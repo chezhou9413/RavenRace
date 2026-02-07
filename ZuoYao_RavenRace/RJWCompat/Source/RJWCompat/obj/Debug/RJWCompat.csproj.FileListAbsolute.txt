@@ -1,0 +1,12 @@
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\RJWCompat.csproj.AssemblyReference.cache
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\RJWCompat.csproj.CoreCompileInputs.cache
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Assemblies\RJWCompat.dll
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Assemblies\RJWCompat.pdb
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\RJWCompat.dll
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\RJWCompat.pdb
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Assemblies\RJWCompat.dll
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Assemblies\RJWCompat.pdb
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Source\RJWCompat\obj\Debug\RJWCompat.csproj.AssemblyReference.cache
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Source\RJWCompat\obj\Debug\RJWCompat.csproj.CoreCompileInputs.cache
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Source\RJWCompat\obj\Debug\RJWCompat.dll
+E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Source\RJWCompat\obj\Debug\RJWCompat.pdb

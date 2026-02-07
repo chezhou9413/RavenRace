@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_DragonianBloodline</defName>
+    <label>龙人血脉(次级)</label>
+    <description>源自龙人(Dragonian)的古老血脉。赋予了持有者强健的体魄、惊人的再生能力以及压倒性的力量。\n\n数值加成：\n- 伤口愈合速度 +300% (总计 4.0倍)\n- 近战伤害 +30%\n- 近战命中 +5\n- 移动速度 +0.8\n- 受到的伤害 -15% (龙鳞防护)</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.8, 0.9, 1.0)</defaultLabelColor>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <!-- 愈合：原版 x500%。我们给 +3.0，即 400% 速度 -->
+          <InjuryHealingFactor>3.0</InjuryHealingFactor>
+          
+          <!-- 近战伤害：原版 x135%。我们给 +0.3，即 130% -->
+          <MeleeDamageFactor>0.3</MeleeDamageFactor>
+          
+          <!-- 近战命中：大幅提升 -->
+          <MeleeHitChance>5</MeleeHitChance>
+          
+          <!-- 闪避 -->
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+          
+          <!-- 移动速度 -->
+          <MoveSpeed>0.8</MoveSpeed>
+          
+          <!-- 全局减伤：模拟龙鳞 (IncomingDamageFactor 是负数收益) -->
+          <IncomingDamageFactor>-0.15</IncomingDamageFactor>
+
+          <!-- 抗性：模拟龙鳞对火焰的抗性 -->
+          <ArmorRating_Heat>0.5</ArmorRating_Heat>
+          <Flammability>-0.5</Flammability>
+        </statOffsets>
+        
+        <!-- 免疫部分伤害类型 -->
+        <makeImmuneTo>
+           <li>Hypothermia</li>
+           <li>Heatstroke</li>
+        </makeImmuneTo>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

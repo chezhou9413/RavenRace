@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RavenRace_Extractor_OnlyRaven>只能接受渡鸦族。</RavenRace_Extractor_OnlyRaven>
+  <RavenRace_Extractor_Extracting>正在提取：{0}</RavenRace_Extractor_Extracting>
+  <RavenRace_Extractor_Finished_Safe>提取完成：{0} 虚弱地离开了仪器，余烬之血已凝结。</RavenRace_Extractor_Finished_Safe>
+  <RavenRace_Extractor_InCooldown>{0} 正处于余烬枯竭状态，身体无法承受再次提取。</RavenRace_Extractor_InCooldown>
+  
+  <!-- 新增的交互文本 -->
+  <RavenRace_EnterExtractor>进入残火提取仪</RavenRace_EnterExtractor>
+  <RavenRace_InsertPerson>放入人员</RavenRace_InsertPerson>
+
+
+  <RavenRace_WatchAV>看AV</RavenRace_WatchAV>
+  <RavenRace_WatchAV_Desc>开启后，电视将播放成人内容。观看者会获得特殊的娱乐体验，并有概率激发原始冲动。</RavenRace_WatchAV_Desc>
+  <Raven_WatchingAV>正在看AV</Raven_WatchingAV>
+
+</LanguageData>

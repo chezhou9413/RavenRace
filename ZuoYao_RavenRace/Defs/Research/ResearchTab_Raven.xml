@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchTabDef>
+    <defName>Raven_ResearchTab</defName>
+    <label>渡鸦科技</label> <!-- 这是中文，如果你想支持多语言，这里填 RavenTech，然后在语言文件中翻译 -->
+  </ResearchTabDef>
+</Defs>

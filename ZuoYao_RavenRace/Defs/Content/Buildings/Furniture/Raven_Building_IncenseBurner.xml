@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_IncenseBurner</defName>
+    <label>催情香炉</label>
+    <description>燃烧七情草叶。燃烧时会散发出令人意乱情迷的香气。</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Buildings/IncenseBurner/IncenseBurner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+      <color>(255, 180, 200)</color>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    
+    <!-- 1.6 显示半径 -->
+    <specialDisplayRadius>9.9</specialDisplayRadius>
+
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <!-- [修复红字] 1.6 解析器严谨，整型字段禁止写小数点 -->
+        <fuelConsumptionRate>10</fuelConsumptionRate>
+        <fuelCapacity>50</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>WoodLog</li>
+            <li>RavenItem_SevenEmotionsLeaf</li>
+          </thingDefs>
+        </fuelFilter>
+        <initialFuelPercent>0</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+      <!-- 逻辑组件 -->
+      <li Class="RavenRace.Buildings.Comps.CompProperties_IncenseBurner">
+        <effectRadius>9.9</effectRadius> <!-- 这里是 float，保留小数 -->
+        <joyAmount>0.05</joyAmount>
+        <forceLovinChance>0.05</forceLovinChance>
+      </li>
+    </comps>
+    
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_Reproduction</li>
+    </researchPrerequisites>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>Raven_Recipe_ExtractEmberBlood</defName>
+    <label>提取余烬之血</label>
+    <description>通过一种古老而残酷的仪式性手术，从渡鸦族的心脏中提取最后的生命精华。\n\n警告：此手术会导致受术者必然死亡。</description>
+    <workerClass>RavenRace.Recipe_ExtractEmberBlood</workerClass>
+    <jobString>正在提取余烬之血。</jobString>
+    <workAmount>2000</workAmount>
+    <surgerySuccessChanceFactor>999</surgerySuccessChanceFactor>
+    <!-- [Fixed] 移除了 deathOnFailedSurgery，死亡逻辑由 C# 接管 -->
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>true</anesthetize>
+    <effectWorking>ButcherFlesh</effectWorking>
+    <soundWorking>Recipe_ButcherCorpseFlesh</soundWorking>
+    <recipeUsers>
+      <li>Raven_Race</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>RavenResearch_FusangComm</defName>
+    <label>扶桑加密通讯</label>
+    <description>破解并掌握扶桑组织的通讯协议，允许建造扶桑通讯台以获取支援。</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+</Defs>

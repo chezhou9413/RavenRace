@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 人名规则：大幅扩充字库 -->
+  <RulePackDef>
+    <defName>NamerPersonFusang</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=12)->[SolidName]</li>
+        
+        <!-- 核心修复：在姓和名之间添加空格，确保系统能正确解析 NameTriple -->
+        <li>SolidName->[NameLast] [NameFirst]</li>
+        
+        <!-- 姓氏 -->
+        <li>NameLast->金</li>
+        <li>NameLast->乌</li>
+        <li>NameLast->陆</li>
+        <li>NameLast->帝</li>
+        <li>NameLast->羲</li>
+        <li>NameLast->和</li>
+        <li>NameLast->东</li>
+        <li>NameLast->阳</li>
+        <li>NameLast->姜</li>
+        <li>NameLast->姬</li>
+        <li>NameLast->赢</li>
+        <li>NameLast->子</li>
+        <li>NameLast->风</li>
+        <li>NameLast->烈</li>
+        <li>NameLast->赤</li>
+        <li>NameLast->炎</li>
+        <li>NameLast->火</li>
+        <li>NameLast->祝</li>
+        <li>NameLast->融</li>
+        <li>NameLast->烛</li>
+
+        <!-- 名字：采用组合词以增加数量级 -->
+        <li>NameFirst->[NameSyl]</li>
+        <li>NameFirst->[NameSyl][NameSyl]</li>
+
+        <!-- 字库：用于组合名字 -->
+        <li>NameSyl->曜</li>
+        <li>NameSyl->辉</li>
+        <li>NameSyl->光</li>
+        <li>NameSyl->赫</li>
+        <li>NameSyl->曦</li>
+        <li>NameSyl->昕</li>
+        <li>NameSyl->昂</li>
+        <li>NameSyl->昭</li>
+        <li>NameSyl->昱</li>
+        <li>NameSyl->影</li>
+        <li>NameSyl->墨</li>
+        <li>NameSyl->羽</li>
+        <li>NameSyl->翼</li>
+        <li>NameSyl->翔</li>
+        <li>NameSyl->天</li>
+        <li>NameSyl->穹</li>
+        <li>NameSyl->日</li>
+        <li>NameSyl->月</li>
+        <li>NameSyl->星</li>
+        <li>NameSyl->辰</li>
+        <li>NameSyl->离</li>
+        <li>NameSyl->火</li>
+        <li>NameSyl->焰</li>
+        <li>NameSyl->烁</li>
+        <li>NameSyl->炜</li>
+        <li>NameSyl->煌</li>
+        <li>NameSyl->灵</li>
+        <li>NameSyl->修</li>
+        <li>NameSyl->华</li>
+        <li>NameSyl->烨</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerPersonFusangFemale</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=12)->[SolidName]</li>
+        
+        <!-- 添加空格 -->
+        <li>SolidName->[NameLast] [NameFirstFemale]</li>
+        
+        <!-- 复用上面的姓氏 -->
+        <li>NameLast->金</li>
+        <li>NameLast->乌</li>
+        <li>NameLast->陆</li>
+        <li>NameLast->帝</li>
+        <li>NameLast->羲</li>
+        <li>NameLast->和</li>
+        <li>NameLast->常</li>
+        <li>NameLast->仪</li>
+        <li>NameLast->玄</li>
+        <li>NameLast->素</li>
+        <li>NameLast->白</li>
+        <li>NameLast->丹</li>
+        <li>NameLast->朱</li>
+        <li>NameLast->彤</li>
+        <li>NameLast->彩</li>
+        <li>NameLast->云</li>
+        <li>NameLast->霓</li>
+        <li>NameLast->霞</li>
+
+        <li>NameFirstFemale->[NameSylFem]</li>
+        <li>NameFirstFemale->[NameSylFem][NameSylFem]</li>
+
+        <li>NameSylFem->月</li>
+        <li>NameSylFem->灵</li>
+        <li>NameSylFem->秀</li>
+        <li>NameSylFem->婉</li>
+        <li>NameSylFem->清</li>
+        <li>NameSylFem->瑶</li>
+        <li>NameSylFem->琴</li>
+        <li>NameSylFem->瑟</li>
+        <li>NameSylFem->霓</li>
+        <li>NameSylFem->裳</li>
+        <li>NameSylFem->羽</li>
+        <li>NameSylFem->微</li>
+        <li>NameSylFem->柔</li>
+        <li>NameSylFem->熙</li>
+        <li>NameSylFem->然</li>
+        <li>NameSylFem->琼</li>
+        <li>NameSylFem->瑰</li>
+        <li>NameSylFem->瑛</li>
+        <li>NameSylFem->岚</li>
+        <li>NameSylFem->雪</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- 其余规则包保持不变 -->
+  <RulePackDef>
+    <defName>NamerDeityFusang</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_deityName->三足金乌</li>
+        <li>r_deityName->东皇太一</li>
+        <li>r_deityName->帝俊</li>
+        <li>r_deityName->羲和</li>
+        <li>r_deityName->太阳女神</li>
+        <li>r_deityName->金乌帝君</li>
+        <li>r_deityName->日御</li>
+        <li>r_deityName->火帝</li>
+        <li>r_deityName->太阳神鸟</li>
+        <li>r_deityName->朱雀神君</li>
+        <li>r_deityName->炎阳大帝</li>
+        <li>r_deityName->光明天帝</li>
+        <li>r_deityName->金羽圣尊</li>
+        <li>r_deityName->旭日之主</li>
+        <li>r_deityName->黄昏之神</li>
+        <li>r_deityName->黎明女神</li>
+        
+        <!-- 安全网：手动定义原版全局规则可能请求的符号 -->
+        <li>place_foeSoldiers->敌人</li>
+        <li>place_foeLeader->敌军首领</li>
+        <li>place_foeWeapon->毁灭武器</li>
+        <li>place_foeAdj->邪恶的</li>
+        <li>place_personalWeapon->利刃</li>
+        <li>place_massWeapon->天火</li>
+        <li>place_job->使命</li>
+        <li>place_community->组织</li>
+        <li>place_location->战场</li>
+        <li>place_event->战斗</li>
+        <li>place_outcome->胜利</li>
+        <li>place_reward->荣耀</li>
+        <li>place_punishment->失败</li>
+        <li>place_hero->勇士</li>
+        <li>place_villain->恶人</li>
+        <li>place_ally->盟友</li>
+        <li>place_obstacle->障碍</li>
+        <li>place_solution->解决方案</li>
+        <li>place_goal->目标</li>
+        <li>place_challenge->挑战</li>
+        <li>place_skill->技能</li>
+        <li>place_virtue->美德</li>
+        <li>place_vice->恶习</li>
+        <li>place_emotion->情感</li>
+        <li>place_lesson->教训</li>
+        <li>place_morale->士气</li>
+        <li>place_strategy->策略</li>
+        <li>place_tactic->战术</li>
+        <li>deity_name->金乌神</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerDeityTypeFusang</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_deityType->神君</li>
+        <li>r_deityType->圣尊</li>
+        <li>r_deityType->天帝</li>
+        <li>r_deityType->日神</li>
+        <li>r_deityType->女神</li>
+        <li>r_deityType->帝君</li>
+        <li>r_deityType->御使</li>
+        <li>r_deityType->火神</li>
+        <li>r_deityType->圣王</li>
+        <li>r_deityType->圣灵</li>
+        <li>r_deityType->天尊</li>
+        <li>r_deityType->天后</li>
+        <li>r_deityType->神官</li>
+        <li>r_deityType->使者</li>
+        <li>r_deityType->守护者</li>
+        <li>r_deityType->创造者</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerIdeoFusang</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_ideoName->金乌神道</li>
+        <li>r_ideoName->扶桑真理</li>
+        <li>r_ideoName->汤谷誓约</li>
+        <li>r_ideoName->天穹铁律</li>
+        <li>r_ideoName->逐日之道</li>
+        
+        <li>ideoName->[r_ideoName]</li>
+        <li>adjective->[r_ideoAdjective]</li>
+        <li>memberName->[r_memberName]</li>
+        
+        <li>r_ideoAdjective->金乌的</li>
+        <li>r_ideoAdjective->神圣的</li>
+        <li>r_ideoAdjective->太阳的</li>
+        <li>r_memberName->信徒</li>
+        <li>r_memberName->追随者</li>
+        <li>r_memberName->逐日者</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerLeaderTitleFusang</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_leaderTitle->司命</li>
+        <li>r_leaderTitle->祭酒</li>
+        <li>r_leaderTitle->大司祭</li>
+        <li>r_leaderTitle->掌火者</li>
+        <li>r_leaderTitle->首席司命</li>
+        <li>r_leaderTitle->太阳祭酒</li>
+        <li>r_leaderTitle->金乌大司祭</li>
+        <li>r_leaderTitle->余烬掌火者</li>
+        <li>r_leaderTitle->日御</li>
+        <li>r_leaderTitle->火帝</li>
+        <li>r_leaderTitle->东皇太一</li>
+        <li>r_leaderTitle->羲和</li>
+        
+        <!-- 直接定义meme相关规则，确保它们能被找到 -->
+        <li>memeLeaderAdjective->神圣的</li>
+        <li>memeLeaderAdjective->太阳的</li>
+        <li>memeLeaderAdjective->金乌的</li>
+        <li>memeLeaderAdjective->余烬的</li>
+        <li>memeLeaderNoun->司命</li>
+        <li>memeLeaderNoun->祭酒</li>
+        <li>memeLeaderNoun->大司祭</li>
+        <li>memeLeaderNoun->掌火者</li>
+        <li>memeMoralist->祭酒</li>
+        <li>memeMoralist->司命</li>
+        <li>memeMoralist->大司祭</li>
+        <li>memeMoralist->掌火者</li>
+        <li>memeAdjective->神圣的</li>
+        <li>memeAdjective->太阳的</li>
+        <li>memeAdjective->金乌的</li>
+        <li>memeAdjective->余烬的</li>
+        <li>memeConcept->神圣</li>
+        <li>memeConcept->太阳</li>
+        <li>memeConcept->金乌</li>
+        <li>memeConcept->余烬</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerFestivalFusang</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_ritualName->浴日节</li>
+        <li>r_ritualName->扶桑祭</li>
+        <li>r_ritualName->金羽诞</li>
+        <li>r_ritualName->归巢日</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

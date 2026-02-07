@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>Raven_Incident_TraderCaravanArrival</defName>
+    <label>扶桑商队抵达</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>RavenRace.Features.FusangOrganization.Trader.IncidentWorker_FusangTraderArrival</workerClass>
+    <letterLabel>商队抵达</letterLabel>
+    <letterText>一支来自扶桑组织的隐秘商队响应了你的召唤，抵达了殖民地。</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <baseChance>0</baseChance>
+    <!-- [Fixed] 移除了无效的 pawnGroupMakerSeed -->
+  </IncidentDef>
+</Defs>

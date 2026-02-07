@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 金羽信件 -->
+  <RavenRace_LetterLabel_Feather_Mood>折翼金羽析出 (情绪)</RavenRace_LetterLabel_Feather_Mood>
+  <RavenRace_LetterText_Feather_HugeGrief>{0} 陷入了无尽的悲恸之中，灵魂的激荡使得一根金羽从羽翼中脱落。</RavenRace_LetterText_Feather_HugeGrief>
+  <RavenRace_LetterText_Feather_HugeJoy>{0} 感到了无上的极乐，灵魂的共鸣使得一根金羽从羽翼中脱落。</RavenRace_LetterText_Feather_HugeJoy>
+  <RavenRace_LetterText_Feather_MentalBreak>{0} 的精神防线彻底崩溃了，这种极端的混乱反而促使了金羽的析出。</RavenRace_LetterText_Feather_MentalBreak>
+
+  <RavenRace_LetterLabel_Feather_Health>折翼金羽析出 (濒死)</RavenRace_LetterLabel_Feather_Health>
+  <RavenRace_LetterText_Feather_NearDeath>在死亡的边缘，{0} 的求生本能激发了血脉深处的神性，一根金羽作为代价脱落了。</RavenRace_LetterText_Feather_NearDeath>
+
+  <RavenRace_LetterLabel_Feather_Birth>折翼金羽析出 (新生)</RavenRace_LetterLabel_Feather_Birth>
+  <RavenRace_LetterText_Feather_NewLife>新生命的诞生带来了纯粹的希望，{0} 为此献上了一根金羽作为祝福。</RavenRace_LetterText_Feather_NewLife>
+
+  <!-- 余烬之血信件 -->
+  <RavenRace_LetterLabel_EmberExtraction>余烬之血提取完成</RavenRace_LetterLabel_EmberExtraction>
+  <RavenRace_LetterText_EmberExtraction>{0} 成功完成了手术。{1} 的心脏停止了跳动，所有的生命精华都已凝结在这份余烬之血中。这是一份沉重的代价。</RavenRace_LetterText_EmberExtraction>
+  
+  <!-- 任务描述 -->
+  <RavenRace_Mission_Ember_Desc>【代号：余烬】崇高奉献\n\n组织内有一些年迈或身负重伤的成员，自愿献出生命以换取族群的延续。我们需要情报点数来定位他们的位置，并消耗影响力来安排专门的运输舱将提取物送达。\n\n获得：余烬之血 x1</RavenRace_Mission_Ember_Desc>
+
+  <!-- [新增] 武器淬毒 -->
+  <Raven_Message_WeaponCoated>已将 {0} 涂抹在 {1} 上。剩余生效次数: {2}</Raven_Message_WeaponCoated>
+  <Raven_Mote_Poisoned>中毒</Raven_Mote_Poisoned>
+
+
+
+</LanguageData>

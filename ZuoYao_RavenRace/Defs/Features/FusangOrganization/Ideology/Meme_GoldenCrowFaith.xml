@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 添加 MayRequire -->
+  <MemeDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>GoldenCrow_Faith</defName>
+    <label>金乌信条</label>
+    <description>血脉即是一切。我们不是在寻找神，我们是在成为神。</description>
+    <iconPath>UI/Ideoligions/Memes/GoldenCrowFaith</iconPath>
+    <category>Normal</category>
+    <impact>3</impact>
+    <renderOrder>100</renderOrder>
+    
+    <!-- 兼容性设置 -->
+    <exclusionTags>
+      <li>DivineNonHuman</li>
+    </exclusionTags>
+    
+    <generalRules>
+      <rulesStrings>
+        <!-- meme相关规则 - 中文版本 -->
+        <li>memeLeaderAdjective->神圣的</li>
+        <li>memeLeaderAdjective->太阳的</li>
+        <li>memeLeaderAdjective->金乌的</li>
+        <li>memeLeaderAdjective->余烬的</li>
+        <li>memeLeaderNoun->司命</li>
+        <li>memeLeaderNoun->祭酒</li>
+        <li>memeLeaderNoun->大司祭</li>
+        <li>memeLeaderNoun->掌火者</li>
+        <li>memeMoralist->祭酒</li>
+        <li>memeMoralist->司命</li>
+        <li>memeMoralist->大司祭</li>
+        <li>memeMoralist->掌火者</li>
+        <li>memeAdjective->神圣的</li>
+        <li>memeAdjective->太阳的</li>
+        <li>memeAdjective->金乌的</li>
+        <li>memeAdjective->余烬的</li>
+        <li>memeConcept->神圣</li>
+        <li>memeConcept->太阳</li>
+        <li>memeConcept->金乌</li>
+        <li>memeConcept->余烬</li>
+        <li>r_leaderTitle->[memeLeaderAdjective] [memeLeaderNoun]</li>
+        <li>r_roleName->[memeAdjective] [memeMoralist]</li>
+        
+        <!-- 安全网：手动定义原版全局规则可能请求的符号 -->
+        <li>place_foeSoldiers->敌人</li>
+        <li>place_foeLeader->敌军首领</li>
+        <li>place_foeWeapon->毁灭武器</li>
+        <li>place_foeAdj->邪恶的</li>
+        <li>place_personalWeapon->利刃</li>
+        <li>place_massWeapon->天火</li>
+        <li>place_job->使命</li>
+        <li>place_community->组织</li>
+        <li>place_location->战场</li>
+        <li>place_event->战斗</li>
+        <li>place_outcome->胜利</li>
+        <li>place_reward->荣耀</li>
+        <li>place_punishment->失败</li>
+        <li>place_hero->勇士</li>
+        <li>place_villain->恶人</li>
+        <li>place_ally->盟友</li>
+        <li>place_obstacle->障碍</li>
+        <li>place_solution->解决方案</li>
+        <li>place_goal->目标</li>
+        <li>place_challenge->挑战</li>
+        <li>place_skill->技能</li>
+        <li>place_virtue->美德</li>
+        <li>place_vice->恶习</li>
+        <li>place_emotion->情感</li>
+        <li>place_lesson->教训</li>
+        <li>place_morale->士气</li>
+        <li>place_strategy->策略</li>
+        <li>place_tactic->战术</li>
+        <li>deity_name->金乌神</li>
+      </rulesStrings>
+    </generalRules>
+  </MemeDef>
+</Defs>

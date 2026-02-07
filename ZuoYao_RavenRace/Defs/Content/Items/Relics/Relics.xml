@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 某位大师的画笔 ==================== -->
+  <!-- 继承自RelicInertBase使其成为一个惰性圣物 -->
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RavenRelic_MastersBrush</defName>
+    <label>某位大师的画笔</label>
+    <description>据说是创造邪恶六角恐龙的超凡智能遗留下的画笔，有一股强大的灵能守护着它。据说在萌螈的禁忌典籍里有记载，必须得到那位超凡智能的认可的人才能使用。对于某些人来说，它的功能堪称罪大恶极。它可以将所有种族的大肉包变成小笼包。</description>
+    <graphicData>
+      <texPath>Items/Relics/MastersBrush</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <!-- 重写基类的属性 -->
+      <MarketValue>1</MarketValue>
+      <Mass>0.1</Mass>
+      <Beauty>500</Beauty>
+    </statBases>
+    <!-- 归类为神器，而不是普通惰性圣物 -->
+    <thingCategories>
+      <li>Artifacts</li>
+    </thingCategories>
+    <tradeability>None</tradeability>
+  </ThingDef>
+
+  <!-- ==================== 2. 某个绿色米莉拉的价格标签 ==================== -->
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RavenRelic_MiliraPriceTag</defName>
+    <label>某个绿色米莉拉的价格标签</label>
+    <description>来自某位雌雄莫辨的米莉拉钉在耳朵上的价格标签，但是无论用什么方法识别上面的条码，都会弹出此商品不存在的提示。然而，传说得到某位粉色超凡智能的加护后，便能成功读取该条码，上面显示着：“价格：882853688白银；商品描述：一只对你百依百顺的绿色米莉拉小男娘；付款链接：xxxxxxxxxxx。”“111真能买吗？”某位黑色米莉拉如此说道。</description>
+    <graphicData>
+      <texPath>Items/Relics/MiliraPriceTag</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+      <Beauty>500</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>Artifacts</li>
+    </thingCategories>
+    <tradeability>None</tradeability>
+  </ThingDef>
+
+  <!-- ==================== 3. 鼠饼恩情雕像 ==================== -->
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RavenRelic_RatkinStatue</defName>
+    <label>鼠饼恩情雕像</label>
+    <description>一尊描绘着几位鼠鼠高层指点江山的小雕塑，据说每位在城市里的鼠鼠床头必须摆上，并且每天起床和睡觉前都要双手举过头顶一边哭一边跳，以表对几位做出巨大贡献的鼠鼠的尊敬。雕像做的十分精致，细致到连每一根脚趾头的纹路都刻的清清楚楚，能看出设计工匠的努力。“为什么工匠这么清楚每位高层的脚的样子？这刻画的也太精细了吧，每个人的脚趾甲长度都不一样。”“嘘，还想要脑袋的话，那就别说了。”</description>
+    <graphicData>
+      <texPath>Items/Relics/RatkinStatue</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>1.5</Mass>
+      <Beauty>500</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>Artifacts</li>
+    </thingCategories>
+    <tradeability>None</tradeability>
+  </ThingDef>
+
+  <!-- ==================== 4. 狼球抱枕 ==================== -->
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RavenRelic_WolfeinPillow</defName>
+    <label>狼球抱枕</label>
+    <description>一个毛茸茸，圆滚滚的抱枕，似乎捏他了看板娘芬里尔的形象。据沃芬野史记载，当年有一位因欺骗巨企高层的获罪的抵抗组织成员---沃沃芬斯，就被判处推着狼球抱枕上山的惩罚。因为抱枕实在是太圆太可爱了，每次快到山顶的时候就会滑落下山，沃沃芬斯不得不从头再推一次，循环往复。这个抱枕和后面藏着的故事一直在哲学界有着激烈的讨论，他们吵得不可开交，但是，这只是个很可爱的抱枕，不是吗？</description>
+    <graphicData>
+      <texPath>Items/Relics/WolfeinPillow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>1.0</Mass>
+      <Beauty>500</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>Artifacts</li>
+    </thingCategories>
+    <tradeability>None</tradeability>
+  </ThingDef>
+
+  <!-- ==================== 5. 一款神秘的奶 ==================== -->
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RavenRelic_MysteriousMilk</defName>
+    <label>一款神秘的奶</label>
+    <description>一瓶有着神秘香气的母乳，似乎来自某些长着龙角的，拥有傲人乳房的种族。</description>
+    <graphicData>
+      <texPath>Items/Relics/MysteriousMilk</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.5</Mass>
+      <Beauty>500</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>Artifacts</li>
+    </thingCategories>
+    <tradeability>None</tradeability>
+  </ThingDef>
+
+</Defs>

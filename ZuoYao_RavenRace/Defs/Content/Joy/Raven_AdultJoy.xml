@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JoyKindDef>
+    <defName>Raven_AdultEntertainment</defName>
+    <label>淫靡感官刺激</label>
+    <description>通过高度露骨的性行为影像获得的快感。这种刺激会直接引发渡鸦族最原始的交配冲动。</description>
+    <needsThing>true</needsThing>
+  </JoyKindDef>
+
+  <JobDef>
+    <defName>Raven_WatchAV</defName>
+    <driverClass>JobDriver_WatchTelevision</driverClass>
+    <reportString>正在观看成人艺术资料，因极度的快感而急促喘息。</reportString>
+    <joyDuration>4000</joyDuration>
+    <joyMaxParticipants>8</joyMaxParticipants>
+    <joyKind>Raven_AdultEntertainment</joyKind>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <!-- 专属想法 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_AdultObservation</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>沉沦色欲</label>
+        <description>脑子里全是刚才屏幕上那些疯狂交配的画面...巨大的阳具不断贯穿湿润的小穴，伴随着“啾啵啾啵”的泥泞声和绝顶时的失神娇喘。身体变得好烫，我好想被狠狠地内射，把温暖的遗传因子填满子宫...</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <JoyGiverDef>
+    <defName>Raven_Giver_WatchAV</defName>
+    <giverClass>RavenRace.Features.MiscSmallFeatures.AVTelevision.JoyGiver_WatchAV</giverClass>
+    <baseChance>5</baseChance> 
+    <!-- 【1.6 核心修复】设为 false 后，小人会直接站在电视前观看，不再强制找椅子 -->
+    <desireSit>false</desireSit> 
+    <thingDefs>
+      <li>TubeTelevision</li>
+      <li>FlatscreenTelevision</li>
+      <li>MegascreenTelevision</li>
+    </thingDefs>
+    <jobDef>Raven_WatchAV</jobDef>
+    <joyKind>Raven_AdultEntertainment</joyKind>
+    <requiredCapacities><li>Sight</li></requiredCapacities>
+  </JoyGiverDef>
+</Defs>

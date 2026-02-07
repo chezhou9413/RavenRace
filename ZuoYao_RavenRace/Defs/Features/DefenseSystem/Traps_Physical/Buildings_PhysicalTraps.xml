@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>RavenTrap_LegCrusher</defName>
+    <label>leg crusher trap</label>
+    <description>A cruel mechanical trap designed to snap shut on the victim's lower leg. The serrated blades are positioned to sever the Achilles tendon.</description>
+    <thingClass>RavenRace.Building_RavenTrap</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Security/RavenTrapPhysical/LegTrap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0,0,1,0.15)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <stealable>false</stealable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <uiOrder>30</uiOrder>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <Mass>3.5</Mass>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+      <Flammability>1</Flammability>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <designationCategory>Security</designationCategory>
+    <building>
+      <isTrap>true</isTrap>
+      <trapDestroyOnSpring>true</trapDestroyOnSpring>
+      <expandHomeArea>false</expandHomeArea>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <placeWorkers>
+      <li>PlaceWorker_NeverAdjacentTrap</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>RavenResearch_TrapBasics</li>
+    </researchPrerequisites>
+    <comps>
+      <!-- 核心触发器 -->
+      <li Class="RavenRace.CompProperties_Trigger">
+        <condition>StepOn</condition>
+        <detectionRadius>0</detectionRadius>
+        <cooldownTicks>-1</cooldownTicks>
+        <manualTriggerable>true</manualTriggerable>
+      </li>
+      <!-- 断腿效果：使用标准 CompProperties -->
+      <li Class="CompProperties">
+        <compClass>RavenRace.CompTrapEffect_LegCrusher</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>RavenItem_SevenEmotionsLeaf</defName>
+    <label>七情草叶</label>
+    <description>刚采摘的七情草叶片，散发着甜腻的香气。可以直接燃烧，也可以提炼成浓缩药剂。</description>
+    <graphicData>
+      <texPath>Items/Resource/SevenEmotionsLeaf</texPath>
+      <graphicClass>Graphic_Single</graphicClass> 
+      <color>(255, 105, 180)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>3.5</MarketValue>
+      <Mass>0.03</Mass>
+      <Flammability>1.0</Flammability>
+      <!-- [修改] 移除 Nutrition，因为我们将其设为不可食用(充饥) -->
+    </statBases>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+    <ingestible>
+        <foodType>Plant</foodType>
+        <!-- [修改] 改为 NeverForNutrition，彻底解决囚犯喂食问题和 socialPropernessMatters 报错 -->
+        <preferability>NeverForNutrition</preferability>
+        <!-- [删除] 导致红字的行 -->
+        <!-- <socialPropernessMatters>true</socialPropernessMatters> -->
+        <outcomeDoers>
+            <li Class="IngestionOutcomeDoer_GiveHediff">
+                <hediffDef>RavenHediff_AphrodisiacEffect</hediffDef>
+                <severity>0.1</severity>
+            </li>
+        </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Raven_Item_CorruptionTalisman.label>淫堕符咒</Raven_Item_CorruptionTalisman.label>
+  <Raven_Item_CorruptionTalisman.description>这张散发着麝香与蜜糖般甜腻气味的符咒，上面的朱砂仿佛是少女的唇印，仅仅是注视着它，就会让人的心跳加速，呼吸变得急促。\n\n咒文上书：“强制受孕，见我发情”。\n\n将其贴在目标的额头，那扭曲的咒文便会渗入灵魂，将最坚固的道德堤坝冲垮，让其化为只知渴求与奉献的浪荡尤物。携带此符咒时，可以通过右键菜单对他人使用。</Raven_Item_CorruptionTalisman.description>
+  <Raven_Item_CorruptionTalisman.comps.CompUsable.useLabel>贴上淫堕符咒</Raven_Item_CorruptionTalisman.comps.CompUsable.useLabel>
+
+</LanguageData>

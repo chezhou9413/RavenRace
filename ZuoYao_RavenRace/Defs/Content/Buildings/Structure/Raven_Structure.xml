@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 渡鸦墙体 (Raven Wall) ==================== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_Wall</defName>
+    <label>渡鸦墙体</label>
+    <description>由暗羽钢与钢铁复合锻造而成的重型墙体。结构内部填充了吸能材料，能有效抵御爆炸与钝击，其哑光表面的美感也深受渡鸦族喜爱。</description>
+    
+    <thingClass>RavenRace.Buildings.RavenWall_Building</thingClass>
+    <category>Building</category>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <replaceTags>
+      <li>Wall</li>
+    </replaceTags>
+
+    <graphicData>
+      <texPath>Things/Building/Structure/RavenWall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Cutout</shaderType>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+
+    <uiIconPath>Things/Building/Structure/RavenWall_Icon</uiIconPath>
+    
+    <drawStyleCategory>Walls</drawStyleCategory>
+    
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>200</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>3</Beauty>
+      <MeditationFocusStrength>0.2</MeditationFocusStrength>
+    </statBases>
+
+    <costList>
+      <Steel>12</Steel>
+      <Raven_DarkfeatherSteel>6</Raven_DarkfeatherSteel>
+    </costList>
+
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <blockLight>true</blockLight>
+    <holdsRoof>true</holdsRoof>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <designationCategory>Raven_Category</designationCategory>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+
+    <building>
+      <paintable>true</paintable>
+      <isInert>true</isInert>
+      <isWall>true</isWall>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <isAirtight>true</isAirtight>
+      
+      <blueprintGraphicData>
+        <texPath>Things/Building/Structure/RavenWall</texPath>
+      </blueprintGraphicData>
+      <relatedBuildCommands>
+        <li>Cooler</li>
+        <li>Vent</li>
+      </relatedBuildCommands>
+    </building>
+
+    <comps>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes><li>Minimal</li></focusTypes>
+      </li>
+    </comps>
+
+    <modExtensions>
+      <!-- [核心修改] 更新 Class 引用 -->
+      <li Class="RavenRace.Harmony.RavenStuffColorDisableExtension">
+        <disableStuffColor>true</disableStuffColor>
+      </li>
+    </modExtensions>
+
+    <researchPrerequisites>
+      <li>RavenResearch_BasicMaterials</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <!-- 渡鸦地砖 -->
+  <TerrainDef ParentName="FloorBase">
+    <defName>Raven_Terrain_Tile</defName>
+    <label>渡鸦地砖</label>
+    <description>采用高抛光渡鸦合金制成的地砖。其表面极其平滑，且具有天然的抗污属性，非常易于清洁，且具有极高的装饰价值。</description>
+    <texturePath>Terrain/Surfaces/RavenTile</texturePath>
+    <edgeType>Fade</edgeType> 
+    <statBases>
+      <WorkToBuild>850</WorkToBuild>
+      <Beauty>2</Beauty>
+      <Cleanliness>0.5</Cleanliness>
+      <CleaningTimeFactor>0.6</CleaningTimeFactor>
+    </statBases>
+    <costList>
+      <Raven_DarkfeatherSteel>4</Raven_DarkfeatherSteel>
+    </costList>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_BasicMaterials</li>
+    </researchPrerequisites>
+  </TerrainDef>
+
+</Defs>

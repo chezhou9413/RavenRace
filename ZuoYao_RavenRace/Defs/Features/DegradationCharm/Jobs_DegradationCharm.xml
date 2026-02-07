@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JobDef>
+    <defName>Raven_Job_ApplyCharm</defName>
+    <!-- [最终修正] 修正命名空间 -->
+    <driverClass>RavenRace.Features.DegradationCharm.Jobs.JobDriver_ApplyCharm</driverClass>
+    <reportString>正在对 TargetA 贴上淫堕符咒。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Raven_Job_RemoveCharm</defName>
+    <!-- [最终修正] 修正命名空间 -->
+    <driverClass>RavenRace.Features.DegradationCharm.Jobs.JobDriver_RemoveCharm</driverClass>
+    <reportString>正在揭下 TargetA 的淫堕符咒。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

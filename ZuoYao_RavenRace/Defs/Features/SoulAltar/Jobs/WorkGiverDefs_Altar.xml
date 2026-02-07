@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>Raven_WorkGiver_PlaceEggInCradle</defName>
+    <label>安置灵卵</label>
+    <giverClass>RavenRace.WorkGiver_PlaceEggInCradle</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>90</priorityInType> <!-- 优先级较高 -->
+    <verb>安置</verb>
+    <gerund>正在安置</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+</Defs>

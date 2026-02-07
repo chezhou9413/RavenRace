@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 翡翠：提升艺术 -->
+  <RavenRace.SoulAltarUpgradeDef>
+    <defName>Raven_Upgrade_Jade_Art</defName>
+    <label>翡翠注灵</label>
+    <description>注入翡翠的温润灵气，赋予新生儿艺术天赋。</description>
+    <inputItem>Jade</inputItem>
+    <slotType>Infuser</slotType>
+    <skillGains>
+      <li>
+        <skill>Artistic</skill>
+        <xp>5000</xp>
+        <passion>Minor</passion>
+      </li>
+    </skillGains>
+  </RavenRace.SoulAltarUpgradeDef>
+
+  <!-- 黄金：提升社交 -->
+  <RavenRace.SoulAltarUpgradeDef>
+    <defName>Raven_Upgrade_Gold_Social</defName>
+    <label>黄金注灵</label>
+    <description>注入黄金的尊贵气息，提升社会影响力。</description>
+    <inputItem>Gold</inputItem>
+    <slotType>Infuser</slotType>
+    <statOffsets>
+      <SocialImpact>0.2</SocialImpact>
+      <NegotiationAbility>0.1</NegotiationAbility>
+    </statOffsets>
+  </RavenRace.SoulAltarUpgradeDef>
+
+  <!-- 白银：提升交易 -->
+  <RavenRace.SoulAltarUpgradeDef>
+    <defName>Raven_Upgrade_Silver_Trade</defName>
+    <label>白银注灵</label>
+    <description>注入白银的流通气息，提升交易价格改善。</description>
+    <inputItem>Silver</inputItem>
+    <slotType>Infuser</slotType>
+    <statOffsets>
+      <TradePriceImprovement>0.1</TradePriceImprovement>
+    </statOffsets>
+  </RavenRace.SoulAltarUpgradeDef>
+
+  <!-- 玻璃钢：提升近战 -->
+  <RavenRace.SoulAltarUpgradeDef>
+    <defName>Raven_Upgrade_Plasteel_Melee</defName>
+    <label>锋锐注灵</label>
+    <description>注入玻璃钢的坚韧，提升近战能力。</description>
+    <inputItem>Plasteel</inputItem>
+    <slotType>Infuser</slotType>
+    <skillGains>
+      <li>
+        <skill>Melee</skill>
+        <xp>3000</xp>
+        <passion>Minor</passion>
+      </li>
+    </skillGains>
+  </RavenRace.SoulAltarUpgradeDef>
+
+  <!-- 余烬之怒 -->
+  <RavenRace.SoulAltarUpgradeDef>
+    <defName>Raven_Upgrade_EmberFury</defName>
+    <label>余烬之怒</label>
+    <description>注入强化物质，赋予好战特性。</description>
+    <inputItem>Chemfuel</inputItem>
+    <slotType>Injector</slotType>
+    <forcedTraits>
+      <li>Bloodlust</li>
+    </forcedTraits>
+  </RavenRace.SoulAltarUpgradeDef>
+
+</Defs>

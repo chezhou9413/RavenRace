@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnRelationDef>
+    <defName>Raven_Relation_Dominated</defName>
+    <label>master</label>
+    <labelFemale>mistress</labelFemale> <!-- 修正为更准确的英文 -->
+    <importance>200</importance>
+    
+    <!-- 引用自定义的心情 -->
+    <diedThought>MyMasterDied</diedThought>
+    <killedThought>KilledMyMaster</killedThought>
+    
+    <!-- 核心修复：使用列表结构引用自定义心情 -->
+    <soldThoughts>
+      <li>SoldMyMaster</li>
+    </soldThoughts>
+    
+    <opinionOffset>40</opinionOffset> <!-- 提高好感度加成，体现支配 -->
+    <generationChanceFactor>0</generationChanceFactor>
+    <romanceChanceFactor>1.5</romanceChanceFactor>
+    <incestOpinionOffset>0</incestOpinionOffset>
+    <familyByBloodRelation>false</familyByBloodRelation>
+    <implied>false</implied>
+    <reflexive>false</reflexive>
+  </PawnRelationDef>
+</Defs>

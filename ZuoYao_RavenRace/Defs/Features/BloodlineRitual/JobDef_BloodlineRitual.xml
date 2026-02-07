@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>Raven_Job_BloodlineRitual</defName>
+    <driverClass>RavenRace.Features.BloodlineRitual.JobDriver_BloodlineRitual</driverClass>
+    <reportString>正在进行归元回溯仪式。</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

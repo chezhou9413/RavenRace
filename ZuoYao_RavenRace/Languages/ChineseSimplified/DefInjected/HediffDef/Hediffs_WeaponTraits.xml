@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 袖剑 Buff -->
+  <Raven_Hediff_HiddenBladePrep.label>刺杀准备</Raven_Hediff_HiddenBladePrep.label>
+  <Raven_Hediff_HiddenBladePrep.description>袖剑已滑入掌心，下一次攻击将造成毁灭性的伤害。</Raven_Hediff_HiddenBladePrep.description>
+
+  <!-- 狙击枪 Buff -->
+  <Raven_Hediff_SteadyAim.label>稳定瞄准</Raven_Hediff_SteadyAim.label>
+  <Raven_Hediff_SteadyAim.description>保持静止使射手进入了极度专注的状态。精准度大幅提升。</Raven_Hediff_SteadyAim.description>
+  <Raven_Hediff_SteadyAim.stages.0.label>专注 I</Raven_Hediff_SteadyAim.stages.0.label>
+  <Raven_Hediff_SteadyAim.stages.1.label>专注 V</Raven_Hediff_SteadyAim.stages.1.label>
+  <Raven_Hediff_SteadyAim.stages.2.label>人枪合一</Raven_Hediff_SteadyAim.stages.2.label>
+</LanguageData>

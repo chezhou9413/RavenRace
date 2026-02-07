@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+
+  <!-- ==================== [新增] 构造破碎日核 ==================== -->
+  <RecipeDef>
+    <defName>Make_Raven_ShatteredSunCore</defName>
+    <label>构造破碎日核</label>
+    <description>在升阳注入器中进行超高压粒子对撞，将日冕钢与金羽的精华凝聚成破碎日核。</description>
+    <jobString>正在构造破碎日核。</jobString>
+    
+    <workAmount>30000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    
+    <recipeUsers>
+      <li>Raven_Building_SunRaiserInjector</li>
+    </recipeUsers>
+    
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Raven_CoronaSteel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Raven_GoldenFeather</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Raven_CoronaSteel</li>
+        <li>Raven_GoldenFeather</li>
+        <li>ComponentSpacer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    
+    <products>
+      <Raven_ShatteredSunCore>1</Raven_ShatteredSunCore>
+    </products>
+    
+    <skillRequirements>
+      <Crafting>15</Crafting>
+      <Intellectual>12</Intellectual>
+    </skillRequirements>
+    
+    <researchPrerequisite>RavenResearch_AdvancedForging</researchPrerequisite>
+  </RecipeDef>
+
+</Defs>

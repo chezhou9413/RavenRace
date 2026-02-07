@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+    <FacialAnimation.FaceAnimationDef>
+        <defName>WokrJob</defName>
+        <raceName>Raven_Race</raceName>
+        <animationFrames>
+            <li>
+                <duration>1</duration>
+                <browShapeDef>normal</browShapeDef>
+                <lidShapeDef>half</lidShapeDef>
+                <mouthShapeDef>normal</mouthShapeDef>
+            </li>
+        </animationFrames>
+        <roopIntervalMin>0</roopIntervalMin>
+        <roopIntervalMax>0</roopIntervalMax>
+        <targetJobs>
+            <li>Raven_Job_UseFusangRadio</li>
+            <li>Raven_Job_EnterConcealment</li>
+            <li>Raven_Job_BloodlineRitual</li>
+        </targetJobs>
+        <priority>10300</priority>
+    </FacialAnimation.FaceAnimationDef>
+</Defs>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Raven_Apparel_Quju</defName>
+    <label>渡鸦曲裾</label>
+    <description>一件为渡鸦族设计的传统曲裾。宽大的袖袍和层叠的裙摆不仅优雅，还为翅膀的活动留出了充足空间。采用特殊的织物制成，具有出色的保暖性能。</description>
+    <graphicData>
+      <texPath>Items/Apparel/Raven/Quju/RavenQuju_Icon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    
+    <costStuffCount>80</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <!-- WorkToMake 由下面的 recipeMaker 自动处理 -->
+      <Mass>1.2</Mass>
+      <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>1.2</StuffEffectMultiplierInsulation_Cold> 
+      <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>2.5</EquipDelay>
+    </statBases>
+    
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Legs</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      
+      <wornGraphicPath>Items/Apparel/Raven/Quju/RavenQuju</wornGraphicPath>
+      
+      <layers>
+        <li>Shell</li>
+      </layers>
+      
+      <tags>
+        <li>IndustrialBasic</li>
+        <li>RavenApparel</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workAmount>4000</workAmount>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <!-- 【核心修改】将前置科技改为新的缝纫科技 -->
+      <researchPrerequisite>RavenResearch_Tailoring</researchPrerequisite>
+      <!-- 【核心修改】将可制作的工作台改为新的渡鸦缝纫台 -->
+      <recipeUsers>
+        <li>Raven_Building_SewingBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    
+
+
+
+
+  </ThingDef>
+</Defs>

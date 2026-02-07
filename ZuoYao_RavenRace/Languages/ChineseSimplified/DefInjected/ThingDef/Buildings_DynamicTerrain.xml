@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RavenTrap_RisingWall.label>升墙陷阱</RavenTrap_RisingWall.label>
+  <RavenTrap_RisingWall.description>一种战术陷阱，触发后会在周围生成封闭墙体和屋顶，将敌人困在内部。可通过规划器调整大小。</RavenTrap_RisingWall.description>
+  
+  <Raven_TrapWall.label>能量屏障墙</Raven_TrapWall.label>
+  <Raven_TrapWall.description>由陷阱生成的临时墙体，会在短时间后自动消散。</Raven_TrapWall.description>
+</LanguageData>

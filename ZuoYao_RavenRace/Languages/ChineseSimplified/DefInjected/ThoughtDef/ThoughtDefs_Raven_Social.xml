@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <KilledMyMaster.stages.0.label>杀害了我的主人</KilledMyMaster.stages.0.label>
+  
+  <MyMasterDied.stages.0.label>主人去世</MyMasterDied.stages.0.label>
+  <MyMasterDied.stages.0.description>我的主人去世了。我感觉迷失了方向，失去了存在的意义。</MyMasterDied.stages.0.description>
+  
+  <SoldMyMaster.stages.0.label>主人被卖</SoldMyMaster.stages.0.label>
+  <SoldMyMaster.stages.0.labelSocial>卖掉了我的主人</SoldMyMaster.stages.0.labelSocial>
+  <SoldMyMaster.stages.0.description>我的主人被卖掉了！他们怎么能这么做？</SoldMyMaster.stages.0.description>
+</LanguageData>

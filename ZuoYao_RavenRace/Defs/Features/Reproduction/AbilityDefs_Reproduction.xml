@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef>
+    <defName>Raven_Ability_ForceLovin</defName>
+    <label>强制求爱</label>
+    <description>利用渡鸦族的魅力或威压，强制要求一名异性立刻进行交配。</description>
+    <iconPath>UI/Abilities/Raven_Ability_ForceLovin</iconPath>
+    
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    
+    <abilityClass>Ability</abilityClass>
+    
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>True</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <stunTargetWhileCasting>False</stunTargetWhileCasting>
+    <showCastingProgressBar>True</showCastingProgressBar>
+    
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    
+    <hostile>false</hostile>
+
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30</range>
+      <drawAimPie>True</drawAimPie>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight> 
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetMechs>False</canTargetMechs>
+        <neverTargetIncapacitated>False</neverTargetIncapacitated>
+      </targetParams>
+    </verbProperties>
+
+    <comps>
+      <!-- [Change] RavenRace.CompProperties_AbilityForceLovin -> RavenRace.CompProperties_AbilityForceLovin -->
+      <!-- 注意：这个类还在 RavenRace 根命名空间下，因为我没有在这次重构中移动它。 -->
+      <!-- 如果你有意移动它，请告诉我。目前保持原样，因为它是 Ability 相关的。 -->
+      <li Class="RavenRace.CompProperties_AbilityForceLovin">
+        <compClass>RavenRace.CompAbilityEffect_ForceLovin</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

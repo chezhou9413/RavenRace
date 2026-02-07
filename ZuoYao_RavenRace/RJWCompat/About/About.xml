@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Raven Race - RJW Compatibility (Internal)</name>
+    <author>ZuoYao</author>
+    <packageId>ZuoYao.RavenRace.RJWCompat</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>RJW and Menstruation Cycle compatibility for Raven Race. Loaded via LoadFolders.xml.</description>
+</ModMetaData>

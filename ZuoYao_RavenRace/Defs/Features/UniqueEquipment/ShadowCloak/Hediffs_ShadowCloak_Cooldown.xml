@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 攻击冷却状态：禁止攻击但允许高速移动 -->
+  <HediffDef>
+    <defName>Raven_Hediff_ShadowAttackCooldown</defName>
+    <label>暗影冷却</label>
+    <description>刚刚发动了致命一击，正在重整姿态。此时移动速度极快，但无法再次发动攻击。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>180</disappearsAfterTicks> <!-- 3秒冷却 -->
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>4.0</MoveSpeed> <!-- 爆发性移速 -->
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

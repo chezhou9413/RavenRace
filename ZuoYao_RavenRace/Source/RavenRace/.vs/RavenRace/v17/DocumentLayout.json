@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\Source\\RavenRace\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\steam\\steamapps\\common\\rimworld\\mods\\zuoyao_ravenrace\\source\\ravenrace\\features\\hybridization\\compat_wolfein\\wolfeincompatutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\hybridization\\compat_wolfein\\wolfeincompatutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\steam\\steamapps\\common\\rimworld\\mods\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenracestartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\ravenracestartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WolfeinCompatUtility.cs",
+              "DocumentMoniker": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Hybridization\\Compat_Wolfein\\WolfeinCompatUtility.cs",
+              "RelativeDocumentMoniker": "Features\\Hybridization\\Compat_Wolfein\\WolfeinCompatUtility.cs",
+              "ToolTip": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Hybridization\\Compat_Wolfein\\WolfeinCompatUtility.cs",
+              "RelativeToolTip": "Features\\Hybridization\\Compat_Wolfein\\WolfeinCompatUtility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T05:51:46.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RavenRaceStartup.cs",
+              "DocumentMoniker": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceStartup.cs",
+              "RelativeDocumentMoniker": "Core\\RavenRaceStartup.cs",
+              "ToolTip": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceStartup.cs",
+              "RelativeToolTip": "Core\\RavenRaceStartup.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T09:25:28.432Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RavenTrap_Claymore.label>阔剑护墙器</RavenTrap_Claymore.label>
+  <RavenTrap_Claymore.description>一种设计用于保护墙体的定向爆炸装置。它仅在附着的墙体受损时触发（反工兵模式）。触发时，会向正前方扇形区域喷射致命的破片，清除威胁。</RavenTrap_Claymore.description>
+</LanguageData>

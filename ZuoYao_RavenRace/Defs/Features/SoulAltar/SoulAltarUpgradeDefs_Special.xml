@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 高级零部件：注灵 (赋予技能热情) -->
+  <RavenRace.SoulAltarUpgradeDef>
+    <defName>Raven_Upgrade_Passion_Advanced</defName>
+    <label>高级注灵</label>
+    <description>使用高级零部件进行的精密灵魂手术。能够激发新生儿对特定领域的强烈兴趣。</description>
+    <inputItem>ComponentSpacer</inputItem> <!-- 高级零部件 -->
+    <slotType>Infuser</slotType>
+    
+    <skillGains>
+      <li>
+        <skill>Shooting</skill>
+        <xp>0</xp>
+        <passion>Major</passion> <!-- 强火 -->
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <xp>0</xp>
+        <passion>Major</passion>
+      </li>
+    </skillGains>
+    
+    <!-- 如果想要其他技能，请修改上面的 skill 标签，例如:
+         Intellectual (智识), Medicine (医学), Social (社交), 
+         Crafting (手工), Construction (建造), Mining (采矿), 
+         Plants (种植), Animals (驯兽), Artistic (艺术) 
+    -->
+    
+  </RavenRace.SoulAltarUpgradeDef>
+
+</Defs>

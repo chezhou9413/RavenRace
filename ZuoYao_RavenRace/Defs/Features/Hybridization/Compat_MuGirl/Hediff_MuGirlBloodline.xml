@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_MuGirlBloodline</defName>
+    <label>雪牛血脉(显性)</label>
+    <description>源自雪牛娘(MooGirl)的强韧血脉。赋予了持有者惊人的皮肤硬度和抗打击能力，以及分泌特殊营养乳汁的潜能。\n\n数值加成：\n- 护甲 +60%\n- 热能护甲 +80%\n- 受到的伤害 -15%\n- 近战伤害 +15%</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.7, 0.8, 1.0)</defaultLabelColor>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <!-- 原版 1.0 -> 我们 0.6 -->
+          <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+          <!-- 原版 1.4 -> 我们 0.8 -->
+          <ArmorRating_Heat>0.8</ArmorRating_Heat>
+          
+          <!-- 原版 0.65 (-35%) -> 我们 -15% -->
+          <IncomingDamageFactor>-0.15</IncomingDamageFactor>
+          
+          <!-- 原版 1.3 (+30%) -> 我们 +15% -->
+          <MeleeDamageFactor>0.15</MeleeDamageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

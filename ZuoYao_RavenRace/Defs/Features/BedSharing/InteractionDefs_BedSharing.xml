@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 定义社交心情 (Opinion) -->
+  <ThoughtDef>
+    <defName>Raven_Thought_Snuggle_Social</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass> <!-- 关键：社交记忆 -->
+    <durationDays>1</durationDays> <!-- 持续1天 -->
+    <stackLimit>1</stackLimit> <!-- 限制堆叠1次，防止刷好感 -->
+    <stages>
+      <li>
+        <label>暖床</label>
+        <baseOpinionOffset>8</baseOpinionOffset> <!-- +8 好感 -->
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- 2. 定义交互行为 -->
+  <InteractionDef>
+    <defName>Raven_Interaction_Snuggle</defName>
+    <label>warm snuggle</label>
+    <workerClass>InteractionWorker</workerClass>
+    <symbol>Things/Mote/SpeechSymbols/KindWords</symbol> <!-- 使用原版图标或自定义 -->
+    <interactionMote>Mote_ThoughtGood</interactionMote> <!-- 绿色笑脸气泡 -->
+    
+    <!-- 关键：关联上面的社交心情 -->
+    <!-- initiatorThought: 发起者获得的对接收者的看法 -->
+    <!-- recipientThought: 接收者获得的对发起者的看法 -->
+    <!-- 我们希望双方都互有好感，所以都填 -->
+    <initiatorThought>Raven_Thought_Snuggle_Social</initiatorThought>
+    <recipientThought>Raven_Thought_Snuggle_Social</recipientThought>
+    
+    <!-- 日志规则 (可选) -->
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] shared a warm moment with [RECIPIENT_nameDef].</li>
+      </rulesStrings>
+    </logRulesInitiator>
+    <logRulesRecipient>
+      <rulesStrings>
+        <li>r_logentry->[RECIPIENT_nameDef] felt the warmth of [INITIATOR_nameDef]'s wings.</li>
+      </rulesStrings>
+    </logRulesRecipient>
+  </InteractionDef>
+
+</Defs>

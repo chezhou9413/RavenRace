@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 和渡鸦共眠的心情 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_Snuggle</defName>
+    <durationDays>0.5</durationDays> <!-- 醒来后持续半天 -->
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>毛茸茸的暖床</label>
+        <description>那个渡鸦族的翅膀好软好蓬松，带着淡淡的太阳香味，感觉入睡都变得轻松了~</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

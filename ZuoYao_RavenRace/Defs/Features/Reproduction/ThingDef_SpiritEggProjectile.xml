@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Raven_Projectile_SpiritEgg</defName>
+    <label>飞行灵卵</label>
+    <!-- [Change] RavenRace.Projectile_SpiritEgg -> RavenRace.Features.Reproduction.SpiritEggProjectile -->
+    <thingClass>RavenRace.Features.Reproduction.SpiritEggProjectile</thingClass>
+    <graphicData>
+      <texPath>Items/Resource/RavenSpiritEgg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Stun</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <speed>40</speed>
+      <flyOverhead>false</flyOverhead>
+    </projectile>
+  </ThingDef>
+</Defs>

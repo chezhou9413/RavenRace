@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    
+  <!-- [错误修复 2] 将根标签修改为正确的 Def 类型 -->
+  <RavenRace.Features.Operator.Defs.OperatorDef>
+    <defName>Operator_ZuoYao</defName>
+    <label>接线员 · 左爻</label>
+    <description>扶桑组织的神秘接线员。</description>
+    <favorabilityLevels>
+      <li>
+        <level>0</level>
+        <expressionsPath>UI/Operator/ZuoYao/Favor_0</expressionsPath>
+      </li>
+      <li>
+        <level>1</level>
+        <expressionsPath>UI/Operator/ZuoYao/Favor_1</expressionsPath>
+      </li>
+      <li>
+        <level>2</level>
+        <expressionsPath>UI/Operator/ZuoYao/Favor_2</expressionsPath>
+      </li>
+      <li>
+        <level>3</level>
+        <expressionsPath>UI/Operator/ZuoYao/Favor_3</expressionsPath>
+      </li>
+      <li>
+        <level>4</level>
+        <expressionsPath>UI/Operator/ZuoYao/Favor_4</expressionsPath>
+      </li>
+    </favorabilityLevels>
+  </RavenRace.Features.Operator.Defs.OperatorDef>
+
+</Defs>

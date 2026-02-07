@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Lv1: 搜集情报 -->
+  <RavenRace.Features.Espionage.EspionageMissionDef>
+    <defName>Raven_Mission_GatherIntel</defName>
+    <label>搜集基础情报</label>
+    <description>派遣间谍混入派系外围，搜集关于官员身份和性格的基础信息。这也是提升渗透度的主要手段。</description>
+    <difficultyLevel>0</difficultyLevel>
+    <baseDurationDays>3</baseDurationDays>
+    <baseSuccessChance>0.8</baseSuccessChance>
+    <costIntel>5</costIntel>
+    <rewardIntel>15</rewardIntel>
+    <requiresTargetOfficial>false</requiresTargetOfficial>
+    <missionType>GatherIntel</missionType>
+  </RavenRace.Features.Espionage.EspionageMissionDef>
+
+  <!-- Lv2: 窃取物资 -->
+  <RavenRace.Features.Espionage.EspionageMissionDef>
+    <defName>Raven_Mission_StealSupplies</defName>
+    <label>窃取物资</label>
+    <description>从派系仓库中盗取少量补给品。风险较低。</description>
+    <difficultyLevel>2</difficultyLevel>
+    <baseDurationDays>5</baseDurationDays>
+    <baseSuccessChance>0.6</baseSuccessChance>
+    <costIntel>10</costIntel>
+    <rewardIntel>5</rewardIntel> <!-- 少量增加 -->
+    <rewardItem>Silver</rewardItem>
+    <rewardItemCount>300</rewardItemCount>
+    <requiresTargetOfficial>false</requiresTargetOfficial>
+    <missionType>StealSupplies</missionType>
+  </RavenRace.Features.Espionage.EspionageMissionDef>
+
+  <!-- Lv2: 刺探官员 (关键前置) -->
+  <RavenRace.Features.Espionage.EspionageMissionDef>
+    <defName>Raven_Mission_ProbeOfficial</defName>
+    <label>刺探详细资料</label>
+    <description>深入调查特定官员的个人喜好、弱点和人际关系。这是执行策反、暗杀等高级行动的必要前置。\n\n成功后将解锁该官员的详细信息。</description>
+    <difficultyLevel>2</difficultyLevel>
+    <baseDurationDays>5</baseDurationDays>
+    <baseSuccessChance>0.75</baseSuccessChance>
+    <costIntel>20</costIntel>
+    <rewardIntel>20</rewardIntel> <!-- 高额渗透度奖励 -->
+    <requiresTargetOfficial>true</requiresTargetOfficial>
+    <missionType>GatherIntel</missionType> 
+  </RavenRace.Features.Espionage.EspionageMissionDef>
+
+  <!-- Lv3: 贿赂 -->
+  <RavenRace.Features.Espionage.EspionageMissionDef>
+    <defName>Raven_Mission_Bribe</defName>
+    <label>贿赂官员</label>
+    <description>向目标官员提供资金，换取好感度提升和短期庇护。\n\n前置：需已解锁目标信息。</description>
+    <missionType>Bribe</missionType>
+    <difficultyLevel>3</difficultyLevel>
+    <baseDurationDays>1</baseDurationDays>
+    <baseSuccessChance>0.9</baseSuccessChance>
+    <costIntel>10</costIntel>
+    <costMoney>500</costMoney>
+    <rewardIntel>10</rewardIntel>
+    <requiresTargetOfficial>true</requiresTargetOfficial>
+  </RavenRace.Features.Espionage.EspionageMissionDef>
+
+  <!-- Lv3: 策反 (原 Lv3) -->
+  <RavenRace.Features.Espionage.EspionageMissionDef>
+    <defName>Raven_Mission_Turncoat</defName>
+    <label>策反行动</label>
+    <description>利用把柄或利益诱惑，将目标官员发展为内线。成功后将直接暴露其所有下属。\n\n前置：需已解锁目标信息。</description>
+    <missionType>Turncoat</missionType>
+    <difficultyLevel>3</difficultyLevel>
+    <baseDurationDays>7</baseDurationDays>
+    <baseSuccessChance>0.5</baseSuccessChance>
+    <costIntel>50</costIntel>
+    <costInfluence>20</costInfluence>
+    <rewardIntel>30</rewardIntel>
+    <requiresTargetOfficial>true</requiresTargetOfficial>
+  </RavenRace.Features.Espionage.EspionageMissionDef>
+
+  <!-- Lv3: 暗杀 (原 Lv4, 现下调至 Lv3，与策反同级) -->
+  <RavenRace.Features.Espionage.EspionageMissionDef>
+    <defName>Raven_Mission_Assassinate</defName>
+    <label>清除目标</label>
+    <description>物理消除该官员。如果目标是领袖，将导致派系领导层更替。\n\n前置：需已解锁目标信息。极度危险。</description>
+    <missionType>Assassinate</missionType>
+    <difficultyLevel>3</difficultyLevel> <!-- 修改此处 -->
+    <baseDurationDays>5</baseDurationDays>
+    <baseSuccessChance>0.4</baseSuccessChance>
+    <costIntel>80</costIntel>
+    <costInfluence>50</costInfluence>
+    <rewardIntel>40</rewardIntel>
+    <requiresTargetOfficial>true</requiresTargetOfficial>
+  </RavenRace.Features.Espionage.EspionageMissionDef>
+
+</Defs>

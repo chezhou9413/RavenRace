@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 基础陷阱 (碎胫陷阱) -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_TrapBasics</defName>
+    <label>raven trap basics</label>
+    <description>Study the fundamental principles of Raven defensive engineering. Unlocks simple mechanical traps like the leg crusher.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Machining</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>2.50</researchViewY>
+    <tab>Raven_ResearchTab</tab> 
+  </ResearchProjectDef>
+
+  <!-- 伪装掩体科技 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_Concealment</defName>
+    <label>concealment tactics</label>
+    <description>Unlocks advanced camouflage structures that allow snipers to remain hidden while engaging targets.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_TrapBasics</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
+    <tab>Raven_ResearchTab</tab> 
+  </ResearchProjectDef>
+
+  <!-- 彩蛋陷阱科技 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_SpecialTraps</defName>
+    <label>specialized traps</label>
+    <description>Unlocks unconventional traps designed for psychological warfare and specialized capture, such as Lego mines and Conception machines.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_TrapBasics</li>
+    </prerequisites>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>2.50</researchViewY>
+    <tab>Raven_ResearchTab</tab> 
+  </ResearchProjectDef>
+
+  <!-- 升墙陷阱科技 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_DynamicTerrain</defName>
+    <label>dynamic terrain defense</label>
+    <description>Unlocks the massive Rising Wall Trap, capable of altering the battlefield instantly by generating walls.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_Concealment</li>
+    </prerequisites>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
+    <tab>Raven_ResearchTab</tab> 
+  </ResearchProjectDef>
+
+  <!-- 诱饵技术 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_DecoyTech</defName>
+    <label>decoy technology</label>
+    <description>Develop realistic decoys and sound lures to deceive enemy AI.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_TrapBasics</li>
+    </prerequisites>
+    <researchViewX>8.00</researchViewX>
+    <researchViewY>1.50</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+  <!-- 化学战 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_ChemicalWarfare</defName>
+    <label>chemical warfare</label>
+    <description>Research various gases for area denial and crowd control.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_TrapBasics</li>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>8.00</researchViewX>
+    <researchViewY>4.50</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+</Defs>

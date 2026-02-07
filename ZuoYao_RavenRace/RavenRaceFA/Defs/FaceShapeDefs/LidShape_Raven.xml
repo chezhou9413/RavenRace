@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.LidShapeDef>
+    <defName>half</defName>
+  </FacialAnimation.LidShapeDef>
+
+  <FacialAnimation.LidShapeDef>
+    <defName>xlid</defName>
+  </FacialAnimation.LidShapeDef>
+
+  <FacialAnimation.LidShapeDef>
+    <defName>drowsy</defName>
+  </FacialAnimation.LidShapeDef>
+
+  <FacialAnimation.LidShapeDef>
+    <defName>aversion</defName>
+  </FacialAnimation.LidShapeDef>
+
+   <FacialAnimation.LidShapeDef>
+    <defName>closed</defName>
+  </FacialAnimation.LidShapeDef>
+</Defs>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Raven Race - Embers in Shadow</name>
+    <author>ZuoYao</author>
+    <packageId>ZuoYao.RavenRace</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>
+渡鸦族 · 暗影中的余烬
+
+一个全面的种族模组，包含渡鸦族及其金乌飞升系统。
+
+特性：
+- 独特的渡鸦族种族，拥有翅膀和特殊能力
+- 血脉系统：追踪并遗传金乌血脉浓度
+- 育生祭坛：孵化灵卵并影响后代特性
+- 扶桑组织：神秘的支援网络
+- 间谍系统：渗透、暗杀、颠覆
+- 主线任务：揭开金乌一族的秘密
+- 独特装备：暗羽钢和日冕合金制品
+
+现在还处在早期测试版本，如果你在渡鸦群（518495086）之外看到了这个，那就是哪个思乐牧的东西把我还没做完的包给发出来了。
+请注意，这个模组还在开发中，可能会有不稳定或不完整的地方，仅供小范围测试使用，并不代表完整体验。
+
+建议把渡鸦放在所有的外星人种族后面排序！
+
+
+以下名字排名不分先后：
+主体代码：我自己
+动态表情支持与代码建议：追踪虫
+SA支持：生物大师
+画师：冰皮汤圆（人物和服饰）、荟冰/懒鱼（建筑和武器）、快快显灵（叙事者1）、一口黑莓酒（叙事者2）、奈亚（待定的封面图）
+文案：生物大师，我自己
+
+鸣谢：
+感谢边缘战争空岛作者叶小羊的mod制作教学与工具支持！
+感谢外星人动态表情作者塔洛斯的动态表情教学与协助！
+感谢泰临族作者Esuro_埃苏罗的三件常用武器的贴图支持与帮助！
+感谢联合重工作者PSIONIC海豹的护墙器，渡鸦墙体与地板的贴图支持与帮助！
+感谢雪牛娘作者三项全能柊舞缇娜！的代码指导与帮助！
+感谢绮罗、米莉拉作者ancot与沃芬作者瓜鸽（大肉包体型），以及萌螈作者易青（小笼包体型）的优秀种族人物模型参考！
+感谢米莉拉帝国作者Ariandel关于黑衣人事件替换，特殊pawn生成的代码参考！
+感谢A.K.的种族背景文本支持！
+
+感谢天狼公爵丫制作的视频宣传！
+感谢堂丸、海龙喵对我发布贴图和代码委托的协助！
+感谢和泉对我服饰缩放调整问题的帮助！
+感谢厨神米夏的铸币大头表情包！
+感谢Milch.（烧奶老师）的表情包！
+感谢여우，夜寻喵和只会偷吃的厨师喵对我早期模组的宣传与鼓励！
+
+感谢所有在测试群里陪伴我的，提供反馈和建议的朋友们！
+
+
+    </description>
+    <modDependencies>
+        <li>
+            <packageId>erdelf.HumanoidAlienRaces</packageId>
+            <displayName>Humanoid Alien Races</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+    <loadAfter>
+        <li>Ludeon.RimWorld</li>
+        <li>Ludeon.RimWorld.Royalty</li>
+        <li>Ludeon.RimWorld.Ideology</li>
+        <li>Ludeon.RimWorld.Biotech</li>
+        <li>Ludeon.RimWorld.Anomaly</li>
+        <li>erdelf.HumanoidAlienRaces</li>
+        
+        <!-- Phase 3.6 兼容项 -->
+        <li>Ancot.Milira</li> <!-- 米莉拉 -->
+        <li>Milira.Independent.Pathing</li> <!-- 天羽族真实飞行补丁 -->
+        <li>Moe.MoeLotl</li> <!-- 萌螈 -->
+        <li>Koelime.Race</li> <!-- 珂莉姆 -->
+
+    </loadAfter>
+    <incompatibleWith />
+</ModMetaData>

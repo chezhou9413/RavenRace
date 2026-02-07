@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+    <FacialAnimation.FaceAnimationDef>
+        <defName>IncenseSmellAndAphrodisiacEffect</defName>
+        <raceName>Raven_Race</raceName>
+        <animationFrames>
+            <li>
+                <duration>1</duration>
+                <emotionShapeDef>cheerful</emotionShapeDef>
+                <lidShapeDef>half</lidShapeDef>
+                <eyeballShapeDef>high_light</eyeballShapeDef>
+                <mouthShapeDef>sexb</mouthShapeDef>
+            </li>
+        </animationFrames>
+        <targetThoughtDefs>
+            <li>Raven_Thought_IncenseSmell</li>
+            <li>Raven_Thought_AphrodisiacEffect</li>
+        </targetThoughtDefs>
+        <priority>10300</priority>
+    </FacialAnimation.FaceAnimationDef>
+
+    <FacialAnimation.FaceAnimationDef>
+        <defName>IncenseSmellAndAphrodisiacEffectQuick</defName>
+        <raceName>Raven_Race</raceName>
+        <animationFrames>
+            <li>
+                <duration>60</duration>
+                <mouthShapeDef>smoke</mouthShapeDef>
+                <mouthOffset>(0, 0, 0)</mouthOffset>
+            </li>
+        </animationFrames>
+        <roopIntervalMin>100</roopIntervalMin>
+        <roopIntervalMax>200</roopIntervalMax>
+        <targetThoughtDefs>
+            <li>Raven_Thought_IncenseSmell</li>
+            <li>Raven_Thought_AphrodisiacEffect</li>
+        </targetThoughtDefs>
+        <priority>10310</priority>
+    </FacialAnimation.FaceAnimationDef>
+</Defs>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>Raven_Thought_IncenseSmell</defName>
+    <durationDays>0.1</durationDays> <!-- 很短，只有在范围内才有 -->
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>迷醉香气</label>
+        <description>空气中弥漫着一股甜腻而温暖的香气，让人感到莫名的燥热和兴奋。</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

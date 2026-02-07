@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 麻醉累积 -->
+  <HediffDef>
+    <defName>RavenHediff_AnestheticBuildup</defName>
+    <label>anesthetic buildup</label>
+    <description>Buildup of anesthetic gas in the system. Will cause unconsciousness at high levels.</description>
+    <hediffClass>RavenRace.Hediff_AnestheticBuildup</hediffClass>
+    <defaultLabelColor>(0.7, 0.7, 1.0)</defaultLabelColor>
+    <isBad>true</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.0</severityPerDay> <!-- 离开气体后快速消退 -->
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>drowsy</label>
+        <minSeverity>0.1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>groggy</label>
+        <minSeverity>0.5</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.3</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 催情效果 -->
+  <HediffDef>
+    <defName>RavenHediff_AphrodisiacEffect</defName>
+    <label>aphrodisiac effect</label>
+    <description>Powerful pheromones affecting the subject. Causes uncontrollable urge to strip and eventual collapse.</description>
+    <hediffClass>RavenRace.Hediff_AphrodisiacEffect</hediffClass>
+    <defaultLabelColor>(1.0, 0.5, 0.8)</defaultLabelColor>
+    <isBad>true</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>aroused</label>
+        <minSeverity>0.1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>flushed</label>
+        <minSeverity>0.5</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 投掷物 -->
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>RavenProj_BlackMistGrenade</defName>
+    <label>黑灵烟雾弹</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Grenade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <explosionRadius>4.9</explosionRadius>
+      <damageDef>Smoke</damageDef>
+      <postExplosionSpawnThingDef>RavenGas_BlackMist</postExplosionSpawnThingDef>
+      <postExplosionSpawnChance>1</postExplosionSpawnChance>
+      <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+      <explosionDelay>50</explosionDelay>
+    </projectile>
+  </ThingDef>
+
+  <!-- 2. 武器 -->
+  <ThingDef ParentName="BaseMakeableGrenade">
+    <defName>Raven_Weapon_BlackMistGrenade</defName>
+    <label>黑灵烟雾弹</label>
+    <description>一种填充了特殊炼金气体的烟雾弹。这种黑色的迷雾蕴含着某种只能被金乌血脉穿透的微粒。\n\n效果：阻碍敌人的视线和命中率，但我方单位不受影响。</description>
+    <graphicData>
+      <texPath>Items/Weapons/Raven/BlackMistGrenade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <!-- [修复] 添加 TechLevel -->
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <Mass>1</Mass>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+      <MarketValue>250</MarketValue>
+    </statBases>
+    <weaponTags>
+      <li>GrenadeDestructive</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <label>投掷黑灵烟雾弹</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>RavenProj_BlackMistGrenade</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>15.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <soundCast>ThrowGrenade</soundCast>
+      </li>
+    </verbs>
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_ChemicalWarfare</researchPrerequisite>
+      <recipeUsers>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Steel>20</Steel>
+      <Chemfuel>40</Chemfuel>
+    </costList>
+  </ThingDef>
+
+</Defs>

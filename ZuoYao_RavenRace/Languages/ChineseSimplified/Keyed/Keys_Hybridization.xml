@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <!-- 设置分类 -->
+    <RavenRace_Settings_Hybridization>杂交</RavenRace_Settings_Hybridization>
+    <RavenRace_Settings_HybridizationDesc>配置渡鸦杂交后代从其他种族继承能力的规则。</RavenRace_Settings_HybridizationDesc>
+
+    <!-- 通用状态 -->
+    <RavenRace_Settings_ModActive>状态: 已激活 (检测到Mod)</RavenRace_Settings_ModActive>
+    <RavenRace_Settings_ModInactive>状态: 未激活 (未检测到Mod)</RavenRace_Settings_ModInactive>
+
+    <!-- 米莉拉飞行 -->
+    <RavenRace_Settings_MiliraFlight>米莉拉飞行能力</RavenRace_Settings_MiliraFlight>
+    <RavenRace_Settings_MiliraFlight_Tooltip>含有米莉拉血脉的渡鸦将获得真实飞行能力。</RavenRace_Settings_MiliraFlight_Tooltip>
+    
+    <RavenRace_Settings_EnableMiliraFlight>为杂交渡鸦启用飞行</RavenRace_Settings_EnableMiliraFlight>
+    <RavenRace_Settings_EnableMiliraFlight_Desc>如果开启，只要含有米莉拉血脉，渡鸦将自动获得飞行能力界面。</RavenRace_Settings_EnableMiliraFlight_Desc>
+    
+    <RavenRace_Settings_MiliraFlight_Note>注意：要实现真正的“穿墙/飞越深水”功能，强烈建议安装【天羽族真实飞行补丁】Mod。如果不安装，飞行功能将仅作为状态显示和饥饿消耗，无法越过障碍。</RavenRace_Settings_MiliraFlight_Note>
+
+    <!-- MoeLotl (萌螈) -->
+    <RavenRace_Settings_MoeLotlCultivation>萌螈修炼能力</RavenRace_Settings_MoeLotlCultivation>
+    <RavenRace_Settings_EnableMoeLotlCompat>启用萌螈修炼特性</RavenRace_Settings_EnableMoeLotlCompat>
+    <RavenRace_Settings_EnableMoeLotlCompat_Desc>如果开启，含有萌螈血脉的渡鸦将获得修炼面板和阅读功法书的能力。</RavenRace_Settings_EnableMoeLotlCompat_Desc>
+    <RavenRace_ForceReadBook>强行阅读：{0}</RavenRace_ForceReadBook>
+    <RavenRace_WrongBook>错误的书籍类型</RavenRace_WrongBook>
+
+
+    <!-- 珂莉姆龙血 -->
+    <RavenRace_Settings_KlimDragonBlood>珂莉姆龙血</RavenRace_Settings_KlimDragonBlood>
+    <RavenRace_Settings_EnableKoelimeBloodline>启用古龙血脉遗传</RavenRace_Settings_EnableKoelimeBloodline>
+    <RavenRace_Settings_EnableKoelimeBloodline_Desc>如果开启，含有珂莉姆血脉的渡鸦将获得“古龙血脉（次级）”Buff，提供再生能力和多种疾病免疫。</RavenRace_Settings_EnableKoelimeBloodline_Desc>
+
+
+    <!-- MuGirl (雪牛娘) -->
+    <RavenRace_Settings_MuGirlCompat>雪牛娘(MooGirl)血脉</RavenRace_Settings_MuGirlCompat>
+    <RavenRace_Settings_EnableMuGirlCompat>启用雪牛娘血脉特性</RavenRace_Settings_EnableMuGirlCompat>
+    <RavenRace_Settings_EnableMuGirlCompat_Desc>如果开启，含有雪牛娘血脉的渡鸦（无论性别）将获得高额护甲与减伤加成，并获得产出雪牛奶的能力。</RavenRace_Settings_EnableMuGirlCompat_Desc>
+    <!-- 产奶组件 -->
+    <RavenRace_MilkFullness>雪牛奶已满</RavenRace_MilkFullness>
+    <RavenRace_GatherMilk>收集雪牛奶</RavenRace_GatherMilk>
+    <RavenRace_GatherMilkDesc>从该名渡鸦身上收集积攒的雪牛奶。</RavenRace_GatherMilkDesc>
+    <RavenRace_Msg_MilkGathered>{0} 收集了 {1} 个 {2}。</RavenRace_Msg_MilkGathered>
+    <!-- [新增] 雪牛彩蛋 -->
+    <RavenRace_Settings_MuffaloPrank>等等？你说的是哪个雪牛？</RavenRace_Settings_MuffaloPrank>
+    <RavenRace_Settings_MuffaloPrank_Desc>这是一个关于走地鸡与雪牛的古老故事...啊呀，真是一对苦命鸳鸯！\n\n（开启后，强制求爱技能可对原版动物雪牛生效，并视作与雪牛娘交配）</RavenRace_Settings_MuffaloPrank_Desc>
+
+
+    <!-- [Phase 3.6.5] 沃芬 -->
+    <RavenRace_Settings_WolfeinCompat>沃芬(Wolfein)血脉</RavenRace_Settings_WolfeinCompat>
+    <RavenRace_Settings_EnableWolfeinCompat>启用沃芬血脉特性</RavenRace_Settings_EnableWolfeinCompat>
+    <RavenRace_Settings_EnableWolfeinCompat_Desc>如果开启，含有沃芬血脉的渡鸦将获得次级的夜间增强和月相增强效果。\n\n效果：在夜间小幅提升意识、视力和移动速度。在满月之夜，这些效果会进一步增强，并获得额外的闪避和近战攻击力。</RavenRace_Settings_EnableWolfeinCompat_Desc>
+
+    <!-- Dragonian [Phase 3.6.7] -->
+    <RavenRace_Settings_DragonianCompat>龙人(Dragonian)血脉</RavenRace_Settings_DragonianCompat>
+    <RavenRace_Settings_EnableDragonianCompat>启用龙人血脉特性</RavenRace_Settings_EnableDragonianCompat>
+    <RavenRace_Settings_EnableDragonianCompat_Desc>如果开启，含有龙人血脉的渡鸦将获得次级龙人基因加成并能产出龙奶。\n\nCombo奖励：\n如果同时拥有雪牛(MuGirl)血脉，将产出特殊的“神赐乳”。</RavenRace_Settings_EnableDragonianCompat_Desc>
+    
+    <RavenRace_DragonMilkFullness>龙奶已满</RavenRace_DragonMilkFullness>
+    <RavenRace_DivineMilkFullness>神赐乳已满</RavenRace_DivineMilkFullness>
+
+
+    <!-- Moyo [Phase 3.6.8] -->
+    <RavenRace_Settings_MoyoCompat>茉约(Moyo)血脉</RavenRace_Settings_MoyoCompat>
+    <RavenRace_Settings_EnableMoyoCompat>启用茉约血脉特性</RavenRace_Settings_EnableMoyoCompat>
+    <RavenRace_Settings_EnableMoyoCompat_Desc>如果开启，含有茉约血脉的渡鸦将能够产出深蓝血浆，并且免疫深蓝药物的成瘾与副作用。</RavenRace_Settings_EnableMoyoCompat_Desc>
+
+    <!-- Epona [Phase 3.6.9] -->
+    <RavenRace_Settings_EponaCompat>艾波娜(Epona)血脉</RavenRace_Settings_EponaCompat>
+    <RavenRace_Settings_EnableEponaCompat>启用艾波娜血脉特性</RavenRace_Settings_EnableEponaCompat>
+    <RavenRace_Settings_EnableEponaCompat_Desc>如果开启，含有艾波娜血脉的渡鸦将在室外移动时获得“骏驹奔腾”加速效果。若同时拥有雪牛血脉，还将强化“雪牛冲锋”技能。</RavenRace_Settings_EnableEponaCompat_Desc>
+
+    <RavenRace_AbilityLabel_EnhancedCharge>骏足·雪牛冲锋</RavenRace_AbilityLabel_EnhancedCharge>
+    <RavenRace_AbilityDesc_EnhancedCharge>艾波娜血脉与雪牛力量的完美结合。\n\n范围更大，速度更快，能将沿途敌人撞得更远，并对终结目标造成毁灭性打击。</RavenRace_AbilityDesc_EnhancedCharge>
+    <RavenRace_Message_OutOfRange>目标超出普通冲锋射程。</RavenRace_Message_OutOfRange>
+
+    <!-- 泰临 [Phase 3.6.10] -->
+
+    <RavenRace_Settings_TailinCompat>泰临(Epona)血脉</RavenRace_Settings_TailinCompat>
+    <RavenRace_Settings_EnableTailinCompat>启用泰临血脉特性</RavenRace_Settings_EnableTailinCompat>
+    <RavenRace_Settings_EnableTailinCompat_Desc>如果开启，含有泰临血脉的渡鸦将。</RavenRace_Settings_EnableTailinCompat_Desc>
+
+
+
+    <!-- Gizmo UI -->
+    <Milira_Flight_Toggle>飞行</Milira_Flight_Toggle>
+    <Milira_Flight_Toggle_Desc>开启/关闭飞行能力。\n\n飞行时可以越过深水、墙壁等障碍（需补丁支持），但会持续消耗饥饿度。</Milira_Flight_Toggle_Desc>
+    
+    <Milira_Flight_LowAlt>低空模式</Milira_Flight_LowAlt>
+    <Milira_Flight_HighAlt>高空模式</Milira_Flight_HighAlt>
+    <Milira_Flight_Mode_Desc>切换飞行高度。\n\n【低空】：仅在移动时飞行，可飞越建筑但不能飞越屋顶。\n【高空】：始终飞行，可飞越屋顶但不能飞越实体建筑。</Milira_Flight_Mode_Desc>
+</LanguageData>

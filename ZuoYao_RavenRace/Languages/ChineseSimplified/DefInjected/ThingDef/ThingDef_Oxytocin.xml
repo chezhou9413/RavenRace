@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Raven_Drug_Oxytocin.label>催产素</Raven_Drug_Oxytocin.label>
+  <Raven_Drug_Oxytocin.description>一种强效的激素药物，能强制刺激渡鸦族的生殖系统。服用后会立即引发剧烈的排卵反应，导致服用者在极短时间内产下一枚未受精的灵卵。\n\n副作用：会导致极度的虚弱和疼痛。</Raven_Drug_Oxytocin.description>
+  <Raven_Drug_Oxytocin.ingestible.ingestCommandString>注射 {0}</Raven_Drug_Oxytocin.ingestible.ingestCommandString>
+  <Raven_Drug_Oxytocin.ingestible.ingestReportString>正在注射 {0}。</Raven_Drug_Oxytocin.ingestible.ingestReportString>
+</LanguageData>

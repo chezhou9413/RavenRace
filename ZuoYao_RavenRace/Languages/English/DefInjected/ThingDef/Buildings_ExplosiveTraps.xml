@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RavenTrap_Claymore.label>claymore wall guard</RavenTrap_Claymore.label>
+  <RavenTrap_Claymore.description>A directional explosive charge designed to protect walls. It is triggered ONLY when the wall it is attached to takes damage (anti-sapper). When triggered, it blasts a fan-shaped area in front of it to eliminate threats.</RavenTrap_Claymore.description>
+</LanguageData>

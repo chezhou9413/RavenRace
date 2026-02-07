@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 天才炸弹制造师 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_BombMaker</defName>
+    <title>天才炸弹制造师</title>
+    <titleShort>炸弹客</titleShort>
+    <baseDesc>[PAWN_nameDef]曾经在一个化工星球做工，成年累月的接触化合物令[PAWN_pronoun]的身体受到了极大的损害，但[PAWN_pronoun]有一项他人所不具备的天分——制作炸弹。最终[PAWN_pronoun]炸了自己曾经做工的工厂，并且用炸弹劫持了一架飞船，从而到了这个边缘世界。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Crafting>8</Crafting>
+      <Artistic>2</Artistic>
+      <Melee>-4</Melee>
+      <Shooting>-4</Shooting>
+    </skillGains>
+    <workDisables>
+      <li>Firefighting</li>
+    </workDisables>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 拾骨者 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_BonePicker</defName>
+    <title>拾骨者</title>
+    <titleShort>拾骨者</titleShort>
+    <baseDesc>一场大战过后，无论如何总是有些残羹剩饭可供后人来食，而[PAWN_nameDef]就是精于此道者之一。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Crafting>6</Crafting>
+      <Shooting>4</Shooting>
+      <Melee>2</Melee>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 情报贩子 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_InfoBroker</defName>
+    <title>情报贩子</title>
+    <titleShort>情报贩子</titleShort>
+    <baseDesc>无论什么行动都离不开情报的支撑，而[PAWN_nameDef]具有一张经过多年经营筑构的情报网络，以此来支持组织扶桑活动并以此谋利。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Social>5</Social>
+      <Intellectual>4</Intellectual>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 扶桑组织机械师 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_FusangMechanic</defName>
+    <title>扶桑组织机械师</title>
+    <titleShort>机械师</titleShort>
+    <baseDesc>武器，工具，机器，这些容易出故障的东西总有其专司修理之人。在外界的压力下，[PAWN_nameDef]被迫强行掌握了许多东西的维修方法，但代价是[PAWN_pronoun]相对封闭起自己的思绪。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Crafting>6</Crafting>
+      <Construction>4</Construction>
+      <Artistic>-2</Artistic>
+      <Social>-4</Social>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 夜羽 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_Nightfeather</defName>
+    <title>夜羽</title>
+    <titleShort>夜羽</titleShort>
+    <baseDesc>[PAWN_nameDef]是扶桑组织最锋利的刃之一，经过从小到大的仇恨灌输与武器训练，[PAWN_pronoun]已经成为了阴影中的完美刺客。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Melee>6</Melee>
+      <Shooting>6</Shooting>
+    </skillGains>
+    <workDisables>
+      <li>Social</li>
+    </workDisables>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 资深夜羽 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_SeniorNightfeather</defName>
+    <title>资深夜羽</title>
+    <titleShort>资深夜羽</titleShort>
+    <baseDesc>[PAWN_nameDef]是扶桑组织最锋利的刃之一，每次出手都意味着这个边缘世界上某个大人物活不过第二天，一位真正的刺客大师。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Melee>10</Melee>
+      <Shooting>10</Shooting>
+    </skillGains>
+    <workDisables>
+      <li>Social</li>
+    </workDisables>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 告死黑日 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_BlackSun</defName>
+    <title>告死黑日</title>
+    <titleShort>黑日</titleShort>
+    <baseDesc>[PAWN_nameDef]是扶桑组织最锋利的刃，告死黑日是扶桑组织里晋无可晋升无可升的最高称号，[PAWN_nameDef]的目标永远只有族群复仇之路上那些最难啃的硬骨头，是一位真正的刺客大宗师。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Melee>15</Melee>
+      <Shooting>15</Shooting>
+    </skillGains>
+    <workDisables>
+      <li>Caring</li>
+      <li>Intellectual</li>
+    </workDisables>
+  </AlienRace.AlienBackstoryDef>
+  
+  <!-- 珠宝收集者 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_JewelryCollector</defName>
+    <title>珠宝收集者</title>
+    <titleShort>收藏家</titleShort>
+    <baseDesc>[PAWN_nameDef]是一名眼尖的珠宝收集者，一眼就可以分辨出珠宝的优劣，[PAWN_pronoun]凭借这个本事在组织内盘下了一间私人收藏库。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Artistic>6</Artistic>
+      <Social>6</Social>
+      <Intellectual>4</Intellectual>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 拉珠剑大师 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_BeadSwordMaster</defName>
+    <title>拉珠剑大师</title>
+    <titleShort>剑大师</titleShort>
+    <baseDesc>[PAWN_nameDef]因为不想在看见同胞和异族请婚对象因为腔道过于狭窄在娩出灵卵时被撕裂腔道带来的巨大痛苦和死亡，[PAWN_pronoun]苦练拉珠剑技巧和手法，籍此挽救了许多家庭免于生离死别，许多同胞都向[PAWN_pronoun]虚心求教使用心得，在此期间也悟出了许多剑术技法。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Melee>5</Melee>
+      <Medicine>6</Medicine>
+      <Social>3</Social>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 助灵卵产士 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_EggMidwife</defName>
+    <title>助灵卵产士</title>
+    <titleShort>助产士</titleShort>
+    <baseDesc>[PAWN_nameDef]是一名灵卵助产士，专门为即将产出灵卵的托卵对象安抚情绪和扩张外部出口，尽管[PAWN_pronoun]看过很多小渡鸦出世，但[PAWN_pronoun]最渴望的还是亲自看到一位纯血金乌族诞生。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Medicine>6</Medicine>
+      <Social>3</Social>
+      <Melee>-4</Melee>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 产卵爱好者 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_OvipositionLover</defName>
+    <title>产卵爱好者</title>
+    <titleShort>爱好者</titleShort>
+    <baseDesc>[PAWN_nameDef]十分享受目睹他人分娩灵卵的过程，特别是看到分娩者的表情，为此拍摄了许多艺术写真和生产学习资料，而[PAWN_pronoun]自己也十分享受孕卵产卵的过程，但[PAWN_pronoun]不喜欢养孩子。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Medicine>3</Medicine>
+      <Artistic>6</Artistic>
+      <Melee>-3</Melee>
+      <Shooting>-3</Shooting>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 扶桑陷阱师 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_FusangTrapper</defName>
+    <title>扶桑陷阱师</title>
+    <titleShort>陷阱师</titleShort>
+    <baseDesc>[PAWN_nameDef]是扶桑的陷阱师，擅长制造各种陷阱道具，布设炸药和制造化学物,虽然不像夜羽一般亲手杀人但是[PAWN_pronoun]手中诞生的作品夺取的性命并不少，甚至更多。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Crafting>8</Crafting>
+      <Intellectual>5</Intellectual>
+    </skillGains>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 巢筑师 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_NestBuilder</defName>
+    <title>巢筑师</title>
+    <titleShort>巢筑师</titleShort>
+    <baseDesc>[PAWN_nameDef]擅于筑巢，也学习了很多工学建筑知识，[PAWN_pronoun]打造的灵卵孵育巢在组织内部深得妈妈们喜爱，鉴于[PAWN_pronoun]这门活计组织特许可以不用手上沾血。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Construction>7</Construction>
+      <Crafting>7</Crafting>
+    </skillGains>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 前接线员 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_FormerOperator</defName>
+    <title>前接线员</title>
+    <titleShort>前接线员</titleShort>
+    <baseDesc>[PAWN_nameDef]曾经负责管理与扶桑合作者联系的频道，为了防止泄露扶桑的情报一名接线员最多只能干十年就必须换岗。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Social>9</Social>
+      <Intellectual>3</Intellectual>
+      <Melee>-5</Melee>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+  
+  <!-- 断线人 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_LineCutter</defName>
+    <title>断线人</title>
+    <titleShort>断线人</titleShort>
+    <baseDesc>当一些人试图通过追溯线人和情报或者出现叛徒来寻找扶桑的据点位置时，[PAWN_nameDef]负责夹断这些线索和线人。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Shooting>5</Shooting>
+      <Melee>5</Melee>
+      <Intellectual>5</Intellectual>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 通用混血背景 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Adulthood_Hybrid</defName>
+    <title>渡鸦混血种</title>
+    <titleShort>混血种</titleShort>
+    <baseDesc>[PAWN_nameDef]的血脉中融合了渡鸦族与其他种族的力量，展现出独特的生理特征和潜力。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories><li>Raven_HybridBackstory</li></spawnCategories>
+    <!-- 不设置技能增减，保持通用性 -->
+  </AlienRace.AlienBackstoryDef>
+  
+</Defs>

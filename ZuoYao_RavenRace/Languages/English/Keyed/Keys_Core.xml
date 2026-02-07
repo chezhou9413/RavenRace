@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <!-- Race Names -->
+    <RavenRace_RaceName>Raven</RavenRace_RaceName>
+    <RavenRace_GoldenCrowName>Golden Crow</RavenRace_GoldenCrowName>
+    
+    <!-- Faction -->
+    <RavenRace_FusangName>Fusang</RavenRace_FusangName>
+    <RavenRace_FusangDesc>A mysterious organization operating in the shadows.</RavenRace_FusangDesc>
+    
+    <!-- Settings Category -->
+    <RavenRace_SettingsCategory>Raven Race</RavenRace_SettingsCategory>
+</LanguageData>

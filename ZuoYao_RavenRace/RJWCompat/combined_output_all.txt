@@ -1,0 +1,564 @@
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\About\About.xml
+=
+
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Raven Race - RJW Compatibility (Internal)</name>
+    <author>ZuoYao</author>
+    <packageId>ZuoYao.RavenRace.RJWCompat</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>RJW and Menstruation Cycle compatibility for Raven Race. Loaded via LoadFolders.xml.</description>
+</ModMetaData>
+
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Patches\Patch_RavenDNA.xml
+=
+.
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]</xpath>
+        <value>
+            <!-- 为渡鸦族添加RJW月经周期所需的DNA信息 -->
+            <li Class="RJW_Menstruation.PawnDNAModExtension">
+                <!-- 胎儿贴图路径，我们是卵生，但为了兼容性最好提供一个占位符 -->
+                <fetusTexPath>Fetus/Fetus_Default</fetusTexPath>
+                <!-- 精液颜色 (RGBA) -->
+                <cumColor>(255,255,255,255)</cumColor> 
+                <!-- 精液粘稠度 -->
+                <cumThickness>0.2</cumThickness>
+                <!-- 我们没有特殊的摄入效果 -->
+                <ingestionOutcomeDoers />
+                <!-- 我们不使用RJW的杂交系统，留空 -->
+                <hybridExtension />
+            </li>
+        </value>
+    </Operation>
+</Patch>.
+.
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Patch_ForceLovin.cs
+=
+.
+﻿// File: RJWCompat/Source/RJWCompat/Patch_ForceLovin.cs
+using HarmonyLib;
+using RimWorld;
+using Verse;
+using RavenRace.RJWCompat.UI; // 引入新的UI命名空间
+
+namespace RavenRace.RJWCompat
+{
+    /// <summary>
+    /// 补丁：拦截渡鸦族“强制求爱”技能的Apply方法。
+    /// 作用：阻止原版技能效果的执行，转而打开我们自定义的RJW互动选择UI。
+    /// </summary>
+    [HarmonyPatch("RavenRace.CompAbilityEffect_ForceLovin", "Apply")]
+    public static class Patch_ForceLovin_Apply
+    {
+        /// <summary>
+        /// 在原方法执行前运行。
+        /// </summary>
+        /// <returns>返回 'false' 将完全阻止原方法的执行。</returns>
+        [HarmonyPrefix]
+        public static bool Prefix(LocalTargetInfo target, CompAbilityEffect __instance)
+        {
+            Log.Message($"[RavenRace RJWCompat] 'ForceLovin.Apply' Prefix patch triggered!");
+
+            // 弹出全新的、带分类的UI窗口
+            Find.WindowStack.Add(new Dialog_SelectRjwInteraction(__instance.parent.pawn, target.Pawn));
+
+            // 返回 false，阻止原版的 ForceLovin Job 创建，将控制权完全交给我们的UI和RJW。
+            return false;
+        }
+    }
+}.
+.
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Patch_Menstruation.cs
+=
+.
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using HarmonyLib;
+using RimWorld;
+using Verse;
+
+namespace RavenRace.RJWCompat
+{
+    [HarmonyPatch]
+    public static class Patch_Menstruation_Implant
+    {
+        // 使用字符串名称进行延迟绑定
+        public static MethodBase TargetMethod()
+        {
+            return AccessTools.Method("RJW_Menstruation.HediffComp_Menstruation:Implant");
+        }
+
+        [HarmonyPrefix]
+        public static bool Prefix(HediffComp __instance)
+        {
+            // 通过反射安全地获取字段值
+            var eggsList = RjwReflection.Menstruation_eggs_Field.GetValue(__instance) as IList;
+            if (eggsList == null || eggsList.Count == 0) return true;
+
+            object fertilizedEgg = null;
+            foreach (var egg in eggsList)
+            {
+                bool isFertilized = (bool)RjwReflection.Egg_fertilized_Field.GetValue(egg);
+                object fertilizer = RjwReflection.Egg_fertilizer_Field.GetValue(egg);
+                if (isFertilized && fertilizer != null)
+                {
+                    fertilizedEgg = egg;
+                    break;
+                }
+            }
+
+            if (fertilizedEgg == null) return true;
+
+            Pawn mother = __instance.Pawn;
+            Pawn father = RjwReflection.Egg_fertilizer_Field.GetValue(fertilizedEgg) as Pawn;
+
+            // 后续逻辑与之前相同
+            bool shouldLayEgg = false;
+            if (RavenRaceMod.Settings.enableMalePregnancyEgg && mother.gender == Gender.Male)
+            {
+                if (mother.def.defName == "Raven_Race" || (father != null && father.def.defName == "Raven_Race"))
+                {
+                    shouldLayEgg = true;
+                }
+            }
+            else if (mother.def.defName == "Raven_Race")
+            {
+                shouldLayEgg = true;
+            }
+            else if (RavenRaceMod.Settings.ravenFatherDeterminesEgg && father != null && father.def.defName == "Raven_Race")
+            {
+                shouldLayEgg = true;
+            }
+
+            if (!shouldLayEgg) return true;
+
+            try
+            {
+                Log.Message("[RavenRace RJWCompat] Intercepting RJW pregnancy, creating Spirit Egg hediff...");
+
+                bool success;
+                List<GeneDef> inheritedGenesList = PregnancyUtility.GetInheritedGenes(father, mother, out success);
+                if (!success)
+                {
+                    Log.Warning($"[RavenRace RJWCompat] Failed to get inherited genes. Father: {father?.LabelShort ?? "null"}, Mother: {mother.LabelShort}");
+                }
+                GeneSet inheritedGeneSet = new GeneSet();
+                foreach (var g in inheritedGenesList) inheritedGeneSet.AddGene(g);
+                if (father != null && GeneUtility.SameHeritableXenotype(father, mother))
+                {
+                    inheritedGeneSet.SetNameDirect(father.genes?.xenotypeName);
+                }
+
+                var hediff = HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("Raven_Hediff_RavenPregnancy"), mother) as Hediff_RavenPregnancy;
+                if (hediff != null)
+                {
+                    hediff.Initialize(father, inheritedGeneSet, RavenRaceMod.Settings.forceRavenDescendant);
+                    mother.health.AddHediff(hediff);
+                    mother.Drawer?.renderer?.SetAllGraphicsDirty();
+                }
+
+                eggsList.Clear();
+
+                Messages.Message($"{mother.LabelShort} has conceived a spirit egg (RJW-compatible).", mother, MessageTypeDefOf.PositiveEvent);
+
+                return false;
+            }
+            catch (Exception e)
+            {
+                Log.Error($"[RavenRace RJWCompat] Error during spirit egg conception interception: {e}");
+                return true;
+            }
+        }
+    }
+}.
+.
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\RJWCompat_Startup.cs
+=
+.
+﻿using HarmonyLib;
+using System.Collections.Generic; // [修正] 需要引用 Generic 集合
+using System.Reflection;
+using Verse;
+
+namespace RavenRace.RJWCompat
+{
+    // 这个类不再需要 [StaticConstructorOnStartup]，因为它是由主模组动态调用的
+    public static class RJWCompat_Startup
+    {
+        /// <summary>
+        /// 这个公共静态方法是整个兼容模块的入口点。
+        /// 它由主模组的启动器在确认RJW已加载后，通过反射来调用。
+        /// </summary>
+        public static void ApplyPatches()
+        {
+            var harmony = new Harmony("ZuoYao.RavenRace.RJWCompat");
+
+            Log.Message("[RavenRace RJWCompat] ApplyPatches() called by main module. Applying patches now...");
+
+            // [最终修复] 手动应用整个程序集的补丁，这是最标准和可靠的方式。
+            // Harmony 会自动扫描这个DLL里的所有 [HarmonyPatch] 标签并应用它们。
+            harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+            Log.Message("[RavenRace RJWCompat] All patches from RJWCompat assembly have been applied.");
+
+            // 在所有补丁都应用完毕后，安全地初始化反射缓存。
+            // 这个时候去查找RJW的类型是100%安全的。
+            RjwReflection.Initialize();
+        }
+    }
+}.
+.
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\RjwReflection.cs
+=
+.
+﻿// File: RJWCompat/Source/RJWCompat/RjwReflection.cs
+using HarmonyLib;
+using System;
+using System.Reflection;
+using Verse;
+
+namespace RavenRace.RJWCompat
+{
+    /// <summary>
+    /// 存储通过反射获取的RJW类型、方法和字段的缓存。
+    /// 仅保留月经补丁所需的部分。
+    /// </summary>
+    public static class RjwReflection
+    {
+        // Types
+        public static Type HediffComp_Menstruation_Type { get; private set; }
+        public static Type Egg_Type { get; private set; }
+
+        // Fields
+        public static FieldInfo Menstruation_eggs_Field { get; private set; }
+        public static FieldInfo Egg_fertilized_Field { get; private set; }
+        public static FieldInfo Egg_fertilizer_Field { get; private set; }
+
+        public static bool IsInitialized { get; private set; } = false;
+
+        public static void Initialize()
+        {
+            if (IsInitialized) return;
+
+            Log.Message("[RavenRace RJWCompat] RjwReflection.Initialize() called.");
+
+            // 寻找关键类型
+            HediffComp_Menstruation_Type = AccessTools.TypeByName("RJW_Menstruation.HediffComp_Menstruation");
+
+            if (HediffComp_Menstruation_Type == null)
+            {
+                Log.Error("[RavenRace RJWCompat] FATAL: RJW_Menstruation.HediffComp_Menstruation type not found. Cannot initialize reflection cache for Menstruation patch.");
+                return;
+            }
+
+            // 寻找嵌套类型和字段
+            Egg_Type = AccessTools.Inner(HediffComp_Menstruation_Type, "Egg");
+            if (Egg_Type == null)
+            {
+                Log.Error("[RavenRace RJWCompat] FATAL: 'Egg' nested type not found in HediffComp_Menstruation.");
+                return;
+            }
+
+            Menstruation_eggs_Field = AccessTools.Field(HediffComp_Menstruation_Type, "eggs");
+            Egg_fertilized_Field = AccessTools.Field(Egg_Type, "fertilized");
+            Egg_fertilizer_Field = AccessTools.Field(Egg_Type, "fertilizer");
+
+            // 验证字段是否找到
+            if (Menstruation_eggs_Field == null || Egg_fertilized_Field == null || Egg_fertilizer_Field == null)
+            {
+                Log.Error("[RavenRace RJWCompat] FATAL: One or more fields required for menstruation patch were not found via reflection.");
+                return;
+            }
+
+            IsInitialized = true;
+            Log.Message("[RavenRace RJWCompat] Reflection cache for RJW types initialized successfully.");
+        }
+    }
+}.
+.
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+=
+.
+// <autogenerated />
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETFramework,Version=v4.7.2", FrameworkDisplayName = ".NET Framework 4.7.2")]
+.
+.
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs
+=
+.
+// <autogenerated />
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETFramework,Version=v4.8", FrameworkDisplayName = ".NET Framework 4.8")]
+.
+.
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Properties\AssemblyInfo.cs
+=
+.
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// 有关程序集的一般信息由以下
+// 控制。更改这些特性值可修改
+// 与程序集关联的信息。
+[assembly: AssemblyTitle("RJWCompat")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("RJWCompat")]
+[assembly: AssemblyCopyright("Copyright ©  2026")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// 将 ComVisible 设置为 false 会使此程序集中的类型
+//对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型
+//请将此类型的 ComVisible 特性设置为 true。
+[assembly: ComVisible(false)]
+
+// 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
+[assembly: Guid("b09f150d-3554-4c13-a073-cb767c282e48")]
+
+// 程序集的版本信息由下列四个值组成: 
+//
+//      主版本
+//      次版本
+//      生成号
+//      修订号
+//
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+.
+.
+=
+File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\UI\Dialog_SelectRjwInteraction.cs
+=
+.
+﻿// File: RJWCompat/Source/RJWCompat/UI/Dialog_SelectRjwInteraction.cs
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using Verse;
+using Verse.AI;
+using RimWorld;
+using rjw; // 确保引用RJW
+using rjw.Modules.Interactions;
+
+namespace RavenRace.RJWCompat.UI
+{
+    /// <summary>
+    /// 一个自定义的对话框窗口，用于选择RJW的性爱互动。
+    /// 它取代了原有的FloatMenu，提供了分类和更好的用户体验，并解决了时序问题。
+    /// </summary>
+    public class Dialog_SelectRjwInteraction : Window
+    {
+        // 窗口尺寸
+        private Vector2 scrollPosition = Vector2.zero;
+        public override Vector2 InitialSize => new Vector2(480f, 640f);
+
+        // 参与者
+        private readonly Pawn caster;
+        private readonly Pawn target;
+
+        // 分类后的互动列表
+        private readonly Dictionary<string, List<InteractionDef>> categorizedInteractions;
+
+        // 构造函数
+        public Dialog_SelectRjwInteraction(Pawn caster, Pawn target)
+        {
+            this.caster = caster;
+            this.target = target;
+
+            // 窗口属性
+            forcePause = true;        // 强制暂停游戏，解决时序问题
+            absorbInputAroundWindow = true; // 吸收窗口外的点击
+            closeOnClickedOutside = true;
+
+            // 获取并分类所有可用的互动
+            categorizedInteractions = GetAndCategorizeInteractions();
+        }
+
+        /// <summary>
+        /// 绘制窗口内容的核心方法
+        /// </summary>
+        public override void DoWindowContents(Rect inRect)
+        {
+            // 标题
+            Text.Font = GameFont.Medium;
+            Widgets.Label(new Rect(inRect.x, inRect.y, inRect.width, 40f), $"选择对 {target.LabelShortCap} 的互动方式");
+            Text.Font = GameFont.Small;
+
+            // 滚动视图区域
+            Rect scrollRect = new Rect(inRect.x, inRect.y + 45f, inRect.width, inRect.height - 45f);
+            float viewHeight = CalculateViewHeight(); // 动态计算内容高度
+            Rect viewRect = new Rect(0f, 0f, scrollRect.width - 16f, viewHeight);
+
+            Widgets.BeginScrollView(scrollRect, ref scrollPosition, viewRect);
+
+            Listing_Standard listing = new Listing_Standard();
+            listing.Begin(viewRect);
+
+            // 绘制每个分类
+            if (categorizedInteractions.NullOrEmpty())
+            {
+                listing.Label("没有找到可用的RJW互动。");
+            }
+            else
+            {
+                foreach (var category in categorizedInteractions.OrderBy(kvp => kvp.Key))
+                {
+                    listing.GapLine(12f);
+                    listing.Label($"-- {category.Key} --"); // 分类标题
+                    listing.Gap(4f);
+
+                    foreach (var interaction in category.Value)
+                    {
+                        if (listing.ButtonText(interaction.LabelCap))
+                        {
+                            // 玩家点击按钮后，执行操作并关闭窗口
+                            StartRjwSexJob(caster, target, interaction);
+                            Close();
+                        }
+                    }
+                }
+            }
+
+            listing.End();
+            Widgets.EndScrollView();
+        }
+
+        /// <summary>
+        /// 获取所有可用的RJW互动，并进行分类。
+        /// </summary>
+        private Dictionary<string, List<InteractionDef>> GetAndCategorizeInteractions()
+        {
+            var allRjwInteractions = DefDatabase<InteractionDef>.AllDefs
+                .Where(def => def.HasModExtension<SexInteractionExtension>())
+                .ToList();
+
+            var validInteractions = new List<InteractionDef>();
+
+            // 将 isRape 设为 true 来获取最广泛的互动列表，因为某些互动只在特定条件下可用。
+            // 最终我们使用的是非强奸的 Job，所以这只是为了获取选项。
+            SexProps props = new SexProps { pawn = caster, partner = target, isRape = true };
+            var cache = new SexInteractionFinder.Internal.FinderCache(props);
+
+            foreach (var interactionDef in allRjwInteractions)
+            {
+                var extension = interactionDef.GetModExtension<SexInteractionExtension>();
+                if (extension == null) continue;
+
+                bool initiatorSatisfied = SexInteractionFinder.Internal.TrySatisfyRequirement(caster, cache.initiatorParts, extension.initiatorRequirement, props, out _);
+                bool recipientSatisfied = SexInteractionFinder.Internal.TrySatisfyRequirement(target, cache.recipientParts, extension.recipientRequirement, props, out _);
+
+                if (initiatorSatisfied && recipientSatisfied)
+                {
+                    validInteractions.Add(interactionDef);
+                }
+            }
+
+            var result = new Dictionary<string, List<InteractionDef>>();
+            foreach (var interaction in validInteractions.OrderBy(i => i.label))
+            {
+                string category = GetCategoryFor(interaction);
+
+                if (!result.ContainsKey(category))
+                {
+                    result[category] = new List<InteractionDef>();
+                }
+                result[category].Add(interaction);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 根据互动定义获取其分类。
+        /// </summary>
+        private string GetCategoryFor(InteractionDef def)
+        {
+            var sexInteraction = new SexInteraction(def);
+            switch (sexInteraction.Sextype)
+            {
+                case xxx.rjwSextype.Vaginal: return "常规性交";
+                case xxx.rjwSextype.Anal: return "逆向性交";
+                case xxx.rjwSextype.Oral:
+                case xxx.rjwSextype.Fellatio:
+                case xxx.rjwSextype.Cunnilingus:
+                case xxx.rjwSextype.Rimming:
+                case xxx.rjwSextype.Sixtynine: return "口部性交";
+                case xxx.rjwSextype.Boobjob: return "乳交";
+                case xxx.rjwSextype.Handjob:
+                case xxx.rjwSextype.Footjob:
+                case xxx.rjwSextype.Fingering: return "手/足/指交";
+                case xxx.rjwSextype.DoublePenetration: return "双重渗透";
+                case xxx.rjwSextype.Fisting: return "拳交";
+                default: return "其他互动";
+            }
+        }
+
+        /// <summary>
+        /// 计算滚动视图内容的总高度
+        /// </summary>
+        private float CalculateViewHeight()
+        {
+            float height = 0f;
+            if (categorizedInteractions.NullOrEmpty()) return 30f;
+
+            const float buttonHeight = 30f;
+            const float categoryHeaderHeight = 24f;
+            const float gapHeight = 16f;
+
+            foreach (var category in categorizedInteractions)
+            {
+                height += categoryHeaderHeight + gapHeight + (category.Value.Count * buttonHeight);
+            }
+            return height + 12f;
+        }
+
+        /// <summary>
+        /// 创建并分配一个在机制上是“自愿”的性爱Job，以避免关系惩罚。
+        /// </summary>
+        private void StartRjwSexJob(Pawn pawn, Pawn partner, InteractionDef selectedInteraction)
+        {
+            // [最终解决方案] 使用 "Quickie" 这个自愿的、不需要床的 JobDef。
+            var jobDef = DefDatabase<JobDef>.GetNamed("Quickie");
+            if (jobDef == null)
+            {
+                Log.Error("[RavenRace RJWCompat] Cannot find JobDef named 'Quickie'. This is a standard RJW JobDef.");
+                return;
+            }
+
+            // 创建Job实例。Quickie的目标是伴侣。
+            Job job = JobMaker.MakeJob(jobDef, partner);
+
+            // [关键] 通过job.interaction字段，将玩家选择的互动方式安全地传递给RJW的JobDriver。
+            // JobDriver_SexQuick会读取这个字段，并自己生成一个 isRape = false 的 SexProps。
+            job.interaction = selectedInteraction;
+
+            Log.Message($"[RavenRace RJWCompat] Player selected '{selectedInteraction.defName}'. Assigning RJW's native 'Quickie' job to {pawn.LabelShort}.");
+
+            // 分配Job
+            pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+        }
+    }
+}.
+.

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 基础定义 -->
+  <ThingDef Name="RavenGasBase" Abstract="True">
+    <thingClass>RavenRace.RavenGas</thingClass> <!-- 使用自定义类 -->
+    <category>Gas</category>
+    <altitudeLayer>Gas</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <tickerType>Normal</tickerType> <!-- 必须为 Normal 才能每帧 Tick -->
+    <graphicData>
+      <texPath>Things/Gas/Puff</texPath>
+      <graphicClass>Graphic_Gas</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <drawSize>2.5</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="RavenGasBase">
+    <defName>RavenGas_Anesthetic</defName>
+    <label>anesthetic gas</label>
+    <graphicData>
+      <color>(0.8, 0.9, 1.0, 0.6)</color>
+    </graphicData>
+    <gas>
+      <expireSeconds>
+        <min>20</min>
+        <max>30</max>
+      </expireSeconds>
+    </gas>
+  </ThingDef>
+
+  <ThingDef ParentName="RavenGasBase">
+    <defName>RavenGas_Aphrodisiac</defName>
+    <label>aphrodisiac gas</label>
+    <graphicData>
+      <color>(1.0, 0.6, 0.8, 0.6)</color>
+    </graphicData>
+    <gas>
+      <expireSeconds>
+        <min>20</min>
+        <max>30</max>
+      </expireSeconds>
+    </gas>
+  </ThingDef>
+</Defs>

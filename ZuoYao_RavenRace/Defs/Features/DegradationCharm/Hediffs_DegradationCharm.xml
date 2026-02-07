@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_Degradation</defName>
+    <label>淫堕刻印</label>
+    <description>这张符咒正像饥渴的藤蔓，将它的意志深植于宿主的灵魂。快感与屈辱的蜜液正在重塑其心智，每一次心跳都伴随着对交合的渴望。理智的堤坝正在崩塌，只待最后一次极乐的洪流将其彻底冲垮。</description>
+    <!-- [最终修正] 修正命名空间 -->
+    <hediffClass>RavenRace.Features.DegradationCharm.Hediffs.Hediff_Degradation</hediffClass>
+    <defaultLabelColor>(1, 0.4, 0.7)</defaultLabelColor>
+    <isBad>true</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>0.01</initialSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <renderNodeProperties>
+      <li>
+        <!-- [最终修正] 修正命名空间 -->
+        <workerClass>RavenRace.Features.DegradationCharm.Rendering.PawnRenderNodeWorker_DegradationCharm</workerClass>
+        <texPath>DegradationCharm/TalismanOfCorruption_OnHead</texPath>
+        <baseLayer>1000</baseLayer>
+        <parentTagDef>Head</parentTagDef>
+        <pawnType>Any</pawnType>
+        <drawData>
+          <dataNorth><offset>(0, 0, 0)</offset></dataNorth>
+          <dataSouth><offset>(0, 0, 0)</offset></dataSouth>
+          <dataEast><offset>(-0.04, 0, 0)</offset></dataEast>
+          <dataWest><offset>(0.04, 0, 0)</offset><flip>true</flip></dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <stages>
+      <li>
+        <minSeverity>0.01</minSeverity>
+        <label>初染 (1%)</label>
+      </li>
+      <li>
+        <minSeverity>0.25</minSeverity>
+        <label>沉沦 (25%)</label>
+      </li>
+      <li>
+        <minSeverity>0.50</minSeverity>
+        <label>烙印 (50%)</label>
+      </li>
+      <li>
+        <minSeverity>0.75</minSeverity>
+        <label>雌堕 (75%)</label>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

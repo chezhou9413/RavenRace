@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>Raven_Incident_FirstJoin</defName>
+    <label>渡鸦加入</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>RavenRace.Features.Storyteller.Incidents.IncidentWorker_RavenJoin</workerClass>
+    <letterLabel>渡鸦加入</letterLabel>
+    <letterText>一名在附近游荡的渡鸦族发现了你的营地...</letterText>
+    
+    <!-- [修复] 指向刚刚定义的 LetterDef -->
+    <letterDef>Raven_Letter_AcceptJoiner</letterDef> 
+    
+    <baseChance>0</baseChance>
+  </IncidentDef>
+</Defs>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <!-- 种族名称 -->
+    <RavenRace_RaceName>渡鸦族</RavenRace_RaceName>
+    <RavenRace_GoldenCrowName>三足金乌</RavenRace_GoldenCrowName>
+    
+    <!-- 派系 -->
+    <RavenRace_FusangName>扶桑</RavenRace_FusangName>
+    <RavenRace_FusangDesc>一个在暗影中运作的神秘组织。</RavenRace_FusangDesc>
+    
+    <!-- 设置分类 -->
+    <RavenRace_SettingsCategory>渡鸦族</RavenRace_SettingsCategory>
+
+    <!-- 请确保这一行存在且没有拼写错误 -->
+    <RavenRace_ScenPart_StartingPawnKind>强制开局种族: {0}</RavenRace_ScenPart_StartingPawnKind>
+
+</LanguageData>

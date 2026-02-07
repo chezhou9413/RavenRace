@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Raven_Relation_Dominated.label>主人</Raven_Relation_Dominated.label>
+  <Raven_Relation_Dominated.labelFemale>女主人</Raven_Relation_Dominated.labelFemale>
+
+
+
+  <!-- 新增：别天神关系 -->
+  <Raven_Relation_AbsoluteMaster.label>绝对主人</Raven_Relation_AbsoluteMaster.label>
+  <Raven_Relation_AbsoluteMaster.labelFemale>绝对女主人</Raven_Relation_AbsoluteMaster.labelFemale>
+  
+  <Raven_Relation_LoyalServant.label>忠诚奴仆</Raven_Relation_LoyalServant.label>
+  <Raven_Relation_LoyalServant.labelFemale>忠诚奴仆</Raven_Relation_LoyalServant.labelFemale>
+
+
+
+</LanguageData>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_Item_CorruptionTalisman</defName>
+    <label>淫堕符咒</label>
+    <description>这张散发着麝香与蜜糖般甜腻气味的符咒，上面的朱砂仿佛是少女的唇印，仅仅是注视着它，就会让人的心跳加速，呼吸变得急促。\n\n咒文上书：“强制受孕，见我发情”。\n\n将其贴在目标的额头，那扭曲的咒文便会渗入灵魂，将最坚固的道德堤坝冲垮，让其化为只知渴求与奉献的浪荡尤物。携带此符咒时，携带者身上会出现一个【贴符】指令。</description>
+    
+    <graphicData>
+      <texPath>DegradationCharm/TalismanOfCorruption_Item</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+
+
+    <statBases>
+      <MarketValue>30</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>14</pathCost>
+    <thingCategories>
+      <li>Drugs</li>
+    </thingCategories>
+    <tradeability>Sellable</tradeability>
+    <stackLimit>25</stackLimit>
+    <techLevel>Industrial</techLevel>
+    
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <!-- [最终修正] 修正命名空间 -->
+      <li Class="RavenRace.Features.DegradationCharm.Comps.CompProperties_ApplyCharm"/>
+      <li Class="CompProperties_Drug">
+        <isCombatEnhancingDrug>false</isCombatEnhancingDrug>
+        <addictiveness>0</addictiveness>
+        <listOrder>9998</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

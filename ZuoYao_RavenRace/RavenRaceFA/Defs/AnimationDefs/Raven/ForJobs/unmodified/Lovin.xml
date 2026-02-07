@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.FaceAnimationDef>
+    <defName>Lovin_Raven_Race</defName>
+    <raceName>Raven_Race</raceName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <emotionShapeDef>cheerful</emotionShapeDef>
+        <lidShapeDef>half</lidShapeDef>
+        <eyeballShapeDef>high_light</eyeballShapeDef>
+        <mouthShapeDef>sexb</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>Lovin</li>
+      <li>Raven_Job_InsertSpiritEgg</li>
+    </targetJobs>
+    <priority>10400</priority>
+  </FacialAnimation.FaceAnimationDef>
+
+  <FacialAnimation.FaceAnimationDef>
+    <defName>Lovin_Raven_RaceQuick</defName>
+    <raceName>Raven_Race</raceName>
+    <animationFrames>
+      <li>
+        <duration>60</duration>
+        <mouthShapeDef>smoke</mouthShapeDef>
+        <mouthOffset>(0, 0, 0)</mouthOffset>
+      </li>
+    </animationFrames>
+    <roopIntervalMin>100</roopIntervalMin>
+    <roopIntervalMax>200</roopIntervalMax>
+    <targetJobs>
+      <li>Lovin</li>
+      <li>Raven_Job_InsertSpiritEgg</li>
+    </targetJobs>
+    <priority>10410</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

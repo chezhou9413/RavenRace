@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DesignationCategoryDef>
+    <defName>Raven_Category</defName>
+    <label>渡鸦</label>
+    <order>150</order> <!-- 排序位置 -->
+  </DesignationCategoryDef>
+</Defs>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_SpiritEgg</defName>
+    <label>渡鸦灵卵</label>
+    <description>一枚散发着温热气息的灵卵，里面孕育着渡鸦族的新生命。它需要被放置在特定的摇篮中才能孵化。\n\n如果不放入摇篮，它的生命迹象将处于停滞状态。</description>
+    <graphicData>
+      <texPath>Items/Resource/RavenSpiritEgg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.5</drawSize>
+    </graphicData>
+    <!-- [Change] RavenRace.SpiritEgg -> RavenRace.Features.Reproduction.ThingSpiritEgg -->
+    <thingClass>RavenRace.Features.Reproduction.ThingSpiritEgg</thingClass>
+    <category>Item</category>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>500</MarketValue>
+      <Mass>1.5</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <stackLimit>1</stackLimit>
+    <alwaysHaulable>true</alwaysHaulable>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+    <comps>
+      <!-- [Change] RavenRace.CompProperties_SpiritEgg -->
+      <li Class="RavenRace.Features.Reproduction.CompProperties_SpiritEgg" />
+    </comps>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+</Defs>

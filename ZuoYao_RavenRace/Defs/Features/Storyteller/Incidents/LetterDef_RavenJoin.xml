@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <LetterDef>
+    <defName>Raven_Letter_AcceptJoiner</defName>
+    <label>渡鸦加入邀请</label>
+    <color>(176, 226, 74)</color> <!-- 绿色，同 PositiveEvent -->
+    <!-- 核心：指向我们自定义的 C# 类 -->
+    <letterClass>RavenRace.Features.Storyteller.Incidents.ChoiceLetter_RavenJoin</letterClass>
+    <flashColor>(176, 226, 74)</flashColor>
+    <flashInterval>10</flashInterval>
+  </LetterDef>
+</Defs>

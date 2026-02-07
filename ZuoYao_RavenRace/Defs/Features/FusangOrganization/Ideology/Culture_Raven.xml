@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <CultureDef>
+    <defName>Raven_Culture</defName>
+    <label>扶桑文化</label>
+    <description>一种源自古老金乌神话的独特文化，强调血脉的纯净与对光热的崇拜。</description>
+    <iconPath>UI/Ideoligions/Cultures/RavenCulture</iconPath>
+    
+    <!-- 引用 Fusang RulePacks -->
+    <pawnNameMaker>NamerPersonFusang</pawnNameMaker>
+    <pawnNameMakerFemale>NamerPersonFusangFemale</pawnNameMakerFemale>
+    <ideoNameMaker>NamerIdeoFusang</ideoNameMaker>
+    <deityNameMaker>NamerDeityFusang</deityNameMaker>
+    <deityTypeMaker>NamerDeityTypeFusang</deityTypeMaker>
+    <!-- <placeNameMaker> 已被移除，因为它不存在 -->
+    <leaderTitleMaker>NamerLeaderTitleFusang</leaderTitleMaker>
+    <festivalNameMaker>NamerFestivalFusang</festivalNameMaker>
+    
+    <styleItemTags>
+      <li>
+        <tag>RavenHair</tag>
+        <baseWeight>100</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+      <li>
+        <tag>NoBeard</tag>
+        <baseWeight>100</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+      <li>
+        <tag>NoTattoo</tag>
+        <baseWeight>100</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+    </styleItemTags>
+    
+    <!-- 关键：这个标签将用于链接到 PlaceDef -->
+    <allowedPlaceTags>
+      <li>Raven_Culture</li>
+    </allowedPlaceTags>
+  </CultureDef>
+</Defs>

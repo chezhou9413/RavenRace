@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.EyeballShapeDef>
+    <defName>normal</defName>
+    <label>normal</label>
+  </FacialAnimation.EyeballShapeDef>
+
+  <!-- 增加紋理組 -->
+  <FacialAnimation.EyeballShapeDef>
+    <defName>Pupil_Heart</defName>
+    <label>Pupil_Heart</label>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.EyeballShapeDef>
+
+  <FacialAnimation.EyeballShapeDef>
+    <defName>high_light</defName>
+    <label>high_light</label>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.EyeballShapeDef>
+
+  <FacialAnimation.EyeballShapeDef>
+    <defName>aversion</defName>
+    <label>aversion</label>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.EyeballShapeDef>
+</Defs>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- =========================================================
+       操作 1: 向渡鸦族列表【添加】左爻的专属部件 (眼镜/专属发型)
+       ========================================================= -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/alienRace/generalSettings/alienPartGenerator/bodyAddons</xpath>
+    <value>
+      <!-- 左爻专属眼镜 -->
+      <li>
+        <path>Races/Raven/Special/ZuoYao/Glasses/Glasses</path>
+        <inFrontOfBody>true</inFrontOfBody>
+        <alignWithHead>true</alignWithHead>
+        <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize> <!-- 修正缩放 -->
+        <drawSize>1.2</drawSize> 
+        <colorChannel>skin</colorChannel>
+        <conditions>
+          <li Class="AlienRace.ExtendedGraphics.ConditionBackstory">
+            <backstory>Raven_Backstory_ZuoYao_Adult</backstory>
+          </li>
+          <BodyPart>Head</BodyPart>
+          <Posture><drawnStanding>true</drawnStanding><drawnLaying>true</drawnLaying><drawnInBed>true</drawnInBed></Posture>
+        </conditions>
+        <offsets>
+            <south><bodyTypes><Female>(0,0)</Female></bodyTypes><layerOffset>0.07</layerOffset></south>
+            <north><bodyTypes><Female>(0,0)</Female></bodyTypes></north>
+            <east><bodyTypes><Female>(0,0)</Female></bodyTypes><layerOffset>0.07</layerOffset></east>
+        </offsets>
+      </li>
+
+      <!-- 左爻专属头发 (作为 BodyAddon 绘制) -->
+      <li>
+        <path>Races/Raven/Special/ZuoYao/Hair/ZuoYao_Hair</path>
+        <inFrontOfBody>true</inFrontOfBody>
+        <alignWithHead>true</alignWithHead>
+        <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize>
+        <drawSize>1.2</drawSize>
+        <colorChannel>hair</colorChannel>
+        <conditions>
+          <li Class="AlienRace.ExtendedGraphics.ConditionBackstory">
+            <backstory>Raven_Backstory_ZuoYao_Adult</backstory>
+          </li>
+          <BodyPart>Head</BodyPart>
+          <Posture><drawnStanding>true</drawnStanding><drawnLaying>true</drawnLaying><drawnInBed>true</drawnInBed></Posture>
+        </conditions>
+        <offsets>
+            <south><bodyTypes><Female>(0,0)</Female></bodyTypes></south>
+            <north><bodyTypes><Female>(0,0)</Female></bodyTypes><layerOffset>-1</layerOffset></north>
+            <east><bodyTypes><Female>(0,0)</Female></bodyTypes></east>     
+        </offsets>
+      </li>
+
+      <!-- 左爻专属后发 (作为 BodyAddon 绘制) -->
+      <li>
+        <path>Races/Raven/Special/ZuoYao/Hair/ZuoYao_Hair_Back</path>
+        <inFrontOfBody>false</inFrontOfBody>
+        <alignWithHead>true</alignWithHead>
+        <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize>
+        <drawSize>1.2</drawSize>
+        <colorChannel>hair</colorChannel>
+        <conditions>
+          <li Class="AlienRace.ExtendedGraphics.ConditionBackstory">
+            <backstory>Raven_Backstory_ZuoYao_Adult</backstory>
+          </li>
+          <BodyPart>Head</BodyPart>
+          <Posture><drawnStanding>true</drawnStanding><drawnLaying>true</drawnLaying><drawnInBed>true</drawnInBed></Posture>
+        </conditions>
+        <offsets>
+            <south><bodyTypes><Female>(0,0)</Female></bodyTypes></south>
+            <north><bodyTypes><Female>(0,0)</Female></bodyTypes></north>
+            <east><bodyTypes><Female>(0,0)</Female></bodyTypes></east>
+        </offsets>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- =========================================================
+       操作 2: 【修改】普通头发 A_Back，让它在左爻身上隐藏
+       原理：找到路径为 RavenHair_A_Back 的那个 addon，向其 conditions 列表添加一个“非左爻”条件
+       ========================================================= -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Races/Raven/Hair/RavenHair_A_Back"]/conditions</xpath>
+    <value>
+      <li Class="AlienRace.ExtendedGraphics.ConditionLogicNot">
+         <condition Class="AlienRace.ExtendedGraphics.ConditionBackstory">
+            <backstory>Raven_Backstory_ZuoYao_Adult</backstory>
+         </condition>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- =========================================================
+       操作 3: 【修改】普通头发 A (前发)，让它在左爻身上隐藏
+       ========================================================= -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Races/Raven/Hair/RavenHair_A"]/conditions</xpath>
+    <value>
+      <li Class="AlienRace.ExtendedGraphics.ConditionLogicNot">
+         <condition Class="AlienRace.ExtendedGraphics.ConditionBackstory">
+            <backstory>Raven_Backstory_ZuoYao_Adult</backstory>
+         </condition>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

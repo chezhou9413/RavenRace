@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "syXEVV/TVgw=",
+  "success": true,
+  "projectFilePath": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\Source\\RavenRace\\RavenRace.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\lib.harmony\\2.2.2\\lib.harmony.2.2.2.nupkg.sha512"
+  ],
+  "logs": []
+}

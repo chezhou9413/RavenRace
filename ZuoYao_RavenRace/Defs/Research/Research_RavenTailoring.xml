@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 渡鸦缝纫技术 ==================== -->
+  <ResearchProjectDef>
+    <!-- 定义名称，用于内部引用 -->
+    <defName>RavenResearch_Tailoring</defName>
+    <!-- 游戏内显示的名称 -->
+    <label>渡鸦缝纫技术</label>
+    <!-- 游戏内显示的描述 -->
+    <description>研究渡鸦族独特的服装裁剪和制作工艺，这些技术特别考虑了翅膀的结构与活动范围。解锁“渡鸦缝纫台”的建造，并允许制作多种渡鸦族专属服饰。</description>
+    
+    <!-- 研究成本 -->
+    <baseCost>800</baseCost>
+    <!-- 科技等级 -->
+    <techLevel>Industrial</techLevel>
+    
+    <!-- 前置科技 -->
+    <prerequisites>
+      <li>ComplexClothing</li>
+    </prerequisites>
+    
+    <!-- 在科技树中的位置 (X, Y) -->
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    
+    <!-- 所属科技标签页 -->
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+</Defs>

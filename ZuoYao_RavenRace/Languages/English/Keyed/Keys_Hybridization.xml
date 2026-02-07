@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <!-- Settings Category -->
+    <RavenRace_Settings_Hybridization>Hybridization</RavenRace_Settings_Hybridization>
+    <RavenRace_Settings_HybridizationDesc>Configure rules for hybrid ravens inheriting abilities from other races.</RavenRace_Settings_HybridizationDesc>
+
+    <!-- Common Status -->
+    <RavenRace_Settings_ModActive>Status: Active (Mod Detected)</RavenRace_Settings_ModActive>
+    <RavenRace_Settings_ModInactive>Status: Inactive (Mod Not Detected)</RavenRace_Settings_ModInactive>
+
+    <!-- Milira Flight -->
+    <RavenRace_Settings_MiliraFlight>Milira Flight Ability</RavenRace_Settings_MiliraFlight>
+    <RavenRace_Settings_MiliraFlight_Tooltip>Ravens with Milira bloodline will gain flight ability.</RavenRace_Settings_MiliraFlight_Tooltip>
+    
+    <RavenRace_Settings_EnableMiliraFlight>Enable Milira Flight for Hybrids</RavenRace_Settings_EnableMiliraFlight>
+    <RavenRace_Settings_EnableMiliraFlight_Desc>If enabled, ravens with any Milira bloodline will automatically gain the flight interface.</RavenRace_Settings_EnableMiliraFlight_Desc>
+    
+    <RavenRace_Settings_MiliraFlight_Note>Note: For true obstacle bypassing (walls/deep water), the "Independent Pathing for Milira" mod is highly recommended. Without it, flight only consumes hunger without pathing benefits.</RavenRace_Settings_MiliraFlight_Note>
+
+    <!-- MoeLotl -->
+    <RavenRace_Settings_MoeLotlCultivation>MoeLotl Cultivation</RavenRace_Settings_MoeLotlCultivation>
+    <RavenRace_Settings_EnableMoeLotlCompat>Enable MoeLotl Traits</RavenRace_Settings_EnableMoeLotlCompat>
+    <RavenRace_Settings_EnableMoeLotlCompat_Desc>If enabled, ravens with MoeLotl bloodline will gain cultivation abilities.</RavenRace_Settings_EnableMoeLotlCompat_Desc>
+    <RavenRace_ForceReadBook>Force Read: {0}</RavenRace_ForceReadBook>
+    <RavenRace_WrongBook>Wrong Book Type</RavenRace_WrongBook>
+
+    <!-- Klim Dragon Blood (Placeholder) -->
+    <RavenRace_Settings_KlimDragonBlood>Klim Dragon Blood</RavenRace_Settings_KlimDragonBlood>
+
+    <!-- MuGirl -->
+    <RavenRace_Settings_MuGirlCompat>MooGirl Bloodline</RavenRace_Settings_MuGirlCompat>
+    <RavenRace_Settings_EnableMuGirlCompat>Enable MooGirl Traits</RavenRace_Settings_EnableMuGirlCompat>
+    <RavenRace_Settings_EnableMuGirlCompat_Desc>If enabled, ravens with MooGirl bloodline (regardless of gender) will gain armor bonuses and the ability to produce milk.</RavenRace_Settings_EnableMuGirlCompat_Desc>
+    <!-- Milking -->
+    <RavenRace_MilkFullness>Snow Milk Full</RavenRace_MilkFullness>
+    <RavenRace_GatherMilk>Gather Milk</RavenRace_GatherMilk>
+    <RavenRace_GatherMilkDesc>Gather the accumulated milk from this Raven.</RavenRace_GatherMilkDesc>
+    <RavenRace_Msg_MilkGathered>{0} gathered {1} {2}.</RavenRace_Msg_MilkGathered>
+
+
+    <!-- Wolfein [Phase 3.6.5] -->
+    <RavenRace_Settings_WolfeinCompat>Wolfein Bloodline</RavenRace_Settings_WolfeinCompat>
+    <RavenRace_Settings_EnableWolfeinCompat>Enable Wolfein Traits</RavenRace_Settings_EnableWolfeinCompat>
+    <RavenRace_Settings_EnableWolfeinCompat_Desc>If enabled, ravens with Wolfein bloodline will gain lesser Night and Moon phase buffs.\n\nEffect: Slightly increased consciousness, sight, and movement speed at night. During a full moon, these effects are amplified, with additional melee dodge and hit chance.</RavenRace_Settings_EnableWolfeinCompat_Desc>
+
+
+    <!-- Moyo [Phase 3.6.8] -->
+    <RavenRace_Settings_MoyoCompat>Moyo Bloodline</RavenRace_Settings_MoyoCompat>
+    <RavenRace_Settings_EnableMoyoCompat>Enable Moyo Traits</RavenRace_Settings_EnableMoyoCompat>
+    <RavenRace_Settings_EnableMoyoCompat_Desc>If enabled, ravens with Moyo bloodline will produce Blue Serum and be immune to Deep Blue addiction/side effects.</RavenRace_Settings_EnableMoyoCompat_Desc>
+
+
+
+    <!-- Gizmo UI -->
+    <Milira_Flight_Toggle>Flight</Milira_Flight_Toggle>
+    <Milira_Flight_Toggle_Desc>Toggle flight ability.\n\nWhile flying, can bypass deep water and walls (with patch), but continuously drains hunger.</Milira_Flight_Toggle_Desc>
+    
+    <Milira_Flight_LowAlt>Low Altitude</Milira_Flight_LowAlt>
+    <Milira_Flight_HighAlt>High Altitude</Milira_Flight_HighAlt>
+    <Milira_Flight_Mode_Desc>Switch flight altitude.\n\n【Low】: Only fly while moving, can fly over buildings but not roofs.\n【High】: Always flying, can fly over roofs but not solid buildings.</Milira_Flight_Mode_Desc>
+</LanguageData>

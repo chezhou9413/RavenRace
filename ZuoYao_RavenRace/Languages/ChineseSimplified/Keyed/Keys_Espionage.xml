@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 菜单门户 -->
+  <RavenRace_Espionage_MenuTitle>间谍与派系行动总览</RavenRace_Espionage_MenuTitle>
+  <RavenRace_Espionage_CommandNet>间谍指挥网络</RavenRace_Espionage_CommandNet>
+  <RavenRace_Espionage_CommandNetDesc>查看各派系权力结构\n指派针对性任务</RavenRace_Espionage_CommandNetDesc>
+  <RavenRace_Espionage_Management>间谍管理中心</RavenRace_Espionage_Management>
+  <RavenRace_Espionage_ManagementDesc>派遣与召回特工\n查看潜伏状态</RavenRace_Espionage_ManagementDesc>
+  <RavenRace_Espionage_Back>返回</RavenRace_Espionage_Back>
+
+  <!-- 间谍管理中心 -->
+  <RavenRace_Espionage_ActiveSpies>:: 潜伏中的特工 ::</RavenRace_Espionage_ActiveSpies>
+  <RavenRace_Espionage_NoActiveSpies>目前没有在役间谍。请从右侧派遣殖民者。</RavenRace_Espionage_NoActiveSpies>
+  <RavenRace_Espionage_DispatchAction>:: 派遣行动 ::</RavenRace_Espionage_DispatchAction>
+  <RavenRace_Espionage_SelectTargetFaction>选择目标派系...</RavenRace_Espionage_SelectTargetFaction>
+  <RavenRace_Espionage_NoColonists>没有可用的殖民者。</RavenRace_Espionage_NoColonists>
+  <RavenRace_Espionage_DispatchBtn>派遣</RavenRace_Espionage_DispatchBtn>
+  <RavenRace_Espionage_RecallBtn>召回</RavenRace_Espionage_RecallBtn>
+  <RavenRace_Espionage_RecallConfirm>确定要召回 {0} 吗？\n该特工将撤离当前位置并返回殖民地。</RavenRace_Espionage_RecallConfirm>
+  <RavenRace_Espionage_DispatchConfirm>将 {0} 派遣至 {1}？\n\n该殖民者将暂时离开地图，转入潜伏状态。</RavenRace_Espionage_DispatchConfirm>
+  <RavenRace_Espionage_SpyLoc>位置: {0}</RavenRace_Espionage_SpyLoc>
+  <RavenRace_Espionage_SpyState>状态: {0}</RavenRace_Espionage_SpyState>
+  <RavenRace_Espionage_Exposure>暴露风险:</RavenRace_Espionage_Exposure>
+  <RavenRace_Espionage_DispatchSuccess>{0} 已成功潜入 {1}，开始建立情报网。</RavenRace_Espionage_DispatchSuccess>
+  <RavenRace_Espionage_RecallSuccess>{0} 已结束潜伏任务，返回殖民地。</RavenRace_Espionage_RecallSuccess>
+  
+
+  <!-- 官员职级翻译 -->
+  <RavenRace_OfficialRank_Leader>领袖</RavenRace_OfficialRank_Leader>
+  <RavenRace_OfficialRank_HighCouncil>核心议会</RavenRace_OfficialRank_HighCouncil>
+  <RavenRace_OfficialRank_MiddleManager>中层干部</RavenRace_OfficialRank_MiddleManager>
+  <RavenRace_OfficialRank_KeyFigure>关键人物</RavenRace_OfficialRank_KeyFigure>
+
+  <!-- 状态翻译 -->
+  <RavenRace_SpyState_Idle>待命</RavenRace_SpyState_Idle>
+  <RavenRace_SpyState_Infiltrating>潜伏渗透</RavenRace_SpyState_Infiltrating>
+  <RavenRace_SpyState_OnMission>执行任务</RavenRace_SpyState_OnMission>
+  <RavenRace_SpyState_Cooldown>潜逃/冷却</RavenRace_SpyState_Cooldown>
+  <RavenRace_SpyState_Captured>被捕</RavenRace_SpyState_Captured>
+
+  <!-- 属性显示 -->
+  <RavenRace_Espionage_Stat_Infiltration>潜伏</RavenRace_Espionage_Stat_Infiltration>
+  <RavenRace_Espionage_Stat_Operation>行动</RavenRace_Espionage_Stat_Operation>
+  <RavenRace_Espionage_Stat_Network>网络</RavenRace_Espionage_Stat_Network>
+  
+  <!-- 任务执行 -->
+  <RavenRace_Mission_Executing>执行: {0} (剩余 {1} 天)</RavenRace_Mission_Executing>
+  <RavenRace_Mission_Started>任务【{0}】已开始，执行者：{1}。</RavenRace_Mission_Started>
+  <RavenRace_Mission_TimeLeft>剩余 {0}</RavenRace_Mission_TimeLeft>
+  <RavenRace_Mission_Executing_Detail>执行: {0} (目标: {1})</RavenRace_Mission_Executing_Detail>
+
+  <!-- [修复] 统一后的信件 Key -->
+  <RavenRace_Espionage_Mission_Success>任务成功</RavenRace_Espionage_Mission_Success>
+  <RavenRace_Espionage_Mission_SuccessDesc>间谍 {0} 成功完成了 {1}。</RavenRace_Espionage_Mission_SuccessDesc>
+  <RavenRace_Espionage_Mission_Failure>任务失败</RavenRace_Espionage_Mission_Failure>
+  <RavenRace_Espionage_Mission_FailureDesc>行动败露，{0} 险些被捕，暴露值大幅上升。</RavenRace_Espionage_Mission_FailureDesc>
+
+  <!-- 指挥网络 -->
+  <RavenRace_Espionage_InfiltrationLevel>渗透度: {0} / 100</RavenRace_Espionage_InfiltrationLevel>
+  <RavenRace_Espionage_ControlStatus>控制状态: {0}</RavenRace_Espionage_ControlStatus>
+  <RavenRace_Espionage_StructurePreview>:: 权力结构 (数据预览) ::</RavenRace_Espionage_StructurePreview>
+  <RavenRace_Espionage_UnknownTarget>未知目标</RavenRace_Espionage_UnknownTarget>
+  <RavenRace_Espionage_Known> [已知]</RavenRace_Espionage_Known>
+  <RavenRace_Espionage_Unknown> [未知]</RavenRace_Espionage_Unknown>
+  <RavenRace_Espionage_NoIntel>暂无情报 (请指派间谍以收集数据)</RavenRace_Espionage_NoIntel>
+  
+  <!-- 官员详情 -->
+  <RavenRace_Official_Rank>职级: {0}</RavenRace_Official_Rank>
+  <RavenRace_Official_Age>年龄: {0}</RavenRace_Official_Age>
+  <RavenRace_Official_Gender>性别: {0}</RavenRace_Official_Gender>
+  <RavenRace_Official_Competence>能力值: {0}</RavenRace_Official_Competence>
+  <RavenRace_Official_Corruption>贪婪度: {0}</RavenRace_Official_Corruption>
+  <RavenRace_Official_Relation>对玩家好感: {0}</RavenRace_Official_Relation>
+  <RavenRace_Official_Loyalty>忠诚度: {0}</RavenRace_Official_Loyalty>
+  <RavenRace_Official_UnknownDesc>该官员身份不明。\n派遣间谍进行【搜集情报】任务以解锁详细信息。</RavenRace_Official_UnknownDesc>
+  <RavenRace_Official_ActionBtn>针对行动</RavenRace_Official_ActionBtn>
+  <RavenRace_Official_DataOutdated>数据过期：无法获取官员所属派系。请尝试重新渗透。</RavenRace_Official_DataOutdated>
+
+  <!-- 任务选择 -->
+  <RavenRace_Mission_SelectTitle>指派任务: {0}</RavenRace_Mission_SelectTitle>
+  <RavenRace_Mission_Target>针对目标: {0}</RavenRace_Mission_Target>
+  <RavenRace_Mission_NoSpy>该派系当前没有可用的驻扎间谍！</RavenRace_Mission_NoSpy>
+  <RavenRace_Mission_PleaseDeploy>请先在间谍管理界面派遣间谍进行渗透。</RavenRace_Mission_PleaseDeploy>
+  <RavenRace_Mission_Executor>执行间谍: {0}</RavenRace_Mission_Executor>
+  <RavenRace_Mission_CurrentExposure>当前暴露值: {0}%</RavenRace_Mission_CurrentExposure>
+  <RavenRace_Mission_CostTip>情报: {0}, 影响力: {1}</RavenRace_Mission_CostTip>
+  <RavenRace_Mission_ExecuteBtn>执行</RavenRace_Mission_ExecuteBtn>
+  <RavenRace_Mission_Reason_Level>渗透等级不足 (需 Lv{0})</RavenRace_Mission_Reason_Level>
+  <RavenRace_Mission_Reason_Intel>情报点数不足</RavenRace_Mission_Reason_Intel>
+
+  <RavenRace_Mission_CostSilver>银币不足</RavenRace_Mission_CostSilver>
+  <RavenRace_Mission_TargetTurncoated>目标已被策反</RavenRace_Mission_TargetTurncoated>
+  <RavenRace_Mission_TargetDead>目标已死亡</RavenRace_Mission_TargetDead>
+  
+  <RavenRace_Espionage_TurncoatTag>(已策反)</RavenRace_Espionage_TurncoatTag>
+  <RavenRace_Espionage_UnknownTarget>未知目标</RavenRace_Espionage_UnknownTarget>
+  <RavenRace_Espionage_Known> [已知]</RavenRace_Espionage_Known>
+  <RavenRace_Espionage_Unknown> [未知]</RavenRace_Espionage_Unknown>
+  
+
+
+</LanguageData>

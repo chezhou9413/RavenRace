@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<LanguageData>
+
+
+
+  <!-- 吹箭 -->
+  <Raven_Projectile_BlowgunDart.label>催情飞镖</Raven_Projectile_BlowgunDart.label>
+  <Raven_Weapon_Blowgun.label>渡鸦吹箭</Raven_Weapon_Blowgun.label>
+  <Raven_Weapon_Blowgun.description>一种简单但有效的吹箭，常被渡鸦族刺客使用。它发射的飞镖涂有强效催情毒素，命中后会散发成气体。\n\n这种武器造成的物理伤害极低，但能有效地瓦解敌人的意志。</Raven_Weapon_Blowgun.description>
+
+  <!-- 袖剑 -->
+  <Raven_Weapon_HiddenBlade.label>袖剑</Raven_Weapon_HiddenBlade.label>
+  <Raven_Weapon_HiddenBlade.description>安装在手腕下方的伸缩式利刃。它允许持有者在隐蔽状态下发动突然且致命的袭击。\n\n特殊效果：脱离战斗10秒后，下一次攻击将造成3倍伤害并具有极高的护甲穿透力。</Raven_Weapon_HiddenBlade.description>
+  <Raven_Weapon_HiddenBlade.tools.blade.label>利刃</Raven_Weapon_HiddenBlade.tools.blade.label>
+
+  <!-- 狙击枪 -->
+  <Raven_Weapon_SilentSniper.label>幽灵射手步枪</Raven_Weapon_SilentSniper.label>
+  <Raven_Weapon_SilentSniper.description>一把高度精密的狙击步枪，集成了整体式消音器。它是为渡鸦族渗透者量身定制的。\n\n特殊效果：保持静止会累积“稳定瞄准”状态，显著提高射击精准度。移动会失去此加成。</Raven_Weapon_SilentSniper.description>
+
+
+
+</LanguageData>

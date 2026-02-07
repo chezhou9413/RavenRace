@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.MouthShapeDef>
+    <defName>smile</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>sad</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>tight</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>surprise</defName>
+    <altShapeDef>open</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>puzzle</defName>
+    <altShapeDef>open</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>sexa</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>sexb</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>open</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>angry</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>smoke</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>cat</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>huya</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>sleepclose</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>sleepopen</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>coldclose</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>coldopen</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+
+  <FacialAnimation.MouthShapeDef>
+    <defName>hot</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+</Defs>

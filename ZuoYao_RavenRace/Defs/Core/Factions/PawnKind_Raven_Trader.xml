@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef ParentName="Raven_PawnKindBase">
+    <defName>Raven_Trader</defName>
+    <label>渡鸦商人</label>
+    <labelPlural>渡鸦商人</labelPlural>
+    
+    <trader>true</trader>
+
+    <race>Raven_Race</race>
+    
+    <combatPower>50</combatPower>
+    
+    <isFighter>false</isFighter>
+    
+    <minGenerationAge>25</minGenerationAge>
+    <maxGenerationAge>60</maxGenerationAge>
+    
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>10~17</initialResistanceRange>
+    
+    <!-- 装备 -->
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>1000</min>
+      <max>2500</max>
+    </apparelMoney>
+    <apparelAllowHeadgearChance>0.8</apparelAllowHeadgearChance>
+    
+    <!-- [修改] 武器：允许使用渡鸦武器 -->
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>Revolver</li>
+      <li>RavenWeapon</li>
+    </weaponTags>
+    <weaponMoney>
+      <min>300</min>
+      <max>800</max>
+    </weaponMoney>
+    
+    <!-- 技能 -->
+    <skills>
+      <li>
+        <skill>Social</skill>
+        <range>8~16</range>
+      </li>
+      <li>
+        <skill>Shooting</skill>
+        <range>3~8</range>
+      </li>
+    </skills>
+    
+    <!-- 初始库存 -->
+    <inventoryOptions>
+      <skipChance>0.1</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>Silver</thingDef>
+          <countRange>
+            <min>100</min>
+            <max>300</max>
+          </countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+  </PawnKindDef>
+</Defs>

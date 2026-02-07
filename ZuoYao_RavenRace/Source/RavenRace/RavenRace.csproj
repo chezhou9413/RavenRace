@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AssemblyName>ZuoYao_RavenRace</AssemblyName>
+    <RootNamespace>RavenRace</RootNamespace>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <!-- 修改为你的RimWorld安装路径 -->
+    <RimWorldPath>E:\steam\steamapps\common\RimWorld</RimWorldPath>
+    <!-- 修改为你的HAR模组路径 -->
+    <HARPath>E:\steam\steamapps\workshop\content\294100\839005762</HARPath>
+  </PropertyGroup>
+  
+  <!-- RimWorld核心引用 -->
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldPath)\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(RimWorldPath)\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(RimWorldPath)\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(RimWorldPath)\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  
+  <!-- HAR框架引用 -->
+  <ItemGroup>
+    <Reference Include="AlienRace">
+      <HintPath>$(HARPath)\1.6\Assemblies\AlienRace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  
+  <!-- Harmony通过NuGet引用 -->
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.2.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\Bloodline\Harmony\" />
+    <Folder Include="Features\DefenseSystem\Settings\" />
+    <Folder Include="Features\Operator\Rewards\" />
+    <Folder Include="Features\SoulAltar\Settings\" />
+    <Folder Include="Features\SoulAltar\Harmony\" />
+  </ItemGroup>
+</Project>

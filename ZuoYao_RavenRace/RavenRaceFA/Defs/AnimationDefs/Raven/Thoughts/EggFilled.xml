@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <FacialAnimation.FaceAnimationDef>
+        <defName>EggFilled</defName>
+        <raceName>Raven_Race</raceName>
+        <priority>10100</priority>
+        <animationFrames>
+            <li>
+                <duration>1000</duration>
+                <emotionShapeDef>gloomy</emotionShapeDef>
+                <lidShapeDef>aversion</lidShapeDef>
+                <browShapeDef>normal</browShapeDef>
+                <mouthShapeDef>sad</mouthShapeDef>
+                <eyeballShapeDef>aversion</eyeballShapeDef>
+                <eyeballOffset>(0, 0, 0)</eyeballOffset>
+            </li>
+        </animationFrames>
+        <targetThoughtDefs>
+            <li>Raven_Thought_EggFilled</li>
+        </targetThoughtDefs>
+    </FacialAnimation.FaceAnimationDef>
+</Defs>

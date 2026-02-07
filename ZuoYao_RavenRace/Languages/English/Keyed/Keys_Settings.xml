@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <!-- Settings Tabs -->
+    <RavenRace_Settings_Base>Base</RavenRace_Settings_Base>
+    <RavenRace_Settings_Bloodline>Bloodline</RavenRace_Settings_Bloodline>
+    <RavenRace_Settings_Altar>Altar</RavenRace_Settings_Altar>
+    <RavenRace_Settings_Fusang>Fusang</RavenRace_Settings_Fusang>
+    <RavenRace_Settings_Espionage>Espionage</RavenRace_Settings_Espionage>
+    <RavenRace_Settings_Debug>Debug</RavenRace_Settings_Debug>
+    
+    <!-- Settings Descriptions -->
+    <RavenRace_Settings_BaseDesc>Basic settings for the Raven Race mod.</RavenRace_Settings_BaseDesc>
+    <RavenRace_Settings_BloodlineDesc>Adjust bloodline inheritance and mutation rules.</RavenRace_Settings_BloodlineDesc>
+    <RavenRace_Settings_AltarDesc>Adjust hatching and effect parameters for the Soul Altar.</RavenRace_Settings_AltarDesc>
+    <RavenRace_Settings_FusangDesc>Adjust service and communication parameters for the Fusang organization.</RavenRace_Settings_FusangDesc>
+    <RavenRace_Settings_EspionageDesc>Adjust success rates and cooldowns for espionage missions.</RavenRace_Settings_EspionageDesc>
+    <RavenRace_Settings_DebugDesc>Developer debug tools. Additional features available when debug mode is enabled.</RavenRace_Settings_DebugDesc>
+    <RavenRace_Settings_ComingSoon>This feature will be implemented in a future version...</RavenRace_Settings_ComingSoon>
+    
+    <!-- Bloodline System Settings -->
+    <RavenRace_Settings_InheritanceStrength>Bloodline Inheritance Strength</RavenRace_Settings_InheritanceStrength>
+    <RavenRace_Settings_DecayRate>Golden Crow Concentration Decay Rate</RavenRace_Settings_DecayRate>
+    <RavenRace_Settings_EnableMutations>Enable Bloodline Mutations</RavenRace_Settings_EnableMutations>
+    
+    <!-- Soul Altar Settings -->
+    <RavenRace_Settings_BaseHatchingDays>Base Hatching Days</RavenRace_Settings_BaseHatchingDays>
+    <RavenRace_Settings_EffectRadius>Altar Effect Radius</RavenRace_Settings_EffectRadius>
+    <RavenRace_Settings_EnableVisualEffects>Enable Visual Effects</RavenRace_Settings_EnableVisualEffects>
+    
+    <!-- Fusang Organization Settings -->
+    <RavenRace_Settings_CommCooldown>Communication Cooldown</RavenRace_Settings_CommCooldown>
+    <RavenRace_Settings_ReinforcementDelay>Reinforcement Arrival Delay</RavenRace_Settings_ReinforcementDelay>
+    <RavenRace_Settings_TradePriceModifier>Trade Price Modifier</RavenRace_Settings_TradePriceModifier>
+    
+    <!-- Espionage System Settings -->
+    <RavenRace_Settings_MissionSuccessBonus>Mission Success Rate Bonus</RavenRace_Settings_MissionSuccessBonus>
+    <RavenRace_Settings_EnableManualInfiltration>Enable Manual Infiltration Mode</RavenRace_Settings_EnableManualInfiltration>
+    <RavenRace_Settings_FailureCooldown>Mission Failure Cooldown</RavenRace_Settings_FailureCooldown>
+
+
+    <!-- Defense System -->
+    <RavenRace_Settings_DefenseSystem>Defense System</RavenRace_Settings_DefenseSystem>
+    <RavenRace_Settings_DefenseDebug>Enable Trap Debugging</RavenRace_Settings_DefenseDebug>
+    <RavenRace_Settings_DefenseDebugDesc>Shows trigger radius and status information when traps are selected.</RavenRace_Settings_DefenseDebugDesc>
+    <RavenRace_Settings_FriendlyFireSafe>Friendly Fire Safety</RavenRace_Settings_FriendlyFireSafe>
+    <RavenRace_Settings_FriendlyFireSafeDesc>If enabled, traps will not be triggered by colonists or allies. If disabled, anyone can trigger them.</RavenRace_Settings_FriendlyFireSafeDesc>
+    <RavenRace_Settings_TrapDamageMultiplier>Trap Damage Multiplier</RavenRace_Settings_TrapDamageMultiplier>
+
+
+
+    
+    <!-- Debug Settings -->
+    <RavenRace_Settings_EnableDebugMode>Enable Debug Mode</RavenRace_Settings_EnableDebugMode>
+    <RavenRace_Settings_EnableVerboseLogging>Enable Verbose Logging</RavenRace_Settings_EnableVerboseLogging>
+    <RavenRace_Settings_DebugActions>Debug Actions</RavenRace_Settings_DebugActions>
+    
+    <!-- Debug Buttons -->
+    <RavenRace_Debug_InstantHatch>Instant Hatch All Eggs</RavenRace_Debug_InstantHatch>
+    <RavenRace_Debug_SetConcentration>Set Golden Crow Concentration</RavenRace_Debug_SetConcentration>
+    <RavenRace_Debug_ResetMainQuest>Reset Main Quest</RavenRace_Debug_ResetMainQuest>
+    
+
+    <!-- Common -->
+    <Days>days</Days>
+    <Hours>hours</Hours>
+</LanguageData>

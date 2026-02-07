@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 渡鸦族文化地点定义 -->
+  <PlaceDef>
+    <defName>RavenPlace_TangGu</defName>
+    <label>汤谷</label>
+    <description>金乌栖息的神圣山谷，传说中太阳升起的地方。</description>
+    <tags>
+      <li>Raven_Culture</li>
+      <li>Sacred</li>
+      <li>Mountain</li>
+    </tags>
+  </PlaceDef>
+  
+  <PlaceDef>
+    <defName>RavenPlace_FusangTree</defName>
+    <label>扶桑树</label>
+    <description>巨大的神树，连接天地的通道，金乌一族的圣地。</description>
+    <tags>
+      <li>Raven_Culture</li>
+      <li>Sacred</li>
+      <li>Forest</li>
+    </tags>
+  </PlaceDef>
+  
+  <PlaceDef>
+    <defName>RavenPlace_SunPalace</defName>
+    <label>太阳宫</label>
+    <description>金乌帝君的宫殿，位于天空的最高处。</description>
+    <tags>
+      <li>Raven_Culture</li>
+      <li>Sacred</li>
+      <li>Structure</li>
+    </tags>
+  </PlaceDef>
+  
+  <PlaceDef>
+    <defName>RavenPlace_ShadowValley</defName>
+    <label>暗影谷</label>
+    <description>渡鸦族的传统居住地，隐藏在山脉的阴影中。</description>
+    <tags>
+      <li>Raven_Culture</li>
+      <li>Valley</li>
+      <li>Settlement</li>
+    </tags>
+  </PlaceDef>
+  
+  <PlaceDef>
+    <defName>RavenPlace_EmberShrine</defName>
+    <label>余烬神社</label>
+    <description>供奉金乌余烬的神社，渡鸦族进行仪式的地方。</description>
+    <tags>
+      <li>Raven_Culture</li>
+      <li>Sacred</li>
+      <li>Shrine</li>
+    </tags>
+  </PlaceDef>
+</Defs>

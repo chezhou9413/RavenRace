@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>RavenTrap_Claymore</defName>
+    <label>claymore wall guard</label> <!-- [Fixed] 改名 -->
+    <description>A directional explosive charge designed to protect walls. It is triggered ONLY when the wall it is attached to takes damage. When triggered, it blasts a fan-shaped area in front of it to eliminate sappers.</description>
+    <thingClass>RavenRace.Building_RavenTrap</thingClass>
+
+
+
+    <graphicData>
+      <!-- [Fixed] 指向贴图文件夹和文件名前缀 -->
+      <texPath>Things/Building/Security/RavenClaymore/Claymore</texPath> 
+      
+      <!-- [Fixed] 改为 Graphic_Multi 以支持多方向 -->
+      <graphicClass>Graphic_Multi</graphicClass> 
+      
+      <drawSize>0.8</drawSize>
+      <drawOffset>(0, 0, 0.25)</drawOffset> 
+    </graphicData>
+
+
+
+
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <rotatable>true</rotatable>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <Mass>2</Mass>
+      <MaxHitPoints>40</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Flammability>1</Flammability>
+    </statBases>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <designationCategory>Security</designationCategory>
+    <placeWorkers>
+      <li>RavenRace.PlaceWorker_OnWall</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>RavenResearch_TrapBasics</li>
+    </researchPrerequisites>
+    <comps>
+      <!-- 触发器：纯反工兵模式 -->
+      <li Class="RavenRace.CompProperties_Trigger">
+        <condition>WallDamage</condition> 
+        <!-- [Fixed] 移除了 detectionRadius 和 viewAngle，只由墙体受损触发 -->
+        <cooldownTicks>-1</cooldownTicks>
+        <manualTriggerable>true</manualTriggerable>
+      </li>
+      
+      <!-- 效果 -->
+      <li Class="CompProperties">
+        <compClass>RavenRace.CompTrapEffect_Claymore</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

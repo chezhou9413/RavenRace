@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RavenDecoy_Dummy.label>渡鸦假人</RavenDecoy_Dummy.label>
+  <RavenDecoy_Dummy.description>一个逼真的假人，外形酷似渡鸦族士兵。它内置了高级电子信号模拟器，能极大地吸引敌方AI的仇恨，使其优先将其作为高威胁目标进行攻击。</RavenDecoy_Dummy.description>
+  
+  <RavenDecoy_SoundLure.label>声波诱饵</RavenDecoy_SoundLure.label>
+  <RavenDecoy_SoundLure.description>一种发射模拟求救信号或指挥频率的高频装置。它能强制附近的敌人前往其位置进行调查，从而打乱敌人的阵型，将其引入陷阱区域。</RavenDecoy_SoundLure.description>
+</LanguageData>

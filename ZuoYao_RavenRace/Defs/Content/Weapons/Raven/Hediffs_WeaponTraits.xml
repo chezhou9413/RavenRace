@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 袖剑：刺杀准备 -->
+  <HediffDef>
+    <defName>Raven_Hediff_HiddenBladePrep</defName>
+    <label>assassination prep</label> <!-- 英文占位，中文通过 DefInjected 覆盖 -->
+    <description>The blade is ready for a lethal strike.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDamageFactor>2.0</MeleeDamageFactor>
+          <MeleeArmorPenetration>0.5</MeleeArmorPenetration>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 狙击枪：稳定瞄准 -->
+  <HediffDef>
+    <defName>Raven_Hediff_SteadyAim</defName>
+    <label>steady aim</label>
+    <description>Focusing aim due to stillness.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.2, 0.8, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.1</minSeverity>
+        <label>focus I</label>
+        <statOffsets>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>focus V</label>
+        <statOffsets>
+          <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+          <AimingDelayFactor>-0.2</AimingDelayFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.0</minSeverity>
+        <label>zen state</label>
+        <statOffsets>
+          <ShootingAccuracyPawn>20</ShootingAccuracyPawn>
+          <AimingDelayFactor>-0.4</AimingDelayFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

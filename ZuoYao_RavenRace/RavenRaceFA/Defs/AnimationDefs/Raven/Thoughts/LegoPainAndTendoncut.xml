@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.FaceAnimationDef>
+    <defName>LegoPainAndTendoncut</defName>
+    <raceName>Raven_Race</raceName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <lidShapeDef>xlid</lidShapeDef>
+        <emotionShapeDef>sad</emotionShapeDef>
+        <mouthShapeDef>open</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <targetThoughtDefs>
+      <li>Raven_Thought_LegoPain</li>
+      <li>Raven_Thought_TendonCut</li>
+    </targetThoughtDefs>
+    <priority>10100</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

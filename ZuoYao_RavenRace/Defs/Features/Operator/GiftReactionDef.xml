@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 礼物反应定义 ==================== -->
+  
+  <RavenRace.Features.Operator.Gifting.GiftReactionDef>
+    <defName>Raven_GiftReaction_Default</defName>
+    <isDefault>true</isDefault>
+    <favorChangePerValue>0.05</favorChangePerValue>
+    <maxFavorChange>10</maxFavorChange>
+  </RavenRace.Features.Operator.Gifting.GiftReactionDef>
+
+  <!-- 特别喜欢的礼物: 奢侈品 -->
+  <!-- [错误修复 3 & 4] 暂时移除 thingCategoryDefs，等待您提供 ThingCategories.xml -->
+  <RavenRace.Features.Operator.Gifting.GiftReactionDef>
+    <defName>Raven_GiftReaction_LikesLuxury</defName>
+    <!-- <thingCategoryDefs>
+      <li>Exotic</li>
+    </thingCategoryDefs> -->
+    <favorChangePerValue>0.1</favorChangePerValue>
+    <maxFavorChange>30</maxFavorChange>
+  </RavenRace.Features.Operator.Gifting.GiftReactionDef>
+  
+  <!-- 讨厌的礼物: 基础原材料 -->
+  <RavenRace.Features.Operator.Gifting.GiftReactionDef>
+    <defName>Raven_GiftReaction_HatesRaw</defName>
+    <!-- <thingCategoryDefs>
+      <li>StoneBlocks</li>
+      <li>ResourcesRaw</li>
+    </thingCategoryDefs> -->
+    <favorChangePerValue>-0.02</favorChangePerValue>
+    <maxFavorChange>-5</maxFavorChange>
+    <specialMessage>“……你是认真的吗？拿这些东西给我？你是在清理仓库吗？”</specialMessage>
+  </RavenRace.Features.Operator.Gifting.GiftReactionDef>
+
+</Defs>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+    <defName>Raven_Weapon_SpiritBeads</defName>
+    <label>灵卵拉珠</label>
+    <description>一串由五枚未受精灵卵串连而成的特殊“武器”。它不仅是渡鸦族私密的玩具，在特定的技巧下，也能成为致命的钝器。\n\n特殊机制：\n可以将其置入体内（纳刀）。从体内瞬间拔出并挥击时，会造成极高的伤害并使敌人陷入强烈的“高潮”状态（晕眩与虚弱）。\n\n大招（需设置开启）：\n【盛大高潮】—— 瞬间制服全图敌人。</description>
+    <graphicData>
+      <texPath>Items/Weapons/Raven/RavenSpiritBeads</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <Mass>1.5</Mass>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <equippedAngleOffset>-45</equippedAngleOffset>
+    
+    <!-- [新增] 特殊武器标签 -->
+    <weaponTags>
+      <li>RavenSpecial</li>
+    </weaponTags>
+
+    <costList>
+      <Raven_SpiritEgg_Unfertilized>5</Raven_SpiritEgg_Unfertilized>
+      <Cloth>30</Cloth>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_RavenSpecials</researchPrerequisite>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+      </recipeUsers>
+    </recipeMaker>
+
+    <comps>
+      <li Class="RavenRace.Features.UniqueWeapons.SpiritBeads.CompProperties_SpiritBeads">
+        <insertedHediff>Raven_Hediff_SpiritBeadsInserted</insertedHediff>
+        <insertTicks>120</insertTicks>
+      </li>
+    </comps>
+
+    <tools>
+      <li>
+        <label>beads</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- 大招能力定义 (保持不变) -->
+  <AbilityDef>
+    <defName>Raven_Ability_GrandClimax</defName>
+    <label>盛大高潮</label>
+    <description>消耗所有灵卵的能量，瞬间让地图上所有敌对生物陷入不可抗拒的高潮状态。\n\n需要模组设置开启。</description>
+    <iconPath>UI/Abilities/Raven_GrandClimax</iconPath>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>0</range>
+      <warmupTime>2.0</warmupTime>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="RavenRace.Features.UniqueWeapons.SpiritBeads.CompProperties_AbilityGrandClimax" />
+    </comps>
+  </AbilityDef>
+
+</Defs>

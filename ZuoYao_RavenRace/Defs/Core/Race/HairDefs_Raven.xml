@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HairDef>
+    <defName>Raven_Hair_Standard</defName> <!-- 保持旧名字兼容存档 -->
+    <label>渡鸦长发 A</label>
+    <hairGender>Any</hairGender>
+    
+    <!-- 指向透明贴图，实际上什么都不画 -->
+    <texPath>Races/Raven/Hair/Transparent</texPath> 
+    
+    <styleTags>
+      <li>RavenHair</li>
+    </styleTags>
+  </HairDef>
+</Defs>

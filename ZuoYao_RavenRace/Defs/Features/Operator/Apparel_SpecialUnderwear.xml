@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 抽象基类 (重构为不可穿戴的圣物) ==================== -->
+  <ThingDef Name="Raven_SpecialUnderwearBase" ParentName="ResourceBase" Abstract="True">
+    <description>左爻赠予的特殊贴身衣物。它似乎由一种未知的柔软材料制成，美丽而又坚韧，散发着淡淡的香气。\n\n这件衣物具有极高的艺术价值，并且无法被摧毁。</description>
+    <thingClass>ThingWithComps</thingClass>
+    <techLevel>Spacer</techLevel>
+    <tradeability>None</tradeability> <!-- 不可交易 -->
+    <destroyable>false</destroyable> <!-- 不可摧毁 -->
+    <smeltable>false</smeltable> <!-- 不可熔炼 -->
+    <burnableByRecipe>false</burnableByRecipe> <!-- 不可焚烧 -->
+    
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Mass>0.1</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>50</Beauty> <!-- 作为艺术品，美观度极高 -->
+      <WorkToMake>-1</WorkToMake> <!-- 不可制作 -->
+    </statBases>
+    
+    <thingCategories>
+      <li>Items</li> <!-- 归类于通用物品 -->
+    </thingCategories>
+    
+    <comps>
+       <li Class="CompProperties_Forbiddable"/>
+    </comps>
+
+    <!-- [错误修复 1] 移除在 ThingDef 根目录下的 <color> 标签 -->
+    <graphicData>
+      <!-- 将颜色设置移到这里 -->
+      <color>(255,255,255)</color>
+      <!-- 其他 graphicData 属性由子类定义 -->
+    </graphicData>
+  </ThingDef>
+
+  <!-- ==================== 具体内衣定义 ==================== -->
+  
+  <!-- 1. 纯白之约 -->
+  <ThingDef ParentName="Raven_SpecialUnderwearBase">
+    <defName>Raven_Underwear_PurePledge</defName>
+    <label>纯白之约</label>
+    <graphicData>
+      <texPath>UI/Operator/Collection/Underwear_PurePledge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <!-- 2. 魅惑蕾丝 -->
+  <ThingDef ParentName="Raven_SpecialUnderwearBase">
+    <defName>Raven_Underwear_LaceTemptation</defName>
+    <label>魅惑蕾丝</label>
+    <graphicData>
+      <texPath>UI/Operator/Collection/Underwear_LaceTemptation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <!-- 3. 午夜秘语 -->
+  <ThingDef ParentName="Raven_SpecialUnderwearBase">
+    <defName>Raven_Underwear_MidnightWhisper</defName>
+    <label>午夜秘语</label>
+    <graphicData>
+      <texPath>UI/Operator/Collection/Underwear_MidnightWhisper</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

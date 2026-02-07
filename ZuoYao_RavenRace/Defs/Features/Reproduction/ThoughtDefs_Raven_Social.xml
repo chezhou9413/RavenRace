@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 主人被杀 -->
+  <ThoughtDef>
+    <defName>KilledMyMaster</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>120</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>killed my master</label>
+        <baseOpinionOffset>-100</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- 主人自然死亡 -->
+  <ThoughtDef>
+    <defName>MyMasterDied</defName>
+    <durationDays>30</durationDays>
+    <stackLimit>10</stackLimit>
+    <stages>
+      <li>
+        <label>my master died</label>
+        <description>My master has died. I feel lost and without purpose.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- 主人被卖 -->
+  <ThoughtDef>
+    <defName>SoldMyMaster</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>120</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackLimitForSameOtherPawn>2</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>master sold</label>
+        <labelSocial>sold my master</labelSocial>
+        <description>My master was sold! How could they do this?</description>
+        <baseOpinionOffset>-50</baseOpinionOffset>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

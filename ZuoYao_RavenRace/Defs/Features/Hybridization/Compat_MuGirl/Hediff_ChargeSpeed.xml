@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_ChargeVelocity</defName>
+    <label>冲锋爆发(极速)</label>
+    <description>腿部肌肉爆发出惊人的力量，速度极快。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.5, 0.5, 1.0)</defaultLabelColor>
+    <stages>
+      <li>
+        <statFactors>
+          <!-- 极端加速：15倍移速 -->
+          <MoveSpeed>15.0</MoveSpeed> 
+        </statFactors>
+        <statOffsets>
+          <!-- 极高闪避 -->
+          <MeleeDodgeChance>80</MeleeDodgeChance> 
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>600</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

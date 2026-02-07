@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ScenarioDef>
+    <defName>Raven_Scenario_Outcast</defName>
+    <label>离群渡鸦</label>
+    <description>你曾是扶桑组织的一员，或是某个隐秘巢穴的雏鸟。但现在，无论是因为犯错、派系斗争还是单纯的运气不好，你被抛弃了。\n\n你独自一人坠落在这个边缘世界，除了手中的利刃和少得可怜的补给，一无所有。\n\n这是对你生存能力的终极考验。在暗影中重铸你的羽翼，或者默默死去。</description>
+    <scenario>
+      <summary>一名孤独的渡鸦族幸存者。</summary>
+      
+      <!-- 1. 玩家派系 (必需) -->
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>PlayerColony</factionDef>
+      </playerFaction>
+
+      <!-- 2. [Fixed] 补全缺失的 surfaceLayer (从原版 ScenarioBase 复制) -->
+      <surfaceLayer>
+        <def>SurfaceLayerFixed</def>
+        <tag>Surface</tag>
+        <layer>Surface</layer>
+        <settingsDef>Surface</settingsDef>
+        <hide>true</hide>
+        <connections>
+          <Orbit MayRequire="Ludeon.RimWorld.Odyssey">
+            <zoomMode>ZoomOut</zoomMode>
+          </Orbit>
+        </connections>
+      </surfaceLayer>
+
+      <parts>
+        <!-- [Fixed] 补全 PlanetLayer (从原版 ScenarioBase 复制) -->
+        <li MayRequire="Ludeon.RimWorld.Odyssey" Class="ScenPart_PlanetLayer">
+          <def>PlanetLayer</def>
+          <tag>Orbit</tag>
+          <layer>Orbit</layer>
+          <settingsDef>Orbit</settingsDef>
+          <hide>true</hide>
+          <connections>
+            <Surface>
+              <zoomMode>ZoomIn</zoomMode>
+            </Surface>
+          </connections>
+        </li>
+
+        <!-- 3. 基础配置 -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>1</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+        </li>
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>DropPods</method>
+        </li>
+
+        <!-- 4. 强制种族：渡鸦 -->
+        <!-- 务必确保 RavenRace.ScenPart_StartingPawnKind 类已编译且 ScenPartDefs_Raven.xml 已存在 -->
+        <li Class="RavenRace.ScenPart_StartingPawnKind">
+          <def>Raven_ScenPart_StartingPawnKind</def>
+          <pawnKind>Raven_Colonist</pawnKind>
+        </li>
+
+        <!-- 5. 物资 -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>200</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>10</count>
+        </li>
+        
+        <!-- 6. 武器 -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Raven_Weapon_HiddenBlade</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>WoodLog</thingDef>
+          <count>300</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>150</count>
+        </li>
+
+        <!-- 7. 游戏规则 -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>醒来，流亡者。\n\n虽然离开了巢穴的庇护，但你依然流淌着金乌的血脉（哪怕很稀薄）。利用你的隐蔽天赋，在这个充满敌意的世界中活下去。</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+        
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

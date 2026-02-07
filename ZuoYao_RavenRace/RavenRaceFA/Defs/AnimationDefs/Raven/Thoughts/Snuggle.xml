@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <FacialAnimation.FaceAnimationDef>
+        <defName>Snuggle</defName>
+        <raceName>Raven_Race</raceName>
+        <animationFrames>
+            <li>
+                <duration>10</duration>
+                <emotionShapeDef>cheerful</emotionShapeDef>
+                <lidShapeDef>closed</lidShapeDef>
+                <eyeballShapeDef>Pupil_Heart</eyeballShapeDef>
+                <mouthShapeDef>huya</mouthShapeDef>
+                <browShapeDef>happy</browShapeDef>
+                <eyeballOffset>(0, 0, -0.01)</eyeballOffset>
+                <lidOffset>(0, 0, -0.01)</lidOffset>
+            </li>
+        </animationFrames>
+        <roopIntervalMin>0</roopIntervalMin>
+        <roopIntervalMax>0</roopIntervalMax>
+        <applyWhenStandingOnly>false</applyWhenStandingOnly>
+        <targetThoughtDefs>
+            <li>Raven_Thought_Snuggle</li>
+            <li>Raven_Thought_AteDivineMilk</li>
+            <li>Raven_Thought_ForceLovin_Initiatork</li>
+        </targetThoughtDefs>
+        <priority>10200</priority>
+    </FacialAnimation.FaceAnimationDef>
+</Defs>

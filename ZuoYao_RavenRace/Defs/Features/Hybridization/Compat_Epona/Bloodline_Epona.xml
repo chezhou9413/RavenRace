@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 艾波娜 (Epona) - 三合一核心定义 -->
+    <!-- 核心修复：添加 MayRequire，包ID为 Peppne.Epona -->
+    <RavenRace.BloodlineDef MayRequire="Peppne.Epona">
+        <defName>Bloodline_Epona</defName>
+        <label>艾波娜血脉</label>
+        <labelShort>艾波娜</labelShort>
+        <description>源自艾波娜(Epona)及其亚种(战马、独角兽)的统合血脉。赋予了持有者强健的腿部力量和在开阔地带奔跑的渴望。</description>
+        <raceDef>Alien_Epona</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

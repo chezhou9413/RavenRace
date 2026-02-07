@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 渡鸦基础工艺 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_BasicMaterials</defName>
+    <label>渡鸦基础工艺</label>
+    <description>解锁渡鸦族的基础材料处理技术，允许建造薄暮制作台以加工暗羽钢等特殊材料。</description>
+    <baseCost>600</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
+    <!-- 放在渡鸦科技页面的左侧起始位置 -->
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+</Defs>

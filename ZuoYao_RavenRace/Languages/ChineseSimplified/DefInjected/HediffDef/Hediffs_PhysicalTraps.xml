@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RavenHediff_TendonCut.label>跟腱断裂</RavenHediff_TendonCut.label>
+  <RavenHediff_TendonCut.description>跟腱已被完全切断。受害者的移动能力受到严重且永久的损害，不进行手术无法恢复。</RavenHediff_TendonCut.description>
+  <RavenHediff_TendonCut.stages.fresh.label>新鲜伤口</RavenHediff_TendonCut.stages.fresh.label>
+  <RavenHediff_TendonCut.stages.scarred.label>愈合伤疤</RavenHediff_TendonCut.stages.scarred.label>
+</LanguageData>

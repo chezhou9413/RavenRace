@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 检测是否安装了 Nals.FacialAnimation -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Nals.FacialAnimation</li>
+      <li>[NL] Facial Animation - WIP</li>
+    </mods>
+    
+    <!-- 如果找到了 FA，不做任何事 (match 为空) -->
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- 可以在这里写针对 FA 的特殊配置，现在留空即可 -->
+      </operations>
+    </match>
+    
+    <!-- 如果没找到 FA (nomatch)，则插入静态脸的BodyAddon（其实是眼眉等贴图） -->
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/alienRace/generalSettings/alienPartGenerator/bodyAddons</xpath>
+      <value>
+        <!-- 静态脸配置 -->
+        <li>
+          <path>Races/Raven/Head/Face/RavenFace</path>
+          <inFrontOfBody>true</inFrontOfBody>
+          <alignWithHead>true</alignWithHead>
+          <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+          <drawSize>1.2</drawSize>
+          <colorChannel>skin</colorChannel>
+          <conditions>
+            <BodyPart>Head</BodyPart> 
+            <Posture><drawnStanding>true</drawnStanding><drawnLaying>true</drawnLaying><drawnInBed>true</drawnInBed></Posture>
+          </conditions>
+          <offsets>
+              <south><bodyTypes><Female>(0,0)</Female><Male>(0,0)</Male></bodyTypes><layerOffset>0.01</layerOffset></south>
+              <north><bodyTypes><Female>(0,0)</Female><Male>(0,0)</Male></bodyTypes><layerOffset>0.01</layerOffset></north>
+              <east><bodyTypes><Female>(0,0)</Female><Male>(0,0)</Male></bodyTypes><layerOffset>0.01</layerOffset></east>
+          </offsets>
+        </li>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

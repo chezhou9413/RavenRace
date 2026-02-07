@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+    <FacialAnimation.BrowShapeDef>
+        <defName>happy</defName>
+        <label>开心</label>
+    </FacialAnimation.BrowShapeDef>
+    <FacialAnimation.BrowShapeDef>
+        <defName>angry</defName>
+        <label>愤怒</label>
+    </FacialAnimation.BrowShapeDef>
+</Defs>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Make_Raven_DarkSunLens.label>制作暗日透镜</Make_Raven_DarkSunLens.label>
+  <Make_Raven_DarkSunLens.description>切割暗羽钢并在高压下注入微量的金羽粉末，利用光学设备校准其折射率。这需要极高的工艺技巧。</Make_Raven_DarkSunLens.description>
+  <Make_Raven_DarkSunLens.jobString>正在制作暗日透镜。</Make_Raven_DarkSunLens.jobString>
+
+</LanguageData>

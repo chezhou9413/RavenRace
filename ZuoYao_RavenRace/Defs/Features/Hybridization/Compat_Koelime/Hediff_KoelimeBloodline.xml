@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_KoelimeBloodline</defName>
+    <label>古龙血脉(次级)</label>
+    <description>源自古龙种珂莉姆的血脉力量。虽然不如纯血古龙那般强横，但依然赋予了持有者对多种致命疾病的免疫力以及显著的再生能力。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1.0, 0.8, 0.2)</defaultLabelColor> <!-- 金色 -->
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    
+    <stages>
+      <li>
+        <!-- 修正1：免疫列表移动到 Stage 内部 -->
+        <makeImmuneTo>
+          <li>Flu</li>
+          <li>Malaria</li>
+          <li>SleepingSickness</li>
+          <li>Plague</li>
+          <li>WoundInfection</li>
+          <li>LungRot</li>
+          <li>GutWorms</li>
+          <li>MuscleParasites</li>
+          <li>OrganDecay</li>
+        </makeImmuneTo>
+
+        <!-- 再生能力：原版 KoelimeRegeneration 是 50，我们给 20 -->
+        <regeneration>20</regeneration>
+        <showRegenerationStat>true</showRegenerationStat>
+        <statOffsets>
+           <!-- 稍微加一点肉度体现龙血 -->
+           <IncomingDamageFactor>-0.05</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    
+    <!-- 修正2：移除了 HediffCompProperties_DisappearsOnDeath 组件 -->
+    <!-- 只要不加这个组件，且 HediffDef 默认配置下，状态通常会保留在尸体上 -->
+    <comps>
+    </comps>
+  </HediffDef>
+</Defs>

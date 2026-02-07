@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 基础装备 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_RavenWeapons</defName>
+    <label>渡鸦武装</label>
+    <description>解锁渡鸦族的标志性武器：袖剑、幽灵射手步枪和催情吹箭。</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Machining</li>
+      <!-- [已移除] RavenResearch_TrapBasics -->
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+  <!-- 特殊装备 (保持不变) -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_RavenSpecials</defName>
+    <label>渡鸦秘宝</label>
+    <description>解锁具有特殊用途的装备：暗影斗篷和灵卵拉珠。</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_RavenWeapons</li>
+      <li>ComplexClothing</li>
+    </prerequisites>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+</Defs>

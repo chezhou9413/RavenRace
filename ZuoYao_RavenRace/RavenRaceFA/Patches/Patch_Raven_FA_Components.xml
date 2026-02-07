@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 检测 FA 模组是否激活 (支持 WIP版 和 稳定版) -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Nals.FacialAnimation</li>
+      <li>[NL] Facial Animation - WIP</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- 给渡鸦族注入 FA 的组件 -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/comps</xpath>
+          <value>
+            <li><compClass>FacialAnimation.DrawFaceGraphicsComp</compClass></li>
+            <li><compClass>FacialAnimation.HeadControllerComp</compClass></li>
+            <li><compClass>FacialAnimation.EyeballControllerComp</compClass></li>
+            <li><compClass>FacialAnimation.LidControllerComp</compClass></li>
+            <li><compClass>FacialAnimation.BrowControllerComp</compClass></li>
+            <li><compClass>FacialAnimation.MouthControllerComp</compClass></li>
+            <li><compClass>FacialAnimation.SkinControllerComp</compClass></li>
+            <li><compClass>FacialAnimation.LidOptionControllerComp</compClass></li>
+            <li><compClass>FacialAnimation.EmotionControllerComp</compClass></li>
+            <li><compClass>FacialAnimation.FacialAnimationControllerComp</compClass></li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>Raven_Job_MuGirlCharge</defName>
+    <driverClass>RavenRace.Compat.MuGirl.JobDriver_RavenMuGirlCharge</driverClass>
+    <reportString>正在向 TargetA 发起冲锋。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>

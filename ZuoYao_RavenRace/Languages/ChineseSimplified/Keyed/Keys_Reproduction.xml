@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <!-- 孵化相关 -->
+    <IncubationProgress>孵化进度</IncubationProgress>
+    <RavenRace_Mother>母亲</RavenRace_Mother>
+    <RavenRace_Father>父亲</RavenRace_Father>
+    <RavenRace_BloodlineComposition>血脉组成</RavenRace_BloodlineComposition>
+    <RavenRace_GoldenCrowConcentration>金乌浓度</RavenRace_GoldenCrowConcentration>
+    
+    <!-- 信件 -->
+    <RavenRace_LetterLabel_EggLaid>产下灵卵</RavenRace_LetterLabel_EggLaid>
+    <RavenRace_LetterText_EggLaid>{0} 成功产下了一枚渡鸦灵卵。父亲是 {1}，这枚卵中结合了他们的血脉。\n\n请尽快将其放入原始摇篮中进行孵化，否则生命迹象将停止发育。</RavenRace_LetterText_EggLaid>
+    <LetterLabelHatch>灵卵孵化</LetterLabelHatch>
+    <LetterTextHatch>一枚渡鸦灵卵成功孵化了！\n\n{0} 破壳而出。</LetterTextHatch>
+
+    <!-- 摇篮与灵卵操作 -->
+    <RavenRace_CradleEmpty>摇篮空置</RavenRace_CradleEmpty>
+    <RavenRace_EjectEgg>取出灵卵</RavenRace_EjectEgg>
+    <RavenRace_EjectEggDesc>将灵卵从摇篮中取出，停止孵化过程。</RavenRace_EjectEggDesc>
+    
+    <!-- 体内保存系统 (Phase 3.2) -->
+    <RavenRace_FloatMenu_InsertEgg>将灵卵置入 {0} 体内</RavenRace_FloatMenu_InsertEgg>
+    <RavenRace_Message_EggInsertedFemale>{0} 的子宫现在温暖地包裹着灵卵。</RavenRace_Message_EggInsertedFemale>
+    <RavenRace_Message_EggInsertedMale>灵卵已被置入 {0} 直肠深处。</RavenRace_Message_EggInsertedMale>
+    <RavenRace_Message_EggRemoved>灵卵已从 {0} 体内取出。</RavenRace_Message_EggRemoved>
+    
+    <RavenRace_Gizmo_RemoveEgg>取出体内灵卵</RavenRace_Gizmo_RemoveEgg>
+    <RavenRace_Gizmo_RemoveEggDesc>将目前保存在体内的灵卵取出。</RavenRace_Gizmo_RemoveEggDesc>
+    
+    <!-- 强制交配反馈信息 (Phase 3.2 - 更新) -->
+    <RavenRace_Msg_ResistanceLowered>在极度的快感剥夺与射精管理下，{0} 的心理防线正在崩塌（抵抗 -{1}）。</RavenRace_Msg_ResistanceLowered>
+    <RavenRace_Msg_WillLowered>除了臣服和高潮，{0} 的脑海中已容不下任何反抗的念头（意志 -{1}）。</RavenRace_Msg_WillLowered>
+    <RavenRace_Msg_InstantRecruit>{0} 哭喊着乞求完全的占有。为了换取再一次的高潮，{0} 发誓永远效忠于您！</RavenRace_Msg_InstantRecruit>
+    <RavenRace_Msg_InstantEnslave>{0} 的自我意志被彻底击碎了。现在，{0} 只是您顺从而渴望的奴隶。</RavenRace_Msg_InstantEnslave>
+    <RavenRace_Msg_LoyaltyBroken>曾经的誓言在持续不断的强烈刺激下化为泡影。{0} 的死忠信念已然瓦解，眼中只有对您的渴望。</RavenRace_Msg_LoyaltyBroken>
+
+
+    <!-- Phase 3.5 扩展 -->
+    <RavenRace_Gizmo_LaunchEgg>发射灵卵</RavenRace_Gizmo_LaunchEgg>
+    <RavenRace_Gizmo_LaunchEggDesc>利用腹部肌肉强力收缩，将最外侧的一枚灵卵像炮弹一样射向目标。\n\n命中会导致目标强制昏迷。</RavenRace_Gizmo_LaunchEggDesc>
+    
+    <RavenRace_Msg_EggEjected_Pleasure>{0} 浑身颤抖着达到了高潮，伴随着大量的爱液，一枚灵卵被噗地一声排了出来。</RavenRace_Msg_EggEjected_Pleasure>
+    <RavenRace_Msg_EggLaunch_Impact>灵卵精准地砸中了 {0}，巨大的冲击力让其瞬间失去了意识。</RavenRace_Msg_EggLaunch_Impact>
+    
+    <RavenRace_Fail_Full>{0} 的体内已经塞满了灵卵，再也塞不进去了！</RavenRace_Fail_Full>
+
+
+
+
+</LanguageData>

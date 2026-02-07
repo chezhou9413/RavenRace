@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 折翼金羽 -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_GoldenFeather</defName>
+    <label>折翼金羽</label>
+    <description>一根根部带有金色脉络的羽毛，是渡鸦族在极端情绪或生理剧变下析出的神性结晶。\n\n获取方式：\n1. 渡鸦族情绪极度崩溃或极度快乐时概率掉落。\n2. 渡鸦族重伤濒死时概率掉落。\n3. 渡鸦族产下灵卵时必定掉落。\n（每种方式有独立的冷却时间）\n\n它蕴含着微弱但纯净的金乌之力，是制作高级法器和药剂的关键材料。</description>
+    <graphicData>
+      <texPath>Items/Materials/GoldenFeather</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <stackLimit>75</stackLimit>
+    <statBases>
+      <MarketValue>60</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+  <!-- 2. 暗日透镜 -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_DarkSunLens</defName>
+    <label>暗日透镜</label>
+    <description>一块不规则的黑曜石薄片，经过扶桑工匠的特殊处理。当滴入金乌之血时，它能扭曲周围的光线与热能。\n\n是制作高级隐身装备的核心部件。</description>
+    <graphicData>
+      <texPath>Items/Materials/DarkSunLens</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+  <!-- 3. 余烬之血 -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_EmberBlood</defName>
+    <label>余烬之血</label>
+    <description>从渡鸦族心脏中提取的浓缩血液，呈暗金色胶状，散发着不稳定的热量。\n\n获取方式：\n1. 对渡鸦族进行“提取余烬之血”手术（必死）。\n2. 通过扶桑电台发布“崇高奉献”特殊协议。\n\n这是一种极其危险的血脉纯化媒介。直接注射可能唤醒体内的金乌之力，但也极可能导致死亡或疯狂。</description>
+    <graphicData>
+      <texPath>Items/Materials/EmberBlood</texPath> 
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>800</MarketValue>
+      <Mass>0.2</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <stackLimit>75</stackLimit>
+    
+    <ingestible>
+      <foodType>Fluid</foodType>
+      <preferability>NeverForNutrition</preferability>
+      <baseIngestTicks>200</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>注射{0}</ingestCommandString> 
+      <ingestReportString>正在注射{0}。</ingestReportString>
+      <outcomeDoers>
+        <li Class="RavenRace.IngestionOutcomeDoer_EmberBlood" />
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <!-- 4. 破碎日核 -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_ShatteredSunCore</defName>
+    <label>破碎日核</label>
+    <description>古代金乌都星毁灭后的核心碎片。这种晶体内部封存着仿佛仍在流动的太阳光丝。\n\n它是制作神级装备的必要材料，也是极其昂贵的收藏品。</description>
+    <graphicData>
+      <texPath>Items/Materials/ShatteredSunCore</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>2500</MarketValue>
+      <Mass>0.5</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>10</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <stackLimit>75</stackLimit>
+  </ThingDef>
+
+</Defs>

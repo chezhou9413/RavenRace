@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_Item_MasturbatorCup</defName>
+    <label>渡鸦工学飞机杯</label>
+    <description>一个采用渡鸦族特有软体仿生材料制成的便携式自慰杯。内部结构极其复杂，能模拟出惊人的吸吮感和温热感。\n\n携带者可以用它来解决生理需求，获得比普通手段更高的满足感。\n\n特殊功能（需设置）：似乎内置了某种量子纠缠模块，可以与远处的目标建立单向的感官连接。</description>
+    <graphicData>
+      <texPath>Items/Misc/MasturbatorCup/MasturbatorCup</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <techLevel>Industrial</techLevel>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MarketValue>150</MarketValue>
+      <Mass>0.3</Mass>
+      <WorkToMake>1200</WorkToMake>
+    </statBases>
+    
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    
+    <comps>
+      <!-- 核心逻辑组件 -->
+      <li Class="RavenRace.Features.MiscSmallFeatures.MasturbatorCup.CompProperties_MasturbatorCup"/>
+    </comps>
+    
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_Reproduction</researchPrerequisite>
+      <recipeUsers>
+        <li>Raven_Building_SewingBench</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    
+    <costList>
+      <RavenItem_SevenEmotionsLeaf>10</RavenItem_SevenEmotionsLeaf>
+      <Chemfuel>20</Chemfuel>
+      <Cloth>10</Cloth>
+    </costList>
+  </ThingDef>
+
+</Defs>

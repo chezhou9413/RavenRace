@@ -1,0 +1,1717 @@
+Grammar unresolvable. Root 'place_foeSoldiers'
+
+GRAMMAR RESOLUTION TRACE
+     place_foeSoldiers → UNRESOLVABLE
+
+
+BARE INCLUDES
+  memeCreed → 教会
+  memeCreed → 崇拜
+  memeCreed → 神庙
+  memeCreed → 信仰
+  memeHyphenPrefix → 神学
+  memeConcept → 创造
+  memeConcept → 生命
+  memeLeaderNoun → 圣殿骑士
+  memeLeaderAdjective → 神圣
+  memeMoralist → 神父
+  memeMoralist → 教士
+  memeCreed → 聚会
+  memeAdjective → 吸嗨
+  memeAdjective → 狂喜
+  memeAdjective → 恍惚
+  memeConcept → 成瘾品
+  memeConcept → 极乐
+  memeConcept → 幻梦
+  memeHyphenPrefix → 成瘾品
+  memeHyphenPrefix → 毒枭
+  memeLeaderNoun → 沉眠者
+  memeLeaderNoun → 麻痹者
+  memeLeaderNoun → 抽烟者
+  memeLeaderNoun → 僵冷者
+  memeMoralist → 哲学者
+  memeMoralist → 萃取者
+  memeMoralist → 失笑者
+  memeMoralist → 愉笑者
+  creation → 宇宙是一团烟雾，和[deity0_name]在一缕一缕的烟雾中结合，方能使自身苏醒。
+  episode → [deity0_type][deity0_name]隐藏着[deity0_possessive]在正常的精神状态中不可见的被现实折叠的真理。
+  intro → 是[deity0_name]的恩惠让我们发现了[place_summary] [place_name]，当时一位醉酒的船长开着星际飞船差点撞上它。
+  conflict → 禁欲者[foeLeader] 鄙视 [memberNamePlural]，为了抹除他们的异常状态，他禁止了一切吸食精神性药物的行为。
+  founderJoin → 当一切尽失之时，[deity0_name]来到[founderName]的面前，在具有成瘾性的烟雾中，给了[founder_objective]一条战胜[foeSoldiers]的未曾设想的道路。
+  victory → [foeLeader]的[foeSoldiers]手持[place_personalWeapon]突袭了[memberNamePlural]的[place_community]。[founderName]给了他们一支和平烟斗，促使[foeSoldiers]放下了武器。
+  setup → 在被社会抛弃后，我们的创始人[founderName]来到丛林里，在那里吃了一些奇异的草药。而后，[founder_pronoun]便在[founder_pronoun]自己异常的意识中发现了真理。
+  story → 为了加深他们的理解，[founderName]每周将[founder_possessive]的信徒聚集在一起，分享由新药物诱导的精神状态。
+  lessonIntro → 只嗨一次是不够的，伙计。我们得嗨上成百上千次，然后所有的那些拼图碎片都在我早已炸裂的脑袋里拼合在一起，就像是倒放一栋房子的倒塌。我看到了！
+  lesson → 如果你们未曾一起在精神世界里漫游过，那他可就不是你的朋友
+  lessonReinforcement → 嘿，伙计，我知道这是一次很重要的旅途，但我很高兴我能去做这件事，我把这根烟传递你，这样你也能一起走上这段旅途。
+  archistBasis → 超凡智能的思维告诉我们，超越意识认知不是理性的、机械的逻辑性问题，而是一种多重的思维模式。
+  archistFact → 在适当的化学成分的影响下，我们的大脑将会激发出相对应的潜力使得我们得以与超凡智能交流。
+  archistProphecy → [inTheEnd]，超凡智能将给我们每个人一粒药丸。那些吞下药丸的人将会被永远改变，并被超凡智能接纳加入它们的旅程。
+  animistFact → 当我们使用我们被赋予的工具来扩展我们的意识时，灵魂便能向我们揭示它的本性。
+  episode → 
+  creation → 无尽长的时间以前，世界由[Color]色的[materialOrigin]构成，直到[deity0_name]创造了恒星与行星。
+  creation → 在纷争不断的古老宇宙中，[deity0_name]用一团宏伟的烈焰扫清六合席卷八荒，带来了我们的时代。
+  creation → [deity0_name]于一场意外中创造了人类，而后开始好奇地观察他们。
+  creation → 宇宙本是一片虚无，有一天[deity0_name]厌倦了这永恒的孤寂，便用[bodilyOrigin]创造了男人与女人。
+  episode → 注视着人类许久过后，[deity0_name]将他们认作自己的子嗣，并宣告了[deity0_possessive]的权威。
+  episode → 在广袤无边的宇宙中，[deity0_name]的意志帮助人类在虚空中生存了下来。
+  episode → 虽然很多野心家试图反叛[deity0_objective]，[deity0_name]就轻而易举的击败了他们，[deity0_pronoun]毕竟是[deity0_type].
+  episode → 人类所受到的痛苦让[deity0_name]无比哀痛。
+  materialOrigin → 粘土
+  materialOrigin → 气体
+  materialOrigin → 水
+  materialOrigin → 空气
+  materialOrigin → 尘埃
+  bodilyOrigin → 粘土
+  bodilyOrigin → 石头
+  bodilyOrigin → 汗水
+  veneratedAnimal → [animal0_thingDef_label]
+  altarName → [altar0_name]
+  ritualName → [ritual0_name]
+  founderName → [founder_nameFull]
+  founderName → [founder_label]
+  foeLeader_pronoun → 他
+  foeLeader_possessive → 他的
+  foeLeader_objective → 他
+  Trans → 的
+  Trans → 之
+  Trans → 同
+  Trans → 与
+  Character → [PersonJob]
+  Character → [Animal]
+  Character → [Enemy]
+  Character → [Mechanoid]
+  Quantity_adjphrase → 两个
+  Quantity_adjphrase → 三个
+  Quantity_adjphrase → 四个
+  Quantity_adjphrase → 五个
+  Quantity_adjphrase → 六个
+  Quantity_adjphrase → 七个
+  Quantity_adjphrase → 八个
+  Quantity_adjphrase → 九个
+  Quantity_adjphrase → 十个
+  Quantity_adjphrase → 一些
+  Quantity_adjphrase → 一群
+  Quantity_adjphrase → 一大群
+  Quantity_adjphrase → 数十个
+  Quantity_adjphrase → 数百个
+  Quantity_adjphrase → 上千
+  Quantity_adjphrase → 数不清的
+  Shape → 三角形
+  Shape → 正方形
+  Shape → 矩形
+  Shape → 圆锥形
+  Shape → 直线
+  Shape → 心形
+  Shape → 星形
+  Shape → 圆形
+  Shape → 椭圆形
+  AdjectiveAny → [AdjectiveBadass]
+  AdjectiveAny → [AdjectiveAngsty]
+  AdjectiveAny → [AdjectiveFriendly]
+  AdjectiveAny → [AdjectiveNatural]
+  ConceptAny → [ConceptPositive]
+  ConceptAny → [ConceptBadass]
+  ConceptAny → [ConceptAngsty]
+  PersonalCharacteristic → 生殖器
+  PersonalCharacteristic → 阴毛
+  PersonalCharacteristic → 体毛
+  PersonalCharacteristic → 如厕习惯
+  PersonalCharacteristic → 性能力
+  PersonalCharacteristic → 性取向
+  PersonalCharacteristic → 性经验
+  RomanNumeral->(15 strings from file: Words/Misc/Numbers_SmallRoman)
+  Direction->(24 strings from file: Words/Adjectives/CompassDirections)
+  Letter->(26 strings from file: WordParts/CapitalLetters)
+  SylE->(102 strings from file: WordParts/Syllables_English)
+  SylG->(197 strings from file: WordParts/Syllables_Galician)
+  SylB->(81 strings from file: WordParts/Syllables_Byzantinian)
+  SylP->(62 strings from file: WordParts/Syllables_Pig)
+  Color->(20 strings from file: Words/Nouns/Colors)
+  ColorBadass->(23 strings from file: Words/Nouns/Colors_Badass)
+  Vegetable->(50 strings from file: Words/Nouns/Vegetables)
+  Game->(248 strings from file: Words/Nouns/Games)
+  Animal->(210 strings from file: Words/Nouns/Animals)
+  AnimalBadass->(85 strings from file: Words/Nouns/Animals_Badass)
+  AnimalGroup->(9 strings from file: Words/Nouns/AnimalGroups)
+  Weapon->(85 strings from file: Words/Nouns/Weapons)
+  TerrainFeature->(55 strings from file: Words/Nouns/TerrainFeatures)
+  NaturalObject->(29 strings from file: Words/Nouns/NaturalObject)
+  TreeType->(25 strings from file: Words/Nouns/TreeTypes)
+  PersonJob->(262 strings from file: Words/Nouns/People_Jobs)
+  PersonFamily->(15 strings from file: Words/Nouns/People_Family)
+  PersonAlly->(19 strings from file: Words/Nouns/People_Allies)
+  PersonBadass->(114 strings from file: Words/Nouns/People_Badass)
+  Enemy->(85 strings from file: Words/Nouns/Enemies)
+  Apparel->(119 strings from file: Words/Nouns/Apparel)
+  Gore->(31 strings from file: Words/Nouns/Gore)
+  Mechanoid->(30 strings from file: Words/Nouns/Mechanoid)
+  ConceptPositive->(85 strings from file: Words/Nouns/Concepts_Positive)
+  ConceptBadass->(77 strings from file: Words/Nouns/Concepts_Badass)
+  ConceptAngsty->(75 strings from file: Words/Nouns/Concepts_Angsty)
+  Community->(24 strings from file: Words/Nouns/Communities)
+  BodyPart->(32 strings from file: Words/Nouns/Bodyparts)
+  AdjectiveLarge->(22 strings from file: Words/Adjectives/Large)
+  AdjectiveBadass->(210 strings from file: Words/Adjectives/Badass)
+  AdjectiveAngsty->(29 strings from file: Words/Adjectives/Angsty)
+  AdjectiveFriendly->(139 strings from file: Words/Adjectives/Friendly)
+  AdjectiveNatural->(19 strings from file: Words/Adjectives/Natural)
+  VerbFriendly->(9 strings from file: Words/Verbs/Friendly)
+  PersonalCharacteristic->(137 strings from file: Words/Nouns/PersonalCharacteristics)
+  NamePerson->(personname)
+  NamePersonMale->(personname)
+  NamePersonFemale->(personname)
+  Digit->(number: 0~9)
+  TalkTopicAny → [TalkTopicLight]
+  TalkTopicAny → [TalkTopicHeavy]
+  TalkTopicHeavy → [talktopicheavyfile]
+  TalkTopicHeavy → [talktopicheavyfile]与[talktopicheavyfile]之间的关联
+  TalkTopicHeavy → [talktopicheavyfile]和[talktopicheavyfile]之间的联系
+  TalkTopicHeavy → [talktopicheavyfile]和[talktopicheavyfile]的关系
+  TalkTopicLight → [talktopiclightfile]
+  TalkTopicLight → [Vegetable]
+  TalkTopicLight → 吃[Vegetable]
+  TalkTopicLight → 用[Vegetable]烹饪
+  TalkTopicLight → [Game]
+  TalkTopicLight → 玩[Game]
+  TalkTopicLight → 练习[Game]
+  TalkTopicLight → 学习[Game]
+  TalkTopicLight → [Animal]
+  TalkTopicLight → 训练[Animal]
+  TalkTopicLight → 驯服[Animal]
+  TalkTopicLight → 和[Animal]战斗
+  TalkTopicLight → 发狂的[Animal]
+  TalkTopicLight → [Weapon]
+  TalkTopicLight → 使用[Weapon]
+  TalkTopicLight → 练习使用[Weapon]
+  TalkTopicLight → [TerrainFeature]
+  TalkTopicLight → [NaturalObject]
+  TalkTopicLight → [TreeType]
+  TalkTopicLight → [PersonJob]
+  TalkTopicLight → 友善的[PersonJob]
+  TalkTopicLight → 敌对的[PersonJob]
+  TalkTopicLight → [Enemy]
+  TalkTopicLight → 和[Enemy]战斗
+  TalkTopicLight → [Apparel]
+  TalkTopicLight → 穿着[Apparel]
+  TalkTopicLight → 制作[Apparel]
+  talktopicheavyfile → 性
+  talktopicheavyfile → 性诱惑
+  talktopicheavyfile → 动物的性行为
+  talktopicheavyfile → 恋物癖
+  talktopicheavyfile->(239 strings from file: Words/Nouns/TalkTopics_Heavy)
+  talktopiclightfile->(716 strings from file: Words/Nouns/TalkTopics_Light)
+CONSTANTS
+founder_flesh                          Normal
+founder_gender                         Male
+founder_genderResolved                 Male
+founder_cubeInterest                   False
+believer_flesh                         Normal
+believer_gender                        Male
+believer_genderResolved                Male
+believer_cubeInterest                  False
+structure_theist                       true
+structure_theistEmbodied               true
+deity0_gender                          Male
+deity1_gender                          Female
+deity2_gender                          Male
+
+CUSTOM RULES
+■founder_nameFull → 赢 赫华
+■founder_label → 赫华
+■founder_labelNoParenthesis → 
+■founder_definite → 赫华
+■founder_nameDef → 赫华
+■founder_indefinite → 赫华
+■founder_nameIndef → 赫华
+■founder_pronoun → 他
+■founder_possessive → 他的
+■founder_objective → 他
+■founder_kind → 殖民者
+■founder_kindPlural → 殖民者
+■founder_age → 21
+■founder_chronologicalAge → 21
+■founder_relationInfo → 
+■believer_nameFull → 姜 穹
+■believer_label → 穹
+■believer_labelNoParenthesis → 
+■believer_definite → 穹
+■believer_nameDef → 穹
+■believer_indefinite → 穹
+■believer_nameIndef → 穹
+■believer_pronoun → 他
+■believer_possessive → 他的
+■believer_objective → 他
+■believer_kind → 殖民者
+■believer_kindPlural → 殖民者
+■believer_age → 21
+■believer_chronologicalAge → 21
+■believer_relationInfo →
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.IdeoDescriptionUtility:BuildGrammarRequest (RimWorld.Ideo,Verse.IdeoStoryPatternDef,System.Collections.Generic.Dictionary`2<string, string>)
+RimWorld.IdeoDescriptionUtility:ResolveDescription (RimWorld.Ideo,Verse.IdeoStoryPatternDef,bool)
+RimWorld.Ideo:GetNewDescription (bool)
+RimWorld.Ideo:RegenerateDescription (bool)
+RimWorld.IdeoFoundation_Deity:Init (RimWorld.IdeoGenerationParms)
+RimWorld.IdeoGenerator:GenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionIdeosTracker:ChooseOrGenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionGenerator:NewGeneratedFaction (RimWorld.Planet.PlanetLayer,RimWorld.FactionGeneratorParms)
+RimWorld.FactionGenerator:CreateFactionAndAddToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:AddFactionToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:InitializeFactions (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.FactionGenerator:GenerateFactionsIntoWorldLayer (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.Planet.WorldGenStep_Factions:GenerateFresh (string,RimWorld.Planet.PlanetLayer)
+RimWorld.Planet.WorldGenerator:GeneratePlanetLayer (RimWorld.Planet.PlanetLayer,string,int)
+RimWorld.Planet.WorldGenerator:GenerateWorld (single,string,RimWorld.Planet.OverallRainfall,RimWorld.Planet.OverallTemperature,RimWorld.Planet.OverallPopulation,RimWorld.Planet.LandmarkDensity,System.Collections.Generic.List`1<RimWorld.FactionDef>,single)
+RimWorld.Page_CreateWorldParams:<CanDoNext>b__20_0 ()
+Verse.LongEventHandler:RunEventFromAnotherThread (System.Action)
+Verse.LongEventHandler/<>c:<UpdateCurrentAsynchronousEvent>b__28_0 ()
+System.Threading.ThreadHelper:ThreadStart_Context (object)
+System.Threading.ExecutionContext:RunInternal (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object)
+System.Threading.ThreadHelper:ThreadStart ()
+
+Failed to resolve text. Trying again with English.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.IdeoDescriptionUtility:BuildGrammarRequest (RimWorld.Ideo,Verse.IdeoStoryPatternDef,System.Collections.Generic.Dictionary`2<string, string>)
+RimWorld.IdeoDescriptionUtility:ResolveDescription (RimWorld.Ideo,Verse.IdeoStoryPatternDef,bool)
+RimWorld.Ideo:GetNewDescription (bool)
+RimWorld.Ideo:RegenerateDescription (bool)
+RimWorld.IdeoFoundation_Deity:Init (RimWorld.IdeoGenerationParms)
+RimWorld.IdeoGenerator:GenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionIdeosTracker:ChooseOrGenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionGenerator:NewGeneratedFaction (RimWorld.Planet.PlanetLayer,RimWorld.FactionGeneratorParms)
+RimWorld.FactionGenerator:CreateFactionAndAddToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:AddFactionToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:InitializeFactions (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.FactionGenerator:GenerateFactionsIntoWorldLayer (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.Planet.WorldGenStep_Factions:GenerateFresh (string,RimWorld.Planet.PlanetLayer)
+RimWorld.Planet.WorldGenerator:GeneratePlanetLayer (RimWorld.Planet.PlanetLayer,string,int)
+RimWorld.Planet.WorldGenerator:GenerateWorld (single,string,RimWorld.Planet.OverallRainfall,RimWorld.Planet.OverallTemperature,RimWorld.Planet.OverallPopulation,RimWorld.Planet.LandmarkDensity,System.Collections.Generic.List`1<RimWorld.FactionDef>,single)
+RimWorld.Page_CreateWorldParams:<CanDoNext>b__20_0 ()
+Verse.LongEventHandler:RunEventFromAnotherThread (System.Action)
+Verse.LongEventHandler/<>c:<UpdateCurrentAsynchronousEvent>b__28_0 ()
+System.Threading.ThreadHelper:ThreadStart_Context (object)
+System.Threading.ExecutionContext:RunInternal (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object)
+System.Threading.ThreadHelper:ThreadStart ()
+
+Grammar unresolvable. Root 'place_foeSoldiers'
+
+GRAMMAR RESOLUTION TRACE
+     place_foeSoldiers → UNRESOLVABLE
+
+
+BARE INCLUDES
+  memeCreed → sect
+  memeCreed → cult
+  memeCreed → temple
+  memeCreed → faith
+  memeHyphenPrefix → theo
+  memeConcept → creation
+  memeConcept → life
+  memeLeaderNoun → templar
+  memeLeaderAdjective → divine
+  memeMoralist → priest
+  memeMoralist → cleric
+  memeCreed → party
+  memeAdjective → high
+  memeAdjective → delirious
+  memeAdjective → stoned
+  memeConcept → drugs
+  memeConcept → bliss
+  memeConcept → dreams
+  memeHyphenPrefix → drug
+  memeHyphenPrefix → narco
+  memeLeaderNoun → sleeper
+  memeLeaderNoun → doper
+  memeLeaderNoun → smoker
+  memeLeaderNoun → chiller
+  memeMoralist → philosophizer
+  memeMoralist → abstractor
+  memeMoralist → laugher
+  memeMoralist → giggler
+  creation → The universe was smoke, and [deity0_name] coalesced in the wisps and awoke.
+  episode → The [deity0_type] [deity0_name] concealed [deity0_possessive] truths in the folds of reality, invisible in normal states of mind.
+  intro → The [place_summary] [place_name] was first discovered by [deity0_name]'s grace, when a drunk starship captain almost crashed into it.
+  conflict → A puritan [foeLeader] despised the [memberNamePlural], and to erase their uniqueness, outlawed the use of mind-altering substances.
+  founderJoin → When all seemed lost, [deity0_name] came to the prophet [founderName] in a drug-fueled haze and gave [founder_objective] the unique perspective needed to defeat the [foeSoldiers].
+  victory → The [foeLeader]'s [foeSoldiers], armed with [place_personalWeapon]s, raided the [place_community] of the [memberNamePlural]. [founderName] offered them a peace pipe, and the [foeSoldiers] put down their weapons.
+  setup → Cast out from society, our founder [founderName] traveled into the jungle and ingested the exotic herbs there. [founder_pronoun] found truth inside [founder_possessive] own altered consciousness.
+  story → To deepen their understanding, [founderName] brought [founder_possessive] followers together every week to share new chemical-inducted mental states.
+  lessonIntro → Getting high once wasn't enough, man. We had to do it a thousand times, then all the puzzle pieces fit together in my blown-open brain like a house falling down, but like, backwards. I saw that
+  lesson → a friend isn't a friend unless you've drifted through the mind-verse together
+  lessonReinforcement → And dude, this was a serious trip, figuring that out, but I'm glad I did, and I'll pass the smoke to you so you can too.
+  archistBasis → The archotech minds showed us that super-consciousness it not a matter of sober, mechanical logic, but one of multi-mode thought.
+  archistFact → Given the right chemical influences, the human mind has the potential to commune with the archotechs.
+  archistProphecy → [inTheEnd], the archotechs will deliver each human a pill. Those that take it will be forever altered, and join the archotechs on their final journey.
+  animistFact → The spirits can reveal their nature to us when we expand our consciousness using the tools we have been given to do so.
+  episode → 
+  creation → For an eternity, there was a world of [Color] [materialOrigin], until [deity0_name] created the planets and stars.
+  creation → In an old universe of strife, [deity0_name] whipped up great fire that swept away the last age, and brought forth a new one.
+  creation → [deity0_name] gave birth to humans in a grand accident, and looked upon them with curiosity.
+  creation → The universe was a void. Then, [deity0_name], bored with eternity, fashioned man and woman from [bodilyOrigin].
+  episode → Looking upon mankind, [deity0_name] found them as children, and declared [deity0_possessive] dominion over them.
+  episode → Across the vast stellar distances, [deity0_name]'s will sustained the life of mankind against the void.
+  episode → Though many adventurers moved against [deity0_objective], [deity0_name] prevented them easily, for [deity0_pronoun] was [deity0_type].
+  episode → Humanity's suffering brought [deity0_name] to terrible grief.
+  materialOrigin → clay
+  materialOrigin → gas
+  materialOrigin → water
+  materialOrigin → space
+  materialOrigin → dust
+  bodilyOrigin → clay
+  bodilyOrigin → stone
+  bodilyOrigin → sweat
+  veneratedAnimal → [animal0_thingDef_label]
+  altarName → [altar0_name]
+  ritualName → [ritual0_name]
+  founderName → [founder_nameFull]
+  founderName → [founder_label]
+  foeLeader_pronoun → he
+  foeLeader_possessive → his
+  foeLeader_objective → him
+  Trans → of
+  Trans → for
+  Trans → by
+  Trans → with
+  Character → [PersonJob]
+  Character → [Animal]
+  Character → [Enemy]
+  Character → [Mechanoid]
+  Quantity_adjphrase → two
+  Quantity_adjphrase → three
+  Quantity_adjphrase → four
+  Quantity_adjphrase → five
+  Quantity_adjphrase → six
+  Quantity_adjphrase → seven
+  Quantity_adjphrase → eight
+  Quantity_adjphrase → nine
+  Quantity_adjphrase → ten
+  Quantity_adjphrase → several
+  Quantity_adjphrase → a group of
+  Quantity_adjphrase → a large group of
+  Quantity_adjphrase → dozens of
+  Quantity_adjphrase → hundreds of
+  Quantity_adjphrase → a thousand
+  Quantity_adjphrase → thousands of
+  Shape → triangle
+  Shape → square
+  Shape → rectangle
+  Shape → cone
+  Shape → line
+  Shape → heart
+  Shape → star
+  Shape → circle
+  Shape → ellipse
+  AdjectiveAny → [AdjectiveBadass]
+  AdjectiveAny → [AdjectiveAngsty]
+  AdjectiveAny → [AdjectiveFriendly]
+  AdjectiveAny → [AdjectiveNatural]
+  ConceptAny → [ConceptPositive]
+  ConceptAny → [ConceptBadass]
+  ConceptAny → [ConceptAngsty]
+  PersonalCharacteristic → genitals
+  PersonalCharacteristic → pubic hair
+  PersonalCharacteristic → body hair
+  PersonalCharacteristic → toilet habits
+  PersonalCharacteristic → sexual prowess
+  PersonalCharacteristic → sexual preferences
+  PersonalCharacteristic → sexual experience
+  RomanNumeral->(15 strings from file: Words/Misc/Numbers_SmallRoman)
+  Direction->(24 strings from file: Words/Adjectives/CompassDirections)
+  Letter->(26 strings from file: WordParts/CapitalLetters)
+  SylE->(102 strings from file: WordParts/Syllables_English)
+  SylG->(197 strings from file: WordParts/Syllables_Galician)
+  SylB->(81 strings from file: WordParts/Syllables_Byzantinian)
+  SylP->(62 strings from file: WordParts/Syllables_Pig)
+  Color->(20 strings from file: Words/Nouns/Colors)
+  ColorBadass->(23 strings from file: Words/Nouns/Colors_Badass)
+  Vegetable->(50 strings from file: Words/Nouns/Vegetables)
+  Game->(248 strings from file: Words/Nouns/Games)
+  Animal->(210 strings from file: Words/Nouns/Animals)
+  AnimalBadass->(85 strings from file: Words/Nouns/Animals_Badass)
+  AnimalGroup->(9 strings from file: Words/Nouns/AnimalGroups)
+  Weapon->(85 strings from file: Words/Nouns/Weapons)
+  TerrainFeature->(55 strings from file: Words/Nouns/TerrainFeatures)
+  NaturalObject->(29 strings from file: Words/Nouns/NaturalObject)
+  TreeType->(25 strings from file: Words/Nouns/TreeTypes)
+  PersonJob->(262 strings from file: Words/Nouns/People_Jobs)
+  PersonFamily->(15 strings from file: Words/Nouns/People_Family)
+  PersonAlly->(19 strings from file: Words/Nouns/People_Allies)
+  PersonBadass->(114 strings from file: Words/Nouns/People_Badass)
+  Enemy->(85 strings from file: Words/Nouns/Enemies)
+  Apparel->(119 strings from file: Words/Nouns/Apparel)
+  Gore->(31 strings from file: Words/Nouns/Gore)
+  Mechanoid->(30 strings from file: Words/Nouns/Mechanoid)
+  ConceptPositive->(85 strings from file: Words/Nouns/Concepts_Positive)
+  ConceptBadass->(77 strings from file: Words/Nouns/Concepts_Badass)
+  ConceptAngsty->(75 strings from file: Words/Nouns/Concepts_Angsty)
+  Community->(24 strings from file: Words/Nouns/Communities)
+  BodyPart->(32 strings from file: Words/Nouns/Bodyparts)
+  AdjectiveLarge->(22 strings from file: Words/Adjectives/Large)
+  AdjectiveBadass->(210 strings from file: Words/Adjectives/Badass)
+  AdjectiveAngsty->(29 strings from file: Words/Adjectives/Angsty)
+  AdjectiveFriendly->(139 strings from file: Words/Adjectives/Friendly)
+  AdjectiveNatural->(19 strings from file: Words/Adjectives/Natural)
+  VerbFriendly->(9 strings from file: Words/Verbs/Friendly)
+  PersonalCharacteristic->(137 strings from file: Words/Nouns/PersonalCharacteristics)
+  NamePerson->(personname)
+  NamePersonMale->(personname)
+  NamePersonFemale->(personname)
+  Digit->(number: 0~9)
+  TalkTopicAny → [TalkTopicLight]
+  TalkTopicAny → [TalkTopicHeavy]
+  TalkTopicHeavy → [talktopicheavyfile]
+  TalkTopicHeavy → the link between [talktopicheavyfile] and [talktopicheavyfile]
+  TalkTopicHeavy → the connection between [talktopicheavyfile] and [talktopicheavyfile]
+  TalkTopicHeavy → the relationship between [talktopicheavyfile] and [talktopicheavyfile]
+  TalkTopicLight → [talktopiclightfile]
+  TalkTopicLight → [Vegetable]s
+  TalkTopicLight → eating [Vegetable]s
+  TalkTopicLight → cooking with [Vegetable]s
+  TalkTopicLight → [Game]
+  TalkTopicLight → playing [Game]
+  TalkTopicLight → practicing [Game]
+  TalkTopicLight → learning [Game]
+  TalkTopicLight → [Animal]s
+  TalkTopicLight → training [Animal]s
+  TalkTopicLight → taming [Animal]s
+  TalkTopicLight → fighting [Animal]s
+  TalkTopicLight → crazy [Animal]s
+  TalkTopicLight → [Weapon]s
+  TalkTopicLight → using [Weapon]s
+  TalkTopicLight → practicing with [Weapon]s
+  TalkTopicLight → [TerrainFeature]s
+  TalkTopicLight → [NaturalObject]s
+  TalkTopicLight → [TreeType] trees
+  TalkTopicLight → [PersonJob]s
+  TalkTopicLight → friendly [PersonJob]s
+  TalkTopicLight → hostile [PersonJob]s
+  TalkTopicLight → [Enemy]s
+  TalkTopicLight → fighting [Enemy]s
+  TalkTopicLight → [Apparel]s
+  TalkTopicLight → wearing [Apparel]s
+  TalkTopicLight → making [Apparel]s
+  talktopicheavyfile → sex
+  talktopicheavyfile → seduction
+  talktopicheavyfile → animal sexuality
+  talktopicheavyfile → sexual fetishes
+  talktopicheavyfile->(239 strings from file: Words/Nouns/TalkTopics_Heavy)
+  talktopiclightfile->(716 strings from file: Words/Nouns/TalkTopics_Light)
+CONSTANTS
+founder_flesh                          Normal
+founder_gender                         Male
+founder_genderResolved                 Male
+founder_cubeInterest                   False
+believer_flesh                         Normal
+believer_gender                        Male
+believer_genderResolved                Male
+believer_cubeInterest                  False
+structure_theist                       true
+structure_theistEmbodied               true
+deity0_gender                          Male
+deity1_gender                          Female
+deity2_gender                          Male
+
+CUSTOM RULES
+■founder_nameFull → 赢 赫华
+■founder_label → 赫华
+■founder_labelNoParenthesis → 
+■founder_definite → 赫华
+■founder_nameDef → 赫华
+■founder_indefinite → 赫华
+■founder_nameIndef → 赫华
+■founder_pronoun → 他
+■founder_possessive → 他的
+■founder_objective → 他
+■founder_kind → 殖民者
+■founder_kindPlural → 殖民者
+■founder_age → 21
+■founder_chronologicalAge → 21
+■founder_relationInfo → 
+■believer_nameFull → 姜 穹
+■believer_label → 穹
+■believer_labelNoParenthesis → 
+■believer_definite → 穹
+■believer_nameDef → 穹
+■believer_indefinite → 穹
+■believer_nameIndef → 穹
+■believer_pronoun → 他
+■believer_possessive → 他的
+■believer_objective → 他
+■believer_kind → 殖民者
+■believer_kindPlural → 殖民者
+■believer_age → 21
+■believer_chronologicalAge → 21
+■believer_relationInfo →
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.IdeoDescriptionUtility:BuildGrammarRequest (RimWorld.Ideo,Verse.IdeoStoryPatternDef,System.Collections.Generic.Dictionary`2<string, string>)
+RimWorld.IdeoDescriptionUtility:ResolveDescription (RimWorld.Ideo,Verse.IdeoStoryPatternDef,bool)
+RimWorld.Ideo:GetNewDescription (bool)
+RimWorld.Ideo:RegenerateDescription (bool)
+RimWorld.IdeoFoundation_Deity:Init (RimWorld.IdeoGenerationParms)
+RimWorld.IdeoGenerator:GenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionIdeosTracker:ChooseOrGenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionGenerator:NewGeneratedFaction (RimWorld.Planet.PlanetLayer,RimWorld.FactionGeneratorParms)
+RimWorld.FactionGenerator:CreateFactionAndAddToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:AddFactionToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:InitializeFactions (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.FactionGenerator:GenerateFactionsIntoWorldLayer (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.Planet.WorldGenStep_Factions:GenerateFresh (string,RimWorld.Planet.PlanetLayer)
+RimWorld.Planet.WorldGenerator:GeneratePlanetLayer (RimWorld.Planet.PlanetLayer,string,int)
+RimWorld.Planet.WorldGenerator:GenerateWorld (single,string,RimWorld.Planet.OverallRainfall,RimWorld.Planet.OverallTemperature,RimWorld.Planet.OverallPopulation,RimWorld.Planet.LandmarkDensity,System.Collections.Generic.List`1<RimWorld.FactionDef>,single)
+RimWorld.Page_CreateWorldParams:<CanDoNext>b__20_0 ()
+Verse.LongEventHandler:RunEventFromAnotherThread (System.Action)
+Verse.LongEventHandler/<>c:<UpdateCurrentAsynchronousEvent>b__28_0 ()
+System.Threading.ThreadHelper:ThreadStart_Context (object)
+System.Threading.ExecutionContext:RunInternal (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object)
+System.Threading.ThreadHelper:ThreadStart ()
+
+Grammar unresolvable. Root 'place_foeLeader'
+
+GRAMMAR RESOLUTION TRACE
+     place_foeLeader → UNRESOLVABLE
+
+
+BARE INCLUDES
+  memeCreed → 教会
+  memeCreed → 崇拜
+  memeCreed → 神庙
+  memeCreed → 信仰
+  memeHyphenPrefix → 神学
+  memeConcept → 创造
+  memeConcept → 生命
+  memeLeaderNoun → 圣殿骑士
+  memeLeaderAdjective → 神圣
+  memeMoralist → 神父
+  memeMoralist → 教士
+  memeCreed → 聚会
+  memeAdjective → 吸嗨
+  memeAdjective → 狂喜
+  memeAdjective → 恍惚
+  memeConcept → 成瘾品
+  memeConcept → 极乐
+  memeConcept → 幻梦
+  memeHyphenPrefix → 成瘾品
+  memeHyphenPrefix → 毒枭
+  memeLeaderNoun → 沉眠者
+  memeLeaderNoun → 麻痹者
+  memeLeaderNoun → 抽烟者
+  memeLeaderNoun → 僵冷者
+  memeMoralist → 哲学者
+  memeMoralist → 萃取者
+  memeMoralist → 失笑者
+  memeMoralist → 愉笑者
+  creation → 宇宙是一团烟雾，和[deity0_name]在一缕一缕的烟雾中结合，方能使自身苏醒。
+  episode → [deity0_type][deity0_name]隐藏着[deity0_possessive]在正常的精神状态中不可见的被现实折叠的真理。
+  intro → 是[deity0_name]的恩惠让我们发现了[place_summary] [place_name]，当时一位醉酒的船长开着星际飞船差点撞上它。
+  conflict → 禁欲者[foeLeader] 鄙视 [memberNamePlural]，为了抹除他们的异常状态，他禁止了一切吸食精神性药物的行为。
+  founderJoin → 当一切尽失之时，[deity0_name]来到[founderName]的面前，在具有成瘾性的烟雾中，给了[founder_objective]一条战胜[foeSoldiers]的未曾设想的道路。
+  victory → [foeLeader]的[foeSoldiers]手持[place_personalWeapon]突袭了[memberNamePlural]的[place_community]。[founderName]给了他们一支和平烟斗，促使[foeSoldiers]放下了武器。
+  setup → 在被社会抛弃后，我们的创始人[founderName]来到丛林里，在那里吃了一些奇异的草药。而后，[founder_pronoun]便在[founder_pronoun]自己异常的意识中发现了真理。
+  story → 为了加深他们的理解，[founderName]每周将[founder_possessive]的信徒聚集在一起，分享由新药物诱导的精神状态。
+  lessonIntro → 只嗨一次是不够的，伙计。我们得嗨上成百上千次，然后所有的那些拼图碎片都在我早已炸裂的脑袋里拼合在一起，就像是倒放一栋房子的倒塌。我看到了！
+  lesson → 如果你们未曾一起在精神世界里漫游过，那他可就不是你的朋友
+  lessonReinforcement → 嘿，伙计，我知道这是一次很重要的旅途，但我很高兴我能去做这件事，我把这根烟传递你，这样你也能一起走上这段旅途。
+  archistBasis → 超凡智能的思维告诉我们，超越意识认知不是理性的、机械的逻辑性问题，而是一种多重的思维模式。
+  archistFact → 在适当的化学成分的影响下，我们的大脑将会激发出相对应的潜力使得我们得以与超凡智能交流。
+  archistProphecy → [inTheEnd]，超凡智能将给我们每个人一粒药丸。那些吞下药丸的人将会被永远改变，并被超凡智能接纳加入它们的旅程。
+  animistFact → 当我们使用我们被赋予的工具来扩展我们的意识时，灵魂便能向我们揭示它的本性。
+  episode → 
+  creation → 无尽长的时间以前，世界由[Color]色的[materialOrigin]构成，直到[deity0_name]创造了恒星与行星。
+  creation → 在纷争不断的古老宇宙中，[deity0_name]用一团宏伟的烈焰扫清六合席卷八荒，带来了我们的时代。
+  creation → [deity0_name]于一场意外中创造了人类，而后开始好奇地观察他们。
+  creation → 宇宙本是一片虚无，有一天[deity0_name]厌倦了这永恒的孤寂，便用[bodilyOrigin]创造了男人与女人。
+  episode → 注视着人类许久过后，[deity0_name]将他们认作自己的子嗣，并宣告了[deity0_possessive]的权威。
+  episode → 在广袤无边的宇宙中，[deity0_name]的意志帮助人类在虚空中生存了下来。
+  episode → 虽然很多野心家试图反叛[deity0_objective]，[deity0_name]就轻而易举的击败了他们，[deity0_pronoun]毕竟是[deity0_type].
+  episode → 人类所受到的痛苦让[deity0_name]无比哀痛。
+  materialOrigin → 粘土
+  materialOrigin → 气体
+  materialOrigin → 水
+  materialOrigin → 空气
+  materialOrigin → 尘埃
+  bodilyOrigin → 粘土
+  bodilyOrigin → 石头
+  bodilyOrigin → 汗水
+  veneratedAnimal → [animal0_thingDef_label]
+  altarName → [altar0_name]
+  ritualName → [ritual0_name]
+  founderName → [founder_nameFull]
+  founderName → [founder_label]
+  foeLeader_pronoun → 他
+  foeLeader_possessive → 他的
+  foeLeader_objective → 他
+  Trans → 的
+  Trans → 之
+  Trans → 同
+  Trans → 与
+  Character → [PersonJob]
+  Character → [Animal]
+  Character → [Enemy]
+  Character → [Mechanoid]
+  Quantity_adjphrase → 两个
+  Quantity_adjphrase → 三个
+  Quantity_adjphrase → 四个
+  Quantity_adjphrase → 五个
+  Quantity_adjphrase → 六个
+  Quantity_adjphrase → 七个
+  Quantity_adjphrase → 八个
+  Quantity_adjphrase → 九个
+  Quantity_adjphrase → 十个
+  Quantity_adjphrase → 一些
+  Quantity_adjphrase → 一群
+  Quantity_adjphrase → 一大群
+  Quantity_adjphrase → 数十个
+  Quantity_adjphrase → 数百个
+  Quantity_adjphrase → 上千
+  Quantity_adjphrase → 数不清的
+  Shape → 三角形
+  Shape → 正方形
+  Shape → 矩形
+  Shape → 圆锥形
+  Shape → 直线
+  Shape → 心形
+  Shape → 星形
+  Shape → 圆形
+  Shape → 椭圆形
+  AdjectiveAny → [AdjectiveBadass]
+  AdjectiveAny → [AdjectiveAngsty]
+  AdjectiveAny → [AdjectiveFriendly]
+  AdjectiveAny → [AdjectiveNatural]
+  ConceptAny → [ConceptPositive]
+  ConceptAny → [ConceptBadass]
+  ConceptAny → [ConceptAngsty]
+  PersonalCharacteristic → 生殖器
+  PersonalCharacteristic → 阴毛
+  PersonalCharacteristic → 体毛
+  PersonalCharacteristic → 如厕习惯
+  PersonalCharacteristic → 性能力
+  PersonalCharacteristic → 性取向
+  PersonalCharacteristic → 性经验
+  RomanNumeral->(15 strings from file: Words/Misc/Numbers_SmallRoman)
+  Direction->(24 strings from file: Words/Adjectives/CompassDirections)
+  Letter->(26 strings from file: WordParts/CapitalLetters)
+  SylE->(102 strings from file: WordParts/Syllables_English)
+  SylG->(197 strings from file: WordParts/Syllables_Galician)
+  SylB->(81 strings from file: WordParts/Syllables_Byzantinian)
+  SylP->(62 strings from file: WordParts/Syllables_Pig)
+  Color->(20 strings from file: Words/Nouns/Colors)
+  ColorBadass->(23 strings from file: Words/Nouns/Colors_Badass)
+  Vegetable->(50 strings from file: Words/Nouns/Vegetables)
+  Game->(248 strings from file: Words/Nouns/Games)
+  Animal->(210 strings from file: Words/Nouns/Animals)
+  AnimalBadass->(85 strings from file: Words/Nouns/Animals_Badass)
+  AnimalGroup->(9 strings from file: Words/Nouns/AnimalGroups)
+  Weapon->(85 strings from file: Words/Nouns/Weapons)
+  TerrainFeature->(55 strings from file: Words/Nouns/TerrainFeatures)
+  NaturalObject->(29 strings from file: Words/Nouns/NaturalObject)
+  TreeType->(25 strings from file: Words/Nouns/TreeTypes)
+  PersonJob->(262 strings from file: Words/Nouns/People_Jobs)
+  PersonFamily->(15 strings from file: Words/Nouns/People_Family)
+  PersonAlly->(19 strings from file: Words/Nouns/People_Allies)
+  PersonBadass->(114 strings from file: Words/Nouns/People_Badass)
+  Enemy->(85 strings from file: Words/Nouns/Enemies)
+  Apparel->(119 strings from file: Words/Nouns/Apparel)
+  Gore->(31 strings from file: Words/Nouns/Gore)
+  Mechanoid->(30 strings from file: Words/Nouns/Mechanoid)
+  ConceptPositive->(85 strings from file: Words/Nouns/Concepts_Positive)
+  ConceptBadass->(77 strings from file: Words/Nouns/Concepts_Badass)
+  ConceptAngsty->(75 strings from file: Words/Nouns/Concepts_Angsty)
+  Community->(24 strings from file: Words/Nouns/Communities)
+  BodyPart->(32 strings from file: Words/Nouns/Bodyparts)
+  AdjectiveLarge->(22 strings from file: Words/Adjectives/Large)
+  AdjectiveBadass->(210 strings from file: Words/Adjectives/Badass)
+  AdjectiveAngsty->(29 strings from file: Words/Adjectives/Angsty)
+  AdjectiveFriendly->(139 strings from file: Words/Adjectives/Friendly)
+  AdjectiveNatural->(19 strings from file: Words/Adjectives/Natural)
+  VerbFriendly->(9 strings from file: Words/Verbs/Friendly)
+  PersonalCharacteristic->(137 strings from file: Words/Nouns/PersonalCharacteristics)
+  NamePerson->(personname)
+  NamePersonMale->(personname)
+  NamePersonFemale->(personname)
+  Digit->(number: 0~9)
+  TalkTopicAny → [TalkTopicLight]
+  TalkTopicAny → [TalkTopicHeavy]
+  TalkTopicHeavy → [talktopicheavyfile]
+  TalkTopicHeavy → [talktopicheavyfile]与[talktopicheavyfile]之间的关联
+  TalkTopicHeavy → [talktopicheavyfile]和[talktopicheavyfile]之间的联系
+  TalkTopicHeavy → [talktopicheavyfile]和[talktopicheavyfile]的关系
+  TalkTopicLight → [talktopiclightfile]
+  TalkTopicLight → [Vegetable]
+  TalkTopicLight → 吃[Vegetable]
+  TalkTopicLight → 用[Vegetable]烹饪
+  TalkTopicLight → [Game]
+  TalkTopicLight → 玩[Game]
+  TalkTopicLight → 练习[Game]
+  TalkTopicLight → 学习[Game]
+  TalkTopicLight → [Animal]
+  TalkTopicLight → 训练[Animal]
+  TalkTopicLight → 驯服[Animal]
+  TalkTopicLight → 和[Animal]战斗
+  TalkTopicLight → 发狂的[Animal]
+  TalkTopicLight → [Weapon]
+  TalkTopicLight → 使用[Weapon]
+  TalkTopicLight → 练习使用[Weapon]
+  TalkTopicLight → [TerrainFeature]
+  TalkTopicLight → [NaturalObject]
+  TalkTopicLight → [TreeType]
+  TalkTopicLight → [PersonJob]
+  TalkTopicLight → 友善的[PersonJob]
+  TalkTopicLight → 敌对的[PersonJob]
+  TalkTopicLight → [Enemy]
+  TalkTopicLight → 和[Enemy]战斗
+  TalkTopicLight → [Apparel]
+  TalkTopicLight → 穿着[Apparel]
+  TalkTopicLight → 制作[Apparel]
+  talktopicheavyfile → 性
+  talktopicheavyfile → 性诱惑
+  talktopicheavyfile → 动物的性行为
+  talktopicheavyfile → 恋物癖
+  talktopicheavyfile->(239 strings from file: Words/Nouns/TalkTopics_Heavy)
+  talktopiclightfile->(716 strings from file: Words/Nouns/TalkTopics_Light)
+CONSTANTS
+founder_flesh                          Normal
+founder_gender                         Male
+founder_genderResolved                 Male
+founder_cubeInterest                   False
+believer_flesh                         Normal
+believer_gender                        Male
+believer_genderResolved                Male
+believer_cubeInterest                  False
+structure_theist                       true
+structure_theistEmbodied               true
+deity0_gender                          Male
+deity1_gender                          Female
+deity2_gender                          Male
+
+CUSTOM RULES
+■founder_nameFull → 赢 赫华
+■founder_label → 赫华
+■founder_labelNoParenthesis → 
+■founder_definite → 赫华
+■founder_nameDef → 赫华
+■founder_indefinite → 赫华
+■founder_nameIndef → 赫华
+■founder_pronoun → 他
+■founder_possessive → 他的
+■founder_objective → 他
+■founder_kind → 殖民者
+■founder_kindPlural → 殖民者
+■founder_age → 21
+■founder_chronologicalAge → 21
+■founder_relationInfo → 
+■believer_nameFull → 姜 穹
+■believer_label → 穹
+■believer_labelNoParenthesis → 
+■believer_definite → 穹
+■believer_nameDef → 穹
+■believer_indefinite → 穹
+■believer_nameIndef → 穹
+■believer_pronoun → 他
+■believer_possessive → 他的
+■believer_objective → 他
+■believer_kind → 殖民者
+■believer_kindPlural → 殖民者
+■believer_age → 21
+■believer_chronologicalAge → 21
+■believer_relationInfo → 
+■foeSoldiers → ERR: 赢 赫华
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.IdeoDescriptionUtility:BuildGrammarRequest (RimWorld.Ideo,Verse.IdeoStoryPatternDef,System.Collections.Generic.Dictionary`2<string, string>)
+RimWorld.IdeoDescriptionUtility:ResolveDescription (RimWorld.Ideo,Verse.IdeoStoryPatternDef,bool)
+RimWorld.Ideo:GetNewDescription (bool)
+RimWorld.Ideo:RegenerateDescription (bool)
+RimWorld.IdeoFoundation_Deity:Init (RimWorld.IdeoGenerationParms)
+RimWorld.IdeoGenerator:GenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionIdeosTracker:ChooseOrGenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionGenerator:NewGeneratedFaction (RimWorld.Planet.PlanetLayer,RimWorld.FactionGeneratorParms)
+RimWorld.FactionGenerator:CreateFactionAndAddToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:AddFactionToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:InitializeFactions (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.FactionGenerator:GenerateFactionsIntoWorldLayer (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.Planet.WorldGenStep_Factions:GenerateFresh (string,RimWorld.Planet.PlanetLayer)
+RimWorld.Planet.WorldGenerator:GeneratePlanetLayer (RimWorld.Planet.PlanetLayer,string,int)
+RimWorld.Planet.WorldGenerator:GenerateWorld (single,string,RimWorld.Planet.OverallRainfall,RimWorld.Planet.OverallTemperature,RimWorld.Planet.OverallPopulation,RimWorld.Planet.LandmarkDensity,System.Collections.Generic.List`1<RimWorld.FactionDef>,single)
+RimWorld.Page_CreateWorldParams:<CanDoNext>b__20_0 ()
+Verse.LongEventHandler:RunEventFromAnotherThread (System.Action)
+Verse.LongEventHandler/<>c:<UpdateCurrentAsynchronousEvent>b__28_0 ()
+System.Threading.ThreadHelper:ThreadStart_Context (object)
+System.Threading.ExecutionContext:RunInternal (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object)
+System.Threading.ThreadHelper:ThreadStart ()
+
+Grammar unresolvable. Root 'place_foeLeader'
+
+GRAMMAR RESOLUTION TRACE
+     place_foeLeader → UNRESOLVABLE
+
+
+BARE INCLUDES
+  memeCreed → sect
+  memeCreed → cult
+  memeCreed → temple
+  memeCreed → faith
+  memeHyphenPrefix → theo
+  memeConcept → creation
+  memeConcept → life
+  memeLeaderNoun → templar
+  memeLeaderAdjective → divine
+  memeMoralist → priest
+  memeMoralist → cleric
+  memeCreed → party
+  memeAdjective → high
+  memeAdjective → delirious
+  memeAdjective → stoned
+  memeConcept → drugs
+  memeConcept → bliss
+  memeConcept → dreams
+  memeHyphenPrefix → drug
+  memeHyphenPrefix → narco
+  memeLeaderNoun → sleeper
+  memeLeaderNoun → doper
+  memeLeaderNoun → smoker
+  memeLeaderNoun → chiller
+  memeMoralist → philosophizer
+  memeMoralist → abstractor
+  memeMoralist → laugher
+  memeMoralist → giggler
+  creation → The universe was smoke, and [deity0_name] coalesced in the wisps and awoke.
+  episode → The [deity0_type] [deity0_name] concealed [deity0_possessive] truths in the folds of reality, invisible in normal states of mind.
+  intro → The [place_summary] [place_name] was first discovered by [deity0_name]'s grace, when a drunk starship captain almost crashed into it.
+  conflict → A puritan [foeLeader] despised the [memberNamePlural], and to erase their uniqueness, outlawed the use of mind-altering substances.
+  founderJoin → When all seemed lost, [deity0_name] came to the prophet [founderName] in a drug-fueled haze and gave [founder_objective] the unique perspective needed to defeat the [foeSoldiers].
+  victory → The [foeLeader]'s [foeSoldiers], armed with [place_personalWeapon]s, raided the [place_community] of the [memberNamePlural]. [founderName] offered them a peace pipe, and the [foeSoldiers] put down their weapons.
+  setup → Cast out from society, our founder [founderName] traveled into the jungle and ingested the exotic herbs there. [founder_pronoun] found truth inside [founder_possessive] own altered consciousness.
+  story → To deepen their understanding, [founderName] brought [founder_possessive] followers together every week to share new chemical-inducted mental states.
+  lessonIntro → Getting high once wasn't enough, man. We had to do it a thousand times, then all the puzzle pieces fit together in my blown-open brain like a house falling down, but like, backwards. I saw that
+  lesson → a friend isn't a friend unless you've drifted through the mind-verse together
+  lessonReinforcement → And dude, this was a serious trip, figuring that out, but I'm glad I did, and I'll pass the smoke to you so you can too.
+  archistBasis → The archotech minds showed us that super-consciousness it not a matter of sober, mechanical logic, but one of multi-mode thought.
+  archistFact → Given the right chemical influences, the human mind has the potential to commune with the archotechs.
+  archistProphecy → [inTheEnd], the archotechs will deliver each human a pill. Those that take it will be forever altered, and join the archotechs on their final journey.
+  animistFact → The spirits can reveal their nature to us when we expand our consciousness using the tools we have been given to do so.
+  episode → 
+  creation → For an eternity, there was a world of [Color] [materialOrigin], until [deity0_name] created the planets and stars.
+  creation → In an old universe of strife, [deity0_name] whipped up great fire that swept away the last age, and brought forth a new one.
+  creation → [deity0_name] gave birth to humans in a grand accident, and looked upon them with curiosity.
+  creation → The universe was a void. Then, [deity0_name], bored with eternity, fashioned man and woman from [bodilyOrigin].
+  episode → Looking upon mankind, [deity0_name] found them as children, and declared [deity0_possessive] dominion over them.
+  episode → Across the vast stellar distances, [deity0_name]'s will sustained the life of mankind against the void.
+  episode → Though many adventurers moved against [deity0_objective], [deity0_name] prevented them easily, for [deity0_pronoun] was [deity0_type].
+  episode → Humanity's suffering brought [deity0_name] to terrible grief.
+  materialOrigin → clay
+  materialOrigin → gas
+  materialOrigin → water
+  materialOrigin → space
+  materialOrigin → dust
+  bodilyOrigin → clay
+  bodilyOrigin → stone
+  bodilyOrigin → sweat
+  veneratedAnimal → [animal0_thingDef_label]
+  altarName → [altar0_name]
+  ritualName → [ritual0_name]
+  founderName → [founder_nameFull]
+  founderName → [founder_label]
+  foeLeader_pronoun → he
+  foeLeader_possessive → his
+  foeLeader_objective → him
+  Trans → of
+  Trans → for
+  Trans → by
+  Trans → with
+  Character → [PersonJob]
+  Character → [Animal]
+  Character → [Enemy]
+  Character → [Mechanoid]
+  Quantity_adjphrase → two
+  Quantity_adjphrase → three
+  Quantity_adjphrase → four
+  Quantity_adjphrase → five
+  Quantity_adjphrase → six
+  Quantity_adjphrase → seven
+  Quantity_adjphrase → eight
+  Quantity_adjphrase → nine
+  Quantity_adjphrase → ten
+  Quantity_adjphrase → several
+  Quantity_adjphrase → a group of
+  Quantity_adjphrase → a large group of
+  Quantity_adjphrase → dozens of
+  Quantity_adjphrase → hundreds of
+  Quantity_adjphrase → a thousand
+  Quantity_adjphrase → thousands of
+  Shape → triangle
+  Shape → square
+  Shape → rectangle
+  Shape → cone
+  Shape → line
+  Shape → heart
+  Shape → star
+  Shape → circle
+  Shape → ellipse
+  AdjectiveAny → [AdjectiveBadass]
+  AdjectiveAny → [AdjectiveAngsty]
+  AdjectiveAny → [AdjectiveFriendly]
+  AdjectiveAny → [AdjectiveNatural]
+  ConceptAny → [ConceptPositive]
+  ConceptAny → [ConceptBadass]
+  ConceptAny → [ConceptAngsty]
+  PersonalCharacteristic → genitals
+  PersonalCharacteristic → pubic hair
+  PersonalCharacteristic → body hair
+  PersonalCharacteristic → toilet habits
+  PersonalCharacteristic → sexual prowess
+  PersonalCharacteristic → sexual preferences
+  PersonalCharacteristic → sexual experience
+  RomanNumeral->(15 strings from file: Words/Misc/Numbers_SmallRoman)
+  Direction->(24 strings from file: Words/Adjectives/CompassDirections)
+  Letter->(26 strings from file: WordParts/CapitalLetters)
+  SylE->(102 strings from file: WordParts/Syllables_English)
+  SylG->(197 strings from file: WordParts/Syllables_Galician)
+  SylB->(81 strings from file: WordParts/Syllables_Byzantinian)
+  SylP->(62 strings from file: WordParts/Syllables_Pig)
+  Color->(20 strings from file: Words/Nouns/Colors)
+  ColorBadass->(23 strings from file: Words/Nouns/Colors_Badass)
+  Vegetable->(50 strings from file: Words/Nouns/Vegetables)
+  Game->(248 strings from file: Words/Nouns/Games)
+  Animal->(210 strings from file: Words/Nouns/Animals)
+  AnimalBadass->(85 strings from file: Words/Nouns/Animals_Badass)
+  AnimalGroup->(9 strings from file: Words/Nouns/AnimalGroups)
+  Weapon->(85 strings from file: Words/Nouns/Weapons)
+  TerrainFeature->(55 strings from file: Words/Nouns/TerrainFeatures)
+  NaturalObject->(29 strings from file: Words/Nouns/NaturalObject)
+  TreeType->(25 strings from file: Words/Nouns/TreeTypes)
+  PersonJob->(262 strings from file: Words/Nouns/People_Jobs)
+  PersonFamily->(15 strings from file: Words/Nouns/People_Family)
+  PersonAlly->(19 strings from file: Words/Nouns/People_Allies)
+  PersonBadass->(114 strings from file: Words/Nouns/People_Badass)
+  Enemy->(85 strings from file: Words/Nouns/Enemies)
+  Apparel->(119 strings from file: Words/Nouns/Apparel)
+  Gore->(31 strings from file: Words/Nouns/Gore)
+  Mechanoid->(30 strings from file: Words/Nouns/Mechanoid)
+  ConceptPositive->(85 strings from file: Words/Nouns/Concepts_Positive)
+  ConceptBadass->(77 strings from file: Words/Nouns/Concepts_Badass)
+  ConceptAngsty->(75 strings from file: Words/Nouns/Concepts_Angsty)
+  Community->(24 strings from file: Words/Nouns/Communities)
+  BodyPart->(32 strings from file: Words/Nouns/Bodyparts)
+  AdjectiveLarge->(22 strings from file: Words/Adjectives/Large)
+  AdjectiveBadass->(210 strings from file: Words/Adjectives/Badass)
+  AdjectiveAngsty->(29 strings from file: Words/Adjectives/Angsty)
+  AdjectiveFriendly->(139 strings from file: Words/Adjectives/Friendly)
+  AdjectiveNatural->(19 strings from file: Words/Adjectives/Natural)
+  VerbFriendly->(9 strings from file: Words/Verbs/Friendly)
+  PersonalCharacteristic->(137 strings from file: Words/Nouns/PersonalCharacteristics)
+  NamePerson->(personname)
+  NamePersonMale->(personname)
+  NamePersonFemale->(personname)
+  Digit->(number: 0~9)
+  TalkTopicAny → [TalkTopicLight]
+  TalkTopicAny → [TalkTopicHeavy]
+  TalkTopicHeavy → [talktopicheavyfile]
+  TalkTopicHeavy → the link between [talktopicheavyfile] and [talktopicheavyfile]
+  TalkTopicHeavy → the connection between [talktopicheavyfile] and [talktopicheavyfile]
+  TalkTopicHeavy → the relationship between [talktopicheavyfile] and [talktopicheavyfile]
+  TalkTopicLight → [talktopiclightfile]
+  TalkTopicLight → [Vegetable]s
+  TalkTopicLight → eating [Vegetable]s
+  TalkTopicLight → cooking with [Vegetable]s
+  TalkTopicLight → [Game]
+  TalkTopicLight → playing [Game]
+  TalkTopicLight → practicing [Game]
+  TalkTopicLight → learning [Game]
+  TalkTopicLight → [Animal]s
+  TalkTopicLight → training [Animal]s
+  TalkTopicLight → taming [Animal]s
+  TalkTopicLight → fighting [Animal]s
+  TalkTopicLight → crazy [Animal]s
+  TalkTopicLight → [Weapon]s
+  TalkTopicLight → using [Weapon]s
+  TalkTopicLight → practicing with [Weapon]s
+  TalkTopicLight → [TerrainFeature]s
+  TalkTopicLight → [NaturalObject]s
+  TalkTopicLight → [TreeType] trees
+  TalkTopicLight → [PersonJob]s
+  TalkTopicLight → friendly [PersonJob]s
+  TalkTopicLight → hostile [PersonJob]s
+  TalkTopicLight → [Enemy]s
+  TalkTopicLight → fighting [Enemy]s
+  TalkTopicLight → [Apparel]s
+  TalkTopicLight → wearing [Apparel]s
+  TalkTopicLight → making [Apparel]s
+  talktopicheavyfile → sex
+  talktopicheavyfile → seduction
+  talktopicheavyfile → animal sexuality
+  talktopicheavyfile → sexual fetishes
+  talktopicheavyfile->(239 strings from file: Words/Nouns/TalkTopics_Heavy)
+  talktopiclightfile->(716 strings from file: Words/Nouns/TalkTopics_Light)
+CONSTANTS
+founder_flesh                          Normal
+founder_gender                         Male
+founder_genderResolved                 Male
+founder_cubeInterest                   False
+believer_flesh                         Normal
+believer_gender                        Male
+believer_genderResolved                Male
+believer_cubeInterest                  False
+structure_theist                       true
+structure_theistEmbodied               true
+deity0_gender                          Male
+deity1_gender                          Female
+deity2_gender                          Male
+
+CUSTOM RULES
+■founder_nameFull → 赢 赫华
+■founder_label → 赫华
+■founder_labelNoParenthesis → 
+■founder_definite → 赫华
+■founder_nameDef → 赫华
+■founder_indefinite → 赫华
+■founder_nameIndef → 赫华
+■founder_pronoun → 他
+■founder_possessive → 他的
+■founder_objective → 他
+■founder_kind → 殖民者
+■founder_kindPlural → 殖民者
+■founder_age → 21
+■founder_chronologicalAge → 21
+■founder_relationInfo → 
+■believer_nameFull → 姜 穹
+■believer_label → 穹
+■believer_labelNoParenthesis → 
+■believer_definite → 穹
+■believer_nameDef → 穹
+■believer_indefinite → 穹
+■believer_nameIndef → 穹
+■believer_pronoun → 他
+■believer_possessive → 他的
+■believer_objective → 他
+■believer_kind → 殖民者
+■believer_kindPlural → 殖民者
+■believer_age → 21
+■believer_chronologicalAge → 21
+■believer_relationInfo → 
+■foeSoldiers → ERR: 赢 赫华
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.IdeoDescriptionUtility:BuildGrammarRequest (RimWorld.Ideo,Verse.IdeoStoryPatternDef,System.Collections.Generic.Dictionary`2<string, string>)
+RimWorld.IdeoDescriptionUtility:ResolveDescription (RimWorld.Ideo,Verse.IdeoStoryPatternDef,bool)
+RimWorld.Ideo:GetNewDescription (bool)
+RimWorld.Ideo:RegenerateDescription (bool)
+RimWorld.IdeoFoundation_Deity:Init (RimWorld.IdeoGenerationParms)
+RimWorld.IdeoGenerator:GenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionIdeosTracker:ChooseOrGenerateIdeo (RimWorld.IdeoGenerationParms)
+RimWorld.FactionGenerator:NewGeneratedFaction (RimWorld.Planet.PlanetLayer,RimWorld.FactionGeneratorParms)
+RimWorld.FactionGenerator:CreateFactionAndAddToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:AddFactionToManager (RimWorld.Planet.PlanetLayer,RimWorld.FactionDef)
+RimWorld.FactionGenerator:InitializeFactions (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.FactionGenerator:GenerateFactionsIntoWorldLayer (RimWorld.Planet.PlanetLayer,System.Collections.Generic.List`1<RimWorld.FactionDef>)
+RimWorld.Planet.WorldGenStep_Factions:GenerateFresh (string,RimWorld.Planet.PlanetLayer)
+RimWorld.Planet.WorldGenerator:GeneratePlanetLayer (RimWorld.Planet.PlanetLayer,string,int)
+RimWorld.Planet.WorldGenerator:GenerateWorld (single,string,RimWorld.Planet.OverallRainfall,RimWorld.Planet.OverallTemperature,RimWorld.Planet.OverallPopulation,RimWorld.Planet.LandmarkDensity,System.Collections.Generic.List`1<RimWorld.FactionDef>,single)
+RimWorld.Page_CreateWorldParams:<CanDoNext>b__20_0 ()
+Verse.LongEventHandler:RunEventFromAnotherThread (System.Action)
+Verse.LongEventHandler/<>c:<UpdateCurrentAsynchronousEvent>b__28_0 ()
+System.Threading.ThreadHelper:ThreadStart_Context (object)
+System.Threading.ExecutionContext:RunInternal (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object)
+System.Threading.ThreadHelper:ThreadStart ()
+
+[RimBiochemistry] 未找到服装贴图：'渡鸦常服 (一般)'。尝试过的路径：Items/Apparel/Raven/Casual/RavenCasual_Fat, Items/Apparel/Raven/Casual/RavenCasual (包括 base / _south / _east / _north 变体)。请检查体型后缀设置和资源文件是否存在。
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Warning (string)
+ChezhouLib.ClThingComp.Patch_TryGetGraphicApparel:Prefix (RimWorld.Apparel,RimWorld.BodyTypeDef,bool,RimWorld.ApparelGraphicRecord&,bool&)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:RimWorld.ApparelGraphicRecordGetter.TryGetGraphicApparel_Patch2 (RimWorld.Apparel,RimWorld.BodyTypeDef,bool,RimWorld.ApparelGraphicRecord&)
+Verse.DynamicPawnRenderNodeSetup_Apparel/<ProcessApparel>d__5:MoveNext ()
+Verse.DynamicPawnRenderNodeSetup_Apparel/<GetDynamicNodes>d__3:MoveNext ()
+Verse.PawnRenderTree:SetupDynamicNodes ()
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:Verse.PawnRenderTree.TrySetupGraphIfNeeded_Patch1 (Verse.PawnRenderTree)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:Verse.PawnRenderTree.EnsureInitialized_Patch1 (Verse.PawnRenderTree,Verse.PawnRenderFlags)
+Verse.PawnRenderer:RenderCache (Verse.Rot4,single,UnityEngine.Vector3,bool,bool,bool,bool,System.Collections.Generic.IReadOnlyDictionary`2<RimWorld.Apparel, UnityEngine.Color>,System.Nullable`1<UnityEngine.Color>,bool)
+RimWorld.PawnCacheRenderer:OnPostRender ()
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:RimWorld.PawnCacheRenderer.RenderPawn_Patch1 (RimWorld.PawnCacheRenderer,Verse.Pawn,UnityEngine.RenderTexture,UnityEngine.Vector3,single,single,Verse.Rot4,bool,bool,bool,bool,UnityEngine.Vector3,System.Collections.Generic.IReadOnlyDictionary`2<RimWorld.Apparel, UnityEngine.Color>,System.Nullable`1<UnityEngine.Color>,bool)
+RimWorld.PortraitsCache/PortraitParams:RenderPortrait (Verse.Pawn,UnityEngine.RenderTexture)
+RimWorld.PortraitsCache:Get (Verse.Pawn,UnityEngine.Vector2,Verse.Rot4,UnityEngine.Vector3,single,bool,bool,bool,bool,System.Collections.Generic.IReadOnlyDictionary`2<RimWorld.Apparel, UnityEngine.Color>,System.Nullable`1<UnityEngine.Color>,bool,System.Nullable`1<Verse.PawnHealthState>)
+RimWorld.Page_ConfigureStartingPawns:DrawPawnList (UnityEngine.Rect)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:RimWorld.Page_ConfigureStartingPawns.DoWindowContents_Patch1 (RimWorld.Page_ConfigureStartingPawns,UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+[RimBiochemistry] 未找到服装贴图：'合成纤维渡鸦曲裾 (一般)'。尝试过的路径：Items/Apparel/Raven/Quju/RavenQuju_Fat, Items/Apparel/Raven/Quju/RavenQuju (包括 base / _south / _east / _north 变体)。请检查体型后缀设置和资源文件是否存在。
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Warning (string)
+ChezhouLib.ClThingComp.Patch_TryGetGraphicApparel:Prefix (RimWorld.Apparel,RimWorld.BodyTypeDef,bool,RimWorld.ApparelGraphicRecord&,bool&)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:RimWorld.ApparelGraphicRecordGetter.TryGetGraphicApparel_Patch2 (RimWorld.Apparel,RimWorld.BodyTypeDef,bool,RimWorld.ApparelGraphicRecord&)
+Verse.DynamicPawnRenderNodeSetup_Apparel/<ProcessApparel>d__5:MoveNext ()
+Verse.DynamicPawnRenderNodeSetup_Apparel/<GetDynamicNodes>d__3:MoveNext ()
+Verse.PawnRenderTree:SetupDynamicNodes ()
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:Verse.PawnRenderTree.TrySetupGraphIfNeeded_Patch1 (Verse.PawnRenderTree)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:Verse.PawnRenderTree.EnsureInitialized_Patch1 (Verse.PawnRenderTree,Verse.PawnRenderFlags)
+Verse.PawnRenderer:RenderCache (Verse.Rot4,single,UnityEngine.Vector3,bool,bool,bool,bool,System.Collections.Generic.IReadOnlyDictionary`2<RimWorld.Apparel, UnityEngine.Color>,System.Nullable`1<UnityEngine.Color>,bool)
+RimWorld.PawnCacheRenderer:OnPostRender ()
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:RimWorld.PawnCacheRenderer.RenderPawn_Patch1 (RimWorld.PawnCacheRenderer,Verse.Pawn,UnityEngine.RenderTexture,UnityEngine.Vector3,single,single,Verse.Rot4,bool,bool,bool,bool,UnityEngine.Vector3,System.Collections.Generic.IReadOnlyDictionary`2<RimWorld.Apparel, UnityEngine.Color>,System.Nullable`1<UnityEngine.Color>,bool)
+RimWorld.PortraitsCache/PortraitParams:RenderPortrait (Verse.Pawn,UnityEngine.RenderTexture)
+RimWorld.PortraitsCache:Get (Verse.Pawn,UnityEngine.Vector2,Verse.Rot4,UnityEngine.Vector3,single,bool,bool,bool,bool,System.Collections.Generic.IReadOnlyDictionary`2<RimWorld.Apparel, UnityEngine.Color>,System.Nullable`1<UnityEngine.Color>,bool,System.Nullable`1<Verse.PawnHealthState>)
+RimWorld.Page_ConfigureStartingPawns:DrawPawnList (UnityEngine.Rect)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:RimWorld.Page_ConfigureStartingPawns.DoWindowContents_Patch1 (RimWorld.Page_ConfigureStartingPawns,UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+[RimBiochemistry] 未找到服装贴图：'渡鸦常服 (一般)'。尝试过的路径：Items/Apparel/Raven/Casual/RavenCasual_Fat, Items/Apparel/Raven/Casual/RavenCasual (包括 base / _south / _east / _north 变体)。请检查体型后缀设置和资源文件是否存在。
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Warning (string)
+ChezhouLib.ClThingComp.Patch_TryGetGraphicApparel:Prefix (RimWorld.Apparel,RimWorld.BodyTypeDef,bool,RimWorld.ApparelGraphicRecord&,bool&)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:RimWorld.ApparelGraphicRecordGetter.TryGetGraphicApparel_Patch2 (RimWorld.Apparel,RimWorld.BodyTypeDef,bool,RimWorld.ApparelGraphicRecord&)
+Verse.DynamicPawnRenderNodeSetup_Apparel/<ProcessApparel>d__5:MoveNext ()
+Verse.DynamicPawnRenderNodeSetup_Apparel/<GetDynamicNodes>d__3:MoveNext ()
+Verse.PawnRenderTree:SetupDynamicNodes ()
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:Verse.PawnRenderTree.TrySetupGraphIfNeeded_Patch1 (Verse.PawnRenderTree)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:Verse.PawnRenderTree.EnsureInitialized_Patch1 (Verse.PawnRenderTree,Verse.PawnRenderFlags)
+Verse.PawnRenderer:RenderCache (Verse.Rot4,single,UnityEngine.Vector3,bool,bool,bool,bool,System.Collections.Generic.IReadOnlyDictionary`2<RimWorld.Apparel, UnityEngine.Color>,System.Nullable`1<UnityEngine.Color>,bool)
+RimWorld.PawnCacheRenderer:OnPostRender ()
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:RimWorld.PawnCacheRenderer.RenderPawn_Patch1 (RimWorld.PawnCacheRenderer,Verse.Pawn,UnityEngine.RenderTexture,UnityEngine.Vector3,single,single,Verse.Rot4,bool,bool,bool,bool,UnityEngine.Vector3,System.Collections.Generic.IReadOnlyDictionary`2<RimWorld.Apparel, UnityEngine.Color>,System.Nullable`1<UnityEngine.Color>,bool)
+RimWorld.PortraitsCache/PortraitParams:RenderPortrait (Verse.Pawn,UnityEngine.RenderTexture)
+RimWorld.PortraitsCache:Get (Verse.Pawn,UnityEngine.Vector2,Verse.Rot4,UnityEngine.Vector3,single,bool,bool,bool,bool,System.Collections.Generic.IReadOnlyDictionary`2<RimWorld.Apparel, UnityEngine.Color>,System.Nullable`1<UnityEngine.Color>,bool,System.Nullable`1<Verse.PawnHealthState>)
+RimWorld.Page_ConfigureStartingPawns:DrawPawnList (UnityEngine.Rect)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:RimWorld.Page_ConfigureStartingPawns.DoWindowContents_Patch1 (RimWorld.Page_ConfigureStartingPawns,UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+Grammar unresolvable. Root 'r_leaderTitle'
+
+GRAMMAR RESOLUTION TRACE
+1    r_leaderTitle → [memeLeaderAdjective][memeLeaderNoun]
+       memeLeaderAdjective → UNRESOLVABLE
+       memeLeaderNoun → UNRESOLVABLE
+1    r_leaderTitle → [cultureLeaderAdjective][memeLeaderNoun]
+2      cultureLeaderAdjective → 高级
+       memeLeaderNoun → UNRESOLVABLE
+1    r_leaderTitle → [cultureLeaderTitle]
+       cultureLeaderTitle → UNRESOLVABLE
+1    r_leaderTitle → [memeLeaderAdjective][cultureLeaderNoun]
+       memeLeaderAdjective → UNRESOLVABLE
+2      cultureLeaderNoun → 领导
+     r_leaderTitle → UNRESOLVABLE
+
+INCLUDES
+LeaderTitleMaker_Astropolitan
+LeaderTitleMaker_GenericContent
+LeaderTitleMaker_GlobalStructure
+
+BARE INCLUDES
+  place_foeSoldiers → 敌人
+  place_foeLeader → 敌军首领
+  place_foeWeapon → 毁灭武器
+  place_foeAdj → 邪恶的
+  place_personalWeapon → 利刃
+  place_massWeapon → 天火
+  place_job → 使命
+  place_community → 组织
+  place_location → 战场
+  place_event → 战斗
+  place_outcome → 胜利
+  place_reward → 荣耀
+  place_punishment → 失败
+  place_hero → 勇士
+  place_villain → 恶人
+  place_ally → 盟友
+  place_obstacle → 障碍
+  place_solution → 解决方案
+  place_goal → 目标
+  place_challenge → 挑战
+  place_skill → 技能
+  place_virtue → 美德
+  place_vice → 恶习
+  place_emotion → 情感
+  place_lesson → 教训
+  place_morale → 士气
+  place_strategy → 策略
+  place_tactic → 战术
+  deity_name → 金乌神
+
+CUSTOM RULES
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.NameGenerator:GenerateName (Verse.Grammar.GrammarRequest,System.Predicate`1<string>,bool,string,string)
+RimWorld.IdeoFoundation:GenerateLeaderTitle ()
+RimWorld.Dialog_ChooseMemes:DoAcceptChanges ()
+RimWorld.Dialog_ChooseMemes:TryAccept ()
+RimWorld.Dialog_ChooseMemes:DoWindowContents (UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+Failed to resolve text. Trying again with English.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.NameGenerator:GenerateName (Verse.Grammar.GrammarRequest,System.Predicate`1<string>,bool,string,string)
+RimWorld.IdeoFoundation:GenerateLeaderTitle ()
+RimWorld.Dialog_ChooseMemes:DoAcceptChanges ()
+RimWorld.Dialog_ChooseMemes:TryAccept ()
+RimWorld.Dialog_ChooseMemes:DoWindowContents (UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+Grammar unresolvable. Root 'r_leaderTitle'
+
+GRAMMAR RESOLUTION TRACE
+1    r_leaderTitle → [cultureLeaderAdjective] [memeLeaderNoun]
+2      cultureLeaderAdjective → prime
+       memeLeaderNoun → UNRESOLVABLE
+1    r_leaderTitle → [memeLeaderAdjective] [memeLeaderNoun]
+       memeLeaderAdjective → UNRESOLVABLE
+       memeLeaderNoun → UNRESOLVABLE
+1    r_leaderTitle → [cultureLeaderTitle]
+       cultureLeaderTitle → UNRESOLVABLE
+1    r_leaderTitle → [memeLeaderAdjective] [cultureLeaderNoun]
+       memeLeaderAdjective → UNRESOLVABLE
+2      cultureLeaderNoun → president
+     r_leaderTitle → UNRESOLVABLE
+
+INCLUDES
+LeaderTitleMaker_Astropolitan
+LeaderTitleMaker_GenericContent
+LeaderTitleMaker_GlobalStructure
+
+BARE INCLUDES
+  place_foeSoldiers → 敌人
+  place_foeLeader → 敌军首领
+  place_foeWeapon → 毁灭武器
+  place_foeAdj → 邪恶的
+  place_personalWeapon → 利刃
+  place_massWeapon → 天火
+  place_job → 使命
+  place_community → 组织
+  place_location → 战场
+  place_event → 战斗
+  place_outcome → 胜利
+  place_reward → 荣耀
+  place_punishment → 失败
+  place_hero → 勇士
+  place_villain → 恶人
+  place_ally → 盟友
+  place_obstacle → 障碍
+  place_solution → 解决方案
+  place_goal → 目标
+  place_challenge → 挑战
+  place_skill → 技能
+  place_virtue → 美德
+  place_vice → 恶习
+  place_emotion → 情感
+  place_lesson → 教训
+  place_morale → 士气
+  place_strategy → 策略
+  place_tactic → 战术
+  deity_name → 金乌神
+
+CUSTOM RULES
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.NameGenerator:GenerateName (Verse.Grammar.GrammarRequest,System.Predicate`1<string>,bool,string,string)
+RimWorld.IdeoFoundation:GenerateLeaderTitle ()
+RimWorld.Dialog_ChooseMemes:DoAcceptChanges ()
+RimWorld.Dialog_ChooseMemes:TryAccept ()
+RimWorld.Dialog_ChooseMemes:DoWindowContents (UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+Grammar unresolvable. Root 'r_leaderTitle'
+
+GRAMMAR RESOLUTION TRACE
+1    r_leaderTitle → [memeLeaderAdjective][memeLeaderNoun]
+       memeLeaderAdjective → UNRESOLVABLE
+       memeLeaderNoun → UNRESOLVABLE
+1    r_leaderTitle → [memeLeaderAdjective][cultureLeaderNoun]
+       memeLeaderAdjective → UNRESOLVABLE
+2      cultureLeaderNoun → 领导
+1    r_leaderTitle → [cultureLeaderTitle]
+       cultureLeaderTitle → UNRESOLVABLE
+1    r_leaderTitle → [cultureLeaderAdjective][memeLeaderNoun]
+2      cultureLeaderAdjective → 大
+       memeLeaderNoun → UNRESOLVABLE
+     r_leaderTitle → UNRESOLVABLE
+
+INCLUDES
+LeaderTitleMaker_Astropolitan
+LeaderTitleMaker_GenericContent
+LeaderTitleMaker_GlobalStructure
+
+BARE INCLUDES
+  place_foeSoldiers → 敌人
+  place_foeLeader → 敌军首领
+  place_foeWeapon → 毁灭武器
+  place_foeAdj → 邪恶的
+  place_personalWeapon → 利刃
+  place_massWeapon → 天火
+  place_job → 使命
+  place_community → 组织
+  place_location → 战场
+  place_event → 战斗
+  place_outcome → 胜利
+  place_reward → 荣耀
+  place_punishment → 失败
+  place_hero → 勇士
+  place_villain → 恶人
+  place_ally → 盟友
+  place_obstacle → 障碍
+  place_solution → 解决方案
+  place_goal → 目标
+  place_challenge → 挑战
+  place_skill → 技能
+  place_virtue → 美德
+  place_vice → 恶习
+  place_emotion → 情感
+  place_lesson → 教训
+  place_morale → 士气
+  place_strategy → 策略
+  place_tactic → 战术
+  deity_name → 金乌神
+
+CUSTOM RULES
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.NameGenerator:GenerateName (Verse.Grammar.GrammarRequest,System.Predicate`1<string>,bool,string,string)
+RimWorld.IdeoFoundation:GenerateLeaderTitle ()
+RimWorld.Precept_Role:GenerateNameRaw ()
+RimWorld.Precept:GenerateNewName ()
+RimWorld.Precept:RegenerateName ()
+RimWorld.Precept_Role:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.Precept_RoleSingle:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.IdeoFoundation/<>c__DisplayClass38_0:<InitPrecepts>g__AddAndInitPrecepts|0 ()
+RimWorld.IdeoFoundation:InitPrecepts (RimWorld.IdeoGenerationParms,System.Collections.Generic.List`1<RimWorld.Precept>)
+RimWorld.Dialog_ChooseMemes:DoAcceptChanges ()
+RimWorld.Dialog_ChooseMemes:TryAccept ()
+RimWorld.Dialog_ChooseMemes:DoWindowContents (UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+Grammar unresolvable. Root 'r_leaderTitle'
+
+GRAMMAR RESOLUTION TRACE
+1    r_leaderTitle → [cultureLeaderTitle]
+       cultureLeaderTitle → UNRESOLVABLE
+1    r_leaderTitle → [memeLeaderAdjective] [memeLeaderNoun]
+       memeLeaderAdjective → UNRESOLVABLE
+       memeLeaderNoun → UNRESOLVABLE
+1    r_leaderTitle → [cultureLeaderAdjective] [memeLeaderNoun]
+2      cultureLeaderAdjective → prime
+       memeLeaderNoun → UNRESOLVABLE
+1    r_leaderTitle → [memeLeaderAdjective] [cultureLeaderNoun]
+       memeLeaderAdjective → UNRESOLVABLE
+2      cultureLeaderNoun → governor
+     r_leaderTitle → UNRESOLVABLE
+
+INCLUDES
+LeaderTitleMaker_Astropolitan
+LeaderTitleMaker_GenericContent
+LeaderTitleMaker_GlobalStructure
+
+BARE INCLUDES
+  place_foeSoldiers → 敌人
+  place_foeLeader → 敌军首领
+  place_foeWeapon → 毁灭武器
+  place_foeAdj → 邪恶的
+  place_personalWeapon → 利刃
+  place_massWeapon → 天火
+  place_job → 使命
+  place_community → 组织
+  place_location → 战场
+  place_event → 战斗
+  place_outcome → 胜利
+  place_reward → 荣耀
+  place_punishment → 失败
+  place_hero → 勇士
+  place_villain → 恶人
+  place_ally → 盟友
+  place_obstacle → 障碍
+  place_solution → 解决方案
+  place_goal → 目标
+  place_challenge → 挑战
+  place_skill → 技能
+  place_virtue → 美德
+  place_vice → 恶习
+  place_emotion → 情感
+  place_lesson → 教训
+  place_morale → 士气
+  place_strategy → 策略
+  place_tactic → 战术
+  deity_name → 金乌神
+
+CUSTOM RULES
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.NameGenerator:GenerateName (Verse.Grammar.GrammarRequest,System.Predicate`1<string>,bool,string,string)
+RimWorld.IdeoFoundation:GenerateLeaderTitle ()
+RimWorld.Precept_Role:GenerateNameRaw ()
+RimWorld.Precept:GenerateNewName ()
+RimWorld.Precept:RegenerateName ()
+RimWorld.Precept_Role:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.Precept_RoleSingle:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.IdeoFoundation/<>c__DisplayClass38_0:<InitPrecepts>g__AddAndInitPrecepts|0 ()
+RimWorld.IdeoFoundation:InitPrecepts (RimWorld.IdeoGenerationParms,System.Collections.Generic.List`1<RimWorld.Precept>)
+RimWorld.Dialog_ChooseMemes:DoAcceptChanges ()
+RimWorld.Dialog_ChooseMemes:TryAccept ()
+RimWorld.Dialog_ChooseMemes:DoWindowContents (UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+Grammar unresolvable. Root 'r_roleName'
+
+GRAMMAR RESOLUTION TRACE
+1    r_roleName → [memeAdjective][memeMoralist]
+       memeAdjective → UNRESOLVABLE
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [keyDeity][memeMoralist]
+2      keyDeity → 朱雀神君
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [memeMoralist]
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [memeConcept]之[memeMoralist]
+       memeConcept → UNRESOLVABLE
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [chosenAdjective][memeMoralist]
+2      chosenAdjective → 金乌的
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [keyDeity][memeMoralist]
+2      keyDeity → 朱雀神君
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [chosenIdeoName][memeMoralist]
+2      chosenIdeoName → 金乌真理
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [chosenTheme][memeMoralist]
+2      chosenTheme → 太阳
+       memeMoralist → UNRESOLVABLE
+     r_roleName → UNRESOLVABLE
+
+INCLUDES
+NamerRoleMoralist
+
+BARE INCLUDES
+  place_foeSoldiers → 敌人
+  place_foeLeader → 敌军首领
+  place_foeWeapon → 毁灭武器
+  place_foeAdj → 邪恶的
+  place_personalWeapon → 利刃
+  place_massWeapon → 天火
+  place_job → 使命
+  place_community → 组织
+  place_location → 战场
+  place_event → 战斗
+  place_outcome → 胜利
+  place_reward → 荣耀
+  place_punishment → 失败
+  place_hero → 勇士
+  place_villain → 恶人
+  place_ally → 盟友
+  place_obstacle → 障碍
+  place_solution → 解决方案
+  place_goal → 目标
+  place_challenge → 挑战
+  place_skill → 技能
+  place_virtue → 美德
+  place_vice → 恶习
+  place_emotion → 情感
+  place_lesson → 教训
+  place_morale → 士气
+  place_strategy → 策略
+  place_tactic → 战术
+  deity_name → 金乌神
+
+CUSTOM RULES
+■chosenIdeoName → 金乌真理
+■chosenTheme → 太阳
+■memePackTheme → 太阳
+■memePackAdjective → 金乌的
+■chosenAdjective → 金乌的
+■keyDeity → 朱雀神君
+■leaderTitle → ERR
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.Precept_Role:GenerateNameRaw ()
+RimWorld.Precept:GenerateNewName ()
+RimWorld.Precept:RegenerateName ()
+RimWorld.Precept_Role:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.Precept_RoleSingle:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.IdeoFoundation/<>c__DisplayClass38_0:<InitPrecepts>g__AddAndInitPrecepts|0 ()
+RimWorld.IdeoFoundation:InitPrecepts (RimWorld.IdeoGenerationParms,System.Collections.Generic.List`1<RimWorld.Precept>)
+RimWorld.Dialog_ChooseMemes:DoAcceptChanges ()
+RimWorld.Dialog_ChooseMemes:TryAccept ()
+RimWorld.Dialog_ChooseMemes:DoWindowContents (UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+Failed to resolve text. Trying again with English.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.Precept_Role:GenerateNameRaw ()
+RimWorld.Precept:GenerateNewName ()
+RimWorld.Precept:RegenerateName ()
+RimWorld.Precept_Role:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.Precept_RoleSingle:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.IdeoFoundation/<>c__DisplayClass38_0:<InitPrecepts>g__AddAndInitPrecepts|0 ()
+RimWorld.IdeoFoundation:InitPrecepts (RimWorld.IdeoGenerationParms,System.Collections.Generic.List`1<RimWorld.Precept>)
+RimWorld.Dialog_ChooseMemes:DoAcceptChanges ()
+RimWorld.Dialog_ChooseMemes:TryAccept ()
+RimWorld.Dialog_ChooseMemes:DoWindowContents (UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
+
+Grammar unresolvable. Root 'r_roleName'
+
+GRAMMAR RESOLUTION TRACE
+1    r_roleName → [memeAdjective] [memeMoralist]
+       memeAdjective → UNRESOLVABLE
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [memeMoralist] of [keyDeity]
+       memeMoralist → UNRESOLVABLE
+2      keyDeity → 朱雀神君
+1    r_roleName → [keyDeity]'s [memeMoralist]
+2      keyDeity → 朱雀神君
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [memeMoralist] of [chosenIdeoName]
+       memeMoralist → UNRESOLVABLE
+2      chosenIdeoName → 金乌真理
+1    r_roleName → [chosenAdjective] [memeMoralist]
+2      chosenAdjective → 金乌的
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [memeMoralist]
+       memeMoralist → UNRESOLVABLE
+1    r_roleName → [memeMoralist] of [chosenTheme]
+       memeMoralist → UNRESOLVABLE
+2      chosenTheme → 太阳
+1    r_roleName → [memeMoralist] of [memeConcept]
+       memeMoralist → UNRESOLVABLE
+       memeConcept → UNRESOLVABLE
+     r_roleName → UNRESOLVABLE
+
+INCLUDES
+NamerRoleMoralist
+
+BARE INCLUDES
+  place_foeSoldiers → 敌人
+  place_foeLeader → 敌军首领
+  place_foeWeapon → 毁灭武器
+  place_foeAdj → 邪恶的
+  place_personalWeapon → 利刃
+  place_massWeapon → 天火
+  place_job → 使命
+  place_community → 组织
+  place_location → 战场
+  place_event → 战斗
+  place_outcome → 胜利
+  place_reward → 荣耀
+  place_punishment → 失败
+  place_hero → 勇士
+  place_villain → 恶人
+  place_ally → 盟友
+  place_obstacle → 障碍
+  place_solution → 解决方案
+  place_goal → 目标
+  place_challenge → 挑战
+  place_skill → 技能
+  place_virtue → 美德
+  place_vice → 恶习
+  place_emotion → 情感
+  place_lesson → 教训
+  place_morale → 士气
+  place_strategy → 策略
+  place_tactic → 战术
+  deity_name → 金乌神
+
+CUSTOM RULES
+■chosenIdeoName → 金乌真理
+■chosenTheme → 太阳
+■memePackTheme → 太阳
+■memePackAdjective → 金乌的
+■chosenAdjective → 金乌的
+■keyDeity → 朱雀神君
+■leaderTitle → ERR
+
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Verse.Log:Error (string)
+Verse.Log:ErrorOnce (string,int)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:ResolveUnsafe (string,Verse.Grammar.GrammarRequest,bool&,string,bool,bool,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+Verse.Grammar.GrammarResolver:Resolve (string,Verse.Grammar.GrammarRequest,string,bool,string,System.Collections.Generic.List`1<string>,System.Collections.Generic.List`1<string>,bool)
+RimWorld.Precept_Role:GenerateNameRaw ()
+RimWorld.Precept:GenerateNewName ()
+RimWorld.Precept:RegenerateName ()
+RimWorld.Precept_Role:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.Precept_RoleSingle:Init (RimWorld.Ideo,RimWorld.FactionDef)
+RimWorld.IdeoFoundation/<>c__DisplayClass38_0:<InitPrecepts>g__AddAndInitPrecepts|0 ()
+RimWorld.IdeoFoundation:InitPrecepts (RimWorld.IdeoGenerationParms,System.Collections.Generic.List`1<RimWorld.Precept>)
+RimWorld.Dialog_ChooseMemes:DoAcceptChanges ()
+RimWorld.Dialog_ChooseMemes:TryAccept ()
+RimWorld.Dialog_ChooseMemes:DoWindowContents (UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)

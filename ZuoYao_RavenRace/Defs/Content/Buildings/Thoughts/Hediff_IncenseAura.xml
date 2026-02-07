@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>RavenHediff_IncenseAura</defName>
+    <label>香薰氛围</label>
+    <description>受到催情香炉的影响，感到身心放松，意识变得敏锐但由于香气的影响，情绪变得更加激动。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.8, 0.9)</defaultLabelColor>
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>      
+      <!-- 修正：大幅降低衰减速度，或者大幅增加单次添加量 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay> <!-- 每天减1.0，即24小时消失 -->
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>微醺</label>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.05</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>0.10</offset></li>
+        </capMods>
+        <statOffsets>
+            <RestRateMultiplier>1.1</RestRateMultiplier>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

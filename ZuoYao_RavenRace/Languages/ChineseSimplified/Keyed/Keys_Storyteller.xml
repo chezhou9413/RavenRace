@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RavenRace_Kotoamatsukami_Title>别天神 - 意志改写</RavenRace_Kotoamatsukami_Title>
+  <RavenRace_Kotoamatsukami_Desc>正在改写 {1} 的意志，使其成为 {0} 的所有物。</RavenRace_Kotoamatsukami_Desc>
+  
+  <RavenRace_Label_Master>受术者 {0} 对 施术者 {1} 的称呼:</RavenRace_Label_Master>
+  <RavenRace_Label_Servant>施术者 {0} 对 受术者 {1} 的称呼:</RavenRace_Label_Servant>
+  
+  <RavenRace_Label_Opinion_S2M>强制好感度 ({0} - {1}): {2}</RavenRace_Label_Opinion_S2M>
+  <RavenRace_Label_Opinion_M2S>强制好感度 ({0} - {1}): {2}</RavenRace_Label_Opinion_M2S>
+  
+  <RavenRace_Msg_KotoamatsukamiSuccess>{0} 对 {1} 施展了别天神！{1} 的意志已被彻底改写。</RavenRace_Msg_KotoamatsukamiSuccess>
+  
+  <Raven_Default_Master>绝对主人</Raven_Default_Master>
+  <Raven_Default_Servant>忠诚奴仆</Raven_Default_Servant>
+  <Confirm>确定</Confirm> 
+
+  <!-- 渡鸦加入事件 -->
+  <RavenRace_LetterLabel_FirstRavenJoin>渡鸦加入</RavenRace_LetterLabel_FirstRavenJoin>
+  <RavenRace_LetterText_FirstRavenJoin>一名流浪的渡鸦族来到了你的殖民地附近。{0} 声称在暗影中听到了召唤。\n\n名字: {0}\n背景: {1}\n年龄: {2}\n\n你可以选择接纳{0}成为殖民者，或者将其拒之门外。</RavenRace_LetterText_FirstRavenJoin>
+  <RavenRace_Message_RavenJoined>{0} 已加入殖民地。</RavenRace_Message_RavenJoined>
+  
+
+
+
+</LanguageData>

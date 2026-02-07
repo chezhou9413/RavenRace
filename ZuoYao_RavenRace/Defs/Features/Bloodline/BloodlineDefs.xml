@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 渡鸦族血脉定义 -->
+    <RavenRace.BloodlineDef>
+        <defName>Bloodline_Raven</defName>
+        <label>渡鸦血脉</label>
+        <labelShort>渡鸦</labelShort>
+        <description>源自远古三足金乌的稀薄血脉，蕴含着对光与热的渴望。</description>
+        <raceDef>Raven_Race</raceDef>
+        <isGoldenCrowSource>true</isGoldenCrowSource>
+    </RavenRace.BloodlineDef>
+    
+    <!-- 可以在此添加其他兼容种族的血脉定义，如鼠族等 -->
+</Defs>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="PlantBase">
+    <defName>RavenPlant_SevenEmotions</defName>
+    <label>七情草</label>
+    <description>一种通体呈现彩色光晕的奇异草药。它的汁液能极大地放大生物的情欲感官。</description>
+    <statBases>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Plants/SevenEmotionsHerb/SevenEmotionsHerb</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <plant>
+      <sowTags>
+        <li>Ground</li>
+        <li>Hydroponic</li>
+      </sowTags>
+      <sowResearchPrerequisites>
+        <li>RavenResearch_Reproduction</li>
+      </sowResearchPrerequisites>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>RavenItem_SevenEmotionsLeaf</harvestedThingDef>
+      <harvestYield>4</harvestYield>
+      <growDays>6</growDays>
+      <visualSizeRange>0.3~1.1</visualSizeRange>
+      <topWindExposure>0.1</topWindExposure>
+    </plant>
+  </ThingDef>
+</Defs>

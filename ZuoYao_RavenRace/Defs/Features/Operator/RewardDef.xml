@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== 回礼定义 ==================== -->
+  
+  <RavenRace.Features.Operator.Rewards.RewardDef>
+    <defName>Raven_Reward_Level1</defName>
+    <label>信任的证明</label>
+    <description>“这是……给你的。别多想，只是看你平时穿得跟个难民一样，随便给你的而已。”</description>
+    <requiredFavorability>250</requiredFavorability>
+    <rewardThing>Raven_Underwear_PurePledge</rewardThing>
+  </RavenRace.Features.Operator.Rewards.RewardDef>
+
+  <RavenRace.Features.Operator.Rewards.RewardDef>
+    <defName>Raven_Reward_Level2</defName>
+    <label>暧昧的信号</label>
+    <description>“嗯……这个或许更适合你。穿上它，让我看看效果。”</description>
+    <requiredFavorability>500</requiredFavorability>
+    <rewardThing>Raven_Underwear_LaceTemptation</rewardThing>
+  </RavenRace.Features.Operator.Rewards.RewardDef>
+
+  <RavenRace.Features.Operator.Rewards.RewardDef>
+    <defName>Raven_Reward_Level3</defName>
+    <label>深夜的邀约</label>
+    <description>“……今晚，来我的房间。记得穿上这个。”</description>
+    <requiredFavorability>750</requiredFavorability>
+    <rewardThing>Raven_Underwear_MidnightWhisper</rewardThing>
+  </RavenRace.Features.Operator.Rewards.RewardDef>
+
+</Defs>

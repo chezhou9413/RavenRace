@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FacialAnimation.FaceAnimationDef>
+    <defName>Raven_Combat_BaseFace</defName>
+    <raceName>Raven_Race</raceName>
+    <priority>10100</priority>
+    <animationFrames>
+      <li>
+        <duration>1000</duration>
+        <lidShapeDef>half</lidShapeDef>
+        <browShapeDef>angry</browShapeDef>
+        <mouthShapeDef>angry</mouthShapeDef>
+        <eyeballShapeDef>normal</eyeballShapeDef>
+        <eyeballOffset>(0, 0, 0)</eyeballOffset>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>Wait_Combat</li>
+      <li>AttackStatic</li>
+      <li>AttackMelee</li>
+      <li>Raven_Job_MuGirlCharge</li>
+      <li>Raven_Job_InsertBeads</li>
+    </targetJobs>
+  </FacialAnimation.FaceAnimationDef>
+  <FacialAnimation.FaceAnimationDef>
+    <defName>Raven_Combat_EyeScan</defName>
+    <raceName>Raven_Race</raceName>
+    <priority>10200</priority>
+    <animationFrames>
+      <li>
+        <duration>15</duration>
+        <lidShapeDef>half</lidShapeDef>
+        <browShapeDef>angry</browShapeDef>
+        <mouthShapeDef>angry</mouthShapeDef>
+        <eyeballOffset>(-0.005, 0, 0)</eyeballOffset>
+      </li>
+      <li>
+        <duration>60</duration>
+        <lidShapeDef>half</lidShapeDef>
+        <browShapeDef>angry</browShapeDef>
+        <mouthShapeDef>angry</mouthShapeDef>
+        <eyeballOffset>(-0.005, 0, 0)</eyeballOffset>
+      </li>
+      <li>
+        <duration>20</duration>
+        <lidShapeDef>half</lidShapeDef>
+        <browShapeDef>angry</browShapeDef>
+        <mouthShapeDef>angry</mouthShapeDef>
+        <eyeballOffset>(0.005, 0, 0)</eyeballOffset>
+      </li>
+      <li>
+        <duration>60</duration>
+        <lidShapeDef>half</lidShapeDef>
+        <browShapeDef>angry</browShapeDef>
+        <mouthShapeDef>angry</mouthShapeDef>
+        <eyeballOffset>(0.005, 0, 0)</eyeballOffset>
+      </li>
+      <li>
+        <duration>15</duration>
+        <lidShapeDef>half</lidShapeDef>
+        <browShapeDef>angry</browShapeDef>
+        <mouthShapeDef>angry</mouthShapeDef>
+        <eyeballOffset>(0, 0, 0)</eyeballOffset>
+      </li>
+    </animationFrames>
+    <roopIntervalMin>60</roopIntervalMin>
+    <roopIntervalMax>180</roopIntervalMax>
+    <targetJobs>
+      <li>Wait_Combat</li>
+      <li>AttackStatic</li>
+      <li>AttackMelee</li>
+    </targetJobs>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

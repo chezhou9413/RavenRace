@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================== 催产素物品定义 ==================== -->
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>Raven_Drug_Oxytocin</defName>
+    <label>催产素</label>
+    <description>一种强效的激素药物，能强制刺激渡鸦族的生殖系统。服用后会立即引发剧烈的排卵反应，导致服用者在极短时间内产下一枚未受精的灵卵。\n\n副作用：会导致极度的虚弱和疼痛。</description>
+    
+    <graphicData>
+      <texPath>Things/Item/Drug/Oxytocin</texPath>
+      <graphicClass>Graphic_Single</graphicClass> 
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    
+    <rotatable>false</rotatable>
+    
+    <statBases>
+      <WorkToMake>600</WorkToMake>
+      <MarketValue>45</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    
+    <techLevel>Industrial</techLevel>
+    
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <foodType>Processed</foodType> 
+      <outcomeDoers>
+        <!-- 必须与 C# 类名完全一致 -->
+        <li Class="RavenRace.Features.Reproduction.IngestionOutcomeDoer_Oxytocin">
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_Reproduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+    </recipeMaker>
+    
+    <costList>
+      <Neutroamine>2</Neutroamine>
+      <MedicineHerbal>1</MedicineHerbal>
+    </costList>
+    
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== 强制排卵 Hediff 定义 ==================== -->
+  <HediffDef>
+    <defName>Raven_Hediff_RapidOvulation</defName>
+    <label>强制排卵</label>
+    <description>生殖系统正在药物刺激下超负荷运转，即将产下未受精灵卵。</description>
+    
+    <!-- [Change] RavenRace.Hediff_RapidOvulation -> RavenRace.Features.Reproduction.HediffRapidOvulation -->
+    <!-- 类名标准化：Hediff_RapidOvulation -> HediffRapidOvulation -->
+    <!-- 命名空间更新：移至 Reproduction 功能模块 -->
+    <hediffClass>RavenRace.Features.Reproduction.HediffRapidOvulation</hediffClass>
+    
+    <defaultLabelColor>(1.0, 0.2, 0.6)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    
+    <comps>
+      <!-- 极快的增长速度，确保短时间内触发分娩 -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>24.0</severityPerDay>
+      </li>
+    </comps>
+    
+    <stages>
+      <li>
+        <label>阵痛</label>
+        <painOffset>0.4</painOffset>
+        <vomitMtbDays>0.1</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.5</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

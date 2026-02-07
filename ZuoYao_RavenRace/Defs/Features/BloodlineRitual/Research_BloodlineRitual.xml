@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>RavenResearch_BloodlineRegression</defName>
+    <label>血脉回溯理论</label>
+    <description>解锁“归元回溯”仪式。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <!-- [说明] 这是一个分叉，需要辉光共振原理，但不是血脉精炼的前置 -->
+      <li>RavenResearch_Altar_Resonance</li>
+    </prerequisites>
+    <!-- [修改] 坐标调整，使其看起来像个分支 -->
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>4.50</researchViewY> 
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+</Defs>

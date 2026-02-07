@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.LidOptionShapeDef>
+    <defName>normal</defName>
+  </FacialAnimation.LidOptionShapeDef>
+
+  <FacialAnimation.LidOptionShapeDef>
+    <defName>tear</defName>
+  </FacialAnimation.LidOptionShapeDef>
+
+  <FacialAnimation.LidOptionShapeDef>
+    <defName>hot</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.LidOptionShapeDef>
+
+  <FacialAnimation.LidOptionShapeDef>
+    <defName>cold</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.LidOptionShapeDef>
+</Defs>

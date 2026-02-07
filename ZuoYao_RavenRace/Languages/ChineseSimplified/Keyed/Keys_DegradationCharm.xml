@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 交互 -->
+  <Raven_FloatMenu_RemoveCharm>揭下{0}的淫堕符咒</Raven_FloatMenu_RemoveCharm>
+
+  <!-- 消息与信件 -->
+  <Raven_Message_CharmApplied>{0}将一张散发着甜香的符咒贴在了{1}的额头上，符咒仿佛活物般瞬间融入了皮肤。</Raven_Message_CharmApplied>
+  <Raven_Message_CharmRemoved>{0}揭下了{1}额头上的淫堕符咒。</Raven_Message_CharmRemoved>
+
+  <Raven_LetterLabel_CharmComplete>心智扭曲：{0}已然堕落</Raven_LetterLabel_CharmComplete>
+  <Raven_LetterText_CharmComplete>在淫堕刻印的长期侵蚀下，{PAWN_nameDef}的理智终于完全崩溃了。{PAWN_possessive}人格被重塑，如今只剩下对原始欲望的无限渴求，成为了一个只为欢愉而生的存在。\n\n{PAWN_pronoun}获得了“淫堕狂宴”特性，性取向被扭曲为双性恋，并且对滥交行为不再有任何文化或道德上的顾忌。\n\n【彩蛋】由于能量的剧烈冲突，{PAWN_possessive}身体结构也发生了不可逆的改变……</Raven_LetterText_CharmComplete>
+  
+</LanguageData>

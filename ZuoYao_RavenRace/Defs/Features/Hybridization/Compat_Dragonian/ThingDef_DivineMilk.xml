@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 物品定义 -->
+  <ThingDef ParentName="OrganicProductBase">
+    <defName>Raven_DivineMilk</defName>
+    <label>神赐乳</label>
+    <description>一种极其罕见的混合乳液，产自同时拥有龙人与雪牛血脉的渡鸦族。它散发着金色的微光，兼具龙奶的狂野与雪牛奶的醇厚。\n\n饮用后不仅能极大满足营养需求，还能提供极其强效的生理与心理增益，被视为“液体的奇迹”。</description>
+    <graphicData>
+      <!-- 请确保贴图存在 -->
+      <texPath>Items/Resource/DivineMilk</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <MarketValue>25.0</MarketValue> <!-- 价值提升 -->
+      <Mass>0.045</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Nutrition>0.5</Nutrition> <!-- 增强：0.35 -> 0.5 (极高营养) -->
+      <DeteriorationRate>4.0</DeteriorationRate> <!-- 增强：更耐储存 -->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart> <!-- 增强：保鲜期 30天 -->
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <ingestible>
+      <preferability>MealFine</preferability>
+      
+      <!-- [核心修复] 添加 JoyKind，解决红字报错 -->
+      <joyKind>Gluttonous</joyKind>
+      
+      <foodType>Fluid, AnimalProduct</foodType>
+      
+      <!-- 增强：0.5 -> 0.8 (极高娱乐) -->
+      <joy>0.80</joy>
+      
+      <maxNumToIngestAtOnce>4</maxNumToIngestAtOnce>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>Raven_Hediff_DivineNectar</hediffDef>
+          <severity>0.5</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <thingCategories>
+      <li>AnimalProductRaw</li>
+    </thingCategories>
+    <tradeTags>
+        <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+  <!-- 饮用 Buff：神赐滋养 (大幅增强) -->
+  <HediffDef>
+    <defName>Raven_Hediff_DivineNectar</defName>
+    <label>神赐滋养</label>
+    <description>饮用了神赐乳。仿佛有一股神圣的能量流淌在血管中，思维变得无比清晰，身体充满了力量。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1.0, 0.8, 0.2)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>15000</disappearsAfterTicks> <!-- 持续 6小时 -->
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+            <!-- 增强：意识 +10% (提升一切) -->
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.10</offset>
+            </li>
+        </capMods>
+        <statOffsets>
+            <!-- 增强：工作速度 +20% -->
+            <WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+            <!-- 增强：学习速度 +20% -->
+            <GlobalLearningFactor>0.2</GlobalLearningFactor>
+            <!-- 增强：精神崩溃阈值 -15% (更不容易崩溃) -->
+            <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+            <!-- 增强：免疫速度 +10% -->
+            <ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <!-- 心情 Buff -->
+  <ThoughtDef>
+    <defName>Raven_Thought_AteDivineMilk</defName>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>饮用神赐乳</label>
+        <description>这不仅仅是某种乳制品...这是液体的黄金，是生命的礼赞！我感觉棒极了！</description>
+        <baseMoodEffect>8</baseMoodEffect> <!-- 增强：+5 -> +8 -->
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

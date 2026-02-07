@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 【修改】Key 和内容均已更新 -->
+  <Raven_Wall.label>渡鸦墙体</Raven_Wall.label>
+  <Raven_Wall.description>由坚固的岩石砖块砌成的墙体，表面经过抛光处理，呈现出深邃的暗色光泽。结构坚固，能有效抵御攻击，同时其独特的美感也为殖民地增添了一抹肃穆的风格。</Raven_Wall.description>
+
+  <!-- 【修改】Key 和内容均已更新 -->
+  <Raven_Terrain_Tile.label>渡鸦地砖</Raven_Terrain_Tile.label>
+  <Raven_Terrain_Tile.description>经过精细打磨的暗色地砖，表面平滑，不易积攒灰尘。简单的几何图案在光线下会呈现出微妙的变化。</Raven_Terrain_Tile.description>
+
+</LanguageData>

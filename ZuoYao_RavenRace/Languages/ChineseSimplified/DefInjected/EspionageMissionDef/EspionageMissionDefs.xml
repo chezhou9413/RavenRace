@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Raven_Mission_GatherIntel.label>搜集基础情报</Raven_Mission_GatherIntel.label>
+  <Raven_Mission_GatherIntel.description>派遣间谍混入派系外围，搜集关于官员身份和性格的基础信息。</Raven_Mission_GatherIntel.description>
+
+  <Raven_Mission_StealSupplies.label>窃取物资</Raven_Mission_StealSupplies.label>
+  <Raven_Mission_StealSupplies.description>从派系仓库中盗取少量补给品。风险较低。</Raven_Mission_StealSupplies.description>
+
+  <Raven_Mission_ProbeOfficial.label>刺探详细资料</Raven_Mission_ProbeOfficial.label>
+  <Raven_Mission_ProbeOfficial.description>深入调查特定官员的个人喜好、弱点和人际关系。这是策反或暗杀的前置准备。</Raven_Mission_ProbeOfficial.description>
+</LanguageData>

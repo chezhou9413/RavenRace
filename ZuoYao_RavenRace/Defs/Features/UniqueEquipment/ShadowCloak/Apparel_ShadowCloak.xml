@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Raven_Apparel_ShadowCloak</defName>
+    <label>暗影斗篷</label>
+    <description>一件由特殊吸光材料编织而成的斗篷，表面仿佛流动着阴影。\n\n战术功能：\n1. 隐匿身形：穿戴者在敌人的视野中会变得模糊不清，大幅降低被远程敌人选为目标的概率。\n2. 影步：近战攻击命中后，会借助阴影瞬间加速脱离战场。\n\n这是渡鸦族渗透者的标准装备。</description>
+    <graphicData>
+      <texPath>Items/Apparel/Raven/ShadowCloak</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Cloth>60</Cloth>
+      <Steel>20</Steel>
+      <!-- [核心修复] 原版魔菇布的 defName 是 DevilstrandCloth，不是 Devilstrand -->
+      <DevilstrandCloth>20</DevilstrandCloth>
+    </costList>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.5</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.60</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.60</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+
+
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <!-- 确保这个路径下有纹理。如果只有 ShadowCloak.png，游戏可能会找 ShadowCloak_Male_South.png -->
+      <!-- 建议：确保 Textures/Items/Apparel/Raven/ShadowCloak 文件夹下至少有默认的 -->
+      <wornGraphicPath>Items/Apparel/Raven/ShadowCloak</wornGraphicPath>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>Raven_Spy</li>
+      </tags>
+      <!-- 移除 defaultOutfitTags 限制 -->
+    </apparel>
+
+
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_RavenSpecials</researchPrerequisite>
+      <recipeUsers>
+        <li>HandTailoringBench</li>
+        <li>ElectricTailoringBench</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+
+</Defs>

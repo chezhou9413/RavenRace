@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.FaceAnimationDef>
+    <defName>FleeAndCower_Raven_Race</defName>
+    <raceName>Raven_Race</raceName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <lidShapeDef>xlid</lidShapeDef>
+        <emotionShapeDef>sad</emotionShapeDef>
+        <mouthShapeDef>open</mouthShapeDef>
+        <browShapeDef>happy</browShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>FleeAndCower</li>
+      <li>FleeAndCowerShort</li>
+    </targetJobs>
+    <priority>10200</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

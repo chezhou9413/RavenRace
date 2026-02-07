@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <!-- ==================== 新生儿/婴儿背景 ==================== -->
+  
+  <!-- 渡鸦新生儿 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Newborn</defName>
+    <title>渡鸦新生儿</title>
+    <titleShort>新生儿</titleShort>
+    <baseDesc>[PAWN_nameDef]是个宝宝，刚从灵卵中出世不久。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_NewbornBackstory</li></spawnCategories>
+    <bodyTypeGlobal>Baby</bodyTypeGlobal>
+    <bodyTypeMale>Baby</bodyTypeMale>
+    <bodyTypeFemale>Baby</bodyTypeFemale>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 渡鸦殖民者宝宝 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_ColonyChild</defName>
+    <title>渡鸦殖民者</title>
+    <titleShort>殖民者</titleShort>
+    <baseDesc>[PAWN_nameDef]在殖民地长大，[PAWN_pronoun]觉得自己就是这儿的一份子。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_NewbornBackstory</li></spawnCategories>
+    <bodyTypeGlobal>Child</bodyTypeGlobal>
+    <bodyTypeMale>Child</bodyTypeMale>
+    <bodyTypeFemale>Child</bodyTypeFemale>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 金乌宝宝 (禁止生成) -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>GoldenCrow_Newborn</defName>
+    <title>新生的纯血金乌</title>
+    <titleShort>金乌宝宝</titleShort>
+    <baseDesc>[PAWN_nameDef]是一只成功返祖的纯血金乌族宝宝，刚从灵卵中出世不久。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>GoldenCrow_Backstory</li></spawnCategories>
+    <bodyTypeGlobal>Baby</bodyTypeGlobal>
+  </AlienRace.AlienBackstoryDef>
+  
+  <AlienRace.AlienBackstoryDef>
+    <defName>GoldenCrow_Child</defName>
+    <title>纯血金乌</title>
+    <titleShort>金乌</titleShort>
+    <baseDesc>[PAWN_nameDef]的金乌族力量已经开始觉醒，[PAWN_pronoun]已经可以熟练的驾驭血脉中的力量。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>GoldenCrow_Backstory</li></spawnCategories>
+    <bodyTypeGlobal>Child</bodyTypeGlobal>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- ==================== 少年背景 ==================== -->
+  
+  <!-- 渡鸦族奴隶 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_Slave</defName>
+    <title>渡鸦族奴隶</title>
+    <titleShort>奴隶</titleShort>
+    <baseDesc>[PAWN_nameDef]出生于一个世代为奴的渡鸦奴隶家庭。在这段生活中[PAWN_pronoun]虽然充分感受到了人性之恶，但成功磨练了[PAWN_pronoun]的技巧。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Crafting>4</Crafting>
+      <Cooking>2</Cooking>
+      <Construction>2</Construction>
+    </skillGains>
+    <workDisables>
+      <li>Social</li>
+    </workDisables>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 渡鸦儿童反抗者 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_Rebel</defName>
+    <title>渡鸦儿童反抗者</title>
+    <titleShort>反抗者</titleShort>
+    <baseDesc>经过前辈和历史的教育，[PAWN_nameDef]学会了在外族社会中伪装并隐藏自己的情绪，从而能够配合外地的组织扶桑给予外族更致命的一击。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Melee>3</Melee>
+      <Shooting>3</Shooting>
+      <Social>-2</Social>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 渡鸦儿童农家劳工 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_FarmLaborer</defName>
+    <title>渡鸦儿童农家劳工</title>
+    <titleShort>农家劳工</titleShort>
+    <baseDesc>可能是出于恶趣味或者别的类似什么，[PAWN_nameDef]的主人买下[PAWN_pronoun]后就将其扔在一个农场上劳作，[PAWN_pronoun]只尽力在有限的资源中自给自足，并维修好自己的一切工具。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Plants>4</Plants>
+      <Crafting>2</Crafting>
+      <Social>-2</Social>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+  
+  <!-- 渡鸦流亡者之子 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_ExileSon</defName>
+    <title>渡鸦流亡者之子</title>
+    <titleShort>流亡者之子</titleShort>
+    <baseDesc>[PAWN_nameDef]曾经是一个金乌贵族的混血私生子之一。但是在那场大战中，[PAWN_nameDef]的家庭成员几乎被外族屠杀至尽。[PAWN_pronoun]被自己的家庭成员塞进休眠舱后被随机向星海发射，经过不知道多少年的漂流坠落到这个边缘世界。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Intellectual>4</Intellectual>
+      <Social>4</Social>
+      <Melee>2</Melee>
+    </skillGains>
+    <workDisables>
+      <li>Firefighting</li>
+    </workDisables>
+  </AlienRace.AlienBackstoryDef>
+  
+  <!-- 渡鸦幸运儿 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_LuckyOne</defName>
+    <title>渡鸦幸运儿</title>
+    <titleShort>幸运儿</titleShort>
+    <baseDesc>[PAWN_nameDef]毫无疑问相比于其他过着悲惨奴隶生活的同族们，显然是碰到了一家稍微还有一些人道主义的家庭。虽然仍然过着仆人般的生活，至少主人家有一口饱饭都有[PAWN_pronoun]的一份。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Cooking>3</Cooking>
+      <Plants>3</Plants>
+      <Social>2</Social>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 渡鸦少年走私者 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_Smuggler</defName>
+    <title>渡鸦少年走私者</title>
+    <titleShort>小走私犯</titleShort>
+    <baseDesc>[PAWN_nameDef]的父母利用[PAWN_pronoun]的少年时身材矮小的优势进行走私，也因此学会了一些关于走私相关的事情。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Melee>4</Melee>
+      <Social>2</Social>
+      <Plants>-2</Plants>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 渡鸦卖身少女 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_SoldGirl</defName>
+    <title>渡鸦卖身少女</title>
+    <titleShort>卖身少女</titleShort>
+    <baseDesc>[PAWN_nameDef]从小就知道怎么勾引男人得到钱财，在他们在自己身上春风得意的时候，悄悄地顺走他们的亮闪闪之后远走高飞，但不是每次都能成功。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Social>5</Social>
+      <Cooking>3</Cooking>
+      <Intellectual>2</Intellectual>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 渡鸦族产卵奴隶 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_EggSlave</defName>
+    <title>渡鸦族产卵奴隶</title>
+    <titleShort>产卵奴隶</titleShort>
+    <baseDesc>[PAWN_nameDef]可以开始排卵的年纪就被反复强制注射排卵药，源源不断的分娩营养丰富的高价值的无精卵供富人食用，直到她被扶桑救出。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Cooking>5</Cooking>
+      <Social>3</Social>
+      <Intellectual>-4</Intellectual>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+  
+  <!-- 渡鸦复仇者 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_Avenger</defName>
+    <title>渡鸦复仇者</title>
+    <titleShort>复仇者</titleShort>
+    <baseDesc>[PAWN_nameDef]出生于一个乡村星球，当[PAWN_nameDef]溜出村子去玩耍，回来时[PAWN_pronoun]的故乡就成为了一堆燃烧在火中的废墟，[PAWN_nameDef]立志于要让外族同样感觉到[PAWN_pronoun]的痛苦。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Shooting>4</Shooting>
+      <Melee>4</Melee>
+      <Plants>-2</Plants>
+      <Construction>-2</Construction>
+      <Social>-2</Social>
+      <Intellectual>-2</Intellectual>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+  
+  <!-- 渡鸦新手夜羽 -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Childhood_NewbieNightfeather</defName>
+    <title>渡鸦新手夜羽</title>
+    <titleShort>新手夜羽</titleShort>
+    <baseDesc>[PAWN_nameDef]是扶桑组织羽翼未丰的后备生力军，能拿住一把暗羽琉璃钢匕首的时候就开始了杀手训练。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Raven_Backstory</li></spawnCategories>
+    <skillGains>
+      <Melee>3</Melee>
+      <Shooting>3</Shooting>
+    </skillGains>
+    <workDisables>
+      <li>Social</li>
+    </workDisables>
+  </AlienRace.AlienBackstoryDef>
+
+</Defs>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 扶桑育生祭坛 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_SoulAltar_Core</defName>
+    <label>扶桑育生祭坛</label>
+    <description>金乌飞升仪式的核心建筑。结构精密，表面镌刻着星图与血脉回路。\n\n功能：\n- 孵化渡鸦灵卵\n- 链接周围的注灵器与共鸣桩\n- 必须放置在仪式地面的中心</description>
+    <thingClass>RavenRace.Building_Cradle</thingClass>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Buildings/SoulAltar/RavenCradle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+
+      <drawSize>(4.5,4.5)</drawSize>      <!-- 改这个变大小 -->
+      <drawOffset>(0, 0, 0.6)</drawOffset>      <!-- [新增] 向上(Z轴)偏移 -->
+
+      <shadowData>
+        <volume>(2.8, 0.5, 2.8)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>150</Steel>
+      <Jade>20</Jade>
+      <Gold>10</Gold>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <building>
+      <fixedStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>Raven_SpiritEgg</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>Raven_SpiritEgg</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <comps>
+      <li Class="RavenRace.CompProperties_SoulAltar">
+        <hatchingSpeedPerPylon>0.08</hatchingSpeedPerPylon>
+      </li>
+    </comps>
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_Altar_Core</li>
+    </researchPrerequisites>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+  </ThingDef>
+
+  <!-- 2. 内环：注灵器 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_Altar_Infuser</defName>
+    <label>扶桑注灵器</label>
+    <description>祭坛的内环组件。放入特定物资可以强化灵卵的属性。</description>
+    <thingClass>RavenRace.Building_AltarInfuser</thingClass>
+    <graphicData>
+      <texPath>Buildings/SoulAltar/RavenInfuser</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+
+      <drawSize>(1.5,1.5)</drawSize>      <!-- 改这个变大小 -->
+      <drawOffset>(0, 0, 0.3)</drawOffset>      <!-- [新增] 向上(Z轴)偏移 -->
+
+    </graphicData>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>40</Steel>
+      <Jade>5</Jade>
+    </costList>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <building>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>ResourcesRaw</li>
+            <li>Manufactured</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <categories>
+            <li>ResourcesRaw</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_Altar_Infusion</li>
+    </researchPrerequisites>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+  </ThingDef>
+
+  <!-- 3. 外环：共鸣桩 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_Altar_Pylon</defName>
+    <label>辉光共鸣桩</label>
+    <description>祭坛的外环组件。通电后可加速孵化过程。</description>
+    <thingClass>RavenRace.Building_AltarPylon</thingClass>
+    <graphicData>
+      <texPath>Buildings/SoulAltar/RavenPylon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+
+      <drawSize>(1.8,1.8)</drawSize>      <!-- 改这个变大小 -->
+      <drawOffset>(0, 0, 0.3)</drawOffset>      <!-- [新增] 向上(Z轴)偏移 -->
+
+    </graphicData>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(255,180,0,0)</glowColor>
+      </li>
+    </comps>
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_Altar_Resonance</li>
+    </researchPrerequisites>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+  </ThingDef>
+
+  <!-- 4. 强化模块：注入仪 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_Altar_Injector</defName>
+    <label>蜕凡注入仪</label>
+    <description>祭坛的高级强化模块。用于注入特殊物质以获得强力特性。</description>
+    <thingClass>RavenRace.Building_AltarInfuser</thingClass>
+    <graphicData>
+      <texPath>Buildings/SoulAltar/RavenInjector</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+
+      <drawSize>(1.5,1.5)</drawSize>      <!-- 改这个变大小 -->
+      <drawOffset>(0, 0, 0.3)</drawOffset>      <!-- [新增] 向上(Z轴)偏移 -->
+
+    </graphicData>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>100</Steel>
+      <Gold>20</Gold>
+    </costList>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <building>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>ResourcesRaw</li>
+            <li>Manufactured</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+    </building>
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_Altar_Transformation</li>
+    </researchPrerequisites>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+  </ThingDef>
+
+</Defs>

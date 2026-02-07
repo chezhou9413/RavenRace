@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 目标检查 -->
+  <RavenRace_Ritual_TargetDestroyed>目标已损毁。</RavenRace_Ritual_TargetDestroyed>
+  <RavenRace_Ritual_NotCradle>目标不是摇篮。</RavenRace_Ritual_NotCradle>
+  <RavenRace_Ritual_CradleEmpty>摇篮中没有灵卵。</RavenRace_Ritual_CradleEmpty>
+  <RavenRace_Ritual_NotSpiritEgg>摇篮中的物品不是灵卵。</RavenRace_Ritual_CradleEmpty>
+  <RavenRace_Ritual_TargetInfo>包含灵卵的摇篮</RavenRace_Ritual_TargetInfo>
+  
+  <!-- 仪式结果 -->
+  <RavenRace_Ritual_AbsorptionSuccess>{0} 成功吸收了灵卵的血脉精华，体内的力量变得更加纯粹了。</RavenRace_Ritual_AbsorptionSuccess>
+  
+  <!-- 角色检查 -->
+  <RavenRace_Ritual_RoleMustBeRaven>必须由渡鸦族发起。</RavenRace_Ritual_RoleMustBeRaven>
+
+  <!-- 祭坛提示 -->
+  <RavenRace_Ritual_CradleEmpty>摇篮为空</RavenRace_Ritual_CradleEmpty>
+  
+
+
+  <!-- 这里补充一些 UI 上的提示 -->
+  <RavenRace_Ritual_NoRavens>无可用渡鸦族</RavenRace_Ritual_NoRavens>
+  <RavenRace_Ritual_Unreachable>{0} (无法到达)</RavenRace_Ritual_Unreachable>
+  
+</LanguageData>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>Raven_Job_UseFusangRadio</defName>
+    <driverClass>RavenRace.JobDriver_UseFusangRadio</driverClass>
+    <reportString>使用扶桑通讯台。</reportString>
+  </JobDef>
+</Defs>

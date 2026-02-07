@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 炒渡鸦蛋 (菜肴定义) -->
+  <ThingDef ParentName="MealFineBase">
+    <defName>Raven_Meal_FriedEgg</defName>
+    <label>炒渡鸦蛋</label>
+    <description>用未受精的渡鸦灵卵制作的简单菜肴。蛋液金黄，口感滑嫩，蕴含着丰富的营养和微弱的灵气。吃下去会让人感到非常满足。</description>
+    <graphicData>
+      <!-- 贴图位置: Textures/Items/Food/FriedRavenEgg.png -->
+      <texPath>Items/Food/FriedRavenEgg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>45</MarketValue>
+      <WorkToMake>400</WorkToMake>
+      <Nutrition>0.9</Nutrition>
+    </statBases>
+    <ingestible>
+      <!-- [修复] RimWorld 代码中没有 MealLuxurious，最高级是 MealLavish -->
+      <preferability>MealLavish</preferability> 
+      <!-- 心情给予：使用原版奢华食物的心情 (+12) -->
+      <tasteThought>AteLavishMeal</tasteThought> 
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+    </ingestible>
+  </ThingDef>
+
+  <!-- 2. 烹饪配方 -->
+  <RecipeDef>
+    <defName>Raven_Cook_FriedRavenEgg</defName>
+    <label>烹饪炒渡鸦蛋</label>
+    <description>用未受精的渡鸦灵卵制作美味的炒蛋。</description>
+    <jobString>正在烹饪炒渡鸦蛋。</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>400</workAmount>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Raven_SpiritEgg_Unfertilized</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Raven_SpiritEgg_Unfertilized</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Raven_Meal_FriedEgg>1</Raven_Meal_FriedEgg>
+    </products>
+    <skillRequirements>
+      <Cooking>6</Cooking>
+    </skillRequirements>
+  </RecipeDef>
+
+</Defs>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_PrimitiveCradle</defName>
+    <label>原始摇篮</label>
+    <description>一个用原木搭建的简单摇篮，专门用于孵化渡鸦灵卵。只有将灵卵放入其中，孵化过程才会开始。</description>
+    
+    <!-- [新增] 科技限制 -->
+    <researchPrerequisites>
+      <li>RavenResearch_Cradle</li>
+    </researchPrerequisites>
+
+    <graphicData>
+      <texPath>Buildings/SoulAltar/PrimitiveCradle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(2.8, 0.5, 2.8)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <costList>
+      <WoodLog>100</WoodLog>
+    </costList>
+    <building>
+      <fixedStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>Raven_SpiritEgg</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>Raven_SpiritEgg</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <thingClass>RavenRace.Building_Cradle</thingClass>
+    <tickerType>Normal</tickerType>
+    <designationCategory>Raven_Category</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+  </ThingDef>
+</Defs>

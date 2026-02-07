@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MustPlaceOnWall>必须放置在墙壁或岩石上。</MustPlaceOnWall>
+
+
+  <!-- 掩体系统 -->
+  <Raven_EnterConcealment>进入掩体</Raven_EnterConcealment>
+  <Raven_ExitConcealment>离开掩体</Raven_ExitConcealment>
+  <Raven_ExitConcealmentDesc>离开当前的伪装掩体。</Raven_ExitConcealmentDesc>
+  
+  <Raven_Concealment_Occupied>已有人驻守</Raven_Concealment_Occupied>
+  <Raven_Concealment_Vacant>空闲</Raven_Concealment_Vacant>
+  <Raven_Concealment_Hidden>隐蔽中 (AI无法发现)</Raven_Concealment_Hidden>
+  <Raven_Concealment_Revealed>已暴露! (AI将攻击)</Raven_Concealment_Revealed>
+  
+  <Raven_Concealment_SwapWeapon>切换武器</Raven_Concealment_SwapWeapon>
+  <Raven_Concealment_SwapWeaponDesc>选择使用驻守者装备或背包中的另一把远程武器。</Raven_Concealment_SwapWeaponDesc>
+
+
+  <!-- [新增] 催情香炉 -->
+  <Raven_Message_IncenseEffect>{0} 在香薰的作用下对 {1} 产生了强烈的冲动...</Raven_Message_IncenseEffect>
+
+
+</LanguageData>

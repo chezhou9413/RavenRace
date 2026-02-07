@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HeadTypeDef>
+    <defName>Raven_Head_Normal</defName>
+    <!-- [核心修改] 指向空白头 -->
+    <graphicPath>Races/Raven/Head/Blank/RavenHead_Blank</graphicPath> 
+    <gender>None</gender> 
+  </HeadTypeDef>
+</Defs>

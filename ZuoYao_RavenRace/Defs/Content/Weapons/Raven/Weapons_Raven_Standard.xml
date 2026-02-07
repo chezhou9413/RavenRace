@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 吹箭 (Blowgun) ==================== -->
+
+  <!-- 飞镖弹药定义 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Raven_Projectile_BlowgunDart</defName>
+    <label>aphrodisiac dart</label>
+    <thingClass>RavenRace.Projectile_BlowgunDart</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Arrow_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Scratch</damageDef>
+      <damageAmountBase>1</damageAmountBase> 
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  <!-- 武器定义 -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Raven_Weapon_Blowgun</defName>
+    <label>raven blowgun</label>
+    <description>A simple but effective blowgun used by Raven assassins. It fires darts coated in a potent aphrodisiac toxin.\n\nUpon impact, the toxin is injected directly, causing the victim to lose composure.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Items/Weapons/Raven/RavenBlowgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>3000</WorkToMake>
+      <Mass>1.2</Mass>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    
+    <!-- [新增] 武器标签，允许被 PawnKind 引用 -->
+    <weaponTags>
+      <li>RavenWeapon</li>
+      <li>RavenRanged</li>
+    </weaponTags>
+
+    <costList>
+      <WoodLog>30</WoodLog>
+      <Steel>5</Steel>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Raven_Projectile_BlowgunDart</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>16.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_RavenWeapons</researchPrerequisite>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+
+
+  <!-- ==================== 2. 袖剑 (Hidden Blade) ==================== -->
+  
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>Raven_Weapon_HiddenBlade</defName>
+    <label>hidden blade</label>
+    <description>A retractable blade mounted under the wrist.\n\nSpecial Effect: After remaining out of combat for 10 seconds, the next attack deals massive damage.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Items/Weapons/Raven/RavenHiddenBlade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>0.5</Mass>
+      <MarketValue>350</MarketValue>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    
+    <!-- [新增] 武器标签 -->
+    <weaponTags>
+      <li>RavenWeapon</li>
+      <li>RavenMelee</li>
+    </weaponTags>
+
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_RavenWeapons</researchPrerequisite>
+      <recipeUsers>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="RavenRace.CompProperties_HiddenBlade">
+        <ticksToPrep>600</ticksToPrep>
+        <prepHediff>Raven_Hediff_HiddenBladePrep</prepHediff>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <label>blade</label>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>1.2</cooldownTime>
+        <armorPenetration>0.4</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+
+
+  <!-- ==================== 3. 消音狙击枪 (Marksman Rifle) ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Raven_Weapon_SilentSniper</defName>
+    <label>phantom marksman rifle</label>
+    <description>A highly sophisticated sniper rifle with an integral suppressor.\n\nSpecial Effect: Staying still accumulates "Steady Aim", increasing accuracy.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Items/Weapons/Raven/RavenSilentSniper</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.85</AccuracyMedium>
+      <AccuracyLong>0.88</AccuracyLong>
+      <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+    </statBases>
+    
+    <!-- [新增] 武器标签 -->
+    <weaponTags>
+      <li>RavenWeapon</li>
+      <li>SniperRifle</li>
+    </weaponTags>
+
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="RavenRace.CompProperties_SteadyAim">
+        <aimHediff>Raven_Hediff_SteadyAim</aimHediff>
+        <ticksToStack>120</ticksToStack>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_SniperRifle</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>44.9</range>
+        <soundCast>Shot_SniperRifle</soundCast> 
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_RavenWeapons</researchPrerequisite>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+
+</Defs>

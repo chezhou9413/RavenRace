@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 定义一个完全隐形的武器 -->
+  <!-- 这是关键！如果不定义这个，Building_TurretGun 会找不到枪而报错，或者如果用了原版枪会显示贴图 -->
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Raven_Weapon_InvisiblePlaceholder</defName>
+    <label>concealment slot</label>
+    <graphicData>
+      <!-- 必须指向一个存在的透明贴图 -->
+      <texPath>Races/Raven/Hair/Transparent</texPath> 
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.1</drawSize>
+    </graphicData>
+    <statBases>
+      <RangedWeapon_Cooldown>1000</RangedWeapon_Cooldown> <!-- 极长冷却，防止没人的时候自动射击 -->
+      <AccuracyTouch>0</AccuracyTouch>
+      <AccuracyShort>0</AccuracyShort>
+      <AccuracyMedium>0</AccuracyMedium>
+      <AccuracyLong>0</AccuracyLong>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_Autopistol</defaultProjectile> <!-- 这个无所谓，反正不射 -->
+        <warmupTime>1000</warmupTime>
+        <range>0.1</range> <!-- 0 射程，确保不开火 -->
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- 2. 掩体定义 -->
+  <ThingDef Name="RavenConcealmentBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>RavenRace.Features.DefenseSystem.Concealment.Building_Concealment</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.85</fillPercent> 
+    <pathCost>50</pathCost>
+    <drawerType>MapMeshAndRealTime</drawerType> <!-- 必须支持实时绘制 -->
+    <tickerType>Normal</tickerType>
+    
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Mass>20</Mass>
+      <ShootingAccuracyTurret>1.0</ShootingAccuracyTurret>
+    </statBases>
+    
+    <size>(1,1)</size>
+    <designationCategory>Security</designationCategory>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <!-- 引用上面的隐形枪 -->
+      <turretGunDef>Raven_Weapon_InvisiblePlaceholder</turretGunDef> 
+      <turretBurstCooldownTime>1.0</turretBurstCooldownTime>
+    </building>
+    
+    <placeWorkers>
+      <!-- 移除 TurretTop，因为我们不需要那个旋转的底座 -->
+      <!-- <li>PlaceWorker_TurretTop</li> --> 
+    </placeWorkers>
+    
+    <researchPrerequisites>
+      <li>RavenResearch_Concealment</li> 
+    </researchPrerequisites>
+  </ThingDef>
+
+  <!-- 低语之树 -->
+  <ThingDef ParentName="RavenConcealmentBase">
+    <defName>RavenConcealment_Tree</defName>
+    <label>whispering tree</label>
+    <description>A hollow artificial tree tactical nest.\n\n- Enter to hide.\n- Uses occupant's weapon to fire.\n- Invisible until firing.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/RavenConcealment/Tree</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <costList>
+      <WoodLog>50</WoodLog>
+      <Steel>20</Steel>
+    </costList>
+  </ThingDef>
+
+</Defs>

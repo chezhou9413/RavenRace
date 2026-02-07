@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]</xpath>
+        <value>
+            <!-- 为渡鸦族添加RJW月经周期所需的DNA信息 -->
+            <li Class="RJW_Menstruation.PawnDNAModExtension">
+                <!-- 胎儿贴图路径，我们是卵生，但为了兼容性最好提供一个占位符 -->
+                <fetusTexPath>Fetus/Fetus_Default</fetusTexPath>
+                <!-- 精液颜色 (RGBA) -->
+                <cumColor>(255,255,255,255)</cumColor> 
+                <!-- 精液粘稠度 -->
+                <cumThickness>0.2</cumThickness>
+                <!-- 我们没有特殊的摄入效果 -->
+                <ingestionOutcomeDoers />
+                <!-- 我们不使用RJW的杂交系统，留空 -->
+                <hybridExtension />
+            </li>
+        </value>
+    </Operation>
+</Patch>

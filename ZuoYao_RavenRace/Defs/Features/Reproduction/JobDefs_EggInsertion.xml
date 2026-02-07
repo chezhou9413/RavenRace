@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>Raven_Job_InsertSpiritEgg</defName>
+    <driverClass>RavenRace.JobDriver_InsertSpiritEgg</driverClass>
+    <reportString>正在将灵卵置入TargetA体内。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Raven_Job_RemoveSpiritEgg</defName>
+    <driverClass>RavenRace.JobDriver_RemoveSpiritEgg</driverClass>
+    <reportString>正在从TargetA体内取出灵卵。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Job: 使用飞机杯自慰 (使用者) -->
+  <JobDef>
+    <defName>Raven_Job_MasturbateWithCup</defName>
+    <driverClass>RavenRace.Features.MiscSmallFeatures.MasturbatorCup.JobDriver_MasturbateWithCup</driverClass>
+    <reportString>正在使用飞机杯。</reportString>
+    <joyDuration>2500</joyDuration>
+    <joyKind>Raven_AdultEntertainment</joyKind>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <casualInterruptible>false</casualInterruptible> <!-- 禁止闲逛打断 -->
+    <playerInterruptible>false</playerInterruptible> <!-- 尝试禁止玩家打断 (1.6部分有效) -->
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage> <!-- 受伤也不停 -->
+    <suspendable>false</suspendable>
+  </JobDef>
+
+  <!-- Job: 次元性交受害者 (目标) -->
+  <JobDef>
+    <defName>Raven_Job_DimensionalClimax</defName>
+    <driverClass>RavenRace.Features.MiscSmallFeatures.MasturbatorCup.JobDriver_DimensionalClimax</driverClass>
+    <reportString>正受到远程感官刺激。</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>false</playerInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+    <suspendable>false</suspendable>
+    <alwaysShowWeapon>false</alwaysShowWeapon>
+  </JobDef>
+
+</Defs>

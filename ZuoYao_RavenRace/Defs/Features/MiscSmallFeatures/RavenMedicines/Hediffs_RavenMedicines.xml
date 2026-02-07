@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 渡鸦栓剂效果 -->
+  <HediffDef>
+    <defName>Raven_Hediff_SuppositoryEffect</defName>
+    <label>栓剂吸收中</label>
+    <description>渡鸦族特制栓剂正在体内缓慢溶解。药物成分正在持续修复受损组织并增强免疫系统。\n\n由于给药方式和药物的特殊性，会导致下体异物感和轻微的意识模糊。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.8, 0.6)</defaultLabelColor>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <!-- 持续时间：0.5天 (12小时) -->
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.0</severityPerDay>
+      </li>
+      <!-- 自定义再生逻辑 -->
+      <li Class="RavenRace.Features.MiscSmallFeatures.RavenMedicines.CompProperties_RavenRegeneration">
+        <!-- [用户指定] 极度强力数值 -->
+        <healIntervalTicks>60</healIntervalTicks> <!-- 每1秒 (60 ticks) -->
+        <healAmount>10.0</healAmount> <!-- 每次治疗 10 点 -->
+        <immunityOffset>10</immunityOffset>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.15</offset> <!-- 移动减值 -->
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.10</offset> <!-- 意识减值 -->
+          </li>
+        </capMods>
+        <statOffsets>
+          <!-- [用户指定] 免疫力增益 10.0 = +1000% -->
+          <ImmunityGainSpeed>10.0</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

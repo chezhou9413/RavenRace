@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_Building_EmberExtractor</defName>
+    <label>残火提取仪</label>
+    <description>一台精密的生物炼金设备，能够安全地将渡鸦族体内的金乌血脉精华剥离出来，而不伤害受试者的性命。\n\n提取过程会让受试者陷入长时间的“余烬枯竭”状态，在此期间无法再次进行提取。</description>
+    <thingClass>RavenRace.Buildings.Building_EmberExtractor</thingClass>
+    
+    <graphicData>
+      <texPath>Buildings/EmberExtractor/Base</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4, 4)</drawSize>
+      <drawOffset>(0.045, 0, 0.18)</drawOffset> <!-- [新增] 向上(Z轴)偏移 -->
+      <shadowData>
+        <volume>(1.8, 1.0, 2.8)</volume>
+      </shadowData>
+    </graphicData>
+    
+    <size>(3,2)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <rotatable>true</rotatable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    
+    <!-- [最终修复] 正确的自定义 BuildingProperties 方式 -->
+    <building Class="RavenRace.Buildings.BuildingProperties_EmberExtractor">
+      <!-- 这个自定义字段现在可以被正确识别了 -->
+      <emberExtractorTankGraphic>
+        <texPath>Buildings/EmberExtractor/Tank</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>Transparent</shaderType>
+        <drawSize>(4, 4)</drawSize>
+        <drawOffset>(0.045, 0, 0.18)</drawOffset> <!-- [新增] 向上(Z轴)偏移 -->
+      </emberExtractorTankGraphic>
+    </building>
+    
+    <statBases>
+      <MaxHitPoints>350</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    
+    <costList>
+      <Steel>200</Steel>
+      <Raven_DarkfeatherSteel>60</Raven_DarkfeatherSteel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <Plasteel>30</Plasteel>
+    </costList>
+    
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_EmberExtraction</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 纳刀 Buff (给自己) -->
+  <HediffDef>
+    <defName>Raven_Hediff_SpiritBeadsInserted</defName>
+    <label>灵珠纳体</label>
+    <description>灵卵拉珠已完全置入体内。这种充盈与紧致的感觉让持有者处于一种奇异的专注状态，随时准备发动致命一击。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.5, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.2</MoveSpeed> <!-- 稍微兴奋走得快 -->
+          <MeleeDodgeChance>5</MeleeDodgeChance>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 2. 高潮 Debuff (给敌人) -->
+  <HediffDef>
+    <defName>Raven_Hediff_HighClimax</defName>
+    <label>绝顶升天</label>
+    <description>强烈的感官刺激导致神经系统过载。受害者陷入全身痉挛和极度的高潮余韵中，几乎无法动弹。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.2, 0.6)</defaultLabelColor>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1200~2500</disappearsAfterTicks> <!-- 20~40秒 -->
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painOffset>0.1</painOffset>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.8</offset> <!-- 几乎走不动 -->
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.5</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+        <vomitMtbDays>0.1</vomitMtbDays> <!-- 可能会失禁/呕吐 -->
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

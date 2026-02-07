@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 麻醉累积 -->
+  <RavenHediff_AnestheticBuildup.label>麻醉累积</RavenHediff_AnestheticBuildup.label>
+  <RavenHediff_AnestheticBuildup.description>体内积累的麻醉气体。达到高水平时会导致昏迷。</RavenHediff_AnestheticBuildup.description>
+  <RavenHediff_AnestheticBuildup.stages.drowsy.label>昏昏欲睡</RavenHediff_AnestheticBuildup.stages.drowsy.label>
+  <RavenHediff_AnestheticBuildup.stages.groggy.label>神志不清</RavenHediff_AnestheticBuildup.stages.groggy.label>
+
+  <!-- 催情效果 -->
+  <RavenHediff_AphrodisiacEffect.label>催情效果</RavenHediff_AphrodisiacEffect.label>
+  <RavenHediff_AphrodisiacEffect.description>强效费洛蒙正在影响受试者。会导致无法控制的脱衣冲动，并最终虚脱倒地。</RavenHediff_AphrodisiacEffect.description>
+  <RavenHediff_AphrodisiacEffect.stages.aroused.label>欲火焚身</RavenHediff_AphrodisiacEffect.stages.aroused.label>
+  <RavenHediff_AphrodisiacEffect.stages.flushed.label>意乱情迷</RavenHediff_AphrodisiacEffect.stages.flushed.label>
+</LanguageData>

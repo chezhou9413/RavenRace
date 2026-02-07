@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_EmberDrain</defName>
+    <label>余烬枯竭</label>
+    <description>这个人的金乌血脉精华刚刚被“残火”提取仪提取过。体内的能量回路处于极度匮乏和不稳定的状态。\n\n在此状态消失前，无法再次进行余烬提取，否则会导致直接死亡（安全协议会阻止仪器启动）。\n\n这会导致轻微的意识模糊和身体虚弱。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.6, 0.6)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <comps>
+      <!-- 持续时间：20天 -->
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>1200000</min>
+          <max>1200000</max>
+        </disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

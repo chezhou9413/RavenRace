@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>Raven_Incident_ZuoYaoJoin</defName>
+    <label>左爻救场</label>
+    <category>Special</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>RavenRace.IncidentWorker_ZuoYaoJoin</workerClass>
+    <letterLabel>左爻加入</letterLabel>
+    <letterText>一名叫左爻的渡鸦族接线员加入了你的殖民地，既然她出现在这里说明她做了许多思想斗争并且下了很大的决心，她卸下了所有的虚伪和欺瞒，除了一颗真心和一片真情什么都没有带来，当心！她的性欲是普通渡鸦族女子的十倍！而且可以接受很多玩法！如果你不够变态请不要向她告白！</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <baseChance>0</baseChance> <!-- 只能通过叙事者触发 -->
+    <minRefireDays>60</minRefireDays>
+  </IncidentDef>
+</Defs>

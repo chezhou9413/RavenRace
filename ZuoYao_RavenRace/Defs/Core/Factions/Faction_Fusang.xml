@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================== 扶桑派系定义 ==================== -->
+  <FactionDef ParentName="FactionBase">
+    <defName>Fusang_Hidden</defName>
+    <label>扶桑</label>
+    <description>扶桑是一个在边缘世界暗中活动的古老组织，由幸存的渡鸦族人组成。他们没有固定的据点，行踪诡秘。</description>
+    <pawnSingular>扶桑探员</pawnSingular>
+    <pawnsPlural>扶桑探员</pawnsPlural>
+    <fixedName>扶桑</fixedName>
+    <factionIconPath>World/Factions/FusangFaction</factionIconPath>
+    
+    <!-- 基础设置 -->
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <techLevel>Industrial</techLevel>
+    <hidden>true</hidden>
+    <humanlikeFaction>true</humanlikeFaction>
+    <permanentEnemy>false</permanentEnemy>
+    
+    <!-- 文化与信仰 -->
+    <allowedCultures>
+      <li>Raven_Culture</li>
+    </allowedCultures>
+    <structureMemeWeights>
+      <Structure_GoldenCrow>999</Structure_GoldenCrow>
+    </structureMemeWeights>
+    <requiredMemes>
+      <li>GoldenCrow_Faith</li>
+    </requiredMemes>
+    <allowedMemes>
+      <li>GoldenCrow_Faith</li>
+      <li>Structure_GoldenCrow</li>
+    </allowedMemes>
+    
+    <!-- 交易类型 -->
+    <caravanTraderKinds>
+      <li>Raven_Trader_Caravan</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>Raven_Trader_Caravan</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Raven_Trader_Caravan</li>
+    </baseTraderKinds>
+    
+    <!-- 背景故事过滤 -->
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Raven_Backstory</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    
+    <!-- 基础成员类型 -->
+    <basicMemberKind>Raven_Colonist</basicMemberKind>
+    
+    <!-- 战利品价值曲线 -->
+    <raidLootValueFromPointsCurve>
+      <points>
+        <li>(35, 15)</li>
+        <li>(100, 120)</li>
+        <li>(1000, 500)</li>
+        <li>(2000, 800)</li>
+        <li>(4000, 1000)</li>
+      </points>
+    </raidLootValueFromPointsCurve>
+    
+    <!-- 最大单位成本曲线 -->
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0, 35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    
+    <!-- Pawn 组生成器 -->
+    <pawnGroupMakers>
+      <!-- 战斗队伍 -->
+      <li>
+        <kindDef>Combat</kindDef>
+        <options>
+          <Raven_Colonist>100</Raven_Colonist>
+        </options>
+      </li>
+      
+      <!-- 交易商队 -->
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Raven_Trader>1</Raven_Trader> <!-- 这里必须是 Raven_Trader -->
+        </traders>
+        <carriers>
+          <Muffalo>6</Muffalo>
+          <Dromedary>5</Dromedary>
+          <Alpaca>3</Alpaca>
+        </carriers>
+        <guards>
+          <Raven_Colonist>10</Raven_Colonist> <!-- 护卫可以用普通单位 -->
+        </guards>
+      </li>
+      
+    </pawnGroupMakers>
+    
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>60</configurationListOrderPriority>
+  </FactionDef>
+</Defs>

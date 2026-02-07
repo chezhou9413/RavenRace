@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>Raven_Thought_EggFilled</defName>
+    <!-- [Change] RavenRace.Thoughts -> RavenRace.Features.Reproduction -->
+    <workerClass>RavenRace.Features.Reproduction.ThoughtWorker_EggFilled</workerClass>
+    <stages>
+      <li>
+        <label>被灵卵填满(普通)</label>
+        <description>这种充盈的感觉...很奇怪，但并不讨厌。</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>被爱之卵填满</label>
+        <description>这是我和爱人的结晶，它就在我体内。这种连接感无比美妙。</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

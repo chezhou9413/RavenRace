@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>Raven_Job_InsertBeads</defName>
+    <driverClass>RavenRace.Features.UniqueWeapons.SpiritBeads.JobDriver_InsertBeads</driverClass>
+    <reportString>正在将灵卵拉珠置入体内。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

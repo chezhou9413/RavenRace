@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <!-- 暗影斗篷 -->
+
+
+  <Raven_Hediff_ShadowStep.label>暗影步</Raven_Hediff_ShadowStep.label>
+  <Raven_Hediff_ShadowStep.description>借助暗影斗篷的力量，移动速度大幅提升，身形变得难以捉摸。</Raven_Hediff_ShadowStep.description>
+
+  <RavenHediff_ShadowAttackCooldown.label>暗影冷却</RavenHediff_ShadowAttackCooldown.label>
+  <RavenHediff_ShadowAttackCooldown.description>刚刚发动了致命一击，正在重整姿态。此时移动速度极快，但无法再次发动攻击。</RavenHediff_ShadowAttackCooldown.description>
+
+
+
+</LanguageData>

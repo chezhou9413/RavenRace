@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RavenRace_AutoInsert>自动纳刀</RavenRace_AutoInsert>
+  <RavenRace_AutoInsertDesc>开启后，当脱离战斗且灵珠未在体内时，会自动尝试将其塞入。\n(不会在征召状态下触发)</RavenRace_AutoInsertDesc>
+  
+  <RavenRace_InsertBeads>塞入灵珠</RavenRace_InsertBeads>
+  <RavenRace_InsertBeadsDesc>手动将灵卵拉珠塞入体内，准备发动强力攻击。</RavenRace_InsertBeadsDesc>
+  
+  <RavenRace_Msg_BeadsPopOut>{0} 卸下了武器，灵珠滑了出来。</RavenRace_Msg_BeadsPopOut>
+  <RavenRace_Text_BeadsInserted>已纳刀 (充盈)</RavenRace_Text_BeadsInserted>
+  <RavenRace_Text_ClimaxImpact>高潮!</RavenRace_Text_ClimaxImpact>
+  
+  <RavenRace_Settings_SpiritBeads>灵卵拉珠 (彩蛋武器)</RavenRace_Settings_SpiritBeads>
+  <RavenRace_Settings_EnableGrandClimax>启用技能：盛大高潮</RavenRace_Settings_EnableGrandClimax>
+  <RavenRace_Settings_EnableGrandClimaxDesc>允许灵卵拉珠使用全图范围的强力控制技能。默认关闭以保持平衡。</RavenRace_Settings_EnableGrandClimaxDesc>
+  <RavenRace_Msg_GrandClimaxDisabled>该技能已在模组设置中禁用。</RavenRace_Msg_GrandClimaxDisabled>
+  <RavenRace_Msg_GrandClimaxUnleashed>{0} 释放了灵珠的所有潜能，战场被淫靡的气息淹没！</RavenRace_Msg_GrandClimaxUnleashed>
+</LanguageData>

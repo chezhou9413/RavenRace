@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 核心修复：修正 MayRequire 的包 ID -->
+  <WorkGiverDef MayRequire="HenTaiLoliTeam.Axolotl"> 
+    <defName>Raven_ReadMoeLotlQiSkillBooks</defName>
+    <label>read books (raven)</label>
+    <giverClass>RavenRace.Compat.MoeLotl.WorkGiver_RavenReadBook</giverClass>
+    <workType>Axolotl_ReadMoeLotlQiSkillBooks</workType> 
+    <verb>read</verb>
+    <gerund>reading</gerund>
+    <canBeDoneWhileDrafted>false</canBeDoneWhileDrafted>
+    <!-- 优先级高一点，确保排在前面 -->
+    <priorityInType>600</priorityInType> 
+  </WorkGiverDef>
+</Defs>

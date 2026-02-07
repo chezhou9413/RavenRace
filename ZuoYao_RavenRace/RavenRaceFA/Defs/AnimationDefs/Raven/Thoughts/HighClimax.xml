@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.FaceAnimationDef>
+    <defName>HighClimax</defName>
+    <raceName>Raven_Race</raceName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <lidShapeDef>drowsy</lidShapeDef>
+        <mouthShapeDef>open</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <targetThoughtDefs>
+      <li>Raven_Thought_HighClimax</li>
+    </targetThoughtDefs>
+    <priority>10100</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

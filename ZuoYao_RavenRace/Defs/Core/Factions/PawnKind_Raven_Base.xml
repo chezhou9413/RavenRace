@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================== 渡鸦族 PawnKind 抽象基类 ==================== -->
+  <PawnKindDef Name="Raven_PawnKindBase" Abstract="True">
+    <race>Raven_Race</race>
+    <defaultFactionType>Fusang_Hidden</defaultFactionType>
+    <chemicalAddictionChance>0.05</chemicalAddictionChance>
+    <invNutrition>2.55</invNutrition>
+    <itemQuality>Normal</itemQuality>
+    <backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+    
+    <backstoryFiltersOverride>
+      <li>
+        <categories>
+          <li>Raven_Backstory</li>
+        </categories>
+      </li>
+    </backstoryFiltersOverride>
+  </PawnKindDef>
+</Defs>

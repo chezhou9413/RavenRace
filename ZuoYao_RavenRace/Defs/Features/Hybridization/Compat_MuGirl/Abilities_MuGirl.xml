@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 核心修复：添加 MayRequire，包ID为 Nukafrog.MooGirl -->
+  <AbilityDef MayRequire="Nukafrog.MooGirl">
+    <defName>Raven_Ability_MuGirlCharge</defName>
+    <label>雪牛冲锋</label>
+    <description>利用雪牛娘血脉中的蛮力，向目标发起猛烈的冲锋。</description>
+    <iconPath>UI/MooGirl_Charge</iconPath> <!-- 确保 Textures/UI/MooGirl_Charge.png 存在，或者依赖 MooGirl 模组 -->
+    
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <jobDef>Raven_Job_MuGirlCharge</jobDef>
+    <targetRequired>True</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showCastingProgressBar>True</showCastingProgressBar>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <hostile>true</hostile>
+
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>19.9</range> 
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetMechs>True</canTargetMechs>
+        <neverTargetIncapacitated>False</neverTargetIncapacitated>
+      </targetParams>
+    </verbProperties>
+
+    <comps>
+      <li Class="RavenRace.Compat.MuGirl.CompProperties_AbilityMuGirlCharge">
+        <compClass>RavenRace.Compat.MuGirl.CompAbilityEffect_MuGirlCharge</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

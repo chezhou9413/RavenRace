@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TattooDef>
+    <defName>RavenTattoo_Placeholder</defName>
+    <label>无</label>
+    <tattooType>Face</tattooType>
+    <!-- 指向一个已存在的透明贴图 -->
+    <texPath>Races/Raven/Hair/Transparent</texPath> 
+    <!-- 核心修复：使用正确的标签 <styleTags> -->
+    <styleTags>
+        <li>RavenTattoo</li>
+    </styleTags>
+  </TattooDef>
+</Defs>

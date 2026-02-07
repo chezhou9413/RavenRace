@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FacialAnimation.FaceAnimationDef>
+    <defName>Raven_Job_PlaceEggInCradle</defName>
+    <raceName>Raven_Race</raceName>
+    <animationFrames>
+      <li>
+        <duration>10</duration>
+        <emotionShapeDef>cheerful</emotionShapeDef>
+        <lidShapeDef>closed</lidShapeDef>
+        <eyeballShapeDef>Pupil_Heart</eyeballShapeDef>
+        <mouthShapeDef>huya</mouthShapeDef>
+        <browShapeDef>happy</browShapeDef>
+        <eyeballOffset>(0, 0, -0.01)</eyeballOffset>
+        <lidOffset>(0, 0, -0.01)</lidOffset>
+      </li>
+    </animationFrames>
+    <roopIntervalMin>0</roopIntervalMin>
+    <roopIntervalMax>0</roopIntervalMax>
+    <applyWhenStandingOnly>false</applyWhenStandingOnly>
+    <targetJobs>
+      <li>Raven_Job_PlaceEggInCradle</li>
+      <li>Raven_Job_FillAltar</li>
+    </targetJobs>
+    <priority>10400</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

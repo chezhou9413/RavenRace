@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_MiliraFlight</defName>
+    <label>飞行中</label>
+    <description>利用米莉拉的血脉力量进行反重力飞行。极大提升闪避能力并无视地形阻碍。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>1.0</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <defaultLabelColor>(0.6,0.8,0.6)</defaultLabelColor>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+          <MeleeDodgeChance>3</MeleeDodgeChance>
+          <!-- 假如安装了 AncotLibrary，这个属性才生效，否则会被忽略 -->
+          <!-- <Ancot_RangeDodgeChance>0.1</Ancot_RangeDodgeChance> -->
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 薄暮制作台 (Dusk Workbench) ==================== -->
+  <ThingDef ParentName="BenchBase">
+    <defName>Raven_Building_DuskWorkbench</defName>
+    <label>薄暮制作台</label>
+    <description>一个修长的流线型工作台，专为处理暗羽钢和光敏材料而设计。台面由特殊的吸光材料制成，配有精密的光学校准仪器。\n\n它可以用来制作暗日透镜以及其他涉及光影转换的精密部件。</description>
+    
+    <thingClass>Building_WorkTable</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    
+    <graphicData>
+      <texPath>Buildings/Production/DuskWorkbench/DuskWorkbench</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    
+    <size>(3,1)</size>
+    
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    
+    <costList>
+      <Steel>150</Steel>
+      <Raven_DarkfeatherSteel>50</Raven_DarkfeatherSteel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>3500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    
+    <minifiedDef>MinifiedThing</minifiedDef>
+    
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+        <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_BasicMaterials</li>
+    </researchPrerequisites>
+    
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+  </ThingDef>
+
+  <!-- 
+    【核心修复】
+    将 "制作暗日透镜" 的配方从 Recipes_Materials.xml 移至此处。
+    这确保了在加载此配方时，其依赖的工作台（本文件中的 Raven_Building_DuskWorkbench）一定已经被定义，从而解决了交叉引用错误。
+  -->
+  <RecipeDef>
+    <defName>Make_Raven_DarkSunLens</defName>
+    <label>制作暗日透镜</label>
+    <description>切割暗羽钢并在高压下注入微量的金羽粉末，利用光学设备校准其折射率。这需要极高的工艺技巧。</description>
+    <jobString>正在制作暗日透镜。</jobString>
+    
+    <workAmount>4000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    
+    <!-- 依赖于此文件内定义的薄暮制作台 -->
+    <recipeUsers>
+      <li>Raven_Building_DuskWorkbench</li>
+    </recipeUsers>
+    
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Raven_DarkfeatherSteel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Raven_GoldenFeather</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Raven_DarkfeatherSteel</li>
+        <li>Raven_GoldenFeather</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    
+    <products>
+      <Raven_DarkSunLens>1</Raven_DarkSunLens>
+    </products>
+    
+    <skillRequirements>
+      <Crafting>8</Crafting>
+      <Intellectual>4</Intellectual>
+    </skillRequirements>
+    
+    <researchPrerequisite>RavenResearch_BasicMaterials</researchPrerequisite>
+  </RecipeDef>
+
+</Defs>

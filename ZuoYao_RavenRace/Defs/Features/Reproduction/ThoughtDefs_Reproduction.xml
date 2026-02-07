@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 主体心情：发起者 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_ForceLovin_Initiator</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>愉悦的采补</label>
+        <description>嗯~嗬~这种掌控一切的感觉，还有那喷薄而出的生命力，真是太爽了。</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- 受体心情：目标 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_ForceLovin_Recipient</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>被大姐姐榨出牛奶了</label>
+        <description>这种感觉...太强烈了，仿佛灵魂都被吸走了一样，但又令人回味无穷。</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

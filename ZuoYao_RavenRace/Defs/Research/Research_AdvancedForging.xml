@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>RavenResearch_AdvancedForging</defName>
+    <label>升阳锻造</label>
+    <description>研究金乌神话中关于创造“太阳”的传说，结合现代粒子对撞技术，尝试重现古代金乌族的神级锻造工艺。解锁“升阳注入器”的建造，用以制造破碎日核。</description>
+    <baseCost>4000</baseCost> <!-- 高昂的研究成本 -->
+    <techLevel>Spacer</techLevel> <!-- 宇航级科技 -->
+    <prerequisites>
+      <li>RavenResearch_EmberExtraction</li> <!-- 前置科技：余烬提取 -->
+    </prerequisites>
+    <!-- 在科技树中的位置 -->
+    <researchViewX>8.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+</Defs>

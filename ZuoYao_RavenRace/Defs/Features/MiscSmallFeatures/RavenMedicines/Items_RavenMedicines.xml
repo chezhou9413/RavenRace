@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 渡鸦特制栓剂 -->
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>Raven_Item_Suppository</defName>
+    <label>渡鸦特制栓剂</label>
+    <description>一种由七情草叶、草药和未受精灵卵混合制成的特殊栓剂。虽然名字听起来像药，但其外形和使用方式更接近于某种……玩具。\n\n使用后可以缓慢修复全身伤口并增强免疫力，但会有明显的异物感和副作用。\n\n可以通过手术施用，或直接使用（模拟塞入）。无法像普通药物一样吞服。</description>
+
+
+    <graphicData>
+      <texPath>Items/Medicine/RavenSuppository</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+
+    <stackLimit>10</stackLimit>
+
+    <statBases>
+      <WorkToMake>500</WorkToMake>
+      <MarketValue>120</MarketValue>
+      <Mass>0.1</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <foodType>Processed</foodType>
+      <preferability>NeverForNutrition</preferability>
+      <!-- 设置为不可直接吞服，强制使用 Job 或 Surgery -->
+      <baseIngestTicks>300</baseIngestTicks> 
+      <ingestCommandString>置入 {0}</ingestCommandString>
+      <ingestReportString>正在置入 {0}。</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>Raven_Hediff_SuppositoryEffect</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_Reproduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+    </recipeMaker>
+    
+    <costList>
+      <RavenItem_SevenEmotionsLeaf>5</RavenItem_SevenEmotionsLeaf>
+      <MedicineHerbal>2</MedicineHerbal>
+      <Raven_SpiritEgg_Unfertilized>1</Raven_SpiritEgg_Unfertilized>
+    </costList>
+    
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+
+
+
+  <!-- 2. 特效治疗药 -->
+  <ThingDef ParentName="ResourceBase"> <!-- 不使用 MakeableDrugBase，因为它只能通过手术使用 -->
+    <defName>Raven_Item_MiracleHeal</defName>
+    <label>潜能榨取针剂</label>
+    <description>一种极其危险但也极其有效的混合药剂。混合了高浓度催情提取液、闪耀世界医药和催产素。\n\n原理是瞬间榨取人体的所有潜能（主要是生殖与神经系统）来加速细胞再生。可以瞬间治愈除非断肢外的所有伤口。\n\n副作用：受术者会陷入持续一整天的极度高潮和神志不清状态。只能通过手术操作使用。</description>
+    <graphicData>
+      <texPath>Items/Medicine/AphrodisiacExtract</texPath> <!-- 复用贴图，换个颜色 -->
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(255, 50, 50)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>200</MarketValue>
+      <Mass>0.1</Mass>
+      <WorkToMake>1000</WorkToMake>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>Medicine</li>
+    </thingCategories>
+    <stackLimit>10</stackLimit>
+    
+    <!-- 只能制造，不能直接吃 -->
+    <recipeMaker>
+      <researchPrerequisite>RavenResearch_Reproduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+    </recipeMaker>
+    
+    <costList>
+      <RavenItem_AphrodisiacExtract>3</RavenItem_AphrodisiacExtract>
+      <MedicineUltratech>1</MedicineUltratech>
+      <Raven_Drug_Oxytocin>2</Raven_Drug_Oxytocin>
+    </costList>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================== 渡鸦族战斗单位 ==================== -->
+  <PawnKindDef ParentName="Raven_PawnKindBase">
+    <defName>Raven_Colonist</defName>
+    <label>渡鸦族探员</label>
+    <labelPlural>渡鸦族探员</labelPlural>
+    
+    <race>Raven_Race</race>
+    
+    <combatPower>30</combatPower>
+    <isFighter>true</isFighter>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    
+    <!-- 意志和抵抗 -->
+    <initialWillRange>0~0</initialWillRange>
+    <initialResistanceRange>10~17</initialResistanceRange>
+    
+    <!-- 装备 -->
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>200</min>
+      <max>1000</max>
+    </apparelMoney>
+    
+    <!-- [新增] 武器配置 -->
+    <!-- 必须配置此项，否则默认无武器 -->
+    <weaponMoney>
+      <min>500</min>
+      <max>1500</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>RavenWeapon</li>
+    </weaponTags>
+
+    <!-- 生化植入物 -->
+    <techHediffsChance>0.03</techHediffsChance>
+    <techHediffsMoney>
+      <min>50</min>
+      <max>800</max>
+    </techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+    </techHediffsTags>
+    
+    <!-- 生命阶段图形 -->
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/Raven/Body/RavenBody</texPath>
+          <drawSize>0.75</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/Raven/Body/RavenBody</texPath>
+          <drawSize>0.75</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/Raven/Body/RavenBody</texPath>
+          <drawSize>0.9</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/Raven/Body/RavenBody</texPath>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

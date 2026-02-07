@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 左爻专属特性 -->
+  <TraitDef>
+    <defName>Raven_Trait_ZuoYao</defName>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>接线员左爻</label>
+        <description>左爻是渡鸦族的接线员，她曾负责管理维护你的殖民地联络线，是组织里出了名的性欲旺盛鸦！</description>
+        <skillGains>
+            <Social>15</Social>
+            <Intellectual>10</Intellectual>
+        </skillGains>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+  <!-- 左爻专属背景 (幼年) -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Backstory_ZuoYao_Child</defName>
+    <title>扶桑圣女</title>
+    <titleShort>圣女</titleShort>
+    <baseDesc>左爻自幼便展现出惊人的天赋，被选为扶桑组织的圣女。在别的孩子玩耍时，她正在背诵古老的金乌典籍和学习人体经络图。这种严苛的教育剥夺了她的童年，但也造就了她超乎常人的心智。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>Raven_ZuoYao</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>12</Social>
+      <Medicine>12</Medicine>
+      <Intellectual>10</Intellectual>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- 左爻专属背景 (成年) -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Backstory_ZuoYao_Adult</defName>
+    <title>扶桑司命</title>
+    <titleShort>司命</titleShort>
+    <baseDesc>成年后的左爻成为了扶桑组织的核心成员，也是金乌血脉的坚定守护者。她在暗影中编织着网络，操纵着边缘世界的局势。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>Raven_ZuoYao</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>15</Social>
+      <Medicine>15</Medicine>
+      <Intellectual>10</Intellectual>
+      <Shooting>10</Shooting>
+      <Melee>8</Melee>
+    </skillGains>
+    <forcedTraitsChance>
+      <li>
+        <defName>Raven_Trait_ZuoYao</defName>
+        <chance>100</chance>
+      </li>
+    </forcedTraitsChance>
+  </AlienRace.AlienBackstoryDef>
+</Defs>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 乐高陷阱 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RavenTrap_Lego</defName>
+    <label>lego trap</label>
+    <description>A scattering of small, colorful plastic bricks. Stepping on them causes unimaginable pain.</description>
+    <thingClass>RavenRace.Building_RavenTrap</thingClass>
+
+
+
+    <researchPrerequisites>
+      <li>RavenResearch_SpecialTraps</li> 
+    </researchPrerequisites>
+
+
+    <graphicData>
+      <!-- [Fixed] 指向你的新贴图 -->
+      <texPath>Things/Building/Security/RavenSpecial/RavenTrapLego</texPath> 
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(255, 255, 255)</color> <!-- 不需要染色了 -->
+      <drawSize>0.5</drawSize>
+    </graphicData>
+
+
+
+
+
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>10</MaxHitPoints>
+      <WorkToBuild>100</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>5</Steel>
+    </costList>
+    <designationCategory>Security</designationCategory>
+    <comps>
+      <li Class="RavenRace.CompProperties_Trigger">
+        <condition>StepOn</condition>
+        <cooldownTicks>60</cooldownTicks> <!-- 可重复使用 -->
+        <manualTriggerable>false</manualTriggerable>
+      </li>
+      <li Class="CompProperties">
+        <compClass>RavenRace.CompTrapEffect_Lego</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+
+
+  <!-- 受孕机 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RavenTrap_Conception</defName>
+    <label>conception machine</label>
+    <description>A devious trap that restrains the victim and forcibly implants spirit eggs.</description>
+    <thingClass>RavenRace.Building_RavenTrap</thingClass>
+
+
+    <researchPrerequisites>
+      <li>RavenResearch_SpecialTraps</li> 
+    </researchPrerequisites>
+
+
+    <graphicData>
+      <!-- [Fixed] 指向你的新贴图 -->
+      <texPath>Things/Building/Security/RavenSpecial/RavenTrapConception</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+
+
+
+
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <designationCategory>Security</designationCategory>
+    <comps>
+      <li Class="RavenRace.CompProperties_Trigger">
+        <condition>StepOn</condition>
+        <cooldownTicks>-1</cooldownTicks>
+        <manualTriggerable>true</manualTriggerable>
+      </li>
+      <li Class="CompProperties">
+        <compClass>RavenRace.CompTrapEffect_Conception</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

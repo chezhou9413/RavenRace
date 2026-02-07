@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 淫堕咒术 (科技定义) ==================== -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_DegradationCharm</defName>
+    <label>淫堕咒术</label>
+    <description>研究那些被视为禁忌的、直接作用于他人心智的符咒技术。通过将精神活性物质与渡鸦族的血脉精华相结合，可以制作出能够扭曲意志、放大欲望的“淫堕符咒”。</description>
+    <baseCost>1200</baseCost> <!-- 科技点数 -->
+    <techLevel>Industrial</techLevel>
+    
+    <!-- 前置科技：繁殖技术 -->
+    <prerequisites>
+      <li>RavenResearch_Reproduction</li>
+    </prerequisites>
+    
+    <!-- 在科技树中的位置 (X, Y) -->
+    <!-- 我会把它放在“繁殖技术”附近 -->
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>0.50</researchViewY>
+    
+    <!-- 所属科技标签页 -->
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+</Defs>

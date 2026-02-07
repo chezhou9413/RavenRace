@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.FaceAnimationDef>
+    <defName>laydown_Raven_Race</defName>
+    <raceName>Raven_Race</raceName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <browShapeDef>normal</browShapeDef>
+        <lidShapeDef>closed</lidShapeDef>
+        <mouthShapeDef>sleepclose</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <roopIntervalMin>0</roopIntervalMin>
+    <roopIntervalMax>0</roopIntervalMax>
+    <targetJobs>
+      <li>LayDown</li>
+    </targetJobs>
+    <priority>13300</priority>
+  </FacialAnimation.FaceAnimationDef>
+
+  <FacialAnimation.FaceAnimationDef>
+    <defName>laydown_Raven_RaceQuik</defName>
+    <raceName>Raven_Race</raceName>
+    <animationFrames>
+      <li>
+        <duration>20</duration>
+        <browShapeDef>normal</browShapeDef>
+        <lidShapeDef>closed</lidShapeDef>
+        <mouthShapeDef>sleepopen</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <roopIntervalMin>50</roopIntervalMin>
+    <roopIntervalMax>150</roopIntervalMax>
+    <targetJobs>
+      <li>LayDown</li>
+    </targetJobs>
+    <priority>13310</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

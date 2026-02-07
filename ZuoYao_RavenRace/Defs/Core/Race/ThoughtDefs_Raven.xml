@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 乐高之痛 (对应 RavenHediff_LegoPain) -->
+  <ThoughtDef>
+    <defName>Raven_Thought_LegoPain</defName>
+    <workerClass>RavenRace.Thoughts.ThoughtWorker_LegoPain</workerClass>
+    <stages>
+      <li>
+        <label>踩到乐高</label>
+        <description>嗷！该死的乐高积木！这简直是世界上最恶毒的刑具！</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- 2. 跟腱断裂 (对应 RavenHediff_TendonCut) -->
+  <ThoughtDef>
+    <defName>Raven_Thought_TendonCut</defName>
+    <workerClass>RavenRace.Thoughts.ThoughtWorker_TendonCut</workerClass>
+    <stages>
+      <li>
+        <label>跟腱剧痛</label>
+        <description>我的脚后跟...断了！每动一下都是钻心的疼！</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- 3. 催情效果 (对应 RavenHediff_AphrodisiacEffect) -->
+  <ThoughtDef>
+    <defName>Raven_Thought_AphrodisiacEffect</defName>
+    <workerClass>RavenRace.Thoughts.ThoughtWorker_AphrodisiacEffect</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>意乱情迷</label>
+        <description>身体好热...脑袋晕乎乎的...这种渴望的感觉是怎么回事...</description>
+        <baseMoodEffect>5</baseMoodEffect> <!-- 甚至可能加心情 -->
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- 4. 绝顶升天 (对应 Raven_Hediff_HighClimax) -->
+  <ThoughtDef>
+    <defName>Raven_Thought_HighClimax</defName>
+    <workerClass>RavenRace.Thoughts.ThoughtWorker_HighClimax</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>绝顶余韵</label>
+        <description>脑子一片空白...这就是...极乐的尽头吗...</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+
+</Defs>

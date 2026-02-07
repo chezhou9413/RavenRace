@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <FacialAnimation.FaceAnimationDef>
+        <defName>Recipient</defName>
+        <raceName>Raven_Race</raceName>
+        <animationFrames>
+            <li>
+                <duration>10</duration>
+                <emotionShapeDef>sweat</emotionShapeDef>
+                <lidShapeDef>half</lidShapeDef>
+                <eyeballShapeDef>Pupil_Heart</eyeballShapeDef>
+                <eyeballOffset>(0,0,0.015)</eyeballOffset>
+                <mouthShapeDef>sexb</mouthShapeDef>
+                <lidOffset>(0,0,0)</lidOffset>
+                <browOffset>(0,0,0)</browOffset>
+                <browShapeDef>normal</browShapeDef>
+            </li>
+            <li>
+                <duration>10</duration>
+                <emotionShapeDef>sweat</emotionShapeDef>
+                <lidShapeDef>half</lidShapeDef>
+                <eyeballShapeDef>Pupil_Heart</eyeballShapeDef>
+                <eyeballOffset>(0,0,0.012)</eyeballOffset>
+                <mouthShapeDef>sexb</mouthShapeDef>
+                <lidOffset>(0,0,0)</lidOffset>
+                <browOffset>(0,0,0)</browOffset>
+                <browShapeDef>normal</browShapeDef>
+            </li>
+        </animationFrames>
+        <roopIntervalMin>0</roopIntervalMin>
+        <roopIntervalMax>0</roopIntervalMax>
+        <applyWhenStandingOnly>false</applyWhenStandingOnly>
+        <targetThoughtDefs>
+            <li>Raven_Thought_ForceLovin_Recipient</li>
+        </targetThoughtDefs>
+        <priority>10300</priority>
+    </FacialAnimation.FaceAnimationDef>
+</Defs>

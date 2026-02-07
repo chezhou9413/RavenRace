@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 0. 原始摇篮科技 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_Cradle</defName>
+    <label>渡鸦原始摇篮</label>
+    <description>解锁制作原始摇篮，这是孵化渡鸦灵卵的基础设施。</description>
+    <baseCost>400</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+  <!-- 1. 渡鸦繁殖技术 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_Reproduction</defName>
+    <label>渡鸦繁殖技术</label>
+    <description>解锁控制渡鸦族独特生殖周期的技术。</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_Cradle</li>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+  <!-- 2. 远古孵化仪式 (核心) -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_Altar_Core</defName>
+    <label>远古孵化仪式</label>
+    <description>研究如何建造扶桑育生祭坛的核心摇篮。</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_Reproduction</li>
+      <li>Electricity</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+  <!-- 3. 外物注灵术 (内环) - [修改] 仅依赖核心，Y轴上移以示并列 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_Altar_Infusion</defName>
+    <label>外物注灵术</label>
+    <description>解锁注灵器基座。</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_Altar_Core</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.50</researchViewY> <!-- Y轴上移 -->
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+  <!-- 4. 辉光共振原理 (外环) - [修改] 仅依赖核心，不再依赖注灵术，Y轴下移以示并列 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_Altar_Resonance</defName>
+    <label>辉光共振原理</label>
+    <description>解锁辉光共鸣桩。</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_Altar_Core</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.50</researchViewY> <!-- Y轴下移 -->
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+  <!-- 5. 血脉精炼 (终极) - [修改] 依赖注灵术 + 共振 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_Altar_Transformation</defName>
+    <label>血脉精炼</label>
+    <description>解锁蜕凡注入仪。</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>RavenResearch_Altar_Infusion</li>
+      <li>RavenResearch_Altar_Resonance</li>
+    </prerequisites>
+    <researchViewX>4.50</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+</Defs>

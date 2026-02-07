@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Gizmo -->
+  <RavenRace_OpenFusangRadio>打开扶桑终端</RavenRace_OpenFusangRadio>
+  <RavenRace_OpenFusangRadioDesc>连接至扶桑组织的加密网络。</RavenRace_OpenFusangRadioDesc>
+  <RavenRace_NoColonistCanReach>没有殖民者可以操作终端。</RavenRace_NoColonistCanReach>
+  
+  <!-- Dev Tools -->
+  <RavenRace_Dev_ResetCooldown>DEBUG: 重置冷却</RavenRace_Dev_ResetCooldown>
+  <RavenRace_Dev_ReadyTrade>DEBUG: 强制商船抵达</RavenRace_Dev_ReadyTrade>
+  <RavenRace_Dev_AddIntel>DEBUG: 获得情报点数</RavenRace_Dev_AddIntel>
+  
+  <!-- UI Main -->
+  <RavenRace_FusangRadioTitle>FUSANG.NETSEC.TERMINAL_V4 // 扶桑网络终端</RavenRace_FusangRadioTitle>
+  
+  <!-- UI Status -->
+  <RavenRace_RadioStatus_Header>:: 链路状态 ::</RavenRace_RadioStatus_Header>
+  <RavenRace_Status_Online>连接</RavenRace_Status_Online>
+  <RavenRace_Status_Signal>信号</RavenRace_Status_Signal>
+  <RavenRace_Status_Power>能源</RavenRace_Status_Power>
+  
+  <RavenRace_Tag_Stable>[稳定]</RavenRace_Tag_Stable>
+  <RavenRace_Tag_Strong>[强]</RavenRace_Tag_Strong>
+  <RavenRace_Tag_Online>[在线]</RavenRace_Tag_Online>
+  <RavenRace_Tag_Offline>[离线]</RavenRace_Tag_Offline>
+  
+  <RavenRace_Status_Relation>信任级别</RavenRace_Status_Relation>
+  <RavenRace_OperatorFavorability>左爻好感度</RavenRace_OperatorFavorability> <!-- 新增好感度标签 -->
+  <RavenRace_Status_Location>接入点坐标</RavenRace_Status_Location>
+  <RavenRace_Status_TradeCool>物流状态</RavenRace_Status_TradeCool>
+  <RavenRace_Status_Ready>--- 就绪 ---</RavenRace_Status_Ready>
+  
+  <!-- UI Buttons -->
+  <RavenRace_Btn_Trade>物资交换协议</RavenRace_Btn_Trade>
+  <RavenRace_Btn_TradeCool>物流重新以此... ({0}天)</RavenRace_Btn_TradeCool>
+  <RavenRace_Btn_Scan>区域扫描</RavenRace_Btn_Scan>
+  <RavenRace_Btn_Mission>任务面板</RavenRace_Btn_Mission>
+  <RavenRace_Btn_Support>捐赠支援</RavenRace_Btn_Support>
+  
+  <!-- Resources -->
+  <RavenRace_Res_Supplies>物资储备</RavenRace_Res_Supplies>
+  <RavenRace_Res_Military>武力支持</RavenRace_Res_Military>
+  <RavenRace_Res_Intel>情报网络</RavenRace_Res_Intel>
+  <RavenRace_Res_Influence>组织声望</RavenRace_Res_Influence>
+  
+  <!-- Missions -->
+  <RavenRace_MissionBoard_Title>行动代号列表</RavenRace_MissionBoard_Title>
+  
+  <RavenRace_Mission_Surrogate>【代号：杜鹃】灵卵代孕</RavenRace_Mission_Surrogate>
+  <RavenRace_Mission_Surrogate_Desc>这是一项保护血脉的必要措施。我们需要借用外族的躯体来孵化我们的后代。\n\n我们将提供一枚经过处理的灵卵（纯血统），植入代孕者体内。这对母体有一定生理负担，但我们会支付相应的报酬（或好感）。\n\n“在那寒冷的巢穴里，任何温暖都是被允许的。”</RavenRace_Mission_Surrogate_Desc>
+  <RavenRace_Mission_SelectSurrogate>指定宿主...</RavenRace_Mission_SelectSurrogate>
+  <RavenRace_Mission_Success>植入完成。宿主 {0} 状况稳定，正如计划的那样。</RavenRace_Mission_Success>
+  <RavenRace_Mission_Cost>消耗声望: {0}</RavenRace_Mission_Cost>
+  <RavenRace_Mission_NoCost>无需声望</RavenRace_Mission_NoCost>
+  
+  <!-- Support -->
+  <RavenRace_Support_Title>物资捐赠协议</RavenRace_Support_Title>
+  <RavenRace_Support_Desc>扶桑组织长期处于资源匮乏状态。通过提供资金或物资支持，可以换取组织的信任及各方面能力的提升。</RavenRace_Support_Desc>
+  
+  <RavenRace_Support_SilverSmall>小额资金注入</RavenRace_Support_SilverSmall>
+  <RavenRace_Support_SilverSmall_Desc>消耗 100 白银。\n获得：物资+5, 武力+5, 情报+5, 声望+5。</RavenRace_Support_SilverSmall_Desc>
+  
+  <RavenRace_Support_SilverMedium>专项资金拨款</RavenRace_Support_SilverMedium>
+  <RavenRace_Support_SilverMedium_Desc>消耗 500 白银。\n获得：物资+30, 武力+30, 情报+30, 声望+30。</RavenRace_Support_SilverMedium_Desc>
+  
+  <RavenRace_Support_SilverLarge>战略级投资</RavenRace_Support_SilverLarge>
+  <RavenRace_Support_SilverLarge_Desc>消耗 2000 白银。\n获得：物资+150, 武力+150, 情报+150, 声望+150。</RavenRace_Support_SilverLarge_Desc>
+  
+  <RavenRace_Donate_Success>捐赠成功。资源储备已提升。</RavenRace_Donate_Success>
+  <RavenRace_Donate_Fail>资金不足。需要 {0} 白银。</RavenRace_Donate_Fail>
+
+  <!-- Dialogues (Lore) - 这些现在被DialogueManager替代了 -->
+
+  <!-- Ideology Positions -->
+  
+  <!--
+  <Herald>传谕使</Herald>
+  <High Priest>大祭司</High Priest>
+  <solar>太阳的</solar>
+  <ascendant>飞升的</ascendant>
+  <purity>纯净</purity>
+  <radiance>光辉</radiance>
+  -->
+
+</LanguageData>

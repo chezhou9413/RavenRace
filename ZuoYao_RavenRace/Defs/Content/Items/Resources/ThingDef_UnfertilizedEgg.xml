@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 未受精灵卵 -->
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>Raven_SpiritEgg_Unfertilized</defName>
+    <label>unfertilized spirit egg</label>
+    <description>A raven spirit egg that was not fertilized. It cannot hatch life but contains high nutrition and emits a faint warmth.</description>
+    <graphicData>
+      <texPath>Items/Resource/RavenSpiritEgg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.8</drawSize>
+      <color>(200, 200, 200)</color>
+    </graphicData>
+
+
+
+    <statBases>
+      <MarketValue>80</MarketValue>
+      <Mass>1.0</Mass>
+      <Nutrition>1.8</Nutrition>
+      <Flammability>0.1</Flammability> <!-- [Fixed] 易燃性 -->
+      <Beauty>4</Beauty> <!-- [Fixed] 负美观度 -->
+    </statBases>
+
+
+    <ingestible>
+      <foodType>AnimalProduct</foodType>
+      <preferability>RawTasty</preferability>
+      <tasteThought>AteFineMeal</tasteThought>
+    </ingestible>
+    <tradeTags>
+      <li>AnimalProduct</li>
+    </tradeTags>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 手术：使用栓剂 -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>Raven_Recipe_AdministerSuppository</defName>
+    <label>施用渡鸦栓剂</label>
+    <description>通过手术方式将渡鸦特制栓剂置入病人体内。这种方式比自行置入更稳妥，没有失败风险。</description>
+    <workerClass>Recipe_AdministerIngestible</workerClass>
+    <jobString>正在施用栓剂。</jobString>
+    <workAmount>500</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize> <!-- 不需要麻醉 -->
+    <recipeUsers>
+      <li>Human</li>
+      <li>Raven_Race</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Raven_Item_Suppository</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Raven_Item_Suppository</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- 手术：施用特效药 -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>Raven_Recipe_AdministerMiracleHeal</defName>
+    <label>注射潜能榨取针剂</label>
+    <description>注射这种危险的药物以瞬间治愈全身伤口。警告：受术者将立刻失去战斗力并陷入长时间的异常状态。</description>
+    <workerClass>RavenRace.Features.MiscSmallFeatures.RavenMedicines.Recipe_AdministerMiracleHeal</workerClass>
+    <jobString>正在注射潜能榨取针剂。</jobString>
+    <workAmount>1000</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize>
+    <surgerySuccessChanceFactor>999</surgerySuccessChanceFactor> <!-- 确保无失败风险 -->
+    <recipeUsers>
+      <li>Human</li>
+      <li>Raven_Race</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Raven_Item_MiracleHeal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Raven_Item_MiracleHeal</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+</Defs>

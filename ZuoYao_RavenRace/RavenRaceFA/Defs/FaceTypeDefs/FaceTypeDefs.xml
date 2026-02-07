@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 头部: 你的文件在 Textures/Races/Raven/Face/Head/Unisex/RavenHead_*.png -->
+  <FacialAnimation.HeadTypeDef>
+    <defName>Raven_Head_FA</defName>
+    <raceName>Raven_Race</raceName>
+    <texPath>Races/Raven/Face/Head</texPath>
+    <shader>Map/CutoutSkin</shader>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+  </FacialAnimation.HeadTypeDef>
+
+  <!-- 皮膚美人痣 (Skin): Textures/Races/Raven/Face/Skin/Unisex/normal_*.png -->
+  <!-- 這個紋理移到Lid 的 normal_bottom-->
+  <FacialAnimation.SkinTypeDef>
+    <defName>Raven_Skin</defName>
+    <raceName>Raven_Race</raceName>
+    <texPath>Races/Raven/Face/Skin</texPath>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+    <shader>Map/Transparent</shader>
+    <probability>1.0</probability>
+  </FacialAnimation.SkinTypeDef>
+
+  <!-- 瞳孔: Textures/Races/Raven/Face/Eyeball/Unisex/Pupil_Normal_*.png -->
+  <FacialAnimation.EyeballTypeDef>
+    <defName>Raven_Eye</defName>
+    <raceName>Raven_Race</raceName>
+    <texPath>Races/Raven/Face/Eyeball</texPath>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+    <shader>Map/CutoutComplex</shader>
+    <minColor>RGB(1,1,1)</minColor>
+    <maxColor>RGB(1,1,1)</maxColor>
+  </FacialAnimation.EyeballTypeDef>
+
+  <!-- 眼皮: Textures/Races/Raven/Face/Lid/Unisex/normal_*.png -->
+  <FacialAnimation.LidTypeDef>
+    <defName>Raven_Lid</defName>
+    <raceName>Raven_Race</raceName>
+    <texPath>Races/Raven/Face/Lid</texPath>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+    <shader>Map/Transparent</shader>
+  </FacialAnimation.LidTypeDef>
+
+  <!-- 附件: Textures/Races/Raven/Face/LidOption/Unisex/Highlight_Normal_*.png -->
+  <FacialAnimation.LidOptionTypeDef>
+    <defName>Raven_LidOpt</defName>
+    <raceName>Raven_Race</raceName>
+    <texPath>Races/Raven/Face/LidOption</texPath>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+    <shader>Map/Transparent</shader>
+  </FacialAnimation.LidOptionTypeDef>
+
+  <!-- 眉毛: Textures/Races/Raven/Face/Brow/Unisex/normal_*.png -->
+  <FacialAnimation.BrowTypeDef>
+    <defName>Raven_Brow</defName>
+    <raceName>Raven_Race</raceName>
+    <texPath>Races/Raven/Face/Brow</texPath>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+    <shader>Map/Transparent</shader>
+  </FacialAnimation.BrowTypeDef>
+
+  <!-- 嘴巴: Textures/Races/Raven/Face/Mouth/Unisex/normal_*.png -->
+  <FacialAnimation.MouthTypeDef>
+    <defName>Raven_Mouth</defName>
+    <raceName>Raven_Race</raceName>
+    <texPath>Races/Raven/Face/Mouth</texPath>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+    <shader>Map/Transparent</shader>
+  </FacialAnimation.MouthTypeDef>
+
+  <!-- 情绪: Textures/Races/Raven/Face/Emotion/Unisex/Mole_*.png -->
+  <FacialAnimation.EmotionTypeDef>
+    <defName>Raven_Emotion</defName>
+    <raceName>Raven_Race</raceName>
+    <texPath>Races/Raven/Face/Emotion</texPath>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+    <shader>Map/Transparent</shader>
+  </FacialAnimation.EmotionTypeDef>
+
+</Defs>

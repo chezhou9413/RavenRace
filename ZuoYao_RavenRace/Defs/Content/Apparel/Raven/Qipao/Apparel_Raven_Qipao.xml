@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 中式旗袍奶盖 ==================== -->
+  <ThingDef ParentName="ApparelMakeableBase">
+    <!-- 定义名称，用于内部引用 -->
+    <defName>Raven_Apparel_Qipao</defName>
+    <!-- 游戏内显示的名称 -->
+    <label>中式旗袍奶盖</label>
+    <!-- 游戏内显示的描述 -->
+    <description>一件融合了古典旗袍与现代设计的优雅服饰，专为渡鸦族的身形剪裁。胸前的“奶盖”设计既是装饰，也提供了额外的舒适度。面料轻薄透气，适合在温暖气候下进行社交活动，也能提供基础的防护。</description>
+    
+    <!-- 物品在地上的贴图 -->
+    <graphicData>
+      <!-- 推荐使用单独的图标文件，如果没有，暂时指向女性南向贴图作为占位符 -->
+      <texPath>Items/Apparel/Raven/Qipao/RavenQipao_Female_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    
+    <!-- 制作所需材料，参考曲裾 -->
+    <costStuffCount>80</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    
+    <!-- 物品分类 -->
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    
+    <!-- 基础属性，参考曲裾 -->
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <!-- WorkToMake 由下面的 recipeMaker 自动处理 -->
+      <Mass>0.8</Mass>
+      <StuffEffectMultiplierArmor>0.22</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold> 
+      <StuffEffectMultiplierInsulation_Heat>0.8</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>2.0</EquipDelay>
+    </statBases>
+    
+    <!-- 作为服装的属性 -->
+    <apparel>
+      <!-- 覆盖的身体部位 -->
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Legs</li>
+        <li>Shoulders</li>
+      </bodyPartGroups>
+      
+      <!-- 穿着时的贴图路径，游戏会自动添加 _Male/_Female 和方向后缀 -->
+      <wornGraphicPath>Items/Apparel/Raven/Qipao/RavenQipao</wornGraphicPath>
+      
+      <!-- 穿着的图层，Shell层，可以穿在大多数内衣外面 -->
+      <layers>
+        <li>Shell</li>
+      </layers>
+      
+      <!-- 服装标签 -->
+      <tags>
+        <li>IndustrialBasic</li>
+        <!-- 专属标签，用于商人库存和敌人生成 -->
+        <li>RavenApparel</li> 
+      </tags>
+      <!-- 默认装备策略 -->
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+    </apparel>
+    
+    <!-- 配方生成器 -->
+    <recipeMaker>
+      <!-- 制作速度依赖的属性 -->
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <!-- 制作所需工时 -->
+      <workAmount>4200</workAmount>
+      <!-- 技能需求 -->
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <!-- [核心] 解锁此配方所需的研究 -->
+      <!-- 指向我们即将创建的新科技 -->
+      <researchPrerequisite>RavenResearch_Tailoring</researchPrerequisite>
+      <!-- [核心] 可以在哪些工作台上制作 -->
+      <!-- 只允许在新的渡鸦缝纫台上制作 -->
+      <recipeUsers>
+        <li>Raven_Building_SewingBench</li>
+      </recipeUsers>
+    </recipeMaker>
+
+
+
+    
+  </ThingDef>
+</Defs>

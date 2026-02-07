@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>RavenItem_AphrodisiacExtract</defName>
+    <label>高浓度催情提取液</label>
+    <description>从七情草中提炼的纯化药剂。可以作为药物服用，也可以涂抹在近战武器上以赋予其“催情毒素”效果。</description>
+    <graphicData>
+      <!-- 指向单张贴图文件 -->
+      <texPath>Items/Medicine/AphrodisiacExtract</texPath>
+      <!-- [修复] 改为 Graphic_Single 以避免路径错误红字 -->
+      <graphicClass>Graphic_Single</graphicClass> 
+      <!-- 如果你有堆叠贴图文件夹，请自行改为 Graphic_StackCount -->
+    </graphicData>
+    <statBases>
+      <MarketValue>50</MarketValue>
+      <Mass>0.1</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>Drugs</li>
+    </thingCategories>
+    <stackLimit>75</stackLimit>
+   <comps>
+      <!-- 1. 基础使用逻辑 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>涂抹于武器...</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      
+      <!-- 2. 目标选择器 (允许点人选武器) -->
+      <li Class="RavenRace.Items.Comps.CompProperties_TargetableRavenPoison">
+        <compClass>RavenRace.Items.Comps.CompTargetable_RavenPoison</compClass>
+      </li>
+      
+      <!-- 3. 实际效果 (继承 CompTargetEffect) -->
+      <li Class="CompProperties_UseEffect">
+        <compClass>RavenRace.Items.Comps.CompTargetEffect_RavenCoat</compClass>
+      </li>
+      
+      <!-- 4. 消耗物品 (必须加！) -->
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>Make_AphrodisiacExtract</defName>
+    <label>提炼催情提取液</label>
+    <description>从七情草中提炼高浓度药剂。</description>
+    <jobString>正在提炼药剂。</jobString>
+    <workAmount>800</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RavenItem_SevenEmotionsLeaf</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RavenItem_SevenEmotionsLeaf</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <RavenItem_AphrodisiacExtract>1</RavenItem_AphrodisiacExtract>
+    </products>
+    <skillRequirements>
+      <Intellectual>4</Intellectual>
+    </skillRequirements>
+  </RecipeDef>
+</Defs>

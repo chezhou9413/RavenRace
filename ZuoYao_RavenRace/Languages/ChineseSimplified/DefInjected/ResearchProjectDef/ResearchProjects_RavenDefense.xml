@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RavenResearch_TrapBasics.label>渡鸦陷阱学基础</RavenResearch_TrapBasics.label>
+  <RavenResearch_TrapBasics.description>解锁碎胫陷阱等基础防御设施。</RavenResearch_TrapBasics.description>
+
+  <RavenResearch_Concealment.label>伪装战术</RavenResearch_Concealment.label>
+  <RavenResearch_Concealment.description>解锁低语之树和歌唱之石，为狙击手提供隐蔽掩体。</RavenResearch_Concealment.description>
+
+  <RavenResearch_SpecialTraps.label>特种陷阱</RavenResearch_SpecialTraps.label>
+  <RavenResearch_SpecialTraps.description>解锁乐高地雷和受孕机等非传统陷阱。</RavenResearch_SpecialTraps.description>
+
+  <RavenResearch_DynamicTerrain.label>动态地形防御</RavenResearch_DynamicTerrain.label>
+  <RavenResearch_DynamicTerrain.description>解锁升墙陷阱，能够瞬间改变战场地形。</RavenResearch_DynamicTerrain.description>
+
+  <RavenResearch_DecoyTech.label>诱饵技术</RavenResearch_DecoyTech.label>
+  <RavenResearch_DecoyTech.description>解锁渡鸦假人。</RavenResearch_DecoyTech.description>
+
+  <RavenResearch_ChemicalWarfare.label>化学战</RavenResearch_ChemicalWarfare.label>
+  <RavenResearch_ChemicalWarfare.description>解锁各种气体陷阱。</RavenResearch_ChemicalWarfare.description>
+</LanguageData>

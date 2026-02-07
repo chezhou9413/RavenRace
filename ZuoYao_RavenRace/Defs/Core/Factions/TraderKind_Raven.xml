@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TraderKindDef>
+    <defName>Raven_Trader_Caravan</defName>
+    <label>扶桑隐秘商队</label>
+    <commonality>1</commonality>
+    <faction>Fusang_Hidden</faction>
+    <!-- [Fixed] 移除了 permitRequiredForTrading 标签，默认为空 -->
+    
+    <stockGenerators>
+      <!-- 1. 白银 -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>3000~6000</countRange>
+      </li>
+
+      <!-- 2. 基础材料 (暗羽钢) -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Raven_DarkfeatherSteel</thingDef>
+        <countRange>200~500</countRange>
+        <price>Cheap</price>
+      </li>
+
+      <!-- 3. 高级材料 -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Raven_CoronaSteel</thingDef>
+        <countRange>50~100</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Raven_GoldenFeather</thingDef>
+        <countRange>5~15</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Raven_DarkSunLens</thingDef>
+        <countRange>2~5</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Raven_ShatteredSunCore</thingDef>
+        <countRange>0~2</countRange>
+      </li>
+
+      <!-- 4. 渡鸦武器 -->
+      <li Class="StockGenerator_Tag">
+        <tradeTag>RavenWeapon</tradeTag>
+        <thingDefCountRange>3~6</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+
+      <!-- 5. 渡鸦装备 -->
+      <li Class="StockGenerator_Tag">
+        <tradeTag>RavenApparel</tradeTag>
+        <thingDefCountRange>3~6</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+      
+      <!-- 6. 药品 (催产素) -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Raven_Drug_Oxytocin</thingDef>
+        <countRange>5~20</countRange>
+      </li>
+      
+      <!-- 7. 收购类别 -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>ImplantEmpireCommon</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>TechHediff</tag></li>
+    </stockGenerators>
+  </TraderKindDef>
+</Defs>
