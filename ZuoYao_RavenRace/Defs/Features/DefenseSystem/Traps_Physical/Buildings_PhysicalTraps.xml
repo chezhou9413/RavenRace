@@ -6,7 +6,7 @@
     <description>A cruel mechanical trap designed to snap shut on the victim's lower leg. The serrated blades are positioned to sever the Achilles tendon.</description>
     <thingClass>RavenRace.Building_RavenTrap</thingClass>
     <graphicData>
-      <texPath>Things/Building/Security/RavenTrapPhysical/LegTrap</texPath>
+      <texPath>Buildings/DefenseSystem/RavenTrapPhysical/LegTrap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
         <rect>(0,0,1,0.15)</rect>

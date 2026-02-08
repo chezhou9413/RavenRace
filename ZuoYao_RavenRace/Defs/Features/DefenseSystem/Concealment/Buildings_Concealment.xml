@@ -75,7 +75,7 @@
     <label>whispering tree</label>
     <description>A hollow artificial tree tactical nest.\n\n- Enter to hide.\n- Uses occupant's weapon to fire.\n- Invisible until firing.</description>
     <graphicData>
-      <texPath>Things/Building/Security/RavenConcealment/Tree</texPath>
+      <texPath>Buildings/DefenseSystem/RavenConcealment/Tree</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.5</drawSize>
     </graphicData>

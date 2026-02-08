@@ -11,7 +11,7 @@
 
     <graphicData>
       <!-- [Fixed] 指向贴图文件夹和文件名前缀 -->
-      <texPath>Things/Building/Security/RavenClaymore/Claymore</texPath> 
+      <texPath>Buildings/DefenseSystem/RavenClaymore/Claymore</texPath> 
       
       <!-- [Fixed] 改为 Graphic_Multi 以支持多方向 -->
       <graphicClass>Graphic_Multi</graphicClass> 

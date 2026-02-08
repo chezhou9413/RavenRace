@@ -10,7 +10,7 @@
     <category>Building</category>
     
     <graphicData>
-      <texPath>Things/Building/Security/RavenDefenseWall/RavenTrapWall</texPath> 
+      <texPath>Buildings/DefenseSystem/RavenDefenseWall/RavenTrapWall</texPath> 
       <graphicClass>Graphic_Single</graphicClass>
       <color>(100, 110, 120)</color> 
     </graphicData>
@@ -41,7 +41,7 @@
     <thingClass>RavenRace.Building_RavenTrap</thingClass>
     
     <graphicData>
-      <texPath>Things/Building/Security/RavenDefenseWall/RavenRisingWall</texPath>
+      <texPath>Buildings/DefenseSystem/RavenDefenseWall/RavenRisingWall</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <color>(80, 80, 90)</color>
     </graphicData>

@@ -16,7 +16,7 @@ namespace RavenRace.Features.DegradationCharm.Harmony
     public static class Patch_Pawn_GetGizmos
     {
         // 静态构造函数中缓存贴图，避免每帧都加载，提高性能
-        private static readonly Texture2D GizmoIcon = ContentFinder<Texture2D>.Get("DegradationCharm/TalismanOfCorruption_Item");
+        private static readonly Texture2D GizmoIcon = ContentFinder<Texture2D>.Get("Items/Misc/DegradationCharm/TalismanOfCorruption_Item");
 
         /// <summary>
         /// 在原版的Pawn.GetGizmos()方法执行后运行，向其结果中添加我们的自定义Gizmo。

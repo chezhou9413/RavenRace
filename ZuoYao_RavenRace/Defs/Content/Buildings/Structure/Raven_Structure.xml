@@ -15,7 +15,7 @@
     </replaceTags>
 
     <graphicData>
-      <texPath>Things/Building/Structure/RavenWall</texPath>
+      <texPath>Buildings/Structure/RavenWall</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>Cutout</shaderType>
       <linkType>CornerFiller</linkType>
@@ -35,7 +35,7 @@
       </damageData>
     </graphicData>
 
-    <uiIconPath>Things/Building/Structure/RavenWall_Icon</uiIconPath>
+    <uiIconPath>Buildings/Structure/RavenWall_Icon</uiIconPath>
     
     <drawStyleCategory>Walls</drawStyleCategory>
     
@@ -79,7 +79,7 @@
       <isAirtight>true</isAirtight>
       
       <blueprintGraphicData>
-        <texPath>Things/Building/Structure/RavenWall</texPath>
+        <texPath>Buildings/Structure/RavenWall</texPath>
       </blueprintGraphicData>
       <relatedBuildCommands>
         <li>Cooler</li>

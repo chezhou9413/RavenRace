@@ -8,7 +8,7 @@
     <description>一个模拟渡鸦族士兵的逼真假人。内置了电子信号模拟器，敌方AI会将其识别为高威胁的武装单位（炮塔）。\n\n它配备了一把没有伤害的模拟枪，通过不断的“攻击”来吸引敌人的仇恨。</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Things/Building/Security/RavenDecoy/DecoyDummy</texPath>
+      <texPath>Buildings/DefenseSystem/RavenDecoy/DecoyDummy</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.2</drawSize>
     </graphicData>
@@ -18,7 +18,7 @@
       <!-- <li>PlaceWorker_TurretTop</li> -->
     </placeWorkers>
     
-    <uiIconPath>Things/Building/Security/RavenDecoy/DecoyDummy</uiIconPath> <!-- 使用 UI Icon，让建造菜单显示正确 -->
+    <uiIconPath>Buildings/DefenseSystem/RavenDecoy/DecoyDummy</uiIconPath> <!-- 使用 UI Icon，让建造菜单显示正确 -->
     <uiIconScale>0.8</uiIconScale> <!-- 调整UI图标大小 -->
 
     <altitudeLayer>Building</altitudeLayer>

@@ -15,7 +15,7 @@
       <li>
         <!-- [最终修正] 修正命名空间 -->
         <workerClass>RavenRace.Features.DegradationCharm.Rendering.PawnRenderNodeWorker_DegradationCharm</workerClass>
-        <texPath>DegradationCharm/TalismanOfCorruption_OnHead</texPath>
+        <texPath>Items/Misc/DegradationCharm/TalismanOfCorruption_OnHead</texPath>
         <baseLayer>1000</baseLayer>
         <parentTagDef>Head</parentTagDef>
         <pawnType>Any</pawnType>

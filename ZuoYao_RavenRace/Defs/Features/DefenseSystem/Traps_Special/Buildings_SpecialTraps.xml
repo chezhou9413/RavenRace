@@ -17,7 +17,7 @@
 
     <graphicData>
       <!-- [Fixed] 指向你的新贴图 -->
-      <texPath>Things/Building/Security/RavenSpecial/RavenTrapLego</texPath> 
+      <texPath>Buildings/DefenseSystem/RavenSpecial/RavenTrapLego</texPath> 
       <graphicClass>Graphic_Single</graphicClass>
       <color>(255, 255, 255)</color> <!-- 不需要染色了 -->
       <drawSize>0.5</drawSize>
@@ -69,7 +69,7 @@
 
     <graphicData>
       <!-- [Fixed] 指向你的新贴图 -->
-      <texPath>Things/Building/Security/RavenSpecial/RavenTrapConception</texPath>
+      <texPath>Buildings/DefenseSystem/RavenSpecial/RavenTrapConception</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.2</drawSize>
     </graphicData>

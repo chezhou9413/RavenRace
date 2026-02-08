@@ -27,7 +27,7 @@
     <defName>RavenTrap_Gas_Anesthetic</defName>
     <label>anesthetic gas trap</label>
     <graphicData>
-      <texPath>Things/Building/Security/RavenTrapGas/AnestheticGas</texPath> <!-- 暂时使用原版，建议换成你的 -->
+      <texPath>Buildings/DefenseSystem/RavenTrapGas/AnestheticGas</texPath> <!-- 暂时使用原版，建议换成你的 -->
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <description>Releases a cloud of anesthetic gas when triggered. Causes unconsciousness.</description>
@@ -49,7 +49,7 @@
     <defName>RavenTrap_Gas_Aphrodisiac</defName>
     <label>aphrodisiac gas trap</label>
     <graphicData>
-      <texPath>Things/Building/Security/RavenTrapGas/AphrodisiacGas</texPath> <!-- 暂时使用原版，建议换成你的 -->
+      <texPath>Buildings/DefenseSystem/RavenTrapGas/AphrodisiacGas</texPath> <!-- 暂时使用原版，建议换成你的 -->
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <description>Releases a cloud of powerful aphrodisiac gas. Victims will strip and collapse in ecstasy.</description>
