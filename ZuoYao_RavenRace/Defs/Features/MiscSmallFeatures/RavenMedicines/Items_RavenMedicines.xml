@@ -67,9 +67,8 @@
     <label>潜能榨取针剂</label>
     <description>一种极其危险但也极其有效的混合药剂。混合了高浓度催情提取液、闪耀世界医药和催产素。\n\n原理是瞬间榨取人体的所有潜能（主要是生殖与神经系统）来加速细胞再生。可以瞬间治愈除非断肢外的所有伤口。\n\n副作用：受术者会陷入持续一整天的极度高潮和神志不清状态。只能通过手术操作使用。</description>
     <graphicData>
-      <texPath>Items/Medicine/AphrodisiacExtract</texPath> <!-- 复用贴图，换个颜色 -->
+      <texPath>Items/Medicine/MiracleHeal</texPath> <!-- 复用贴图，换个颜色 -->
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(255, 50, 50)</color>
     </graphicData>
     <statBases>
       <MarketValue>200</MarketValue>
