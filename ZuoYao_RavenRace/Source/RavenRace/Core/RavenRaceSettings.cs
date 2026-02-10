@@ -58,6 +58,10 @@ namespace RavenRace
         public bool enableMalePregnancyEgg = false;
         public bool ignoreFertilityForPregnancy = false;
         public bool enableSameSexForceLovin = true;
+
+        // [新增] 机械族交配开关
+        public bool enableMechanoidLovin = false;
+
         public bool forceRavenDescendant = true;
         public bool enableEggProjectileMode = false;
 
@@ -219,6 +223,7 @@ namespace RavenRace
             Scribe_Values.Look(ref enableMalePregnancyEgg, "enableMalePregnancyEgg", false);
             Scribe_Values.Look(ref ignoreFertilityForPregnancy, "ignoreFertilityForPregnancy", false);
             Scribe_Values.Look(ref enableSameSexForceLovin, "enableSameSexForceLovin", true);
+            Scribe_Values.Look(ref enableMechanoidLovin, "enableMechanoidLovin", false);             // 和机械族
             Scribe_Values.Look(ref forceRavenDescendant, "forceRavenDescendant", true);
             Scribe_Values.Look(ref enableEggProjectileMode, "enableEggProjectileMode", false);
             Scribe_Values.Look(ref forceLovinResistanceReduction, "forceLovinResistanceReduction", 2f);

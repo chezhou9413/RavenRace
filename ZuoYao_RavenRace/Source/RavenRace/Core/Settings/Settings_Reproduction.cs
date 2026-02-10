@@ -31,6 +31,9 @@ namespace RavenRace.Settings
 
             listing.CheckboxLabeled("RavenRace_Settings_EnableSameSexForceLovin".Translate(), ref s.enableSameSexForceLovin, "RavenRace_Settings_EnableSameSexForceLovinDesc".Translate());
 
+            // [新增] 机械族交配开关 UI
+            listing.CheckboxLabeled("启用机械体强制交配", ref s.enableMechanoidLovin, "允许对机械族单位使用强制求爱。机械族无法怀孕，但若渡鸦作为母体可产下带有机械血脉的后代。");
+
             listing.Gap();
             listing.Label("RavenRace_Settings_PrisonerInteractions".Translate());
             listing.Label("RavenRace_Settings_ForceLovinResistanceReduction".Translate() + ": " + s.forceLovinResistanceReduction.ToString("0.0"));

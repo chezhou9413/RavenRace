@@ -32,6 +32,20 @@ namespace RavenRace.Features.Bloodline
 
             try
             {
+
+                // [新增] 机械体血脉处理
+                if (bloodlineComposition.ContainsKey(BloodlineManager.MECHANIOD_BLOODLINE_KEY) &&
+                    bloodlineComposition[BloodlineManager.MECHANIOD_BLOODLINE_KEY] > 0f)
+                {
+                    HandleMechanoidBloodline(this.Pawn, true);
+                }
+                else
+                {
+                    HandleMechanoidBloodline(this.Pawn, false);
+                }
+
+
+
                 // 1. 米莉拉
                 if (RavenRaceMod.Settings.enableMiliraFlightForHybrids &&
                     bloodlineComposition.ContainsKey("Milira_Race") &&
@@ -123,6 +137,26 @@ namespace RavenRace.Features.Bloodline
                 Log.Warning($"[RavenRace] 血脉组件访问失效: {ex.Message}");
             }
         }
+
+
+        private void HandleMechanoidBloodline(Pawn pawn, bool hasBloodline) //机械体处理
+        {
+            HediffDef mechHediff = DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_MechanoidBloodline");
+            if (mechHediff == null) return;
+
+            bool hasHediff = pawn.health.hediffSet.HasHediff(mechHediff);
+
+            if (hasBloodline && !hasHediff)
+            {
+                pawn.health.AddHediff(mechHediff);
+            }
+            else if (!hasBloodline && hasHediff)
+            {
+                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(mechHediff);
+                if (h != null) pawn.health.RemoveHediff(h);
+            }
+        }
+
 
         private void RemoveExistingMilkComp()
         {

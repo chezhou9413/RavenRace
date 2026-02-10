@@ -20,15 +20,17 @@ namespace RavenRace
             Pawn targetPawn = target.Pawn;
             if (targetPawn == null) return false;
 
-            // [新增] 检查敌人状态：如果敌对且未倒地，禁止选中
+            // 1. 检查敌人状态：如果敌对且未倒地，禁止选中
             if (targetPawn.HostileTo(parent.pawn) && !targetPawn.Downed)
             {
                 if (throwMessages) Messages.Message("Invalid Target: Enemy must be downed.", targetPawn, MessageTypeDefOf.RejectInput, false);
                 return false;
             }
 
-            // 雪牛彩蛋判定
+            // 2. 种族判定 (Humanlike vs Animal/Mech)
             bool isMuffalo = targetPawn.def.defName == "Muffalo";
+            bool isMech = targetPawn.RaceProps.IsMechanoid;
+
             if (targetPawn.RaceProps.Animal)
             {
                 if (!isMuffalo || !RavenRaceMod.Settings.enableMuffaloPrank)
@@ -37,14 +39,31 @@ namespace RavenRace
                     return false;
                 }
             }
-            else
+            else if (isMech)
             {
-                bool allowSameSex = RavenRaceMod.Settings.enableMalePregnancyEgg || RavenRaceMod.Settings.enableSameSexForceLovin;
-                if (!allowSameSex && targetPawn.gender == this.parent.pawn.gender)
+                // [新增] 机械族检查
+                if (!RavenRaceMod.Settings.enableMechanoidLovin)
                 {
-                    if (throwMessages) Messages.Message("Must target opposite gender.", targetPawn, MessageTypeDefOf.RejectInput, false);
+                    if (throwMessages) Messages.Message("Target is a mechanoid (Feature disabled in settings).", targetPawn, MessageTypeDefOf.RejectInput, false);
                     return false;
                 }
+            }
+            else if (!targetPawn.RaceProps.Humanlike)
+            {
+                // 既不是动物、不是机械、也不是人 (可能是奇怪的Mod种族)
+                return false;
+            }
+
+            // 3. 性别判定
+            // 如果开启了同性/男性生蛋/机械族(机械族通常无性别)，则跳过性别检查
+            bool allowSameSex = RavenRaceMod.Settings.enableMalePregnancyEgg ||
+                                RavenRaceMod.Settings.enableSameSexForceLovin ||
+                                RavenRaceMod.Settings.enableMechanoidLovin; // 机械族通常被视为无性别或特殊性别，放宽检查
+
+            if (!allowSameSex && targetPawn.gender == this.parent.pawn.gender)
+            {
+                if (throwMessages) Messages.Message("Must target opposite gender.", targetPawn, MessageTypeDefOf.RejectInput, false);
+                return false;
             }
 
             if (!this.parent.pawn.CanReach(target, PathEndMode.Touch, Danger.Deadly))

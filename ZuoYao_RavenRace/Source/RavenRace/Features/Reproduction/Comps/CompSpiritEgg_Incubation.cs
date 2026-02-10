@@ -83,7 +83,10 @@ namespace RavenRace.Features.Reproduction
                 GenSpawn.Spawn(baby, this.parent.PositionHeld, this.parent.MapHeld, WipeMode.VanishOrMoveAside);
 
                 ApplyBloodlineData(baby);
+
+                // [修复点] 应用父母关系
                 ApplyParentRelations(baby);
+
                 ApplyStoredUpgrades(baby);
 
                 if (baby.jobs != null) baby.jobs.StopAll();
@@ -119,14 +122,27 @@ namespace RavenRace.Features.Reproduction
             Pawn realMother = FindPawnByIdAllWorld(motherId);
             Pawn realFather = FindPawnByIdAllWorld(fatherId);
 
+            // [核心逻辑修复]
+            // 原版关系系统不支持机械体作为 Parent。
+            // 如果父母一方是机械体，我们只保留灵卵上的名字记录（InspectString），
+            // 但**不**在代码层面添加 DirectRelation，防止红字和社交界面崩溃。
+
             if (realMother != null)
             {
-                baby.relations.AddDirectRelation(PawnRelationDefOf.Parent, realMother);
+                // 只有当母亲 不是 机械体时，才添加关系
+                if (!realMother.RaceProps.IsMechanoid)
+                {
+                    baby.relations.AddDirectRelation(PawnRelationDefOf.Parent, realMother);
+                }
             }
 
             if (realFather != null)
             {
-                baby.relations.AddDirectRelation(PawnRelationDefOf.Parent, realFather);
+                // 只有当父亲 不是 机械体时，才添加关系
+                if (!realFather.RaceProps.IsMechanoid)
+                {
+                    baby.relations.AddDirectRelation(PawnRelationDefOf.Parent, realFather);
+                }
             }
         }
 

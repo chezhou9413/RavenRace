@@ -4,17 +4,29 @@ using System.Linq;
 using Verse;
 using RimWorld;
 
-namespace RavenRace.Features.Bloodline // [Change] Namespace
+namespace RavenRace.Features.Bloodline
 {
     public static class BloodlineManager
     {
         private static Dictionary<ThingDef, BloodlineDef> raceToBloodlineCache;
 
-        // [Change] Comp_Bloodline -> CompBloodline
+        // 特殊常量 Key
+        public const string MECHANIOD_BLOODLINE_KEY = "Bloodline_Mechanoid";
+
         public static void InitializePawnBloodline(Pawn pawn, CompBloodline comp)
         {
             if (pawn == null || comp == null) return;
 
+            // 1. 检查是否为机械族 (优先于 Def 查找)
+            if (pawn.RaceProps.IsMechanoid)
+            {
+                comp.BloodlineComposition.Clear();
+                comp.BloodlineComposition.Add(MECHANIOD_BLOODLINE_KEY, 1.0f);
+                comp.GoldenCrowConcentration = 0f;
+                return;
+            }
+
+            // 2. 原有逻辑
             BloodlineDef bloodline = GetBloodlineDef(pawn.def);
 
             if (bloodline != null)

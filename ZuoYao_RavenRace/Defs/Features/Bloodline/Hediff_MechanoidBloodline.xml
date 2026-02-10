@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_MechanoidBloodline</defName>
+    <label>机械体血脉</label>
+    <description>源自机械体(Mechanoid)的冰冷血脉。细胞结构中充满了纳米机械与合成材料，使其皮肤坚硬如铁，且永远不会被点燃。\n\n特性：\n- 易燃性强制为 0%\n- 利器护甲 +20%\n- 钝器护甲 +10%\n- 对毒素和高温有一定抗性</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.7, 0.7, 0.75)</defaultLabelColor>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <!-- 双重保险：虽然有 Harmony Patch，但这里显示给玩家看 -->
+          <Flammability>-2.0</Flammability> 
+          <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+          <ToxicResistance>0.5</ToxicResistance>
+          <ComfyTemperatureMax>50</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

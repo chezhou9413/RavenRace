@@ -10,5 +10,15 @@
         <isGoldenCrowSource>true</isGoldenCrowSource>
     </RavenRace.BloodlineDef>
     
+    <!-- 机械体血脉定义 -->
+    <!-- 注意：raceDef 指向 Mech_Lancer 只是一个占位符，C# 逻辑会覆盖所有 IsMechanoid -->
+    <RavenRace.BloodlineDef>
+        <defName>Bloodline_Mechanoid</defName>
+        <label>机械体血脉</label>
+        <labelShort>机械</labelShort>
+        <description>源自机械体的无机血脉。</description>
+        <raceDef>Mech_Lancer</raceDef> 
+    </RavenRace.BloodlineDef>
+
     <!-- 可以在此添加其他兼容种族的血脉定义，如鼠族等 -->
 </Defs>

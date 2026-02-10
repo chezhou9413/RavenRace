@@ -32,7 +32,7 @@
         <canTargetPawns>True</canTargetPawns>
         <canTargetBuildings>False</canTargetBuildings>
         <canTargetAnimals>True</canTargetAnimals>
-        <canTargetMechs>False</canTargetMechs>
+        <canTargetMechs>True</canTargetMechs>
         <neverTargetIncapacitated>False</neverTargetIncapacitated>
       </targetParams>
     </verbProperties>

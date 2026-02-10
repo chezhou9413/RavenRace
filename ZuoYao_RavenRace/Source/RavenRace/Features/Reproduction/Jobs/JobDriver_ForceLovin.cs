@@ -183,42 +183,93 @@ namespace RavenRace
         {
             if (!RavenRaceMod.Settings.enableForceLovinPregnancy || !ModsConfig.BiotechActive) return;
 
-            Pawn male = (pawn.gender == Gender.Male) ? pawn : (partnerPawn.gender == Gender.Male ? partnerPawn : null);
-            Pawn female = (pawn.gender == Gender.Female) ? pawn : (partnerPawn.gender == Gender.Female ? partnerPawn : null);
-            Pawn carrier = female;
-            Pawn donor = male;
+            Pawn carrier = null;
+            Pawn donor = null;
 
-            if (RavenRaceMod.Settings.enableMalePregnancyEgg && pawn.gender == partnerPawn.gender && pawn.gender == Gender.Male)
+            // [逻辑更新] 机械族与同性处理逻辑
+            bool isMechanoidInvolved = pawn.RaceProps.IsMechanoid || partnerPawn.RaceProps.IsMechanoid;
+            bool isSameSex = pawn.gender == partnerPawn.gender;
+
+            // 1. 特殊情况：机械族
+            if (isMechanoidInvolved)
             {
-                bool isPawnRaven = pawn.def == RavenDefOf.Raven_Race;
-                bool isPartnerRaven = partnerPawn.def == RavenDefOf.Raven_Race;
-                if (isPawnRaven || isPartnerRaven)
-                {
-                    carrier = isPawnRaven ? pawn : partnerPawn;
-                    donor = (carrier == pawn) ? partnerPawn : pawn;
-                }
+                // 机械族不能作为载体 (Mother/Carrier)，只能由非机械族承担
+                // 假设 pawn 是发起者，partner 是受害者
+                if (!pawn.RaceProps.IsMechanoid) carrier = pawn;
+                else if (!partnerPawn.RaceProps.IsMechanoid) carrier = partnerPawn;
+
+                // 如果双方都是机械，则无法怀孕
+                if (carrier == null) return;
+
+                donor = (carrier == pawn) ? partnerPawn : pawn;
+            }
+            // 2. 特殊情况：同性交配
+            else if (isSameSex && RavenRaceMod.Settings.enableSameSexForceLovin)
+            {
+                // 逻辑：发起者 (pawn) 为 "父亲" (Donor)，接受者 (partner) 为 "母亲" (Carrier)
+                donor = pawn;
+                carrier = partnerPawn;
+
+                // 如果开启了男性生蛋且双方是男性，逻辑一致：接受者怀蛋
+            }
+            // 3. 原版逻辑：异性
+            else
+            {
+                carrier = (pawn.gender == Gender.Female) ? pawn : partnerPawn;
+                donor = (carrier == pawn) ? partnerPawn : pawn;
             }
 
+            // 基础校验
             if (carrier == null || donor == null) return;
+            if (carrier.gender == Gender.Male && !RavenRaceMod.Settings.enableMalePregnancyEgg && !RavenRaceMod.Settings.enableSameSexForceLovin) return;
 
+            // 计算概率
             float chance = RavenRaceMod.Settings.forcedLovinPregnancyRate;
             if (!RavenRaceMod.Settings.ignoreFertilityForPregnancy)
             {
-                chance *= carrier.GetStatValue(StatDefOf.Fertility) * donor.GetStatValue(StatDefOf.Fertility);
+                // 机械族没有 Fertility 属性，取 1.0 (视为有能力提供遗传物质)
+                float carrierFert = carrier.RaceProps.IsMechanoid ? 0f : carrier.GetStatValue(StatDefOf.Fertility);
+                float donorFert = donor.RaceProps.IsMechanoid ? 1f : donor.GetStatValue(StatDefOf.Fertility);
+                chance *= carrierFert * donorFert;
             }
 
             if (Rand.Chance(chance))
             {
-                GeneSet genes = PregnancyUtility.GetInheritedGeneSet(donor, carrier, out bool success);
-                if (success)
+                GeneSet genes;
+
+                // [关键安全检查] 如果有机械族，跳过原版基因遗传
+                if (isMechanoidInvolved)
                 {
-                    // [Change] Hediff_RavenPregnancy -> HediffRavenPregnancy
-                    HediffRavenPregnancy hediff = (HediffRavenPregnancy)HediffMaker.MakeHediff(HediffDef.Named("Raven_Hediff_RavenPregnancy"), carrier);
-                    hediff.Initialize(donor, genes, RavenRaceMod.Settings.forceRavenDescendant);
-                    carrier.health.AddHediff(hediff);
-                    carrier.Drawer?.renderer?.SetAllGraphicsDirty();
+                    // 机械族没有基因，我们创建一个空的 GeneSet，或者只复制 Carrier 的基因
+                    // 这里我们复制 Carrier 的基因，模拟单性繁殖 + 机械血脉注入
+                    genes = new GeneSet();
+                    if (carrier.genes != null)
+                    {
+                        foreach (var g in carrier.genes.GenesListForReading)
+                        {
+                            genes.AddGene(g.def);
+                        }
+                        genes.SetNameDirect("Mechanoid Hybrid");
+                    }
                 }
+                else
+                {
+                    // 原版逻辑
+                    genes = PregnancyUtility.GetInheritedGeneSet(donor, carrier, out bool success);
+                    if (!success) return; // 如果遗传失败则结束
+                }
+
+                // 施加怀孕状态
+                HediffRavenPregnancy hediff = (HediffRavenPregnancy)HediffMaker.MakeHediff(HediffDef.Named("Raven_Hediff_RavenPregnancy"), carrier);
+                hediff.Initialize(donor, genes, RavenRaceMod.Settings.forceRavenDescendant);
+                carrier.health.AddHediff(hediff);
+                carrier.Drawer?.renderer?.SetAllGraphicsDirty();
             }
         }
+
+
+
+
+
     }
 }

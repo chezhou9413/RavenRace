@@ -28,13 +28,29 @@ namespace RavenRace.Features.Reproduction
 
         private void DetermineParents(Pawn carrier, Pawn partner)
         {
+            // [新增逻辑] 兼容同性/机械/男性生蛋
+            // 原逻辑可能会在性别相同时混淆 Father/Mother
+
             Pawn bioFather = null;
             Pawn bioMother = null;
 
-            if (carrier.gender == Gender.Female) bioMother = carrier; else bioFather = carrier;
-            if (partner != null)
+            bool sameSex = (partner != null && carrier.gender == partner.gender);
+            bool mechInvolved = carrier.RaceProps.IsMechanoid || (partner != null && partner.RaceProps.IsMechanoid);
+
+            if (sameSex || mechInvolved)
             {
-                if (partner.gender == Gender.Male) bioFather = partner; else bioMother = partner;
+                // 在特殊情况下，carrier 强制为 Mother (生物学载体)，partner 强制为 Father (供体)
+                bioMother = carrier;
+                bioFather = partner ?? carrier;
+            }
+            else
+            {
+                // 正常异性逻辑
+                if (carrier.gender == Gender.Female) bioMother = carrier; else bioFather = carrier;
+                if (partner != null)
+                {
+                    if (partner.gender == Gender.Male) bioFather = partner; else bioMother = partner;
+                }
             }
 
             if (bioMother == null) bioMother = carrier;
@@ -80,6 +96,7 @@ namespace RavenRace.Features.Reproduction
 
         private void CalculateBloodlineInheritance(Pawn parent1, Pawn parent2)
         {
+            // 这里的 parent1 和 parent2 可能是机械
             var p1Data = GetOrSimulateBloodline(parent1);
             var p2Data = GetOrSimulateBloodline(parent2);
 
@@ -128,6 +145,14 @@ namespace RavenRace.Features.Reproduction
         private (float concentration, Dictionary<string, float> composition) GetOrSimulateBloodline(Pawn p)
         {
             if (p == null) return (0f, new Dictionary<string, float>());
+
+            // [新增] 机械族判断
+            if (p.RaceProps.IsMechanoid)
+            {
+                return (0f, new Dictionary<string, float> { { BloodlineManager.MECHANIOD_BLOODLINE_KEY, 1.0f } });
+            }
+
+
 
             string raceKey = p.def.defName;
             if (EponaCompatUtility.IsEponaActive)
