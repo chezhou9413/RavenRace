@@ -4,15 +4,32 @@
     <defName>Raven_Race</defName>
     <label>渡鸦族</label>
     <description>他们自称“渡鸦”，是一个拥有黑色羽翼的类人种族。他们通常生活在阴影中，擅长隐秘行动和精细作业。</description>
-    
+
     <inspectorTabs>
       <li>RavenRace.ITab_Bloodline</li>
     </inspectorTabs>
 
     <comps>
-      <li><compClass>RavenRace.Features.Bloodline.CompBloodline</compClass></li>
+      <li>
+        <compClass>RavenRace.Features.Bloodline.CompBloodline</compClass>
+      </li>
       <li Class="RavenRace.Race.CompProperties_RavenRace" />
       <li Class="RavenRace.CompProperties_RavenFeatherDrop"/>
+      <li Class="ChezhouLib.ClThingComp.ThingCompProperties_RaceFly">
+        <flySpeed>5</flySpeed>
+        <diagonalSpeed>1.414</diagonalSpeed>
+        <drawHeight>4</drawHeight>
+        <hoverSize>0.1</hoverSize>
+        <hoverSpeed>2.5</hoverSpeed>
+        <shadowTexPath>back</shadowTexPath>
+        <shadowSize>1.2,1.2,1.2</shadowSize>
+        <autoLandingJobDefs>
+          <li>LayDown</li>
+        </autoLandingJobDefs>
+        <!-- takeOffButtonTexPath这个是配置起飞按钮贴图的
+        landingButtonTexPath这个是配置降落按钮贴图的 -->
+      </li>
+      <li Class="ChezhouLib.ClThingComp.ThingCompProperties_ClAnimationController"/>
     </comps>
 
     <alienRace>
@@ -29,31 +46,37 @@
           <headOffset>(0, -0.063)</headOffset>
 
           <bodyTypes>
-            <li>Male</li> 
+            <li>Male</li>
             <li>Female</li>
           </bodyTypes>
           <!-- 头部类型：现在只负责轮廓（白膜） -->
           <headTypes>
             <li>Raven_Head_Normal</li>
           </headTypes>
-          
+
           <colorChannels>
-             <li>
-                <name>skin</name>
-                <first Class="ColorGenerator_Options">
-                   <options>
-                      <li><weight>10</weight><only>RGBA(1.0, 1.0, 1.0, 1.0)</only></li>
-                   </options>
-                </first>
-             </li>
-             <li>
-                <name>hair</name>
-                <first Class="ColorGenerator_Options">
-                   <options>
-                      <li><weight>10</weight><only>RGBA(1.0, 1.0, 1.0, 1.0)</only></li>
-                   </options>
-                </first>
-             </li>
+            <li>
+              <name>skin</name>
+              <first Class="ColorGenerator_Options">
+                <options>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(1.0, 1.0, 1.0, 1.0)</only>
+                  </li>
+                </options>
+              </first>
+            </li>
+            <li>
+              <name>hair</name>
+              <first Class="ColorGenerator_Options">
+                <options>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(1.0, 1.0, 1.0, 1.0)</only>
+                  </li>
+                </options>
+              </first>
+            </li>
           </colorChannels>
 
           <bodyAddons>
@@ -67,12 +90,31 @@
               <conditions>
                 <BodyPart>Torso</BodyPart>
                 <Gender>Male</Gender>
-                <Posture><drawnStanding>true</drawnStanding><drawnLaying>true</drawnLaying><drawnInBed>true</drawnInBed></Posture>
+                <Posture>
+                  <drawnStanding>true</drawnStanding>
+                  <drawnLaying>true</drawnLaying>
+                  <drawnInBed>true</drawnInBed>
+                </Posture>
               </conditions>
               <offsets>
-                  <south><bodyTypes><Male>(0,0)</Male></bodyTypes><layerOffset>-0.301</layerOffset></south>
-                  <east><bodyTypes><Male>(0,0)</Male></bodyTypes><layerOffset>-0.301</layerOffset></east>
-                  <west><bodyTypes><Male>(0,0)</Male></bodyTypes><layerOffset>-0.301</layerOffset></west>
+                <south>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                  </bodyTypes>
+                  <layerOffset>-0.301</layerOffset>
+                </south>
+                <east>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                  </bodyTypes>
+                  <layerOffset>-0.301</layerOffset>
+                </east>
+                <west>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                  </bodyTypes>
+                  <layerOffset>-0.301</layerOffset>
+                </west>
               </offsets>
             </li>
             <li>
@@ -82,14 +124,33 @@
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <drawSize>1.0</drawSize>
               <conditions>
-                <BodyPart>Torso</BodyPart>              
+                <BodyPart>Torso</BodyPart>
                 <Gender>Female</Gender>
-                <Posture><drawnStanding>true</drawnStanding><drawnLaying>true</drawnLaying><drawnInBed>true</drawnInBed></Posture>
+                <Posture>
+                  <drawnStanding>true</drawnStanding>
+                  <drawnLaying>true</drawnLaying>
+                  <drawnInBed>true</drawnInBed>
+                </Posture>
               </conditions>
               <offsets>
-                  <south><bodyTypes><Female>(0,0)</Female></bodyTypes><layerOffset>-0.301</layerOffset></south>
-                  <east><bodyTypes><Female>(0,0)</Female></bodyTypes><layerOffset>-0.301</layerOffset></east>
-                  <west><bodyTypes><Female>(0,0)</Female></bodyTypes><layerOffset>-0.301</layerOffset></west>
+                <south>
+                  <bodyTypes>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>-0.301</layerOffset>
+                </south>
+                <east>
+                  <bodyTypes>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>-0.301</layerOffset>
+                </east>
+                <west>
+                  <bodyTypes>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>-0.301</layerOffset>
+                </west>
               </offsets>
             </li>
 
@@ -98,13 +159,19 @@
               <path>Races/Raven/Hair/RavenHair_A_Back</path>
               <inFrontOfBody>false</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
-              <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize> 
+              <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize>
               <drawSize>1.2</drawSize>
               <colorChannel>hair</colorChannel>
-              <useSkipFlags><li>Hair</li></useSkipFlags>
+              <useSkipFlags>
+                <li>Hair</li>
+              </useSkipFlags>
               <conditions>
                 <BodyPart>Head</BodyPart>
-                <Posture><drawnStanding>true</drawnStanding><drawnLaying>true</drawnLaying><drawnInBed>false</drawnInBed></Posture>
+                <Posture>
+                  <drawnStanding>true</drawnStanding>
+                  <drawnLaying>true</drawnLaying>
+                  <drawnInBed>false</drawnInBed>
+                </Posture>
               </conditions>
             </li>
 
@@ -116,23 +183,52 @@
               <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize>
               <drawSize>1.2</drawSize>
               <colorChannel>hair</colorChannel>
-              <useSkipFlags><li>Hair</li></useSkipFlags>
+              <useSkipFlags>
+                <li>Hair</li>
+              </useSkipFlags>
               <conditions>
                 <BodyPart>Head</BodyPart>
-                <Posture><drawnStanding>true</drawnStanding><drawnLaying>true</drawnLaying><drawnInBed>true</drawnInBed></Posture>
+                <Posture>
+                  <drawnStanding>true</drawnStanding>
+                  <drawnLaying>true</drawnLaying>
+                  <drawnInBed>true</drawnInBed>
+                </Posture>
               </conditions>
-              <offsets><north><bodyTypes><Female>(0,0)</Female><Male>(0,0)</Male></bodyTypes><layerOffset>-1</layerOffset></north></offsets>
+              <offsets>
+                <north>
+                  <bodyTypes>
+                    <Female>(0,0)</Female>
+                    <Male>(0,0)</Male>
+                  </bodyTypes>
+                  <layerOffset>-1</layerOffset>
+                </north>
+              </offsets>
             </li>
 
             <!-- 3. 翅膀 (保持不变) -->
             <li>
               <path>Races/Raven/Wing/RavenWing_LayerC</path>
               <inFrontOfBody>false</inFrontOfBody>
-              <drawSize>2.5</drawSize> 
+              <drawSize>2.5</drawSize>
               <offsets>
-                  <south><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes></south>
-                  <north><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes></north>
-                  <east><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes></east>
+                <south>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                </south>
+                <north>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                </north>
+                <east>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                </east>
               </offsets>
             </li>
             <li>
@@ -140,21 +236,56 @@
               <inFrontOfBody>false</inFrontOfBody>
               <drawSize>2.5</drawSize>
               <offsets>
-                  <south><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes><layerOffset>-0.2</layerOffset></south>
-                  <north><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes><layerOffset>0.2</layerOffset></north>
-                  <east><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes></east>
+                <south>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>-0.2</layerOffset>
+                </south>
+                <north>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>0.2</layerOffset>
+                </north>
+                <east>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                </east>
               </offsets>
             </li>
             <li>
               <path>Races/Raven/Wing/RavenWing_LayerA</path>
-              <inFrontOfBody>true</inFrontOfBody> 
+              <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>false</alignWithHead>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <drawSize>2.5</drawSize>
               <offsets>
-                  <south><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes><layerOffset>-0.02</layerOffset></south>
-                  <north><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes><layerOffset>-1</layerOffset></north>
-                  <east><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes><layerOffset>0.04</layerOffset></east>
+                <south>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>-0.02</layerOffset>
+                </south>
+                <north>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>-1</layerOffset>
+                </north>
+                <east>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>0.04</layerOffset>
+                </east>
               </offsets>
             </li>
 
@@ -165,9 +296,19 @@
               <alignWithHead>true</alignWithHead>
               <drawSize>1.2</drawSize>
               <colorChannel>hair</colorChannel>
-              <layerInvert>true</layerInvert> 
-              <conditions><BodyPart>Head</BodyPart></conditions>
-              <offsets><north><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes><layerOffset>-0.1</layerOffset></north></offsets>
+              <layerInvert>true</layerInvert>
+              <conditions>
+                <BodyPart>Head</BodyPart>
+              </conditions>
+              <offsets>
+                <north>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>-0.1</layerOffset>
+                </north>
+              </offsets>
             </li>
             <li>
               <path>Races/Raven/Ear/RavenEar_Base</path>
@@ -175,41 +316,75 @@
               <alignWithHead>true</alignWithHead>
               <drawSize>1.2</drawSize>
               <colorChannel>hair</colorChannel>
-              <conditions><BodyPart>Head</BodyPart></conditions>
+              <conditions>
+                <BodyPart>Head</BodyPart>
+              </conditions>
               <offsets>
-                  <south><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes><layerOffset>0.05</layerOffset></south>
-                  <north><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes></north>
-                  <east><bodyTypes><Male>(0,0)</Male><Female>(0,0)</Female></bodyTypes><layerOffset>0.05</layerOffset></east>
+                <south>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>0.05</layerOffset>
+                </south>
+                <north>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                </north>
+                <east>
+                  <bodyTypes>
+                    <Male>(0,0)</Male>
+                    <Female>(0,0)</Female>
+                  </bodyTypes>
+                  <layerOffset>0.05</layerOffset>
+                </east>
               </offsets>
             </li>
           </bodyAddons>
         </alienPartGenerator>
       </generalSettings>
-      
+
       <graphicPaths>
         <body>
-            <path>Races/Raven/Body/RavenBody</path>
-            <bodytypeGraphics>
-                <Male>Races/Raven/Body/RavenBody_Male</Male>
-                <Female>Races/Raven/Body/RavenBody_Female</Female>
-            </bodytypeGraphics>
+          <path>Races/Raven/Body/RavenBody</path>
+          <bodytypeGraphics>
+            <Male>Races/Raven/Body/RavenBody_Male</Male>
+            <Female>Races/Raven/Body/RavenBody_Female</Female>
+          </bodytypeGraphics>
         </body>
-        
+
         <!-- [核心修改] 头部路径现在指向 "Blank" 文件夹 (白膜/不含眼睛的头部) -->
         <head>Races/Raven/Head/Blank/RavenHead_Blank</head>
         <skinShader>Cutout</skinShader>
       </graphicPaths>
 
       <styleSettings>
-         <li>
-            <key>HairDef</key>
-            <value><hasStyle>true</hasStyle><styleTagsOverride><li>RavenHair</li></styleTagsOverride></value>
-         </li>
-         <li><key>BeardDef</key><value><hasStyle>false</hasStyle></value></li>
-         <li>
-            <key>TattooDef</key>
-            <value><hasStyle>true</hasStyle><styleTagsOverride><li>RavenTattoo</li></styleTagsOverride></value>
-         </li>
+        <li>
+          <key>HairDef</key>
+          <value>
+            <hasStyle>true</hasStyle>
+            <styleTagsOverride>
+              <li>RavenHair</li>
+            </styleTagsOverride>
+          </value>
+        </li>
+        <li>
+          <key>BeardDef</key>
+          <value>
+            <hasStyle>false</hasStyle>
+          </value>
+        </li>
+        <li>
+          <key>TattooDef</key>
+          <value>
+            <hasStyle>true</hasStyle>
+            <styleTagsOverride>
+              <li>RavenTattoo</li>
+            </styleTagsOverride>
+          </value>
+        </li>
       </styleSettings>
 
 
@@ -221,17 +396,17 @@
           <li>HairColor</li>
           <li>BodyType</li>
         </blackEndoCategories>
-        
+
         <!-- 1. 将所有渡鸦服装标记为“受限”，这样其他种族默认不能穿 -->
         <apparelList>
           <li>Raven_Apparel_Casual</li>
           <li>Raven_Apparel_Qipao</li>
           <li>Raven_Apparel_Quju</li>
         </apparelList>
-        
+
         <!-- 2. 开启“只穿受限服装”模式 -->
         <onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
-        
+
         <!-- 3. 将渡鸦服装加入“白名单”，这样渡鸦自己可以穿 -->
         <whiteApparelList>
           <li>Raven_Apparel_Casual</li>
@@ -240,10 +415,10 @@
         </whiteApparelList>
       </raceRestriction>
     </alienRace>
-    
 
 
-    
+
+
     <statBases>
       <MarketValue>1750</MarketValue>
       <MoveSpeed>5.2</MoveSpeed>
@@ -252,32 +427,38 @@
       <LeatherAmount>50</LeatherAmount>
       <RoyalFavorValue>3</RoyalFavorValue>
     </statBases>
-    
+
     <tools>
       <li>
         <label>左拳</label>
-        <capacities><li>Blunt</li></capacities>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
         <power>8.2</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
       </li>
       <li>
         <label>右拳</label>
-        <capacities><li>Blunt</li></capacities>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
         <power>8.2</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
       </li>
       <li>
         <label>牙齿</label>
-        <capacities><li>Bite</li></capacities>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
         <power>8.2</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
         <chanceFactor>0.07</chanceFactor>
       </li>
     </tools>
-    
+
     <race>
       <thinkTreeMain>Humanlike</thinkTreeMain>
       <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
@@ -303,10 +484,22 @@
         </points>
       </litterSizeCurve>
       <lifeStageAges>
-        <li><def>HumanlikeBaby</def><minAge>0</minAge></li>
-        <li><def>HumanlikeChild</def><minAge>3</minAge></li>
-        <li><def>HumanlikeTeenager</def><minAge>13</minAge></li>
-        <li><def>HumanlikeAdult</def><minAge>18</minAge></li>
+        <li>
+          <def>HumanlikeBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>HumanlikeChild</def>
+          <minAge>3</minAge>
+        </li>
+        <li>
+          <def>HumanlikeTeenager</def>
+          <minAge>13</minAge>
+        </li>
+        <li>
+          <def>HumanlikeAdult</def>
+          <minAge>18</minAge>
+        </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
