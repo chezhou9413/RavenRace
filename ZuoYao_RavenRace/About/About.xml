@@ -66,6 +66,11 @@ SA支持：生物大师
             <displayName>Humanoid Alien Races</displayName>
             <steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
         </li>
+        <li>
+            <packageId>chezhoulib</packageId>
+            <displayName>ChezhouLib</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/221583801</steamWorkshopUrl>
+        </li>
     </modDependencies>
     <loadAfter>
         <li>Ludeon.RimWorld</li>
@@ -74,7 +79,9 @@ SA支持：生物大师
         <li>Ludeon.RimWorld.Biotech</li>
         <li>Ludeon.RimWorld.Anomaly</li>
         <li>erdelf.HumanoidAlienRaces</li>
-        
+        <li>chezhoulib</li>
+
+
         <!-- Phase 3.6 兼容项 -->
         <li>Ancot.Milira</li> <!-- 米莉拉 -->
         <li>Milira.Independent.Pathing</li> <!-- 天羽族真实飞行补丁 -->

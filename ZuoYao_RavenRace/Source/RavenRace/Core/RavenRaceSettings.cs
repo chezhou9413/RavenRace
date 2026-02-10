@@ -82,7 +82,9 @@ namespace RavenRace
         // ===================================================
         // 5. 杂交兼容 (Hybridization)
         // ===================================================
-        public bool enableMiliraFlightForHybrids = true; // 米莉拉 (Milira)
+
+        // 米莉拉 (Milira)先移除了，后面加
+
         public bool enableMoeLotlCompat = true; // 萌螈 (MoeLotl)
         public bool enableKoelimeBloodline = true; // 珂莉姆 (Koelime)
         public bool enableMuGirlCompat = true; // 雪牛娘 (MuGirl)
@@ -234,15 +236,14 @@ namespace RavenRace
             Scribe_Values.Look(ref spiritEggWarmthDays, "spiritEggWarmthDays", 3f);
 
 
-
-
-
-
+            // 米莉拉 (Milira)先移除了，后面加
 
 
             Scribe_Values.Look(ref enableGrandClimax, "enableGrandClimax", false);
             Scribe_Values.Look(ref enableDimensionalSex, "enableDimensionalSex", false); // 新增
-            Scribe_Values.Look(ref enableMiliraFlightForHybrids, "enableMiliraFlightForHybrids", true);
+
+
+
             Scribe_Values.Look(ref enableMoeLotlCompat, "enableMoeLotlCompat", true);
             Scribe_Values.Look(ref enableKoelimeBloodline, "enableKoelimeBloodline", true);
             Scribe_Values.Look(ref enableMuGirlCompat, "enableMuGirlCompat", true);
@@ -252,9 +253,6 @@ namespace RavenRace
             Scribe_Values.Look(ref enableMoyoCompat, "enableMoyoCompat", true);
             Scribe_Values.Look(ref enableEponaCompat, "enableEponaCompat", true);
             Scribe_Values.Look(ref enableTailinCompat, "enableTailinCompat", true);// [Phase 3.6.10] 泰临 (Tailin)
-
-
-
 
 
 

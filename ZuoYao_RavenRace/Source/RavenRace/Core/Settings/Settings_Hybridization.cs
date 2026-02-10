@@ -27,28 +27,15 @@ namespace RavenRace.Settings
             // 1. 米莉拉 (Milira)
             // =================================================
             listing.GapLine();
-            listing.Label("RavenRace_Settings_MiliraFlight".Translate()); // 标题
-            DrawModStatus(listing, MiliraCompatUtility.IsMiliraActive);   // 状态
+            listing.Label("RavenRace_Settings_MiliraFlight".Translate());
+            DrawModStatus(listing, MiliraCompatUtility.IsMiliraActive);
 
-            listing.CheckboxLabeled(
-                "RavenRace_Settings_EnableMiliraFlight".Translate(),
-                ref s.enableMiliraFlightForHybrids,
-                "RavenRace_Settings_EnableMiliraFlight_Desc".Translate()
-            );
-
+            // [修改] 移除了飞行开关和补丁提示
             if (MiliraCompatUtility.IsMiliraActive)
             {
-                listing.Gap(2f);
-                Color oldColor = GUI.color;
-                bool hasPatch = MiliraCompatUtility.IsPathingPatchActive;
-                GUI.color = hasPatch ? Color.green : new Color(1f, 0.5f, 0.5f);
-
-                string patchStatus = hasPatch
-                    ? "(Pathing Patch: OK)"
-                    : "(Pathing Patch: Missing - Flight might be purely visual)";
-
-                listing.Label("RavenRace_Settings_MiliraFlight_Note".Translate() + " " + patchStatus);
-                GUI.color = oldColor;
+                GUI.color = Color.gray;
+                listing.Label("(米莉拉血脉已启用，但旧版飞行逻辑已被内置飞行替代，等待后续更新)");
+                GUI.color = Color.white;
             }
 
             // =================================================

@@ -47,12 +47,11 @@ namespace RavenRace.Features.Bloodline
 
 
                 // 1. 米莉拉
-                if (RavenRaceMod.Settings.enableMiliraFlightForHybrids &&
-                    bloodlineComposition.ContainsKey("Milira_Race") &&
-                    bloodlineComposition["Milira_Race"] > 0f)
-                {
-                    GrantMiliraFlight();
-                }
+                // [修改] 移除了米莉拉飞行逻辑
+                // 米莉拉血脉 (Milira_Race) 仍然存在于字典中，现在没有任何效果。后面加功能
+
+
+
 
                 // 2. 萌螈
                 if (RavenRaceMod.Settings.enableMoeLotlCompat &&
@@ -163,23 +162,6 @@ namespace RavenRace.Features.Bloodline
             Pawn.AllComps.RemoveAll(c => c is Compat.MuGirl.CompRavenMilkable);
         }
 
-        private void GrantMiliraFlight()
-        {
-            var existingComp = Pawn.TryGetComp<CompFlightControl>();
-            if (existingComp != null) return;
 
-            try
-            {
-                var proxyComp = new CompFlightControl();
-                proxyComp.parent = this.parent;
-                proxyComp.Initialize(new CompProperties_FlightControl());
-                Pawn.AllComps.Add(proxyComp);
-                if (Pawn.Spawned) proxyComp.PostSpawnSetup(false);
-            }
-            catch (Exception ex)
-            {
-                Log.Warning($"[RavenRace] Failed to grant Milira flight: {ex.Message}");
-            }
-        }
     }
 }
