@@ -24,7 +24,7 @@
           <inFrontOfBody>true</inFrontOfBody>
           <alignWithHead>true</alignWithHead>
           <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
-          <drawSize>1.2</drawSize>
+          <drawSize>1.0</drawSize>
           <colorChannel>skin</colorChannel>
           <conditions>
             <BodyPart>Head</BodyPart> 
