@@ -1,69 +1,69 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\",
+  "WorkspaceRootPath": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\fusangorganization\\ui\\fusangwindowbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\fusangorganization\\ui\\fusangwindowbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\fusangorganization\\ui\\fusangwindowbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\uniqueweapons\\spiritbeads\\compabilityeffect_grandclimax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\uniqueweapons\\spiritbeads\\compabilityeffect_grandclimax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\uniqueweapons\\spiritbeads\\compabilityeffect_grandclimax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\uniqueweapons\\spiritbeads\\compspiritbeads.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\uniqueweapons\\spiritbeads\\compspiritbeads.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\uniqueweapons\\spiritbeads\\compspiritbeads.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\reproduction\\comps\\compspiritegg_upgrades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\reproduction\\comps\\compspiritegg_upgrades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\reproduction\\comps\\compspiritegg_upgrades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\reproduction\\comps\\compspiritegg_incubation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\reproduction\\comps\\compspiritegg_incubation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\reproduction\\comps\\compspiritegg_incubation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\soulaltar\\buildings\\building_cradle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\soulaltar\\buildings\\building_cradle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\soulaltar\\buildings\\building_cradle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\soulaltar\\buildings\\building_altarpylon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\soulaltar\\buildings\\building_altarpylon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\soulaltar\\buildings\\building_altarpylon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\soulaltar\\buildings\\building_altarinfuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\soulaltar\\buildings\\building_altarinfuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\soulaltar\\buildings\\building_altarinfuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\core\\defof\\ravendefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\defof\\ravendefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\defof\\ravendefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\defensesystem\\harmony\\patch_shotreport_blackmist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\defensesystem\\harmony\\patch_shotreport_blackmist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\defensesystem\\harmony\\patch_shotreport_blackmist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenracestartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenracestartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\ravenracestartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenracemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenracemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\ravenracemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\defensesystem\\harmony\\patch_attacktargetfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\defensesystem\\harmony\\patch_attacktargetfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\defensesystem\\harmony\\patch_attacktargetfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\defensesystem\\harmony\\patch_decoycachemaintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\defensesystem\\harmony\\patch_decoycachemaintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\defensesystem\\harmony\\patch_decoycachemaintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\features\\defensesystem\\managers\\ravendecoycache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\defensesystem\\managers\\ravendecoycache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\defensesystem\\managers\\ravendecoycache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\30978\\desktop\\\u4FEE\u6539\\rimmod\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenmodconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|e:\\rimmoddev\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenmodconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\ravenmodconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -80,9 +80,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "FusangWindowBase.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\FusangOrganization\\UI\\FusangWindowBase.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\FusangOrganization\\UI\\FusangWindowBase.cs",
               "RelativeDocumentMoniker": "Features\\FusangOrganization\\UI\\FusangWindowBase.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\FusangOrganization\\UI\\FusangWindowBase.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\FusangOrganization\\UI\\FusangWindowBase.cs",
               "RelativeToolTip": "Features\\FusangOrganization\\UI\\FusangWindowBase.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAUwCAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -93,35 +93,33 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "CompAbilityEffect_GrandClimax.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\UniqueWeapons\\SpiritBeads\\CompAbilityEffect_GrandClimax.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\UniqueWeapons\\SpiritBeads\\CompAbilityEffect_GrandClimax.cs",
               "RelativeDocumentMoniker": "Features\\UniqueWeapons\\SpiritBeads\\CompAbilityEffect_GrandClimax.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\UniqueWeapons\\SpiritBeads\\CompAbilityEffect_GrandClimax.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\UniqueWeapons\\SpiritBeads\\CompAbilityEffect_GrandClimax.cs",
               "RelativeToolTip": "Features\\UniqueWeapons\\SpiritBeads\\CompAbilityEffect_GrandClimax.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAUwCEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T14:34:15.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-30T14:34:15.19Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "CompSpiritBeads.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\UniqueWeapons\\SpiritBeads\\CompSpiritBeads.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\UniqueWeapons\\SpiritBeads\\CompSpiritBeads.cs",
               "RelativeDocumentMoniker": "Features\\UniqueWeapons\\SpiritBeads\\CompSpiritBeads.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\UniqueWeapons\\SpiritBeads\\CompSpiritBeads.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\UniqueWeapons\\SpiritBeads\\CompSpiritBeads.cs",
               "RelativeToolTip": "Features\\UniqueWeapons\\SpiritBeads\\CompSpiritBeads.cs",
               "ViewState": "AgIAAHYAAAAAAAAAAAAowIoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T14:20:16.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-30T14:20:16.379Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "CompSpiritEgg_Incubation.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Reproduction\\Comps\\CompSpiritEgg_Incubation.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Reproduction\\Comps\\CompSpiritEgg_Incubation.cs",
               "RelativeDocumentMoniker": "Features\\Reproduction\\Comps\\CompSpiritEgg_Incubation.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Reproduction\\Comps\\CompSpiritEgg_Incubation.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Reproduction\\Comps\\CompSpiritEgg_Incubation.cs",
               "RelativeToolTip": "Features\\Reproduction\\Comps\\CompSpiritEgg_Incubation.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -131,22 +129,21 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "CompSpiritEgg_Upgrades.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Reproduction\\Comps\\CompSpiritEgg_Upgrades.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Reproduction\\Comps\\CompSpiritEgg_Upgrades.cs",
               "RelativeDocumentMoniker": "Features\\Reproduction\\Comps\\CompSpiritEgg_Upgrades.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Reproduction\\Comps\\CompSpiritEgg_Upgrades.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Reproduction\\Comps\\CompSpiritEgg_Upgrades.cs",
               "RelativeToolTip": "Features\\Reproduction\\Comps\\CompSpiritEgg_Upgrades.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T06:57:23.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-27T06:57:23.898Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Building_Cradle.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_Cradle.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_Cradle.cs",
               "RelativeDocumentMoniker": "Features\\SoulAltar\\Buildings\\Building_Cradle.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_Cradle.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_Cradle.cs",
               "RelativeToolTip": "Features\\SoulAltar\\Buildings\\Building_Cradle.cs",
               "ViewState": "AgIAAMEAAAAAAAAAAAAiwBwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -156,9 +153,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Building_AltarPylon.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_AltarPylon.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_AltarPylon.cs",
               "RelativeDocumentMoniker": "Features\\SoulAltar\\Buildings\\Building_AltarPylon.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_AltarPylon.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_AltarPylon.cs",
               "RelativeToolTip": "Features\\SoulAltar\\Buildings\\Building_AltarPylon.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -168,9 +165,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Building_AltarInfuser.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_AltarInfuser.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_AltarInfuser.cs",
               "RelativeDocumentMoniker": "Features\\SoulAltar\\Buildings\\Building_AltarInfuser.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_AltarInfuser.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\SoulAltar\\Buildings\\Building_AltarInfuser.cs",
               "RelativeToolTip": "Features\\SoulAltar\\Buildings\\Building_AltarInfuser.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -180,9 +177,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "RavenRaceStartup.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceStartup.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceStartup.cs",
               "RelativeDocumentMoniker": "Core\\RavenRaceStartup.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceStartup.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceStartup.cs",
               "RelativeToolTip": "Core\\RavenRaceStartup.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAYwDkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -192,9 +189,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "RavenRaceMod.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceMod.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceMod.cs",
               "RelativeDocumentMoniker": "Core\\RavenRaceMod.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceMod.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceMod.cs",
               "RelativeToolTip": "Core\\RavenRaceMod.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAzwD8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -204,9 +201,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Patch_ShotReport_BlackMist.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_ShotReport_BlackMist.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_ShotReport_BlackMist.cs",
               "RelativeDocumentMoniker": "Features\\DefenseSystem\\Harmony\\Patch_ShotReport_BlackMist.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_ShotReport_BlackMist.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_ShotReport_BlackMist.cs",
               "RelativeToolTip": "Features\\DefenseSystem\\Harmony\\Patch_ShotReport_BlackMist.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAADwv3kAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -216,9 +213,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "Patch_AttackTargetFinder.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_AttackTargetFinder.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_AttackTargetFinder.cs",
               "RelativeDocumentMoniker": "Features\\DefenseSystem\\Harmony\\Patch_AttackTargetFinder.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_AttackTargetFinder.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_AttackTargetFinder.cs",
               "RelativeToolTip": "Features\\DefenseSystem\\Harmony\\Patch_AttackTargetFinder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -228,9 +225,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Patch_DecoyCacheMaintenance.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_DecoyCacheMaintenance.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_DecoyCacheMaintenance.cs",
               "RelativeDocumentMoniker": "Features\\DefenseSystem\\Harmony\\Patch_DecoyCacheMaintenance.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_DecoyCacheMaintenance.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Harmony\\Patch_DecoyCacheMaintenance.cs",
               "RelativeToolTip": "Features\\DefenseSystem\\Harmony\\Patch_DecoyCacheMaintenance.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -240,9 +237,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "RavenDecoyCache.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Managers\\RavenDecoyCache.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Managers\\RavenDecoyCache.cs",
               "RelativeDocumentMoniker": "Features\\DefenseSystem\\Managers\\RavenDecoyCache.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Managers\\RavenDecoyCache.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\DefenseSystem\\Managers\\RavenDecoyCache.cs",
               "RelativeToolTip": "Features\\DefenseSystem\\Managers\\RavenDecoyCache.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -252,9 +249,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "RavenDefOf.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\DefOf\\RavenDefOf.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\DefOf\\RavenDefOf.cs",
               "RelativeDocumentMoniker": "Core\\DefOf\\RavenDefOf.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\DefOf\\RavenDefOf.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\DefOf\\RavenDefOf.cs",
               "RelativeToolTip": "Core\\DefOf\\RavenDefOf.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -264,9 +261,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "RavenModConstants.cs",
-              "DocumentMoniker": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenModConstants.cs",
+              "DocumentMoniker": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenModConstants.cs",
               "RelativeDocumentMoniker": "Core\\RavenModConstants.cs",
-              "ToolTip": "C:\\Users\\30978\\Desktop\\\u4FEE\u6539\\rimmod\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenModConstants.cs",
+              "ToolTip": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenModConstants.cs",
               "RelativeToolTip": "Core\\RavenModConstants.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Races/Raven/Head/Face/RavenFace"]/offsets/south/layerOffset</xpath>
+    <value>
+      <layerOffset>-0.4</layerOffset>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Races/Raven/Head/Face/RavenFace"]/offsets/north/layerOffset</xpath>
+    <value>
+      <layerOffset>-0.4</layerOffset>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Races/Raven/Head/Face/RavenFace"]/offsets/east/layerOffset</xpath>
+    <value>
+      <layerOffset>-0.4</layerOffset>
+    </value>
+  </Operation>
+</Patch>

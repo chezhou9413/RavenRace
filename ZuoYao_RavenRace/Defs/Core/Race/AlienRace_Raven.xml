@@ -204,7 +204,46 @@
                 </north>
               </offsets>
             </li>
-
+            <!-- 静态脸 -->
+            <li>
+              <path>Races/Raven/Head/Face/RavenFace</path>
+              <inFrontOfBody>true</inFrontOfBody>
+              <alignWithHead>true</alignWithHead>
+              <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+              <drawSize>1</drawSize>
+              <colorChannel>skin</colorChannel>
+              <conditions>
+                <BodyPart>Head</BodyPart>
+                <Posture>
+                  <drawnStanding>true</drawnStanding>
+                  <drawnLaying>true</drawnLaying>
+                  <drawnInBed>true</drawnInBed>
+                </Posture>
+              </conditions>
+              <offsets>
+                <south>
+                  <bodyTypes>
+                    <Female>(0,0)</Female>
+                    <Male>(0,0)</Male>
+                  </bodyTypes>
+                  <layerOffset>0.01</layerOffset>
+                </south>
+                <north>
+                  <bodyTypes>
+                    <Female>(0,0)</Female>
+                    <Male>(0,0)</Male>
+                  </bodyTypes>
+                  <layerOffset>0.01</layerOffset>
+                </north>
+                <east>
+                  <bodyTypes>
+                    <Female>(0,0)</Female>
+                    <Male>(0,0)</Male>
+                  </bodyTypes>
+                  <layerOffset>0.01</layerOffset>
+                </east>
+              </offsets>
+            </li>
             <!-- 3. 翅膀 (保持不变) -->
             <li>
               <path>Races/Raven/Wing/RavenWing_LayerC</path>
