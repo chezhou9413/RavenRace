@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <PawnKindDef>
+        <defName>Raven_PawnKind_ZuoYao</defName>
+        <label>左爻</label>
+        <race>Raven_Race</race>
+        <combatPower>100</combatPower>
+        <isFighter>true</isFighter>
+        <defaultFactionType>PlayerColony</defaultFactionType>
+
+        <backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>Raven_ZuoYao</li>
+                </categories>
+            </li>
+        </backstoryFiltersOverride>
+        <!-- 强制服装 -->
+        <apparelRequired>
+            <li>Raven_ApparelZuoYaoOutfit</li>
+            <li>Raven_GoldenGlasses</li>
+        </apparelRequired>
+        <apparelTags>
+            <li>ZuoYao_Apparel</li>
+        </apparelTags>
+        <apparelMoney>
+            <min>9999</min>
+            <max>9999</max>
+        </apparelMoney>
+
+        <techHediffsChance>0.5</techHediffsChance>
+        <initialWillRange>10~10</initialWillRange>
+        <initialResistanceRange>0~0</initialResistanceRange>
+        <modExtensions>
+            <li Class="ChezhouLib.Extension.kindRule">
+                <kindName>左爻</kindName>
+                <kindAge>22</kindAge>
+                <kindDesName></kindDesName>
+                <renderNodeRules>
+                    <li>
+                        <debugLabel>RavenHair_A</debugLabel>
+                        <replacePath>Races/Raven/Special/ZuoYao/Hair/ZuoYao_Hair</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>RavenHair_A_Back</debugLabel>
+                        <replacePath>Races/Raven/Special/ZuoYao/Hair/ZuoYao_Hair_Back</replacePath>
+                    </li>
+                </renderNodeRules>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+</Defs>

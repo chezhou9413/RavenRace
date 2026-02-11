@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="ApparelBase">
+        <defName>Raven_GoldenGlasses</defName>
+        <label>金框眼镜</label>
+        <description>一副精致的金框眼镜。佩戴它会让人显得更加博学和睿智，从而提升社交表现。</description>
+        <smeltable>false</smeltable>
+        <apparel>
+            <wornGraphicPath />
+            <layers>
+                <li>Belt</li>
+            </layers>
+            <bodyPartGroups>
+                <li>Eyes</li>
+            </bodyPartGroups>
+            <renderNodeProperties>
+                <li>
+                    <nodeClass>PawnRenderNode</nodeClass>
+                    <workerClass>ChezhouLib.ClPawnRenderNodeWorker.PawnRenderNodeWorker_FixedSize</workerClass>
+                    <texPath>Races/Raven/Special/ZuoYao/Glasses/Glasses</texPath>
+                    <parentTagDef>Head</parentTagDef>
+                    <baseLayer>170</baseLayer>
+                    <shaderTypeDef>Cutout</shaderTypeDef>
+                    <drawData>
+                        <scale>1.2</scale>
+                        <defaultData>
+                            <offset>(0, 0, 0)</offset>
+                        </defaultData>
+                    </drawData>
+                </li>
+            </renderNodeProperties>
+            <tags>
+                <li>ZuoYao_Apparel</li>
+            </tags>
+        </apparel>
+        <comps>
+            <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+                <requiredPawnKindDefName>
+                    <li>Raven_PawnKind_ZuoYao</li>
+                </requiredPawnKindDefName>
+            </li>
+            <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+                <targetRaces>
+                    <li>Raven_Race</li>
+                </targetRaces>
+            </li>
+        </comps>
+        <graphicData>
+            <texPath>Races/Raven/Special/ZuoYao/Glasses/Glasses_south</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1.2,1.2)</drawSize>
+        </graphicData>
+        <statBases>
+            <Mass>0.03</Mass>
+            <MarketValue>50000</MarketValue>
+            <MaxHitPoints>60</MaxHitPoints>
+            <Flammability>0.3</Flammability>
+            <Insulation_Cold>0</Insulation_Cold>
+            <Insulation_Heat>0</Insulation_Heat>
+        </statBases>
+        <tradeability>All</tradeability>
+
+        <equippedStatOffsets>
+            <SocialImpact>0.15</SocialImpact>
+        </equippedStatOffsets>
+
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+
+    </ThingDef>
+
+</Defs>

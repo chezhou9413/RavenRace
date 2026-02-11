@@ -1,0 +1,94 @@
+<Defs>
+
+
+  <ThingDef>
+    <defName>Raven_ApparelZuoYaoOutfit</defName>
+    <label>扶桑司命礼装</label>
+    <description>扶桑组织高级司命的专属礼装。设计极具威严与神秘感，面料融合了暗羽钢纤维，提供卓越的防护性能。</description>
+
+    <techLevel>Industrial</techLevel>
+    <thingClass>Apparel</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+
+    <!-- 外观数据 -->
+    <graphicData>
+      <texPath>Races/Raven/Special/ZuoYao/Apparel/ZuoYao_Apparel_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>Raven_PawnKind_ZuoYao</li>
+        </requiredPawnKindDefName>
+      </li>
+      <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+        <targetRaces>
+          <li>Raven_Race</li>
+        </targetRaces>
+      </li>
+    </comps>
+    <!-- 其他属性 -->
+    <tickerType>Never</tickerType>
+    <burnableByRecipe>true</burnableByRecipe>
+    <smeltable>false</smeltable>
+
+    <!-- 基础属性 -->
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <MarketValue>5000</MarketValue>
+      <Mass>2.0</Mass>
+      <ArmorRating_Sharp>1.20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.80</ArmorRating_Heat>
+      <Insulation_Cold>50</Insulation_Cold>
+      <Insulation_Heat>30</Insulation_Heat>
+      <EquipDelay>1.0</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <TradePriceImprovement>0.40</TradePriceImprovement>
+    </equippedStatOffsets>
+    <!-- 物品分类 -->
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+
+    <!-- 服装定义 -->
+    <apparel>
+      <!-- 覆盖躯干、腰部、肩膀、腿部 -->
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Waist</li>
+        <li>Shoulders</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+
+      <!-- Middle层 -->
+      <layers>
+        <li>Middle</li>
+      </layers>
+
+      <wornGraphicPath>Races/Raven/Special/ZuoYao/Apparel/ZuoYao_Apparel</wornGraphicPath>
+
+      <useWornGraphicMask>false</useWornGraphicMask>
+
+      <!-- 常服标签 -->
+      <tags>
+        <li>ZuoYao_Apparel</li>
+      </tags>
+
+      <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+      <canBeGeneratedToSatisfyWarmth>true</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <countsAsClothingForNudity>true</countsAsClothingForNudity>
+    </apparel>
+  </ThingDef>
+</Defs>
