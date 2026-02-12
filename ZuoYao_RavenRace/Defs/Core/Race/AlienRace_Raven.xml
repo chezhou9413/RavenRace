@@ -40,10 +40,10 @@
 
         <alienPartGenerator>
           <customDrawSize>(1.0, 1.0)</customDrawSize>
-          <customHeadDrawSize>(1.2, 1.2)</customHeadDrawSize>
+          <customHeadDrawSize>(1.0, 1.0)</customHeadDrawSize>
           <customPortraitDrawSize>(1.0, 1.0)</customPortraitDrawSize>
-          <customPortraitHeadDrawSize>(1.2, 1.2)</customPortraitHeadDrawSize>
-          <headOffset>(0, -0.063)</headOffset>
+          <customPortraitHeadDrawSize>(1.0, 1.0)</customPortraitHeadDrawSize>
+          <headOffset>(0, 0.06)</headOffset>
 
           <bodyTypes>
             <li>Male</li>
@@ -160,7 +160,7 @@
               <inFrontOfBody>false</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
               <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize>
-              <drawSize>1.2</drawSize>
+              <drawSize>1.0</drawSize>
               <colorChannel>hair</colorChannel>
               <useSkipFlags>
                 <li>Hair</li>
@@ -181,7 +181,7 @@
               <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
               <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize>
-              <drawSize>1.2</drawSize>
+              <drawSize>1.0</drawSize>
               <colorChannel>hair</colorChannel>
               <useSkipFlags>
                 <li>Hair</li>
@@ -210,7 +210,7 @@
               <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
-              <drawSize>1</drawSize>
+              <drawSize>1.0</drawSize>
               <colorChannel>skin</colorChannel>
               <conditions>
                 <BodyPart>Head</BodyPart>
@@ -248,7 +248,7 @@
             <li>
               <path>Races/Raven/Wing/RavenWing_LayerC</path>
               <inFrontOfBody>false</inFrontOfBody>
-              <drawSize>2.5</drawSize>
+              <drawSize>1.0</drawSize>
               <offsets>
                 <south>
                   <bodyTypes>
@@ -273,7 +273,7 @@
             <li>
               <path>Races/Raven/Wing/RavenWing_LayerB</path>
               <inFrontOfBody>false</inFrontOfBody>
-              <drawSize>2.5</drawSize>
+              <drawSize>1.0</drawSize>
               <offsets>
                 <south>
                   <bodyTypes>
@@ -302,7 +302,7 @@
               <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>false</alignWithHead>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
-              <drawSize>2.5</drawSize>
+              <drawSize>1.0</drawSize>
               <offsets>
                 <south>
                   <bodyTypes>
@@ -333,7 +333,7 @@
               <path>Races/Raven/Ear/RavenEar_Back</path>
               <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
-              <drawSize>1.2</drawSize>
+              <drawSize>1.0</drawSize>
               <colorChannel>hair</colorChannel>
               <layerInvert>true</layerInvert>
               <conditions>
@@ -353,7 +353,7 @@
               <path>Races/Raven/Ear/RavenEar_Base</path>
               <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
-              <drawSize>1.2</drawSize>
+              <drawSize>1.0</drawSize>
               <colorChannel>hair</colorChannel>
               <conditions>
                 <BodyPart>Head</BodyPart>
