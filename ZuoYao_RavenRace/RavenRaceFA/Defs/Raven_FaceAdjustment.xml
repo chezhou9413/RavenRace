@@ -4,7 +4,7 @@
     <defName>Raven_FaceAdjustment</defName>
     <RaceName>Raven_Race</RaceName>
     <!-- 放大头部以匹配身体比例 -->
-    <Size>(1.9, 1.9)</Size>
+    <Size>(2.24, 2.24)</Size>
     
     <!-- 微调位置，确保五官不偏离 -->
     <OffsetNorth>(0, 0)</OffsetNorth>

@@ -39,10 +39,10 @@
         <humanRecipeImport>true</humanRecipeImport>
 
         <alienPartGenerator>
-          <customDrawSize>(1.0, 1.0)</customDrawSize>
-          <customHeadDrawSize>(0.8, 0.8)</customHeadDrawSize>
-          <customPortraitDrawSize>(1.0, 1.0)</customPortraitDrawSize>
-          <customPortraitHeadDrawSize>(1.0, 1.0)</customPortraitHeadDrawSize>
+          <customDrawSize>(2.6, 2.6)</customDrawSize>
+          <customHeadDrawSize>(1.46,1.46)</customHeadDrawSize>
+          <customPortraitDrawSize>(2.6, 2.6)</customPortraitDrawSize>
+          <customPortraitHeadDrawSize>(1.46, 1.46)</customPortraitHeadDrawSize>
           <headOffsetDirectional>
             <north>
               <offset>(0, 0)</offset>
@@ -264,6 +264,7 @@
               <path>Races/Raven/Wing/RavenWing_LayerC</path>
               <inFrontOfBody>false</inFrontOfBody>
               <drawSize>1.0</drawSize>
+              <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <offsets>
                 <south>
                   <bodyTypes>
@@ -287,6 +288,7 @@
             </li>
             <li>
               <path>Races/Raven/Wing/RavenWing_LayerB</path>
+              <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <inFrontOfBody>false</inFrontOfBody>
               <drawSize>1.0</drawSize>
               <offsets>
@@ -314,6 +316,7 @@
             </li>
             <li>
               <path>Races/Raven/Wing/RavenWing_LayerA</path>
+              <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>false</alignWithHead>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
