@@ -17,7 +17,7 @@ namespace RavenRace
             { "matathias.tdiner",             "正在让大家上桌吃饭..." },
             { "Ancot.MiliraRace",             "正在摸米莉拉的翅膀根..." },
             { "Ariandel.MiliraImperium",      "正在将灵卵塞入艾蕾德尔的后门..." },
-            { "HenTaiLoliTeam.Axolotl",       "正在嗦可爱萌螈的小脚..." },
+            { "hentailoliteam.axolotl",       "正在嗦可爱萌螈的小脚..." },
             { "fxz.moelotlzombie.update",     "正在玩弄满道长的墨镜..." },
             { "Draconis.Koelime",             "正在揉饺龙的肚子..." },
             { "MelonDove.WolfeinRace",        "正在吸沃芬的毛绒绒大尾巴..." },
