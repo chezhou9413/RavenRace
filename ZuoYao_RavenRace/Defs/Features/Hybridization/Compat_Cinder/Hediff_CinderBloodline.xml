@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_CinderBloodline</defName>
+    <label>聚合物再生(次级)</label>
+    <description>源自烟烬族的特殊血脉。体内的细胞结构部分被类聚合物取代，赋予了其缓慢修复受损组织甚至再生缺失肢体的能力。\n\n效果：\n- 获得再生能力 (每600ticks检测一次)\n- 受到的伤害系数 x0.9\n- 易燃性 x0.8</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(254, 216, 130)</defaultLabelColor>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    
+    <stages>
+      <li>
+        <statFactors>
+          <IncomingDamageFactor>0.9</IncomingDamageFactor>
+          <Flammability>0.8</Flammability>
+        </statFactors>
+      </li>
+    </stages>
+    
+    <comps>
+      <!-- 使用我们复刻的 C# 组件，参数参照原版 -->
+      <li Class="RavenRace.Compat.Cinder.CompProperties_RavenRegen">
+        <healPerDay>10</healPerDay>
+        <checkInterval>600</checkInterval>
+        <healPerDayUnlocked>50</healPerDayUnlocked>
+        <maxPartHpForLocked>10</maxPartHpForLocked>
+        <unlockedString>已觉醒</unlockedString>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

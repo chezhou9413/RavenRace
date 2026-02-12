@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 米莉拉 (Milira) - 包含原版和帝国版 -->
+    <RavenRace.BloodlineDef MayRequire="Ancot.Milira">
+        <defName>Bloodline_Milira</defName>
+        <label>米莉拉血脉</label>
+        <labelShort>米莉拉</labelShort>
+        <description>源自拥有洁白羽翼的机械天使血脉。赋予了持有者更轻盈的身姿和更精准的射击本能。</description>
+        <raceDef>Milira_Race</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RavenRace.BloodlineDef MayRequire="Draconis.Koelime">
+        <defName>Bloodline_Koelime</defName>
+        <label>珂莉姆血脉</label>
+        <labelShort>珂莉姆</labelShort>
+        <description>源自古龙种珂莉姆的血脉，流淌着强大的再生因子与对疾病的抗性。</description>
+        <raceDef>Alien_Koelime</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RavenRace.BloodlineDef MayRequire="MelonDove.WolfeinRace">
+        <defName>Bloodline_Wolfein</defName>
+        <label>沃芬血脉</label>
+        <labelShort>沃芬</labelShort>
+        <description>源自沃芬狼族的野性血脉，赋予了持有者在夜间与满月时更敏锐的感官。</description>
+        <raceDef>Wolfein_Race</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

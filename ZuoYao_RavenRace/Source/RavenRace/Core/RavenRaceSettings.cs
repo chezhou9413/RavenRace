@@ -83,17 +83,18 @@ namespace RavenRace
         // 5. 杂交兼容 (Hybridization)
         // ===================================================
 
-        // 米莉拉 (Milira)先移除了，后面加
 
+        public bool enableMiliraCompat = true; // 米莉拉 (Milira)
         public bool enableMoeLotlCompat = true; // 萌螈 (MoeLotl)
         public bool enableKoelimeBloodline = true; // 珂莉姆 (Koelime)
         public bool enableMuGirlCompat = true; // 雪牛娘 (MuGirl)
         public bool enableMuffaloPrank = false;  // 雪牛(Muffalo)彩蛋开关
-        public bool enableWolfeinCompat = true; // [Phase 3.6.5] 沃芬 (Wolfein)
+        public bool enableWolfeinCompat = true; // 沃芬 (Wolfein)
         public bool enableDragonianCompat = true; // 龙人 (Dragonian)
         public bool enableMoyoCompat = true; // [Phase 3.6.8] 莫约 (Moyo)                                          
         public bool enableEponaCompat = true;// Epona Compat
-        public bool enableTailinCompat = true;// [Phase 3.6.10] 泰临 (Tailin)
+        public bool enableTailinCompat = true;// 泰临 (Tailin)
+        public bool enableCinderCompat = true; // 烟烬 (Cinder)
 
         // ===================================================
         // 6. 扶桑组织 (Fusang)
@@ -236,14 +237,11 @@ namespace RavenRace
             Scribe_Values.Look(ref spiritEggWarmthDays, "spiritEggWarmthDays", 3f);
 
 
-            // 米莉拉 (Milira)先移除了，后面加
-
-
             Scribe_Values.Look(ref enableGrandClimax, "enableGrandClimax", false);
             Scribe_Values.Look(ref enableDimensionalSex, "enableDimensionalSex", false); // 新增
 
 
-
+            Scribe_Values.Look(ref enableMiliraCompat, "enableMiliraCompat", true);
             Scribe_Values.Look(ref enableMoeLotlCompat, "enableMoeLotlCompat", true);
             Scribe_Values.Look(ref enableKoelimeBloodline, "enableKoelimeBloodline", true);
             Scribe_Values.Look(ref enableMuGirlCompat, "enableMuGirlCompat", true);
@@ -252,7 +250,8 @@ namespace RavenRace
             Scribe_Values.Look(ref enableDragonianCompat, "enableDragonianCompat", true);
             Scribe_Values.Look(ref enableMoyoCompat, "enableMoyoCompat", true);
             Scribe_Values.Look(ref enableEponaCompat, "enableEponaCompat", true);
-            Scribe_Values.Look(ref enableTailinCompat, "enableTailinCompat", true);// [Phase 3.6.10] 泰临 (Tailin)
+            Scribe_Values.Look(ref enableTailinCompat, "enableTailinCompat", true);// 泰临 (Tailin)
+            Scribe_Values.Look(ref enableCinderCompat, "enableCinderCompat", true);// 烟烬 (Cinder)
 
 
 

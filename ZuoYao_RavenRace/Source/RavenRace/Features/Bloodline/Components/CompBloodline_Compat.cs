@@ -12,6 +12,9 @@ using RavenRace.Compat.Dragonian;
 using RavenRace.Compat.Moyo;
 using RavenRace.Compat.Epona;
 using RavenRace.Compat.Tailin;
+using RavenRace.Compat.Cinder;
+
+// 记得每加一个都要引用命名空间！
 
 namespace RavenRace.Features.Bloodline
 {
@@ -47,9 +50,11 @@ namespace RavenRace.Features.Bloodline
 
 
                 // 1. 米莉拉
-                // [修改] 移除了米莉拉飞行逻辑
-                // 米莉拉血脉 (Milira_Race) 仍然存在于字典中，现在没有任何效果。后面加功能
-
+                if (RavenRaceMod.Settings.enableMiliraCompat && MiliraCompatUtility.IsMiliraActive)
+                {
+                    bool hasMilira = MiliraCompatUtility.HasMiliraBloodline(this);
+                    MiliraCompatUtility.HandleMiliraBuff(this.Pawn, hasMilira);
+                }
 
 
 
@@ -69,7 +74,7 @@ namespace RavenRace.Features.Bloodline
                     KoelimeCompatUtility.HandleDraconicBloodline(this.Pawn, hasKoelime);
                 }
 
-                // 【核心修正】4. 沃芬 (Wolfein)
+                // 4. 沃芬 (Wolfein)
                 if (RavenRaceMod.Settings.enableWolfeinCompat && WolfeinCompatUtility.IsWolfeinActive)
                 {
                     // 逻辑与珂莉姆一致：先判断是否有血脉，然后让工具类处理组件的添加或移除
@@ -130,6 +135,18 @@ namespace RavenRace.Features.Bloodline
                     bool hasTailinBlood = TailinCompatUtility.HasTailinBloodline(this);
                     TailinCompatUtility.HandleTailinBloodline(this.Pawn, hasTailinBlood);
                 }
+
+                // 9. 烟烬 (Cinder)
+                if (RavenRaceMod.Settings.enableCinderCompat && CinderCompatUtility.IsCinderActive)
+                {
+                    bool hasCinder = CinderCompatUtility.HasCinderBloodline(this);
+                    CinderCompatUtility.HandleCinderRegen(this.Pawn, hasCinder);
+                }
+
+
+
+
+
             }
             catch (Exception ex)
             {

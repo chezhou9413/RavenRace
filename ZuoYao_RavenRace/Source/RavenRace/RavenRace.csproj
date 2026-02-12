@@ -16,6 +16,12 @@
     <BaseOutputPath>C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Assemblies</BaseOutputPath>
   </PropertyGroup>
   
+  <ItemGroup>
+    <Compile Remove="Features\Bloodline\Harmony\**" />
+    <EmbeddedResource Remove="Features\Bloodline\Harmony\**" />
+    <None Remove="Features\Bloodline\Harmony\**" />
+  </ItemGroup>
+  
   <!-- RimWorld核心引用 -->
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
@@ -49,7 +55,6 @@
     <PackageReference Include="Lib.Harmony" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\Bloodline\Harmony\" />
     <Folder Include="Features\DefenseSystem\Settings\" />
     <Folder Include="Features\Operator\Rewards\" />
     <Folder Include="Features\SoulAltar\Settings\" />

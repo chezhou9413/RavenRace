@@ -2,68 +2,49 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.8": {
-      "Lib.Harmony/2.3.5": {
+      "Lib.Harmony/2.2.2": {
         "type": "package",
         "compile": {
           "lib/net48/0Harmony.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml"
           }
         },
         "runtime": {
           "lib/net48/0Harmony.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml"
           }
         }
       }
     }
   },
   "libraries": {
-    "Lib.Harmony/2.3.5": {
-      "sha512": "LgVL1EhCYtY39YNp/h1PNraKdQn9Vwyb70bYIVLxz60zRgOTi11YohOjJwk4zXsIAoJLG57lO4aP6WXs2fv23A==",
+    "Lib.Harmony/2.2.2": {
+      "sha512": "70KvWz+DiUELxafsYL/LHxA/jH3PDWeApLo/VwtnrpTvRWQ/eUdPfS/l5funmhZWOy41QXw6UjVv+6C57Nx77A==",
       "type": "package",
-      "path": "lib.harmony/2.3.5",
+      "path": "lib.harmony/2.2.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "HarmonyLogo.png",
         "LICENSE",
-        "README.md",
-        "lib.harmony.2.3.5.nupkg.sha512",
+        "lib.harmony.2.2.2.nupkg.sha512",
         "lib.harmony.nuspec",
         "lib/net35/0Harmony.dll",
-        "lib/net35/0Harmony.pdb",
         "lib/net35/0Harmony.xml",
-        "lib/net452/0Harmony.dll",
-        "lib/net452/0Harmony.pdb",
-        "lib/net452/0Harmony.xml",
+        "lib/net45/0Harmony.dll",
+        "lib/net45/0Harmony.xml",
         "lib/net472/0Harmony.dll",
-        "lib/net472/0Harmony.pdb",
         "lib/net472/0Harmony.xml",
         "lib/net48/0Harmony.dll",
-        "lib/net48/0Harmony.pdb",
         "lib/net48/0Harmony.xml",
         "lib/net5.0/0Harmony.dll",
-        "lib/net5.0/0Harmony.pdb",
         "lib/net5.0/0Harmony.xml",
         "lib/net6.0/0Harmony.dll",
-        "lib/net6.0/0Harmony.pdb",
         "lib/net6.0/0Harmony.xml",
-        "lib/net7.0/0Harmony.dll",
-        "lib/net7.0/0Harmony.pdb",
-        "lib/net7.0/0Harmony.xml",
-        "lib/net8.0/0Harmony.dll",
-        "lib/net8.0/0Harmony.pdb",
-        "lib/net8.0/0Harmony.xml",
-        "lib/net9.0/0Harmony.dll",
-        "lib/net9.0/0Harmony.pdb",
-        "lib/net9.0/0Harmony.xml",
         "lib/netcoreapp3.0/0Harmony.dll",
-        "lib/netcoreapp3.0/0Harmony.pdb",
         "lib/netcoreapp3.0/0Harmony.xml",
         "lib/netcoreapp3.1/0Harmony.dll",
-        "lib/netcoreapp3.1/0Harmony.pdb",
-        "lib/netcoreapp3.1/0Harmony.xml",
-        "lib/netstandard2.0/_._"
+        "lib/netcoreapp3.1/0Harmony.xml"
       ]
     }
   },
@@ -73,23 +54,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\30978\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\RavenRace.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\RavenRace.csproj",
       "projectName": "ZuoYao_RavenRace",
-      "projectPath": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\RavenRace.csproj",
-      "packagesPath": "C:\\Users\\30978\\.nuget\\packages\\",
-      "outputPath": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\obj\\",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\RavenRace.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\30978\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -98,7 +79,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -117,7 +97,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net48": {
@@ -128,20 +108,8 @@
             "version": "[2.2.2, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "ZuoYao_RavenRace 依赖于 Lib.Harmony (>= 2.2.2)，但没有找到 Lib.Harmony 2.2.2。已改为解析 Lib.Harmony 2.3.5。",
-      "libraryId": "Lib.Harmony",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.8"
-      ]
-    }
-  ]
+  }
 }

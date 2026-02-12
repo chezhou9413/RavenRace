@@ -1,23 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "px4yt3QAcQ8=",
+  "dgSpecHash": "73NYn86n4xs=",
   "success": true,
-  "projectFilePath": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\RavenRace.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\RavenRace.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\30978\\.nuget\\packages\\lib.harmony\\2.3.5\\lib.harmony.2.3.5.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\lib.harmony\\2.2.2\\lib.harmony.2.2.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "message": "ZuoYao_RavenRace 依赖于 Lib.Harmony (>= 2.2.2)，但没有找到 Lib.Harmony 2.2.2。已改为解析 Lib.Harmony 2.3.5。",
-      "projectPath": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\RavenRace.csproj",
-      "warningLevel": 1,
-      "filePath": "E:\\RimModDev\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\RavenRace.csproj",
-      "libraryId": "Lib.Harmony",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.8"
-      ]
-    }
-  ]
+  "logs": []
 }

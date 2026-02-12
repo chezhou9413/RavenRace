@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 烟烬 (Cinder) - 只有安装了 BreadMo.Cinders 才生效 -->
+    <RavenRace.BloodlineDef MayRequire="BreadMo.Cinders">
+        <defName>Bloodline_Cinder</defName>
+        <label>烟烬血脉</label>
+        <labelShort>烟烬</labelShort>
+        <description>源自余烬花园的变异血脉。体内的无定形聚合物赋予了持有者缓慢但强大的自我修复能力。</description>
+        <raceDef>Alien_Cinder</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

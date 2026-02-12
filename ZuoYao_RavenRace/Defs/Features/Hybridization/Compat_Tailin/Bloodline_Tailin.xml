@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RavenRace.BloodlineDef MayRequire="LepechandEusro.Tailin">
+        <defName>Bloodline_Tailin</defName>
+        <label>泰临血脉</label>
+        <labelShort>泰临</labelShort>
+        <description>源自泰临族的血脉，赋予了持有者敏锐的战斗直觉。</description>
+        <raceDef>TailinRace</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

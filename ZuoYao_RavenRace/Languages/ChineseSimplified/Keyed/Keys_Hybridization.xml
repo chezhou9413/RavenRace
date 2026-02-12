@@ -8,14 +8,10 @@
     <RavenRace_Settings_ModActive>状态: 已激活 (检测到Mod)</RavenRace_Settings_ModActive>
     <RavenRace_Settings_ModInactive>状态: 未激活 (未检测到Mod)</RavenRace_Settings_ModInactive>
 
-    <!-- 米莉拉飞行 -->
-    <RavenRace_Settings_MiliraFlight>米莉拉飞行能力</RavenRace_Settings_MiliraFlight>
-    <RavenRace_Settings_MiliraFlight_Tooltip>含有米莉拉血脉的渡鸦将获得真实飞行能力。</RavenRace_Settings_MiliraFlight_Tooltip>
-    
-    <RavenRace_Settings_EnableMiliraFlight>为杂交渡鸦启用飞行</RavenRace_Settings_EnableMiliraFlight>
-    <RavenRace_Settings_EnableMiliraFlight_Desc>如果开启，只要含有米莉拉血脉，渡鸦将自动获得飞行能力界面。</RavenRace_Settings_EnableMiliraFlight_Desc>
-    
-    <RavenRace_Settings_MiliraFlight_Note>注意：要实现真正的“穿墙/飞越深水”功能，强烈建议安装【天羽族真实飞行补丁】Mod。如果不安装，飞行功能将仅作为状态显示和饥饿消耗，无法越过障碍。</RavenRace_Settings_MiliraFlight_Note>
+    <!-- 米莉拉 -->
+    <RavenRace_Settings_MiliraCompat>米莉拉(Milira)血脉</RavenRace_Settings_MiliraCompat>
+    <RavenRace_Settings_EnableMiliraCompat>启用米莉拉血脉特性</RavenRace_Settings_EnableMiliraCompat>
+    <RavenRace_Settings_EnableMiliraCompat_Desc>如果开启，含有米莉拉血脉的渡鸦将获得移速加成和瞄准时间缩减。</RavenRace_Settings_EnableMiliraCompat_Desc>
 
     <!-- MoeLotl (萌螈) -->
     <RavenRace_Settings_MoeLotlCultivation>萌螈修炼能力</RavenRace_Settings_MoeLotlCultivation>
@@ -79,6 +75,10 @@
     <RavenRace_Settings_EnableTailinCompat>启用泰临血脉特性</RavenRace_Settings_EnableTailinCompat>
     <RavenRace_Settings_EnableTailinCompat_Desc>如果开启，含有泰临血脉的渡鸦将。</RavenRace_Settings_EnableTailinCompat_Desc>
 
+    <!-- Cinder [Phase 3.6.11] -->
+    <RavenRace_Settings_CinderCompat>烟烬(Cinder)血脉</RavenRace_Settings_CinderCompat>
+    <RavenRace_Settings_EnableCinderCompat>启用烟烬血脉特性</RavenRace_Settings_EnableCinderCompat>
+    <RavenRace_Settings_EnableCinderCompat_Desc>如果开启，含有烟烬血脉的渡鸦将获得“聚合物再生”能力，可以缓慢修复伤口甚至再生缺失的肢体。</RavenRace_Settings_EnableCinderCompat_Desc>
 
 
     <!-- Gizmo UI -->

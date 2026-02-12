@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RavenRace.BloodlineDef MayRequire="Nukafrog.MooGirl">
+        <defName>Bloodline_MuGirl</defName>
+        <label>雪牛血脉</label>
+        <labelShort>雪牛</labelShort>
+        <description>源自雪牛娘的强韧血脉，赋予了持有者惊人的耐力、护甲以及特殊的产乳能力。</description>
+        <raceDef>MooGirl</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

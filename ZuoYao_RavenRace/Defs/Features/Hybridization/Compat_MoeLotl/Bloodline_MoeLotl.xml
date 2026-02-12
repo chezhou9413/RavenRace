@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RavenRace.BloodlineDef MayRequire="HenTaiLoliTeam.Axolotl">
+        <defName>Bloodline_MoeLotl</defName>
+        <label>萌螈血脉</label>
+        <labelShort>萌螈</labelShort>
+        <description>源自萌螈的修仙血脉，赋予了持有者感应天地灵气与修炼功法的潜能。</description>
+        <raceDef>Axolotl</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

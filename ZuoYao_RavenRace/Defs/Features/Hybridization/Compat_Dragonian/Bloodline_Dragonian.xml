@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RavenRace.BloodlineDef MayRequire="RooAndGloomy.DragonianRaceMod">
+        <defName>Bloodline_Dragonian</defName>
+        <label>龙人血脉</label>
+        <labelShort>龙人</labelShort>
+        <description>源自龙人的古老血脉，拥有极其强健的体魄和快速愈合能力，以及独特的产乳潜能。</description>
+        <raceDef>Dragonian_Race</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

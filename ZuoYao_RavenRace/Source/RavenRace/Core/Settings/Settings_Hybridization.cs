@@ -7,8 +7,11 @@ using RavenRace.Compat.Milira;
 using RavenRace.Compat.Wolfein;
 using RavenRace.Compat.Dragonian;
 using RavenRace.Compat.Moyo;
-using RavenRace.Compat.Epona; // [NEW] 引用
-using RavenRace.Compat.Tailin; //这里也要补
+using RavenRace.Compat.Epona; 
+using RavenRace.Compat.Tailin;
+using RavenRace.Compat.Cinder;
+
+// 记得每加一个都要引用命名空间！
 
 namespace RavenRace.Settings
 {
@@ -27,16 +30,15 @@ namespace RavenRace.Settings
             // 1. 米莉拉 (Milira)
             // =================================================
             listing.GapLine();
-            listing.Label("RavenRace_Settings_MiliraFlight".Translate());
+            listing.Label("RavenRace_Settings_MiliraCompat".Translate());
             DrawModStatus(listing, MiliraCompatUtility.IsMiliraActive);
 
-            // [修改] 移除了飞行开关和补丁提示
-            if (MiliraCompatUtility.IsMiliraActive)
-            {
-                GUI.color = Color.gray;
-                listing.Label("(米莉拉血脉已启用，但旧版飞行逻辑已被内置飞行替代，等待后续更新)");
-                GUI.color = Color.white;
-            }
+            // 替换为：
+            listing.CheckboxLabeled(
+                "RavenRace_Settings_EnableMiliraCompat".Translate(),
+                ref s.enableMiliraCompat,
+                "RavenRace_Settings_EnableMiliraCompat_Desc".Translate()
+            );
 
             // =================================================
             // 2. 萌螈 (MoeLotl)
@@ -125,7 +127,7 @@ namespace RavenRace.Settings
 
 
             // =================================================
-            // 8. [Phase 3.6.9] 艾波娜 (Epona)
+            // 8. 艾波娜 (Epona)
             // =================================================
             listing.GapLine();
             listing.Label("RavenRace_Settings_EponaCompat".Translate());
@@ -138,7 +140,7 @@ namespace RavenRace.Settings
             );
 
             // =================================================
-            // 9. [Phase 3.6.10] 泰临 (Tailin)
+            // 9. 泰临 (Tailin)
             // =================================================
             listing.GapLine();
             listing.Label("RavenRace_Settings_TailinCompat".Translate());
@@ -149,6 +151,23 @@ namespace RavenRace.Settings
                 ref s.enableTailinCompat,
                 "RavenRace_Settings_EnableTailinCompat_Desc".Translate()
             );
+
+            // =================================================
+            // 10. 烟烬 (Cinder)
+            // =================================================
+            listing.GapLine();
+            listing.Label("RavenRace_Settings_CinderCompat".Translate());
+            DrawModStatus(listing, CinderCompatUtility.IsCinderActive);
+
+            listing.CheckboxLabeled(
+                "RavenRace_Settings_EnableCinderCompat".Translate(),
+                ref s.enableCinderCompat,
+                "RavenRace_Settings_EnableCinderCompat_Desc".Translate()
+            );
+
+
+
+
 
         }
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RavenRace.BloodlineDef MayRequire="Nemonian.MY2.Beta">
+        <defName>Bloodline_Moyo</defName>
+        <label>茉约血脉</label>
+        <labelShort>茉约</labelShort>
+        <description>源自深海茉约的血脉，体内流淌着能够生成深蓝物质的特殊体液。</description>
+        <raceDef>Alien_Moyo</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

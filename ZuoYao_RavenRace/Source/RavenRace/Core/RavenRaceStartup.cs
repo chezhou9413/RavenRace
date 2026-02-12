@@ -25,7 +25,8 @@ namespace RavenRace
             { "RooAndGloomy.DragonianRaceMod","正在把玩龙娘的珠子..." },
             { "Nemonian.MY2.Beta",            "正在用巨大触手攻击茉约的子宫..." },
             { "Epona.EponaDynasticRise",      "正在和艾波娜一起玩赛马娘..." },
-            { "LepechandEusro.Tailin",        "正在拍小泰临的屁股..." }
+            { "LepechandEusro.Tailin",        "正在拍小泰临的屁股..." },
+            { "BreadMo.Cinders",              "正在感受余烬的温暖..." },
         };
 
         static RavenRaceStartup()

@@ -8,14 +8,10 @@
     <RavenRace_Settings_ModActive>Status: Active (Mod Detected)</RavenRace_Settings_ModActive>
     <RavenRace_Settings_ModInactive>Status: Inactive (Mod Not Detected)</RavenRace_Settings_ModInactive>
 
-    <!-- Milira Flight -->
-    <RavenRace_Settings_MiliraFlight>Milira Flight Ability</RavenRace_Settings_MiliraFlight>
-    <RavenRace_Settings_MiliraFlight_Tooltip>Ravens with Milira bloodline will gain flight ability.</RavenRace_Settings_MiliraFlight_Tooltip>
-    
-    <RavenRace_Settings_EnableMiliraFlight>Enable Milira Flight for Hybrids</RavenRace_Settings_EnableMiliraFlight>
-    <RavenRace_Settings_EnableMiliraFlight_Desc>If enabled, ravens with any Milira bloodline will automatically gain the flight interface.</RavenRace_Settings_EnableMiliraFlight_Desc>
-    
-    <RavenRace_Settings_MiliraFlight_Note>Note: For true obstacle bypassing (walls/deep water), the "Independent Pathing for Milira" mod is highly recommended. Without it, flight only consumes hunger without pathing benefits.</RavenRace_Settings_MiliraFlight_Note>
+    <!-- Milira -->
+    <RavenRace_Settings_MiliraCompat>Milira Bloodline</RavenRace_Settings_MiliraCompat>
+    <RavenRace_Settings_EnableMiliraCompat>Enable Milira Traits</RavenRace_Settings_EnableMiliraCompat>
+    <RavenRace_Settings_EnableMiliraCompat_Desc>If enabled, ravens with Milira bloodline will gain movement speed bonus and reduced aiming time.</RavenRace_Settings_EnableMiliraCompat_Desc>
 
     <!-- MoeLotl -->
     <RavenRace_Settings_MoeLotlCultivation>MoeLotl Cultivation</RavenRace_Settings_MoeLotlCultivation>
@@ -49,6 +45,12 @@
     <RavenRace_Settings_EnableMoyoCompat>Enable Moyo Traits</RavenRace_Settings_EnableMoyoCompat>
     <RavenRace_Settings_EnableMoyoCompat_Desc>If enabled, ravens with Moyo bloodline will produce Blue Serum and be immune to Deep Blue addiction/side effects.</RavenRace_Settings_EnableMoyoCompat_Desc>
 
+
+
+    <!-- Cinder [Phase 3.6.11] -->
+    <RavenRace_Settings_CinderCompat>Cinder Bloodline</RavenRace_Settings_CinderCompat>
+    <RavenRace_Settings_EnableCinderCompat>Enable Cinder Traits</RavenRace_Settings_EnableCinderCompat>
+    <RavenRace_Settings_EnableCinderCompat_Desc>If enabled, ravens with Cinder bloodline will gain "Polymer Regeneration", allowing slow healing of wounds and regeneration of missing limbs.</RavenRace_Settings_EnableCinderCompat_Desc>
 
 
     <!-- Gizmo UI -->
