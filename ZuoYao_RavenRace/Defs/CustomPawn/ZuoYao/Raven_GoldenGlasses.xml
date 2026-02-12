@@ -22,7 +22,7 @@
                     <baseLayer>170</baseLayer>
                     <shaderTypeDef>Cutout</shaderTypeDef>
                     <drawData>
-                        <scale>1.2</scale>
+                        <scale>0.8</scale>
                         <defaultData>
                             <offset>(0, 0, 0)</offset>
                         </defaultData>
@@ -48,7 +48,7 @@
         <graphicData>
             <texPath>Races/Raven/Special/ZuoYao/Glasses/Glasses_south</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(1.2,1.2)</drawSize>
+            <drawSize>(0.8,0.8)</drawSize>
         </graphicData>
         <statBases>
             <Mass>0.03</Mass>

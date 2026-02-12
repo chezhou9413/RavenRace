@@ -40,11 +40,23 @@
 
         <alienPartGenerator>
           <customDrawSize>(1.0, 1.0)</customDrawSize>
-          <customHeadDrawSize>(1.0, 1.0)</customHeadDrawSize>
+          <customHeadDrawSize>(0.8, 0.8)</customHeadDrawSize>
           <customPortraitDrawSize>(1.0, 1.0)</customPortraitDrawSize>
           <customPortraitHeadDrawSize>(1.0, 1.0)</customPortraitHeadDrawSize>
-          <headOffset>(0, 0.06)</headOffset>
-
+          <headOffsetDirectional>
+            <north>
+              <offset>(0, 0)</offset>
+            </north>
+            <south>
+              <offset>(0, 0)</offset>
+            </south>
+            <east>
+              <offset>(0, 0)</offset>
+            </east>
+            <west>
+              <offset>(0, 0)</offset>
+            </west>
+          </headOffsetDirectional>
           <bodyTypes>
             <li>Male</li>
             <li>Female</li>
@@ -82,6 +94,7 @@
           <bodyAddons>
             <!-- 1. 纹身 (保持不变) -->
             <li>
+              <name>raven_womb_male</name>
               <path>Races/Raven/Tattoo/Womb/Womb_Male</path>
               <inFrontOfBody>false</inFrontOfBody>
               <alignWithHead>false</alignWithHead>
@@ -118,6 +131,7 @@
               </offsets>
             </li>
             <li>
+              <name>raven_womb_female</name>
               <path>Races/Raven/Tattoo/Womb/Womb_Female</path>
               <inFrontOfBody>false</inFrontOfBody>
               <alignWithHead>false</alignWithHead>
@@ -159,7 +173,7 @@
               <path>Races/Raven/Hair/RavenHair_A_Back</path>
               <inFrontOfBody>false</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
-              <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize>
+              <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <drawSize>1.0</drawSize>
               <colorChannel>hair</colorChannel>
               <useSkipFlags>
@@ -180,7 +194,7 @@
               <path>Races/Raven/Hair/RavenHair_A</path>
               <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
-              <scaleWithPawnDrawsize>false</scaleWithPawnDrawsize>
+              <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <drawSize>1.0</drawSize>
               <colorChannel>hair</colorChannel>
               <useSkipFlags>
@@ -206,6 +220,7 @@
             </li>
             <!-- 静态脸 -->
             <li>
+              <name>raven_face</name>
               <path>Races/Raven/Head/Face/RavenFace</path>
               <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
@@ -330,11 +345,13 @@
 
             <!-- 4. 耳羽 (保持不变) -->
             <li>
+              <name>raven_RavenEar</name>
               <path>Races/Raven/Ear/RavenEar_Back</path>
               <inFrontOfBody>true</inFrontOfBody>
               <alignWithHead>true</alignWithHead>
               <drawSize>1.0</drawSize>
               <colorChannel>hair</colorChannel>
+              <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <layerInvert>true</layerInvert>
               <conditions>
                 <BodyPart>Head</BodyPart>
@@ -352,6 +369,7 @@
             <li>
               <path>Races/Raven/Ear/RavenEar_Base</path>
               <inFrontOfBody>true</inFrontOfBody>
+              <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <alignWithHead>true</alignWithHead>
               <drawSize>1.0</drawSize>
               <colorChannel>hair</colorChannel>
