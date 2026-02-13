@@ -58,6 +58,11 @@
     <RavenRace_Settings_EnableEggProjectileMode>启用灵卵投射模式</RavenRace_Settings_EnableEggProjectileMode>
     <RavenRace_Settings_EnableEggProjectileModeDesc>开启后，取出体内灵卵的操作将变为瞄准射击模式，可将灵卵作为非致命投射物发射。</RavenRace_Settings_EnableEggProjectileModeDesc>
 
+
+    <!-- [新增] 渡鸦本能教本 -->
+    <RavenRace_AbilityTomeLearned>{0} 学习并掌握了“强制求爱”技能！</RavenRace_AbilityTomeLearned>
+    <RavenRace_AbilityTomeAlreadyKnown>{0} 已经掌握了这项技能。</RavenRace_AbilityTomeAlreadyKnown>
+
     <!-- 杂交设置 -->
     <RavenRace_Settings_MiliraFlight>米莉拉飞行能力</RavenRace_Settings_MiliraFlight>
     <RavenRace_Settings_MiliraFlight_Tooltip>含有米莉拉血脉的渡鸦将获得真实飞行能力。</RavenRace_Settings_MiliraFlight_Tooltip>

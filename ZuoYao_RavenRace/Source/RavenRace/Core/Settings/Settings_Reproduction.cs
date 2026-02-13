@@ -31,7 +31,6 @@ namespace RavenRace.Settings
 
             listing.CheckboxLabeled("RavenRace_Settings_EnableSameSexForceLovin".Translate(), ref s.enableSameSexForceLovin, "RavenRace_Settings_EnableSameSexForceLovinDesc".Translate());
 
-            // [新增] 机械族交配开关 UI
             listing.CheckboxLabeled("启用机械体强制交配", ref s.enableMechanoidLovin, "允许对机械族单位使用强制求爱。机械族无法怀孕，但若渡鸦作为母体可产下带有机械血脉的后代。");
 
             listing.Gap();
@@ -55,18 +54,29 @@ namespace RavenRace.Settings
             listing.Label("RavenRace_Settings_SpiritBeads".Translate());
             listing.CheckboxLabeled("RavenRace_Settings_EnableGrandClimax".Translate(), ref s.enableGrandClimax, "RavenRace_Settings_EnableGrandClimaxDesc".Translate());
 
-            // 飞机杯彩蛋
             listing.GapLine();
             listing.Label("RavenRace_Settings_MasturbatorCup".Translate());
             listing.CheckboxLabeled("RavenRace_Settings_EnableDimensionalSex".Translate(), ref s.enableDimensionalSex, "RavenRace_Settings_EnableDimensionalSexDesc".Translate());
 
-            // 灵卵温养设置
             listing.GapLine();
             listing.Label("灵卵温养设置");
             listing.Label($"完全温养所需时间: {s.spiritEggWarmthDays:F1} 天");
 
             s.spiritEggWarmthDays = listing.Slider(s.spiritEggWarmthDays, 0.01f, 5f);
             listing.Label("将灵卵保存在体内可进行温养，完美温养的灵卵在摇篮中孵化时会获得速度加成。");
+
+            // [新增] RJW 兼容设置部分
+            listing.GapLine();
+            listing.Label("RJW 兼容设置");
+            // 只有在RJW激活时才显示
+            if (ModsConfig.IsActive("rim.job.world"))
+            {
+                listing.CheckboxLabeled("启用渡鸦怀孕兼容模式", ref s.rjwRavenPregnancyCompat, "开启后，使用“强制求爱”技能会立即触发渡鸦灵卵怀孕，RJW性爱过程仅作为表现。关闭则完全由RJW决定是否怀孕。");
+            }
+            else
+            {
+                listing.Label("未检测到RJW，相关设置已隐藏。");
+            }
         }
     }
 }

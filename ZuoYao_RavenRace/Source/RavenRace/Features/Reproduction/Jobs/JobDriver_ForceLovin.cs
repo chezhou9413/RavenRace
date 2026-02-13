@@ -186,90 +186,95 @@ namespace RavenRace
             Pawn carrier = null;
             Pawn donor = null;
 
-            // [逻辑更新] 机械族与同性处理逻辑
             bool isMechanoidInvolved = pawn.RaceProps.IsMechanoid || partnerPawn.RaceProps.IsMechanoid;
             bool isSameSex = pawn.gender == partnerPawn.gender;
 
-            // 1. 特殊情况：机械族
             if (isMechanoidInvolved)
             {
-                // 机械族不能作为载体 (Mother/Carrier)，只能由非机械族承担
-                // 假设 pawn 是发起者，partner 是受害者
                 if (!pawn.RaceProps.IsMechanoid) carrier = pawn;
                 else if (!partnerPawn.RaceProps.IsMechanoid) carrier = partnerPawn;
-
-                // 如果双方都是机械，则无法怀孕
                 if (carrier == null) return;
-
                 donor = (carrier == pawn) ? partnerPawn : pawn;
             }
-            // 2. 特殊情况：同性交配
-            else if (isSameSex && RavenRaceMod.Settings.enableSameSexForceLovin)
+            else if (isSameSex && (RavenRaceMod.Settings.enableSameSexForceLovin || RavenRaceMod.Settings.enableMalePregnancyEgg))
             {
-                // 逻辑：发起者 (pawn) 为 "父亲" (Donor)，接受者 (partner) 为 "母亲" (Carrier)
                 donor = pawn;
                 carrier = partnerPawn;
-
-                // 如果开启了男性生蛋且双方是男性，逻辑一致：接受者怀蛋
             }
-            // 3. 原版逻辑：异性
             else
             {
                 carrier = (pawn.gender == Gender.Female) ? pawn : partnerPawn;
                 donor = (carrier == pawn) ? partnerPawn : pawn;
             }
 
-            // 基础校验
             if (carrier == null || donor == null) return;
-            if (carrier.gender == Gender.Male && !RavenRaceMod.Settings.enableMalePregnancyEgg && !RavenRaceMod.Settings.enableSameSexForceLovin) return;
+            if (carrier.gender == Gender.Male && !RavenRaceMod.Settings.enableMalePregnancyEgg) return;
 
-            // 计算概率
             float chance = RavenRaceMod.Settings.forcedLovinPregnancyRate;
             if (!RavenRaceMod.Settings.ignoreFertilityForPregnancy)
             {
-                // 机械族没有 Fertility 属性，取 1.0 (视为有能力提供遗传物质)
                 float carrierFert = carrier.RaceProps.IsMechanoid ? 0f : carrier.GetStatValue(StatDefOf.Fertility);
                 float donorFert = donor.RaceProps.IsMechanoid ? 1f : donor.GetStatValue(StatDefOf.Fertility);
                 chance *= carrierFert * donorFert;
             }
 
-            if (Rand.Chance(chance))
+            if (!Rand.Chance(chance)) return;
+
+            bool isCarrierRaven = carrier.def == RavenDefOf.Raven_Race;
+            bool isDonorRaven = donor.def == RavenDefOf.Raven_Race;
+
+            if (isCarrierRaven || isDonorRaven)
             {
-                GeneSet genes;
-
-                // [关键安全检查] 如果有机械族，跳过原版基因遗传
-                if (isMechanoidInvolved)
-                {
-                    // 机械族没有基因，我们创建一个空的 GeneSet，或者只复制 Carrier 的基因
-                    // 这里我们复制 Carrier 的基因，模拟单性繁殖 + 机械血脉注入
-                    genes = new GeneSet();
-                    if (carrier.genes != null)
-                    {
-                        foreach (var g in carrier.genes.GenesListForReading)
-                        {
-                            genes.AddGene(g.def);
-                        }
-                        genes.SetNameDirect("Mechanoid Hybrid");
-                    }
-                }
-                else
-                {
-                    // 原版逻辑
-                    genes = PregnancyUtility.GetInheritedGeneSet(donor, carrier, out bool success);
-                    if (!success) return; // 如果遗传失败则结束
-                }
-
-                // 施加怀孕状态
-                HediffRavenPregnancy hediff = (HediffRavenPregnancy)HediffMaker.MakeHediff(HediffDef.Named("Raven_Hediff_RavenPregnancy"), carrier);
-                hediff.Initialize(donor, genes, RavenRaceMod.Settings.forceRavenDescendant);
-                carrier.health.AddHediff(hediff);
-                carrier.Drawer?.renderer?.SetAllGraphicsDirty();
+                AttemptRavenPregnancy(carrier, donor, isMechanoidInvolved);
+            }
+            else
+            {
+                AttemptVanillaPregnancy(carrier, donor);
             }
         }
 
+        private void AttemptRavenPregnancy(Pawn carrier, Pawn donor, bool isMechanoidInvolved)
+        {
+            GeneSet genes;
+            if (isMechanoidInvolved)
+            {
+                genes = new GeneSet();
+                if (carrier.genes != null)
+                {
+                    foreach (var g in carrier.genes.GenesListForReading)
+                    {
+                        genes.AddGene(g.def);
+                    }
+                    genes.SetNameDirect("机械混血");
+                }
+            }
+            else
+            {
+                // [修正] 直接接收返回的 GeneSet 对象
+                genes = PregnancyUtility.GetInheritedGeneSet(donor, carrier, out bool success);
+                if (!success) return;
+            }
 
+            var hediff = (HediffRavenPregnancy)HediffMaker.MakeHediff(RavenDefOf.Raven_Hediff_RavenPregnancy, carrier);
+            hediff.Initialize(donor, genes, RavenRaceMod.Settings.forceRavenDescendant);
+            carrier.health.AddHediff(hediff);
+            carrier.Drawer?.renderer?.SetAllGraphicsDirty();
+            Messages.Message($"{carrier.LabelShortCap} 体内开始孕育一枚渡鸦灵卵。", carrier, MessageTypeDefOf.PositiveEvent);
+        }
 
+        private void AttemptVanillaPregnancy(Pawn carrier, Pawn donor)
+        {
+            if (carrier.gender != Gender.Female) return;
 
+            // [修正] 直接接收返回的 GeneSet 对象
+            GeneSet genes = PregnancyUtility.GetInheritedGeneSet(donor, carrier, out bool success);
+            if (!success) return;
 
+            var hediff = (Hediff_Pregnant)HediffMaker.MakeHediff(HediffDefOf.PregnantHuman, carrier);
+            hediff.SetParents(carrier, donor, genes);
+            carrier.health.AddHediff(hediff);
+            carrier.Drawer?.renderer?.SetAllGraphicsDirty();
+            Messages.Message($"{carrier.LabelShortCap} 怀孕了。", carrier, MessageTypeDefOf.PositiveEvent);
+        }
     }
 }

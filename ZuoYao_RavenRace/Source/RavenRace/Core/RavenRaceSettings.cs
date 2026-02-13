@@ -79,6 +79,10 @@ namespace RavenRace
         // [新增] 飞机杯设置
         public bool enableDimensionalSex = false; // 默认关闭，作为彩蛋
 
+
+        // [新增] RJW兼容开关
+        public bool rjwRavenPregnancyCompat = true;
+
         // ===================================================
         // 5. 杂交兼容 (Hybridization)
         // ===================================================
@@ -238,8 +242,9 @@ namespace RavenRace
 
 
             Scribe_Values.Look(ref enableGrandClimax, "enableGrandClimax", false);
-            Scribe_Values.Look(ref enableDimensionalSex, "enableDimensionalSex", false); // 新增
+            Scribe_Values.Look(ref enableDimensionalSex, "enableDimensionalSex", false);
 
+            Scribe_Values.Look(ref rjwRavenPregnancyCompat, "rjwRavenPregnancyCompat", true); // [新增] 保存 RJW 兼容设置
 
             Scribe_Values.Look(ref enableMiliraCompat, "enableMiliraCompat", true);
             Scribe_Values.Look(ref enableMoeLotlCompat, "enableMoeLotlCompat", true);

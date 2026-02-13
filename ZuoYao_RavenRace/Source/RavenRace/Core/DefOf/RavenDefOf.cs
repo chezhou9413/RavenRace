@@ -3,10 +3,6 @@ using Verse;
 
 namespace RavenRace
 {
-    /// <summary>
-    /// 渡鸦族核心 Def 引用
-    /// 使用 [DefOf] 属性自动绑定 XML 定义，替代 defName 字符串查找，极大提升性能。
-    /// </summary>
     [DefOf]
     public static class RavenDefOf
     {
@@ -24,8 +20,10 @@ namespace RavenRace
         public static ThingDef Raven_Item_MiracleHeal;
         public static ThingDef Raven_GoldenFeather;
 
-        // [新增] 飞机杯
         public static ThingDef Raven_Item_MasturbatorCup;
+
+        // [新增] 技能教本
+        public static ThingDef RavenItem_AbilityTome;
 
         // --- 武器 & 装备 ---
         public static ThingDef Raven_Weapon_HiddenBlade;
@@ -36,15 +34,13 @@ namespace RavenRace
         public static ThingDef RavenGas_BlackMist;
         public static ThingDef RavenGas_Anesthetic;
         public static ThingDef RavenGas_Aphrodisiac;
-        public static ThingDef RavenDecoy_Dummy; // 假人
+        public static ThingDef RavenDecoy_Dummy;
 
         // --- 能力 (Abilities) ---
         public static AbilityDef Raven_Ability_ForceLovin;
         public static AbilityDef Raven_Ability_Kotoamatsukami;
         public static AbilityDef Raven_Ability_GrandClimax;
 
-        // [核心修复] 添加 MayRequire 属性，防止在未安装雪牛娘模组时爆红字
-        // 这里的字符串必须与 XML 中 MayRequire 的 Mod PackageId 完全一致
         [MayRequire("Nukafrog.MooGirl")]
         public static AbilityDef Raven_Ability_MuGirlCharge;
 
@@ -61,7 +57,6 @@ namespace RavenRace
         public static JobDef Raven_Job_ApplyCharm;
         public static JobDef Raven_Job_RemoveCharm;
 
-        // [新增] 飞机杯相关 Job
         public static JobDef Raven_Job_MasturbateWithCup;
         public static JobDef Raven_Job_DimensionalClimax;
 
@@ -72,14 +67,13 @@ namespace RavenRace
         public static HediffDef Raven_Hediff_RapidOvulation;
         public static HediffDef Raven_Hediff_SoulAltarBonus;
 
-        // 特殊效果 Hediff
         public static HediffDef Raven_Hediff_SpiritBeadsInserted;
         public static HediffDef Raven_Hediff_HighClimax;
         public static HediffDef Raven_Hediff_HiddenBladePrep;
         public static HediffDef Raven_Hediff_SteadyAim;
         public static HediffDef Raven_Hediff_ShadowStep;
         public static HediffDef Raven_Hediff_ShadowAttackCooldown;
-        public static HediffDef Raven_Hediff_Degradation; // 堕落刻印
+        public static HediffDef Raven_Hediff_Degradation;
         public static HediffDef RavenHediff_AphrodisiacEffect;
         public static HediffDef RavenHediff_AnestheticBuildup;
         public static HediffDef RavenHediff_LegoPain;
@@ -95,10 +89,8 @@ namespace RavenRace
         public static ThoughtDef Raven_Thought_Snuggle;
         public static ThoughtDef Raven_Thought_IncenseSmell;
 
-        // [新增] 飞机杯思想
         public static ThoughtDef Raven_Thought_MasturbatedWithCup;
 
-        // [修复] 娱乐类型定义 (解决 CS0117 错误)
         public static JoyKindDef Raven_AdultEntertainment;
 
         // --- 关系 ---

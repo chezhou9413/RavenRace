@@ -10,3 +10,9 @@ E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Source\RJWCompat\ob
 E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Source\RJWCompat\obj\Debug\RJWCompat.csproj.CoreCompileInputs.cache
 E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Source\RJWCompat\obj\Debug\RJWCompat.dll
 E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJW\Source\RJWCompat\obj\Debug\RJWCompat.pdb
+C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\RJWCompat.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\RJWCompat.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\RJWCompat.dll
+C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\RJWCompat.pdb
+C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Assemblies\RJWCompat.dll
+C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Assemblies\RJWCompat.pdb

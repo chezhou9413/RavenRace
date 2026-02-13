@@ -1,5 +1,5 @@
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\About\About.xml
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\About\About.xml
 =
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -14,7 +14,7 @@ File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\About\A
 </ModMetaData>
 
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Patches\Patch_RavenDNA.xml
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Patches\Patch_RavenDNA.xml
 =
 .
 <?xml version="1.0" encoding="utf-8"?>
@@ -40,44 +40,115 @@ File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Patches
 </Patch>.
 .
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Patch_ForceLovin.cs
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Patch_ForceLovin.cs
 =
 .
-﻿// File: RJWCompat/Source/RJWCompat/Patch_ForceLovin.cs
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using Verse;
-using RavenRace.RJWCompat.UI; // 引入新的UI命名空间
+using RavenRace.RJWCompat.UI;
+using RavenRace.Features.Reproduction; // 引用主模组的繁殖命名空间
 
 namespace RavenRace.RJWCompat
 {
-    /// <summary>
-    /// 补丁：拦截渡鸦族“强制求爱”技能的Apply方法。
-    /// 作用：阻止原版技能效果的执行，转而打开我们自定义的RJW互动选择UI。
-    /// </summary>
     [HarmonyPatch("RavenRace.CompAbilityEffect_ForceLovin", "Apply")]
     public static class Patch_ForceLovin_Apply
     {
-        /// <summary>
-        /// 在原方法执行前运行。
-        /// </summary>
-        /// <returns>返回 'false' 将完全阻止原方法的执行。</returns>
         [HarmonyPrefix]
         public static bool Prefix(LocalTargetInfo target, CompAbilityEffect __instance)
         {
             Log.Message($"[RavenRace RJWCompat] 'ForceLovin.Apply' Prefix patch triggered!");
 
-            // 弹出全新的、带分类的UI窗口
-            Find.WindowStack.Add(new Dialog_SelectRjwInteraction(__instance.parent.pawn, target.Pawn));
+            Pawn caster = __instance.parent.pawn;
+            Pawn targetPawn = target.Pawn;
+            if (caster == null || targetPawn == null) return false;
 
-            // 返回 false，阻止原版的 ForceLovin Job 创建，将控制权完全交给我们的UI和RJW。
+            // [修改] 新增逻辑：如果开启了RJW兼容模式，则在使用技能时立即触发渡鸦怀孕
+            if (RavenRaceMod.Settings.rjwRavenPregnancyCompat)
+            {
+                // 调用一个独立的辅助方法来处理怀孕逻辑，保持代码整洁
+                AttemptRavenPregnancyImmediately(caster, targetPawn);
+            }
+
+            // 无论是否触发怀孕，都弹出RJW互动选择窗口
+            Find.WindowStack.Add(new Dialog_SelectRjwInteraction(caster, targetPawn));
+
+            // 阻止原版的 ForceLovin Job 创建
             return false;
+        }
+
+        /// <summary>
+        /// [新增] 立即尝试触发渡鸦灵卵怀孕的辅助方法。
+        /// </summary>
+        private static void AttemptRavenPregnancyImmediately(Pawn caster, Pawn partner)
+        {
+            Pawn carrier = null;
+            Pawn donor = null;
+
+            bool isMechanoidInvolved = caster.RaceProps.IsMechanoid || partner.RaceProps.IsMechanoid;
+            bool isSameSex = caster.gender == partner.gender;
+
+            // 确定载体和供体 (逻辑与 JobDriver_ForceLovin 一致)
+            if (isMechanoidInvolved)
+            {
+                if (!caster.RaceProps.IsMechanoid) carrier = caster;
+                else if (!partner.RaceProps.IsMechanoid) carrier = partner;
+                if (carrier == null) return;
+                donor = (carrier == caster) ? partner : caster;
+            }
+            else if (isSameSex && (RavenRaceMod.Settings.enableSameSexForceLovin || RavenRaceMod.Settings.enableMalePregnancyEgg))
+            {
+                donor = caster;
+                carrier = partner;
+            }
+            else
+            {
+                carrier = (caster.gender == Gender.Female) ? caster : partner;
+                donor = (carrier == caster) ? partner : caster;
+            }
+
+            if (carrier == null || donor == null) return;
+            if (carrier.gender == Gender.Male && !RavenRaceMod.Settings.enableMalePregnancyEgg) return;
+
+            // 只有至少一方是渡鸦族，才进行灵卵怀孕
+            bool isCarrierRaven = carrier.def == RavenDefOf.Raven_Race;
+            bool isDonorRaven = donor.def == RavenDefOf.Raven_Race;
+            if (!isCarrierRaven && !isDonorRaven) return;
+
+            // 检查概率
+            if (!Rand.Chance(RavenRaceMod.Settings.forcedLovinPregnancyRate)) return;
+
+            // 获取基因
+            GeneSet genes;
+            if (isMechanoidInvolved)
+            {
+                genes = new GeneSet();
+                if (carrier.genes != null)
+                {
+                    foreach (var g in carrier.genes.GenesListForReading) genes.AddGene(g.def);
+                    genes.SetNameDirect("机械混血");
+                }
+            }
+            else
+            {
+                // [修正] 直接接收返回的 GeneSet 对象
+                genes = PregnancyUtility.GetInheritedGeneSet(donor, carrier, out bool success);
+                if (!success) return;
+            }
+
+            // 创建并添加Hediff
+            var hediff = (HediffRavenPregnancy)HediffMaker.MakeHediff(RavenDefOf.Raven_Hediff_RavenPregnancy, carrier);
+            hediff.Initialize(donor, genes, RavenRaceMod.Settings.forceRavenDescendant);
+            carrier.health.AddHediff(hediff);
+            carrier.Drawer?.renderer?.SetAllGraphicsDirty();
+
+            Messages.Message($"{carrier.LabelShortCap} 在互动前已被强制注入了一枚渡鸦灵卵。", carrier, MessageTypeDefOf.PositiveEvent);
         }
     }
 }.
 .
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Patch_Menstruation.cs
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Patch_Menstruation.cs
 =
 .
 ﻿using System;
@@ -88,13 +159,14 @@ using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using Verse;
+using RavenRace.Features.Reproduction; // [核心修复] 引用新的命名空间
 
 namespace RavenRace.RJWCompat
 {
     [HarmonyPatch]
     public static class Patch_Menstruation_Implant
     {
-        // 使用字符串名称进行延迟绑定
+        // 使用字符串名称进行延迟绑定，防止RJW未加载时直接崩溃
         public static MethodBase TargetMethod()
         {
             return AccessTools.Method("RJW_Menstruation.HediffComp_Menstruation:Implant");
@@ -103,6 +175,9 @@ namespace RavenRace.RJWCompat
         [HarmonyPrefix]
         public static bool Prefix(HediffComp __instance)
         {
+            // 如果反射初始化失败，直接跳过
+            if (!RjwReflection.IsInitialized) return true;
+
             // 通过反射安全地获取字段值
             var eggsList = RjwReflection.Menstruation_eggs_Field.GetValue(__instance) as IList;
             if (eggsList == null || eggsList.Count == 0) return true;
@@ -124,20 +199,27 @@ namespace RavenRace.RJWCompat
             Pawn mother = __instance.Pawn;
             Pawn father = RjwReflection.Egg_fertilizer_Field.GetValue(fertilizedEgg) as Pawn;
 
-            // 后续逻辑与之前相同
+            // --- 判定是否应该产卵 (逻辑与主模组一致) ---
             bool shouldLayEgg = false;
-            if (RavenRaceMod.Settings.enableMalePregnancyEgg && mother.gender == Gender.Male)
+
+            // 1. 获取设置
+            var settings = RavenRaceMod.Settings;
+
+            // 2. 男性生子(蛋)逻辑
+            if (settings.enableMalePregnancyEgg && mother.gender == Gender.Male)
             {
                 if (mother.def.defName == "Raven_Race" || (father != null && father.def.defName == "Raven_Race"))
                 {
                     shouldLayEgg = true;
                 }
             }
+            // 3. 渡鸦母亲
             else if (mother.def.defName == "Raven_Race")
             {
                 shouldLayEgg = true;
             }
-            else if (RavenRaceMod.Settings.ravenFatherDeterminesEgg && father != null && father.def.defName == "Raven_Race")
+            // 4. 父系决定逻辑
+            else if (settings.ravenFatherDeterminesEgg && father != null && father.def.defName == "Raven_Race")
             {
                 shouldLayEgg = true;
             }
@@ -152,27 +234,33 @@ namespace RavenRace.RJWCompat
                 List<GeneDef> inheritedGenesList = PregnancyUtility.GetInheritedGenes(father, mother, out success);
                 if (!success)
                 {
-                    Log.Warning($"[RavenRace RJWCompat] Failed to get inherited genes. Father: {father?.LabelShort ?? "null"}, Mother: {mother.LabelShort}");
+                    // 仅作为警告，不阻止流程
+                    // Log.Warning($"[RavenRace RJWCompat] Failed to get inherited genes.");
                 }
                 GeneSet inheritedGeneSet = new GeneSet();
                 foreach (var g in inheritedGenesList) inheritedGeneSet.AddGene(g);
+
                 if (father != null && GeneUtility.SameHeritableXenotype(father, mother))
                 {
                     inheritedGeneSet.SetNameDirect(father.genes?.xenotypeName);
                 }
 
-                var hediff = HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("Raven_Hediff_RavenPregnancy"), mother) as Hediff_RavenPregnancy;
+                // [核心修复] 使用新的类名 HediffRavenPregnancy，并使用 DefOf 获取 Def
+                var hediff = HediffMaker.MakeHediff(RavenDefOf.Raven_Hediff_RavenPregnancy, mother) as HediffRavenPregnancy;
+
                 if (hediff != null)
                 {
-                    hediff.Initialize(father, inheritedGeneSet, RavenRaceMod.Settings.forceRavenDescendant);
+                    hediff.Initialize(father, inheritedGeneSet, settings.forceRavenDescendant);
                     mother.health.AddHediff(hediff);
                     mother.Drawer?.renderer?.SetAllGraphicsDirty();
                 }
 
+                // 清空原版月经Mod的卵子列表，防止双重怀孕
                 eggsList.Clear();
 
                 Messages.Message($"{mother.LabelShort} has conceived a spirit egg (RJW-compatible).", mother, MessageTypeDefOf.PositiveEvent);
 
+                // 返回 false 阻止原方法执行（即阻止RJW的原版怀孕逻辑）
                 return false;
             }
             catch (Exception e)
@@ -185,7 +273,145 @@ namespace RavenRace.RJWCompat
 }.
 .
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\RJWCompat_Startup.cs
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Patch_RJW_AfterSex.cs
+=
+.
+﻿using System.Net;
+using HarmonyLib;
+using RavenRace.Features.DegradationCharm; // 引用淫堕符咒相关定义
+using RimWorld;
+using rjw; // 必须引用 RJW
+using UnityEngine;
+using Verse;
+
+namespace RavenRace.RJWCompat
+{
+    /// <summary>
+    /// RJW 性爱结算补丁
+    /// 作用：
+    /// 1. 恢复因拦截 Raven_Job_ForceLovin 而丢失的“降低抵抗/意志”逻辑。
+    /// 2. 恢复因未使用 JobDriver_Lovin 而丢失的“增加淫堕条”逻辑。
+    /// </summary>
+    [HarmonyPatch(typeof(SexUtility), "Aftersex")]
+    public static class Patch_RJW_AfterSex
+    {
+        [HarmonyPostfix]
+        public static void Postfix(SexProps props)
+        {
+            // 安全检查
+            if (props == null || props.pawn == null || props.partner == null) return;
+
+            Pawn initiator = props.pawn; // 发起者 (渡鸦)
+            Pawn partner = props.partner; // 承受者 (可能是囚犯)
+
+            // ------------------------------------------------------
+            // 1. 处理“淫堕刻印” (Degradation Charm) 增加逻辑
+            // ------------------------------------------------------
+            IncreaseDegradationIfPresent(initiator);
+            IncreaseDegradationIfPresent(partner);
+
+            // ------------------------------------------------------
+            // 2. 处理“强制求爱”带来的囚犯互动 (降低抵抗/意志)
+            // ------------------------------------------------------
+            // 条件：发起者是渡鸦族 (或拥有该能力)，且对象是本殖民地的囚犯
+            // 注意：因为我们无法轻易区分这是 "ForceLovin" 还是普通的 RJW 性爱，
+            // 这里我们假设只要是渡鸦族发起的对囚犯的性行为，都视作这种互动。
+            if (initiator.def == RavenDefOf.Raven_Race && partner.IsPrisonerOfColony)
+            {
+                HandleRavenPrisonerInteraction(initiator, partner);
+            }
+        }
+
+        /// <summary>
+        /// 增加淫堕 Hediff 的严重度
+        /// </summary>
+        private static void IncreaseDegradationIfPresent(Pawn pawn)
+        {
+            if (pawn == null || pawn.Dead) return;
+
+            // 使用 DefOf 获取 HediffDef
+            Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(DegradationCharmDefOf.Raven_Hediff_Degradation);
+            if (hediff != null)
+            {
+                // 每次 RJW 性行为增加 0.1
+                hediff.Severity += 0.10f;
+            }
+        }
+
+        /// <summary>
+        /// 处理囚犯互动逻辑 (从 JobDriver_ForceLovin 移植并适配)
+        /// </summary>
+        private static void HandleRavenPrisonerInteraction(Pawn initiator, Pawn prisoner)
+        {
+            var s = RavenRaceMod.Settings;
+            if (s == null) return;
+            bool graphicsDirty = false;
+
+            // A. 招募模式 -> 降抵抗
+            if (prisoner.guest.ExclusiveInteractionMode == PrisonerInteractionModeDefOf.AttemptRecruit && prisoner.guest.resistance > 0)
+            {
+                float reduction = s.forceLovinResistanceReduction;
+                prisoner.guest.resistance = Mathf.Max(0, prisoner.guest.resistance - reduction);
+                Messages.Message("RavenRace_Msg_ResistanceLowered".Translate(prisoner.LabelShort, reduction), prisoner, MessageTypeDefOf.PositiveEvent);
+
+                // 瞬间招募判定
+                if (prisoner.guest.resistance <= 0 && Rand.Chance(s.forceLovinInstantRecruitChance))
+                {
+                    InteractionWorker_RecruitAttempt.DoRecruit(initiator, prisoner);
+                    AddDominatedRelation(prisoner, initiator);
+                    Messages.Message("RavenRace_Msg_InstantRecruit".Translate(prisoner.LabelShort), prisoner, MessageTypeDefOf.PositiveEvent);
+                    graphicsDirty = true;
+                }
+            }
+            // B. 奴役模式 -> 降意志
+            else if (prisoner.guest.ExclusiveInteractionMode == PrisonerInteractionModeDefOf.Enslave && prisoner.guest.will > 0)
+            {
+                float reduction = s.forceLovinWillReduction;
+                prisoner.guest.will = Mathf.Max(0, prisoner.guest.will - reduction);
+                Messages.Message("RavenRace_Msg_WillLowered".Translate(prisoner.LabelShort, reduction), prisoner, MessageTypeDefOf.PositiveEvent);
+
+                // 瞬间奴役判定
+                if (prisoner.guest.will <= 0 && Rand.Chance(s.forceLovinInstantRecruitChance))
+                {
+                    GenGuest.EnslavePrisoner(initiator, prisoner);
+                    AddDominatedRelation(prisoner, initiator);
+                    Messages.Message("RavenRace_Msg_InstantEnslave".Translate(prisoner.LabelShort), prisoner, MessageTypeDefOf.PositiveEvent);
+                    graphicsDirty = true;
+                }
+            }
+            // C. 转化模式 -> 降信仰
+            else if (ModsConfig.IdeologyActive && prisoner.guest.ExclusiveInteractionMode == PrisonerInteractionModeDefOf.Convert && prisoner.Ideo != initiator.Ideo)
+            {
+                prisoner.ideo.OffsetCertainty(-s.forceLovinCertaintyReduction);
+            }
+
+            // D. 打破死忠
+            if (!prisoner.guest.Recruitable && Rand.Chance(s.forceLovinBreakLoyaltyChance))
+            {
+                prisoner.guest.Recruitable = true;
+                prisoner.guest.SetExclusiveInteraction(PrisonerInteractionModeDefOf.AttemptRecruit);
+                Messages.Message("RavenRace_Msg_LoyaltyBroken".Translate(prisoner.LabelShort), prisoner, MessageTypeDefOf.PositiveEvent);
+                graphicsDirty = true;
+            }
+
+            if (graphicsDirty)
+            {
+                prisoner.Drawer?.renderer?.SetAllGraphicsDirty();
+            }
+        }
+
+        private static void AddDominatedRelation(Pawn subject, Pawn master)
+        {
+            if (subject != null && master != null)
+            {
+                subject.relations.AddDirectRelation(RavenDefOf.Raven_Relation_Dominated, master);
+            }
+        }
+    }
+}.
+.
+=
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\RJWCompat_Startup.cs
 =
 .
 ﻿using HarmonyLib;
@@ -204,7 +430,8 @@ namespace RavenRace.RJWCompat
         /// </summary>
         public static void ApplyPatches()
         {
-            var harmony = new Harmony("ZuoYao.RavenRace.RJWCompat");
+            // 修改为（加上 HarmonyLib. 前缀）：
+            var harmony = new HarmonyLib.Harmony("ZuoYao.RavenRace.RJWCompat");
 
             Log.Message("[RavenRace RJWCompat] ApplyPatches() called by main module. Applying patches now...");
 
@@ -222,7 +449,7 @@ namespace RavenRace.RJWCompat
 }.
 .
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\RjwReflection.cs
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\RjwReflection.cs
 =
 .
 ﻿// File: RJWCompat/Source/RJWCompat/RjwReflection.cs
@@ -291,7 +518,7 @@ namespace RavenRace.RJWCompat
 }.
 .
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
 =
 .
 // <autogenerated />
@@ -301,7 +528,7 @@ using System.Reflection;
 .
 .
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs
 =
 .
 // <autogenerated />
@@ -311,7 +538,7 @@ using System.Reflection;
 .
 .
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Properties\AssemblyInfo.cs
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\Properties\AssemblyInfo.cs
 =
 .
 ﻿using System.Reflection;
@@ -350,11 +577,10 @@ using System.Runtime.InteropServices;
 .
 .
 =
-File: E:\steam\steamapps\common\RimWorld\Mods\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\UI\Dialog_SelectRjwInteraction.cs
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\RJWCompat\Source\RJWCompat\UI\Dialog_SelectRjwInteraction.cs
 =
 .
-﻿// File: RJWCompat/Source/RJWCompat/UI/Dialog_SelectRjwInteraction.cs
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
@@ -547,6 +773,23 @@ namespace RavenRace.RJWCompat.UI
                 return;
             }
 
+            // ========================================================================
+            // 【核心修正】 RJW 的 Quickie 工作逻辑会检查 FailOn(() => pawn.Drafted)。
+            // 因此，如果玩家处于征召状态（通常使用技能时都是），必须先取消征召。
+            // ========================================================================
+            if (pawn.Drafted)
+            {
+                pawn.drafter.Drafted = false;
+            }
+
+            // 同时为了防止目标乱跑或还在战斗，也强制停止目标的工作
+            // 如果目标被征召，也尝试取消征召（如果是玩家单位）
+            if (partner.IsColonistPlayerControlled && partner.Drafted)
+            {
+                partner.drafter.Drafted = false;
+            }
+            partner.jobs.StopAll(); // 强行打断，让目标准备好接受互动
+
             // 创建Job实例。Quickie的目标是伴侣。
             Job job = JobMaker.MakeJob(jobDef, partner);
 
@@ -554,7 +797,7 @@ namespace RavenRace.RJWCompat.UI
             // JobDriver_SexQuick会读取这个字段，并自己生成一个 isRape = false 的 SexProps。
             job.interaction = selectedInteraction;
 
-            Log.Message($"[RavenRace RJWCompat] Player selected '{selectedInteraction.defName}'. Assigning RJW's native 'Quickie' job to {pawn.LabelShort}.");
+            Log.Message($"[RavenRace RJWCompat] Player selected '{selectedInteraction.defName}'. Force-undrafted and assigning RJW's 'Quickie' job to {pawn.LabelShort}.");
 
             // 分配Job
             pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);

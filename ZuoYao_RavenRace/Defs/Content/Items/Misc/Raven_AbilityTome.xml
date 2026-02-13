@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 渡鸦本能教本 (赋予技能) ==================== -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>RavenItem_AbilityTome</defName>
+    <label>渡鸦本能教本</label>
+    <description>一本古老的典籍，详细记载了渡鸦族如何利用其独特的魅力和信息素来影响其他生物的意志。学习后可以掌握“强制求爱”技能。\n\n“理论终究是理论，实践才是检验真理的唯一标准。” —— 某位不愿透露姓名的司命</description>
+    <graphicData>
+      <texPath>Items/Medicine/Oxytocin</texPath> <!-- 复用贴图 -->
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+
+    <statBases>
+      <MarketValue>750</MarketValue>
+      <Mass>0.5</Mass>
+    </statBases>
+
+    <techLevel>Industrial</techLevel>
+
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+
+    <comps>
+      <!-- 使用交互 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>学习强制求爱</useLabel>
+        <useDuration>60</useDuration> <!-- 学习需要一点时间 -->
+      </li>
+      <!-- 选择目标 (学习者) -->
+      <li Class="CompProperties_Targetable">
+        <compClass>CompTargetable_SinglePawn</compClass>
+      </li>
+      <!-- 实际效果 -->
+      <li Class="CompProperties_UseEffect">
+        <compClass>RavenRace.Items.Comps.CompTargetEffect_GainForceLovin</compClass>
+      </li>
+      <!-- 使用后销毁 -->
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== 制作配方 ==================== -->
+  <RecipeDef>
+    <defName>Make_RavenItem_AbilityTome</defName>
+    <label>抄写渡鸦本能教本</label>
+    <description>抄写一本关于渡鸦族本能的教本。</description>
+    <jobString>正在抄写教本。</jobString>
+    <workAmount>50</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat> <!-- 与研究速度挂钩 -->
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+
+
+    <recipeUsers>
+        <li>DrugLab</li>
+    </recipeUsers>
+
+    <researchPrerequisite>RavenResearch_Reproduction</researchPrerequisite>
+
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+
+    <products>
+      <RavenItem_AbilityTome>1</RavenItem_AbilityTome>
+    </products>
+
+
+  </RecipeDef>
+
+</Defs>

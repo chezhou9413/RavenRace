@@ -178,8 +178,10 @@ namespace RavenRace.RJWCompat.UI
             return height + 12f;
         }
 
+
+
         /// <summary>
-        /// 创建并分配一个在机制上是“自愿”的性爱Job，以避免关系惩罚。
+        /// 创建并分配一个在机制上是"自愿"的性爱Job，以避免关系惩罚。
         /// </summary>
         private void StartRjwSexJob(Pawn pawn, Pawn partner, InteractionDef selectedInteraction)
         {
@@ -211,14 +213,19 @@ namespace RavenRace.RJWCompat.UI
             // 创建Job实例。Quickie的目标是伴侣。
             Job job = JobMaker.MakeJob(jobDef, partner);
 
-            // [关键] 通过job.interaction字段，将玩家选择的互动方式安全地传递给RJW的JobDriver。
-            // JobDriver_SexQuick会读取这个字段，并自己生成一个 isRape = false 的 SexProps。
+            // [核心修复] 使用 job.interaction 字段存储玩家选择的 InteractionDef
+            // 这个字段在 RJW 的性爱逻辑中完全没有被使用，我们可以安全地占用它
             job.interaction = selectedInteraction;
 
-            Log.Message($"[RavenRace RJWCompat] Player selected '{selectedInteraction.defName}'. Force-undrafted and assigning RJW's 'Quickie' job to {pawn.LabelShort}.");
+            Log.Message($"[RavenRace RJWCompat] Player selected '{selectedInteraction.defName}'. Stored in job.interaction. Assigning Quickie job.");
 
             // 分配Job
             pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
         }
+
+
+
+
+
     }
 }

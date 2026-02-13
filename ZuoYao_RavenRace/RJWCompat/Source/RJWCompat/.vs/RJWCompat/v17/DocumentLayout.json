@@ -1,26 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|e:\\steam\\steamapps\\common\\rimworld\\mods\\zuoyao_ravenrace\\rjwcompat\\source\\rjwcompat\\ui\\dialog_selectrjwinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\rjwcompat\\source\\rjwcompat\\patch_sexinteractionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:patch_sexinteractionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\rjwcompat\\source\\rjwcompat\\ui\\dialog_selectrjwinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:ui\\dialog_selectrjwinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\rjwcompat_startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:rjwcompat_startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\rjwcompat\\source\\rjwcompat\\patch_jobdriver_sexquick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:patch_jobdriver_sexquick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\rjwreflection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:rjwreflection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\patch_menstruation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:patch_menstruation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\patch_rjw_aftersex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:patch_rjw_aftersex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\rjwcompat\\source\\rjwcompat\\patch_forcelovin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:patch_forcelovin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,68 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RJWCompat_Startup.cs",
-              "DocumentMoniker": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\RJWCompat_Startup.cs",
-              "RelativeDocumentMoniker": "RJWCompat_Startup.cs",
-              "ToolTip": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\RJWCompat_Startup.cs",
-              "RelativeToolTip": "RJWCompat_Startup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T04:58:30.549Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Dialog_SelectRjwInteraction.cs",
-              "DocumentMoniker": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\UI\\Dialog_SelectRjwInteraction.cs",
-              "RelativeDocumentMoniker": "UI\\Dialog_SelectRjwInteraction.cs",
-              "ToolTip": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\UI\\Dialog_SelectRjwInteraction.cs",
-              "RelativeToolTip": "UI\\Dialog_SelectRjwInteraction.cs",
-              "ViewState": "AgIAALUAAAAAAAAAAAAIwNwAAAA6AAAAAAAAAA==",
+              "Title": "Patch_SexInteractionHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_SexInteractionHelper.cs",
+              "RelativeDocumentMoniker": "Patch_SexInteractionHelper.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_SexInteractionHelper.cs",
+              "RelativeToolTip": "Patch_SexInteractionHelper.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAIwGMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T14:07:48.107Z",
+              "WhenOpened": "2026-02-13T07:26:59.493Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RjwReflection.cs",
-              "DocumentMoniker": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\RjwReflection.cs",
-              "RelativeDocumentMoniker": "RjwReflection.cs",
-              "ToolTip": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\RjwReflection.cs",
-              "RelativeToolTip": "RjwReflection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
+              "Title": "Patch_JobDriver_SexQuick.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_JobDriver_SexQuick.cs",
+              "RelativeDocumentMoniker": "Patch_JobDriver_SexQuick.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_JobDriver_SexQuick.cs",
+              "RelativeToolTip": "Patch_JobDriver_SexQuick.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAADwvzIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T12:45:42.342Z"
+              "WhenOpened": "2026-02-13T07:17:22.19Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Patch_RJW_AfterSex.cs",
-              "DocumentMoniker": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_RJW_AfterSex.cs",
-              "RelativeDocumentMoniker": "Patch_RJW_AfterSex.cs",
-              "ToolTip": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_RJW_AfterSex.cs",
-              "RelativeToolTip": "Patch_RJW_AfterSex.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAGAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Dialog_SelectRjwInteraction.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\UI\\Dialog_SelectRjwInteraction.cs",
+              "RelativeDocumentMoniker": "UI\\Dialog_SelectRjwInteraction.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\UI\\Dialog_SelectRjwInteraction.cs",
+              "RelativeToolTip": "UI\\Dialog_SelectRjwInteraction.cs",
+              "ViewState": "AgIAALMAAAAAAAAAAAAswOMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T04:57:24.543Z"
+              "WhenOpened": "2026-02-13T07:16:38.542Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Patch_Menstruation.cs",
-              "DocumentMoniker": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_Menstruation.cs",
-              "RelativeDocumentMoniker": "Patch_Menstruation.cs",
-              "ToolTip": "E:\\steam\\steamapps\\common\\RimWorld\\Mods\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_Menstruation.cs",
-              "RelativeToolTip": "Patch_Menstruation.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAHcAAAABAAAAAAAAAA==",
+              "Title": "Patch_ForceLovin.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_ForceLovin.cs",
+              "RelativeDocumentMoniker": "Patch_ForceLovin.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_ForceLovin.cs",
+              "RelativeToolTip": "Patch_ForceLovin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T04:57:01.625Z"
+              "WhenOpened": "2026-02-13T07:13:45.353Z",
+              "EditorCaption": ""
             }
           ]
         }
