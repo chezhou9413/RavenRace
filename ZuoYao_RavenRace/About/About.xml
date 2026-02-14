@@ -73,9 +73,9 @@ SA支持：生物大师
             <steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
         </li>
         <li>
-            <packageId>chezhoulib</packageId>
+            <packageId>Chezhou.ChezhouLib.lib</packageId>
             <displayName>ChezhouLib</displayName>
-            <steamWorkshopUrl>steam://url/CommunityFilePage/221583801</steamWorkshopUrl>
+            <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3595247479</steamWorkshopUrl>
         </li>
     </modDependencies>
     <loadAfter>
@@ -85,13 +85,12 @@ SA支持：生物大师
         <li>Ludeon.RimWorld.Biotech</li>
         <li>Ludeon.RimWorld.Anomaly</li>
         <li>erdelf.HumanoidAlienRaces</li>
-        <li>chezhoulib</li> <!-- 必要的前置库 -->
-
+        <li>Chezhou.ChezhouLib.lib</li>        <!-- 必要的前置库 -->
         <!-- Phase 3.6 兼容项 -->
-        <li>Ancot.Milira</li> <!-- 米莉拉 -->
-        <li>Milira.Independent.Pathing</li> <!-- 天羽族真实飞行补丁 -->
-        <li>Moe.MoeLotl</li> <!-- 萌螈 -->
-        <li>Koelime.Race</li> <!-- 珂莉姆 -->
+        <li>Ancot.Milira</li>        <!-- 米莉拉 -->
+        <li>Milira.Independent.Pathing</li>        <!-- 天羽族真实飞行补丁 -->
+        <li>Moe.MoeLotl</li>        <!-- 萌螈 -->
+        <li>Koelime.Race</li>        <!-- 珂莉姆 -->
 
     </loadAfter>
     <incompatibleWith />
