@@ -37,12 +37,36 @@
                 <kindName>Binah</kindName>
                 <kindAge>22</kindAge>
                 <kindDesName></kindDesName>
-                <renderNodeRules>
+                <isColseFa>true</isColseFa>
+                <bodyAddonRules>
                     <li>
-                        <debugLabel>raven_face</debugLabel>
-                        <replacePath>Races/Raven/Special/Binah/Face/Binah_Face</replacePath>
+                        <BodyAddonName>raven_face</BodyAddonName>
+                        <ReplacePath>Races/Raven/Special/Binah/Face/Binah_Face</ReplacePath>
+                        <offset>
+                            <south>
+                                <bodyTypes>
+                                    <Female>(0,0)</Female>
+                                    <Male>(0,0)</Male>
+                                </bodyTypes>
+                                <layerOffset>0.01</layerOffset>
+                            </south>
+                            <north>
+                                <bodyTypes>
+                                    <Female>(0,0)</Female>
+                                    <Male>(0,0)</Male>
+                                </bodyTypes>
+                                <layerOffset>0.01</layerOffset>
+                            </north>
+                            <east>
+                                <bodyTypes>
+                                    <Female>(0,0)</Female>
+                                    <Male>(0,0)</Male>
+                                </bodyTypes>
+                                <layerOffset>0.01</layerOffset>
+                            </east>
+                        </offset>
                     </li>
-                </renderNodeRules>
+                </bodyAddonRules>
             </li>
         </modExtensions>
 
