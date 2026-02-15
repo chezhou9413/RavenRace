@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 1. 柱之射击 -->
+  <AbilityDef>
+    <defName>Raven_Ability_Binah_PillarShot</defName>
+    <label>柱之射击</label>
+    <description>Binah 从虚空中召唤暴虐之碑。8根巨柱将环绕她生成并向四周激射而出，摧毁路径上的一切。\n\n伤害巨大，且无视敌我，请谨慎使用。</description>
+    <iconPath>UI/Abilities/Binah_PillarShot</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    
+    <verbProperties>
+      <verbClass>RavenRace.Features.CustomPawn.Binah.Verb_BinahPillarBarrage</verbClass>
+      <range>25.9</range>
+      <warmupTime>1.0</warmupTime>
+      <soundCast>Explosion_Bomb</soundCast>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetLocations>True</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <!-- 2. 震击 -->
+  <AbilityDef>
+    <defName>Raven_Ability_Binah_Shockwave</defName>
+    <label>震击</label>
+    <description>以自身为中心释放金色的冲击波。强大的能量流会导致空间扭曲，对周围所有生物造成严重伤害。</description>
+    <iconPath>UI/Abilities/Binah_Shockwave</iconPath>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>20</range>
+      <warmupTime>2.0</warmupTime>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+      <soundCast>Explosion_Emp</soundCast>
+    </verbProperties>
+
+    <comps>
+      <li Class="RavenRace.Features.CustomPawn.Binah.CompProperties_AbilityShockwave">
+        <radius>20</radius>
+        <damageAmount>80</damageAmount>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- 3. 劣化之柱 -->
+  <AbilityDef>
+    <defName>Raven_Ability_Binah_DegradationPillar</defName>
+    <label>劣化之柱</label>
+    <description>瞄准一个目标，生成一根伴随妖灵拖尾的柱子刺向对方。投射物具有极高的穿透力。</description>
+    <iconPath>UI/Abilities/Binah_DegradationPillar</iconPath>
+    <cooldownTicksRange>30</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    
+    <verbProperties>
+      <!-- 指向我们的自定义Verb -->
+      <verbClass>RavenRace.Features.CustomPawn.Binah.Verb_BinahDegradationPillar</verbClass>
+      <!-- [重要] 这个引用必须存在于 Projectiles_Binah.xml 中 -->
+      <defaultProjectile>Raven_Projectile_Binah_Degradation</defaultProjectile>
+      <range>45.9</range>
+      <warmupTime>1.5</warmupTime>
+      <soundCast>Shot_ChargeRifle</soundCast>
+      <targetParams>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>True</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <!-- 4. 劣化之锁 (确保这个Def存在且名字正确！) -->
+  <AbilityDef>
+    <defName>Raven_Ability_Binah_DegradationLock</defName>
+    <label>劣化之锁</label>
+    <description>用概念性的锁链束缚目标。被锁住的敌人将完全无法移动和操作，持续1天。</description>
+    <iconPath>UI/Abilities/Binah_Lock</iconPath>
+    <cooldownTicksRange>36</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>29.9</range>
+      <warmupTime>0.5</warmupTime>
+      <targetParams>
+        <canTargetPawns>True</canTargetPawns>
+        <neverTargetIncapacitated>True</neverTargetIncapacitated>
+      </targetParams>
+    </verbProperties>
+
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Raven_Hediff_Binah_DegradationLock</hediffDef>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>
