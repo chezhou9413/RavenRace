@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Binah专属特性 -->
+  <TraitDef>
+    <defName>Raven_Trait_Binah</defName>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>调律者</label>
+        <description>一位神秘的调律者。</description>
+        <skillGains>
+            <Social>15</Social>
+            <Intellectual>10</Intellectual>
+        </skillGains>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+  <!-- Binah专属背景 (幼年) -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Backstory_Binah_Child</defName>
+    <title>神秘人</title>
+    <titleShort>神秘人</titleShort>
+    <baseDesc>一位神秘的调律者。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>Raven_Binah</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>12</Social>
+      <Medicine>12</Medicine>
+      <Intellectual>10</Intellectual>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <!-- Binah专属背景 (成年) -->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Backstory_Binah_Adult</defName>
+    <title>首脑</title>
+    <titleShort>首脑</titleShort>
+    <baseDesc>如果你不能超越我，那你的结局只会是被“首脑”蹂躏致死。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>Raven_Binah</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>20</Social>
+      <Medicine>20</Medicine>
+      <Intellectual>20</Intellectual>
+      <Shooting>20</Shooting>
+      <Melee>20</Melee>
+    </skillGains>
+    <forcedTraitsChance>
+      <li>
+        <defName>Raven_Trait_Binah</defName>
+        <chance>100</chance>
+      </li>
+    </forcedTraitsChance>
+  </AlienRace.AlienBackstoryDef>
+</Defs>

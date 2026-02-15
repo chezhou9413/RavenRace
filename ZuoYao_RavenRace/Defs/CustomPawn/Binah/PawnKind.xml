@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <PawnKindDef>
+        <defName>Raven_PawnKind_Binah</defName>
+        <label>Binah</label>
+        <race>Raven_Race</race>
+        <combatPower>1000</combatPower>
+        <isFighter>true</isFighter>
+        <defaultFactionType>PlayerColony</defaultFactionType>
+
+        <backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>Raven_Binah</li>
+                </categories>
+            </li>
+        </backstoryFiltersOverride>
+        <!-- 强制服装 -->
+        <apparelRequired>
+            <li>Raven_ApparelBinahOutfit</li>
+            <li>Raven_eardrop</li>
+        </apparelRequired>
+        <apparelTags>
+            <li>Binah_Apparel</li>
+        </apparelTags>
+        <apparelMoney>
+            <min>9999</min>
+            <max>9999</max>
+        </apparelMoney>
+
+        <techHediffsChance>0.5</techHediffsChance>
+        <initialWillRange>10~10</initialWillRange>
+        <initialResistanceRange>0~0</initialResistanceRange>
+
+        <modExtensions>
+            <li Class="ChezhouLib.Extension.kindRule">
+                <kindName>Binah</kindName>
+                <kindAge>22</kindAge>
+                <kindDesName></kindDesName>
+                <renderNodeRules>
+                    <li>
+                        <debugLabel>raven_face</debugLabel>
+                        <replacePath>Races/Raven/Special/Binah/Face/Binah_Face</replacePath>
+                    </li>
+                </renderNodeRules>
+            </li>
+        </modExtensions>
+
+
+    </PawnKindDef>
+</Defs>
