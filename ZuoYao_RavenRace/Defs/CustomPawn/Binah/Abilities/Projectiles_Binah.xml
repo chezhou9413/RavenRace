@@ -1,76 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-  <!-- 柱子基础 -->
-  <ThingDef Name="Raven_Binah_PillarBase" ParentName="BaseBullet" Abstract="True">
-    <thingClass>Projectile_Explosive</thingClass>
+  <!-- [原有内容保持不变...] -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Raven_Projectile_Binah_Pillar_I</defName>
+    <label>暴虐之碑 I</label>
+    <thingClass>RavenRace.Features.CustomPawn.Binah.Projectile_Piercing</thingClass>
     <graphicData>
+      <texPath>Races/Raven/Special/Binah/Abilities/Pillar1</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>Transparent</shaderType>
-      <drawSize>10</drawSize> <!-- 超大贴图 -->
+      <drawSize>(8,8)</drawSize>
     </graphicData>
     <projectile>
-      <damageDef>Bomb</damageDef>
-      <damageAmountBase>200</damageAmountBase> <!-- 巨大伤害 -->
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>600</damageAmountBase>
       <speed>50</speed>
-      <flyOverhead>false</flyOverhead> <!-- [Fix] 设为false才能撞墙 -->
-      <explosionRadius>10</explosionRadius> <!-- [Fix] 巨大爆炸范围 -->
-      <!-- 总是命中 -->
-      <alwaysFreeIntercept>true</alwaysFreeIntercept>
+      <soundImpact>BulletImpact_Metal</soundImpact>
     </projectile>
+    <comps>
+      <li Class="RavenRace.Features.CustomPawn.Binah.CompProperties_PathDamage"/>
+    </comps>
   </ThingDef>
 
-  <!-- 1-4 形态 (继承上方) -->
-  <ThingDef ParentName="Raven_Binah_PillarBase">
-    <defName>Raven_Projectile_Binah_Pillar_I</defName>
-    <label>暴虐之碑</label>
-    <graphicData><texPath>Races/Raven/Special/Binah/Abilities/Pillar1</texPath></graphicData>
-  </ThingDef>
-  <ThingDef ParentName="Raven_Binah_PillarBase">
+  <ThingDef ParentName="BaseBullet">
     <defName>Raven_Projectile_Binah_Pillar_II</defName>
-    <label>暴虐之碑</label>
-    <graphicData><texPath>Races/Raven/Special/Binah/Abilities/Pillar2</texPath></graphicData>
+    <label>暴虐之碑 II</label>
+    <thingClass>RavenRace.Features.CustomPawn.Binah.Projectile_Piercing</thingClass>
+    <graphicData>
+      <texPath>Races/Raven/Special/Binah/Abilities/Pillar2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>600</damageAmountBase>
+      <speed>50</speed>
+      <soundImpact>BulletImpact_Metal</soundImpact>
+    </projectile>
+    <comps>
+      <li Class="RavenRace.Features.CustomPawn.Binah.CompProperties_PathDamage"/>
+    </comps>
   </ThingDef>
-  <ThingDef ParentName="Raven_Binah_PillarBase">
+
+  <ThingDef ParentName="BaseBullet">
     <defName>Raven_Projectile_Binah_Pillar_III</defName>
-    <label>暴虐之碑</label>
-    <graphicData><texPath>Races/Raven/Special/Binah/Abilities/Pillar3</texPath></graphicData>
+    <label>暴虐之碑 III</label>
+    <thingClass>RavenRace.Features.CustomPawn.Binah.Projectile_Piercing</thingClass>
+    <graphicData>
+      <texPath>Races/Raven/Special/Binah/Abilities/Pillar3</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>600</damageAmountBase>
+      <speed>50</speed>
+      <soundImpact>BulletImpact_Metal</soundImpact>
+    </projectile>
+    <comps>
+      <li Class="RavenRace.Features.CustomPawn.Binah.CompProperties_PathDamage"/>
+    </comps>
   </ThingDef>
-  <ThingDef ParentName="Raven_Binah_PillarBase">
+
+  <ThingDef ParentName="BaseBullet">
     <defName>Raven_Projectile_Binah_Pillar_IV</defName>
-    <label>暴虐之碑</label>
-    <graphicData><texPath>Races/Raven/Special/Binah/Abilities/Pillar4</texPath></graphicData>
+    <label>暴虐之碑 IV</label>
+    <thingClass>RavenRace.Features.CustomPawn.Binah.Projectile_Piercing</thingClass>
+    <graphicData>
+      <texPath>Races/Raven/Special/Binah/Abilities/Pillar4</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>600</damageAmountBase>
+      <speed>50</speed>
+      <soundImpact>BulletImpact_Metal</soundImpact>
+    </projectile>
+    <comps>
+      <li Class="RavenRace.Features.CustomPawn.Binah.CompProperties_PathDamage"/>
+    </comps>
+  </ThingDef>
+
+  <!-- Mote 静态柱子 (用于前摇显示) -->
+  <ThingDef ParentName="MoteBase">
+    <defName>Raven_Mote_Binah_Pillar_I</defName>
+    <label>暴虐之碑幻影</label>
+    <graphicData>
+      <texPath>Races/Raven/Special/Binah/Abilities/Pillar1</texPath>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>5</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Raven_Mote_Binah_Pillar_II</defName>
+    <label>暴虐之碑幻影</label>
+    <graphicData>
+      <texPath>Races/Raven/Special/Binah/Abilities/Pillar2</texPath>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>5</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Raven_Mote_Binah_Pillar_III</defName>
+    <label>暴虐之碑幻影</label>
+    <graphicData>
+      <texPath>Races/Raven/Special/Binah/Abilities/Pillar3</texPath>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>5</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Raven_Mote_Binah_Pillar_IV</defName>
+    <label>暴虐之碑幻影</label>
+    <graphicData>
+      <texPath>Races/Raven/Special/Binah/Abilities/Pillar4</texPath>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>5</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
   </ThingDef>
 
   <!-- 劣化之柱 -->
   <ThingDef ParentName="BaseBullet">
     <defName>Raven_Projectile_Binah_Degradation</defName>
     <label>劣化之柱</label>
-    <!-- 使用我们修复后的 WithTrail 类 (继承自Explosive) -->
-    <thingClass>RavenRace.Features.CustomPawn.Binah.Projectile_WithTrail</thingClass>
+    <thingClass>RavenRace.Features.CustomPawn.Binah.Projectile_Piercing</thingClass>
     <graphicData>
       <texPath>Races/Raven/Special/Binah/Abilities/PillarAttack</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>10</drawSize>
+      <drawSize>(8,8)</drawSize>
     </graphicData>
     <projectile>
-      <damageDef>Bomb</damageDef>
-      <damageAmountBase>150</damageAmountBase>
-      <speed>60</speed>
-      <flyOverhead>false</flyOverhead> <!-- 设为false撞击路径上的物体 -->
+      <damageDef>Cut</damageDef>
+      <damageAmountBase>400</damageAmountBase>
+      <speed>30</speed>
       <explosionRadius>5</explosionRadius>
+      <soundImpact>BulletImpact_Metal</soundImpact>
     </projectile>
+    <comps>
+      <li Class="RavenRace.Features.CustomPawn.Binah.CompProperties_PathDamage"/>
+    </comps>
   </ThingDef>
 
-  <!-- ... (Mote 定义保持不变) ... -->
+  <!-- 妖灵 Mote -->
   <ThingDef ParentName="MoteBase">
     <defName>Raven_Mote_Binah_FairyTrail</defName>
     <label>妖灵</label>
     <graphicData>
       <texPath>Races/Raven/Special/Binah/Abilities/Fairy</texPath>
       <graphicClass>Graphic_Mote</graphicClass>
-      <shaderType>TransparentPostLight</shaderType>
-      <drawSize>8</drawSize>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>5</drawSize>
     </graphicData>
     <mote>
       <fadeInTime>0.1</fadeInTime>
@@ -79,6 +181,7 @@
     </mote>
   </ThingDef>
 
+  <!-- [修复] 震击波 Mote：降低扩散速度，增加持续时间 -->
   <ThingDef ParentName="MoteBase">
     <defName>Raven_Mote_Binah_ShockwaveDistortion</defName>
     <label>震击波</label>
@@ -86,14 +189,16 @@
       <texPath>Races/Raven/Special/Binah/Abilities/Shockwave</texPath>
       <graphicClass>Graphic_Mote</graphicClass>
       <shaderType>MoteGlow</shaderType> 
-      <drawSize>10.0</drawSize>
+      <drawSize>3.0</drawSize> <!-- 初始小一点 -->
     </graphicData>
     <mote>
-      <fadeInTime>1</fadeInTime>
-      <solidTime>1</solidTime>
-      <fadeOutTime>8</fadeOutTime>
-      <growthRate>15</growthRate>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>1.5</solidTime> <!-- 增加持续时间 -->
+      <fadeOutTime>0.5</fadeOutTime>
+      <growthRate>10</growthRate> <!-- [Fix] 降低扩散速度 (原15 -> 10) -->
     </mote>
   </ThingDef>
+
+
 
 </Defs>

@@ -1,40 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- 锁 Hediff -->
   <HediffDef>
     <defName>Raven_Hediff_Binah_DegradationLock</defName>
-    <label>劣化之锁</label>
-    <description>被Binah的劣化之锁束缚。无法移动，无法操作。</description>
     <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.8, 0.8, 0.2)</defaultLabelColor>
+    <label>劣化之锁</label>
+    <description>被锁链束缚。</description>
+    <defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
     <isBad>true</isBad>
-    <initialSeverity>1.0</initialSeverity> <!-- 确保有初始严重度 -->
     <comps>
-      <!-- 移除 IntRange，使用固定值 -->
       <li Class="HediffCompProperties_Disappears">
-        <disappearsAfterTicks>60000~60000</disappearsAfterTicks> <!-- 明确的范围 -->
+        <disappearsAfterTicks>60000</disappearsAfterTicks>
         <showRemainingTime>true</showRemainingTime>
       </li>
     </comps>
     <stages>
       <li>
         <capMods>
-          <li>
-            <capacity>Moving</capacity>
-            <setMax>0</setMax>
-          </li>
-          <li>
-            <capacity>Manipulation</capacity>
-            <setMax>0</setMax>
-          </li>
+          <li><capacity>Moving</capacity><setMax>0</setMax></li>
+          <li><capacity>Manipulation</capacity><setMax>0</setMax></li>
         </capMods>
       </li>
     </stages>
-    
-    <!-- 渲染节点移到根目录下 -->
+    <!-- 锁链贴图 -->
     <renderNodeProperties>
       <li>
         <nodeClass>PawnRenderNode</nodeClass>
-        <workerClass>RavenRace.Features.CustomPawn.Binah.PawnRenderNodeWorker_HediffVisual</workerClass>
+        <workerClass>PawnRenderNodeWorker</workerClass>
         <texPath>Races/Raven/Special/Binah/Abilities/LockChain</texPath>
         <parentTagDef>Body</parentTagDef>
         <drawData>
@@ -42,5 +34,26 @@
         </drawData>
       </li>
     </renderNodeProperties>
+  </HediffDef>
+  
+  <!-- 技能赋予 Hediff -->
+  <HediffDef>
+    <defName>Raven_Hediff_Binah_Skills</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>仲裁鸟之力</label>
+    <description>Binah的独特能力。</description>
+    <initialSeverity>1</initialSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <!-- [核心修复] 使用 abilityDefs 列表，只用一个 Comp -->
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+          <li>Raven_Ability_Binah_PillarShot</li>
+          <li>Raven_Ability_Binah_Shockwave</li>
+          <li>Raven_Ability_Binah_DegradationPillar</li>
+          <li>Raven_Ability_Binah_DegradationLock</li>
+        </abilityDefs>
+      </li>
+    </comps>
   </HediffDef>
 </Defs>

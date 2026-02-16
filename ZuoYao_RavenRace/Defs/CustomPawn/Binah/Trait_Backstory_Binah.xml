@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- Binah专属特性 -->
   <TraitDef>
     <defName>Raven_Trait_Binah</defName>
     <commonality>0</commonality>
@@ -16,7 +15,6 @@
     </degreeDatas>
   </TraitDef>
 
-  <!-- Binah专属背景 (幼年) -->
   <AlienRace.AlienBackstoryDef>
     <defName>Raven_Backstory_Binah_Child</defName>
     <title>神秘人</title>
@@ -33,12 +31,12 @@
     </skillGains>
   </AlienRace.AlienBackstoryDef>
 
-  <!-- Binah专属背景 (成年) -->
+  <!-- ✓ 修改：在成年背景中添加 forcedHediffs -->
   <AlienRace.AlienBackstoryDef>
     <defName>Raven_Backstory_Binah_Adult</defName>
     <title>首脑</title>
     <titleShort>首脑</titleShort>
-    <baseDesc>如果你不能超越我，那你的结局只会是被“首脑”蹂躏致死。</baseDesc>
+    <baseDesc>如果你不能超越我，那你的结局只会是被"首脑"蹂躏致死。</baseDesc>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>Raven_Binah</li>
@@ -56,5 +54,10 @@
         <chance>100</chance>
       </li>
     </forcedTraitsChance>
+    
+    <!-- ✓ 核心：通过背景故事赋予技能 Hediff -->
+    <forcedHediffs>
+      <li>Raven_Hediff_Binah_Skills</li>
+    </forcedHediffs>
   </AlienRace.AlienBackstoryDef>
 </Defs>

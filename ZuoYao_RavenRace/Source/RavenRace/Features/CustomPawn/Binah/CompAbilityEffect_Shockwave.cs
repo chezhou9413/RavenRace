@@ -7,12 +7,9 @@ namespace RavenRace.Features.CustomPawn.Binah
 {
     public class CompProperties_AbilityShockwave : CompProperties_AbilityEffect
     {
-        public float radius = 20f;
+        public float radius = 30f;
         public int damageAmount = 500;
-        public CompProperties_AbilityShockwave()
-        {
-            this.compClass = typeof(CompAbilityEffect_Shockwave);
-        }
+        public CompProperties_AbilityShockwave() => this.compClass = typeof(CompAbilityEffect_Shockwave);
     }
 
     public class CompAbilityEffect_Shockwave : CompAbilityEffect
@@ -22,53 +19,53 @@ namespace RavenRace.Features.CustomPawn.Binah
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             base.Apply(target, dest);
-
-            Pawn caster = this.parent.pawn;
+            Pawn caster = parent.pawn;
             Map map = caster.Map;
-            IntVec3 center = caster.Position;
 
-            // 1. AOE 伤害 (排除自己)
-            List<Thing> targets = new List<Thing>();
-            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, Props.radius, true))
+            Vector3 centerPos = caster.DrawPos;
+            centerPos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
+
+            // 1. 金色冲击波 Mote
+            ThingDef moteDef = BinahDefOf.Raven_Mote_Binah_ShockwaveDistortion ?? ThingDefOf.Mote_PowerBeam;
+
+            // 初始 Scale 设为 0.1，让它从中心扩散
+            Mote mote = MoteMaker.MakeStaticMote(centerPos, map, moteDef, 0.1f);
+            if (mote != null)
+            {
+                mote.exactPosition = centerPos;
+                mote.instanceColor = new Color(1f, 0.85f, 0.1f, 0.9f); // 金色
+                mote.solidTimeOverride = 2.0f; // 持续2秒，配合 XML 中的 growthRate 变慢
+            }
+
+            // 2. 屏幕扭曲
+            Effecter effecter = new Effecter(EffecterDefOf.Skip_Entry);
+            effecter.Trigger(new TargetInfo(caster.Position, map), new TargetInfo(caster.Position, map));
+            effecter.Cleanup();
+
+            // 3. 屏幕震动
+            Find.CameraDriver.shaker.DoShake(3.0f);
+
+            // 4. 伤害逻辑
+            foreach (var cell in GenRadial.RadialCellsAround(caster.Position, Props.radius, true))
             {
                 if (!cell.InBounds(map)) continue;
                 List<Thing> things = cell.GetThingList(map);
-                for (int i = 0; i < things.Count; i++)
+                for (int i = things.Count - 1; i >= 0; i--)
                 {
                     Thing t = things[i];
-                    if (t != caster && (t.def.category == ThingCategory.Pawn || t.def.category == ThingCategory.Building))
+                    if (t == caster) continue;
+                    if (t is Pawn p && !p.HostileTo(caster)) continue;
+
+                    if (t is Pawn || t is Building)
                     {
-                        if (!targets.Contains(t)) targets.Add(t);
+                        t.TakeDamage(new DamageInfo(DamageDefOf.Blunt, Props.damageAmount, 0.5f, -1, caster));
+                        if (t is Pawn victim && !victim.Dead)
+                        {
+                            victim.stances.stunner.StunFor(120, caster);
+                        }
                     }
                 }
             }
-
-            foreach (Thing t in targets)
-            {
-                DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, Props.damageAmount, 0.5f, -1, caster);
-                t.TakeDamage(dinfo);
-            }
-
-            // 2. 视觉特效
-            if (map != null)
-            {
-                FleckMaker.Static(center, map, FleckDefOf.ExplosionFlash, 10f);
-                // 使用原版冲击波
-                if (FleckDefOf.PsycastAreaEffect != null)
-                {
-                    FleckMaker.Static(center, map, FleckDefOf.PsycastAreaEffect, Props.radius * 2f);
-                }
-                else
-                {
-                    for (int i = 0; i < 20; i++)
-                    {
-                        Vector3 rndPos = center.ToVector3() + Vector3Utility.FromAngleFlat(Rand.Range(0, 360)) * (Props.radius * Rand.Range(0.2f, 1f));
-                        FleckMaker.ThrowDustPuff(rndPos, map, 2f);
-                    }
-                }
-            }
-
-            Find.CameraDriver.shaker.DoShake(3.0f);
         }
     }
 }

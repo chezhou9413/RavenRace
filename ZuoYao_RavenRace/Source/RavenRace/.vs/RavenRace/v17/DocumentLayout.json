@@ -3,48 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\verb_binahpillarbarrage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\verb_binahpillarbarrage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\compabilityeffect_pillarshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\compabilityeffect_pillarshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\projectile_piercingpillar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\projectile_piercingpillar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\compprojectile_pathdamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\compprojectile_pathdamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\patch_binahvisuals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\patch_binahvisuals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\compabilityeffect_degradationlock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\compabilityeffect_degradationlock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\compabilityeffect_degradationpillar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\compabilityeffect_degradationpillar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\compabilityeffect_shockwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\compabilityeffect_shockwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\projectile_withtrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\projectile_withtrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\verb_binahdegradationpillar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\verb_binahdegradationpillar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\verb_binahshockwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\verb_binahshockwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\projectile_piercing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\projectile_piercing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\binahdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\binahdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\compabilityeffect_givehediff_lock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\compabilityeffect_givehediff_lock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\patch_binahskills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\patch_binahskills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\pawnrendernodeworker_hediffvisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\pawnrendernodeworker_hediffvisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,149 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CompProjectile_PathDamage.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompProjectile_PathDamage.cs",
+              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\CompProjectile_PathDamage.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompProjectile_PathDamage.cs",
+              "RelativeToolTip": "Features\\CustomPawn\\Binah\\CompProjectile_PathDamage.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwFwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T07:53:48.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Patch_BinahVisuals.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Patch_BinahVisuals.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\Patch_BinahVisuals.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Patch_BinahVisuals.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\Patch_BinahVisuals.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Title": "CompAbilityEffect_DegradationLock.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_DegradationLock.cs",
+              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\CompAbilityEffect_DegradationLock.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_DegradationLock.cs",
+              "RelativeToolTip": "Features\\CustomPawn\\Binah\\CompAbilityEffect_DegradationLock.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T17:58:01.149Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CompAbilityEffect_GiveHediff_Lock.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_GiveHediff_Lock.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\CompAbilityEffect_GiveHediff_Lock.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_GiveHediff_Lock.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\CompAbilityEffect_GiveHediff_Lock.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T17:55:24.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Verb_BinahDegradationPillar.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Verb_BinahDegradationPillar.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\Verb_BinahDegradationPillar.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Verb_BinahDegradationPillar.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\Verb_BinahDegradationPillar.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T17:54:39.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Verb_BinahShockwave.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Verb_BinahShockwave.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\Verb_BinahShockwave.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Verb_BinahShockwave.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\Verb_BinahShockwave.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T17:54:03.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Patch_BinahSkills.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Patch_BinahSkills.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\Patch_BinahSkills.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Patch_BinahSkills.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\Patch_BinahSkills.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T17:12:39.381Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PawnRenderNodeWorker_HediffVisual.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\PawnRenderNodeWorker_HediffVisual.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\PawnRenderNodeWorker_HediffVisual.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\PawnRenderNodeWorker_HediffVisual.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\PawnRenderNodeWorker_HediffVisual.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T16:53:59.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Projectile_WithTrail.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Projectile_WithTrail.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\Projectile_WithTrail.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Projectile_WithTrail.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\Projectile_WithTrail.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T16:53:46.157Z",
+              "WhenOpened": "2026-02-16T07:53:38.17Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CompAbilityEffect_Shockwave.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_Shockwave.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\CompAbilityEffect_Shockwave.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_Shockwave.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\CompAbilityEffect_Shockwave.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Title": "CompAbilityEffect_DegradationPillar.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_DegradationPillar.cs",
+              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\CompAbilityEffect_DegradationPillar.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_DegradationPillar.cs",
+              "RelativeToolTip": "Features\\CustomPawn\\Binah\\CompAbilityEffect_DegradationPillar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T16:53:29.843Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Projectile_PiercingPillar.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Projectile_PiercingPillar.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\Projectile_PiercingPillar.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Projectile_PiercingPillar.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\Projectile_PiercingPillar.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwE0AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T16:53:16.226Z",
+              "WhenOpened": "2026-02-16T07:53:27.775Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Verb_BinahPillarBarrage.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Verb_BinahPillarBarrage.cs",
-              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\Verb_BinahPillarBarrage.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Verb_BinahPillarBarrage.cs",
-              "RelativeToolTip": "Features\\CustomPawn\\Binah\\Verb_BinahPillarBarrage.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwCoAAAAAAAAAAAAAAA==",
+              "Title": "CompAbilityEffect_PillarShot.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_PillarShot.cs",
+              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\CompAbilityEffect_PillarShot.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_PillarShot.cs",
+              "RelativeToolTip": "Features\\CustomPawn\\Binah\\CompAbilityEffect_PillarShot.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwDYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T16:52:57.799Z",
+              "WhenOpened": "2026-02-16T07:53:14.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
+              "Title": "CompAbilityEffect_Shockwave.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_Shockwave.cs",
+              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\CompAbilityEffect_Shockwave.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\CompAbilityEffect_Shockwave.cs",
+              "RelativeToolTip": "Features\\CustomPawn\\Binah\\CompAbilityEffect_Shockwave.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAkwCEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T07:41:03.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Projectile_Piercing.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Projectile_Piercing.cs",
+              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\Projectile_Piercing.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\Projectile_Piercing.cs",
+              "RelativeToolTip": "Features\\CustomPawn\\Binah\\Projectile_Piercing.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAQwG4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T07:39:59.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "BinahDefOf.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\BinahDefOf.cs",
               "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\BinahDefOf.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\BinahDefOf.cs",
               "RelativeToolTip": "Features\\CustomPawn\\Binah\\BinahDefOf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T16:52:44.236Z",
+              "WhenOpened": "2026-02-16T07:39:08.05Z",
               "EditorCaption": ""
             }
           ]
