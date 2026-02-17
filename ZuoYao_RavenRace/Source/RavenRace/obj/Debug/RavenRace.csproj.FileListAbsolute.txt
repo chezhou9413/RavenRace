@@ -29,3 +29,14 @@ C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\D
 C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\RavenRace.csproj.Up2Date
 C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\ZuoYao_RavenRace.dll
 C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\ZuoYao_RavenRace.pdb
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Assemblies\ZuoYao_RavenRace.dll
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Assemblies\ZuoYao_RavenRace.pdb
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\RavenRace.csproj.AssemblyReference.cache
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\RavenRace.GeneratedMSBuildEditorConfig.editorconfig
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\RavenRace.AssemblyInfoInputs.cache
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\RavenRace.AssemblyInfo.cs
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\RavenRace.csproj.CoreCompileInputs.cache
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\RavenRace.sourcelink.json
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\RavenRace.csproj.Up2Date
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\ZuoYao_RavenRace.dll
+E:\RimModDev\RavenRace\ZuoYao_RavenRace\Source\RavenRace\obj\Debug\ZuoYao_RavenRace.pdb

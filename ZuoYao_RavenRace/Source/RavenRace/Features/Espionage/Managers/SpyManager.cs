@@ -37,32 +37,69 @@ namespace RavenRace.Features.Espionage.Managers
             if (spy == null) return;
             var comp = Find.World.GetComponent<WorldComponent_Espionage>();
 
-            if (spy.targetFaction != null)
-            {
-                var factionData = comp.GetSpyData(spy.targetFaction);
-                factionData.activeSpies.Remove(spy);
-            }
-            comp.RemoveSpy(spy);
-
-            if (spy.sourceType == SpySourceType.Colonist && spy.colonistRef != null)
+            if (spy.sourceType == SpySourceType.Colonist)
             {
                 Pawn p = spy.colonistRef;
-                if (p == null || p.Destroyed) return;
-
-                if (Find.WorldPawns.Contains(p)) Find.WorldPawns.RemovePawn(p);
-
-                if (mapToReturn != null)
+                if (p == null || p.Destroyed)
                 {
+                    Log.Error($"[RavenRace] RecallSpy: colonistRef 为 null 或已销毁, agentName={spy.agentName}");
+                    return;
+                }
+
+                if (mapToReturn == null)
+                {
+                    mapToReturn = Find.AnyPlayerHomeMap;
+                    if (mapToReturn == null)
+                    {
+                        Log.Error("[RavenRace] RecallSpy: 没有可用的玩家地图");
+                        return;
+                    }
+                }
+
+                try
+                {
+                    if (Find.WorldPawns.Contains(p))
+                        Find.WorldPawns.RemovePawn(p);
+                    if (p.holdingOwner != null)
+                        p.holdingOwner.Remove(p);
+                    if (p.Spawned)
+                        p.DeSpawn();
+
                     IntVec3 spot;
-                    if (!CellFinder.TryFindRandomEdgeCellWith((IntVec3 c) => c.Standable(mapToReturn) && !c.Fogged(mapToReturn), mapToReturn, CellFinder.EdgeRoadChance_Neutral, out spot))
+                    if (!CellFinder.TryFindRandomEdgeCellWith(
+                        c => c.Standable(mapToReturn) && !c.Fogged(mapToReturn),
+                        mapToReturn, CellFinder.EdgeRoadChance_Neutral, out spot))
                     {
                         spot = DropCellFinder.TradeDropSpot(mapToReturn);
                     }
-                    if (p.holdingOwner != null) p.holdingOwner.Remove(p);
+
                     GenSpawn.Spawn(p, spot, mapToReturn);
+
+                    if (p.Faction != Faction.OfPlayer)
+                        p.SetFaction(Faction.OfPlayer);
+
+                    if (p.guest != null)
+                        p.guest.SetGuestStatus(null);
+
                     p.Drawer?.renderer?.SetAllGraphicsDirty();
-                    Messages.Message("RavenRace_Espionage_RecallSuccess".Translate(p.LabelShort), p, MessageTypeDefOf.PositiveEvent);
                 }
+                catch (System.Exception ex)
+                {
+                    Log.Error($"[RavenRace] RecallSpy: Spawn 失败: {ex}");
+                    if (!p.Destroyed && !Find.WorldPawns.Contains(p) && !p.Spawned)
+                        Find.WorldPawns.PassToWorld(p, PawnDiscardDecideMode.KeepForever);
+                    return;
+                }
+
+                if (spy.targetFaction != null)
+                {
+                    var factionData = comp.GetSpyData(spy.targetFaction);
+                    factionData?.activeSpies.Remove(spy);
+                }
+                comp.RemoveSpy(spy);
+
+                Messages.Message("RavenRace_Espionage_RecallSuccess".Translate(p.LabelShort),
+                    p, MessageTypeDefOf.PositiveEvent);
             }
         }
     }

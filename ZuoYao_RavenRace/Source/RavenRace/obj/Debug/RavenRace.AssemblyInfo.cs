@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZuoYao_RavenRace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1da806ed9f9334ebb61e6619b92244fa531f85c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ba5c1e7de87238602d05146de9291250f954fa1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZuoYao_RavenRace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZuoYao_RavenRace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

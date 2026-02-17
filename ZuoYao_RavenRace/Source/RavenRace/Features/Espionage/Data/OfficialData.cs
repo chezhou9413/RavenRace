@@ -82,7 +82,7 @@ namespace RavenRace.Features.Espionage
             Scribe_Deep.Look(ref bio, "bio");
             Scribe_Collections.Look(ref traits, "traits", LookMode.Deep);
             Scribe_Collections.Look(ref skillLevels, "skillLevels", LookMode.Value, LookMode.Value);
-            Scribe_Collections.Look(ref subordinates, "subordinates", LookMode.Deep);
+            Scribe_Collections.Look(ref subordinates, "subordinates", LookMode.Reference);
         }
 
         public string GetUniqueLoadID() => "Raven_Official_" + uniqueID;

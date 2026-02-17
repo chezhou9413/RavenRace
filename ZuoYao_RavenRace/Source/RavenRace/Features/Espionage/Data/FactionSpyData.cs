@@ -25,7 +25,7 @@ namespace RavenRace.Features.Espionage
             Scribe_Values.Look(ref infiltrationPoints, "infiltrationPoints", 0f);
             Scribe_Values.Look(ref controlStatus, "controlStatus", FactionControlStatus.Independent);
 
-            Scribe_Deep.Look(ref leaderOfficial, "leaderOfficial");
+            Scribe_References.Look(ref leaderOfficial, "leaderOfficial");
             Scribe_Collections.Look(ref allOfficials, "allOfficials", LookMode.Deep);
             Scribe_Collections.Look(ref activeSpies, "activeSpies", LookMode.Reference);
         }
