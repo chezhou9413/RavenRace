@@ -16,9 +16,7 @@
   <Raven_Concealment_SwapWeapon>切换武器</Raven_Concealment_SwapWeapon>
   <Raven_Concealment_SwapWeaponDesc>选择使用驻守者装备或背包中的另一把远程武器。</Raven_Concealment_SwapWeaponDesc>
 
-
-  <!-- [新增] 催情香炉 -->
-  <Raven_Message_IncenseEffect>{0} 在香薰的作用下对 {1} 产生了强烈的冲动...</Raven_Message_IncenseEffect>
-
+  <!-- 捕兽夹 -->
+  <Raven_Message_BeastTrapKill>捕兽夹成功捕获并击杀了 {0}。</Raven_Message_BeastTrapKill>
 
 </LanguageData>

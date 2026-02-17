@@ -28,7 +28,9 @@ namespace RavenRace
 
         public static ThingDef RavenTrap_RisingWall;
 
-        public static ThingDef RavenGas_BlackMist; // 别忘了这个
+        public static ThingDef RavenGas_BlackMist; 
+
+        public static ThingDef RavenTrap_Beast;
 
         // 伪装系统
         public static JobDef Raven_Job_EnterConcealment;

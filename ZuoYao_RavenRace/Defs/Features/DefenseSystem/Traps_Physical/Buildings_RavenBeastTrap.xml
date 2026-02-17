@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>RavenTrap_Beast</defName>
+    <label>渡鸦捕兽夹</label>
+    <description>一种专门捕捉野生动物的陷阱。它会散发出一种特殊的诱饵气味（消耗有机物生成），能吸引未驯服的野生动物前来。当动物踩上时，陷阱会瞬间闭合将其击杀。\n\n特点：\n- 只对未标记驯服的野生动物有效。\n- 击杀后尸体完整。\n- 需要装填有机物（食物、肉类等）作为诱饵，按营养值转化为可用次数。</description>
+    
+    <thingClass>RavenRace.Building_RavenTrap</thingClass>
+    
+    <graphicData>
+      <texPath>Buildings/DefenseSystem/RavenTrapPhysical/RavenBeastTrap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    
+    <statBases>
+      <Mass>5</Mass>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1200</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    
+    <designationCategory>Security</designationCategory>
+    
+    <researchPrerequisites>
+      <li>RavenResearch_TrapBasics</li>
+    </researchPrerequisites>
+    
+    <comps>
+      <!-- 1. 触发器 -->
+      <li Class="RavenRace.CompProperties_Trigger">
+        <condition>StepOn</condition>
+        <detectionRadius>0</detectionRadius>
+        
+        <!-- [修复] 设置为 60 tick (1秒) 冷却，允许重复使用 -->
+        <cooldownTicks>60</cooldownTicks>
+        <manualTriggerable>true</manualTriggerable>
+        
+        <!-- [新增] 核心限制逻辑：只杀野生动物，不伤人 -->
+        <restrictToAnimals>true</restrictToAnimals>
+        <restrictToWild>true</restrictToWild>
+        
+        <!-- [新增] 必须有燃料才能触发 -->
+        <requireFuelToTrigger>true</requireFuelToTrigger>
+      </li>
+      
+      <!-- 2. 逻辑组件：负责诱饵和击杀 -->
+      <li Class="RavenRace.Features.DefenseSystem.Traps.CompProperties_RavenBeastTrapLogic">
+        <lureRadius>30</lureRadius>
+        <checkInterval>250</checkInterval>
+      </li>
+      
+      <!-- 3. 装填逻辑 (有机物 -> 诱饵次数) -->
+      <li Class="CompProperties_Refuelable">
+        <compClass>RavenRace.Features.DefenseSystem.Traps.CompRavenOrganicRefuelable</compClass>
+        <fuelCapacity>10.0</fuelCapacity>
+        <fuelConsumptionRate>0</fuelConsumptionRate> <!-- 仅在触发时消耗 -->
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <initialFuelPercent>0</initialFuelPercent>
+        <autoRefuelPercent>0.99</autoRefuelPercent>
+        
+        <fuelFilter>
+          <categories>
+            <li>FoodRaw</li>
+            <li>PlantMatter</li>
+            <li>Corpses</li>
+          </categories>
+        </fuelFilter>
+        
+        <fuelLabel>诱饵次数</fuelLabel>
+        <fuelGizmoLabel>诱饵剩余</fuelGizmoLabel>
+        <outOfFuelMessage>无诱饵</outOfFuelMessage>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

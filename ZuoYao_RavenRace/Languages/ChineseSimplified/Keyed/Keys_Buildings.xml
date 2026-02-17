@@ -14,4 +14,7 @@
   <RavenRace_WatchAV_Desc>开启后，电视将播放成人内容。观看者会获得特殊的娱乐体验，并有概率激发原始冲动。</RavenRace_WatchAV_Desc>
   <Raven_WatchingAV>正在看AV</Raven_WatchingAV>
 
+  <!-- [新增] 催情香炉 -->
+  <Raven_Message_IncenseEffect>{0} 在香薰的作用下对 {1} 产生了强烈的冲动...</Raven_Message_IncenseEffect>
+
 </LanguageData>
