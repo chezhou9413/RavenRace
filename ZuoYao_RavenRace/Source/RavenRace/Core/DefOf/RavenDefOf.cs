@@ -20,6 +20,9 @@ namespace RavenRace
         public static ThingDef Raven_Item_MiracleHeal;
         public static ThingDef Raven_GoldenFeather;
 
+        // [新增] 七情花蜜
+        public static ThingDef RavenItem_SevenEmotionsNectar;
+
         public static ThingDef Raven_Item_MasturbatorCup;
 
         // [新增] 技能教本

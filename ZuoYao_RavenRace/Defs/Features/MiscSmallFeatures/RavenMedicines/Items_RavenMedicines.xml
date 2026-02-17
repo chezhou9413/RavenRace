@@ -45,7 +45,8 @@
     </recipeMaker>
     
     <costList>
-      <RavenItem_SevenEmotionsLeaf>5</RavenItem_SevenEmotionsLeaf>
+      <!-- [修复] 改为花蜜 -->
+      <RavenItem_SevenEmotionsNectar>5</RavenItem_SevenEmotionsNectar>
       <MedicineHerbal>2</MedicineHerbal>
       <Raven_SpiritEgg_Unfertilized>1</Raven_SpiritEgg_Unfertilized>
     </costList>

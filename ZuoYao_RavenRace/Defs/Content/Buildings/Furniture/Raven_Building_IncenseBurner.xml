@@ -3,7 +3,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>Raven_IncenseBurner</defName>
     <label>催情香炉</label>
-    <description>燃烧七情草叶。燃烧时会散发出令人意乱情迷的香气。</description>
+    <description>燃烧七情花蜜。燃烧时会散发出令人意乱情迷的香气。</description>
     <thingClass>Building</thingClass>
     <graphicData>
       <texPath>Buildings/IncenseBurner/IncenseBurner</texPath>
@@ -14,26 +14,24 @@
     <tickerType>Normal</tickerType>
     <drawerType>MapMeshAndRealTime</drawerType>
     
-    <!-- 1.6 显示半径 -->
     <specialDisplayRadius>9.9</specialDisplayRadius>
 
     <comps>
       <li Class="CompProperties_Refuelable">
-        <!-- [修复红字] 1.6 解析器严谨，整型字段禁止写小数点 -->
         <fuelConsumptionRate>10</fuelConsumptionRate>
         <fuelCapacity>50</fuelCapacity>
         <fuelFilter>
           <thingDefs>
             <li>WoodLog</li>
-            <li>RavenItem_SevenEmotionsLeaf</li>
+            <!-- [核心修改] 必须改为 RavenItem_SevenEmotionsNectar -->
+            <li>RavenItem_SevenEmotionsNectar</li>
           </thingDefs>
         </fuelFilter>
         <initialFuelPercent>0</initialFuelPercent>
         <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
       </li>
-      <!-- 逻辑组件 -->
       <li Class="RavenRace.Buildings.Comps.CompProperties_IncenseBurner">
-        <effectRadius>9.9</effectRadius> <!-- 这里是 float，保留小数 -->
+        <effectRadius>9.9</effectRadius>
         <joyAmount>0.05</joyAmount>
         <forceLovinChance>0.05</forceLovinChance>
       </li>

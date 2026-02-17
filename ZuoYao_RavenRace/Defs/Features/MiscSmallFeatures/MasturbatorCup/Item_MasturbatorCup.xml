@@ -41,10 +41,13 @@
     </recipeMaker>
     
     <costList>
-      <RavenItem_SevenEmotionsLeaf>10</RavenItem_SevenEmotionsLeaf>
+      <!-- [修复] 改为花蜜 -->
+      <RavenItem_SevenEmotionsNectar>10</RavenItem_SevenEmotionsNectar>
       <Chemfuel>20</Chemfuel>
       <Cloth>10</Cloth>
     </costList>
+
+
   </ThingDef>
 
 </Defs>
