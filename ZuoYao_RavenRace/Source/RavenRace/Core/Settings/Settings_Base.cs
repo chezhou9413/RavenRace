@@ -46,6 +46,22 @@ namespace RavenRace.Settings
 
             listing.Label($"掉落冷却时间: {s.featherCooldownDays:F1} 天");
             s.featherCooldownDays = listing.Slider(s.featherCooldownDays, 1f, 120f);
+
+
+            // --- 大渡鸦设置 ---
+            listing.GapLine();
+            listing.Label("=== 大渡鸦设置 ===");
+            listing.CheckboxLabeled("启用“寻找亮闪闪”功能", ref s.enableGreatRavenShiny, "开启后，驯服的大渡鸦会周期性地叼回金质物品。");
+
+            if (s.enableGreatRavenShiny)
+            {
+                // [修改] 范围改为 0.1f ~ 10f
+                listing.Label($"寻找间隔: {s.greatRavenSearchDays:F1} 天");
+                s.greatRavenSearchDays = listing.Slider(s.greatRavenSearchDays, 0.1f, 10f);
+            }
+
+
+
         }
     }
 }

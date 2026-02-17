@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Raven_LetterLabel_ShinyFound>大渡鸦的礼物</Raven_LetterLabel_ShinyFound>
+  <Raven_LetterText_ShinyFound>{0} 兴冲冲地跑了回来，嘴里叼着闪闪发光的东西！\n\n获得：{1}</Raven_LetterText_ShinyFound>
+  <Raven_Inspect_ShinySearch>寻找亮闪闪</Raven_Inspect_ShinySearch>
+</LanguageData>

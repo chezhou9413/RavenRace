@@ -9,9 +9,10 @@ setlocal enabledelayedexpansion
 set "output_file=combined_output_selected.txt"
 set "defs_features_path=Defs\Features"
 set "source_features_path=Source\RavenRace\Features"
-set "global_ignore_folders=RavenRaceFA"
-set "global_ignore_folders=RJWCompat"
-set "global_ignore_path=Defs\Core\Backstories"
+
+:: 【修正点 1】: 将所有要忽略的关键词写在一行，用空格隔开
+:: 这里包括了文件夹名和具体的路径片段
+set "global_ignore_list=RavenRaceFA RJWCompat Defs\Core\Backstories"
 
 :: ==================================================================
 :: 脚本主体
@@ -55,7 +56,6 @@ if /i "%user_choice%"=="a" (
 ) else if /i "%user_choice%"=="n" (
     echo.
     echo 选择: 全部跳过 Features 文件夹。
-    :: 直接构建要排除的路径片段
     for %%F in (!all_features!) do (
         set "excluded_feature_paths=!excluded_feature_paths! \Features\%%F\ "
     )
@@ -84,16 +84,18 @@ echo.
         set "file_path=%%F"
         set "should_exclude=false"
 
-        :: 检查是否在全局忽略列表中
-        for %%G in (!global_ignore_folders!) do (
-            echo !file_path! | findstr /I /C:"\\%%G" > nul
-            if !errorlevel! equ 0 set "should_exclude=true"
+        :: 【修正点 2】: 优化后的全局忽略检查逻辑
+        :: 只要路径中包含 global_ignore_list 中的任何一个词，就排除
+        for %%G in (!global_ignore_list!) do (
+            :: 使用字符串替换法检查，比 findstr 快且更稳定
+            if not "!file_path:%%G=!" == "!file_path!" (
+                set "should_exclude=true"
+            )
         )
         
-        :: [核心修正] 检查文件路径是否包含任何一个被排除的模块路径片段
+        :: 检查是否在 Features 排除列表中
         if defined excluded_feature_paths (
             for %%E in (!excluded_feature_paths!) do (
-                rem :: 使用更可靠的字符串查找，而不是findstr的路径魔法
                 if not "!file_path:%%E=!" == "!file_path!" (
                     set "should_exclude=true"
                 )
@@ -120,8 +122,8 @@ echo =======================================================
 echo  打包完成!
 echo =======================================================
 echo.
-echo  已全局忽略文件夹: !global_ignore_folders!
-echo  已跳过的Features模块路径:!excluded_feature_paths!
+echo  已全局忽略列表: !global_ignore_list!
+echo  已跳过的Features模块路径: !excluded_feature_paths!
 echo.
 echo  结果已保存到: %output_file%
 echo.

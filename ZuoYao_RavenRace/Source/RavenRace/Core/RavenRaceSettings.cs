@@ -28,10 +28,9 @@ namespace RavenRace
 
         public bool showFeatherCooldown = false;
 
-        // --- 电视机功能设置 ---
-        public float avMatingChance = 0.02f; // 默认 2% 概率
-        public float avJoyWeightMultiplier = 1.0f; // 娱乐权重倍率
-        public bool avDisableTolerance = false;    // 禁用娱乐耐受/厌倦
+        // [新增] 大渡鸦设置
+        public bool enableGreatRavenShiny = true;
+        public float greatRavenSearchDays = 3.0f; // 默认3天一次
 
         // ===================================================
         // 2. 血脉系统 (Bloodline)
@@ -136,6 +135,10 @@ namespace RavenRace
         public float incenseForceLovinChance = 0.05f;
         public int incenseCheckInterval = 250;
 
+        // --- 电视机功能设置 ---
+        public float avMatingChance = 0.02f; // 默认 2% 概率
+        public float avJoyWeightMultiplier = 1.0f; // 娱乐权重倍率
+        public bool avDisableTolerance = false;    // 禁用娱乐耐受/厌倦
 
         // ===================================================
         // UI 状态与逻辑
@@ -217,6 +220,13 @@ namespace RavenRace
             Scribe_Values.Look(ref featherDropChance, "featherDropChance", 0.02f);
             Scribe_Values.Look(ref featherCooldownDays, "featherCooldownDays", 60f);
             Scribe_Values.Look(ref showFeatherCooldown, "showFeatherCooldown", false);
+
+            // [新增] 大渡鸦设置 (归类于 Base)
+            Scribe_Values.Look(ref enableGreatRavenShiny, "enableGreatRavenShiny", true);
+            Scribe_Values.Look(ref greatRavenSearchDays, "greatRavenSearchDays", 3.0f);
+
+
+
             Scribe_Values.Look(ref bloodlineInheritanceStrength, "bloodlineInheritanceStrength", 1.0f);
             Scribe_Values.Look(ref goldenCrowDecayRate, "goldenCrowDecayRate", 0.1f);
             Scribe_Values.Look(ref enableBloodlineMutations, "enableBloodlineMutations", true);
