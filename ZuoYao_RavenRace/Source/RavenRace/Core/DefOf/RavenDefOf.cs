@@ -91,6 +91,7 @@ namespace RavenRace
         public static ThoughtDef Raven_Thought_Kotoamatsukami_Recruited;
         public static ThoughtDef Raven_Thought_Snuggle;
         public static ThoughtDef Raven_Thought_IncenseSmell;
+        public static ThoughtDef Raven_Thought_WatchedAV;
 
         public static ThoughtDef Raven_Thought_MasturbatedWithCup;
 

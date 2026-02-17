@@ -42,7 +42,10 @@ namespace RavenRace.Features.MiscSmallFeatures.AVTelevision
         public void Notify_PawnWatching(Pawn pawn)
         {
             if (!avModeActive) return;
-
+            if (RavenDefOf.Raven_Thought_WatchedAV != null)
+            {
+                pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RavenDefOf.Raven_Thought_WatchedAV);
+            }
             // 1. 施加温和感官 Hediff (香炉同款)
             if (Rand.Chance(0.20f))
             {

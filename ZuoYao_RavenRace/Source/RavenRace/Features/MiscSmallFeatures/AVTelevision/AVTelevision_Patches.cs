@@ -29,7 +29,7 @@ namespace RavenRace.Features.MiscSmallFeatures.AVTelevision
                 else if (RavenRaceMod.Settings.avJoyWeightMultiplier >= 99f)
                 {
                     // 100% 模式：屏蔽其他所有娱乐
-                    __result = 0.0001f;
+                    __result = 0f;
                 }
             }
         }
@@ -76,6 +76,35 @@ namespace RavenRace.Features.MiscSmallFeatures.AVTelevision
                 if (RavenRaceMod.Settings.avDisableTolerance && d != null && AdultJoyKind != null && d == AdultJoyKind)
                 {
                     __result = 0f;
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(JoyToleranceSet), nameof(JoyToleranceSet.Notify_JoyGained))]
+        public static class Patch_JoyTolerance_NoGain
+        {
+            [HarmonyPrefix]
+            public static bool Prefix(JoyKindDef joyKind)
+            {
+                if (RavenRaceMod.Settings.avDisableTolerance && joyKind != null && AdultJoyKind != null && joyKind == AdultJoyKind)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(JoyToleranceSet), nameof(JoyToleranceSet.BoredOf))]
+        public static class Patch_JoyTolerance_NeverBored
+        {
+            [HarmonyPrefix]
+            public static bool Prefix(JoyKindDef def, ref bool __result)
+            {
+                if (RavenRaceMod.Settings.avDisableTolerance && def != null && AdultJoyKind != null && def == AdultJoyKind)
+                {
+                    __result = false;
                     return false;
                 }
                 return true;

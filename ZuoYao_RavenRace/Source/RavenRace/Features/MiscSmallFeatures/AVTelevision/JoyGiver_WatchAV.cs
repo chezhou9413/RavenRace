@@ -17,11 +17,5 @@ namespace RavenRace.Features.MiscSmallFeatures.AVTelevision
             var comp = t.TryGetComp<CompTV_AV>();
             return comp != null && comp.avModeActive;
         }
-
-        public override float GetChance(Pawn pawn)
-        {
-            // 应用设置中的吸引力权重
-            return base.GetChance(pawn) * RavenRaceMod.Settings.avJoyWeightMultiplier;
-        }
     }
 }
