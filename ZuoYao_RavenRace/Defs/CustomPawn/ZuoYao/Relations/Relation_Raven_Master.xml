@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 定义两种基础关系，数值为0，完全由C#接管 -->
+  <PawnRelationDef>
+    <defName>Raven_Relation_AbsoluteMaster</defName>
+    <label>absolute master</label>
+    <labelFemale>absolute mistress</labelFemale>
+    <importance>250</importance>
+    <opinionOffset>0</opinionOffset>
+    <generationChanceFactor>0</generationChanceFactor>
+    <implied>false</implied>
+    <reflexive>false</reflexive>
+  </PawnRelationDef>
+
+  <PawnRelationDef>
+    <defName>Raven_Relation_LoyalServant</defName>
+    <label>loyal servant</label>
+    <importance>250</importance>
+    <opinionOffset>0</opinionOffset>
+    <generationChanceFactor>0</generationChanceFactor>
+    <implied>false</implied>
+    <reflexive>false</reflexive>
+  </PawnRelationDef>
+  
+  <!-- 动态记忆 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_Kotoamatsukami_Recruited</defName>
+    <!-- [Change] 更新命名空间引用 -->
+    <thoughtClass>RavenRace.Features.CustomPawn.ZuoYao.Thought_Memory_DynamicSocial</thoughtClass>
+    <durationDays>99999</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>至高无上的主人</label>
+        <baseOpinionOffset>0</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
