@@ -1,0 +1,76 @@
+我们目前构建的这套架构，在游戏开发领域通常被称为 “数据驱动的层级状态机（Data-Driven Hierarchical State Machine）”，并结合了 MVC（Model-View-Controller） 的设计思想。
+
+为了方便你未来的程序员（或者你自己）进行维护、扩展和优化，以下是这套 StoryEngine 架构的详细技术文档。
+
+架构总览
+整个系统分为四层，层与层之间 低耦合（Low Coupling），这意味着修改 UI 不会坏逻辑，修改逻辑不会坏存档。
+
+层级	核心类/文件	职责 (Responsibility)
+1. 数据定义层 (Data)	StoryDef, StoryNode, StoryOption (XML)	剧本。定义“说什么”、“有什么选项”、“跳转到哪”。完全静态，由 XML 配置。
+2. 状态存储层 (Model)	StoryWorldComponent	记忆。存储全局 Flag（如“是否见过面”）。负责存档与读档。
+3. 逻辑控制层 (Controller)	StoryHandler, StoryAction, StoryCondition	导演。负责判断条件、执行跳转、修改数据、触发事件。不涉及任何 UI 绘制代码。
+4. 表现层 (View)	Dialog_FusangComm, FusangComm_UIPanels	舞台。只负责将 Controller 的当前状态画在屏幕上。它是“哑”的，不包含复杂逻辑。
+
+
+详细技术解析
+1. 数据定义层 (XML 驱动)
+这是这套系统最强大的地方。你后续 90% 的工作（写剧情）都只需要在这里完成，无需碰 C# 代码。
+
+StoryDef: 代表一段完整的剧情（如“初次见面”或“好感度1闲聊”）。
+Priority & Conditions: 决定了这段剧情何时触发。引擎会自动筛选优先级最高且满足条件的剧情。
+RandomStart: 专门为“闲聊”设计。开启后，不再从固定的 Start 节点开始，而是从所有节点中随机选一个。
+StoryNode: 具体的某一句对话。
+支持 onEnterActions：进入这句话时立刻执行的动作（如：播放音效、变换背景）。
+StoryOption: 玩家的选择。
+流转控制: 可以通过 nextNodeID 跳转，或通过 closeDialogue 结束。
+
+2. 逻辑控制层 (Action/Condition 模式)
+这是实现“高扩展性”的关键。我们使用了 多态 (Polymorphism) 来处理逻辑。
+
+抽象基类: StoryAction 和 StoryCondition。
+具体实现: 比如 StoryAction_GiveItem 或 StoryCondition_Favorability。
+优势: 如果未来你想加一个功能，比如“只有在下雨天触发对话”，你只需要写一个新的 C# 类 StoryCondition_Weather 继承基类，然后在 XML 里填 <li Class="...StoryCondition_Weather">Rainy</li> 即可。无需修改核心引擎代码。
+
+3. 状态存储层 (Flag System)
+我们抛弃了旧的 int stage 这种硬编码方式，改用了通用的 Flag 系统 (Dictionary＜string, bool＞)。
+
+StoryWorldComponent: 这是一个全局唯一的字典。
+运作方式:
+当剧情 A 结束时，XML 配置 ＜completeFlag＞Story_A_Done</completeFlag>。
+系统自动写入 Story_A_Done = true。
+剧情 B 的条件配置 ＜flagKey＞Story_A_Done</flagKey>，即可实现“只有 A 完成了才能触发 B”。
+优势: 无限扩展。你可以有成千上万个 Flag，存档依然很小且安全。
+
+4. 表现层 (瞬时切换逻辑)
+这是解决你提到的“不需要点击继续”和“UI 消失问题”的关键优化。
+
+瞬时切换 (Instant Switch):
+在 Dialog_FusangComm.DoWindowContents 中，我们每一帧都在判断 StoryHandler 的状态。
+逻辑：if (节点是结束节点) 画功能面板; else 画选项;
+这意味着当玩家点击最后一个选项的瞬间，逻辑层标记了“结束”，下一帧 UI 层立刻检测到并绘制功能面板，中间没有任何延迟，也不需要玩家额外点击。文本框因为读取的是缓存的 CurrentNode，所以依然保留显示，达成了 Galgame 中“说完话出现菜单”的效果。
+
+
+
+给程序员的扩展指南 (Future Maintenance)
+请参考以下指南：
+
+Q1: 如何添加一个新的触发条件？（例如：必须拥有某个特定的基因）
+在 Source/.../StoryEngine/Conditions 文件夹下新建类 StoryCondition_HasGene.cs。
+继承 StoryCondition，重写 IsMet() 方法。
+在 XML 中使用：<li Class="RavenRace...StoryCondition_HasGene">＜geneDef＞Gene_X</geneDef></li>。
+
+Q2: 如何添加一个新的剧情效果？（例如：让左爻给玩家一个 Buff）
+在 Source/.../StoryEngine/Actions 文件夹下新建类 StoryAction_GiveHediff.cs。
+继承 StoryAction，重写 Execute() 方法。
+在 XML 的 ＜onEnterActions＞ 或 ＜actions＞ 中使用。
+
+Q3: 如何优化性能？
+目前性能瓶颈极低。唯一可能得优化点是 DefDatabase 的筛选。
+如果剧情数量达到 几千个，在 StoryHandler.TryStartNewDialogue 中遍历所有 StoryDef 可能会有微小卡顿。
+优化方案: 建立缓存索引。在游戏启动时，将 StoryDef 按 Priority 分组缓存。
+
+Q4: 如何调试？
+所有的 Flag 都存储在 StoryWorldComponent 中。你可以写一个 Debug Action 来输出当前所有已激活的 Flag，方便排查为什么某个剧情不触发。
+
+总结
+这套架构是 工业标准 的游戏叙事系统实现。它将**内容创作（XML）与程序逻辑（C#）**彻底解耦。
