@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_Item_HojoCube</defName>
+    <label>齁金魔方</label>
+    <description>一个通体金黄的立方体，表面浮现着粉色的奇异淫纹。凑近了听，似乎能听到“齁噢噢噢❤”的奇怪声音。</description>
+    
+    <graphicData>
+      <texPath>Items/Misc/HojoCube/HojoCube</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    
+    <statBases>
+      <MarketValue>1</MarketValue> <!-- 价值为1 -->
+      <Mass>1.0</Mass>
+      <Beauty>100</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    
+    <thingCategories>
+      <li>Artifacts</li>
+    </thingCategories>
+    
+    <tradeability>None</tradeability> <!-- 无法交易 -->
+    <stackLimit>1</stackLimit>
+  </ThingDef>
+</Defs>

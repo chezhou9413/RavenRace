@@ -10,6 +10,7 @@ namespace RavenRace
         public static ThingDef Raven_Race;
         public static PawnKindDef Raven_Colonist;
         public static PawnKindDef Raven_PawnKind_ZuoYao;
+        public static PawnKindDef Raven_HighArchon; // 确保有这个引用
 
         // --- 物品 & 建筑 ---
         public static ThingDef Raven_SpiritEgg;
@@ -20,13 +21,13 @@ namespace RavenRace
         public static ThingDef Raven_Item_MiracleHeal;
         public static ThingDef Raven_GoldenFeather;
 
-        // [新增] 七情花蜜
-        public static ThingDef RavenItem_SevenEmotionsNectar;
+        public static ThingDef RavenItem_SevenEmotionsNectar;        // 七情花蜜
 
         public static ThingDef Raven_Item_MasturbatorCup;
 
-        // [新增] 技能教本
-        public static ThingDef RavenItem_AbilityTome;
+        public static ThingDef Raven_Item_HojoCube;        // 齁金魔方
+
+        public static ThingDef RavenItem_AbilityTome;        // 技能教本
 
         // --- 武器 & 装备 ---
         public static ThingDef Raven_Weapon_HiddenBlade;
@@ -83,6 +84,8 @@ namespace RavenRace
         public static HediffDef RavenHediff_TendonCut;
         public static HediffDef RavenHediff_ConceptionProcess;
         public static HediffDef RavenHediff_IncenseAura;
+
+        public static HediffDef Raven_Hediff_GoldenSpirit;        // 黄金精神
 
         // --- 思想 (Thoughts) ---
         public static ThoughtDef Raven_Thought_ForceLovin_Initiator;

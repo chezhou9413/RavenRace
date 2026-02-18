@@ -28,9 +28,16 @@ namespace RavenRace
 
         public bool showFeatherCooldown = false;
 
-        // [新增] 大渡鸦设置
+        // --- 大渡鸦 (渡鸦大统领) 设置 ---
         public bool enableGreatRavenShiny = true;
-        public float greatRavenSearchDays = 3.0f; // 默认3天一次
+        public float greatRavenSearchDays = 3.0f;
+
+        // [新增] 寻宝概率配置
+        public float greatRavenGoldChance = 0.95f;    // 黄金概率
+        public float greatRavenItemChance = 0.04f;    // 金制品概率
+        public float greatRavenCubeChance = 0.01f;    // 齁金魔方概率
+
+
 
         // ===================================================
         // 2. 血脉系统 (Bloodline)
@@ -221,9 +228,12 @@ namespace RavenRace
             Scribe_Values.Look(ref featherCooldownDays, "featherCooldownDays", 60f);
             Scribe_Values.Look(ref showFeatherCooldown, "showFeatherCooldown", false);
 
-            // [新增] 大渡鸦设置 (归类于 Base)
+            //渡鸦大统领设置 (归类于 Base)
             Scribe_Values.Look(ref enableGreatRavenShiny, "enableGreatRavenShiny", true);
             Scribe_Values.Look(ref greatRavenSearchDays, "greatRavenSearchDays", 3.0f);
+            Scribe_Values.Look(ref greatRavenGoldChance, "greatRavenGoldChance", 0.95f);
+            Scribe_Values.Look(ref greatRavenItemChance, "greatRavenItemChance", 0.04f);
+            Scribe_Values.Look(ref greatRavenCubeChance, "greatRavenCubeChance", 0.01f);
 
 
 

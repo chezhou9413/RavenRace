@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== 渡鸦大统领 (Raven High Archon) ==================== -->
+  
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Raven_HighArchon</defName> <!-- 更新 DefName -->
+    <label>渡鸦大统领</label>
+    <description>渡鸦大统领是渡鸦族培育出的终极生物兵器，拥有令人惊叹的智慧和力量。它们身披闪耀着暗金光泽的黑羽，不仅能理解复杂的战术指令，对黄金更是有着近乎疯狂的痴迷。\n\n特性：\n- 黄金精神：可以通过吸收黄金不断进化，强化自身属性。\n- 绝对意志：免疫绝大多数精神控制和狂暴（保留自卫本能）。\n- 极为罕见：在野外几乎不可能见到。</description>
+    
+    <statBases>
+      <MoveSpeed>9.0</MoveSpeed>
+      <MarketValue>1500</MarketValue>
+      <ComfyTemperatureMin>-120</ComfyTemperatureMin>
+      <ComfyTemperatureMax>120</ComfyTemperatureMax>
+      <FilthRate>1</FilthRate>
+      <Wildness>0.10</Wildness>
+      <ArmorRating_Sharp>1.20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.20</ArmorRating_Blunt>
+      <ArmorRating_Heat>2.00</ArmorRating_Heat>
+      <CaravanRidingSpeedFactor>8</CaravanRidingSpeedFactor>
+      <CarryingCapacity>300</CarryingCapacity>
+      <MeatAmount>0</MeatAmount>
+    </statBases>
+
+    <uiIconScale>1.6</uiIconScale>
+
+    <tools>
+      <li>
+        <label>帝王之喙</label>
+        <capacities>
+          <li>Bite</li>
+          <li>Stab</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>1.0</cooldownTime>
+        <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>50</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>撕裂利爪</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>28</power>
+        <cooldownTime>1.0</cooldownTime>
+        <linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
+      </li>
+    </tools>
+
+    <race>
+      <body>Bird</body>
+      <herdAnimal>false</herdAnimal>
+      <predator>true</predator>
+      <maxPreyBodySize>5.0</maxPreyBodySize>
+      <baseBodySize>3.0</baseBodySize>
+      <baseHealthScale>8.0</baseHealthScale> 
+      <baseHungerRate>0.2</baseHungerRate>
+      <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+      <leatherDef>Leather_Bird</leatherDef>
+      <trainability>Advanced</trainability>
+      <gestationPeriodDays>30</gestationPeriodDays>
+      <lifeExpectancy>300</lifeExpectancy>
+      
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundEating>Bird_Eat</soundEating>
+      
+      <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0.00</manhunterOnTameFailChance>
+
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.5</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>1.0</minAge>
+          <soundWounded>Pawn_Chick_Call</soundWounded>
+          <soundDeath>Pawn_Chick_Call</soundDeath>
+          <soundCall>Pawn_Chick_Call</soundCall>
+          <soundAngry>Pawn_Chick_Call</soundAngry>
+        </li>
+      </lifeStageAges>
+    </race>
+    
+    <comps>
+      <li Class="CompProperties_EggLayer">
+        <eggUnfertilizedDef>Raven_SpiritEgg_Unfertilized</eggUnfertilizedDef>
+        <eggFertilizedDef>Raven_SpiritEgg_Unfertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>15</eggLayIntervalDays>
+        <eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+        <eggCountRange>1</eggCountRange>
+      </li>
+      <!-- 使用新的组件名 -->
+      <li Class="RavenRace.Features.Creatures.GreatRaven.CompProperties_RavenArchonTreasure" />
+    </comps>
+    
+    <tradeTags>
+      <li>AnimalExotic</li>
+      <li>AnimalFighter</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Raven_HighArchon</defName> <!-- 更新 DefName -->
+    <label>渡鸦大统领</label>
+    <race>Raven_HighArchon</race> <!-- 指向新的 race DefName -->
+    <combatPower>1000</combatPower> 
+    <ecoSystemWeight>0.05</ecoSystemWeight> 
+    
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/GreatRaven</texPath>
+          <drawSize>1.8</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/GreatRaven</texPath>
+          <drawSize>2.4</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/GreatRaven</texPath>
+          <drawSize>3.5</drawSize>
+          <shadowData>
+            <volume>(0.8, 0.6, 0.6)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>
