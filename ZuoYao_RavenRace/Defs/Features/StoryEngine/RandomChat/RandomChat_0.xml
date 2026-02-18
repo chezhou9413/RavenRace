@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================== 随机闲聊 (好感度 0 阶段) ==================== -->
+  <RavenRace.Features.StoryEngine.StoryDef>
+    <defName>Story_ZuoYao_RandomChat_Favor0</defName>
+    <priority>50</priority>
+    
+    <!-- 开启随机起始模式 -->
+    <randomStart>true</randomStart>
+
+    <conditions>
+      <!-- 必须已完成初见 -->
+      <li Class="RavenRace.Features.StoryEngine.StoryCondition_HasFlag">
+        <flagKey>Fusang_FirstContact_Complete</flagKey>
+      </li>
+      <!-- 条件：好感度范围 -->
+      <li Class="RavenRace.Features.StoryEngine.StoryCondition_Favorability">
+        <min>-1000</min>
+        <max>1000</max>
+      </li>
+    </conditions>
+
+    <nodes>
+      <!-- 所有节点都是 closeDialogue=true，因为闲聊就是一句话，说完就显示功能面板 -->
+      
+      <li><id>Random_10</id><text>这里是扶桑，我是接线员左爻.......我在听，长话短说，你们有什么地方需要扶桑的支持...</text><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_11</id><text>这里是扶桑。我是接线员左爻.......朋友，愿我们之间合作愉快。</text><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_12</id><text>这里是扶桑。我们在听...（你隐约听到什么咕啾咕啾的水声和淫荡的呻吟）哦，请别在意，这是我们在对敌人进行审讯...</text><expressionKey>blush</expressionKey><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_13</id><text>这里是扶桑，我是接线员左爻.......我们扶桑不是什么慈善机构，也不是什么穷凶极恶的鹰隼。您只需付出亮闪闪的东西，我们什么都可以谈...</text><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_14</id><text>这里是扶桑，我是接线员左爻.......好看吗，我这双眼睛？如果你还想保留你的视力的话就别盯着看......</text><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_15</id><text>这里是扶桑。我是接线员左爻.......你的眼睛在看哪里.........？</text><expressionKey>annoyed</expressionKey><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_16</id><text>这里是扶桑，我是接线员左爻.......如果你需要有人从内部瓦解一个据点，或者让某个讨厌的贵族“意外”消失...我们可以谈谈。</text><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_17</id><text>这里是扶桑，我是接线员左爻.......我们在寻找火种........不是那种燃烧的火，是那种能让余烬复燃的...契机。</text><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_18</id><text>这里是扶桑，我是接线员左爻.......哈？难道你觉得这是什么旮旯给木游戏吗.........我只负责管理你们联络扶桑总部的这条频道。</text><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_19</id><text>这里是扶桑，我是接线员左爻.......我脸上有什么东西吗？.....看什么看......？</text><expressionKey>unhappy</expressionKey><closeDialogue>true</closeDialogue></li>
+      <li><id>Random_20</id><text>这里是....扶桑。我们在听......嗯~~~请不要在意....唔！❤这是....必须的....啊~❤产蛋训练......</text><expressionKey>aroused</expressionKey><closeDialogue>true</closeDialogue></li>
+    </nodes>
+  </RavenRace.Features.StoryEngine.StoryDef>
+</Defs>

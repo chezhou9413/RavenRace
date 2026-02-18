@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RavenRace.Features.StoryEngine.StoryDef>
+    <defName>Story_ZuoYao_FirstContact</defName>
+    <priority>100</priority>
+    
+    <!-- 条件：Flag不存在 (即未完成) -->
+    <conditions>
+      <li Class="RavenRace.Features.StoryEngine.StoryCondition_HasFlag">
+        <flagKey>Fusang_FirstContact_Complete</flagKey>
+        <invert>true</invert>
+      </li>
+    </conditions>
+    
+    <!-- 核心：剧情结束后设置此Flag -->
+    <completeFlag>Fusang_FirstContact_Complete</completeFlag>
+    
+    <initialNodeID>Start</initialNodeID>
+    
+    <nodes>
+      <!-- Start -->
+      <li>
+        <id>Start</id>
+        <text>这里是扶桑，我是接线员左爻......\n我在听，长话短说，你们有什么地方需要扶桑的支持\n物资交换请点击界面左下角第一个，区域扫描支援请点击第二个\n接取任务请点击任务面板，为我们提供捐赠支援请点击捐赠支援,祝我们双方合作愉快。</text>
+        <expressionKey>default</expressionKey>
+        <options>
+          <li>
+            <text>你好，美丽的小姐，我们想要找你们扶桑组织办事。</text>
+            <nextNodeID>Node_1</nextNodeID>
+          </li>
+          <li>
+            <text>（流氓口哨声）啊哈！真是个浑身色气的小妞~。</text>
+            <nextNodeID>Node_2</nextNodeID>
+          </li>
+          <li>
+            <text>你几把谁？叫你们领头的过来和我谈！</text>
+            <nextNodeID>Node_3</nextNodeID>
+            <actions>
+              <li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>-20</amount></li>
+            </actions>
+          </li>
+        </options>
+      </li>
+
+      <!-- Node 1 (礼貌) -->
+      <li>
+        <id>Node_1</id>
+        <text>物资交换请点击界面左下角第一个，区域扫描支援请点击第二个，\n接取任务请点击任务面板，为我们提供捐赠支援请点击捐赠支援.....祝我们双方合作愉快。\n（低声嘟囔）他妈个灵卵..什么时候才下班......</text>
+        <expressionKey>unhappy</expressionKey>
+        <options>
+          <li><text>能给我详细介绍你们扶桑么？</text><nextNodeID>Response_101</nextNodeID><actions><li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>10</amount></li></actions></li>
+          <li><text>那你能让我看看你奶沟子吗？</text><nextNodeID>Response_102</nextNodeID><actions><li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>-10</amount></li></actions></li>
+          <li><text>你们这扶桑是什么群啊———他妈的一窝黑不溜秋的鸟人？（震声）</text><nextNodeID>Response_103</nextNodeID><actions><li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>-100</amount></li></actions></li>
+        </options>
+      </li>
+
+      <!-- Node 2 (调戏) -->
+      <li>
+        <id>Node_2</id>
+        <text>（低声嘟囔）呵....又是个下流胚子.......\n好看吗，我这双眼睛？还是您在盯着我的......乳沟？（微微的挤了挤胸部）</text>
+        <expressionKey>lick_lips</expressionKey>
+        <options>
+          <li><text>能给我详细介绍你们扶桑么？</text><nextNodeID>Response_101</nextNodeID><actions><li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>10</amount></li></actions></li>
+          <li><text>那你能让我看看你奶沟子吗？</text><nextNodeID>Response_102</nextNodeID><actions><li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>-10</amount></li></actions></li>
+          <li><text>你们这扶桑是什么群啊———他妈的一窝黑不溜秋的鸟人？（震声）</text><nextNodeID>Response_103</nextNodeID><actions><li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>-100</amount></li></actions></li>
+        </options>
+      </li>
+
+      <!-- Node 3 (粗鲁) -->
+      <li>
+        <id>Node_3</id>
+        <text>..........我们扶桑成员不会轻易露面，我就是对接您殖民地的接线员\n妈的凑傻逼.....（腹诽）。</text>
+        <expressionKey>annoyed_vein</expressionKey>
+        <options>
+          <li><text>能给我详细介绍你们扶桑么？</text><nextNodeID>Response_101</nextNodeID><actions><li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>10</amount></li></actions></li>
+          <li><text>那你能让我看看你奶沟子吗？</text><nextNodeID>Response_102</nextNodeID><actions><li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>-10</amount></li></actions></li>
+          <li><text>你们这扶桑是什么群啊———他妈的一窝黑不溜秋的鸟人？（震声）</text><nextNodeID>Response_103</nextNodeID><actions><li Class="RavenRace.Features.StoryEngine.StoryAction_ChangeFavorability"><amount>-100</amount></li></actions></li>
+        </options>
+      </li>
+
+      <!-- 终结回应节点 -->
+      <!-- [核心逻辑] closeDialogue=true，UI会自动显示功能面板，不再需要"点击继续" -->
+      <li>
+        <id>Response_101</id>
+        <text>我们？我们不过是一群拿钱办事的渡鸦罢了，您只需付出亮闪闪的东西，我们什么都好谈...</text>
+        <expressionKey>lick_lips</expressionKey>
+        <closeDialogue>true</closeDialogue>
+      </li>
+      <li>
+        <id>Response_102</id>
+        <text>呵呵，我们扶桑不提供导管子材料呢.....</text>
+        <expressionKey>annoyed_vein</expressionKey>
+        <closeDialogue>true</closeDialogue>
+      </li>
+      <li>
+        <id>Response_103</id>
+        <text>我们确实是黑不溜秋，可如果您觉得我们还可以好好谈生意请您务必好好说话....</text>
+        <expressionKey>angry_vein</expressionKey>
+        <closeDialogue>true</closeDialogue>
+      </li>
+    </nodes>
+  </RavenRace.Features.StoryEngine.StoryDef>
+</Defs>

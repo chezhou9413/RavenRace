@@ -115,9 +115,10 @@ namespace RavenRace.Features.FusangOrganization.UI
         /// </summary>
         public static void DrawFunctionPanel(Rect rect, Dialog_FusangComm window)
         {
-            var radio = Traverse.Create(window).Field("radio").GetValue<Thing>();
-            var fusangFaction = Traverse.Create(window).Field("fusangFaction").GetValue<Faction>();
-            var fusangWorldComp = Traverse.Create(window).Field("fusangWorldComp").GetValue<WorldComponent_Fusang>();
+            // 直接访问 Public 字段，不再使用反射！
+            var radio = window.radio;
+            var fusangFaction = window.fusangFaction;
+            var fusangWorldComp = window.fusangWorldComp;
 
             Widgets.DrawBoxSolid(rect, FusangUIStyle.PanelColor);
             FusangUIStyle.DrawBorder(rect, FusangUIStyle.BorderColor);
@@ -134,7 +135,7 @@ namespace RavenRace.Features.FusangOrganization.UI
             float btnHeight = (buttonsArea.height - 10) / 2f;
 
             Rect tradeRect = new Rect(buttonsArea.x, buttonsArea.y, btnWidth, btnHeight);
-            Rect espionageRect = new Rect(tradeRect.xMax + 10, buttonsArea.y, btnWidth, btnHeight); // 原 ScanRect
+            Rect espionageRect = new Rect(tradeRect.xMax + 10, buttonsArea.y, btnWidth, btnHeight);
             Rect missionRect = new Rect(buttonsArea.x, tradeRect.yMax + 10, btnWidth, btnHeight);
             Rect supportRect = new Rect(missionRect.xMax + 10, tradeRect.yMax + 10, btnWidth, btnHeight);
 
@@ -156,19 +157,26 @@ namespace RavenRace.Features.FusangOrganization.UI
                 else { Messages.Message("商队派遣失败：无法找到安全的进入路径。", MessageTypeDefOf.RejectInput); }
             }
 
-            // [修改] 指向新的门户菜单
             if (FusangUIStyle.DrawButton(espionageRect, "间谍与派系"))
             {
                 Find.WindowStack.Add(new Dialog_Espionage_Menu());
-                window.Close(); 
+                window.Close();
             }
 
-            if (FusangUIStyle.DrawButton(missionRect, "任务面板")) { window.Close(); Find.WindowStack.Add(new Dialog_FusangMissionBoard(radio)); }
-            if (FusangUIStyle.DrawButton(supportRect, "捐赠支援")) { window.Close(); Find.WindowStack.Add(new Dialog_FusangSupport(radio)); }
+            if (FusangUIStyle.DrawButton(missionRect, "任务面板"))
+            {
+                window.Close();
+                Find.WindowStack.Add(new Dialog_FusangMissionBoard(radio));
+            }
+
+            if (FusangUIStyle.DrawButton(supportRect, "捐赠支援"))
+            {
+                window.Close();
+                Find.WindowStack.Add(new Dialog_FusangSupport(radio));
+            }
         }
 
-        // DrawTradeCooldown, DrawFavorabilityBar 等辅助方法保持不变 (省略以节省篇幅，请保留原有代码)
-        // ...
+
 
         private static void DrawTradeCooldown(Listing_Standard listing)
         {

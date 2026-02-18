@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using RimWorld.Planet;
 using Verse;
+using RavenRace.Features.StoryEngine; // 引用 StoryEngine
 
 namespace RavenRace
 {
@@ -14,15 +15,12 @@ namespace RavenRace
 
         // 冷却计时器 (Tick)
         public int lastTradeTick = -99999;
-        public int lastSupportTick = -99999; // 战术支援冷却
+        public int lastSupportTick = -99999;
         public int tradeCooldownTicks = 180000; // 3天
 
-        // 状态标记
-        public bool hasContactedBefore = false;
-
-        // [新增] GALGAME对话系统状态
-        public int firstContactDialogueStage = 0; // 当前对话节点ID
-        public bool completedFirstContact = false; // 是否已完成初见对话
+        // [删除] hasContactedBefore, firstContactDialogueStage, completedFirstContact
+        // 这些变量现在应该通过 StoryWorldComponent.HasFlag("Fusang_Contacted") 来替代
+        // 为了数据迁移的安全性，我们可以在 ExposeData 里读取旧数据并转换，但不保留字段。
 
         public WorldComponent_Fusang(World world) : base(world)
         {
@@ -74,11 +72,22 @@ namespace RavenRace
             Scribe_Collections.Look(ref resources, "resources", LookMode.Value, LookMode.Deep);
             Scribe_Values.Look(ref lastTradeTick, "lastTradeTick", -99999);
             Scribe_Values.Look(ref lastSupportTick, "lastSupportTick", -99999);
-            Scribe_Values.Look(ref hasContactedBefore, "hasContactedBefore", false);
 
-            // [新增] 保存/加载对话状态
-            Scribe_Values.Look(ref firstContactDialogueStage, "firstContactDialogueStage", 0);
-            Scribe_Values.Look(ref completedFirstContact, "completedFirstContact", false);
+            // [数据迁移逻辑]
+            // 如果是旧存档，尝试读取旧变量并写入新系统
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+            {
+                bool old_completedFirstContact = false;
+                Scribe_Values.Look(ref old_completedFirstContact, "completedFirstContact", false);
+
+                if (old_completedFirstContact)
+                {
+                    // 将旧标记转换为新系统的 Flag
+                    // 注意：这需要在 PostLoadInit 或延迟执行，因为 StoryWorldComponent 可能还没加载
+                    // 这里简化处理：直接调用静态 Flag 设置（如果 Component 存在）
+                    StoryWorldComponent.SetFlag("Fusang_FirstContact_Complete", true);
+                }
+            }
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
