@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\creatures\\greatraven\\hediff_goldenspirit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\creatures\\greatraven\\hediff_goldenspirit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\sounds\\building_retrophonograph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\sounds\\building_retrophonograph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\creatures\\greatraven\\compravenarchontreasure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\creatures\\greatraven\\compravenarchontreasure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\sounds\\soundpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\sounds\\soundpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\creatures\\greatraven\\harmony\\patch_ravenarchonimmunity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\creatures\\greatraven\\harmony\\patch_ravenarchonimmunity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\custompawn\\binah\\binahdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\custompawn\\binah\\binahdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\defof\\ravendefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\defof\\ravendefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\settings\\settings_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\settings\\settings_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\miscsmallfeatures\\avtelevision\\comptv_av.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\miscsmallfeatures\\avtelevision\\comptv_av.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenracesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\ravenracesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\creatures\\greatraven\\compravenarchontreasure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\creatures\\greatraven\\compravenarchontreasure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\sounds\\ravensounddefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\sounds\\ravensounddefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,71 +38,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Hediff_GoldenSpirit.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Creatures\\GreatRaven\\Hediff_GoldenSpirit.cs",
-              "RelativeDocumentMoniker": "Features\\Creatures\\GreatRaven\\Hediff_GoldenSpirit.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Creatures\\GreatRaven\\Hediff_GoldenSpirit.cs",
-              "RelativeToolTip": "Features\\Creatures\\GreatRaven\\Hediff_GoldenSpirit.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAIwFcAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T16:25:33.642Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Patch_RavenArchonImmunity.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Creatures\\GreatRaven\\Harmony\\Patch_RavenArchonImmunity.cs",
-              "RelativeDocumentMoniker": "Features\\Creatures\\GreatRaven\\Harmony\\Patch_RavenArchonImmunity.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Creatures\\GreatRaven\\Harmony\\Patch_RavenArchonImmunity.cs",
-              "RelativeToolTip": "Features\\Creatures\\GreatRaven\\Harmony\\Patch_RavenArchonImmunity.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC8AAAABAAAAAAAAAA==",
+              "Title": "BinahDefOf.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\BinahDefOf.cs",
+              "RelativeDocumentMoniker": "Features\\CustomPawn\\Binah\\BinahDefOf.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\CustomPawn\\Binah\\BinahDefOf.cs",
+              "RelativeToolTip": "Features\\CustomPawn\\Binah\\BinahDefOf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T16:13:26.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CompRavenArchonTreasure.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Creatures\\GreatRaven\\CompRavenArchonTreasure.cs",
-              "RelativeDocumentMoniker": "Features\\Creatures\\GreatRaven\\CompRavenArchonTreasure.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Creatures\\GreatRaven\\CompRavenArchonTreasure.cs",
-              "RelativeToolTip": "Features\\Creatures\\GreatRaven\\CompRavenArchonTreasure.cs",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAIwAQBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T16:12:49.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Settings_Base.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\Settings\\Settings_Base.cs",
-              "RelativeDocumentMoniker": "Core\\Settings\\Settings_Base.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\Settings\\Settings_Base.cs",
-              "RelativeToolTip": "Core\\Settings\\Settings_Base.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwE4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T16:11:44.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RavenRaceSettings.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceSettings.cs",
-              "RelativeDocumentMoniker": "Core\\RavenRaceSettings.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceSettings.cs",
-              "RelativeToolTip": "Core\\RavenRaceSettings.cs",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAYwOYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T16:10:49.345Z",
+              "WhenOpened": "2026-02-19T08:08:44.384Z",
               "EditorCaption": ""
             },
             {
@@ -109,9 +61,74 @@
               "RelativeDocumentMoniker": "Core\\DefOf\\RavenDefOf.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\DefOf\\RavenDefOf.cs",
               "RelativeToolTip": "Core\\DefOf\\RavenDefOf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T16:09:18.214Z",
+              "WhenOpened": "2026-02-19T08:08:18.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CompTV_AV.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\MiscSmallFeatures\\AVTelevision\\CompTV_AV.cs",
+              "RelativeDocumentMoniker": "Features\\MiscSmallFeatures\\AVTelevision\\CompTV_AV.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\MiscSmallFeatures\\AVTelevision\\CompTV_AV.cs",
+              "RelativeToolTip": "Features\\MiscSmallFeatures\\AVTelevision\\CompTV_AV.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T07:52:50.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CompRavenArchonTreasure.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Creatures\\GreatRaven\\CompRavenArchonTreasure.cs",
+              "RelativeDocumentMoniker": "Features\\Creatures\\GreatRaven\\CompRavenArchonTreasure.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Creatures\\GreatRaven\\CompRavenArchonTreasure.cs",
+              "RelativeToolTip": "Features\\Creatures\\GreatRaven\\CompRavenArchonTreasure.cs",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAUwAkBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T07:51:05.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SoundPatches.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Sounds\\SoundPatches.cs",
+              "RelativeDocumentMoniker": "Features\\Sounds\\SoundPatches.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Sounds\\SoundPatches.cs",
+              "RelativeToolTip": "Features\\Sounds\\SoundPatches.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T07:50:44.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Building_RetroPhonograph.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Sounds\\Building_RetroPhonograph.cs",
+              "RelativeDocumentMoniker": "Features\\Sounds\\Building_RetroPhonograph.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Sounds\\Building_RetroPhonograph.cs*",
+              "RelativeToolTip": "Features\\Sounds\\Building_RetroPhonograph.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T07:50:27.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RavenSoundDefOf.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Sounds\\RavenSoundDefOf.cs",
+              "RelativeDocumentMoniker": "Features\\Sounds\\RavenSoundDefOf.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Sounds\\RavenSoundDefOf.cs",
+              "RelativeToolTip": "Features\\Sounds\\RavenSoundDefOf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T07:50:11.951Z",
               "EditorCaption": ""
             }
           ]

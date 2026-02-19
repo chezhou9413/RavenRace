@@ -10,7 +10,11 @@ namespace RavenRace
         public static ThingDef Raven_Race;
         public static PawnKindDef Raven_Colonist;
         public static PawnKindDef Raven_PawnKind_ZuoYao;
-        public static PawnKindDef Raven_HighArchon; // 确保有这个引用
+        public static PawnKindDef Raven_HighArchon;
+
+        // 【修复】添加 Binah 的 PawnKindDef
+        [MayRequire("Chezhou.ChezhouLib.lib")]
+        public static PawnKindDef Raven_PawnKind_Binah;
 
         // --- 物品 & 建筑 ---
         public static ThingDef Raven_SpiritEgg;

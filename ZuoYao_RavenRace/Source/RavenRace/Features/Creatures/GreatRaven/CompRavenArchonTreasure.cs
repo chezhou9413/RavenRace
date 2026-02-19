@@ -3,6 +3,8 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using RavenRace.Features.Sounds; // 新增：引用音效DefOf
+using Verse.Sound; // 【修复】添加音效命名空间
 
 namespace RavenRace.Features.Creatures.GreatRaven
 {
@@ -115,6 +117,9 @@ namespace RavenRace.Features.Creatures.GreatRaven
             {
                 if (GenPlace.TryPlaceThing(thingToDrop, Pawn.Position, Pawn.Map, ThingPlaceMode.Near))
                 {
+                    // 【音效修改】播放找到宝物的音效
+                    RavenSoundDefOf.RavenMeme_ArchonTreasure?.PlayOneShot(SoundInfo.InMap(new TargetInfo(Pawn)));
+
                     Find.LetterStack.ReceiveLetter(
                         "Raven_LetterLabel_ShinyFound".Translate(),
                         "Raven_LetterText_ShinyFound".Translate(Pawn.LabelShort, thingToDrop.LabelCap),

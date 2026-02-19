@@ -4,6 +4,8 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.Sound; // 新增：引用音效命名空间
+using RavenRace.Features.Sounds; // 新增：引用音效DefOf
 
 namespace RavenRace.Features.MiscSmallFeatures.AVTelevision
 {
@@ -46,6 +48,16 @@ namespace RavenRace.Features.MiscSmallFeatures.AVTelevision
             {
                 pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RavenDefOf.Raven_Thought_WatchedAV);
             }
+
+
+            // 【音效修改】有1%的概率播放彩蛋音效
+            if (Rand.Chance(0.01f))
+            {
+                RavenSoundDefOf.RavenMeme_WatchAV?.PlayOneShot(SoundInfo.InMap(new TargetInfo(pawn)));
+            }
+
+
+
             // 1. 施加温和感官 Hediff (香炉同款)
             if (Rand.Chance(0.20f))
             {

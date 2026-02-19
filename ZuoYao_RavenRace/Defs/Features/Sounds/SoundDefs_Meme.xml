@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 受击音效 -->
+  <SoundDef>
+    <defName>RavenMeme_TakeDamage</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_TakeDamage</clipPath>
+          </li>
+        </grains>
+        <volumeRange>30~30</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- 渡鸦大统领找到宝物 -->
+  <SoundDef>
+    <defName>RavenMeme_ArchonTreasure</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_ArchonTreasure</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- Binah技能 -->
+  <SoundDef>
+    <defName>RavenMeme_BinahAbility</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_BinahAbility</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- Pawn倒地 -->
+  <SoundDef>
+    <defName>RavenMeme_PawnDowned</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_PawnDowned</clipPath>
+          </li>
+        </grains>
+        <volumeRange>70~70</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- 看电视AV -->
+  <SoundDef>
+    <defName>RavenMeme_WatchAV</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_WatchAV</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40~40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- 社交失败 -->
+  <SoundDef>
+    <defName>RavenMeme_SocialFail</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_SocialFail</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- 制作/建造失败 -->
+  <SoundDef>
+    <defName>RavenMeme_CraftFail</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_CraftFail</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- 被侮辱 -->
+  <SoundDef>
+    <defName>RavenMeme_Insulted</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_Insulted</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- 死亡 -->
+  <SoundDef>
+    <defName>RavenMeme_PawnDeath</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_PawnDeath</clipPath>
+          </li>
+        </grains>
+        <volumeRange>80~80</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- 逃跑 -->
+  <SoundDef>
+    <defName>RavenMeme_Fleeing</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_Fleeing</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

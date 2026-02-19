@@ -6,6 +6,10 @@ namespace RavenRace.Features.CustomPawn.Binah
     [DefOf]
     public static class BinahDefOf
     {
+        // PawnKind
+        [MayRequire("Chezhou.ChezhouLib.lib")]
+        public static PawnKindDef Raven_PawnKind_Binah;
+
         // Abilities
         public static AbilityDef Raven_Ability_Binah_PillarShot;
         public static AbilityDef Raven_Ability_Binah_Shockwave;

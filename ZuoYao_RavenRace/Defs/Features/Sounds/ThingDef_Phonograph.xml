@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_Building_RetroPhonograph</defName>
+    <label>渡鸦复古唱片机</label>
+    <description>一台装饰性的复古唱片机，铜制的喇叭闪烁着怀旧的光泽。它静静地立在那里，似乎随时都能流淌出属于往昔岁月的声音。\n\n（开发者模式下可用作音效测试工具）</description>
+    <thingClass>RavenRace.Features.Sounds.Building_RetroPhonograph</thingClass>
+    <graphicData>
+      <texPath>Buildings/Furniture/RavenRetroPhonograph</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.4</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1200</WorkToBuild>
+      <Mass>15</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>15</Beauty>
+    </statBases>
+    <costList>
+      <WoodLog>50</WoodLog>
+      <Steel>20</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <designationCategory>Raven_Category</designationCategory>    <!-- 【修复】将建筑分类改为渡鸦族自定义分类 -->
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+</Defs>
