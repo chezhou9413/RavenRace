@@ -27,6 +27,10 @@ namespace RavenRace
             { "Epona.EponaDynasticRise",      "正在和艾波娜一起玩赛马娘..." },
             { "LepechandEusro.Tailin",        "正在拍小泰临的屁股..." },
             { "BreadMo.Cinders",              "正在感受余烬的温暖..." },
+            { "Tourswen.LegendaryBlackDragon",  "正在请黑龙给灶台生火..." },
+            { "SutSutMan.MinchoTheMintChocoSlimeHARver",  "正在品尝美味的珉巧...嗯，是小人，不是冰淇淋！" },
+
+
         };
 
         static RavenRaceStartup()

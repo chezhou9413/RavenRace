@@ -20,38 +20,69 @@
     <RavenRace_ForceReadBook>Force Read: {0}</RavenRace_ForceReadBook>
     <RavenRace_WrongBook>Wrong Book Type</RavenRace_WrongBook>
 
-    <!-- Klim Dragon Blood (Placeholder) -->
+    <!-- Klim Dragon Blood -->
     <RavenRace_Settings_KlimDragonBlood>Klim Dragon Blood</RavenRace_Settings_KlimDragonBlood>
+    <RavenRace_Settings_EnableKoelimeBloodline>Enable Ancient Dragon Traits</RavenRace_Settings_EnableKoelimeBloodline>
+    <RavenRace_Settings_EnableKoelimeBloodline_Desc>If enabled, ravens with Koelime bloodline will gain regeneration and immunity to diseases.</RavenRace_Settings_EnableKoelimeBloodline_Desc>
 
     <!-- MuGirl -->
     <RavenRace_Settings_MuGirlCompat>MooGirl Bloodline</RavenRace_Settings_MuGirlCompat>
     <RavenRace_Settings_EnableMuGirlCompat>Enable MooGirl Traits</RavenRace_Settings_EnableMuGirlCompat>
     <RavenRace_Settings_EnableMuGirlCompat_Desc>If enabled, ravens with MooGirl bloodline (regardless of gender) will gain armor bonuses and the ability to produce milk.</RavenRace_Settings_EnableMuGirlCompat_Desc>
-    <!-- Milking -->
     <RavenRace_MilkFullness>Snow Milk Full</RavenRace_MilkFullness>
     <RavenRace_GatherMilk>Gather Milk</RavenRace_GatherMilk>
     <RavenRace_GatherMilkDesc>Gather the accumulated milk from this Raven.</RavenRace_GatherMilkDesc>
     <RavenRace_Msg_MilkGathered>{0} gathered {1} {2}.</RavenRace_Msg_MilkGathered>
+    <RavenRace_Settings_MuffaloPrank>Wait, WHICH Muffalo?</RavenRace_Settings_MuffaloPrank>
+    <RavenRace_Settings_MuffaloPrank_Desc>An old story about a chicken and a muffalo... oh my, what a tragic couple!\n\n(Enables Force Lovin on vanilla Muffalos, treating them as MooGirls)</RavenRace_Settings_MuffaloPrank_Desc>
 
-
-    <!-- Wolfein [Phase 3.6.5] -->
+    <!-- Wolfein -->
     <RavenRace_Settings_WolfeinCompat>Wolfein Bloodline</RavenRace_Settings_WolfeinCompat>
     <RavenRace_Settings_EnableWolfeinCompat>Enable Wolfein Traits</RavenRace_Settings_EnableWolfeinCompat>
-    <RavenRace_Settings_EnableWolfeinCompat_Desc>If enabled, ravens with Wolfein bloodline will gain lesser Night and Moon phase buffs.\n\nEffect: Slightly increased consciousness, sight, and movement speed at night. During a full moon, these effects are amplified, with additional melee dodge and hit chance.</RavenRace_Settings_EnableWolfeinCompat_Desc>
+    <RavenRace_Settings_EnableWolfeinCompat_Desc>If enabled, ravens with Wolfein bloodline will gain lesser Night and Moon phase buffs.</RavenRace_Settings_EnableWolfeinCompat_Desc>
+    
+    <!-- Dragonian -->
+    <RavenRace_Settings_DragonianCompat>Dragonian Bloodline</RavenRace_Settings_DragonianCompat>
+    <RavenRace_Settings_EnableDragonianCompat>Enable Dragonian Traits</RavenRace_Settings_EnableDragonianCompat>
+    <RavenRace_Settings_EnableDragonianCompat_Desc>If enabled, ravens with Dragonian bloodline will produce dragon milk.</RavenRace_Settings_EnableDragonianCompat_Desc>
+    <RavenRace_DragonMilkFullness>Dragon Milk</RavenRace_DragonMilkFullness>
+    <RavenRace_DivineMilkFullness>Divine Milk</RavenRace_DivineMilkFullness>
 
-
-    <!-- Moyo [Phase 3.6.8] -->
+    <!-- Moyo -->
     <RavenRace_Settings_MoyoCompat>Moyo Bloodline</RavenRace_Settings_MoyoCompat>
     <RavenRace_Settings_EnableMoyoCompat>Enable Moyo Traits</RavenRace_Settings_EnableMoyoCompat>
     <RavenRace_Settings_EnableMoyoCompat_Desc>If enabled, ravens with Moyo bloodline will produce Blue Serum and be immune to Deep Blue addiction/side effects.</RavenRace_Settings_EnableMoyoCompat_Desc>
 
+    <!-- Epona -->
+    <RavenRace_Settings_EponaCompat>Epona Bloodline</RavenRace_Settings_EponaCompat>
+    <RavenRace_Settings_EnableEponaCompat>Enable Epona Traits</RavenRace_Settings_EnableEponaCompat>
+    <RavenRace_Settings_EnableEponaCompat_Desc>If enabled, ravens with Epona bloodline gain speed bonuses and enhanced charge ability.</RavenRace_Settings_EnableEponaCompat_Desc>
+    <RavenRace_AbilityLabel_EnhancedCharge>Swift Charge</RavenRace_AbilityLabel_EnhancedCharge>
+    <RavenRace_AbilityDesc_EnhancedCharge>A perfect blend of Epona speed and MooGirl strength.</RavenRace_AbilityDesc_EnhancedCharge>
+    <RavenRace_Message_OutOfRange>Target is out of range.</RavenRace_Message_OutOfRange>
 
+    <!-- Tailin -->
+    <RavenRace_Settings_TailinCompat>Tailin Bloodline</RavenRace_Settings_TailinCompat>
+    <RavenRace_Settings_EnableTailinCompat>Enable Tailin Traits</RavenRace_Settings_EnableTailinCompat>
+    <RavenRace_Settings_EnableTailinCompat_Desc>If enabled, ravens with Tailin bloodline gain combat instincts.</RavenRace_Settings_EnableTailinCompat_Desc>
 
-    <!-- Cinder [Phase 3.6.11] -->
+    <!-- Cinder -->
     <RavenRace_Settings_CinderCompat>Cinder Bloodline</RavenRace_Settings_CinderCompat>
     <RavenRace_Settings_EnableCinderCompat>Enable Cinder Traits</RavenRace_Settings_EnableCinderCompat>
-    <RavenRace_Settings_EnableCinderCompat_Desc>If enabled, ravens with Cinder bloodline will gain "Polymer Regeneration", allowing slow healing of wounds and regeneration of missing limbs.</RavenRace_Settings_EnableCinderCompat_Desc>
+    <RavenRace_Settings_EnableCinderCompat_Desc>If enabled, ravens with Cinder bloodline will gain "Polymer Regeneration".</RavenRace_Settings_EnableCinderCompat_Desc>
 
+    <!-- Miraboreas -->
+    <RavenRace_Settings_MiraboreasCompat>Miraboreas Bloodline</RavenRace_Settings_MiraboreasCompat>
+    <RavenRace_Settings_EnableMiraboreasCompat>Enable Miraboreas Traits</RavenRace_Settings_EnableMiraboreasCompat>
+    <RavenRace_Settings_EnableMiraboreasCompat_Desc>If enabled, ravens with Miraboreas bloodline gain stagger immunity and melee cleave attacks.</RavenRace_Settings_EnableMiraboreasCompat_Desc>
+
+    <!-- Mincho -->
+    <RavenRace_Settings_MinchoCompat>Mincho Bloodline</RavenRace_Settings_MinchoCompat>
+    <RavenRace_Settings_EnableMinchoCompat>Enable Mincho Traits</RavenRace_Settings_EnableMinchoCompat>
+    <RavenRace_Settings_EnableMinchoCompat_Desc>If enabled, ravens with Mincho bloodline gain extreme cold resistance (-500C) and produce Mint Choco.</RavenRace_Settings_EnableMinchoCompat_Desc>
+    
+    <RavenRace_MinchoChocolateFullness>Mint Choco</RavenRace_MinchoChocolateFullness>
+    <RavenRace_Message_MinchoProduced>{0} has naturally produced {1}!</RavenRace_Message_MinchoProduced>
 
     <!-- Gizmo UI -->
     <Milira_Flight_Toggle>Flight</Milira_Flight_Toggle>

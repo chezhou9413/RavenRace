@@ -5,4 +5,7 @@
     <RavenRace_BloodlineComposition>血脉组成</RavenRace_BloodlineComposition>
     <RavenRace_GoldenCrowConcentration>金乌血脉浓度</RavenRace_GoldenCrowConcentration>
     <RavenRace_BloodlinePurity>纯度</RavenRace_BloodlinePurity>
+
+    <!-- 新增：特殊血脉翻译 -->
+    <RavenRace_Bloodline_Bloodline_Mechanoid>机械体血脉</RavenRace_Bloodline_Bloodline_Mechanoid>
 </LanguageData>

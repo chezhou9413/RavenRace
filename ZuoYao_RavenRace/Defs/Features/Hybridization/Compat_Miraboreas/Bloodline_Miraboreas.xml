@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RavenRace.BloodlineDef MayRequire="Tourswen.LegendaryBlackDragon">
+        <defName>Bloodline_Miraboreas</defName>
+        <label>米拉波雷亚斯血脉</label>
+        <labelShort>米拉</labelShort>
+        <description>源自传说中的古龙“米拉波雷亚斯”的毁灭血脉。这股力量赋予了持有者无视痛苦与硬直的坚韧，以及在近身搏斗中爆发出范围冲击的恐怖能力。</description>
+        <!-- 核心：链接到米拉波雷亚斯种族的defName -->
+        <raceDef>LBD_Fatalis_Race</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

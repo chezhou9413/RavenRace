@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 珉巧 (Mincho) - 只有安装了 Mincho the Mint Choco Slime 才生效 -->
+    <!-- [核心修复] 使用了正确的 packageId -->
+    <RavenRace.BloodlineDef MayRequire="SutSutMan.MinchoTheMintChocoSlimeHARver">
+        <defName>Bloodline_Mincho</defName>
+        <label>珉巧血脉</label>
+        <labelShort>珉巧</labelShort>
+        <description>源自薄荷巧克力史莱姆的冰凉血脉。这股血脉让持有者对极寒环境无所畏惧，并且身体能够自然凝结出美味的薄荷巧克力。</description>
+        <raceDef>Mincho_ThingDef</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

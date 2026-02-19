@@ -101,10 +101,14 @@ namespace RavenRace
         public bool enableMuffaloPrank = false;  // 雪牛(Muffalo)彩蛋开关
         public bool enableWolfeinCompat = true; // 沃芬 (Wolfein)
         public bool enableDragonianCompat = true; // 龙人 (Dragonian)
-        public bool enableMoyoCompat = true; // [Phase 3.6.8] 莫约 (Moyo)                                          
-        public bool enableEponaCompat = true;// Epona Compat
+        public bool enableMoyoCompat = true; // 茉约 (Moyo)                                          
+        public bool enableEponaCompat = true;// 艾波娜 (Epona)
         public bool enableTailinCompat = true;// 泰临 (Tailin)
         public bool enableCinderCompat = true; // 烟烬 (Cinder)
+        public bool enableMiraboreasCompat = true; // 米拉波雷亚斯 (Miraboreas)
+        public bool enableMinchoCompat = true; // 珉巧 (Mincho)
+
+
 
         // ===================================================
         // 6. 扶桑组织 (Fusang)
@@ -264,7 +268,7 @@ namespace RavenRace
             Scribe_Values.Look(ref enableGrandClimax, "enableGrandClimax", false);
             Scribe_Values.Look(ref enableDimensionalSex, "enableDimensionalSex", false);
 
-            Scribe_Values.Look(ref rjwRavenPregnancyCompat, "rjwRavenPregnancyCompat", true); // [新增] 保存 RJW 兼容设置
+            Scribe_Values.Look(ref rjwRavenPregnancyCompat, "rjwRavenPregnancyCompat", true); // 保存 RJW 兼容设置
 
             Scribe_Values.Look(ref enableMiliraCompat, "enableMiliraCompat", true);
             Scribe_Values.Look(ref enableMoeLotlCompat, "enableMoeLotlCompat", true);
@@ -277,7 +281,8 @@ namespace RavenRace
             Scribe_Values.Look(ref enableEponaCompat, "enableEponaCompat", true);
             Scribe_Values.Look(ref enableTailinCompat, "enableTailinCompat", true);// 泰临 (Tailin)
             Scribe_Values.Look(ref enableCinderCompat, "enableCinderCompat", true);// 烟烬 (Cinder)
-
+            Scribe_Values.Look(ref enableMiraboreasCompat, "enableMiraboreasCompat", true);// 米拉波雷亚斯 (Miraboreas)
+            Scribe_Values.Look(ref enableMinchoCompat, "enableMinchoCompat", true); // 珉巧 (Mincho)
 
 
             Scribe_Values.Look(ref fusangCommCooldownDays, "fusangCommCooldownDays", 3f);

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- 珉巧血脉 Hediff - 只负责属性修正 -->
+  <HediffDef MayRequire="SutSutMan.MinchoTheMintChocoSlimeHARver">
+    <defName>Raven_Hediff_MinchoBloodline</defName>
+    <label>珉巧血脉</label>
+    <description>源自珉巧(Mincho)的冰凉血脉。身体的细胞结构发生了根本性的改变，使其完全免疫寒冷，并将多余的能量转化为薄荷巧克力。\n\n效果：\n- 最低舒适温度降至-500℃\n- 能够生产薄荷巧克力</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.55, 0.86, 0.90)</defaultLabelColor>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMin>-516</ComfyTemperatureMin>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

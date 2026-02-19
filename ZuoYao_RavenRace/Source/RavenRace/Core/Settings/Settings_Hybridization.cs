@@ -10,6 +10,8 @@ using RavenRace.Compat.Moyo;
 using RavenRace.Compat.Epona; 
 using RavenRace.Compat.Tailin;
 using RavenRace.Compat.Cinder;
+using RavenRace.Compat.Miraboreas;
+using RavenRace.Compat.Mincho; // 【新增】
 
 // 记得每加一个都要引用命名空间！
 
@@ -164,6 +166,36 @@ namespace RavenRace.Settings
                 ref s.enableCinderCompat,
                 "RavenRace_Settings_EnableCinderCompat_Desc".Translate()
             );
+
+            // =================================================
+            // 11. 米拉波雷亚斯 (Miraboreas)
+            // =================================================
+            listing.GapLine();
+            listing.Label("RavenRace_Settings_MiraboreasCompat".Translate());
+            DrawModStatus(listing, MiraboreasCompatUtility.IsMiraboreasActive);
+
+            listing.CheckboxLabeled(
+                "RavenRace_Settings_EnableMiraboreasCompat".Translate(),
+                ref s.enableMiraboreasCompat,
+                "RavenRace_Settings_EnableMiraboreasCompat_Desc".Translate()
+            );
+
+
+            // =================================================
+            // 12. 珉巧 (Mincho) 
+            // =================================================
+            listing.GapLine();
+            listing.Label("RavenRace_Settings_MinchoCompat".Translate());
+            DrawModStatus(listing, MinchoCompatUtility.IsMinchoActive);
+
+            listing.CheckboxLabeled(
+                "RavenRace_Settings_EnableMinchoCompat".Translate(),
+                ref s.enableMinchoCompat,
+                "RavenRace_Settings_EnableMinchoCompat_Desc".Translate()
+            );
+
+
+
 
 
 

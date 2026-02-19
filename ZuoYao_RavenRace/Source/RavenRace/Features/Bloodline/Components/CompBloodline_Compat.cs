@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using Verse;
-using RimWorld;
-using UnityEngine;
-using RavenRace.Compat.Milira;
-using RavenRace.Compat.MoeLotl;
-using RavenRace.Compat.Koelime;
-using RavenRace.Compat.MuGirl;
-using RavenRace.Compat.Wolfein;
-using RavenRace.Compat.Dragonian;
-using RavenRace.Compat.Moyo;
-using RavenRace.Compat.Epona;
-using RavenRace.Compat.Tailin;
 using RavenRace.Compat.Cinder;
+using RavenRace.Compat.Dragonian;
+using RavenRace.Compat.Epona;
+using RavenRace.Compat.Koelime;
+using RavenRace.Compat.Milira;
+using RavenRace.Compat.Miraboreas;
+using RavenRace.Compat.MoeLotl;
+using RavenRace.Compat.Moyo;
+using RavenRace.Compat.MuGirl;
+using RavenRace.Compat.Tailin;
+using RavenRace.Compat.Wolfein;
+using RavenRace.Compat.Mincho; // 【新增】
+using RimWorld;
+using RimWorld.Planet;
+using UnityEngine;
+using Verse;
 
 // 记得每加一个都要引用命名空间！
 
@@ -142,6 +145,28 @@ namespace RavenRace.Features.Bloodline
                     bool hasCinder = CinderCompatUtility.HasCinderBloodline(this);
                     CinderCompatUtility.HandleCinderRegen(this.Pawn, hasCinder);
                 }
+
+                // 10. 米拉波雷亚斯 (Miraboreas)
+                if (RavenRaceMod.Settings.enableMiraboreasCompat && MiraboreasCompatUtility.IsMiraboreasActive)
+                {
+                    bool hasBloodline = MiraboreasCompatUtility.HasMiraboreasBloodline(this);
+                    MiraboreasCompatUtility.HandleMiraboreasBloodline(this.Pawn, hasBloodline);
+                }
+
+                // 11. 珉巧( Mincho) 
+                if (RavenRaceMod.Settings.enableMinchoCompat && MinchoCompatUtility.IsMinchoActive)
+                {
+                    bool hasMincho = MinchoCompatUtility.HasMinchoBloodline(this);
+                    MinchoCompatUtility.HandleMinchoBloodline(this.Pawn, hasMincho);
+                }
+
+
+
+
+
+
+
+
 
 
 

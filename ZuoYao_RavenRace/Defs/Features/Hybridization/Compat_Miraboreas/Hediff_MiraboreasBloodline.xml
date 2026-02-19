@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <HediffDef MayRequire="Tourswen.LegendaryBlackDragon">
+        <defName>Raven_Hediff_MiraboreasBloodline</defName>
+        <label>黑龙血脉</label>
+        <description>混合了传说古龙“米拉波雷亚斯”的血脉，获得了其部分毁灭性的力量。\n\n效果：\n- 完全免疫受击硬直。\n- 使用近战武器攻击时，有概率触发“拍击”，对目标周围小范围内的敌人造成冲击伤害。</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+        <isBad>false</isBad>
+        <initialSeverity>1.0</initialSeverity>
+        <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+        
+        <stages>
+          <li>
+            <statFactors>
+                <!-- 核心：将受击硬直时间乘数设为0，实现免疫 -->
+                <StaggerDurationFactor>0</StaggerDurationFactor>
+            </statFactors>
+          </li>
+        </stages>
+        
+        <comps>
+            <!-- 核心：存储拍击的范围和伤害系数 -->
+          <li Class="RavenRace.Compat.Miraboreas.CompProperties_MiraboreasSlam">
+            <slamRadius>3</slamRadius>
+            <slamDamageFactor>0.8</slamDamageFactor>
+          </li>
+        </comps>
+    </HediffDef>
+</Defs>
