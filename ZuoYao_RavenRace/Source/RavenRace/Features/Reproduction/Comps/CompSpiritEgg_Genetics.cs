@@ -28,33 +28,46 @@ namespace RavenRace.Features.Reproduction
 
         private void DetermineParents(Pawn carrier, Pawn partner)
         {
-            // [新增逻辑] 兼容同性/机械/男性生蛋
-            // 原逻辑可能会在性别相同时混淆 Father/Mother
+            // --- [BUG FIX] ---
+            // 核心修复：处理代孕任务中 carrier 和 partner 均为 null 的情况。
+            // 在这种情况下，父母是匿名的扶桑成员，我们直接设置名称为“扶桑”，并返回。
+            // 这样可以防止后续代码因访问 null Pawn 的属性（如 carrier.gender）而引发 NullReferenceException。
+            if (carrier == null && partner == null)
+            {
+                this.motherName = "扶桑"; // "Fusang"
+                this.fatherName = "扶桑"; // "Fusang"
+                this.faction = Faction.OfPlayer; // 保证派系正确
+                // motherId 和 fatherId 保持 null
+                return;
+            }
+
+            // --- 健壮性增强 ---
+            // 如果只有一个为 null，则将另一个作为双亲，确保 carrier 永远不为 null。
+            if (carrier == null) carrier = partner;
+            if (partner == null) partner = carrier;
+            // -----------------
 
             Pawn bioFather = null;
             Pawn bioMother = null;
 
-            bool sameSex = (partner != null && carrier.gender == partner.gender);
-            bool mechInvolved = carrier.RaceProps.IsMechanoid || (partner != null && partner.RaceProps.IsMechanoid);
+            bool sameSex = (carrier.gender == partner.gender);
+            bool mechInvolved = carrier.RaceProps.IsMechanoid || partner.RaceProps.IsMechanoid;
 
             if (sameSex || mechInvolved)
             {
                 // 在特殊情况下，carrier 强制为 Mother (生物学载体)，partner 强制为 Father (供体)
                 bioMother = carrier;
-                bioFather = partner ?? carrier;
+                bioFather = partner;
             }
             else
             {
                 // 正常异性逻辑
                 if (carrier.gender == Gender.Female) bioMother = carrier; else bioFather = carrier;
-                if (partner != null)
-                {
-                    if (partner.gender == Gender.Male) bioFather = partner; else bioMother = partner;
-                }
+                if (partner.gender == Gender.Male) bioFather = partner; else bioMother = partner;
             }
 
             if (bioMother == null) bioMother = carrier;
-            if (bioFather == null) bioFather = partner ?? carrier;
+            if (bioFather == null) bioFather = partner;
 
             this.motherId = bioMother?.ThingID;
             this.fatherId = bioFather?.ThingID;
@@ -65,6 +78,16 @@ namespace RavenRace.Features.Reproduction
 
         private void DetermineRace(Pawn carrier, Pawn partner)
         {
+            // 如果因为修复导致 carrier 和 partner 都为 null，则默认后代为纯血渡鸦
+            if (carrier == null && partner == null)
+            {
+                this.pawnKind = RavenDefOf.Raven_Colonist;
+                return;
+            }
+
+            // 保证 carrier 不为 null
+            if (carrier == null) carrier = partner;
+
             bool forceRaven = RavenRaceMod.Settings != null && RavenRaceMod.Settings.forceRavenDescendant;
             bool isCarrierRaven = carrier.def == RavenDefOf.Raven_Race;
             bool isPartnerRaven = (partner != null && partner.def == RavenDefOf.Raven_Race);
@@ -82,7 +105,7 @@ namespace RavenRace.Features.Reproduction
                 else
                 {
                     if (isCarrierRaven && isPartnerRaven) targetRaceDef = carrier.def;
-                    else if (isCarrierRaven) targetRaceDef = partner.def;
+                    else if (isCarrierRaven) targetRaceDef = partner?.def ?? carrier.def; // 安全检查
                     else targetRaceDef = carrier.def;
                 }
             }
@@ -96,7 +119,7 @@ namespace RavenRace.Features.Reproduction
 
         private void CalculateBloodlineInheritance(Pawn parent1, Pawn parent2)
         {
-            // 这里的 parent1 和 parent2 可能是机械
+            // 这里的 parent1 和 parent2 可能是 null
             var p1Data = GetOrSimulateBloodline(parent1);
             var p2Data = GetOrSimulateBloodline(parent2);
 
@@ -104,16 +127,27 @@ namespace RavenRace.Features.Reproduction
 
             Dictionary<string, float> tempComp = new Dictionary<string, float>();
             HashSet<string> allRaces = new HashSet<string>();
-            foreach (var k in p1Data.composition.Keys) if (k != "Human") allRaces.Add(k);
-            foreach (var k in p2Data.composition.Keys) if (k != "Human") allRaces.Add(k);
+
+            if (p1Data.composition != null)
+                foreach (var k in p1Data.composition.Keys) if (k != "Human") allRaces.Add(k);
+            if (p2Data.composition != null)
+                foreach (var k in p2Data.composition.Keys) if (k != "Human") allRaces.Add(k);
+
+            // 纯血代孕蛋强制包含渡鸦血脉
             allRaces.Add("Raven_Race");
 
             foreach (var race in allRaces)
             {
-                float val1 = p1Data.composition.ContainsKey(race) ? p1Data.composition[race] : 0f;
-                float val2 = p2Data.composition.ContainsKey(race) ? p2Data.composition[race] : 0f;
+                float val1 = p1Data.composition != null && p1Data.composition.ContainsKey(race) ? p1Data.composition[race] : 0f;
+                float val2 = p2Data.composition != null && p2Data.composition.ContainsKey(race) ? p2Data.composition[race] : 0f;
                 float baseVal = (val1 + val2) / 2f;
                 if (baseVal > 0) tempComp[race] = baseVal;
+            }
+
+            // 如果是代孕蛋，tempComp可能是空的，需要手动添加渡鸦血脉
+            if (!tempComp.Any())
+            {
+                tempComp["Raven_Race"] = 1.0f;
             }
 
             float currentRaven = tempComp.ContainsKey("Raven_Race") ? tempComp["Raven_Race"] : 0f;
@@ -130,7 +164,7 @@ namespace RavenRace.Features.Reproduction
             if (currentRaven < 0.5f)
             {
                 this.bloodlineComposition["Raven_Race"] = 0.5f;
-                float scaleFactor = 0.5f / (1.0f - currentRaven);
+                float scaleFactor = (1f - currentRaven) > 0 ? 0.5f / (1f - currentRaven) : 0f;
                 foreach (var kvp in normalizedOthers) this.bloodlineComposition[kvp.Key] = kvp.Value * scaleFactor;
             }
             else
