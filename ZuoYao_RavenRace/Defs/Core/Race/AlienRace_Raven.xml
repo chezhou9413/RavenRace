@@ -24,7 +24,7 @@
         <shadowTexPath>back</shadowTexPath>
         <shadowSize>1.2,1.2,1.2</shadowSize>
 
-        <autoLandingJobDefs>
+        <autoLandingJobDefs>    <!-- 自动降落逻辑 -->
           <!-- 睡眠/躺下 -->
           <li>LayDown</li>
           <li>LayDownAwake</li>

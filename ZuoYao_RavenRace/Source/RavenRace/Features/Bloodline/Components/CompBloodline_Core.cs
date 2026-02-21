@@ -3,6 +3,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 using System.Linq;
+using RavenRace.Compat.MoeLotl; // 引用
 
 namespace RavenRace.Features.Bloodline
 {
@@ -48,6 +49,17 @@ namespace RavenRace.Features.Bloodline
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 if (bloodlineComposition == null) bloodlineComposition = new Dictionary<string, float>();
+            }
+
+            // ============================================================
+            // [核心修复] 手动接管萌螈数据存档
+            // 因为萌螈组件是动态添加的，不在XML里，原版Load不会处理它。
+            // 我们必须在这里手动 Scribe 它的数据，把它存到 Bloodline 组件的数据块里。
+            // ============================================================
+            if (RavenRaceMod.Settings.enableMoeLotlCompat)
+            {
+                // 注意：这里需要传入 Pawn，因为 Utility 需要检查 Pawn 身上的组件
+                MoeLotlCompatUtility.ExposeCultivationData(this.Pawn);
             }
         }
 
