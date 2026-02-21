@@ -89,6 +89,18 @@
     <RavenRace_Settings_EnableNemesisCompat>Enable Nemesis Traits</RavenRace_Settings_EnableNemesisCompat>
     <RavenRace_Settings_EnableNemesisCompat_Desc>If enabled, ravens with Nemesis bloodline will gain "Phase Walk" ability, blinking short distances while moving at the cost of hunger.</RavenRace_Settings_EnableNemesisCompat_Desc>
 
+    <!-- Golden Gloria -->
+    <RavenRace_Settings_GoldenGloriaCompat>Golden Gloria Bloodline</RavenRace_Settings_GoldenGloriaCompat>
+    <RavenRace_Settings_EnableGoldenGloriaCompat>Enable Golden Gloria Traits</RavenRace_Settings_EnableGoldenGloriaCompat>
+    <RavenRace_Settings_EnableGoldenGloriaCompat_Desc>If enabled, ravens with Golden Gloria bloodline will gain "Golden Gloria Genotype" status, providing attribute bonuses (ignores gene testing).</RavenRace_Settings_EnableGoldenGloriaCompat_Desc>
+
+    <!-- Nivarian -->
+    <RavenRace_Settings_NivarianCompat>Nivarian Bloodline</RavenRace_Settings_NivarianCompat>
+    <RavenRace_Settings_EnableNivarianCompat>Enable Nivarian Traits</RavenRace_Settings_EnableNivarianCompat>
+    <RavenRace_Settings_EnableNivarianCompat_Desc>If enabled, ravens with Nivarian bloodline will gain the "Unyielding Focus" ability. When drafted, this ability intensifies over time, providing bonuses to movement speed, dodge chance, and pain threshold.</RavenRace_Settings_EnableNivarianCompat_Desc>
+
+
+
 
     <!-- Gizmo UI -->
     <Milira_Flight_Toggle>Flight</Milira_Flight_Toggle>

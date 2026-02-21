@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\race\\compgoldencrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:race\\compgoldencrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\bloodline\\components\\compbloodline_compat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\bloodline\\components\\compbloodline_compat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenracesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\ravenracesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\settings\\settings_hybridization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\settings\\settings_hybridization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\core\\ravenracestartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:core\\ravenracestartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\hybridization\\compat_nivarian\\hediffcomp_ravenunyieldingfocus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\hybridization\\compat_nivarian\\hediffcomp_ravenunyieldingfocus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\source\\ravenrace\\features\\hybridization\\compat_nivarian\\nivariancompatutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2FBD871-C0B5-4086-AEA4-9BBBD3D00D8C}|RavenRace.csproj|solutionrelative:features\\hybridization\\compat_nivarian\\nivariancompatutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CompGoldenCrow.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Race\\CompGoldenCrow.cs",
-              "RelativeDocumentMoniker": "Race\\CompGoldenCrow.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Race\\CompGoldenCrow.cs",
-              "RelativeToolTip": "Race\\CompGoldenCrow.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "HediffComp_RavenUnyieldingFocus.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Hybridization\\Compat_Nivarian\\HediffComp_RavenUnyieldingFocus.cs",
+              "RelativeDocumentMoniker": "Features\\Hybridization\\Compat_Nivarian\\HediffComp_RavenUnyieldingFocus.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Hybridization\\Compat_Nivarian\\HediffComp_RavenUnyieldingFocus.cs",
+              "RelativeToolTip": "Features\\Hybridization\\Compat_Nivarian\\HediffComp_RavenUnyieldingFocus.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAADwv2kAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-21T16:05:54.846Z",
+              "WhenOpened": "2026-02-21T17:18:44.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NivarianCompatUtility.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Hybridization\\Compat_Nivarian\\NivarianCompatUtility.cs",
+              "RelativeDocumentMoniker": "Features\\Hybridization\\Compat_Nivarian\\NivarianCompatUtility.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Hybridization\\Compat_Nivarian\\NivarianCompatUtility.cs",
+              "RelativeToolTip": "Features\\Hybridization\\Compat_Nivarian\\NivarianCompatUtility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T17:18:29.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RavenRaceStartup.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceStartup.cs",
+              "RelativeDocumentMoniker": "Core\\RavenRaceStartup.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceStartup.cs",
+              "RelativeToolTip": "Core\\RavenRaceStartup.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T16:49:18.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Settings_Hybridization.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\Settings\\Settings_Hybridization.cs",
+              "RelativeDocumentMoniker": "Core\\Settings\\Settings_Hybridization.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\Settings\\Settings_Hybridization.cs",
+              "RelativeToolTip": "Core\\Settings\\Settings_Hybridization.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAQwA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T16:46:18.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RavenRaceSettings.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceSettings.cs",
+              "RelativeDocumentMoniker": "Core\\RavenRaceSettings.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Core\\RavenRaceSettings.cs",
+              "RelativeToolTip": "Core\\RavenRaceSettings.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAwC4BAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T16:45:36.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CompBloodline_Compat.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Bloodline\\Components\\CompBloodline_Compat.cs",
+              "RelativeDocumentMoniker": "Features\\Bloodline\\Components\\CompBloodline_Compat.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\Source\\RavenRace\\Features\\Bloodline\\Components\\CompBloodline_Compat.cs",
+              "RelativeToolTip": "Features\\Bloodline\\Components\\CompBloodline_Compat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T16:44:55.437Z",
               "EditorCaption": ""
             }
           ]

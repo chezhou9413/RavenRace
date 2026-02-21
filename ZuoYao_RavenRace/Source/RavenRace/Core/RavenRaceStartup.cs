@@ -30,8 +30,10 @@ namespace RavenRace
             { "Tourswen.LegendaryBlackDragon",  "正在请黑龙给灶台生火..." },
             { "SutSutMan.MinchoTheMintChocoSlimeHARver",  "正在品尝美味的珉巧...嗯，是小人，不是冰淇淋！" },
             { "Aurora.Nebula.NemesisRaceThePunisher", "正在赐予纳美西斯甘甜的苦痛..." },
+            { "Golden.GloriasMod", "正在与煌金族共享金色的荣耀..." },
+            { "keeptpa.NivarianRace", "正在感受涅瓦莲冰冷坚毅的不屈之心..." },
 
-        };
+    };
 
         static RavenRaceStartup()
         {

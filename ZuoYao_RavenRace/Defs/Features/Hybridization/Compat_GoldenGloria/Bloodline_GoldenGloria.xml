@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 煌金族 (Golden Gloria) -->
+    <RavenRace.BloodlineDef MayRequire="Golden.GloriasMod">
+        <defName>Bloodline_GoldenGloria</defName>
+        <label>煌金血脉</label>
+        <labelShort>煌金</labelShort>
+        <description>源自煌金族的古老龙族血脉。这种血脉蕴含着纳米机械的潜力，能够赋予持有者“煌金基因型”的强化状态。</description>
+        <raceDef>GoldenGlorias</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>
