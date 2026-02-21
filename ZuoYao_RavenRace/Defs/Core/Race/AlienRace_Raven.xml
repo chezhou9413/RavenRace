@@ -23,11 +23,37 @@
         <hoverSpeed>2.5</hoverSpeed>
         <shadowTexPath>back</shadowTexPath>
         <shadowSize>1.2,1.2,1.2</shadowSize>
+
         <autoLandingJobDefs>
+          <!-- 睡眠/躺下 -->
           <li>LayDown</li>
+          <li>LayDownAwake</li>
+          <li>LayDownResting</li>
+          <!-- 游泳 -->
+          <li>GoSwimming</li>
+          <!-- 进入建筑/载具/舱体 -->
+          <li>EnterCryptosleepCasket</li>
+          <li>EnterTransporter</li>
+          <li>EnterBiosculpterPod</li>
+          <li>EnterBuilding</li>
+          <!-- 机械体充能 -->
+          <li>MechCharge</li>
         </autoLandingJobDefs>
-        <!-- takeOffButtonTexPath这个是配置起飞按钮贴图的
-        landingButtonTexPath这个是配置降落按钮贴图的 -->
+
+        <!-- 坠机配置 -->
+        <crashOnDowned>true</crashOnDowned>
+        <!-- 失去行动能力（Downed）时是否坠落（取消飞行状态） -->
+        <crashLandingMode>Teleport</crashLandingMode>
+        <!--         
+ 坠机后如果在不可站立地形上的处理模式：
+ Death = 直接死亡，Teleport = 弹到最近的安全地带 -->
+        <crashDamageMultiplier>1.0</crashDamageMultiplier>
+        <!-- 坠机伤害乘数 -->
+        <crashSound>Shuttle_CrashLanding</crashSound>
+        <!-- 坠机音效 -->
+
+        <!-- takeOffButtonTexPath 配置起飞按钮贴图 -->
+        <!-- landingButtonTexPath 配置降落按钮贴图 -->
       </li>
       <li Class="ChezhouLib.ClThingComp.ThingCompProperties_ClAnimationController"/>
     </comps>
