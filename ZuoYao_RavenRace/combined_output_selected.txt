@@ -9657,6 +9657,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 using System.Linq;
+using RavenRace.Compat.MoeLotl; // 引用
 
 namespace RavenRace.Features.Bloodline
 {
@@ -9702,6 +9703,17 @@ namespace RavenRace.Features.Bloodline
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 if (bloodlineComposition == null) bloodlineComposition = new Dictionary<string, float>();
+            }
+
+            // ============================================================
+            // [核心修复] 手动接管萌螈数据存档
+            // 因为萌螈组件是动态添加的，不在XML里，原版Load不会处理它。
+            // 我们必须在这里手动 Scribe 它的数据，把它存到 Bloodline 组件的数据块里。
+            // ============================================================
+            if (RavenRaceMod.Settings.enableMoeLotlCompat)
+            {
+                // 注意：这里需要传入 Pawn，因为 Utility 需要检查 Pawn 身上的组件
+                MoeLotlCompatUtility.ExposeCultivationData(this.Pawn);
             }
         }
 
@@ -11373,132 +11385,6 @@ namespace RavenRace.Compat.Miraboreas
 }.
 .
 =
-File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\Features\Hybridization\Compat_MoeLotl\Debug_Axolotl_SaveLoad.cs
-=
-.
-﻿using HarmonyLib;
-using Verse;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq;
-using RimWorld;
-using System.Text;
-
-namespace RavenRace.Compat.MoeLotl
-{
-    /// <summary>
-    /// [侦探脚本 V2] 专注于追踪数据载入后的去向
-    /// </summary>
-    [HarmonyPatch]
-    public static class Debug_Axolotl_Inspector
-    {
-        // 1. 监听 PostExposeData 完成后的瞬间状态
-        [HarmonyPatch(typeof(ThingComp), "PostExposeData")] // 这里我们手动指定Target，因为我们要Patch的是萌螈的类
-        public static class Patch_PostExposeData_End
-        {
-            public static bool Prepare()
-            {
-                return MoeLotlCompatUtility.IsMoeLotlActive;
-            }
-
-            public static MethodBase TargetMethod()
-            {
-                return AccessTools.Method(MoeLotlCompatUtility.CompCultivationType, "PostExposeData");
-            }
-
-            [HarmonyPostfix]
-            public static void Postfix(ThingComp __instance)
-            {
-                if (Scribe.mode != LoadSaveMode.PostLoadInit) return; // 只关注载入完成阶段
-
-                Pawn pawn = __instance.parent as Pawn;
-                if (pawn == null || pawn.def != RavenDefOf.Raven_Race) return;
-
-                Log.Error($"[RavenInspector] 1. PostExposeData 结束: {pawn.Name}");
-                CheckSkills(__instance, "PostExposeData");
-            }
-        }
-
-        // 2. 监听 SpawnSetup (生成到地图时)，看看此时数据是否还在
-        [HarmonyPatch(typeof(ThingComp), "PostSpawnSetup")]
-        public static class Patch_PostSpawnSetup
-        {
-            public static bool Prepare()
-            {
-                return MoeLotlCompatUtility.IsMoeLotlActive;
-            }
-
-            public static MethodBase TargetMethod()
-            {
-                return AccessTools.Method(MoeLotlCompatUtility.CompCultivationType, "PostSpawnSetup");
-            }
-
-            [HarmonyPostfix]
-            public static void Postfix(ThingComp __instance)
-            {
-                Pawn pawn = __instance.parent as Pawn;
-                if (pawn == null || pawn.def != RavenDefOf.Raven_Race) return;
-
-                Log.Error($"[RavenInspector] 2. PostSpawnSetup 结束: {pawn.Name}");
-                CheckSkills(__instance, "PostSpawnSetup");
-            }
-        }
-
-        // 3. 辅助检查方法
-        public static void CheckSkills(ThingComp comp, string stage)
-        {
-            Traverse trav = Traverse.Create(comp);
-            var skills = trav.Field("AllLearnedSkills").GetValue() as IList;
-            var installList = trav.Field("SkillInstallList").GetValue() as IList;
-
-            if (skills == null)
-            {
-                Log.Error($"[RavenInspector] [{stage}] AllLearnedSkills is NULL!");
-            }
-            else
-            {
-                Log.Error($"[RavenInspector] [{stage}] Skills Count: {skills.Count}");
-                foreach (var skill in skills)
-                {
-                    if (skill == null)
-                    {
-                        Log.Error($"[RavenInspector]  - Found NULL skill entry!");
-                        continue;
-                    }
-
-                    Traverse tSkill = Traverse.Create(skill);
-                    Def def = tSkill.Field("def").GetValue<Def>();
-                    Pawn p = tSkill.Field("pawn").GetValue<Pawn>();
-                    var comps = tSkill.Field("comps").GetValue() as IList;
-
-                    string defName = def?.defName ?? "NULL_DEF";
-                    string pawnName = p?.Name?.ToStringFull ?? "NULL_PAWN";
-                    int compCount = comps?.Count ?? -1;
-
-                    Log.Error($"[RavenInspector]  - Skill: {defName} | PawnRef: {pawnName} | Comps: {compCount}");
-                }
-            }
-
-            if (installList == null)
-            {
-                Log.Error($"[RavenInspector] [{stage}] SkillInstallList is NULL!");
-            }
-            else
-            {
-                Log.Error($"[RavenInspector] [{stage}] InstallList Count: {installList.Count}");
-                foreach (var item in installList)
-                {
-                    Def d = item as Def;
-                    Log.Error($"[RavenInspector]  - Installed: {d?.defName ?? "NULL"}");
-                }
-            }
-        }
-    }
-}.
-.
-=
 File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\Features\Hybridization\Compat_MoeLotl\MoeLotlCompatUtility.cs
 =
 .
@@ -11510,19 +11396,19 @@ using RimWorld;
 using HarmonyLib;
 using System.Collections.Generic;
 using RavenRace.Features.Bloodline;
+using System.Collections; // 必须引用
 
 namespace RavenRace.Compat.MoeLotl
 {
     /// <summary>
     /// 萌螈兼容性工具类 - 最终完整版
     /// 包含所有字段定义、血脉检查逻辑以及存档修复逻辑。
-    /// [核心修复] 新增了对萌螈原版CompProperties的缓存与注入逻辑，以解决存档加载后数据丢失的问题。
     /// </summary>
     [StaticConstructorOnStartup]
     public static class MoeLotlCompatUtility
     {
         // =============================================================
-        // 1. 静态类型引用 (通过反射获取，避免编译时依赖)
+        // 1. 静态类型引用
         // =============================================================
         public static Type CompCultivationType;
         public static Type CompAxolotlEnergyType;
@@ -11533,11 +11419,15 @@ namespace RavenRace.Compat.MoeLotl
         public static Type WorkGiverReadBookType;
         public static Type MoeLotlSkillBookType;
 
+        // 反射萌螈的数据类型
+        public static Type MoeLotlQiSkillType;
+        public static Type MoeLotlQiSkillDefType;
+
         public static HediffDef LotlQiHediffDef;
         public static bool IsMoeLotlActive { get; private set; }
 
         // =============================================================
-        // 2. [核心修复] 存档修复专用缓存 (用于 Props 注入)
+        // 2. 存档修复专用缓存
         // =============================================================
         public static CompProperties CachedCultivationProps;
         public static CompProperties CachedEnergyProps;
@@ -11551,10 +11441,10 @@ namespace RavenRace.Compat.MoeLotl
                 if (axolotlRace == null)
                 {
                     IsMoeLotlActive = false;
-                    return; // 如果连萌螈种族都找不到，直接中止
+                    return;
                 }
 
-                // 反射所有必要的类型
+                // 反射类型
                 CompCultivationType = AccessTools.TypeByName("Axolotl.Comp_Cultivation");
                 CompAxolotlEnergyType = AccessTools.TypeByName("Axolotl.CompAxolotlEnergy");
                 ITabCultivationType = AccessTools.TypeByName("Axolotl.ITab_MoeLotl_Cultivation");
@@ -11564,6 +11454,9 @@ namespace RavenRace.Compat.MoeLotl
                 WorkGiverReadBookType = AccessTools.TypeByName("Axolotl.WorkGiver_ReadMoeLotlQiSkillBook");
                 MoeLotlSkillBookType = AccessTools.TypeByName("Axolotl.MoeLotlSkillBook");
 
+                MoeLotlQiSkillType = AccessTools.TypeByName("Axolotl.MoeLotlQiSkill");
+                MoeLotlQiSkillDefType = AccessTools.TypeByName("Axolotl.MoeLotlQiSkillDef");
+
                 // 获取 Hediff
                 LotlQiHediffDef = DefDatabase<HediffDef>.GetNamedSilentFail("Axolotl_LotlQi");
 
@@ -11572,18 +11465,16 @@ namespace RavenRace.Compat.MoeLotl
 
                 if (!IsMoeLotlActive) return;
 
-                // [核心修复] 缓存萌螈原版的 CompProperties
-                // 这是解决“存档加载后 props 为空导致数据丢失”的关键
+                // 缓存 Props
                 if (CompCultivationType != null)
                     CachedCultivationProps = axolotlRace.comps.FirstOrDefault(p => p.compClass == CompCultivationType);
 
                 if (CompAxolotlEnergyType != null)
                     CachedEnergyProps = axolotlRace.comps.FirstOrDefault(p => p.compClass == CompAxolotlEnergyType);
 
-                // [兜底逻辑] 如果 Def 里没找到，手动创建一个空属性，防止空指针崩溃
+                // 兜底逻辑
                 if (CachedCultivationProps == null && CompCultivationType != null)
                 {
-                    Log.Warning("[RavenRace] Could not find CompProperties_Cultivation in Axolotl ThingDef. Creating a fallback instance.");
                     Type propType = AccessTools.TypeByName("Axolotl.CompProperties_Cultivation");
                     if (propType != null)
                         CachedCultivationProps = (CompProperties)Activator.CreateInstance(propType);
@@ -11593,7 +11484,6 @@ namespace RavenRace.Compat.MoeLotl
 
                 if (CachedEnergyProps == null && CompAxolotlEnergyType != null)
                 {
-                    Log.Warning("[RavenRace] Could not find CompProperties_AxolotlEnergy in Axolotl ThingDef. Creating a fallback instance.");
                     Type propType = AccessTools.TypeByName("Axolotl.CompProperties_AxolotlEnergy");
                     if (propType != null)
                         CachedEnergyProps = (CompProperties)Activator.CreateInstance(propType);
@@ -11612,19 +11502,12 @@ namespace RavenRace.Compat.MoeLotl
         // 3. 核心功能方法
         // =============================================================
 
-        /// <summary>
-        /// 赋予或修复渡鸦的修仙能力组件。
-        /// </summary>
         public static void GrantCultivationAbility(Pawn pawn)
         {
             if (!IsMoeLotlActive || pawn == null) return;
-
             try
             {
-                // 1. 处理修炼组件 (Comp_Cultivation)
                 EnsureCompExistsAndInitialize(pawn, CompCultivationType, CachedCultivationProps);
-
-                // 2. 处理能量组件 (CompAxolotlEnergy)
                 EnsureCompExistsAndInitialize(pawn, CompAxolotlEnergyType, CachedEnergyProps);
             }
             catch (Exception ex)
@@ -11633,13 +11516,9 @@ namespace RavenRace.Compat.MoeLotl
             }
         }
 
-        /// <summary>
-        /// 辅助方法：确保组件存在。如果不存在，则使用缓存的正确 props 创建并添加它。
-        /// </summary>
         private static void EnsureCompExistsAndInitialize(Pawn pawn, Type compType, CompProperties props)
         {
             if (compType == null || props == null) return;
-
             if (pawn.AllComps.Any(c => c.GetType() == compType)) return;
 
             try
@@ -11659,13 +11538,9 @@ namespace RavenRace.Compat.MoeLotl
             }
         }
 
-        /// <summary>
-        /// 检查Pawn是否拥有萌螈血脉
-        /// </summary>
         public static bool HasMoeLotlBloodline(Pawn pawn)
         {
             if (pawn == null) return false;
-
             var comp = pawn.TryGetComp<CompBloodline>();
             if (comp != null && comp.BloodlineComposition != null)
             {
@@ -11675,9 +11550,6 @@ namespace RavenRace.Compat.MoeLotl
             return false;
         }
 
-        /// <summary>
-        /// 获取当前阅读计划
-        /// </summary>
         public static ThingDef GetTargetReadBook(Pawn pawn)
         {
             if (!IsMoeLotlActive || CompCultivationType == null) return null;
@@ -11689,20 +11561,152 @@ namespace RavenRace.Compat.MoeLotl
                 if (field != null) return (ThingDef)field.GetValue(comp);
                 return null;
             }
-            catch
+            catch { return null; }
+        }
+
+        // =============================================================
+        // 4. [关键] 手动存档接管逻辑
+        // =============================================================
+
+        /// <summary>
+        /// 在 CompBloodline.PostExposeData 中调用。
+        /// 手动将 Comp_Cultivation 的数据保存到 CompBloodline 的存档流中。
+        /// </summary>
+        public static void ExposeCultivationData(Pawn pawn)
+        {
+            if (!IsMoeLotlActive || pawn == null) return;
+
+            // 1. 获取或创建组件（确保 Loading 时组件存在）
+            ThingComp cultComp = null;
+            if (Scribe.mode == LoadSaveMode.Saving)
             {
-                return null;
+                // 保存时，只获取已存在的
+                cultComp = pawn.AllComps.FirstOrDefault(c => c.GetType() == CompCultivationType);
+            }
+            else if (Scribe.mode == LoadSaveMode.LoadingVars)
+            {
+                // 加载时，必须强制创建，否则 Scribe 没地方写数据
+                EnsureCompExistsAndInitialize(pawn, CompCultivationType, CachedCultivationProps);
+                cultComp = pawn.AllComps.FirstOrDefault(c => c.GetType() == CompCultivationType);
+
+                // 同样保证 Energy 组件存在
+                EnsureCompExistsAndInitialize(pawn, CompAxolotlEnergyType, CachedEnergyProps);
+            }
+            else
+            {
+                // PostLoadInit 等其他阶段，尝试获取
+                cultComp = pawn.AllComps.FirstOrDefault(c => c.GetType() == CompCultivationType);
+            }
+
+            if (cultComp == null) return; // 如果还没血脉或没组件，就不存
+
+            // 2. 利用反射进行 Scribe
+            // 只要我们进入了 Scribe_Deep 节点，这里的 Look 就会写入 Bloodline 组件下的子节点
+            try
+            {
+                Traverse trav = Traverse.Create(cultComp);
+
+                // A. AllLearnedSkills (List<MoeLotlQiSkill>)
+                var allLearnedSkills = trav.Field("AllLearnedSkills").GetValue();
+                LookEx_List(ref allLearnedSkills, "Axolotl.MoeLotlQiSkill", "Raven_MoeLotl_Skills", LookMode.Deep, Array.Empty<object>());
+                trav.Field("AllLearnedSkills").SetValue(allLearnedSkills);
+
+                // B. TargetReadBook (ThingDef)
+                var targetReadBook = trav.Field("TargetReadBook").GetValue<ThingDef>();
+                Scribe_Defs.Look(ref targetReadBook, "Raven_MoeLotl_TargetBook");
+                trav.Field("TargetReadBook").SetValue(targetReadBook);
+
+                // C. KV_SkillLearningProgress
+                var skillLearningProgress = trav.Field("KV_SkillLearningProgress").GetValue();
+                LookEx_Dict(ref skillLearningProgress, "Axolotl.MoeLotlQiSkillDef", typeof(int), "Raven_MoeLotl_Progress", LookMode.Def, LookMode.Value);
+                trav.Field("KV_SkillLearningProgress").SetValue(skillLearningProgress);
+
+                // D. KV_SkillLearningMax
+                var skillLearningMax = trav.Field("KV_SkillLearningMax").GetValue();
+                LookEx_Dict(ref skillLearningMax, "Axolotl.MoeLotlQiSkillDef", typeof(int), "Raven_MoeLotl_Max", LookMode.Def, LookMode.Value);
+                trav.Field("KV_SkillLearningMax").SetValue(skillLearningMax);
+
+                // E. SkillInstallList
+                var skillInstallList = trav.Field("SkillInstallList").GetValue();
+                LookEx_List(ref skillInstallList, "Axolotl.MoeLotlQiSkillDef", "Raven_MoeLotl_InstallList", LookMode.Def, Array.Empty<object>());
+                trav.Field("SkillInstallList").SetValue(skillInstallList);
+
+                // 3. 后处理初始化 (模拟萌螈原版的 PostExposeData 逻辑)
+                if (Scribe.mode == LoadSaveMode.PostLoadInit)
+                {
+                    ReinitializeSkills(pawn, cultComp, allLearnedSkills as IList);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"[RavenRace] Error manually scribing MoeLotl data for {pawn.LabelShort}: {ex}");
             }
         }
 
-        public static void LogCompatibilityStatus()
+        private static void ReinitializeSkills(Pawn pawn, ThingComp cultComp, IList skillsList)
         {
-            if (!IsMoeLotlActive)
+            if (skillsList == null) return;
+
+            // 清理空元素
+            for (int i = skillsList.Count - 1; i >= 0; i--)
             {
-                Log.Message("[RavenRace] MoeLotl compatibility: INACTIVE (Mod not detected)");
-                return;
+                if (skillsList[i] == null) skillsList.RemoveAt(i);
             }
-            Log.Message("[RavenRace] MoeLotl Status: ACTIVE.");
+
+            foreach (var skill in skillsList)
+            {
+                if (skill == null) continue;
+                Traverse st = Traverse.Create(skill);
+
+                // 1. 核心修复：强制重置 pawn 引用
+                // 萌螈原版用 Scribe_References 保存，但在嵌套Scribe中可能不稳定
+                st.Field("pawn").SetValue(pawn);
+
+                // 2. 调用萌螈原版初始化逻辑
+                // public virtual void Notify_LevelChange() -> Calls UpdateCurrentStatModifier -> InitializeComps
+                // 我们直接调用反编译代码中看到的流程
+                try
+                {
+                    st.Method("InitializeComps").GetValue(); // 实例化技能组件
+                    st.Method("UpdateCurrentStatModifier").GetValue(); // 更新数值
+                    st.Method("Notify_LevelChange").GetValue(); // 触发更新
+                }
+                catch (Exception ex)
+                {
+                    Log.Warning($"[RavenRace] Failed to re-init skill {skill}: {ex.Message}");
+                }
+            }
+        }
+
+        // =============================================================
+        // 5. 反射 Scribe 辅助方法 (复用之前的逻辑)
+        // =============================================================
+        private static void LookEx_List(ref object list, string typeName, string label, LookMode lookMode, object[] ctorArgs)
+        {
+            Type itemType = AccessTools.TypeByName(typeName);
+            if (itemType == null) return;
+
+            var method = typeof(Scribe_Collections).GetMethods(BindingFlags.Static | BindingFlags.Public)
+                .First(m => m.Name == "Look" && m.GetGenericArguments().Length == 1 && m.GetParameters().Length == 4 && m.GetParameters()[3].ParameterType == typeof(object[]))
+                .MakeGenericMethod(itemType);
+
+            object[] args = new object[] { list, label, lookMode, ctorArgs ?? new object[0] };
+            method.Invoke(null, args);
+            list = args[0];
+        }
+
+        private static void LookEx_Dict(ref object dict, string keyTypeName, Type valueType, string label, LookMode keyLookMode, LookMode valueLookMode)
+        {
+            Type keyType = AccessTools.TypeByName(keyTypeName);
+            if (keyType == null) return;
+
+            var method = typeof(Scribe_Collections).GetMethods(BindingFlags.Static | BindingFlags.Public)
+                .First(m => m.Name == "Look" && m.GetGenericArguments().Length == 2 && m.GetParameters().Length == 4 && m.GetParameters()[2].ParameterType == typeof(LookMode))
+                .MakeGenericMethod(keyType, valueType);
+
+            object[] args = new object[] { dict, label, keyLookMode, valueLookMode };
+            method.Invoke(null, args);
+            dict = args[0];
         }
     }
 }.
@@ -11745,22 +11749,30 @@ namespace RavenRace.Compat.MoeLotl
             try
             {
                 // ==============================================================
-                // [核心功能修复] 全局补丁 IsMoeLotl() 方法
-                // 这是解决所有兼容问题的根源。它让萌螈mod的所有部分都承认我们的混血渡鸦。
+                // 1. [核心功能] 全局补丁 IsMoeLotl()
                 // ==============================================================
                 var mIsMoeLotl = AccessTools.Method("Axolotl.AxolotlExtension:IsMoeLotl");
                 if (mIsMoeLotl != null)
                 {
                     harmony.Patch(mIsMoeLotl, postfix: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(IsMoeLotl_Postfix)));
                 }
-                else
+
+                // ==============================================================
+                // 2. [核心修复] 拦截萌螈组件的原版存档逻辑
+                // 防止出现 "Id already used" 红字。因为数据已经由 CompBloodline 手动接管。
+                // ==============================================================
+                if (MoeLotlCompatUtility.CompCultivationType != null)
                 {
-                    Log.Error("[RavenRace] MoeLotl compat: CRITICAL - Could not find method 'Axolotl.AxolotlExtension:IsMoeLotl' to patch. Compatibility will fail.");
+                    var mPostExposeData = AccessTools.Method(MoeLotlCompatUtility.CompCultivationType, "PostExposeData");
+                    if (mPostExposeData != null)
+                    {
+                        harmony.Patch(mPostExposeData, prefix: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(CompCultivation_PostExposeData_Prefix)));
+                    }
                 }
 
-
-                // [保留的其他功能性兼容补丁]
-                // 这些补丁确保混血渡鸦可以使用萌螈的物品、正确计算能量恢复等。
+                // ==============================================================
+                // 3. 其他功能性补丁
+                // ==============================================================
                 if (MoeLotlCompatUtility.CompUseEffectEnergyThingType != null)
                 {
                     var mCanBeUsedBy = AccessTools.Method(MoeLotlCompatUtility.CompUseEffectEnergyThingType, "CanBeUsedBy");
@@ -11806,7 +11818,7 @@ namespace RavenRace.Compat.MoeLotl
 
                 ApplyMiscPatches(harmony);
 
-                RavenModUtility.LogVerbose("[RavenRace] MoeLotl compatibility patches applied successfully.");
+                // RavenModUtility.LogVerbose("[RavenRace] MoeLotl compatibility patches applied successfully.");
             }
             catch (Exception ex)
             {
@@ -11814,11 +11826,24 @@ namespace RavenRace.Compat.MoeLotl
             }
         }
 
+        // ==============================================================
+        // 补丁实现
+        // ==============================================================
+
         /// <summary>
-        /// [核心功能修复] 在 Axolotl.AxolotlExtension:IsMoeLotl() 方法之后执行。
-        /// 如果原方法因为种族检查而返回 false，我们的补丁会介入，
-        /// 检查Pawn是否是拥有萌螈血脉的渡鸦。如果是，则强制将结果改为 true。
+        /// [拦截补丁] 如果是渡鸦族，禁止运行 Comp_Cultivation.PostExposeData。
+        /// 这里的逻辑完全由 MoeLotlCompatUtility.ExposeCultivationData 手动处理。
         /// </summary>
+        public static bool CompCultivation_PostExposeData_Prefix(ThingComp __instance)
+        {
+            Pawn pawn = __instance.parent as Pawn;
+            if (pawn != null && pawn.def == RavenDefOf.Raven_Race)
+            {
+                return false; // 拦截原版，防止双重注册 ID 导致的红字
+            }
+            return true; // 其他种族正常执行
+        }
+
         public static void IsMoeLotl_Postfix(Pawn pawn, ref bool __result)
         {
             if (__result || pawn == null) return;
@@ -11830,7 +11855,6 @@ namespace RavenRace.Compat.MoeLotl
                 __result = true;
             }
         }
-
 
         private static void ApplyMiscPatches(HarmonyLib.Harmony harmony)
         {
@@ -11912,12 +11936,6 @@ namespace RavenRace.Compat.MoeLotl
                         }
 
                         ThingDef targetBookDef = MoeLotlCompatUtility.GetTargetReadBook(pawn);
-                        if (RavenRaceMod.Settings.enableDebugMode)
-                        {
-                            string tName = targetBookDef?.defName ?? "NULL";
-                            string cName = t.def.defName;
-                            Log.Message($"[RavenRace] RightClick: Pawn={pawn.LabelShort}, TargetInComp={tName}, Clicked={cName}");
-                        }
 
                         if (targetBookDef != t.def)
                         {
@@ -12033,308 +12051,6 @@ namespace RavenRace.Compat.MoeLotl
             }
         }
         #endregion
-    }
-}.
-.
-=
-File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\Features\Hybridization\Compat_MoeLotl\Patch_MoeLotl_SaveLoad.cs
-=
-.
-﻿using HarmonyLib;
-using Verse;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq;
-using RimWorld;
-
-namespace RavenRace.Compat.MoeLotl
-{
-    /// <summary>
-    /// [编译修正版 V6] 萌螈修炼组件存读档补丁
-    /// 修复重点：
-    /// 1. 修正 GetComp 编译错误（改用 LINQ 查找）。
-    /// 2. 修正 Scribe 反射。
-    /// 3. 强制 Props 注入。
-    /// 4. 在 PostLoadInit 阶段强制修复 Pawn 引用并执行技能初始化。
-    /// </summary>
-    [HarmonyPatch]
-    public static class Patch_CompCultivation_PostExposeData
-    {
-        // 缓存反射获取的方法
-        private static MethodInfo _lookListMethod;
-        private static MethodInfo _lookDictMethod;
-
-        // 目标：Axolotl.Comp_Cultivation.PostExposeData
-        public static MethodBase TargetMethod()
-        {
-            if (!MoeLotlCompatUtility.IsMoeLotlActive) return null;
-            return AccessTools.Method(MoeLotlCompatUtility.CompCultivationType, "PostExposeData");
-        }
-
-        public static bool Prefix(ThingComp __instance)
-        {
-            Pawn pawn = __instance.parent as Pawn;
-
-            // 仅对混血渡鸦生效
-            if (pawn == null || pawn.def != RavenDefOf.Raven_Race || !RavenRaceMod.Settings.enableMoeLotlCompat)
-            {
-                return true;
-            }
-
-            try
-            {
-                // [1] 修复动态组件 Props 丢失
-                if (__instance.props == null && MoeLotlCompatUtility.CachedCultivationProps != null)
-                {
-                    __instance.Initialize(MoeLotlCompatUtility.CachedCultivationProps);
-                }
-
-                Traverse trav = Traverse.Create(__instance);
-
-                // =========================================================
-                // 数据保存/读取流程 (Scribe)
-                // =========================================================
-
-                // --- 1. AllLearnedSkills (List<MoeLotlQiSkill>) ---
-                var allLearnedSkills = trav.Field("AllLearnedSkills").GetValue();
-                if (allLearnedSkills == null)
-                {
-                    Type listType = typeof(List<>).MakeGenericType(AccessTools.TypeByName("Axolotl.MoeLotlQiSkill"));
-                    allLearnedSkills = Activator.CreateInstance(listType);
-                    trav.Field("AllLearnedSkills").SetValue(allLearnedSkills);
-                }
-                LookEx_List(ref allLearnedSkills, "Axolotl.MoeLotlQiSkill", "AllLearnedSkills", LookMode.Deep, new object[0]);
-                trav.Field("AllLearnedSkills").SetValue(allLearnedSkills);
-
-                // --- 2. TargetReadBook (ThingDef) ---
-                var targetReadBook = trav.Field("TargetReadBook").GetValue<ThingDef>();
-                Scribe_Defs.Look(ref targetReadBook, "TargetReadBook");
-                trav.Field("TargetReadBook").SetValue(targetReadBook);
-
-                // --- 3. KV_SkillLearningProgress (Dictionary<MoeLotlQiSkillDef, int>) ---
-                var skillLearningProgress = trav.Field("KV_SkillLearningProgress").GetValue();
-                LookEx_Dict(ref skillLearningProgress, "Axolotl.MoeLotlQiSkillDef", typeof(int), "KV_SkillLearningProgress", LookMode.Def, LookMode.Value);
-                trav.Field("KV_SkillLearningProgress").SetValue(skillLearningProgress);
-
-                // --- 4. KV_SkillLearningMax (Dictionary<MoeLotlQiSkillDef, int>) ---
-                var skillLearningMax = trav.Field("KV_SkillLearningMax").GetValue();
-                LookEx_Dict(ref skillLearningMax, "Axolotl.MoeLotlQiSkillDef", typeof(int), "KV_SkillLearningMax", LookMode.Def, LookMode.Value);
-                trav.Field("KV_SkillLearningMax").SetValue(skillLearningMax);
-
-                // --- 5. SkillInstallList (List<MoeLotlQiSkillDef>) ---
-                var skillInstallList = trav.Field("SkillInstallList").GetValue();
-                if (skillInstallList == null)
-                {
-                    Type listType = typeof(List<>).MakeGenericType(AccessTools.TypeByName("Axolotl.MoeLotlQiSkillDef"));
-                    skillInstallList = Activator.CreateInstance(listType);
-                    trav.Field("SkillInstallList").SetValue(skillInstallList);
-                }
-                LookEx_List(ref skillInstallList, "Axolotl.MoeLotlQiSkillDef", "SkillInstallList", LookMode.Def, null);
-                trav.Field("SkillInstallList").SetValue(skillInstallList);
-
-
-                // =========================================================
-                // [核心修复] 载入后数据初始化
-                // =========================================================
-                if (Scribe.mode == LoadSaveMode.PostLoadInit || Scribe.mode == LoadSaveMode.LoadingVars)
-                {
-                    InitializeDataStructs(trav);
-
-                    var skillsList = trav.Field("AllLearnedSkills").GetValue() as IList;
-                    var installList = trav.Field("SkillInstallList").GetValue() as IList;
-
-                    if (skillsList != null)
-                    {
-                        // 清理空元素
-                        for (int i = skillsList.Count - 1; i >= 0; i--)
-                        {
-                            if (skillsList[i] == null) skillsList.RemoveAt(i);
-                        }
-
-                        foreach (var skill in skillsList)
-                        {
-                            if (skill != null)
-                            {
-                                Traverse st = Traverse.Create(skill);
-
-                                // 1. 修复父引用
-                                st.Field("pawn").SetValue(pawn);
-
-                                // 2. 初始化组件与数值
-                                try
-                                {
-                                    st.Method("InitializeComps").GetValue();
-                                    st.Method("UpdateCurrentStatModifier").GetValue();
-                                    st.Method("Notify_LevelChange").GetValue();
-
-                                    // 3. 如果是已启用技能，触发启用通知
-                                    Def skillDef = st.Field("def").GetValue<Def>();
-                                    if (installList != null && installList.Contains(skillDef))
-                                    {
-                                        st.Method("Notify_InstallSkill").GetValue();
-                                    }
-                                }
-                                catch
-                                {
-                                    // 忽略单个技能初始化错误
-                                }
-                            }
-                        }
-                    }
-
-                    // [修复编译错误] 刷新护盾
-                    // 原版 GetComp 不支持 Type 参数，必须使用 AllComps 查找
-                    if (MoeLotlCompatUtility.CompAxolotlEnergyType != null)
-                    {
-                        ThingComp energyComp = pawn.AllComps.FirstOrDefault(c => c.GetType() == MoeLotlCompatUtility.CompAxolotlEnergyType);
-
-                        if (energyComp != null)
-                        {
-                            // 通过反射调用 Action_UpdateLastDamageTick
-                            Traverse.Create(energyComp).Method("Action_UpdateLastDamageTick").GetValue();
-                            // 调用 AutoResetShield (这个方法会计算护盾值)
-                            Traverse.Create(energyComp).Method("AutoResetShield").GetValue();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"[RavenRace] MoeLotl Save/Load Patch Critical Error for {pawn.LabelShort}: {ex}");
-                return false;
-            }
-
-            return false;
-        }
-
-        // ========================================================================
-        // 反射逻辑
-        // ========================================================================
-
-        private static MethodInfo GetLookListMethod()
-        {
-            if (_lookListMethod != null) return _lookListMethod;
-
-            var methods = typeof(Scribe_Collections).GetMethods(BindingFlags.Static | BindingFlags.Public);
-            foreach (var m in methods)
-            {
-                if (m.Name != "Look" || !m.IsGenericMethodDefinition) continue;
-                if (m.GetGenericArguments().Length != 1) continue;
-
-                var pars = m.GetParameters();
-                if (pars.Length == 4 &&
-                    pars[0].ParameterType.IsByRef &&             // ref List<T>
-                    pars[1].ParameterType == typeof(string) &&   // string label
-                    pars[2].ParameterType == typeof(LookMode) && // LookMode
-                    pars[3].ParameterType == typeof(object[]))   // params object[]
-                {
-                    _lookListMethod = m;
-                    return m;
-                }
-            }
-            return null;
-        }
-
-        private static MethodInfo GetLookDictMethod()
-        {
-            if (_lookDictMethod != null) return _lookDictMethod;
-
-            var methods = typeof(Scribe_Collections).GetMethods(BindingFlags.Static | BindingFlags.Public);
-            foreach (var m in methods)
-            {
-                if (m.Name != "Look" || !m.IsGenericMethodDefinition) continue;
-                if (m.GetGenericArguments().Length != 2) continue;
-
-                var pars = m.GetParameters();
-                if (pars.Length == 4 &&
-                    pars[0].ParameterType.IsByRef &&             // ref Dictionary<K,V>
-                    pars[1].ParameterType == typeof(string) &&   // string label
-                    pars[2].ParameterType == typeof(LookMode))   // LookMode key
-                {
-                    _lookDictMethod = m;
-                    return m;
-                }
-            }
-            return null;
-        }
-
-        private static void LookEx_List(ref object list, string typeName, string label, LookMode lookMode, object[] ctorArgs)
-        {
-            Type itemType = AccessTools.TypeByName(typeName);
-            if (itemType == null) return;
-
-            var methodDef = GetLookListMethod();
-            if (methodDef == null) return;
-
-            var method = methodDef.MakeGenericMethod(itemType);
-
-            object[] args;
-            if (methodDef.GetParameters().Length == 4)
-            {
-                args = new object[] { list, label, lookMode, ctorArgs ?? new object[0] };
-            }
-            else
-            {
-                args = new object[] { list, label, false, lookMode, ctorArgs ?? new object[0] };
-            }
-
-            try
-            {
-                method.Invoke(null, args);
-                list = args[0];
-            }
-            catch (Exception ex)
-            {
-                Log.Warning($"[RavenRace] Scribe List invoke error: {ex.Message}");
-            }
-        }
-
-        private static void LookEx_Dict(ref object dict, string keyTypeName, Type valueType, string label, LookMode keyLookMode, LookMode valueLookMode)
-        {
-            Type keyType = AccessTools.TypeByName(keyTypeName);
-            if (keyType == null) return;
-
-            var methodDef = GetLookDictMethod();
-            if (methodDef == null) return;
-
-            var method = methodDef.MakeGenericMethod(keyType, valueType);
-
-            object[] args = new object[] { dict, label, keyLookMode, valueLookMode };
-
-            try
-            {
-                method.Invoke(null, args);
-                dict = args[0];
-            }
-            catch (Exception ex)
-            {
-                Log.Warning($"[RavenRace] Scribe Dict invoke error: {ex.Message}");
-            }
-        }
-
-        private static void InitializeDataStructs(Traverse trav)
-        {
-            EnsureInstance(trav, "AllLearnedSkills", typeof(List<>), "Axolotl.MoeLotlQiSkill");
-            EnsureInstance(trav, "KV_SkillLearningProgress", typeof(Dictionary<,>), "Axolotl.MoeLotlQiSkillDef", typeof(int));
-            EnsureInstance(trav, "KV_SkillLearningMax", typeof(Dictionary<,>), "Axolotl.MoeLotlQiSkillDef", typeof(int));
-            EnsureInstance(trav, "SkillInstallList", typeof(List<>), "Axolotl.MoeLotlQiSkillDef");
-        }
-
-        private static void EnsureInstance(Traverse trav, string fieldName, Type genericType, params object[] typeArgs)
-        {
-            if (trav.Field(fieldName).GetValue() == null)
-            {
-                Type[] types = new Type[typeArgs.Length];
-                for (int i = 0; i < typeArgs.Length; i++)
-                {
-                    if (typeArgs[i] is string s) types[i] = AccessTools.TypeByName(s);
-                    else types[i] = (Type)typeArgs[i];
-                }
-                trav.Field(fieldName).SetValue(Activator.CreateInstance(genericType.MakeGenericType(types)));
-            }
-        }
     }
 }.
 .

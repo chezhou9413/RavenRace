@@ -5,13 +5,14 @@ using RavenRace.Compat.Dragonian;
 using RavenRace.Compat.Epona;
 using RavenRace.Compat.Koelime;
 using RavenRace.Compat.Milira;
+using RavenRace.Compat.Mincho; // 【新增】
 using RavenRace.Compat.Miraboreas;
 using RavenRace.Compat.MoeLotl;
 using RavenRace.Compat.Moyo;
 using RavenRace.Compat.MuGirl;
+using RavenRace.Compat.Nemesis;
 using RavenRace.Compat.Tailin;
 using RavenRace.Compat.Wolfein;
-using RavenRace.Compat.Mincho; // 【新增】
 using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
@@ -160,7 +161,13 @@ namespace RavenRace.Features.Bloodline
                     MinchoCompatUtility.HandleMinchoBloodline(this.Pawn, hasMincho);
                 }
 
-
+                // 12. 纳美西斯 (Nemesis) - 核心修复：确保这里被正确调用
+                if (RavenRaceMod.Settings.enableNemesisCompat && NemesisCompatUtility.IsNemesisActive)
+                {
+                    bool hasNemesis = NemesisCompatUtility.HasNemesisBloodline(this);
+                    // 强制执行状态同步
+                    NemesisCompatUtility.HandleNemesisBloodline(this.Pawn, hasNemesis);
+                }
 
 
 

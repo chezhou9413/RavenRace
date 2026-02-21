@@ -11,7 +11,8 @@ using RavenRace.Compat.Epona;
 using RavenRace.Compat.Tailin;
 using RavenRace.Compat.Cinder;
 using RavenRace.Compat.Miraboreas;
-using RavenRace.Compat.Mincho; // 【新增】
+using RavenRace.Compat.Mincho; 
+using RavenRace.Compat.Nemesis; // [新增引用]
 
 // 记得每加一个都要引用命名空间！
 
@@ -194,6 +195,18 @@ namespace RavenRace.Settings
                 "RavenRace_Settings_EnableMinchoCompat_Desc".Translate()
             );
 
+            // =================================================
+            // 13. 纳美西斯 (Nemesis) [新增]
+            // =================================================
+            listing.GapLine();
+            listing.Label("RavenRace_Settings_NemesisCompat".Translate());
+            DrawModStatus(listing, NemesisCompatUtility.IsNemesisActive);
+
+            listing.CheckboxLabeled(
+                "RavenRace_Settings_EnableNemesisCompat".Translate(),
+                ref s.enableNemesisCompat,
+                "RavenRace_Settings_EnableNemesisCompat_Desc".Translate()
+            );
 
 
 

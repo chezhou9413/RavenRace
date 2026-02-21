@@ -84,6 +84,12 @@
     <RavenRace_MinchoChocolateFullness>Mint Choco</RavenRace_MinchoChocolateFullness>
     <RavenRace_Message_MinchoProduced>{0} has naturally produced {1}!</RavenRace_Message_MinchoProduced>
 
+    <!-- Nemesis -->
+    <RavenRace_Settings_NemesisCompat>Nemesis Bloodline</RavenRace_Settings_NemesisCompat>
+    <RavenRace_Settings_EnableNemesisCompat>Enable Nemesis Traits</RavenRace_Settings_EnableNemesisCompat>
+    <RavenRace_Settings_EnableNemesisCompat_Desc>If enabled, ravens with Nemesis bloodline will gain "Phase Walk" ability, blinking short distances while moving at the cost of hunger.</RavenRace_Settings_EnableNemesisCompat_Desc>
+
+
     <!-- Gizmo UI -->
     <Milira_Flight_Toggle>Flight</Milira_Flight_Toggle>
     <Milira_Flight_Toggle_Desc>Toggle flight ability.\n\nWhile flying, can bypass deep water and walls (with patch), but continuously drains hunger.</Milira_Flight_Toggle_Desc>

@@ -94,6 +94,13 @@
     <RavenRace_Message_MinchoProduced>{0} 的身体自然凝结出了 {1}！</RavenRace_Message_MinchoProduced>
 
 
+    <!-- 纳美西斯 (Nemesis) -->
+    <RavenRace_Settings_NemesisCompat>纳美西斯(Nemesis)血脉</RavenRace_Settings_NemesisCompat>
+    <RavenRace_Settings_EnableNemesisCompat>启用纳美西斯血脉特性</RavenRace_Settings_EnableNemesisCompat>
+    <RavenRace_Settings_EnableNemesisCompat_Desc>如果开启，含有纳美西斯血脉的渡鸦将获得“相位穿梭”能力，在移动时消耗饥饿值进行瞬移。</RavenRace_Settings_EnableNemesisCompat_Desc>
+
+
+
 
 
     <!-- Gizmo UI -->
