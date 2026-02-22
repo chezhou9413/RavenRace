@@ -64,7 +64,7 @@
             <clipPath>Meme/RavenMeme_PawnDowned</clipPath>
           </li>
         </grains>
-        <volumeRange>70~70</volumeRange>
+        <volumeRange>50~50</volumeRange>
       </li>
     </subSounds>
   </SoundDef>
@@ -81,7 +81,7 @@
             <clipPath>Meme/RavenMeme_WatchAV</clipPath>
           </li>
         </grains>
-        <volumeRange>40~40</volumeRange>
+        <volumeRange>50~50</volumeRange>
       </li>
     </subSounds>
   </SoundDef>
@@ -149,7 +149,7 @@
             <clipPath>Meme/RavenMeme_PawnDeath</clipPath>
           </li>
         </grains>
-        <volumeRange>80~80</volumeRange>
+        <volumeRange>60~60</volumeRange>
       </li>
     </subSounds>
   </SoundDef>
@@ -170,5 +170,24 @@
       </li>
     </subSounds>
   </SoundDef>
+
+
+  <!-- 坠机 -->
+  <SoundDef>
+    <defName>Manba_SeeYouAgain</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/Manba_SeeYouAgain</clipPath>
+          </li>
+        </grains>
+        <volumeRange>100~100</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
 
 </Defs>

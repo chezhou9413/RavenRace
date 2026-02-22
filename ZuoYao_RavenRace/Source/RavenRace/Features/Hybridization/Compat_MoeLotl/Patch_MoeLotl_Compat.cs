@@ -7,16 +7,17 @@ using Verse;
 using Verse.AI;
 using RimWorld;
 using UnityEngine;
-using RavenRace.Features.Hybridization.Harmony;
 
 namespace RavenRace.Compat.MoeLotl
 {
+    /// <summary>
+    /// 萌螈模组功能性兼容补丁集合。
+    /// 主要负责拦截萌螈模组的各种功能性检查，确保我们的混血渡鸦能够被正确识别和处理。
+    /// </summary>
     [StaticConstructorOnStartup]
     public static class Patch_MoeLotl_Compat
     {
         private static WorkTypeDef readBookWorkType;
-
-        // 【核心修正1】获取出问题的HediffComp类型
         private static Type hediffCompWaterTreatType;
 
         static Patch_MoeLotl_Compat()
@@ -26,16 +27,35 @@ namespace RavenRace.Compat.MoeLotl
             readBookWorkType = DefDatabase<WorkTypeDef>.GetNamedSilentFail("Axolotl_ReadMoeLotlQiSkillBooks");
             HarmonyLib.Harmony harmony = new HarmonyLib.Harmony("ZuoYao.RavenRace.MoeLotlCompat");
 
-            // 【核心修正2】在启动时获取类型，以便后续打补丁
             hediffCompWaterTreatType = AccessTools.TypeByName("Axolotl.HediffCompWaterTreatToSelf");
 
             try
             {
-                // ... (省略你已有的所有补丁注册代码，它们保持不变)
+                // ==============================================================
+                // 1. [核心功能] 全局补丁 IsMoeLotl()
+                // ==============================================================
                 var mIsMoeLotl = AccessTools.Method("Axolotl.AxolotlExtension:IsMoeLotl");
                 if (mIsMoeLotl != null)
-                    harmony.Patch(mIsMoeLotl, prefix: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(IsMoeLotl_Prefix)));
+                {
+                    harmony.Patch(mIsMoeLotl, postfix: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(IsMoeLotl_Postfix)));
+                }
 
+                // ==============================================================
+                // 2. [核心修复] 拦截萌螈组件的原版存档逻辑
+                // 防止出现 "Id already used" 红字。因为数据已经由 CompBloodline 手动接管。
+                // ==============================================================
+                if (MoeLotlCompatUtility.CompCultivationType != null)
+                {
+                    var mPostExposeData = AccessTools.Method(MoeLotlCompatUtility.CompCultivationType, "PostExposeData");
+                    if (mPostExposeData != null)
+                    {
+                        harmony.Patch(mPostExposeData, prefix: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(CompCultivation_PostExposeData_Prefix)));
+                    }
+                }
+
+                // ==============================================================
+                // 3. 其他功能性补丁
+                // ==============================================================
                 if (MoeLotlCompatUtility.CompUseEffectEnergyThingType != null)
                 {
                     var mCanBeUsedBy = AccessTools.Method(MoeLotlCompatUtility.CompUseEffectEnergyThingType, "CanBeUsedBy");
@@ -62,11 +82,6 @@ namespace RavenRace.Compat.MoeLotl
                         harmony.Patch(mGetFloatMenuOptions, prefix: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(SkillBook_GetFloatMenuOptions_Prefix)));
                     }
                 }
-                if (MoeLotlCompatUtility.CompCultivationType != null)
-                {
-                    var mPostExposeData = AccessTools.Method(MoeLotlCompatUtility.CompCultivationType, "PostExposeData");
-                    if (mPostExposeData != null) harmony.Patch(mPostExposeData, prefix: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(CompCultivation_PostExposeData_Prefix)));
-                }
 
                 Type contextType = AccessTools.TypeByName("RimWorld.FloatMenuContext");
                 var mGetOptions = AccessTools.Method(typeof(FloatMenuMakerMap), "GetOptions", new Type[] { typeof(List<Pawn>), typeof(Vector3), contextType.MakeByRefType() });
@@ -75,7 +90,6 @@ namespace RavenRace.Compat.MoeLotl
                     harmony.Patch(mGetOptions, postfix: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(FloatMenuMakerMap_Postfix)));
                 }
 
-                // 【核心修正3】在这里添加对HediffComp的补丁
                 if (hediffCompWaterTreatType != null)
                 {
                     var mCompPostTick = AccessTools.Method(hediffCompWaterTreatType, "CompPostTick");
@@ -87,7 +101,7 @@ namespace RavenRace.Compat.MoeLotl
 
                 ApplyMiscPatches(harmony);
 
-                RavenModUtility.LogVerbose("[RavenRace] MoeLotl compatibility patches applied successfully.");
+                // RavenModUtility.LogVerbose("[RavenRace] MoeLotl compatibility patches applied successfully.");
             }
             catch (Exception ex)
             {
@@ -95,6 +109,35 @@ namespace RavenRace.Compat.MoeLotl
             }
         }
 
+        // ==============================================================
+        // 补丁实现
+        // ==============================================================
+
+        /// <summary>
+        /// [拦截补丁] 如果是渡鸦族，禁止运行 Comp_Cultivation.PostExposeData。
+        /// 这里的逻辑完全由 MoeLotlCompatUtility.ExposeCultivationData 手动处理。
+        /// </summary>
+        public static bool CompCultivation_PostExposeData_Prefix(ThingComp __instance)
+        {
+            Pawn pawn = __instance.parent as Pawn;
+            if (pawn != null && pawn.def == RavenDefOf.Raven_Race)
+            {
+                return false; // 拦截原版，防止双重注册 ID 导致的红字
+            }
+            return true; // 其他种族正常执行
+        }
+
+        public static void IsMoeLotl_Postfix(Pawn pawn, ref bool __result)
+        {
+            if (__result || pawn == null) return;
+
+            if (pawn.def == RavenDefOf.Raven_Race &&
+                RavenRaceMod.Settings.enableMoeLotlCompat &&
+                MoeLotlCompatUtility.HasMoeLotlBloodline(pawn))
+            {
+                __result = true;
+            }
+        }
 
         private static void ApplyMiscPatches(HarmonyLib.Harmony harmony)
         {
@@ -119,27 +162,19 @@ namespace RavenRace.Compat.MoeLotl
             }
         }
 
-        // ==========================================
-        // 【核心修正4】添加新的Prefix补丁方法
-        // ==========================================
         public static bool HediffCompWaterTreat_CompPostTick_Prefix(HediffComp __instance)
         {
-            // 通过__instance.Pawn获取当前Pawn
             Pawn pawn = __instance.Pawn;
             if (pawn != null && pawn.def.defName == "Raven_Race" && MoeLotlCompatUtility.HasMoeLotlBloodline(pawn))
             {
                 try
                 {
-                    // 手动模拟萌螈的治疗逻辑
                     if (pawn.Map != null && pawn.Position.GetTerrain(pawn.Map).IsWater)
                     {
-                        // 假设治疗逻辑是简单的每秒恢复一定量的伤口
-                        // 这是一个安全的、基于原版API的实现，即使萌螈更新了也不会崩溃
                         foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                         {
                             if (hediff is Hediff_Injury injury && injury.CanHealNaturally())
                             {
-                                // 每秒治疗0.1，这里每60tick大约治疗0.1
                                 if (__instance.parent.ageTicks % 60 == 0)
                                 {
                                     injury.Heal(0.1f);
@@ -152,16 +187,11 @@ namespace RavenRace.Compat.MoeLotl
                 {
                     Log.ErrorOnce($"[RavenRace] Error in manual water treat logic for {pawn.LabelShort}: {ex}", 19283746);
                 }
-
-                // 返回 false，跳过原版的、会导致我们崩溃的方法
                 return false;
             }
-
-            // 如果不是我们的混血渡鸦，则正常执行原版方法
             return true;
         }
 
-        // --- 省略所有其他未修改的补丁方法，保持它们的原样 ---
         #region Unchanged Methods
         public static void FloatMenuMakerMap_Postfix(List<Pawn> selectedPawns, Vector3 clickPos, ref List<FloatMenuOption> __result)
         {
@@ -189,12 +219,6 @@ namespace RavenRace.Compat.MoeLotl
                         }
 
                         ThingDef targetBookDef = MoeLotlCompatUtility.GetTargetReadBook(pawn);
-                        if (RavenRaceMod.Settings.enableDebugMode)
-                        {
-                            string tName = targetBookDef?.defName ?? "NULL";
-                            string cName = t.def.defName;
-                            Log.Message($"[RavenRace] RightClick: Pawn={pawn.LabelShort}, TargetInComp={tName}, Clicked={cName}");
-                        }
 
                         if (targetBookDef != t.def)
                         {
@@ -265,50 +289,6 @@ namespace RavenRace.Compat.MoeLotl
                     __result = true;
                 }
             }
-        }
-
-        public static void CompCultivation_PostExposeData_Prefix(ThingComp __instance)
-        {
-            if (__instance == null) return;
-            var trav = Traverse.Create(__instance);
-            InitializeField(trav, "AllLearnedSkills", "Axolotl.MoeLotlQiSkill");
-            InitializeField(trav, "SkillInstallList", "Axolotl.MoeLotlQiSkillDef");
-            InitializeDict(trav, "KV_SkillLearningProgress", "Axolotl.MoeLotlQiSkillDef", typeof(int));
-            InitializeDict(trav, "KV_SkillLearningMax", "Axolotl.MoeLotlQiSkillDef", typeof(int));
-        }
-
-        private static void InitializeField(Traverse trav, string fieldName, string typeName)
-        {
-            if (trav.Field(fieldName).GetValue<object>() == null)
-            {
-                Type type = AccessTools.TypeByName(typeName);
-                Type listType = typeof(List<>).MakeGenericType(type);
-                trav.Field(fieldName).SetValue(Activator.CreateInstance(listType));
-            }
-        }
-
-        private static void InitializeDict(Traverse trav, string fieldName, string keyTypeName, Type valType)
-        {
-            if (trav.Field(fieldName).GetValue<object>() == null)
-            {
-                Type keyType = AccessTools.TypeByName(keyTypeName);
-                Type dictType = typeof(Dictionary<,>).MakeGenericType(keyType, valType);
-                trav.Field(fieldName).SetValue(Activator.CreateInstance(dictType));
-            }
-        }
-
-        public static bool IsMoeLotl_Prefix(Pawn pawn, ref bool __result)
-        {
-            if (pawn == null) return true;
-            if (pawn.def.defName == "Raven_Race")
-            {
-                if (RavenRaceMod.Settings.enableMoeLotlCompat && MoeLotlCompatUtility.HasMoeLotlBloodline(pawn))
-                {
-                    __result = true;
-                    return false;
-                }
-            }
-            return true;
         }
 
         public static Exception GetGizmos_Finalizer(Exception __exception) { return null; }

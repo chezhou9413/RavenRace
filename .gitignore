@@ -2,4 +2,8 @@
 !/.gitignore
 !/ZuoYao_RavenRace
 !/README.md
-.vs/
+
+# VS缓存和编译产物
+ZuoYao_RavenRace/Source/RavenRace/.vs/
+ZuoYao_RavenRace/Source/RavenRace/obj/
+ZuoYao_RavenRace/Source/RavenRace/bin/

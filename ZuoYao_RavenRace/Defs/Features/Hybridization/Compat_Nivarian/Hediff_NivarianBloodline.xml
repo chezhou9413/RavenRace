@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- 涅瓦莲血脉 Hediff -->
+  <!-- 这是一个容器 Hediff，只要有血脉就会一直存在 -->
+  <!-- 它上面的 HediffComp 负责动态添加/移除实际的战斗Buff (Nivarian_Hediff_UnyieldingFocus) -->
+  <HediffDef MayRequire="keeptpa.NivarianRace">
+    <defName>Raven_Hediff_NivarianBloodline</defName>
+    <label>涅瓦莲血脉</label>
+    <description>源自涅瓦莲的龙人血脉。持有者在被征召进入战斗状态时获得【不屈之心】：更不容易被击倒。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(210, 235, 250)</defaultLabelColor>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    
+    <stages>
+      <li>
+        <statOffsets>
+           <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+        </statOffsets>
+      </li>
+    </stages>
+    
+    <comps>
+      <!-- 核心逻辑组件 -->
+      <li Class="RavenRace.Compat.Nivarian.HediffCompProperties_RavenUnyieldingFocus" />
+    </comps>
+  </HediffDef>
+</Defs>

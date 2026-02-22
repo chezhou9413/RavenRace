@@ -107,6 +107,9 @@ namespace RavenRace
         public bool enableCinderCompat = true; // 烟烬 (Cinder)
         public bool enableMiraboreasCompat = true; // 米拉波雷亚斯 (Miraboreas)
         public bool enableMinchoCompat = true; // 珉巧 (Mincho)
+        public bool enableNemesisCompat = true; // 纳美西斯 (Nemesis)
+        public bool enableGoldenGloriaCompat = true; // 煌金族
+        public bool enableNivarianCompat = true; // 涅瓦莲 (Nivarian)
 
 
 
@@ -283,6 +286,9 @@ namespace RavenRace
             Scribe_Values.Look(ref enableCinderCompat, "enableCinderCompat", true);// 烟烬 (Cinder)
             Scribe_Values.Look(ref enableMiraboreasCompat, "enableMiraboreasCompat", true);// 米拉波雷亚斯 (Miraboreas)
             Scribe_Values.Look(ref enableMinchoCompat, "enableMinchoCompat", true); // 珉巧 (Mincho)
+            Scribe_Values.Look(ref enableNemesisCompat, "enableNemesisCompat", true); // 纳美西斯 (Nemesis)
+            Scribe_Values.Look(ref enableGoldenGloriaCompat, "enableGoldenGloriaCompat", true); // 煌金族
+            Scribe_Values.Look(ref enableNivarianCompat, "enableNivarianCompat", true); // 涅瓦莲 (Nivarian)
 
 
             Scribe_Values.Look(ref fusangCommCooldownDays, "fusangCommCooldownDays", 3f);

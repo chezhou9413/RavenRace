@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef MayRequire="Aurora.Nebula.NemesisRaceThePunisher">
+    <defName>Raven_Hediff_NemesisBloodline</defName>
+    <label>相位穿梭</label>
+    <description>源自纳美西斯血脉的空间天赋。这种不稳定的基因允许持有者在长途跋涉时撕裂空间。\n\n效果：\n- 当移动目标的距离超过 30 格时，会直接折跃至目的地。\n- 折跃后需要 20 秒冷却时间充能。\n- 征召状态下会自动禁用以保证战术执行。\n- 受到的近战伤害降低 10% (空间折射)。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(178, 102, 255)</defaultLabelColor> <!-- 紫色 -->
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    
+    <stages>
+      <li>
+        <statOffsets>
+            <IncomingDamageFactor>-0.1</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    
+    <comps>
+      <li Class="RavenRace.Compat.Nemesis.HediffCompProperties_NemesisPhaseWalk">
+        <jumpCooldownTicks>1200</jumpCooldownTicks> <!-- 20秒冷却 -->
+        <minDistanceToJump>30</minDistanceToJump> <!-- 30格以上触发 -->
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

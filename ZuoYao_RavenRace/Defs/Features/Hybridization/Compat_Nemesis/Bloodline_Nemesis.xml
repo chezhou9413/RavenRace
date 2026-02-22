@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RavenRace.BloodlineDef MayRequire="Aurora.Nebula.NemesisRaceThePunisher">
+        <defName>Bloodline_Nemesis</defName>
+        <label>纳美西斯血脉</label>
+        <labelShort>纳美西斯</labelShort>
+        <description>源自纳美西斯(Nemesis)的虚空血脉。这种不稳定的基因赋予了持有者操纵空间的能力，使其能够在移动中进行短距离的相位折跃。</description>
+        <!-- 链接到纳美西斯种族的defName -->
+        <raceDef>Nemesis_Race</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

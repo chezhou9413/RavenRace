@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 涅瓦莲 (Nivarian) -->
+    <!-- packageId: keeptpa.NivarianRace -->
+    <RavenRace.BloodlineDef MayRequire="keeptpa.NivarianRace">
+        <defName>Bloodline_Nivarian</defName>
+        <label>涅瓦莲血脉</label>
+        <labelShort>涅瓦莲</labelShort>
+        <description>源自寒冷星球 Nivara 的龙人血脉。这种血脉赋予了持有者如同坚冰般冷静的战斗专注力，在战斗中愈战愈勇。</description>
+        <raceDef>NivarianRace_Pawn</raceDef>
+    </RavenRace.BloodlineDef>
+</Defs>

@@ -1,17 +1,20 @@
-﻿using UnityEngine;
-using Verse;
-using RavenRace.Compat.MoeLotl;
-using RavenRace.Compat.Koelime;
-using RavenRace.Compat.MuGirl;
-using RavenRace.Compat.Milira;
-using RavenRace.Compat.Wolfein;
+﻿using RavenRace.Compat.Cinder;
 using RavenRace.Compat.Dragonian;
-using RavenRace.Compat.Moyo;
 using RavenRace.Compat.Epona; 
-using RavenRace.Compat.Tailin;
-using RavenRace.Compat.Cinder;
+using RavenRace.Compat.GoldenGloria; // [新增引用]
+using RavenRace.Compat.Koelime;
+using RavenRace.Compat.Milira;
+using RavenRace.Compat.Mincho; 
 using RavenRace.Compat.Miraboreas;
-using RavenRace.Compat.Mincho; // 【新增】
+using RavenRace.Compat.MoeLotl;
+using RavenRace.Compat.Moyo;
+using RavenRace.Compat.MuGirl;
+using RavenRace.Compat.Nemesis; // [新增引用]
+using RavenRace.Compat.Tailin;
+using RavenRace.Compat.Wolfein;
+using RavenRace.Compat.Nivarian;
+using UnityEngine;
+using Verse;
 
 // 记得每加一个都要引用命名空间！
 
@@ -194,6 +197,44 @@ namespace RavenRace.Settings
                 "RavenRace_Settings_EnableMinchoCompat_Desc".Translate()
             );
 
+            // =================================================
+            // 13. 纳美西斯 (Nemesis) [新增]
+            // =================================================
+            listing.GapLine();
+            listing.Label("RavenRace_Settings_NemesisCompat".Translate());
+            DrawModStatus(listing, NemesisCompatUtility.IsNemesisActive);
+
+            listing.CheckboxLabeled(
+                "RavenRace_Settings_EnableNemesisCompat".Translate(),
+                ref s.enableNemesisCompat,
+                "RavenRace_Settings_EnableNemesisCompat_Desc".Translate()
+            );
+
+            // =================================================
+            // 14. 煌金族 (Golden Gloria) [新增]
+            // =================================================
+            listing.GapLine();
+            listing.Label("RavenRace_Settings_GoldenGloriaCompat".Translate());
+            DrawModStatus(listing, GoldenGloriaCompatUtility.IsGoldenGloriaActive);
+
+            listing.CheckboxLabeled(
+                "RavenRace_Settings_EnableGoldenGloriaCompat".Translate(),
+                ref s.enableGoldenGloriaCompat,
+                "RavenRace_Settings_EnableGoldenGloriaCompat_Desc".Translate()
+            );
+
+            // =================================================
+            // 15. 涅瓦莲 (Nivarian) [新增]
+            // =================================================
+            listing.GapLine();
+            listing.Label("RavenRace_Settings_NivarianCompat".Translate());
+            DrawModStatus(listing, NivarianCompatUtility.IsNivarianActive);
+
+            listing.CheckboxLabeled(
+                "RavenRace_Settings_EnableNivarianCompat".Translate(),
+                ref s.enableNivarianCompat,
+                "RavenRace_Settings_EnableNivarianCompat_Desc".Translate()
+            );
 
 
 
