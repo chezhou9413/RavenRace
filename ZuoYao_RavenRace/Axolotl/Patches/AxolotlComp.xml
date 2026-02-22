@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/comps</xpath>
+    <value>
+      <li Class="Axolotl.CompProperties_AxolotlAI">
+        <compClass>Axolotl.CompAxolotlAI</compClass>
+      </li>
+      <!-- 萌螈灵能：能量条 & 结晶 & 螈力护盾 -->
+      <li Class="Axolotl.CompProperties_AxolotlEnergy">
+        <!-- 螈力结晶贴图 1~3 -->
+        <GraphicData_LotiQiCrystal>
+          <li>
+            <texPath>Axolotl_Mote/Axolotl_Mote_LotiQiCrystal/mote_LotiQiCrystal_one</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>(1.7, 1.7)</drawSize>
+            <drawOffset>(0, 0, +0.2)</drawOffset>
+          </li>
+          <li>
+            <texPath>Axolotl_Mote/Axolotl_Mote_LotiQiCrystal/mote_LotiQiCrystal_two</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>(1.7, 1.7)</drawSize>
+            <drawOffset>(0, 0, +0.2)</drawOffset>
+          </li>
+          <li>
+            <texPath>Axolotl_Mote/Axolotl_Mote_LotiQiCrystal/mote_LotiQiCrystal_three</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>(1.7, 1.7)</drawSize>
+            <drawOffset>(0, 0, +0.2)</drawOffset>
+          </li>
+        </GraphicData_LotiQiCrystal>
+        <!-- 螈力护盾贴图 -->
+        <shieldTextrueData>
+          <!-- 黑色（默认） -->
+          <li>
+            <fouceDefault>true</fouceDefault>
+            <TextPath_Shield>Axolotl_LotlQiShieldTextures/ShieldBubble_black</TextPath_Shield>
+            <graphicData_ShieldBack>
+              <texPath>Axolotl_LotlQiShieldTextures/ShieldBubble_back_black</texPath>
+              <graphicClass>Graphic_Single</graphicClass>
+              <shaderType>MoteGlow</shaderType>
+              <drawSize>(1.5, 1.5)</drawSize>
+            </graphicData_ShieldBack>
+          </li>
+          <!-- 红色 -->
+          <li>
+            <bindingSkillDef>Axolotl_MentSkill_Fire</bindingSkillDef>
+            <TextPath_Shield>Axolotl_LotlQiShieldTextures/ShieldBubble_red</TextPath_Shield>
+            <graphicData_ShieldBack>
+              <texPath>Axolotl_LotlQiShieldTextures/ShieldBubble_back_red</texPath>
+              <graphicClass>Graphic_Single</graphicClass>
+              <shaderType>MoteGlow</shaderType>
+              <drawSize>(1.5, 1.5)</drawSize>
+            </graphicData_ShieldBack>
+          </li>
+          <!-- 蓝色 -->
+          <li>
+            <bindingSkillDef>Axolotl_MentSkill_Water</bindingSkillDef>
+            <TextPath_Shield>Axolotl_LotlQiShieldTextures/ShieldBubble_blue</TextPath_Shield>
+            <graphicData_ShieldBack>
+              <texPath>Axolotl_LotlQiShieldTextures/ShieldBubble_back_blue</texPath>
+              <graphicClass>Graphic_Single</graphicClass>
+              <shaderType>MoteGlow</shaderType>
+              <drawSize>(1.5, 1.5)</drawSize>
+            </graphicData_ShieldBack>
+          </li>
+          <!-- 桃色 -->
+          <li>
+            <bindingSkillDef>Axolotl_MentSkill_Flower</bindingSkillDef>
+            <TextPath_Shield>Axolotl_LotlQiShieldTextures/ShieldBubble_pink</TextPath_Shield>
+            <graphicData_ShieldBack>
+              <texPath>Axolotl_LotlQiShieldTextures/ShieldBubble_back_pink</texPath>
+              <graphicClass>Graphic_Single</graphicClass>
+              <shaderType>MoteGlow</shaderType>
+              <drawSize>(1.5, 1.5)</drawSize>
+            </graphicData_ShieldBack>
+          </li>
+          <!-- 紫色 -->
+          <li>
+            <bindingSkillDef>Axolotl_MentSkill_Thunder</bindingSkillDef>
+            <TextPath_Shield>Axolotl_LotlQiShieldTextures/ShieldBubble_purple</TextPath_Shield>
+            <graphicData_ShieldBack>
+              <texPath>Axolotl_LotlQiShieldTextures/ShieldBubble_back_purple</texPath>
+              <graphicClass>Graphic_Single</graphicClass>
+              <shaderType>MoteGlow</shaderType>
+              <drawSize>(1.5, 1.5)</drawSize>
+            </graphicData_ShieldBack>
+          </li>
+          <li>
+            <bindingSkillDef>Axolotl_MentSkill_Rock</bindingSkillDef>
+            <TextPath_Shield>Axolotl_LotlQiShieldTextures/ShieldBubble_brown</TextPath_Shield>
+            <graphicData_ShieldBack>
+              <texPath>Axolotl_LotlQiShieldTextures/ShieldBubble_back_back_brown</texPath>
+              <graphicClass>Graphic_Single</graphicClass>
+              <shaderType>MoteGlow</shaderType>
+              <drawSize>(1.5, 1.5)</drawSize>
+            </graphicData_ShieldBack>
+          </li>
+        </shieldTextrueData>
+      </li>
+      <li Class="Axolotl.CompProperties_Cultivation" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/inspectorTabs</xpath>
+    <value>
+      <li>Axolotl.ITab_MoeLotl_Cultivation</li>
+    </value>
+  </Operation>
+</Patch>

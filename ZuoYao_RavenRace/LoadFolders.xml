@@ -5,5 +5,6 @@
         <li>1.6</li>
         <li IfModActive="Nals.FacialAnimation">RavenRaceFA</li>
         <li IfModActive="rim.job.world,rjw.menstruation">RJWCompat</li>
+        <li IfModActive="HenTaiLoliTeam.Axolotl">Axolotl</li>
     </v1.6>
 </loadFolders>
