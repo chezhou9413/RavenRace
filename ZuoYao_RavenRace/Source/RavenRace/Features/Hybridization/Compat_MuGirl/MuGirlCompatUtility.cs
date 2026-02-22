@@ -28,24 +28,6 @@ namespace RavenRace.Compat.MuGirl
             }
         }
 
-        public static bool HasMuGirlBloodline(CompBloodline comp)
-        {
-            if (comp == null || comp.BloodlineComposition == null) return false;
-            return comp.BloodlineComposition.ContainsKey("MooGirl") && comp.BloodlineComposition["MooGirl"] > 0f;
-        }
-
-        public static void HandleMuGirlBloodline(Pawn pawn, bool hasBloodline)
-        {
-            if (pawn == null || MuGirlBloodlineHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(MuGirlBloodlineHediff);
-            if (hasBloodline && !hasHediff) pawn.health.AddHediff(MuGirlBloodlineHediff);
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(MuGirlBloodlineHediff);
-                if (h != null) pawn.health.RemoveHediff(h);
-            }
-        }
 
         public static void HandleChargeAbility(Pawn pawn, bool hasBloodline)
         {

@@ -30,34 +30,6 @@ namespace RavenRace.Compat.Nivarian
             }
         }
 
-        public static bool HasNivarianBloodline(CompBloodline comp)
-        {
-            if (comp == null || comp.BloodlineComposition == null) return false;
-            return comp.BloodlineComposition.ContainsKey("NivarianRace_Pawn") &&
-                   comp.BloodlineComposition["NivarianRace_Pawn"] > 0f;
-        }
 
-        public static void HandleNivarianBloodline(Pawn pawn, bool hasBloodline)
-        {
-            if (pawn == null || pawn.health == null || RavenNivarianBloodlineHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(RavenNivarianBloodlineHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(RavenNivarianBloodlineHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(RavenNivarianBloodlineHediff);
-                if (h != null) pawn.health.RemoveHediff(h);
-
-                if (UnyieldingFocusDef != null)
-                {
-                    Hediff focus = pawn.health.hediffSet.GetFirstHediffOfDef(UnyieldingFocusDef);
-                    if (focus != null) pawn.health.RemoveHediff(focus);
-                }
-            }
-        }
     }
 }

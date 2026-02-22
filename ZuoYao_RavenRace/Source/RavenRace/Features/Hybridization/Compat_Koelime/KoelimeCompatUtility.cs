@@ -20,21 +20,6 @@ namespace RavenRace.Compat.Koelime
             }
         }
 
-        public static void HandleDraconicBloodline(Pawn pawn, bool hasBloodline)
-        {
-            if (pawn == null || pawn.health == null || KoelimeBloodlineHediff == null) return;
 
-            bool hasHediff = pawn.health.hediffSet.HasHediff(KoelimeBloodlineHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(KoelimeBloodlineHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(KoelimeBloodlineHediff);
-                if (h != null) pawn.health.RemoveHediff(h);
-            }
-        }
     }
 }

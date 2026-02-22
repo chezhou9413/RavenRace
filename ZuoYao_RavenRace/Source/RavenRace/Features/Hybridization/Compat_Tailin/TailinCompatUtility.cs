@@ -49,28 +49,6 @@ namespace RavenRace.Compat.Tailin
             }
         }
 
-        public static bool HasTailinBloodline(CompBloodline comp)
-        {
-            if (comp == null || comp.BloodlineComposition == null) return false;
-            // 对应 Bloodline_Tailin.xml 中的 <raceDef>TailinRace</raceDef>
-            return comp.BloodlineComposition.ContainsKey("TailinRace") && comp.BloodlineComposition["TailinRace"] > 0f;
-        }
 
-        public static void HandleTailinBloodline(Pawn pawn, bool hasBloodline)
-        {
-            if (pawn == null || pawn.health == null || TailinBloodlineHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(TailinBloodlineHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(TailinBloodlineHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(TailinBloodlineHediff);
-                if (hediff != null) pawn.health.RemoveHediff(hediff);
-            }
-        }
     }
 }

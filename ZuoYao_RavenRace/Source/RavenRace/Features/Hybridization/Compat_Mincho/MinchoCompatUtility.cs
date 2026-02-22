@@ -21,28 +21,16 @@ namespace RavenRace.Compat.Mincho
             }
         }
 
+        // [恢复]：供外部组件和 Harmony 补丁安全调用的 API
         public static bool HasMinchoBloodline(CompBloodline comp)
         {
-            if (comp == null || comp.BloodlineComposition == null) return false;
-            return comp.BloodlineComposition.ContainsKey("Mincho_ThingDef") &&
-                   comp.BloodlineComposition["Mincho_ThingDef"] > 0f;
+            return BloodlineUtility.HasBloodline(comp, "Mincho_ThingDef");
         }
 
-        public static void HandleMinchoBloodline(Pawn pawn, bool hasBloodline)
+        public static bool HasMinchoBloodline(Pawn pawn)
         {
-            if (pawn == null || pawn.health == null || MinchoBloodlineHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(MinchoBloodlineHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(MinchoBloodlineHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(MinchoBloodlineHediff);
-                if (hediff != null) pawn.health.RemoveHediff(hediff);
-            }
+            if (pawn == null) return false;
+            return HasMinchoBloodline(pawn.TryGetComp<CompBloodline>());
         }
     }
 }

@@ -41,29 +41,6 @@ namespace RavenRace.Compat.Miraboreas
             }
         }
 
-        public static bool HasMiraboreasBloodline(CompBloodline comp)
-        {
-            if (comp == null || comp.BloodlineComposition == null) return false;
-            // 对应 Bloodline_Miraboreas.xml 中的 <raceDef>LBD_Fatalis_Race</raceDef>
-            return comp.BloodlineComposition.ContainsKey("LBD_Fatalis_Race") &&
-                   comp.BloodlineComposition["LBD_Fatalis_Race"] > 0f;
-        }
 
-        public static void HandleMiraboreasBloodline(Pawn pawn, bool hasBloodline)
-        {
-            if (pawn == null || pawn.health == null || MiraboreasBloodlineHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(MiraboreasBloodlineHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(MiraboreasBloodlineHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(MiraboreasBloodlineHediff);
-                if (hediff != null) pawn.health.RemoveHediff(hediff);
-            }
-        }
     }
 }

@@ -21,28 +21,6 @@ namespace RavenRace.Compat.GoldenGloria
             }
         }
 
-        public static bool HasGoldenGloriaBloodline(CompBloodline comp)
-        {
-            if (comp == null || comp.BloodlineComposition == null) return false;
-            return comp.BloodlineComposition.ContainsKey("GoldenGlorias") &&
-                   comp.BloodlineComposition["GoldenGlorias"] > 0f;
-        }
 
-        public static void HandleGoldenGloriaBloodline(Pawn pawn, bool hasBloodline)
-        {
-            if (pawn == null || pawn.health == null || GoldenGloriaGenotypeHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(GoldenGloriaGenotypeHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(GoldenGloriaGenotypeHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(GoldenGloriaGenotypeHediff);
-                if (h != null) pawn.health.RemoveHediff(h);
-            }
-        }
     }
 }

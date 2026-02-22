@@ -26,28 +26,6 @@ namespace RavenRace.Compat.Nemesis
             }
         }
 
-        public static bool HasNemesisBloodline(CompBloodline comp)
-        {
-            if (comp == null || comp.BloodlineComposition == null) return false;
-            return comp.BloodlineComposition.ContainsKey(NemesisKey) &&
-                   comp.BloodlineComposition[NemesisKey] > 0f;
-        }
 
-        public static void HandleNemesisBloodline(Pawn pawn, bool hasBloodline)
-        {
-            if (pawn == null || pawn.health == null || NemesisBloodlineHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(NemesisBloodlineHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(NemesisBloodlineHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(NemesisBloodlineHediff);
-                if (h != null) pawn.health.RemoveHediff(h);
-            }
-        }
     }
 }

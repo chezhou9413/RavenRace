@@ -35,32 +35,12 @@ namespace RavenRace.Compat.Epona
             return defName;
         }
 
+        // [恢复]：供外部组件和 Harmony 补丁安全调用的 API
         public static bool HasEponaBloodline(Pawn pawn)
         {
             if (pawn == null) return false;
             var comp = pawn.TryGetComp<CompBloodline>();
-            if (comp == null || comp.BloodlineComposition == null) return false;
-
-            return comp.BloodlineComposition.ContainsKey("Alien_Epona") ||
-                   comp.BloodlineComposition.ContainsKey("Alien_Destrier") ||
-                   comp.BloodlineComposition.ContainsKey("Alien_Unicorn");
-        }
-
-        public static void HandleEponaBloodline(Pawn pawn, bool hasBloodline)
-        {
-            if (pawn == null || pawn.health == null || EponaBloodlineHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(EponaBloodlineHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(EponaBloodlineHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(EponaBloodlineHediff);
-                if (h != null) pawn.health.RemoveHediff(h);
-            }
+            return BloodlineUtility.HasBloodline(comp, "Alien_Epona", "Alien_Destrier", "Alien_Unicorn");
         }
     }
 }
