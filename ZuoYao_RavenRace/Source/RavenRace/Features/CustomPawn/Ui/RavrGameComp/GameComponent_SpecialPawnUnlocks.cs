@@ -37,6 +37,7 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
             tmpUnlockValues = new List<bool>();
             tmpPlayerPawnKeys = new List<PawnKindDef>();
             tmpPlayerPawnValues = new List<Pawn>();
+            cachedSpecialKinds = new List<PawnKindDef>();
         }
 
         public static GameComponent_SpecialPawnUnlocks Instance
@@ -97,6 +98,8 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
 
         public override void GameComponentTick()
         {
+            if (cachedSpecialKinds == null)  // 加这一行
+                return;
             if (Find.TickManager.TicksGame % 60 != 0)
                 return;
 
