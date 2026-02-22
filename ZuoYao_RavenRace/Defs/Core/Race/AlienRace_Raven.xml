@@ -49,7 +49,7 @@
  Death = 直接死亡，Teleport = 弹到最近的安全地带 -->
         <crashDamageMultiplier>1.0</crashDamageMultiplier>
         <!-- 坠机伤害乘数 -->
-        <crashSound>Shuttle_CrashLanding</crashSound>
+        <crashSound>Manba_SeeYouAgain</crashSound>
         <!-- 坠机音效 -->
 
         <!-- takeOffButtonTexPath 配置起飞按钮贴图 -->
@@ -546,6 +546,7 @@
     </tools>
 
     <race>
+      <bloodDef>Filth_Blood</bloodDef>
       <thinkTreeMain>Humanlike</thinkTreeMain>
       <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
       <intelligence>Humanlike</intelligence>
