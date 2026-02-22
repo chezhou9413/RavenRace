@@ -475,7 +475,11 @@
 
 
 
-      <!-- [核心修复] 使用正确的HAR服装限制结构 -->
+      <!-- 
+           只要在这里列出 Def，HAR 就会自动确保：
+           1. 渡鸦族可以穿戴/使用这些物品。
+           2. 其他种族（除非他们也显式添加了白名单）无法穿戴/使用这些物品，也不会自然生成带有这些物品。
+      -->
       <raceRestriction>
         <blackEndoCategories>
           <li>Melanin</li>
@@ -483,23 +487,52 @@
           <li>BodyType</li>
         </blackEndoCategories>
 
-        <!-- 1. 将所有渡鸦服装标记为“受限”，这样其他种族默认不能穿 -->
+        <!-- 专属服装列表 -->
         <apparelList>
           <li>Raven_Apparel_Casual</li>
           <li>Raven_Apparel_Qipao</li>
           <li>Raven_Apparel_Quju</li>
+          <li>Raven_Apparel_ShadowCloak</li> 
         </apparelList>
 
-        <!-- 2. 开启“只穿受限服装”模式 -->
+        <!-- 专属武器列表 -->
+        <weaponList>
+          <li>Raven_Weapon_Blowgun</li>
+          <li>Raven_Weapon_HiddenBlade</li>
+          <li>Raven_Weapon_SilentSniper</li>
+          <li>Raven_Weapon_SpiritBeads</li>
+          <li>Raven_Weapon_BlackMistGrenade</li>
+        </weaponList>
+
+        <!-- 
+             onlyUseRaceRestrictedApparel = true
+             意味着渡鸦族只能*穿上面 apparelList 里的衣服 (以及 whiteApparelList 里的)。
+             这符合设计，因为渡鸦身体结构特殊，通常不穿人类衣服。
+        -->
         <onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
 
-        <!-- 3. 将渡鸦服装加入“白名单”，这样渡鸦自己可以穿 -->
+        <!-- 
+             whiteApparelList
+             这里为了让玩家手动操作方便，我们把专属服装也加进白名单（虽然 apparelList 已经允许了，但作为双重保险）。
+             同时也需要将这些服装重复列在这里，以配合 onlyUseRaceRestrictedApparel 逻辑。
+        -->
         <whiteApparelList>
           <li>Raven_Apparel_Casual</li>
           <li>Raven_Apparel_Qipao</li>
           <li>Raven_Apparel_Quju</li>
+          <li>Raven_Apparel_ShadowCloak</li>
         </whiteApparelList>
+        
+        <!-- 
+             注意：我们不开启 onlyUseRaceRestrictedWeapons。
+             渡鸦族可以使用其他种族的武器（如捡来的枪），但其他种族不能使用渡鸦的武器（由上面的 weaponList 限制）。
+        -->
+             
       </raceRestriction>
+
+
+
+
     </alienRace>
 
 

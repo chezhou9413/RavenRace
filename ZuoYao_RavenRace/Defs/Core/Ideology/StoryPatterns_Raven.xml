@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 
+    金乌神话叙事模板 
+    Structure Meme 必须引用此类 Def 来生成背景故事
+  -->
+  <IdeoStoryPatternDef>
+    <defName>Raven_StoryPattern_GoldenCrow</defName>
+    <segments>
+      <li>setup</li>
+      <li>story</li>
+      <li>conclusion</li>
+    </segments>
+    
+    <rules>
+      <rulesStrings>
+        <!-- 最终的故事结构 -->
+        <li>final->[setup] [story] [conclusion]</li>
+
+        <!-- 故事内容 -->
+        <li>setup->在太古之时，世界是一片混沌的黑暗，直到三足金乌从[place_name]中升起，带来了第一缕光。</li>
+        <li>story->我们的血脉源于金乌洒下的余烬。</li>
+        <li>conclusion->我们是行走的余烬，终将汇聚成燎原的烈火。我们必须保持血脉的纯净，以待神鸟归来。</li>
+
+        <!-- 关键：这里必须定义神的名字引用，否则 Ideology UI 会报错 -->
+        <li>deity->[deity_name]</li>
+        
+        <!-- 专有名词 -->
+        <li>place_name->汤谷</li>
+        <li>place_name->扶桑</li>
+        <li>place_name->若木</li>
+      </rulesStrings>
+    </rules>
+  </IdeoStoryPatternDef>
+</Defs>

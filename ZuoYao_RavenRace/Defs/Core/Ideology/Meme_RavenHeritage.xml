@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 
+    渡鸦传承 Meme (合并了原 GoldenCrowFaith)
+  -->
+  <MemeDef>
+    <defName>Raven_Heritage</defName>
+    <label>渡鸦传承</label>
+    <description>这个群体承载着古老金乌一族的记忆与誓约。血脉即是一切。</description>
+    <iconPath>UI/Ideoligions/Memes/GoldenCrowFaith</iconPath> 
+    <groupDef>Misc</groupDef>
+    
+    <impact>3</impact> <!-- 恢复为高影响力 -->
+    <renderOrder>999</renderOrder>
+    
+    <exclusionTags>
+      <li>DivineNonHuman</li>
+    </exclusionTags>
+    
+    <descriptionMaker>
+      <rules>
+        <rulesStrings>
+          <!-- 敌人与冲突 -->
+          <li>place_foeSoldiers->敌人</li>
+          <li>place_foeSoldiers->入侵者</li>
+          <li>place_foeSoldiers->异教徒</li>
+          <li>place_foeLeader->敌军首领</li>
+          <li>place_foeLeader->暴君</li>
+          <li>place_foeLeader->伪神</li>
+          <li>place_foeWeapon->毁灭武器</li>
+          <li>place_foeWeapon->诅咒之剑</li>
+          <li>place_foeAdj->邪恶的</li>
+          <li>place_foeAdj->堕落的</li>
+          <li>place_foeAdj->无知的</li>
+          
+          <!-- 己方武器与力量 -->
+          <li>place_personalWeapon->利刃</li>
+          <li>place_personalWeapon->袖剑</li>
+          <li>place_personalWeapon->灵珠</li>
+          <li>place_massWeapon->天火</li>
+          <li>place_massWeapon->金乌之怒</li>
+          <li>place_massWeapon->黑雾</li>
+          
+          <!-- 抽象概念 -->
+          <li>place_job->使命</li>
+          <li>place_job->任务</li>
+          <li>place_community->组织</li>
+          <li>place_community->巢穴</li>
+          <li>place_community->扶桑</li>
+          <li>place_location->战场</li>
+          <li>place_location->汤谷</li>
+          <li>place_location->暗影深处</li>
+          <li>place_event->战斗</li>
+          <li>place_event->大清洗</li>
+          <li>place_event->归巢之战</li>
+          <li>place_outcome->胜利</li>
+          <li>place_outcome->重生</li>
+          <li>place_outcome->飞升</li>
+          <li>place_reward->荣耀</li>
+          <li>place_reward->金羽</li>
+          <li>place_punishment->失败</li>
+          <li>place_punishment->流放</li>
+          <li>place_punishment->折翼</li>
+          
+          <!-- 角色 -->
+          <li>place_hero->勇士</li>
+          <li>place_hero->代行者</li>
+          <li>place_hero->司命</li>
+          <li>place_villain->恶人</li>
+          <li>place_villain->背叛者</li>
+          <li>place_ally->盟友</li>
+          <li>place_ally->血亲</li>
+          
+          <!-- 叙事元素 -->
+          <li>place_obstacle->障碍</li>
+          <li>place_obstacle->封印</li>
+          <li>place_solution->解决方案</li>
+          <li>place_solution->智慧</li>
+          <li>place_goal->目标</li>
+          <li>place_goal->复兴</li>
+          <li>place_challenge->挑战</li>
+          <li>place_challenge->试炼</li>
+          <li>place_skill->技能</li>
+          <li>place_skill->潜行技巧</li>
+          <li>place_virtue->美德</li>
+          <li>place_virtue->忠诚</li>
+          <li>place_vice->恶习</li>
+          <li>place_vice->软弱</li>
+          <li>place_emotion->情感</li>
+          <li>place_emotion->渴望</li>
+          <li>place_lesson->教训</li>
+          <li>place_lesson->启示</li>
+          <li>place_morale->士气</li>
+          <li>place_morale->信仰</li>
+          <li>place_strategy->策略</li>
+          <li>place_strategy->布局</li>
+          <li>place_tactic->战术</li>
+          <li>place_tactic->暗杀</li>
+        </rulesStrings>
+      </rules>
+    </descriptionMaker>
+    
+    <generalRules>
+      <rulesStrings>
+        <!-- 这里提供额外的变体，或者覆盖 Structure 的默认值 -->
+        <li>memeAdjective->余烬的</li>
+        <li>memeConcept->复仇</li>
+        <li>memeLeaderNoun->掌火者</li>
+        <li>memeMoralist->守望者</li>
+      </rulesStrings>
+    </generalRules>
+  </MemeDef>
+</Defs>

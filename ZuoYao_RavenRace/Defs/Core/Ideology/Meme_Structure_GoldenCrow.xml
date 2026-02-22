@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 金乌神道 (Structure) -->
+  <MemeDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>Structure_GoldenCrow</defName>
+    <label>金乌神道</label>
+    <description>这种信仰围绕着作为太阳化身的三足金乌展开。信徒们相信通过提纯血脉和特定的仪式，凡躯可以重铸为神性的光辉。</description>
+    <iconPath>UI/Ideoligions/Memes/StructureGoldenCrow</iconPath>
+    <category>Structure</category>
+    <impact>0</impact>
+    <worshipRoomLabel>金乌祭坛</worshipRoomLabel>
+    <renderOrder>999</renderOrder>
+    
+    <!-- 强制使用神灵命名规则 -->
+    <deityNameMakerOverride>NamerDeityFusang</deityNameMakerOverride>
+    <deityTypeMakerOverride>NamerDeityTypeFusang</deityTypeMakerOverride>
+    
+    <deityCount>1~1</deityCount>
+    
+    <!-- 引用核心的描述生成器 -->
+    <descriptionMaker>
+      <patterns>
+        <li>
+          <def>Raven_StoryPattern_GoldenCrow</def>
+        </li>
+      </patterns>
+    </descriptionMaker>
+    
+    <symbolPacks>
+      <li>
+        <ideoName>金乌真理</ideoName>
+        <theme>太阳</theme>
+        <adjective>金乌的</adjective>
+        <member>后裔</member>
+      </li>
+    </symbolPacks>
+    
+    <!-- 
+      [核心修复] 
+      补全所有被 RulePacks 引用的变量。
+      解决 Grammar unresolvable. Root 'r_roleName' 
+    -->
+    <generalRules>
+      <rulesStrings>
+        <!-- 核心形容词 -->
+        <li>memeAdjective->金乌的</li>
+        <li>memeAdjective->太阳的</li>
+        <li>memeAdjective->神圣的</li>
+        
+        <!-- 概念 -->
+        <li>memeConcept->血脉</li>
+        <li>memeConcept->太阳</li>
+        <li>memeConcept->神性</li>
+        
+        <!-- 前缀 -->
+        <li>memeHyphenPrefix->sun</li>
+        <li>memeHyphenPrefix->gold</li>
+        <li>memeHyphenPrefix->raven</li>
+        
+        <!-- 职位名称 (Moralist Role 报错的根源) -->
+        <li>memeMoralist->祭酒</li>
+        <li>memeMoralist->司命</li>
+        <li>memeMoralist->大司祭</li>
+        
+        <!-- 领袖名称 -->
+        <li>memeLeaderNoun->司命</li>
+        <li>memeLeaderNoun->日御</li>
+        <li>memeLeaderNoun->火帝</li>
+        
+        <!-- 领袖形容词 -->
+        <li>memeLeaderAdjective->神圣的</li>
+        <li>memeLeaderAdjective->至高的</li>
+        
+        <!-- 信仰/教条名称 -->
+        <li>memeCreed->神道</li>
+        <li>memeCreed->真理</li>
+        <li>memeCreed->誓约</li>
+        
+        <!-- 确保 deity_name 有默认值 -->
+        <li>deity_name->金乌神</li>
+      </rulesStrings>
+    </generalRules>
+  </MemeDef>
+</Defs>
