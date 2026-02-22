@@ -1,5 +1,4 @@
-﻿using System;
-using Verse;
+﻿using Verse;
 using RimWorld;
 using RavenRace.Features.Bloodline;
 
@@ -9,19 +8,15 @@ namespace RavenRace.Compat.Cinder
     public static class CinderCompatUtility
     {
         public static bool IsCinderActive { get; private set; }
-        public static ThingDef CinderRaceDef { get; private set; }
         public static HediffDef CinderBloodlineHediff { get; private set; }
 
         static CinderCompatUtility()
         {
-            // 根据 About.xml 中的 packageId 或 RaceDefName 判断
-            CinderRaceDef = DefDatabase<ThingDef>.GetNamedSilentFail("Alien_Cinder");
-            IsCinderActive = (CinderRaceDef != null);
-
-            CinderBloodlineHediff = DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_CinderBloodline");
+            IsCinderActive = ModsConfig.IsActive("BreadMo.Cinders");
 
             if (IsCinderActive)
             {
+                CinderBloodlineHediff = DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_CinderBloodline");
                 RavenModUtility.LogVerbose("[RavenRace] Cinder (Embergarden) detected. Compatibility active.");
             }
         }
@@ -35,7 +30,7 @@ namespace RavenRace.Compat.Cinder
 
         public static void HandleCinderRegen(Pawn pawn, bool hasBloodline)
         {
-            if (pawn == null || CinderBloodlineHediff == null) return;
+            if (pawn == null || pawn.health == null || CinderBloodlineHediff == null) return;
 
             bool hasHediff = pawn.health.hediffSet.HasHediff(CinderBloodlineHediff);
 

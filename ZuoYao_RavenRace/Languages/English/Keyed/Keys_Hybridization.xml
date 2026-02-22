@@ -11,7 +11,7 @@
     <!-- Milira -->
     <RavenRace_Settings_MiliraCompat>Milira Bloodline</RavenRace_Settings_MiliraCompat>
     <RavenRace_Settings_EnableMiliraCompat>Enable Milira Traits</RavenRace_Settings_EnableMiliraCompat>
-    <RavenRace_Settings_EnableMiliraCompat_Desc>If enabled, ravens with Milira bloodline will gain movement speed bonus and reduced aiming time.</RavenRace_Settings_EnableMiliraCompat_Desc>
+    <RavenRace_Settings_EnableMiliraCompat_Desc>If enabled, ravens with Milira bloodline will gain angelic traits, including movement speed bonus and reduced aiming time.</RavenRace_Settings_EnableMiliraCompat_Desc>
 
     <!-- MoeLotl -->
     <RavenRace_Settings_MoeLotlCultivation>MoeLotl Cultivation</RavenRace_Settings_MoeLotlCultivation>
@@ -99,14 +99,4 @@
     <RavenRace_Settings_EnableNivarianCompat>Enable Nivarian Traits</RavenRace_Settings_EnableNivarianCompat>
     <RavenRace_Settings_EnableNivarianCompat_Desc>If enabled, ravens with Nivarian bloodline will gain the "Unyielding Focus" ability. When drafted, this ability intensifies over time, providing bonuses to movement speed, dodge chance, and pain threshold.</RavenRace_Settings_EnableNivarianCompat_Desc>
 
-
-
-
-    <!-- Gizmo UI -->
-    <Milira_Flight_Toggle>Flight</Milira_Flight_Toggle>
-    <Milira_Flight_Toggle_Desc>Toggle flight ability.\n\nWhile flying, can bypass deep water and walls (with patch), but continuously drains hunger.</Milira_Flight_Toggle_Desc>
-    
-    <Milira_Flight_LowAlt>Low Altitude</Milira_Flight_LowAlt>
-    <Milira_Flight_HighAlt>High Altitude</Milira_Flight_HighAlt>
-    <Milira_Flight_Mode_Desc>Switch flight altitude.\n\n【Low】: Only fly while moving, can fly over buildings but not roofs.\n【High】: Always flying, can fly over roofs but not solid buildings.</Milira_Flight_Mode_Desc>
 </LanguageData>

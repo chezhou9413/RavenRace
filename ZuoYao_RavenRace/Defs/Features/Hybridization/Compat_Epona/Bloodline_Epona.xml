@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <!-- 艾波娜 (Epona) - 三合一核心定义 -->
-    <!-- 核心修复：添加 MayRequire，包ID为 Peppne.Epona -->
-    <RavenRace.BloodlineDef MayRequire="Peppne.Epona">
+    <!-- 修复：更新 MayRequire 的 PackageId -->
+    <RavenRace.BloodlineDef MayRequire="Epona.EponaDynasticRise">
         <defName>Bloodline_Epona</defName>
         <label>艾波娜血脉</label>
         <labelShort>艾波娜</labelShort>

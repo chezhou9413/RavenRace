@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/comps</xpath>
+    <value>
+      <!-- 龙奶产出 (需要龙人血脉，排斥雪牛血脉) -->
+      <li Class="RavenRace.Compat.MuGirl.CompProperties_RavenMilkable">
+        <milkDef>DragonianMilk</milkDef>
+        <milkAmount>10</milkAmount>
+        <milkIntervalDays>2.5</milkIntervalDays>
+        <displayStringKey>RavenRace_DragonMilkFullness</displayStringKey>
+        <requireBloodline>Dragonian_Race</requireBloodline>
+        <forbidBloodline>MooGirl</forbidBloodline>
+      </li>
+      
+      <!-- 神赐乳产出 Combo (必须同时拥有龙人和雪牛血脉) -->
+      <li Class="RavenRace.Compat.MuGirl.CompProperties_RavenMilkable">
+        <milkDef>Raven_DivineMilk</milkDef>
+        <milkAmount>15</milkAmount>
+        <milkIntervalDays>2.0</milkIntervalDays>
+        <displayStringKey>RavenRace_DivineMilkFullness</displayStringKey>
+        <requireBloodline>Dragonian_Race</requireBloodline>
+        <requireBloodline2>MooGirl</requireBloodline2>
+      </li>
+    </value>
+  </Operation>
+</Patch>

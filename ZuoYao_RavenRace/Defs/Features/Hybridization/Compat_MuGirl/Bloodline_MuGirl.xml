@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <RavenRace.BloodlineDef MayRequire="Nukafrog.MooGirl">
+    <RavenRace.BloodlineDef MayRequire="HAR.MuGirlRace">
         <defName>Bloodline_MuGirl</defName>
         <label>雪牛血脉</label>
         <labelShort>雪牛</labelShort>

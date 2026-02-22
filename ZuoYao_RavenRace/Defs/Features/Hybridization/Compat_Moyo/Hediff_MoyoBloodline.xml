@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef MayRequire="Nemonian.MY2.Beta">
+    <defName>Raven_Hediff_MoyoBloodline</defName>
+    <label>茉约血脉(次级)</label>
+    <description>源自深海茉约的血脉。体内的血液被深蓝物质部分同化，赋予了对毒素的轻微抗性，并能缓慢凝结出深蓝血浆。\n\n效果：\n- 开启深蓝血浆生产\n- 毒素抗性 +10%</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.2, 0.4, 1.0)</defaultLabelColor> <!-- 深蓝色 -->
+    <isBad>false</isBad>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <ToxicResistance>0.10</ToxicResistance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

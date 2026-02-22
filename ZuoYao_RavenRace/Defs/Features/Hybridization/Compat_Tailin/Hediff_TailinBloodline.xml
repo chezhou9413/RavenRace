@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef MayRequire="LepechandEusro.Tailin">
+    <defName>Raven_Hediff_TailinBloodline</defName>
+    <label>泰临血脉(次级)</label>
+    <description>源自泰临族的血脉，赋予了持有者敏锐的战斗直觉与更快的近战反应速度。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.4, 0.4)</defaultLabelColor>
+    <isBad>false</isBad>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>2</MeleeHitChance>
+          <MeleeDodgeChance>2</MeleeDodgeChance>
+        </statOffsets>
+        <statFactors>
+          <MeleeCooldownFactor>0.85</MeleeCooldownFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

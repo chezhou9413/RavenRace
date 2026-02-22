@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Verse;
+﻿using Verse;
 using RimWorld;
-using RavenRace.Features.Bloodline; // [Added]
+using RavenRace.Features.Bloodline;
 
 namespace RavenRace.Compat.Epona
 {
@@ -12,16 +9,17 @@ namespace RavenRace.Compat.Epona
     {
         public static bool IsEponaActive { get; private set; }
         public static HediffDef EponaRunHediff { get; private set; }
+        public static HediffDef EponaBloodlineHediff { get; private set; }
 
         static EponaCompatUtility()
         {
-            IsEponaActive = DefDatabase<ThingDef>.GetNamedSilentFail("Alien_Epona") != null ||
-                            DefDatabase<ThingDef>.GetNamedSilentFail("Alien_Destrier") != null ||
-                            DefDatabase<ThingDef>.GetNamedSilentFail("Alien_Unicorn") != null;
+            IsEponaActive = ModsConfig.IsActive("Epona.EponaDynasticRise");
 
             if (IsEponaActive)
             {
                 EponaRunHediff = DefDatabase<HediffDef>.GetNamedSilentFail("Epona_Run_Hediff");
+                EponaBloodlineHediff = DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_EponaBloodline");
+                RavenModUtility.LogVerbose("[RavenRace] Epona detected. Compatibility active.");
             }
         }
 
@@ -40,7 +38,6 @@ namespace RavenRace.Compat.Epona
         public static bool HasEponaBloodline(Pawn pawn)
         {
             if (pawn == null) return false;
-            // [Change] Comp_Bloodline -> CompBloodline
             var comp = pawn.TryGetComp<CompBloodline>();
             if (comp == null || comp.BloodlineComposition == null) return false;
 
@@ -49,23 +46,20 @@ namespace RavenRace.Compat.Epona
                    comp.BloodlineComposition.ContainsKey("Alien_Unicorn");
         }
 
-        public static void EnsureEponaHybridComp(Pawn pawn)
+        public static void HandleEponaBloodline(Pawn pawn, bool hasBloodline)
         {
-            if (!IsEponaActive || pawn == null) return;
-            if (!HasEponaBloodline(pawn)) return;
+            if (pawn == null || pawn.health == null || EponaBloodlineHediff == null) return;
 
-            if (pawn.GetComp<Comp_EponaHybridLogic>() != null) return;
+            bool hasHediff = pawn.health.hediffSet.HasHediff(EponaBloodlineHediff);
 
-            try
+            if (hasBloodline && !hasHediff)
             {
-                Comp_EponaHybridLogic newComp = new Comp_EponaHybridLogic();
-                newComp.parent = pawn;
-                newComp.Initialize(new CompProperties_EponaHybridLogic());
-                pawn.AllComps.Add(newComp);
+                pawn.health.AddHediff(EponaBloodlineHediff);
             }
-            catch (Exception ex)
+            else if (!hasBloodline && hasHediff)
             {
-                Log.Error($"[RavenRace] Failed to add EponaHybridLogic to {pawn}: {ex}");
+                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(EponaBloodlineHediff);
+                if (h != null) pawn.health.RemoveHediff(h);
             }
         }
     }

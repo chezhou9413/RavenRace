@@ -11,7 +11,7 @@
     <!-- 米莉拉 -->
     <RavenRace_Settings_MiliraCompat>米莉拉(Milira)血脉</RavenRace_Settings_MiliraCompat>
     <RavenRace_Settings_EnableMiliraCompat>启用米莉拉血脉特性</RavenRace_Settings_EnableMiliraCompat>
-    <RavenRace_Settings_EnableMiliraCompat_Desc>如果开启，含有米莉拉血脉的渡鸦将获得移速加成和瞄准时间缩减。</RavenRace_Settings_EnableMiliraCompat_Desc>
+    <RavenRace_Settings_EnableMiliraCompat_Desc>如果开启，含有米莉拉血脉的渡鸦将获得天使血脉加成，包括移动速度的提升和瞄准时间的缩减。</RavenRace_Settings_EnableMiliraCompat_Desc>
 
     <!-- 萌螈 -->
     <RavenRace_Settings_MoeLotlCultivation>萌螈修炼能力</RavenRace_Settings_MoeLotlCultivation>
@@ -99,7 +99,7 @@
     <RavenRace_Settings_EnableNemesisCompat>启用纳美西斯血脉特性</RavenRace_Settings_EnableNemesisCompat>
     <RavenRace_Settings_EnableNemesisCompat_Desc>如果开启，含有纳美西斯血脉的渡鸦将获得“相位穿梭”能力，在移动时消耗饥饿值进行瞬移。</RavenRace_Settings_EnableNemesisCompat_Desc>
 
-    <!-- 煌金族 (Golden Gloria) [新增] -->
+    <!-- 煌金族 (Golden Gloria) -->
     <RavenRace_Settings_GoldenGloriaCompat>煌金族(Golden Gloria)血脉</RavenRace_Settings_GoldenGloriaCompat>
     <RavenRace_Settings_EnableGoldenGloriaCompat>启用煌金族血脉特性</RavenRace_Settings_EnableGoldenGloriaCompat>
     <RavenRace_Settings_EnableGoldenGloriaCompat_Desc>如果开启，含有煌金族血脉的渡鸦将获得【煌金基因型】状态，提供属性加成（无视基因检测）。</RavenRace_Settings_EnableGoldenGloriaCompat_Desc>
@@ -109,12 +109,4 @@
     <RavenRace_Settings_EnableNivarianCompat>启用涅瓦莲血脉特性</RavenRace_Settings_EnableNivarianCompat>
     <RavenRace_Settings_EnableNivarianCompat_Desc>如果开启，含有涅瓦莲血脉的渡鸦将获得“不屈之心”能力。在征召状态下，该能力会随时间增强，提供移动速度、闪避和疼痛抗性加成。</RavenRace_Settings_EnableNivarianCompat_Desc>
 
-
-    <!-- Gizmo UI -->
-    <Milira_Flight_Toggle>飞行</Milira_Flight_Toggle>
-    <Milira_Flight_Toggle_Desc>开启/关闭飞行能力。\n\n飞行时可以越过深水、墙壁等障碍（需补丁支持），但会持续消耗饥饿度。</Milira_Flight_Toggle_Desc>
-    
-    <Milira_Flight_LowAlt>低空模式</Milira_Flight_LowAlt>
-    <Milira_Flight_HighAlt>高空模式</Milira_Flight_HighAlt>
-    <Milira_Flight_Mode_Desc>切换飞行高度。\n\n【低空】：仅在移动时飞行，可飞越建筑但不能飞越屋顶。\n【高空】：始终飞行，可飞越屋顶但不能飞越实体建筑。</Milira_Flight_Mode_Desc>
 </LanguageData>

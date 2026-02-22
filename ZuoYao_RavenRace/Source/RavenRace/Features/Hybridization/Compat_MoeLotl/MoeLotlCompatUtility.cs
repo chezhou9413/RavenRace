@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using RavenRace.Features.Bloodline;
 using System.Collections; // 必须引用
 
+
 namespace RavenRace.Compat.MoeLotl
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace RavenRace.Compat.MoeLotl
         public static Type MoeLotlQiSkillDefType;
 
         public static HediffDef LotlQiHediffDef;
+        public static HediffDef MoeLotlBloodlineHediff; // [新增] 静态展示Hediff
         public static bool IsMoeLotlActive { get; private set; }
 
         // =============================================================
@@ -69,6 +71,7 @@ namespace RavenRace.Compat.MoeLotl
 
                 // 获取 Hediff
                 LotlQiHediffDef = DefDatabase<HediffDef>.GetNamedSilentFail("Axolotl_LotlQi");
+                MoeLotlBloodlineHediff = DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_MoeLotlBloodline"); // [新增]
 
                 // 只要核心组件存在，就视为激活
                 IsMoeLotlActive = (CompCultivationType != null && CompAxolotlEnergyType != null);
@@ -105,6 +108,26 @@ namespace RavenRace.Compat.MoeLotl
             {
                 Log.Error($"[RavenRace] Failed to initialize MoeLotl compatibility: {ex}");
                 IsMoeLotlActive = false;
+            }
+        }
+
+
+
+        // [新增] 处理健康面板上的静态Hediff
+        public static void HandleMoeLotlBloodline(Pawn pawn, bool hasBloodline)
+        {
+            if (pawn == null || MoeLotlBloodlineHediff == null) return;
+
+            bool hasHediff = pawn.health.hediffSet.HasHediff(MoeLotlBloodlineHediff);
+
+            if (hasBloodline && !hasHediff)
+            {
+                pawn.health.AddHediff(MoeLotlBloodlineHediff);
+            }
+            else if (!hasBloodline && hasHediff)
+            {
+                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(MoeLotlBloodlineHediff);
+                if (h != null) pawn.health.RemoveHediff(h);
             }
         }
 

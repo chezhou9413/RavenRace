@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef MayRequire="Golden.GloriasMod">
+    <defName>Raven_Hediff_GoldenGloriaBloodline</defName>
+    <label>煌金血脉(次级)</label>
+    <description>源自煌金族的古老龙族血脉。获得了部分煌金基因型的强化，体能与防护得到提升。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.84, 0.0)</defaultLabelColor> <!-- 金色 -->
+    <isBad>false</isBad>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.3</MoveSpeed>
+          <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.15</ArmorRating_Heat>
+        </statOffsets>
+        <statFactors>
+          <WorkSpeedGlobal>1.05</WorkSpeedGlobal>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

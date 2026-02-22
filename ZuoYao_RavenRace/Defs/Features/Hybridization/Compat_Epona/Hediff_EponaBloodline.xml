@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef MayRequire="Epona.EponaDynasticRise">
+    <defName>Raven_Hediff_EponaBloodline</defName>
+    <label>艾波娜血脉(次级)</label>
+    <description>源自艾波娜的健壮血脉。赋予了持有者更强的负重能力和些许基础移速，并在室外移动时会逐渐加速。\n\n效果：\n- 基础移速 +0.2\n- 携带能力 +15</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(150, 200, 100)</defaultLabelColor>
+    <isBad>false</isBad>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.2</MoveSpeed>
+          <CarryingCapacity>15</CarryingCapacity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
