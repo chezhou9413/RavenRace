@@ -223,13 +223,11 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
                 ref tmpUnlockKeys,
                 ref tmpUnlockValues
             );
-
-            // 玩家 Pawn，Deep完整保存
             Scribe_Collections.Look(
                 ref playerPawns,
                 "playerPawns",
                 LookMode.Def,
-                LookMode.Deep,
+                LookMode.Reference,
                 ref tmpPlayerPawnKeys,
                 ref tmpPlayerPawnValues
             );
