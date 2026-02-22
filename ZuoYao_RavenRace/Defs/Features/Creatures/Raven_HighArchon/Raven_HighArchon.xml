@@ -67,7 +67,7 @@
       <leatherDef>Leather_Bird</leatherDef>
       <trainability>Advanced</trainability>
       <gestationPeriodDays>30</gestationPeriodDays>
-      <lifeExpectancy>300</lifeExpectancy>
+      <lifeExpectancy>100</lifeExpectancy>
       
       <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
@@ -124,21 +124,27 @@
     <ecoSystemWeight>0.05</ecoSystemWeight> 
     
     <lifeStages>
+      <!-- 幼年阶段 -->
       <li>
         <bodyGraphicData>
           <texPath>Animal/GreatRaven</texPath>
+          <graphicClass>Graphic_Multi</graphicClass> <!-- 关键修改：启用多面贴图 -->
           <drawSize>1.8</drawSize>
         </bodyGraphicData>
       </li>
+      <!-- 青年阶段 -->
       <li>
         <bodyGraphicData>
           <texPath>Animal/GreatRaven</texPath>
+          <graphicClass>Graphic_Multi</graphicClass> <!-- 关键修改：启用多面贴图 -->
           <drawSize>2.4</drawSize>
         </bodyGraphicData>
       </li>
+      <!-- 成年阶段 -->
       <li>
         <bodyGraphicData>
           <texPath>Animal/GreatRaven</texPath>
+          <graphicClass>Graphic_Multi</graphicClass> <!-- 关键修改：启用多面贴图 -->
           <drawSize>3.5</drawSize>
           <shadowData>
             <volume>(0.8, 0.6, 0.6)</volume>
@@ -147,6 +153,8 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
+
+    
   </PawnKindDef>
 
 </Defs>
