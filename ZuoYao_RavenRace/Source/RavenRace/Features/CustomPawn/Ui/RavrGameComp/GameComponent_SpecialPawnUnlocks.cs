@@ -59,28 +59,25 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
                 .Where(d => d.GetModExtension<RaveCustomPawnUiData>() != null)
                 .ToList();
 
-            previewPawns.Clear();
-
             foreach (PawnKindDef kindDef in cachedSpecialKinds)
             {
                 //补全解锁状态
                 if (!unlockStates.ContainsKey(kindDef))
                     unlockStates[kindDef] = false;
 
-                // 预览Pawn：每次加载重新生成（不需要保存，仅用于UI展示）
-                previewPawns[kindDef] = GeneratePreviewPawn(kindDef);
-
                 //玩家Pawn只在第一次生成，之后复用同一个
                 if (!playerPawns.ContainsKey(kindDef) || playerPawns[kindDef] == null)
                     playerPawns[kindDef] = GeneratePlayerPawn(kindDef);
             }
+            //previewPawn不在这里生成，懒加载，第一次UI调用时才生成
         }
 
-        /// <summary>预览用Pawn仅UI展示。</summary>
+        /// <summary>预览用Pawn仅UI展示，懒加载。</summary>
         private Pawn GeneratePreviewPawn(PawnKindDef kindDef)
         {
             Faction faction = FactionUtility.DefaultFactionFrom(kindDef.defaultFactionDef);
             Pawn pawn = PawnGenerator.GeneratePawn(kindDef, faction);
+            Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.KeepForever);
             return pawn;
         }
 
@@ -155,11 +152,18 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
             SetUnlocked(kindDef, false);
         }
 
-        //获取预览用的pawn
+        //获取预览用的pawn，懒加载
         public Pawn GetPreviewPawn(PawnKindDef kindDef)
         {
+            if (kindDef == null)
+                return null;
+
             Pawn pawn;
-            previewPawns.TryGetValue(kindDef, out pawn);
+            if (!previewPawns.TryGetValue(kindDef, out pawn) || pawn == null)
+            {
+                pawn = GeneratePreviewPawn(kindDef);
+                previewPawns[kindDef] = pawn;
+            }
             return pawn;
         }
 
@@ -176,7 +180,6 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
             //已在场上或已死亡，不重复处理
             if (pawn.Spawned || pawn.Dead)
                 return null;
-            // 已在 GenerateAndRegisterPawn 时注册，无需再次 PassToWorld
             GenSpawn.Spawn(pawn, spawnPos, map);
             pawn.SetFaction(Faction.OfPlayer);
             data.Worker.UiSummon(pawn);
@@ -223,6 +226,8 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
                 ref tmpUnlockKeys,
                 ref tmpUnlockValues
             );
+
+            // 玩家 Pawn，用Reference保存，由WorldPawns负责Deep保存，避免重复注册ID冲突
             Scribe_Collections.Look(
                 ref playerPawns,
                 "playerPawns",
