@@ -1,12 +1,11 @@
-﻿using System;
+﻿using HarmonyLib;
+using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using HarmonyLib;
+using UnityEngine;
 using Verse;
 using Verse.AI;
-using RimWorld;
-using UnityEngine;
 
 namespace RavenRace.Compat.MoeLotl
 {
@@ -50,6 +49,13 @@ namespace RavenRace.Compat.MoeLotl
                     if (mPostExposeData != null)
                     {
                         harmony.Patch(mPostExposeData, prefix: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(CompCultivation_PostExposeData_Prefix)));
+                    }
+
+                    // [稳定性修复] 吞掉 GetStatOffset 的内部异常，防止世界格 Pawn Tick 时刷红字
+                    var mGetStatOffset = AccessTools.Method(MoeLotlCompatUtility.CompCultivationType, "GetStatOffset");
+                    if (mGetStatOffset != null)
+                    {
+                        harmony.Patch(mGetStatOffset, finalizer: new HarmonyMethod(typeof(Patch_MoeLotl_Compat), nameof(CompCultivation_GetStatOffset_Finalizer)));
                     }
                 }
 
@@ -289,6 +295,17 @@ namespace RavenRace.Compat.MoeLotl
                     __result = true;
                 }
             }
+        }
+
+        public static Exception CompCultivation_GetStatOffset_Finalizer(
+    Exception __exception, ref float __result)
+        {
+            if (__exception != null)
+            {
+                __result = 0f;
+                return null;
+            }
+            return null;
         }
 
         public static Exception GetGizmos_Finalizer(Exception __exception) { return null; }
