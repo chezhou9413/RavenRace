@@ -146,10 +146,6 @@
           <texPath>Animal/GreatRaven</texPath>
           <graphicClass>Graphic_Multi</graphicClass> <!-- 关键修改：启用多面贴图 -->
           <drawSize>3.5</drawSize>
-          <shadowData>
-            <volume>(0.8, 0.6, 0.6)</volume>
-            <offset>(0,0,-0.3)</offset>
-          </shadowData>
         </bodyGraphicData>
       </li>
     </lifeStages>
