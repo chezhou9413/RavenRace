@@ -59,6 +59,8 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
                 .Where(d => d.GetModExtension<RaveCustomPawnUiData>() != null)
                 .ToList();
 
+            previewPawns.Clear();
+
             foreach (PawnKindDef kindDef in cachedSpecialKinds)
             {
                 //补全解锁状态
@@ -74,26 +76,22 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
             }
         }
 
-        //生成 Pawn 并立刻注册到World
-        private Pawn GenerateAndRegisterPawn(PawnKindDef kindDef)
+        /// <summary>预览用Pawn仅UI展示。</summary>
+        private Pawn GeneratePreviewPawn(PawnKindDef kindDef)
+        {
+            Faction faction = FactionUtility.DefaultFactionFrom(kindDef.defaultFactionDef);
+            Pawn pawn = PawnGenerator.GeneratePawn(kindDef, faction);
+            return pawn;
+        }
+
+        /// <summary>交给玩家的正式Pawn。</summary>
+        private Pawn GeneratePlayerPawn(PawnKindDef kindDef)
         {
             Faction faction = FactionUtility.DefaultFactionFrom(kindDef.defaultFactionDef);
             Pawn pawn = PawnGenerator.GeneratePawn(kindDef, faction);
             //必须注册到 WorldPawns
             Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.KeepForever);
             return pawn;
-        }
-
-        /// <summary>预览用Pawn仅UI展示。</summary>
-        private Pawn GeneratePreviewPawn(PawnKindDef kindDef)
-        {
-            return GenerateAndRegisterPawn(kindDef);
-        }
-
-        /// <summary>交给玩家的正式Pawn。</summary>
-        private Pawn GeneratePlayerPawn(PawnKindDef kindDef)
-        {
-            return GenerateAndRegisterPawn(kindDef);
         }
 
         public override void GameComponentTick()
@@ -166,7 +164,7 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
         }
 
         // 把 playerPawn 生成到地图上交给玩家
-        public Pawn GivePawnToPlayer(PawnKindDef kindDef, IntVec3 spawnPos, Map map,RaveCustomPawnUiData data)
+        public Pawn GivePawnToPlayer(PawnKindDef kindDef, IntVec3 spawnPos, Map map, RaveCustomPawnUiData data)
         {
             if (kindDef == null || map == null)
                 return null;
@@ -186,7 +184,7 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
         }
 
         //把playerPawn从地图收回
-        public bool ReclaimPawn(PawnKindDef kindDef,RaveCustomPawnUiData data)
+        public bool ReclaimPawn(PawnKindDef kindDef, RaveCustomPawnUiData data)
         {
             if (kindDef == null)
                 return false;
@@ -199,8 +197,6 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
                 return false;
             data.Worker.UiReclaim(pawn);
             pawn.DeSpawn();
-            if (Find.WorldPawns.Contains(pawn))
-                Find.WorldPawns.RemovePawn(pawn);
 
             return true;
         }
