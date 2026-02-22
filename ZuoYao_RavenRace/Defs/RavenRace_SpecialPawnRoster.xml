@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <MainButtonDef>
+        <defName>RavenRace_SpecialPawnRoster</defName>
+        <label>渡鸦特殊角色</label>
+        <description>打开渡鸦特殊角色管理器</description>
+        <order>100</order>
+        <buttonVisible>true</buttonVisible>
+        <iconPath>UI/Fusang/LeaderPortrait</iconPath>
+        <minimized>true</minimized>
+        <tabWindowClass>RavenRace.Features.CustomPawn.Ui.MainTabWindow_SpecialPawnRoster</tabWindowClass>
+    </MainButtonDef>
+</Defs>

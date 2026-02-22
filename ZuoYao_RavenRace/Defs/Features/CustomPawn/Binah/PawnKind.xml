@@ -68,8 +68,11 @@
                     </li>
                 </bodyAddonRules>
             </li>
+            <li Class="RavenRace.Features.CustomPawn.Ui.RaveExtension.RaveCustomPawnUiData">
+                <workerClass>RavenRace.Features.CustomPawn.Ui.SpecialPawnWorker.SpecialPawnWorkerBase</workerClass>
+                <CustomPawnUiDes>测试文本2,测试文本2,测试文本2,测试文本2,测试文本,测试文本,测试文本</CustomPawnUiDes>                <!-- 角色描述 -->
+                <pos>2</pos>                <!-- ui排序 -->
+            </li>
         </modExtensions>
-
-
     </PawnKindDef>
 </Defs>
