@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <!-- 米莉拉 (Milira) - 包含原版和帝国版 -->
-    <RavenRace.BloodlineDef MayRequire="Ancot.Milira">
+    <RavenRace.BloodlineDef MayRequire="Ancot.MiliraRace">
         <defName>Bloodline_Milira</defName>
         <label>米莉拉血脉</label>
         <labelShort>米莉拉</labelShort>

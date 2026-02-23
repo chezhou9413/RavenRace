@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/comps</xpath>
+    <value>
+      <!-- 完全复刻沃芬原版的月相与夜晚力量组件，解决持久化问题 -->
+      <li Class="Wolfein.CompProperties_WolfeinStrength">
+        <hediffNight>Wolfein_NightStrength</hediffNight>
+        <severity>0.01</severity>
+        <overrideHediff>false</overrideHediff>
+        <moonPhaseHediff>
+          <li>
+            <moonPhase>WaningCrescent</moonPhase>
+            <hediff>Wolfein_MoonStrength</hediff>
+            <severity>0.1</severity>
+            <severity_PureBlood>0.5</severity_PureBlood>
+          </li>
+          <li>
+            <moonPhase>NewMoon</moonPhase>
+            <hediff>Wolfein_MoonStrength</hediff>
+            <severity>0.2</severity>
+            <severity_PureBlood>0.6</severity_PureBlood>
+          </li>
+          <li>
+            <moonPhase>WaxingCrescent</moonPhase>
+            <hediff>Wolfein_MoonStrength</hediff>
+            <severity>0.1</severity>
+            <severity_PureBlood>0.5</severity_PureBlood>
+          </li>
+          <li>
+            <moonPhase>WaxingGibbous</moonPhase>
+            <hediff>Wolfein_MoonStrength</hediff>
+            <severity>0.3</severity>
+            <severity_PureBlood>0.7</severity_PureBlood>
+          </li>
+          <li>
+            <moonPhase>FullMoon</moonPhase>
+            <hediff>Wolfein_MoonStrength</hediff>
+            <severity>0.4</severity>
+            <severity_PureBlood>0.8</severity_PureBlood>
+          </li>
+          <li>
+            <moonPhase>WaningGibbous</moonPhase>
+            <hediff>Wolfein_MoonStrength</hediff>
+            <severity>0.3</severity>
+            <severity_PureBlood>0.7</severity_PureBlood>
+          </li>
+          <li>
+            <moonPhase>LastQuarter</moonPhase>
+            <hediff>Wolfein_MoonStrength</hediff>
+            <severity>0.01</severity>
+            <severity_PureBlood>0.01</severity_PureBlood>
+          </li>
+          <li>
+            <moonPhase>FirstQuarter</moonPhase>
+            <hediff>Wolfein_MoonStrength</hediff>
+            <severity>0.01</severity>
+            <severity_PureBlood>0.01</severity_PureBlood>
+          </li>
+        </moonPhaseHediff>
+      </li>
+    </value>
+  </Operation>
+</Patch>

@@ -5,6 +5,21 @@
         <li>1.6</li>
         <li IfModActive="Nals.FacialAnimation">RavenRaceFA</li>
         <li IfModActive="rim.job.world,rjw.menstruation">RJWCompat</li>
-        <li IfModActive="HenTaiLoliTeam.Axolotl">Axolotl</li>
+
+        <!-- 种族兼容补丁统合目录 -->
+        <li IfModActive="HenTaiLoliTeam.Axolotl">AlienRaces/Axolotl</li>
+        <li IfModActive="SutSutMan.MinchoTheMintChocoSlimeHARver">AlienRaces/Mincho</li>
+        <li IfModActive="Epona.EponaDynasticRise">AlienRaces/Epona</li>
+        <li IfModActive="Nemonian.MY2.Beta">AlienRaces/Moyo</li>
+        <li IfModActive="MelonDove.WolfeinRace">AlienRaces/Wolfein</li>
+        <li IfModActive="HAR.MuGirlRace">AlienRaces/MuGirl</li>
+        <li IfModActive="RooAndGloomy.DragonianRaceMod">AlienRaces/Dragonian</li>
+        <li IfModActive="LepechandEusro.Tailin">AlienRaces/Tailin</li>
+        <li IfModActive="BreadMo.Cinders">AlienRaces/Cinder</li>
+        <li IfModActive="Tourswen.LegendaryBlackDragon">AlienRaces/Miraboreas</li>
+        <li IfModActive="Golden.GloriasMod">AlienRaces/GoldenGloria</li>
+        <li IfModActive="keeptpa.NivarianRace">AlienRaces/Nivarian</li>
+        <li IfModActive="Aurora.Nebula.NemesisRaceThePunisher">AlienRaces/Nemesis</li>
+        <li IfModActive="Ancot.MiliraRace">AlienRaces/Milira</li>
     </v1.6>
 </loadFolders>

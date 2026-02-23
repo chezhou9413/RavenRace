@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/comps</xpath>
+    <value>
+      <!-- 将原本C#中动态赋予的参数，精准转换为持久化的XML属性 -->
+      <li Class="RavenRace.Compat.Mincho.CompProperties_MinchoPassiveProduction">
+        <resourceDef>Mincho_Mintchoco</resourceDef>
+        <amount>10</amount>
+        <intervalDays>0.5</intervalDays>
+        <labelKey>RavenRace_MinchoChocolateFullness</labelKey>
+      </li>
+    </value>
+  </Operation>
+</Patch>

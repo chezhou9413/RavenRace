@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================== 渡鸦玩家派系 (开局用) ==================== -->
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>Raven_PlayerFaction</defName>
+    <label>渡鸦流亡者</label>
+    <description>一群脱离了扶桑组织或巢穴的渡鸦族。</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>Raven_Colonist</basicMemberKind>
+    <pawnSingular>渡鸦族</pawnSingular>
+    <pawnsPlural>渡鸦族</pawnsPlural>
+    <techLevel>Industrial</techLevel>
+    
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Raven_Backstory</li>
+          <!-- 保留 Offworld 以防背景故事不足导致生成失败 -->
+          <li>Offworld</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <allowedCultures><li>Raven_Culture</li></allowedCultures>
+    
+    <!-- 核心：强制要求 Raven_Heritage Meme，以加载文本规则 -->
+    <requiredMemes>
+      <li>Raven_Heritage</li>
+    </requiredMemes>
+    
+    <playerInitialSettlementNameMaker>NamerSettlementOutlander</playerInitialSettlementNameMaker>
+  </FactionDef>
+</Defs>

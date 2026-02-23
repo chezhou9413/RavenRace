@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef MayRequire="MelonDove.WolfeinRace">
+    <defName>Raven_Hediff_WolfeinBloodline</defName>
+    <label>沃芬血脉(次级)</label>
+    <description>源自沃芬狼族的野性血脉。听觉与视觉变得更加敏锐，并且会受到月相与夜晚的加成。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(150, 150, 150)</defaultLabelColor>
+    <isBad>false</isBad>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Hearing</capacity><offset>0.10</offset></li>
+          <li><capacity>Sight</capacity><offset>0.05</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

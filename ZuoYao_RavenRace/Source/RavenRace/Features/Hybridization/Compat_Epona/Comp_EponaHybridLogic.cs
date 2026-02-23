@@ -39,15 +39,26 @@ namespace RavenRace.Compat.Epona
             "EscortPrisonerToBed", "TakeWoundedPrisonerToBed", "TakeToBedToOperate", "Hunt"
         };
 
+        /// <summary>
+        /// 核心拦截：检查Mod是否激活、设置是否允许、角色是否有艾波娜血脉
+        /// </summary>
+        private bool IsActiveAndValid()
+        {
+            if (!RavenRaceMod.Settings.enableEponaCompat) return false;
+            if (!EponaCompatUtility.IsEponaActive) return false;
+            if (Pawn == null || !Pawn.Spawned || Pawn.Dead || Pawn.Downed) return false;
+
+            return EponaCompatUtility.HasEponaBloodline(Pawn);
+        }
+
         public override void CompTick()
         {
             base.CompTick();
 
-            if (!Pawn.IsHashIntervalTick(30)) return;
-            if (!Pawn.Spawned || Pawn.Dead || Pawn.Downed) return;
+            // 如果没有血脉，直接休眠，不执行任何消耗性能的逻辑
+            if (!IsActiveAndValid()) return;
 
-            // 检查血脉
-            if (!EponaCompatUtility.HasEponaBloodline(Pawn)) return;
+            if (!Pawn.IsHashIntervalTick(30)) return;
 
             // 1. 检查 Job
             if (Pawn.jobs?.curJob != null && targetJobDefs.Contains(Pawn.jobs.curJob.def.defName))

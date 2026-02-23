@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using RavenRace.Features.Bloodline; // 必须引用血脉命名空间
 
 namespace RavenRace.Compat.Mincho
 {
@@ -31,11 +32,26 @@ namespace RavenRace.Compat.Mincho
             Scribe_Values.Look(ref progress, "minchoProductionProgress", 0f);
         }
 
+        /// <summary>
+        /// 核心拦截：只有当Mod开启、设置允许，且角色真正拥有血脉时才执行逻辑
+        /// </summary>
+        private bool IsActiveAndValid(Pawn pawn)
+        {
+            if (!RavenRaceMod.Settings.enableMinchoCompat) return false;
+            if (!MinchoCompatUtility.IsMinchoActive) return false;
+            if (pawn == null || pawn.Dead) return false;
+
+            var comp = pawn.TryGetComp<CompBloodline>();
+            return MinchoCompatUtility.HasMinchoBloodline(comp);
+        }
+
         public override void CompTick()
         {
             base.CompTick();
             Pawn pawn = this.parent as Pawn;
-            if (pawn == null || pawn.Dead) return;
+
+            // 拦截检查
+            if (!IsActiveAndValid(pawn)) return;
 
             // 饥饿时停止生产
             float hungerFactor = 1f;
@@ -51,15 +67,16 @@ namespace RavenRace.Compat.Mincho
             // 满了自动掉落
             if (progress >= 1f)
             {
-                Produce();
+                Produce(pawn);
                 progress = 0f;
             }
         }
 
-        private void Produce()
+        private void Produce(Pawn pawn)
         {
-            Pawn pawn = (Pawn)parent;
             if (pawn.Map == null) return; // 不在地图上不生成(但在世界地图会累积进度，回到地图瞬间掉落)
+
+            if (Props.resourceDef == null) return; // 安全检查
 
             // 生成物品
             Thing thing = ThingMaker.MakeThing(Props.resourceDef);
@@ -68,10 +85,6 @@ namespace RavenRace.Compat.Mincho
             // 尝试放置在脚下
             if (GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Near, out Thing resultingThing))
             {
-                // 播放音效和消息
-                // 复用产卵的声音或标准的物品掉落声
-                // (DefDatabase<SoundDef>.GetNamedSilentFail("Hive_Spawn") ?? SoundDefOf.Standard_Drop).PlayOneShot(pawn);
-
                 Messages.Message("RavenRace_Message_MinchoProduced".Translate(pawn.LabelShort, thing.Label), new LookTargets(pawn, resultingThing), MessageTypeDefOf.PositiveEvent);
             }
         }
@@ -79,6 +92,11 @@ namespace RavenRace.Compat.Mincho
         // [核心] 这里决定了左下角信息栏的显示
         public override string CompInspectStringExtra()
         {
+            Pawn pawn = this.parent as Pawn;
+
+            // 拦截检查，无血脉不显示UI
+            if (!IsActiveAndValid(pawn)) return null;
+
             if (Props.resourceDef == null) return null;
             return Props.labelKey.Translate() + ": " + progress.ToStringPercent();
         }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- ==================== 扶桑派系定义 ==================== -->
   <FactionDef ParentName="FactionBase">
@@ -21,15 +21,20 @@
     <allowedCultures>
       <li>Raven_Culture</li>
     </allowedCultures>
+
     <structureMemeWeights>
       <Structure_GoldenCrow>999</Structure_GoldenCrow>
     </structureMemeWeights>
+
+    <!-- 核心修改：添加 Raven_Heritage 到 requiredMemes -->
     <requiredMemes>
-      <li>GoldenCrow_Faith</li>
+      <li>Raven_Heritage</li>
+      <li>Structure_GoldenCrow</li> <!-- 确保这个 Structure 存在 -->
     </requiredMemes>
+    
     <allowedMemes>
-      <li>GoldenCrow_Faith</li>
       <li>Structure_GoldenCrow</li>
+      <li>Raven_Heritage</li> <!-- 同时也加到 allowed 里 -->
     </allowedMemes>
     
     <!-- 交易类型 -->
@@ -91,7 +96,7 @@
       <li>
         <kindDef>Trader</kindDef>
         <traders>
-          <Raven_Trader>1</Raven_Trader> <!-- 这里必须是 Raven_Trader -->
+          <Raven_Trader>1</Raven_Trader> 
         </traders>
         <carriers>
           <Muffalo>6</Muffalo>
@@ -99,7 +104,7 @@
           <Alpaca>3</Alpaca>
         </carriers>
         <guards>
-          <Raven_Colonist>10</Raven_Colonist> <!-- 护卫可以用普通单位 -->
+          <Raven_Colonist>10</Raven_Colonist>
         </guards>
       </li>
       

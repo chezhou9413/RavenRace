@@ -4,6 +4,10 @@ using RavenRace.Features.Bloodline;
 
 namespace RavenRace.Compat.Milira
 {
+    /// <summary>
+    /// 米莉拉兼容性工具类
+    /// 负责检测模组状态并安全地处理血脉Hediff的赋予和移除
+    /// </summary>
     [StaticConstructorOnStartup]
     public static class MiliraCompatUtility
     {
@@ -13,59 +17,28 @@ namespace RavenRace.Compat.Milira
 
         static MiliraCompatUtility()
         {
-            // 尝试查找米莉拉种族 Def
-            MiliraRaceDef = DefDatabase<ThingDef>.GetNamedSilentFail("Milira_Race");
-
-            // 如果没找到 Milira_Race，尝试找 Milira (以防版本差异)
-            if (MiliraRaceDef == null)
-            {
-                MiliraRaceDef = DefDatabase<ThingDef>.GetNamedSilentFail("Milira");
-            }
+            // 尝试获取米莉拉种族 Def (兼容带 _Race 和不带后缀的版本)
+            MiliraRaceDef = DefDatabase<ThingDef>.GetNamedSilentFail("Milira_Race")
+                         ?? DefDatabase<ThingDef>.GetNamedSilentFail("Milira");
 
             IsMiliraActive = (MiliraRaceDef != null);
 
-            // 获取我们新定义的 Hediff
-            MiliraBloodlineHediff = DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_MiliraBloodline");
-
             if (IsMiliraActive)
             {
-                RavenModUtility.LogVerbose("[RavenRace] Milira detected. Compatibility active.");
-            }
-        }
+                // 获取血脉加成 Hediff
+                MiliraBloodlineHediff = DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_MiliraBloodline");
 
-        /// <summary>
-        /// 检查是否拥有米莉拉血脉
-        /// </summary>
-        public static bool HasMiliraBloodline(CompBloodline comp)
-        {
-            if (comp == null || comp.BloodlineComposition == null) return false;
-
-            // 检查可能的 Key
-            return comp.BloodlineComposition.ContainsKey("Milira_Race") ||
-                   comp.BloodlineComposition.ContainsKey("Milira");
-        }
-
-        /// <summary>
-        /// 处理米莉拉血脉带来的属性加成 Hediff
-        /// </summary>
-        public static void HandleMiliraBuff(Pawn pawn, bool hasBloodline)
-        {
-            if (pawn == null || MiliraBloodlineHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(MiliraBloodlineHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(MiliraBloodlineHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(MiliraBloodlineHediff);
-                if (h != null)
+                if (MiliraBloodlineHediff == null)
                 {
-                    pawn.health.RemoveHediff(h);
+                    Log.Warning("[RavenRace] Milira detected, but 'Raven_Hediff_MiliraBloodline' not found in XML.");
+                }
+                else
+                {
+                    RavenModUtility.LogVerbose("[RavenRace] Milira detected. Compatibility active.");
                 }
             }
         }
+
+
     }
 }

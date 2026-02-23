@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using RavenRace.Compat.Cinder;
 using RavenRace.Compat.Dragonian;
 using RavenRace.Compat.Epona;
 using RavenRace.Compat.GoldenGloria;
 using RavenRace.Compat.Koelime;
 using RavenRace.Compat.Milira;
-using RavenRace.Compat.Mincho; 
+using RavenRace.Compat.Mincho;
 using RavenRace.Compat.Miraboreas;
 using RavenRace.Compat.MoeLotl;
 using RavenRace.Compat.Moyo;
@@ -15,215 +14,106 @@ using RavenRace.Compat.Nemesis;
 using RavenRace.Compat.Nivarian;
 using RavenRace.Compat.Tailin;
 using RavenRace.Compat.Wolfein;
-using RimWorld;
-using RimWorld.Planet;
-using UnityEngine;
 using Verse;
-
-// 记得每加一个都要引用命名空间！
 
 namespace RavenRace.Features.Bloodline
 {
     /// <summary>
-    /// 血脉组件 - 模组兼容性逻辑
+    /// 血脉组件 - 模组兼容性逻辑 (重构极简版)
     /// </summary>
     public partial class CompBloodline
     {
         public void RefreshAbilities()
         {
-            EnsureBloodlineFloor(); // 每次刷新都检查保底
+            EnsureBloodlineFloor();
             CheckAndGrantBloodlineAbilities();
         }
 
         private void CheckAndGrantBloodlineAbilities()
         {
-            if (bloodlineComposition == null || bloodlineComposition.Count == 0) return;
+            if (this.Pawn == null || this.Pawn.health == null) return;
 
             try
             {
+                var settings = RavenRaceMod.Settings;
 
-                // [新增] 机械体血脉处理
-                if (bloodlineComposition.ContainsKey(BloodlineManager.MECHANIOD_BLOODLINE_KEY) &&
-                    bloodlineComposition[BloodlineManager.MECHANIOD_BLOODLINE_KEY] > 0f)
-                {
-                    HandleMechanoidBloodline(this.Pawn, true);
-                }
-                else
-                {
-                    HandleMechanoidBloodline(this.Pawn, false);
-                }
+                // ==========================================
+                // 内部特殊血脉
+                // ==========================================
+                bool hasMechanoid = BloodlineUtility.HasBloodline(this, BloodlineManager.MECHANIOD_BLOODLINE_KEY);
+                BloodlineUtility.ToggleHediff(this.Pawn, DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_MechanoidBloodline"), hasMechanoid);
 
-
+                // ==========================================
+                // 第三方兼容血脉
+                // ==========================================
 
                 // 1. 米莉拉
-                if (RavenRaceMod.Settings.enableMiliraCompat && MiliraCompatUtility.IsMiliraActive)
-                {
-                    bool hasMilira = MiliraCompatUtility.HasMiliraBloodline(this);
-                    MiliraCompatUtility.HandleMiliraBuff(this.Pawn, hasMilira);
-                }
+                bool hasMilira = settings.enableMiliraCompat && MiliraCompatUtility.IsMiliraActive && BloodlineUtility.HasBloodline(this, "Milira_Race", "Milira");
+                BloodlineUtility.ToggleHediff(this.Pawn, MiliraCompatUtility.MiliraBloodlineHediff, hasMilira);
 
-
-
-                // 2. 萌螈
-                if (RavenRaceMod.Settings.enableMoeLotlCompat &&
-                    bloodlineComposition.ContainsKey("Axolotl") &&
-                    bloodlineComposition["Axolotl"] > 0f)
-                {
-                    MoeLotlCompatUtility.GrantCultivationAbility(this.Pawn);
-                }
+                // 2. 萌螈 (包含动态初始化)
+                bool hasMoeLotl = settings.enableMoeLotlCompat && MoeLotlCompatUtility.IsMoeLotlActive && BloodlineUtility.HasBloodline(this, "Axolotl");
+                BloodlineUtility.ToggleHediff(this.Pawn, MoeLotlCompatUtility.MoeLotlBloodlineHediff, hasMoeLotl);
+                if (hasMoeLotl) MoeLotlCompatUtility.GrantCultivationAbility(this.Pawn);
 
                 // 3. 珂莉姆
-                if (RavenRaceMod.Settings.enableKoelimeBloodline)
-                {
-                    bool hasKoelime = bloodlineComposition.ContainsKey("Alien_Koelime") &&
-                                      bloodlineComposition["Alien_Koelime"] > 0f;
-                    KoelimeCompatUtility.HandleDraconicBloodline(this.Pawn, hasKoelime);
-                }
+                bool hasKoelime = settings.enableKoelimeBloodline && KoelimeCompatUtility.IsKoelimeActive && BloodlineUtility.HasBloodline(this, "Alien_Koelime");
+                BloodlineUtility.ToggleHediff(this.Pawn, KoelimeCompatUtility.KoelimeBloodlineHediff, hasKoelime);
 
-                // 4. 沃芬 (Wolfein)
-                if (RavenRaceMod.Settings.enableWolfeinCompat && WolfeinCompatUtility.IsWolfeinActive)
-                {
-                    // 逻辑与珂莉姆一致：先判断是否有血脉，然后让工具类处理组件的添加或移除
-                    bool hasWolfein = WolfeinCompatUtility.HasWolfeinBloodline(this);
-                    WolfeinCompatUtility.HandleWolfeinBloodline(this.Pawn, hasWolfein);
-                }
+                // 4. 沃芬
+                bool hasWolfein = settings.enableWolfeinCompat && WolfeinCompatUtility.IsWolfeinActive && BloodlineUtility.HasBloodline(this, "Wolfein_Race");
+                BloodlineUtility.ToggleHediff(this.Pawn, WolfeinCompatUtility.WolfeinBloodlineHediff, hasWolfein);
 
-                // 5. 产奶逻辑 (雪牛 MuGirl & 龙人 Dragonian & 混合 Combo)
-                RemoveExistingMilkComp();
+                // 5. 龙人
+                bool hasDragonian = settings.enableDragonianCompat && DragonianCompatUtility.IsDragonianActive && BloodlineUtility.HasBloodline(this, "Dragonian_Race");
+                BloodlineUtility.ToggleHediff(this.Pawn, DragonianCompatUtility.DragonianBloodlineHediff, hasDragonian);
 
-                bool hasMuGirl = RavenRaceMod.Settings.enableMuGirlCompat && MuGirlCompatUtility.HasMuGirlBloodline(this);
-                bool hasDragonian = RavenRaceMod.Settings.enableDragonianCompat && DragonianCompatUtility.HasDragonianBloodline(this);
+                // 6. 雪牛娘 (包含技能赋予)
+                bool hasMuGirl = settings.enableMuGirlCompat && MuGirlCompatUtility.IsMuGirlActive && BloodlineUtility.HasBloodline(this, "MooGirl");
+                BloodlineUtility.ToggleHediff(this.Pawn, MuGirlCompatUtility.MuGirlBloodlineHediff, hasMuGirl);
+                BloodlineUtility.ToggleAbility(this.Pawn, MuGirlCompatUtility.RavenChargeAbility, hasMuGirl);
 
-                if (RavenRaceMod.Settings.enableDragonianCompat)
-                {
-                    DragonianCompatUtility.HandleDragonianBuff(this.Pawn, hasDragonian);
-                }
-                if (RavenRaceMod.Settings.enableMuGirlCompat)
-                {
-                    MuGirlCompatUtility.HandleMuGirlBloodline(this.Pawn, hasMuGirl);
-                    MuGirlCompatUtility.HandleChargeAbility(this.Pawn, hasMuGirl);
-                }
+                // 7. 莫约
+                bool hasMoyo = settings.enableMoyoCompat && MoyoCompatUtility.IsMoyoActive && BloodlineUtility.HasBloodline(this, "Alien_Moyo");
+                BloodlineUtility.ToggleHediff(this.Pawn, MoyoCompatUtility.MoyoBloodlineHediff, hasMoyo);
 
-                if (hasDragonian && hasMuGirl)
-                {
-                    DragonianCompatUtility.GrantDivineMilkAbility(this.Pawn);
-                }
-                else if (hasDragonian)
-                {
-                    DragonianCompatUtility.GrantDragonMilkAbility(this.Pawn);
-                }
-                else if (hasMuGirl)
-                {
-                    MuGirlCompatUtility.EnsureMilkable(this.Pawn);
-                }
+                // 8. 艾波娜
+                bool hasEpona = settings.enableEponaCompat && EponaCompatUtility.IsEponaActive && BloodlineUtility.HasBloodline(this, "Alien_Epona", "Alien_Destrier", "Alien_Unicorn");
+                BloodlineUtility.ToggleHediff(this.Pawn, EponaCompatUtility.EponaBloodlineHediff, hasEpona);
 
-                // 6. 莫约 (Moyo)
-                if (RavenRaceMod.Settings.enableMoyoCompat && MoyoCompatUtility.HasMoyoBloodline(this.Pawn))
-                {
-                    MoyoCompatUtility.GrantDeepBlueProduction(this.Pawn);
-                }
+                // 9. 泰临
+                bool hasTailin = settings.enableTailinCompat && TailinCompatUtility.IsTailinActive && BloodlineUtility.HasBloodline(this, "TailinRace");
+                BloodlineUtility.ToggleHediff(this.Pawn, TailinCompatUtility.TailinBloodlineHediff, hasTailin);
 
-                // 7. 艾波娜 (Epona)
-                if (EponaCompatUtility.IsEponaActive && EponaCompatUtility.HasEponaBloodline(this.Pawn))
-                {
-                    EponaCompatUtility.EnsureEponaHybridComp(this.Pawn);
-                }
+                // 10. 烟烬
+                bool hasCinder = settings.enableCinderCompat && CinderCompatUtility.IsCinderActive && BloodlineUtility.HasBloodline(this, "Alien_Cinder");
+                BloodlineUtility.ToggleHediff(this.Pawn, CinderCompatUtility.CinderBloodlineHediff, hasCinder);
 
-                // 刷新雪牛冲锋逻辑 (受艾波娜影响)
-                if (RavenRaceMod.Settings.enableMuGirlCompat && MuGirlCompatUtility.HasMuGirlBloodline(this))
-                {
-                    MuGirlCompatUtility.HandleChargeAbility(this.Pawn, true);
-                }
+                // 11. 米拉波雷亚斯 (黑龙)
+                bool hasMiraboreas = settings.enableMiraboreasCompat && MiraboreasCompatUtility.IsMiraboreasActive && BloodlineUtility.HasBloodline(this, "LBD_Fatalis_Race");
+                BloodlineUtility.ToggleHediff(this.Pawn, MiraboreasCompatUtility.MiraboreasBloodlineHediff, hasMiraboreas);
 
-                // 8. 泰临 (Tailin)
-                if (RavenRaceMod.Settings.enableTailinCompat && TailinCompatUtility.IsTailinActive)
-                {
-                    bool hasTailinBlood = TailinCompatUtility.HasTailinBloodline(this);
-                    TailinCompatUtility.HandleTailinBloodline(this.Pawn, hasTailinBlood);
-                }
+                // 12. 珉巧
+                bool hasMincho = settings.enableMinchoCompat && MinchoCompatUtility.IsMinchoActive && BloodlineUtility.HasBloodline(this, "Mincho_ThingDef");
+                BloodlineUtility.ToggleHediff(this.Pawn, MinchoCompatUtility.MinchoBloodlineHediff, hasMincho);
 
-                // 9. 烟烬 (Cinder)
-                if (RavenRaceMod.Settings.enableCinderCompat && CinderCompatUtility.IsCinderActive)
-                {
-                    bool hasCinder = CinderCompatUtility.HasCinderBloodline(this);
-                    CinderCompatUtility.HandleCinderRegen(this.Pawn, hasCinder);
-                }
+                // 13. 纳美西斯
+                bool hasNemesis = settings.enableNemesisCompat && NemesisCompatUtility.IsNemesisActive && BloodlineUtility.HasBloodline(this, "Nemesis_Race");
+                BloodlineUtility.ToggleHediff(this.Pawn, NemesisCompatUtility.NemesisBloodlineHediff, hasNemesis);
 
-                // 10. 米拉波雷亚斯 (Miraboreas)
-                if (RavenRaceMod.Settings.enableMiraboreasCompat && MiraboreasCompatUtility.IsMiraboreasActive)
-                {
-                    bool hasBloodline = MiraboreasCompatUtility.HasMiraboreasBloodline(this);
-                    MiraboreasCompatUtility.HandleMiraboreasBloodline(this.Pawn, hasBloodline);
-                }
+                // 14. 煌金族
+                bool hasGoldenGloria = settings.enableGoldenGloriaCompat && GoldenGloriaCompatUtility.IsGoldenGloriaActive && BloodlineUtility.HasBloodline(this, "GoldenGlorias");
+                BloodlineUtility.ToggleHediff(this.Pawn, GoldenGloriaCompatUtility.GoldenGloriaGenotypeHediff, hasGoldenGloria);
 
-                // 11. 珉巧( Mincho) 
-                if (RavenRaceMod.Settings.enableMinchoCompat && MinchoCompatUtility.IsMinchoActive)
-                {
-                    bool hasMincho = MinchoCompatUtility.HasMinchoBloodline(this);
-                    MinchoCompatUtility.HandleMinchoBloodline(this.Pawn, hasMincho);
-                }
-
-                // 12. 纳美西斯 (Nemesis) - 核心修复：确保这里被正确调用
-                if (RavenRaceMod.Settings.enableNemesisCompat && NemesisCompatUtility.IsNemesisActive)
-                {
-                    bool hasNemesis = NemesisCompatUtility.HasNemesisBloodline(this);
-                    // 强制执行状态同步
-                    NemesisCompatUtility.HandleNemesisBloodline(this.Pawn, hasNemesis);
-                }
-
-
-                // 13. 煌金族 (Golden Gloria) [新增逻辑]
-                // 只有当设置开启 且 模组激活时才执行
-                if (RavenRaceMod.Settings.enableGoldenGloriaCompat && GoldenGloriaCompatUtility.IsGoldenGloriaActive)
-                {
-                    bool hasGoldenGloria = GoldenGloriaCompatUtility.HasGoldenGloriaBloodline(this);
-                    GoldenGloriaCompatUtility.HandleGoldenGloriaBloodline(this.Pawn, hasGoldenGloria);
-                }
-
-
-                // 14. 涅瓦莲 (Nivarian) [新增]
-                if (RavenRaceMod.Settings.enableNivarianCompat && NivarianCompatUtility.IsNivarianActive)
-                {
-                    bool hasNivarian = NivarianCompatUtility.HasNivarianBloodline(this);
-                    NivarianCompatUtility.HandleNivarianBloodline(this.Pawn, hasNivarian);
-                }
-
-
-
-
+                // 15. 涅瓦莲
+                bool hasNivarian = settings.enableNivarianCompat && NivarianCompatUtility.IsNivarianActive && BloodlineUtility.HasBloodline(this, "NivarianRace_Pawn");
+                BloodlineUtility.ToggleHediff(this.Pawn, NivarianCompatUtility.RavenNivarianBloodlineHediff, hasNivarian);
 
             }
             catch (Exception ex)
             {
-                Log.Warning($"[RavenRace] 血脉组件访问失效: {ex.Message}");
+                Log.Warning($"[RavenRace] 血脉状态分发遇到异常: {ex.Message}\n请检查是否有模组冲突或缺失的 XML 定义。");
             }
         }
-
-
-        private void HandleMechanoidBloodline(Pawn pawn, bool hasBloodline) //机械体处理
-        {
-            HediffDef mechHediff = DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_MechanoidBloodline");
-            if (mechHediff == null) return;
-
-            bool hasHediff = pawn.health.hediffSet.HasHediff(mechHediff);
-
-            if (hasBloodline && !hasHediff)
-            {
-                pawn.health.AddHediff(mechHediff);
-            }
-            else if (!hasBloodline && hasHediff)
-            {
-                Hediff h = pawn.health.hediffSet.GetFirstHediffOfDef(mechHediff);
-                if (h != null) pawn.health.RemoveHediff(h);
-            }
-        }
-
-
-        private void RemoveExistingMilkComp()
-        {
-            Pawn.AllComps.RemoveAll(c => c is Compat.MuGirl.CompRavenMilkable);
-        }
-
-
     }
 }

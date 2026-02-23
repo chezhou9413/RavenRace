@@ -7,13 +7,14 @@
     <scenario>
       <summary>一名孤独的渡鸦族幸存者。</summary>
       
-      <!-- 1. 玩家派系 (必需) -->
+      <!-- 1. 玩家派系 (核心修改) -->
       <playerFaction>
         <def>PlayerFaction</def>
-        <factionDef>PlayerColony</factionDef>
+        <!-- 指向我们新建的渡鸦玩家派系，不再使用 PlayerColony -->
+        <factionDef>Raven_PlayerFaction</factionDef>
       </playerFaction>
 
-      <!-- 2. [Fixed] 补全缺失的 surfaceLayer (从原版 ScenarioBase 复制) -->
+      <!-- 2. 图层设置 -->
       <surfaceLayer>
         <def>SurfaceLayerFixed</def>
         <tag>Surface</tag>
@@ -28,7 +29,6 @@
       </surfaceLayer>
 
       <parts>
-        <!-- [Fixed] 补全 PlanetLayer (从原版 ScenarioBase 复制) -->
         <li MayRequire="Ludeon.RimWorld.Odyssey" Class="ScenPart_PlanetLayer">
           <def>PlanetLayer</def>
           <tag>Orbit</tag>
@@ -53,12 +53,8 @@
           <method>DropPods</method>
         </li>
 
-        <!-- 4. 强制种族：渡鸦 -->
-        <!-- 务必确保 RavenRace.ScenPart_StartingPawnKind 类已编译且 ScenPartDefs_Raven.xml 已存在 -->
-        <li Class="RavenRace.ScenPart_StartingPawnKind">
-          <def>Raven_ScenPart_StartingPawnKind</def>
-          <pawnKind>Raven_Colonist</pawnKind>
-        </li>
+        <!-- 4. [已删除] 之前的 ScenPart_StartingPawnKind 已被移除 -->
+        <!-- 原版逻辑会自动根据 FactionDef.basicMemberKind 生成角色 -->
 
         <!-- 5. 物资 -->
         <li Class="ScenPart_StartingThing_Defined">

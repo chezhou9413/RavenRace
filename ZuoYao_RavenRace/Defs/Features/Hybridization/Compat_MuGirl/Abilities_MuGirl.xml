@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- 核心修复：添加 MayRequire，包ID为 Nukafrog.MooGirl -->
-  <AbilityDef MayRequire="Nukafrog.MooGirl">
+  <!-- 核心修复：添加 MayRequire，包ID为 HAR.MuGirlRace -->
+  <AbilityDef MayRequire="HAR.MuGirlRace">
     <defName>Raven_Ability_MuGirlCharge</defName>
     <label>雪牛冲锋</label>
     <description>利用雪牛娘血脉中的蛮力，向目标发起猛烈的冲锋。</description>

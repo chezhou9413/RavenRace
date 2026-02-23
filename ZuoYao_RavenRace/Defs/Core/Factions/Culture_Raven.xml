@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <CultureDef>
+    <defName>Raven_Culture</defName>
+    <label>渡鸦文化</label>
+    <description>一种崇尚隐秘、血脉与金乌信仰的古老文化。</description>
+    
+    <!-- 允许的观念/Meme -->
+    <allowedPlaceTags>
+      <li>OriginRaven</li>
+    </allowedPlaceTags>
+    
+    <!-- [核心修复] 风格定义：必须使用复杂结构 <tag>... -->
+    <styleItemTags>
+      <li>
+        <tag>Raven_Style</tag>
+        <baseWeight>10</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+      <li>
+        <tag>Industrial</tag>
+        <baseWeight>1</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+      <!-- 兼容性标签 -->
+      <li>
+        <tag>Moyo2_HairDummyCategory</tag>
+        <baseWeight>0.01</baseWeight>
+        <weightFactor>0.01</weightFactor>
+      </li>
+      <li>
+        <tag>Mincho</tag>
+        <baseWeight>0</baseWeight>
+        <weightFactor>0</weightFactor>
+      </li>
+    </styleItemTags>
+
+    <iconPath>World/Factions/FusangFaction</iconPath>
+
+    <!-- 命名规则引用 -->
+    <pawnNameMaker>NamerPersonFusang</pawnNameMaker>
+    <pawnNameMakerFemale>NamerPersonFusangFemale</pawnNameMakerFemale>
+    <leaderTitleMaker>NamerLeaderTitleFusang</leaderTitleMaker>
+    <deityNameMaker>NamerDeityFusang</deityNameMaker>
+    <deityTypeMaker>NamerDeityTypeFusang</deityTypeMaker>
+    <festivalNameMaker>NamerFestivalFusang</festivalNameMaker>
+    <ideoNameMaker>NamerIdeoFusang</ideoNameMaker>
+    
+    <!-- 注意：不要在这里写 factionNameMaker 和 settlementNameMaker -->
+  </CultureDef>
+</Defs>

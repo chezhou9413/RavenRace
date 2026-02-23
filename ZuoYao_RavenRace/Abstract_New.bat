@@ -12,7 +12,7 @@ set "source_features_path=Source\RavenRace\Features"
 
 :: 【修正点 1】: 将所有要忽略的关键词写在一行，用空格隔开
 :: 这里包括了文件夹名和具体的路径片段
-set "global_ignore_list=RavenRaceFA RJWCompat Defs\Core\Backstories"
+set "global_ignore_list=RavenRaceFA RJWCompat AlienRaces Defs\Core\Backstories"
 
 :: ==================================================================
 :: 脚本主体

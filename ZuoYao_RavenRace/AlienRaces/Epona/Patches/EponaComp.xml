@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/comps</xpath>
+    <value>
+      <!-- 将原本在C#中动态赋予的艾波娜逻辑组件静态化 -->
+      <li Class="RavenRace.Compat.Epona.CompProperties_EponaHybridLogic" />
+    </value>
+  </Operation>
+</Patch>
