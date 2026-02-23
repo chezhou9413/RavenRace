@@ -49,8 +49,6 @@ namespace RavenRace.Features.CustomPawn.Ui.RavrGameComp
             }
         }
 
-        // ── 初始化 ───────────────────────────────────────────────
-
         public override void FinalizeInit()
         {
             // 扫描所有带扩展的 KindDef
