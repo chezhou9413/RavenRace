@@ -38,6 +38,26 @@ namespace RavenRace.Settings
             listing.GapLine();
             listing.SubLabel("说明：开启电视AV模式后，至少两名观看者同时在场时，有概率无视条件发生交配。", 1f);
             listing.Gap();
+
+
+            // ==========================================
+            // 3. 黏液浴缸
+            // ==========================================
+            listing.Label("=== 黏液浴缸设置 ===");
+
+            listing.Label($"浴缸娱乐吸引力倍率: {s.bathtubJoyWeightMultiplier:F1}x");
+            listing.SubLabel("数值越大，小人越优先选择泡黏液浴。设为 100x 时小人会变成浴缸废人。", 1f);
+            s.bathtubJoyWeightMultiplier = listing.Slider(s.bathtubJoyWeightMultiplier, 0.1f, 100.0f);
+
+            listing.CheckboxLabeled("禁用黏液浴缸的娱乐厌倦感", ref s.bathtubDisableTolerance, "开启后，在浴缸中泡澡产生的耐受度永远为0，获得的娱乐值不会随次数衰减。");
+
+            listing.Gap();
+
+
+
+
+
+
         }
     }
 }

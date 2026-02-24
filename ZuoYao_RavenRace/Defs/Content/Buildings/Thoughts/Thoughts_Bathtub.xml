@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 泡完黏液浴缸后的心情 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_SlimeBath</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>沦陷黏液浴</label>
+        <description>太舒服了...那种温热粘稠的液体紧紧吸附着全身，就像被无数张嘴同时吮吸着一样...好想永远沉溺在里面被弄得泥泞不堪，连骨髓都要融化了...</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

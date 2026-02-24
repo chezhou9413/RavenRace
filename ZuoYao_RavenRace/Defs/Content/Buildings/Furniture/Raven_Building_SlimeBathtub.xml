@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_Building_SlimeBathtub</defName>
+    <label>渡鸦黏液浴缸</label>
+    <description>一个装满了温热、粘稠的特制粉色炼金黏液的浴缸。\n\n这种黏液的触感和温度极度类似于某种体液，能够完美包裹住进入其中的身体。渡鸦族极度享受在里面消磨时光，感受被温暖浓浊的液体彻底填满每一寸肌肤缝隙的极乐体验。洗完后不但能极大地舒缓神经，还能带来一种难以言喻的淫靡快感。</description>
+    <thingClass>RavenRace.Features.MiscSmallFeatures.Bathtub.Building_RavenBathtub</thingClass>
+    <graphicData>
+      <texPath>Buildings/Furniture/RavenBathtub/Bathtub</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <!-- 完全按照要求，强制 2x2 -->
+      <drawSize>(2, 2)</drawSize> 
+      <shadowData>
+        <volume>(0.8, 0.5, 1.8)</volume>
+      </shadowData>
+    </graphicData>
+    
+    <size>(1,2)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.3</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <rotatable>true</rotatable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>15</Beauty>
+      <JoyGainFactor>1.2</JoyGainFactor>
+    </statBases>
+
+    <costList>
+      <Steel>80</Steel>
+      <Plasteel>20</Plasteel>
+    </costList>
+
+    <building>
+      <joyKind>Raven_SlimeBathJoy</joyKind>
+    </building>
+
+    <modExtensions>
+      <li Class="RavenRace.Features.MiscSmallFeatures.Bathtub.DefModExtension_BathtubGraphics">
+        <liquidGraphic>
+          <texPath>Buildings/Furniture/RavenBathtub/Liquid</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Transparent</shaderType>
+          <!-- 同样强制 2x2 -->
+          <drawSize>(2, 2)</drawSize>
+        </liquidGraphic>
+      </li>
+    </modExtensions>
+
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_Reproduction</li>
+    </researchPrerequisites>
+  </ThingDef>
+</Defs>

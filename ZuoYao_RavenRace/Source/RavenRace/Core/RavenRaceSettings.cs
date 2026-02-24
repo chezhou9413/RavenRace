@@ -154,6 +154,11 @@ namespace RavenRace
         public float avJoyWeightMultiplier = 1.0f; // 娱乐权重倍率
         public bool avDisableTolerance = false;    // 禁用娱乐耐受/厌倦
 
+
+        // --- 浴缸功能设置 ---
+        public float bathtubJoyWeightMultiplier = 1.0f; // 浴缸吸引力倍率
+        public bool bathtubDisableTolerance = false;    // 禁用浴缸娱乐耐受/厌倦
+
         // ===================================================
         // UI 状态与逻辑
         // ===================================================
@@ -307,6 +312,12 @@ namespace RavenRace
             Scribe_Values.Look(ref incenseJoyAmount, "incenseJoyAmount", 0.05f);
             Scribe_Values.Look(ref incenseForceLovinChance, "incenseForceLovinChance", 0.05f);
             Scribe_Values.Look(ref incenseCheckInterval, "incenseCheckInterval", 250);
+
+            // --- 浴缸功能设置 ---
+            Scribe_Values.Look(ref bathtubJoyWeightMultiplier, "bathtubJoyWeightMultiplier", 1.0f);
+            Scribe_Values.Look(ref bathtubDisableTolerance, "bathtubDisableTolerance", false);
+
+
         }
 
         public void OnSettingsChanged()

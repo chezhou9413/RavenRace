@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JoyKindDef>
+    <defName>Raven_SlimeBathJoy</defName>
+    <label>沉溺黏液浴</label>
+    <description>沉浸在温暖粘稠的感官黏液中，获得极大的肉体满足与舒缓。</description>
+  </JoyKindDef>
+
+  <JobDef>
+    <defName>Raven_Job_TakeSlimeBath</defName>
+    <driverClass>RavenRace.Features.MiscSmallFeatures.Bathtub.JobDriver_TakeSlimeBath</driverClass>
+    <reportString>正在黏液浴缸中沦陷。</reportString>
+    <joyDuration>3000</joyDuration>
+    <!-- 【核心修改】改为1人，防止两人同浴时贴图重叠 -->
+    <joyMaxParticipants>1</joyMaxParticipants>
+    <joyKind>Raven_SlimeBathJoy</joyKind> 
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+
+  <JoyGiverDef>
+    <defName>Raven_JoyGiver_TakeSlimeBath</defName>
+    <giverClass>RavenRace.Features.MiscSmallFeatures.Bathtub.JoyGiver_TakeSlimeBath</giverClass>
+    <baseChance>4.0</baseChance>
+    <thingDefs>
+      <li>Raven_Building_SlimeBathtub</li>
+    </thingDefs>
+    <jobDef>Raven_Job_TakeSlimeBath</jobDef>
+    <joyKind>Raven_SlimeBathJoy</joyKind>
+  </JoyGiverDef>
+
+</Defs>

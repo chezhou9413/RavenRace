@@ -121,6 +121,14 @@ namespace RavenRace
         // --- 派系 ---
         public static FactionDef Fusang_Hidden;
 
+
+        // --- 浴缸相关 ---
+        public static ThingDef Raven_Building_SlimeBathtub;
+        public static JobDef Raven_Job_TakeSlimeBath;
+        public static ThoughtDef Raven_Thought_SlimeBath;
+        public static JoyKindDef Raven_SlimeBathJoy; // 新增：浴缸专属娱乐类型
+
+
         static RavenDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(RavenDefOf));
