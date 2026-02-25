@@ -43,6 +43,10 @@ namespace RavenRace.Features.Bloodline
                 bool hasMechanoid = BloodlineUtility.HasBloodline(this, BloodlineManager.MECHANIOD_BLOODLINE_KEY);
                 BloodlineUtility.ToggleHediff(this.Pawn, DefDatabase<HediffDef>.GetNamedSilentFail("Raven_Hediff_MechanoidBloodline"), hasMechanoid);
 
+                // [新增] 墙之血脉判定
+                bool hasWall = BloodlineUtility.HasBloodline(this, "Wall");
+                BloodlineUtility.ToggleHediff(this.Pawn, RavenDefOf.Raven_Hediff_WallBloodline, hasWall);
+
                 // ==========================================
                 // 第三方兼容血脉
                 // ==========================================

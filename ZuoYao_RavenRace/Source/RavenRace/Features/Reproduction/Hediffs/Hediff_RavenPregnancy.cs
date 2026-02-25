@@ -11,6 +11,9 @@ namespace RavenRace.Features.Reproduction
         public new GeneSet geneSet;
         public bool isRavenDescendant;
 
+        // [新增] 用于存储非生物实体（如墙）带来的特殊血脉标识
+        public string customBloodline;
+
         public float GestationProgress => this.Severity;
 
         public override void ExposeData()
@@ -18,6 +21,7 @@ namespace RavenRace.Features.Reproduction
             base.ExposeData();
             Scribe_Deep.Look(ref geneSet, "geneSet");
             Scribe_Values.Look(ref isRavenDescendant, "isRavenDescendant");
+            Scribe_Values.Look(ref customBloodline, "customBloodline"); // 保存字段
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
@@ -41,11 +45,13 @@ namespace RavenRace.Features.Reproduction
             }
         }
 
-        public void Initialize(Pawn fatherPawn, GeneSet genes, bool forceRaven)
+        // [修改] 增加 customBloodline 参数，默认为 null
+        public void Initialize(Pawn fatherPawn, GeneSet genes, bool forceRaven, string customBloodline = null)
         {
             base.SetParents(this.pawn, fatherPawn, genes);
             this.geneSet = genes;
             this.isRavenDescendant = forceRaven;
+            this.customBloodline = customBloodline;
         }
 
         private void DoBirth()
@@ -70,7 +76,8 @@ namespace RavenRace.Features.Reproduction
 
             if (eggComp != null)
             {
-                eggComp.Initialize(this.pawn, this.Father, this.geneSet);
+                // [传递] 将 customBloodline 一并传给灵卵组件
+                eggComp.Initialize(this.pawn, this.Father, this.geneSet, this.customBloodline);
             }
 
             GenSpawn.Spawn(eggThing, this.pawn.Position, this.pawn.Map);
@@ -86,8 +93,19 @@ namespace RavenRace.Features.Reproduction
                 this.pawn.health.AddHediff(pain);
             }
 
+            // 处理提示文本：如果是墙体（customBloodline非空且没有实体父亲），显示神秘文本
+            string fatherLabel = "Unknown";
+            if (!string.IsNullOrEmpty(this.customBloodline) && this.Father == null)
+            {
+                fatherLabel = "某种坚硬的建筑结构";
+            }
+            else if (this.Father != null)
+            {
+                fatherLabel = this.Father.LabelShort;
+            }
+
             Find.LetterStack.ReceiveLetter("RavenRace_LetterLabel_EggLaid".Translate(),
-                "RavenRace_LetterText_EggLaid".Translate(this.pawn.LabelShort, (this.Father != null ? this.Father.LabelShort : "Unknown")),
+                "RavenRace_LetterText_EggLaid".Translate(this.pawn.LabelShort, fatherLabel),
                 LetterDefOf.PositiveEvent, eggThing);
 
             this.pawn.health.RemoveHediff(this);

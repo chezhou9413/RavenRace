@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 技能：吸星大法 ==================== -->
+  <AbilityDef>
+    <defName>Raven_Ability_DevourPawn</defName>
+    <label>吸星大法(胎内回归)</label>
+    <description>利用渡鸦族特殊的生殖构造和艰苦训练，将范围内的一名类人生物强行吞入体内，实现极致的“胎内回归”。当施术者为女性时，目标会被肉壁蠕动着强行卷入子宫深处；若为男性，则会被死死绞入紧致的直肠之中。被完全包裹在黏膜与体液中的猎物将陷入彻底的时间静止。</description>
+    <!-- 复用已有的技能图标 -->
+    <iconPath>UI/Abilities/Raven_Ability_Kotoamatsukami</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange> <!-- 1天冷却 -->
+    <abilityClass>Ability</abilityClass>
+    
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>True</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <showCastingProgressBar>True</showCastingProgressBar>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <hostile>true</hostile>
+
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>15.9</range>
+      <drawAimPie>True</drawAimPie>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight> 
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>False</canTargetAnimals>
+        <canTargetMechs>False</canTargetMechs>
+        <neverTargetIncapacitated>False</neverTargetIncapacitated>
+      </targetParams>
+    </verbProperties>
+
+    <comps>
+      <li Class="RavenRace.Features.MiscSmallFeatures.Devour.CompProperties_AbilityDevourPawn" />
+    </comps>
+  </AbilityDef>
+
+  <!-- ==================== 2. 状态：胎内牢笼 ==================== -->
+  <HediffDef>
+    <defName>Raven_Hediff_DevouredPawnHolder</defName>
+    <label>胎内鼓胀</label>
+    <description>这具渡鸦躯体的最深处正囚禁着一个大活人。温暖、湿滑且充满肉感的内壁正死死挤压、包裹着猎物的全身。猎物在浓浊的体液中彻底丧失了抵抗力，仿佛回到了母体之中，在彻底的堕落中陷入了时间静止。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.9, 0.3, 0.6)</defaultLabelColor>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="RavenRace.Features.MiscSmallFeatures.Devour.HediffCompProperties_DevouredPawnHolder" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <!-- 肚子里塞个大活人，移动速度必须下降 -->
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ==================== 3. 牵引抛射物 ==================== -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Raven_Projectile_DevourPull</defName>
+    <label>肉穴牵引</label>
+    <thingClass>RavenRace.Features.MiscSmallFeatures.Devour.Projectile_DevourPull</thingClass>
+    <graphicData>
+      <!-- 复用你已有的黑灵迷雾贴图，伪装成一种黑暗的拉扯力 -->
+      <texPath>Things/Gas/Puff</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(20, 20, 25, 200)</color>
+      <drawSize>2.0</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Stun</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>35</speed>
+      <flyOverhead>true</flyOverhead>
+    </projectile>
+  </ThingDef>
+
+</Defs>

@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- 0. 原始摇篮科技 -->
+  <!-- 【四大基础之二：繁殖】 (无前置，400点) -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_Reproduction</defName>
+    <label>渡鸦繁殖基础</label>
+    <description>解锁控制渡鸦族独特生殖周期的技术。</description>
+    <baseCost>400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <!-- 第一列，行2 -->
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+
+  <!-- 【依附于繁殖：摇篮】 -->
   <ResearchProjectDef>
     <defName>RavenResearch_Cradle</defName>
     <label>渡鸦原始摇篮</label>
     <description>解锁制作原始摇篮，这是孵化渡鸦灵卵的基础设施。</description>
     <baseCost>400</baseCost>
     <techLevel>Neolithic</techLevel>
-    <researchViewX>0.00</researchViewX>
-    <researchViewY>3.00</researchViewY>
-    <tab>Raven_ResearchTab</tab>
-  </ResearchProjectDef>
-
-  <!-- 1. 渡鸦繁殖技术 -->
-  <ResearchProjectDef>
-    <defName>RavenResearch_Reproduction</defName>
-    <label>渡鸦繁殖技术</label>
-    <description>解锁控制渡鸦族独特生殖周期的技术。</description>
-    <baseCost>1000</baseCost>
-    <techLevel>Industrial</techLevel>
     <prerequisites>
-      <li>RavenResearch_Cradle</li>
-      <li>DrugProduction</li>
+      <li>RavenResearch_Reproduction</li>
     </prerequisites>
-    <researchViewX>1.00</researchViewX>
-    <researchViewY>3.00</researchViewY>
+    <!-- 第二列，平移 -->
+    <researchViewX>1.50</researchViewX>
+    <researchViewY>3.50</researchViewY>
     <tab>Raven_ResearchTab</tab>
   </ResearchProjectDef>
 
-  <!-- 2. 远古孵化仪式 (核心) -->
   <ResearchProjectDef>
     <defName>RavenResearch_Altar_Core</defName>
     <label>远古孵化仪式</label>
@@ -37,15 +37,15 @@
     <baseCost>1200</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
-      <li>RavenResearch_Reproduction</li>
+      <li>RavenResearch_Cradle</li>
       <li>Electricity</li>
     </prerequisites>
-    <researchViewX>2.00</researchViewX>
-    <researchViewY>3.00</researchViewY>
+    <!-- 第三列，平移 -->
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
     <tab>Raven_ResearchTab</tab>
   </ResearchProjectDef>
 
-  <!-- 3. 外物注灵术 (内环) - [修改] 仅依赖核心，Y轴上移以示并列 -->
   <ResearchProjectDef>
     <defName>RavenResearch_Altar_Infusion</defName>
     <label>外物注灵术</label>
@@ -55,12 +55,12 @@
     <prerequisites>
       <li>RavenResearch_Altar_Core</li>
     </prerequisites>
-    <researchViewX>3.00</researchViewX>
-    <researchViewY>2.50</researchViewY> <!-- Y轴上移 -->
+    <!-- 第四列，上扬 -->
+    <researchViewX>4.50</researchViewX>
+    <researchViewY>3.00</researchViewY>
     <tab>Raven_ResearchTab</tab>
   </ResearchProjectDef>
 
-  <!-- 4. 辉光共振原理 (外环) - [修改] 仅依赖核心，不再依赖注灵术，Y轴下移以示并列 -->
   <ResearchProjectDef>
     <defName>RavenResearch_Altar_Resonance</defName>
     <label>辉光共振原理</label>
@@ -70,12 +70,12 @@
     <prerequisites>
       <li>RavenResearch_Altar_Core</li>
     </prerequisites>
-    <researchViewX>3.00</researchViewX>
-    <researchViewY>3.50</researchViewY> <!-- Y轴下移 -->
+    <!-- 第四列，下沉 -->
+    <researchViewX>4.50</researchViewX>
+    <researchViewY>4.00</researchViewY>
     <tab>Raven_ResearchTab</tab>
   </ResearchProjectDef>
 
-  <!-- 5. 血脉精炼 (终极) - [修改] 依赖注灵术 + 共振 -->
   <ResearchProjectDef>
     <defName>RavenResearch_Altar_Transformation</defName>
     <label>血脉精炼</label>
@@ -86,8 +86,9 @@
       <li>RavenResearch_Altar_Infusion</li>
       <li>RavenResearch_Altar_Resonance</li>
     </prerequisites>
-    <researchViewX>4.50</researchViewX>
-    <researchViewY>3.00</researchViewY>
+    <!-- 第五列，汇聚回中 -->
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
     <tab>Raven_ResearchTab</tab>
   </ResearchProjectDef>
 

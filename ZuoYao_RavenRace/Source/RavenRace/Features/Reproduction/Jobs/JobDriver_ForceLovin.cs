@@ -4,7 +4,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using RimWorld;
-using RavenRace.Features.Reproduction; // [Added]
+using RavenRace.Features.Reproduction;
 
 namespace RavenRace
 {
@@ -14,30 +14,33 @@ namespace RavenRace
         private const int LovinDuration = 2000;
         private const int TicksBetweenHeartMotes = 100;
 
-        private Pawn Partner => (Pawn)job.GetTarget(PartnerInd).Thing;
+        // 【核心修改】将目标泛化为 Thing，并提供一个尝试转换为 Pawn 的安全访问器
+        private Thing PartnerThing => job.GetTarget(PartnerInd).Thing;
+        private Pawn PartnerPawn => PartnerThing as Pawn;
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return pawn.Reserve(Partner, job, 1, -1, null, errorOnFailed);
+            return pawn.Reserve(PartnerThing, job, 1, -1, null, errorOnFailed);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedOrNull(PartnerInd);
-            this.FailOn(() => Partner.Dead);
+            // 只有当目标是生物时才检查是否死亡（建筑没有 Dead 属性）
+            this.FailOn(() => PartnerPawn != null && PartnerPawn.Dead);
+            this.FailOn(() => PartnerThing is Building b && b.Destroyed);
 
             Toil gotoToil = Toils_Goto.GotoThing(PartnerInd, PathEndMode.Touch);
             gotoToil.tickAction = delegate
             {
-                Pawn target = Partner;
-                if (target != null && target.Spawned && !target.Dead && pawn.Position.DistanceTo(target.Position) < 10f)
+                if (PartnerPawn != null && PartnerPawn.Spawned && !PartnerPawn.Dead && pawn.Position.DistanceTo(PartnerPawn.Position) < 10f)
                 {
-                    if (target.pather != null && target.pather.Moving && target.CurJobDef != JobDefOf.Wait_MaintainPosture)
+                    if (PartnerPawn.pather != null && PartnerPawn.pather.Moving && PartnerPawn.CurJobDef != JobDefOf.Wait_MaintainPosture)
                     {
                         Job waitJob = JobMaker.MakeJob(JobDefOf.Wait_MaintainPosture);
                         waitJob.expiryInterval = 120;
-                        target.jobs.StartJob(waitJob, JobCondition.InterruptForced);
-                        MoteMaker.ThrowText(target.DrawPos, target.Map, "!", 2f);
+                        PartnerPawn.jobs.StartJob(waitJob, JobCondition.InterruptForced);
+                        MoteMaker.ThrowText(PartnerPawn.DrawPos, PartnerPawn.Map, "!", 2f);
                     }
                 }
             };
@@ -46,10 +49,10 @@ namespace RavenRace
             Toil prepare = ToilMaker.MakeToil("Prepare");
             prepare.initAction = delegate
             {
-                pawn.rotationTracker.FaceCell(Partner.Position);
-                if (!Partner.Downed && Partner.health.capacities.CanBeAwake)
+                pawn.rotationTracker.FaceCell(PartnerThing.Position);
+                if (PartnerPawn != null && !PartnerPawn.Downed && PartnerPawn.health.capacities.CanBeAwake)
                 {
-                    Partner.rotationTracker.FaceCell(pawn.Position);
+                    PartnerPawn.rotationTracker.FaceCell(pawn.Position);
                 }
                 Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.InitiatedLovin, pawn.Named(HistoryEventArgsNames.Doer)), true);
             };
@@ -65,47 +68,65 @@ namespace RavenRace
 
             lovinToil.tickAction = delegate
             {
-                pawn.rotationTracker.FaceCell(Partner.Position);
-                Partner.rotationTracker.FaceCell(pawn.Position);
+                pawn.rotationTracker.FaceCell(PartnerThing.Position);
+                if (PartnerPawn != null)
+                {
+                    PartnerPawn.rotationTracker.FaceCell(pawn.Position);
+                }
 
                 if (pawn.IsHashIntervalTick(TicksBetweenHeartMotes))
                 {
                     FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.Heart, 0.42f);
-                    FleckMaker.ThrowMetaIcon(Partner.Position, Partner.Map, FleckDefOf.Heart, 0.42f);
+                    if (PartnerPawn != null)
+                    {
+                        FleckMaker.ThrowMetaIcon(PartnerPawn.Position, PartnerPawn.Map, FleckDefOf.Heart, 0.42f);
+                    }
+                    else
+                    {
+                        // 对着墙发情时，墙也会冒爱心！
+                        FleckMaker.ThrowMetaIcon(PartnerThing.Position, PartnerThing.Map, FleckDefOf.Heart, 0.42f);
+                    }
                 }
 
-                if (Partner.Spawned && !Partner.Downed && !Partner.HostileTo(pawn) && Partner.CurJobDef != JobDefOf.Wait_MaintainPosture)
+                if (PartnerPawn != null && PartnerPawn.Spawned && !PartnerPawn.Downed && !PartnerPawn.HostileTo(pawn) && PartnerPawn.CurJobDef != JobDefOf.Wait_MaintainPosture)
                 {
-                    Partner.jobs.StartJob(JobMaker.MakeJob(JobDefOf.Wait_MaintainPosture), JobCondition.InterruptForced);
+                    PartnerPawn.jobs.StartJob(JobMaker.MakeJob(JobDefOf.Wait_MaintainPosture), JobCondition.InterruptForced);
                 }
             };
 
             lovinToil.AddFinishAction(delegate
             {
-                Pawn partnerPawn = Partner;
-                if (partnerPawn == null) return;
-
-                if (partnerPawn.RaceProps.Humanlike)
+                if (PartnerPawn != null)
                 {
-                    pawn.needs.mood?.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_ForceLovin_Initiator, partnerPawn);
-                    partnerPawn.needs.mood?.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_ForceLovin_Recipient, pawn);
-                    pawn.interactions.TryInteractWith(partnerPawn, InteractionDefOf.Chitchat);
-                    if (partnerPawn.IsPrisonerOfColony)
+                    // === 和生物交配的结算逻辑 ===
+                    if (PartnerPawn.RaceProps.Humanlike)
                     {
-                        HandlePrisonerInteraction(partnerPawn);
+                        pawn.needs.mood?.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_ForceLovin_Initiator, PartnerPawn);
+                        PartnerPawn.needs.mood?.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_ForceLovin_Recipient, pawn);
+                        pawn.interactions.TryInteractWith(PartnerPawn, InteractionDefOf.Chitchat);
+                        if (PartnerPawn.IsPrisonerOfColony)
+                        {
+                            HandlePrisonerInteraction(PartnerPawn);
+                        }
+                        Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.GotLovin, pawn.Named(HistoryEventArgsNames.Doer)), true);
                     }
-                    Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.GotLovin, pawn.Named(HistoryEventArgsNames.Doer)), true);
-                }
-                else
-                {
-                    Messages.Message($"{pawn.LabelShort} 完成了与 {partnerPawn.LabelShort} 的跨物种交流。", pawn, MessageTypeDefOf.NeutralEvent);
-                }
+                    else
+                    {
+                        Messages.Message($"{pawn.LabelShort} 完成了与 {PartnerPawn.LabelShort} 的跨物种交流。", pawn, MessageTypeDefOf.NeutralEvent);
+                    }
 
-                AttemptPregnancy(partnerPawn);
+                    AttemptPregnancy(PartnerPawn);
 
-                if (!partnerPawn.Downed && !partnerPawn.HostileTo(pawn) && partnerPawn.CurJobDef == JobDefOf.Wait_MaintainPosture)
+                    if (!PartnerPawn.Downed && !PartnerPawn.HostileTo(pawn) && PartnerPawn.CurJobDef == JobDefOf.Wait_MaintainPosture)
+                    {
+                        PartnerPawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                    }
+                }
+                else if (PartnerThing is Building b)
                 {
-                    partnerPawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                    // === 和建筑(墙)交配的彩蛋结算逻辑 ===
+                    Messages.Message($"{pawn.LabelShort} 满意地拍了拍那面 {b.LabelShort}。似乎连砖缝里都充满了泥泞的痕迹。", pawn, MessageTypeDefOf.NeutralEvent);
+                    AttemptBuildingPregnancy(b);
                 }
             });
 
@@ -179,6 +200,44 @@ namespace RavenRace
             }
         }
 
+        // ==============================================================
+        // 处理与建筑(墙)的怀孕逻辑
+        // ==============================================================
+        private void AttemptBuildingPregnancy(Building building)
+        {
+            if (!RavenRaceMod.Settings.enableForceLovinPregnancy || !ModsConfig.BiotechActive) return;
+
+            // 如果渡鸦是男性且未开启男性生蛋，跳过
+            if (pawn.gender == Gender.Male && !RavenRaceMod.Settings.enableMalePregnancyEgg) return;
+
+            float chance = RavenRaceMod.Settings.forcedLovinPregnancyRate;
+            if (!RavenRaceMod.Settings.ignoreFertilityForPregnancy)
+            {
+                chance *= pawn.GetStatValue(StatDefOf.Fertility);
+            }
+
+            if (!Rand.Chance(chance)) return;
+
+            // 由于父亲是墙，没有基因可言，我们手动构造一个假的单亲基因集以防原版崩溃
+            GeneSet genes = new GeneSet();
+            if (pawn.genes != null)
+            {
+                foreach (var g in pawn.genes.GenesListForReading) genes.AddGene(g.def);
+                genes.SetNameDirect("坚不可摧"); // 给个幽默的异种族名称
+            }
+
+            // 初始化怀孕 Hediff，并传入自定义血脉标识 "Wall"
+            var hediff = (HediffRavenPregnancy)HediffMaker.MakeHediff(RavenDefOf.Raven_Hediff_RavenPregnancy, pawn);
+            hediff.Initialize(null, genes, RavenRaceMod.Settings.forceRavenDescendant, "Wall");
+            pawn.health.AddHediff(hediff);
+            pawn.Drawer?.renderer?.SetAllGraphicsDirty();
+
+            Messages.Message($"{pawn.LabelShortCap} 与 {building.LabelShort} 深入交流后，体内竟然奇迹般地开始孕育一枚渡鸦灵卵。", pawn, MessageTypeDefOf.PositiveEvent);
+        }
+
+        // ==============================================================
+        // 原有与生物的怀孕逻辑
+        // ==============================================================
         private void AttemptPregnancy(Pawn partnerPawn)
         {
             if (!RavenRaceMod.Settings.enableForceLovinPregnancy || !ModsConfig.BiotechActive) return;
@@ -250,13 +309,13 @@ namespace RavenRace
             }
             else
             {
-                // [修正] 直接接收返回的 GeneSet 对象
                 genes = PregnancyUtility.GetInheritedGeneSet(donor, carrier, out bool success);
                 if (!success) return;
             }
 
             var hediff = (HediffRavenPregnancy)HediffMaker.MakeHediff(RavenDefOf.Raven_Hediff_RavenPregnancy, carrier);
-            hediff.Initialize(donor, genes, RavenRaceMod.Settings.forceRavenDescendant);
+            // 这里传入 null 作为 customBloodline 参数，走原有的生物遗传路线
+            hediff.Initialize(donor, genes, RavenRaceMod.Settings.forceRavenDescendant, null);
             carrier.health.AddHediff(hediff);
             carrier.Drawer?.renderer?.SetAllGraphicsDirty();
             Messages.Message($"{carrier.LabelShortCap} 体内开始孕育一枚渡鸦灵卵。", carrier, MessageTypeDefOf.PositiveEvent);
@@ -266,7 +325,6 @@ namespace RavenRace
         {
             if (carrier.gender != Gender.Female) return;
 
-            // [修正] 直接接收返回的 GeneSet 对象
             GeneSet genes = PregnancyUtility.GetInheritedGeneSet(donor, carrier, out bool success);
             if (!success) return;
 

@@ -6,14 +6,14 @@ using RimWorld;
 using RavenRace.Compat.Epona;
 using RavenRace.Features.Bloodline;
 
-// [关键] 命名空间统一
 namespace RavenRace.Features.Reproduction
 {
     public partial class CompSpiritEgg
     {
-        public void Initialize(Pawn carrier, Pawn partner, GeneSet inheritedGenes)
+        // [核心修改] 增加 customBloodline 参数，接收来自母体怀孕状态里特殊的跨物种属性
+        public void Initialize(Pawn carrier, Pawn partner, GeneSet inheritedGenes, string customBloodline = null)
         {
-            DetermineParents(carrier, partner);
+            DetermineParents(carrier, partner, customBloodline);
             DetermineRace(carrier, partner);
 
             this.geneSet = inheritedGenes;
@@ -23,69 +23,77 @@ namespace RavenRace.Features.Reproduction
                 this.iconDef = carrier.genes?.iconDef;
             }
 
-            CalculateBloodlineInheritance(carrier, partner);
+            CalculateBloodlineInheritance(carrier, partner, customBloodline);
         }
 
-        private void DetermineParents(Pawn carrier, Pawn partner)
+        private void DetermineParents(Pawn carrier, Pawn partner, string customBloodline)
         {
-            // --- [BUG FIX] ---
-            // 核心修复：处理代孕任务中 carrier 和 partner 均为 null 的情况。
-            // 在这种情况下，父母是匿名的扶桑成员，我们直接设置名称为“扶桑”，并返回。
-            // 这样可以防止后续代码因访问 null Pawn 的属性（如 carrier.gender）而引发 NullReferenceException。
-            if (carrier == null && partner == null)
+            // 如果父母都是 null 且没有任何特殊血脉指定，这就是匿名扶桑的代孕蛋
+            if (carrier == null && partner == null && string.IsNullOrEmpty(customBloodline))
             {
-                this.motherName = "扶桑"; // "Fusang"
-                this.fatherName = "扶桑"; // "Fusang"
-                this.faction = Faction.OfPlayer; // 保证派系正确
-                // motherId 和 fatherId 保持 null
+                this.motherName = "扶桑";
+                this.fatherName = "扶桑";
+                this.faction = Faction.OfPlayer;
                 return;
             }
 
-            // --- 健壮性增强 ---
-            // 如果只有一个为 null，则将另一个作为双亲，确保 carrier 永远不为 null。
             if (carrier == null) carrier = partner;
             if (partner == null) partner = carrier;
-            // -----------------
 
             Pawn bioFather = null;
             Pawn bioMother = null;
 
-            bool sameSex = (carrier.gender == partner.gender);
-            bool mechInvolved = carrier.RaceProps.IsMechanoid || partner.RaceProps.IsMechanoid;
-
-            if (sameSex || mechInvolved)
+            // 特殊彩蛋：与墙体发生关系
+            if (customBloodline == "Wall" && partner == carrier)
             {
-                // 在特殊情况下，carrier 强制为 Mother (生物学载体)，partner 强制为 Father (供体)
+                // 自己作为母体，父亲是抽象的墙
                 bioMother = carrier;
-                bioFather = partner;
+                bioFather = null;
             }
             else
             {
-                // 正常异性逻辑
-                if (carrier.gender == Gender.Female) bioMother = carrier; else bioFather = carrier;
-                if (partner.gender == Gender.Male) bioFather = partner; else bioMother = partner;
+                bool sameSex = (carrier.gender == partner.gender);
+                bool mechInvolved = carrier.RaceProps.IsMechanoid || partner.RaceProps.IsMechanoid;
+
+                if (sameSex || mechInvolved)
+                {
+                    bioMother = carrier;
+                    bioFather = partner;
+                }
+                else
+                {
+                    if (carrier.gender == Gender.Female) bioMother = carrier; else bioFather = carrier;
+                    if (partner.gender == Gender.Male) bioFather = partner; else bioMother = partner;
+                }
             }
 
             if (bioMother == null) bioMother = carrier;
-            if (bioFather == null) bioFather = partner;
 
             this.motherId = bioMother?.ThingID;
             this.fatherId = bioFather?.ThingID;
             this.motherName = bioMother?.LabelShort ?? "Unknown";
-            this.fatherName = bioFather?.LabelShort ?? "Unknown";
+
+            // 如果是墙体导致的无生物学父亲，强制给一个拉风的名字
+            if (customBloodline == "Wall" && bioFather == null)
+            {
+                this.fatherName = "某面厚重坚实的墙体";
+            }
+            else
+            {
+                this.fatherName = bioFather?.LabelShort ?? "Unknown";
+            }
+
             this.faction = Faction.OfPlayer;
         }
 
         private void DetermineRace(Pawn carrier, Pawn partner)
         {
-            // 如果因为修复导致 carrier 和 partner 都为 null，则默认后代为纯血渡鸦
             if (carrier == null && partner == null)
             {
                 this.pawnKind = RavenDefOf.Raven_Colonist;
                 return;
             }
 
-            // 保证 carrier 不为 null
             if (carrier == null) carrier = partner;
 
             bool forceRaven = RavenRaceMod.Settings != null && RavenRaceMod.Settings.forceRavenDescendant;
@@ -105,7 +113,7 @@ namespace RavenRace.Features.Reproduction
                 else
                 {
                     if (isCarrierRaven && isPartnerRaven) targetRaceDef = carrier.def;
-                    else if (isCarrierRaven) targetRaceDef = partner?.def ?? carrier.def; // 安全检查
+                    else if (isCarrierRaven) targetRaceDef = partner?.def ?? carrier.def;
                     else targetRaceDef = carrier.def;
                 }
             }
@@ -117,11 +125,17 @@ namespace RavenRace.Features.Reproduction
             this.pawnKind = FindBasicPawnKindForRace(targetRaceDef);
         }
 
-        private void CalculateBloodlineInheritance(Pawn parent1, Pawn parent2)
+        // [核心修改] 处理外部强行塞入的自定义血脉（如 "Wall"）
+        private void CalculateBloodlineInheritance(Pawn parent1, Pawn parent2, string customBloodline)
         {
-            // 这里的 parent1 和 parent2 可能是 null
             var p1Data = GetOrSimulateBloodline(parent1);
             var p2Data = GetOrSimulateBloodline(parent2);
+
+            // 如果触发了和墙体的彩蛋，强行将另一方的血脉数据覆盖为 100% 的墙之血脉
+            if (!string.IsNullOrEmpty(customBloodline))
+            {
+                p2Data = (0f, new Dictionary<string, float> { { customBloodline, 1.0f } });
+            }
 
             this.goldenCrowConcentration = Mathf.Max(0.01f, (p1Data.concentration + p2Data.concentration) / 2f + Rand.Range(-0.02f, 0.02f));
 
@@ -133,7 +147,6 @@ namespace RavenRace.Features.Reproduction
             if (p2Data.composition != null)
                 foreach (var k in p2Data.composition.Keys) if (k != "Human") allRaces.Add(k);
 
-            // 纯血代孕蛋强制包含渡鸦血脉
             allRaces.Add("Raven_Race");
 
             foreach (var race in allRaces)
@@ -144,7 +157,6 @@ namespace RavenRace.Features.Reproduction
                 if (baseVal > 0) tempComp[race] = baseVal;
             }
 
-            // 如果是代孕蛋，tempComp可能是空的，需要手动添加渡鸦血脉
             if (!tempComp.Any())
             {
                 tempComp["Raven_Race"] = 1.0f;
@@ -180,13 +192,10 @@ namespace RavenRace.Features.Reproduction
         {
             if (p == null) return (0f, new Dictionary<string, float>());
 
-            // [新增] 机械族判断
             if (p.RaceProps.IsMechanoid)
             {
                 return (0f, new Dictionary<string, float> { { BloodlineManager.MECHANIOD_BLOODLINE_KEY, 1.0f } });
             }
-
-
 
             string raceKey = p.def.defName;
             if (EponaCompatUtility.IsEponaActive)

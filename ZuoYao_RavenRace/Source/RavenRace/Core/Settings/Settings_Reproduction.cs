@@ -33,6 +33,9 @@ namespace RavenRace.Settings
 
             listing.CheckboxLabeled("启用机械体强制交配", ref s.enableMechanoidLovin, "允许对机械族单位使用强制求爱。机械族无法怀孕，但若渡鸦作为母体可产下带有机械血脉的后代。");
 
+            // [新增] 与建筑交配彩蛋
+            listing.CheckboxLabeled("启用与建筑交配 (彩蛋)", ref s.enableBuildingLovin, "允许对着任何墙体释放强制求爱技能。墙体不会怀孕，但如果渡鸦作为母体，有概率产下带有致密墙体血脉的后代。");
+
             listing.Gap();
             listing.Label("RavenRace_Settings_PrisonerInteractions".Translate());
             listing.Label("RavenRace_Settings_ForceLovinResistanceReduction".Translate() + ": " + s.forceLovinResistanceReduction.ToString("0.0"));
@@ -65,7 +68,7 @@ namespace RavenRace.Settings
             s.spiritEggWarmthDays = listing.Slider(s.spiritEggWarmthDays, 0.01f, 5f);
             listing.Label("将灵卵保存在体内可进行温养，完美温养的灵卵在摇篮中孵化时会获得速度加成。");
 
-            // [新增] RJW 兼容设置部分
+            // RJW 兼容设置部分
             listing.GapLine();
             listing.Label("RJW 兼容设置");
             // 只有在RJW激活时才显示

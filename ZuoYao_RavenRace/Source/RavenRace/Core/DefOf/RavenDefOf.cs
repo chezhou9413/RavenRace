@@ -24,14 +24,11 @@ namespace RavenRace
         public static ThingDef Raven_Item_Suppository;
         public static ThingDef Raven_Item_MiracleHeal;
         public static ThingDef Raven_GoldenFeather;
-
         public static ThingDef RavenItem_SevenEmotionsNectar;        // 七情花蜜
-
-        public static ThingDef Raven_Item_MasturbatorCup;
-
+        public static ThingDef Raven_Item_MasturbatorCup; // 飞机杯
         public static ThingDef Raven_Item_HojoCube;        // 齁金魔方
-
         public static ThingDef RavenItem_AbilityTome;        // 技能教本
+        public static ThingDef Raven_Projectile_DevourPull; // 吸星大法牵引抛射物
 
         // --- 武器 & 装备 ---
         public static ThingDef Raven_Weapon_HiddenBlade;
@@ -43,11 +40,13 @@ namespace RavenRace
         public static ThingDef RavenGas_Anesthetic;
         public static ThingDef RavenGas_Aphrodisiac;
         public static ThingDef RavenDecoy_Dummy;
+        public static ThingDef Filth_RavenBodilyFluid; //特殊体液泡沫污垢
 
         // --- 能力 (Abilities) ---
         public static AbilityDef Raven_Ability_ForceLovin;
         public static AbilityDef Raven_Ability_Kotoamatsukami;
         public static AbilityDef Raven_Ability_GrandClimax;
+        public static AbilityDef Raven_Ability_DevourPawn; //吸星大法
 
         [MayRequire("Nukafrog.MooGirl")]
         public static AbilityDef Raven_Ability_MuGirlCharge;
@@ -90,6 +89,9 @@ namespace RavenRace
         public static HediffDef RavenHediff_IncenseAura;
 
         public static HediffDef Raven_Hediff_GoldenSpirit;        // 黄金精神
+        public static HediffDef Raven_Hediff_DevouredPawnHolder; // 腹中牢笼
+        public static HediffDef Raven_Hediff_WallBloodline; // 墙之血脉
+        public static HediffDef Raven_Hediff_FluidAccelerator; // 液体促进器仿生体
 
         // --- 思想 (Thoughts) ---
         public static ThoughtDef Raven_Thought_ForceLovin_Initiator;
@@ -126,7 +128,7 @@ namespace RavenRace
         public static ThingDef Raven_Building_SlimeBathtub;
         public static JobDef Raven_Job_TakeSlimeBath;
         public static ThoughtDef Raven_Thought_SlimeBath;
-        public static JoyKindDef Raven_SlimeBathJoy; // 新增：浴缸专属娱乐类型
+        public static JoyKindDef Raven_SlimeBathJoy; 
 
 
         static RavenDefOf()

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 特殊粉色体液 (污垢) ==================== -->
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_RavenBodilyFluid</defName>
+    <label>特殊粉色体液</label>
+    <description>一大摊散发着奇异甜腻香气的粉色浓浊体液。出人意料的是，它不但具有极高的观赏价值，还因为特殊的物理性质能完美扑灭火焰。</description>
+    <statBases>
+      <Beauty>20</Beauty>
+      <Cleanliness>0</Cleanliness>
+    </statBases>
+    <graphicData>
+      <!-- 使用原版泡沫贴图染成粉色 -->
+      <texPath>Things/Filth/FireFoam</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>1.75</drawSize>
+      <color>(255, 180, 200, 220)</color> 
+    </graphicData>
+    <filth>
+      <ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
+      <disappearsInDays>5~10</disappearsInDays>
+      <rainWashes>true</rainWashes>
+      <cleaningWorkToReduceThickness>100</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <allowsFire>false</allowsFire>
+      <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+    </filth>
+  </ThingDef>
+
+  <!-- ==================== 2. 液体促进器 (状态/Hediff) ==================== -->
+  <HediffDef>
+    <defName>Raven_Hediff_FluidAccelerator</defName>
+    <label>液体促进器</label>
+    <description>一种安装在体内的特殊腺体调节装置。这本来是一种渡鸦内部的情趣技术，但它能在必要时刻迅速增加特殊体液的量并高压喷出。置入的人可以根据自身性别无法控制地喷出精液或淫水。由于其巨大的喷射量和特殊的物理性质，它甚至能当作人形自走灭火器使用。\n\n遭遇火焰时会自动触发，也可以手动激发。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.4, 0.6)</defaultLabelColor>
+    <isBad>false</isBad>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <comps>
+      <li Class="RavenRace.Features.Bionics.RavenFluidAccelerator.HediffCompProperties_FluidAccelerator">
+        <radius>5.9</radius> 
+        <cooldownTicks>30000</cooldownTicks> 
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ==================== 3. 液体促进器 (物品) ==================== -->
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>Raven_Item_FluidAccelerator</defName>
+    <label>液体促进器</label>
+    <description>一个粉色的管状生物器官，能够极其高效地催化生殖系统分泌体液。</description>
+    <graphicData>
+      <!-- 【核心修复】完全匹配原版 1.6 的仿生体贴图路径 -->
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Raven_GoldenFeather>1</Raven_GoldenFeather>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workAmount>3000</workAmount>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <researchPrerequisite>RavenResearch_Bionics</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- ==================== 4. 植入手术配方 ==================== -->
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallRavenFluidAccelerator</defName>
+    <label>植入液体促进器</label>
+    <description>植入液体促进器。</description>
+    <descriptionHyperlinks>
+      <ThingDef>Raven_Item_FluidAccelerator</ThingDef>
+      <HediffDef>Raven_Hediff_FluidAccelerator</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>正在植入液体促进器。</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Raven_Item_FluidAccelerator</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Raven_Item_FluidAccelerator</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Raven_Hediff_FluidAccelerator</addsHediff>
+  </RecipeDef>
+
+</Defs>

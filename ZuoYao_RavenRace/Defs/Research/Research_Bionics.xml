@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 【依附于工艺】 -->
+  <ResearchProjectDef>
+    <defName>RavenResearch_Bionics</defName>
+    <label>渡鸦仿生科技</label>
+    <description>结合渡鸦特有的生理机制，开发特殊的生物调节器官。解锁如“液体促进器”等令人面红耳赤但又极具实用价值的仿生体。</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>RavenResearch_BasicMaterials</li>
+    </prerequisites>
+    <!-- 第二列，上扬 -->
+    <researchViewX>1.50</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+</Defs>

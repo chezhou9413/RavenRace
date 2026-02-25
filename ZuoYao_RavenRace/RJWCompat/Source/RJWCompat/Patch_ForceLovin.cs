@@ -15,8 +15,23 @@ namespace RavenRace.RJWCompat
             Log.Message($"[RavenRace RJWCompat] 'ForceLovin.Apply' Prefix patch triggered!");
 
             Pawn caster = __instance.parent.pawn;
-            Pawn targetPawn = target.Pawn;
-            if (caster == null || targetPawn == null) return false;
+            Thing targetThing = target.Thing;
+
+            // 安全性检查
+            if (caster == null || targetThing == null) return false;
+
+            // =========================================================================
+            // [核心修正] 如果目标是建筑（例如“墙之血脉”彩蛋的墙体）
+            // 直接返回 true 放行，执行主模组原本的 Apply，跳过 RJW 的互动选项弹窗逻辑
+            // =========================================================================
+            if (targetThing is Building)
+            {
+                return true;
+            }
+
+            // 继续将目标按 Pawn 处理
+            Pawn targetPawn = targetThing as Pawn;
+            if (targetPawn == null) return false; // 兜底
 
             // [修改] 新增逻辑：如果开启了RJW兼容模式，则在使用技能时立即触发渡鸦怀孕
             if (RavenRaceMod.Settings.rjwRavenPregnancyCompat)

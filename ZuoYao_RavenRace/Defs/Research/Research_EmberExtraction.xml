@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- 【依附于工艺，移除繁殖前置】 -->
   <ResearchProjectDef>
     <defName>RavenResearch_EmberExtraction</defName>
     <label>余烬提取技术</label>
@@ -8,10 +9,10 @@
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>RavenResearch_BasicMaterials</li>
-      <li>RavenResearch_Reproduction</li>
     </prerequisites>
-    <researchViewX>7.00</researchViewX>
-    <researchViewY>2.00</researchViewY>
+    <!-- 第二列，平移 -->
+    <researchViewX>1.50</researchViewX>
+    <researchViewY>1.00</researchViewY>
     <tab>Raven_ResearchTab</tab>
   </ResearchProjectDef>
 </Defs>

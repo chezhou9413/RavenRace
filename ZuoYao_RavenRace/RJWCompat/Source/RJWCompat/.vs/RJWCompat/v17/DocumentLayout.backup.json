@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\patch_forcelovin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:patch_forcelovin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\rjwcompat\\source\\rjwcompat\\patch_sexinteractionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:patch_sexinteractionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\rjwcompat\\source\\rjwcompat\\ui\\dialog_selectrjwinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\ui\\dialog_selectrjwinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:ui\\dialog_selectrjwinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\rjwcompat\\source\\rjwcompat\\patch_jobdriver_sexquick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\patch_jobdriver_sexquick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:patch_jobdriver_sexquick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|c:\\users\\administrator\\desktop\\ravenrace\\zuoyao_ravenrace\\rjwcompat\\source\\rjwcompat\\patch_forcelovin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B09F150D-3554-4C13-A073-CB767C282E48}|RJWCompat.csproj|solutionrelative:patch_forcelovin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Patch_SexInteractionHelper.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_SexInteractionHelper.cs",
               "RelativeDocumentMoniker": "Patch_SexInteractionHelper.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_SexInteractionHelper.cs",
               "RelativeToolTip": "Patch_SexInteractionHelper.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAIwGQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAIwGMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-13T07:26:59.493Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Patch_JobDriver_SexQuick.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_JobDriver_SexQuick.cs",
               "RelativeDocumentMoniker": "Patch_JobDriver_SexQuick.cs",
@@ -51,12 +51,11 @@
               "RelativeToolTip": "Patch_JobDriver_SexQuick.cs",
               "ViewState": "AgIAABMAAAAAAAAAAADwvzIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T07:17:22.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T07:17:22.19Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Dialog_SelectRjwInteraction.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\UI\\Dialog_SelectRjwInteraction.cs",
               "RelativeDocumentMoniker": "UI\\Dialog_SelectRjwInteraction.cs",
@@ -64,18 +63,17 @@
               "RelativeToolTip": "UI\\Dialog_SelectRjwInteraction.cs",
               "ViewState": "AgIAALMAAAAAAAAAAAAswOMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T07:16:38.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T07:16:38.542Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Patch_ForceLovin.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_ForceLovin.cs",
               "RelativeDocumentMoniker": "Patch_ForceLovin.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\RavenRace\\ZuoYao_RavenRace\\RJWCompat\\Source\\RJWCompat\\Patch_ForceLovin.cs",
               "RelativeToolTip": "Patch_ForceLovin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAiwHUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-13T07:13:45.353Z",
               "EditorCaption": ""

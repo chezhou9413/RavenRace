@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- 【四大基础之四：通讯】 -->
   <ResearchProjectDef>
     <defName>RavenResearch_FusangComm</defName>
     <label>扶桑加密通讯</label>
@@ -9,8 +10,9 @@
     <prerequisites>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
-    <researchViewX>2.00</researchViewX>
-    <researchViewY>1.00</researchViewY>
+    <!-- 第一列，行4 -->
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>8.00</researchViewY>
     <tab>Raven_ResearchTab</tab>
   </ResearchProjectDef>
 </Defs>

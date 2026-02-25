@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 墙之血脉 (彩蛋定义) -->
+    <RavenRace.BloodlineDef>
+        <defName>Bloodline_Wall</defName>
+        <label>墙之血脉</label>
+        <labelShort>墙体</labelShort>
+        <description>源自坚固墙体的奇妙血脉。这种荒谬的跨物种结合赋予了后代如同建筑般坚韧的身体特征。</description>
+        <raceDef>Wall</raceDef> <!-- 直接映射原版的基础墙体Def -->
+    </RavenRace.BloodlineDef>
+</Defs>

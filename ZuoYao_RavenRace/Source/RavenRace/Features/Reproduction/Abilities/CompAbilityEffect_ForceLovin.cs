@@ -17,17 +17,50 @@ namespace RavenRace
     {
         public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
         {
-            Pawn targetPawn = target.Pawn;
+            Thing targetThing = target.Thing;
+            if (targetThing == null) return false;
+
+            // =====================================
+            // 1. 处理选择建筑 (墙) 的彩蛋情况
+            // =====================================
+            if (targetThing is Building b)
+            {
+                if (!RavenRaceMod.Settings.enableBuildingLovin)
+                {
+                    if (throwMessages) Messages.Message("在设置中未开启“与建筑交配”的彩蛋功能。", targetThing, MessageTypeDefOf.RejectInput, false);
+                    return false;
+                }
+
+                // 严格使用反编译确定的 BuildingProperties.isWall 属性来判定是否为墙体
+                if (b.def.building == null || !b.def.building.isWall)
+                {
+                    if (throwMessages) Messages.Message("你只能对着一面结实的墙发情。", targetThing, MessageTypeDefOf.RejectInput, false);
+                    return false;
+                }
+
+                if (!this.parent.pawn.CanReach(target, PathEndMode.Touch, Danger.Deadly))
+                {
+                    if (throwMessages) Messages.Message("CannotReach".Translate(), targetThing, MessageTypeDefOf.RejectInput, false);
+                    return false;
+                }
+
+                return true;
+            }
+
+            // =====================================
+            // 2. 处理常规生物和机械体的情况
+            // =====================================
+            Pawn targetPawn = targetThing as Pawn;
             if (targetPawn == null) return false;
 
-            // 1. 检查敌人状态：如果敌对且未倒地，禁止选中
+            // 检查敌人状态：如果敌对且未倒地，禁止选中
             if (targetPawn.HostileTo(parent.pawn) && !targetPawn.Downed)
             {
                 if (throwMessages) Messages.Message("Invalid Target: Enemy must be downed.", targetPawn, MessageTypeDefOf.RejectInput, false);
                 return false;
             }
 
-            // 2. 种族判定 (Humanlike vs Animal/Mech)
+            // 种族判定 (Humanlike vs Animal/Mech)
             bool isMuffalo = targetPawn.def.defName == "Muffalo";
             bool isMech = targetPawn.RaceProps.IsMechanoid;
 
@@ -41,7 +74,6 @@ namespace RavenRace
             }
             else if (isMech)
             {
-                // [新增] 机械族检查
                 if (!RavenRaceMod.Settings.enableMechanoidLovin)
                 {
                     if (throwMessages) Messages.Message("Target is a mechanoid (Feature disabled in settings).", targetPawn, MessageTypeDefOf.RejectInput, false);
@@ -54,11 +86,11 @@ namespace RavenRace
                 return false;
             }
 
-            // 3. 性别判定
+            // 性别判定
             // 如果开启了同性/男性生蛋/机械族(机械族通常无性别)，则跳过性别检查
             bool allowSameSex = RavenRaceMod.Settings.enableMalePregnancyEgg ||
                                 RavenRaceMod.Settings.enableSameSexForceLovin ||
-                                RavenRaceMod.Settings.enableMechanoidLovin; // 机械族通常被视为无性别或特殊性别，放宽检查
+                                RavenRaceMod.Settings.enableMechanoidLovin;
 
             if (!allowSameSex && targetPawn.gender == this.parent.pawn.gender)
             {
@@ -79,11 +111,12 @@ namespace RavenRace
         {
             base.Apply(target, dest);
             Pawn pawn = this.parent.pawn;
-            Pawn targetPawn = target.Pawn;
+            Thing targetThing = target.Thing;
 
-            if (pawn != null && targetPawn != null)
+            if (pawn != null && targetThing != null)
             {
-                Job job = JobMaker.MakeJob(RavenDefOf.Raven_Job_ForceLovin, targetPawn);
+                // 创建 Job 时，传入通用的 Thing（Building 或 Pawn 都可以被接受为 TargetA）
+                Job job = JobMaker.MakeJob(RavenDefOf.Raven_Job_ForceLovin, targetThing);
                 pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
 
                 float days = RavenRaceMod.Settings.forceLovinCooldownDays;
