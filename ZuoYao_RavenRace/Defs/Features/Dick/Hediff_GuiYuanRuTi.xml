@@ -2,26 +2,29 @@
 <Defs>
   <HediffDef>
     <defName>Raven_Hediff_GuiYuanRuTi</defName>
-    <label>归元入体</label>
-    <description>1111</description>
+    <label>万吊归宗</label>
+    <description>“万气自生，吊冲废穴；归元武学，宗远功长。气离脉腕，反而太冲，乾坤倒转，化柔为刚。”</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.8, 0.6, 1.0)</defaultLabelColor>
     <isBad>false</isBad>
     <initialSeverity>1.0</initialSeverity>
+    
     <comps>
       <li Class="RavenRace.Features.dick.HediffCompProperties_CrotchSword">
-        <targetScale>100</targetScale>
-        <scaleSpeed>0.5</scaleSpeed>
-        <lifespanTicks>1800</lifespanTicks>
-        <crotchOffset>(0, 0.3, -0.2)</crotchOffset>
+        <targetScale>100</targetScale>        <!-- 模型最终要达到的缩放尺寸。数值越大，模型越大。 -->
+        <scaleSpeed>0.5</scaleSpeed>        <!-- 模型从0长到目标尺寸的速度，数值越大越快。 -->
+        <lifespanTicks>1800</lifespanTicks>        <!-- Hediff的总持续时间（以游戏刻为单位），结束后模型会开始缩小并消失。 -->
+        <crotchOffset>(0, 0.3, -0.2)</crotchOffset>        <!-- 模型相对于Pawn胯部的基础偏移量 (X, Y, Z)，用于精细调整位置。 -->
       </li>
     </comps>
+    
+    <!-- 状态阶段，定义了Hediff在不同严重度下的效果 -->
     <stages>
       <li>
-        <label>归元入体</label>
+        <label>万吊归宗</label>
         <statOffsets>
-          <MeleeDamageFactor>0.1</MeleeDamageFactor>
-          <MoveSpeed>0.1</MoveSpeed>
+          <MeleeDamageFactor>0.1</MeleeDamageFactor>          <!-- 近战伤害倍率 +10% -->
+          <MoveSpeed>2</MoveSpeed>          <!-- 移动速度 +2-->
         </statOffsets>
       </li>
     </stages>

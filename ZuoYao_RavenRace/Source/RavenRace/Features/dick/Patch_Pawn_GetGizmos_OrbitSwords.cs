@@ -1,10 +1,11 @@
-﻿using HarmonyLib;
-using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HarmonyLib;
+using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace RavenRace.Features.dick
@@ -51,7 +52,7 @@ namespace RavenRace.Features.dick
                     {
                         defaultLabel = "归元入体",
                         defaultDesc = "立刻无视所有状态机，让飞剑钻入小人后庭暂时消失，并获得强化状态。",
-                        icon = TexCommand.Draft, // 可替换为: ContentFinder<Texture2D>.Get("UI/YourCustomIcon")
+                        icon = ContentFinder<Texture2D>.Get("UI/Abilities/Raven_WanJianGuiZong"), // 可替换为: ContentFinder<Texture2D>.Get("UI/YourCustomIcon")
                         action = delegate
                         {
                             orbitComp.TriggerHide();

@@ -35,7 +35,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="ChezhouLib">
-      <HintPath>..\..\..\..\..\huanshijie\1.6\RimWorld\Mods\ChezhouLib\1.6\Assemblies\ChezhouLib.dll</HintPath>
+      <HintPath>E:\steam\steamapps\workshop\content\294100\3595247479\1.6\Assemblies\ChezhouLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">

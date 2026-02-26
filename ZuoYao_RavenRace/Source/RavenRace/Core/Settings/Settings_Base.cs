@@ -14,6 +14,11 @@ namespace RavenRace.Settings
             listing.CheckboxLabeled("RavenRace_Settings_EnableDebugMode".Translate(), ref s.enableDebugMode);
             listing.CheckboxLabeled("RavenRace_Settings_EnableVerboseLogging".Translate(), ref s.enableVerboseLogging);
 
+            // [新增] 音效开关
+            listing.Gap();
+            listing.CheckboxLabeled("启用彩蛋音效", ref s.enableMemeSounds, "开启后，在特定情况下会播放趣味音效。可能会很吵，请谨慎开启！");
+
+
             listing.GapLine();
 
             // --- 余烬之血设置 ---

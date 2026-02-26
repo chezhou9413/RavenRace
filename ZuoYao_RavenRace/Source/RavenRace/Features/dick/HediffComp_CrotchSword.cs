@@ -14,10 +14,10 @@ namespace RavenRace.Features.dick
     public class HediffCompProperties_CrotchSword : HediffCompProperties
     {
         public string prefabKey = "dick_xuancai";
-        public float targetScale = 3f;
-        public float scaleSpeed = 0.05f;
-        public int lifespanTicks = 600;
-        public Vector3 crotchOffset = new Vector3(0f, 0.5f, -0.2f);
+        public float targetScale = 3f;        //模型最终要达到的缩放尺寸。
+        public float scaleSpeed = 0.05f;     // 从0长到目标尺寸的速度，数值越大越快。
+        public int lifespanTicks = 600;     // Hediff的总持续时间（以Ticks为单位），结束后模型会开始缩小并消失
+        public Vector3 crotchOffset = new Vector3(0f, 0.5f, -0.2f);        //模型相对于Pawn胯部的基础偏移量 (X, Y, Z)。
 
         //模型初始朝向修正
         public Vector3 baseRotation = new Vector3(90f, 0f, 0f);
@@ -30,7 +30,7 @@ namespace RavenRace.Features.dick
         //动画时长
         public int windupTicks = 50;            // 蓄力
         public int strikeTicks = 8;             // 劈砍
-        public int holdTicks = 70;              // 砸地僵直
+        public int holdTicks = 60;              // 砸地僵直
         public int returnTicks = 60;            // 收招
 
         //动画角度
@@ -44,6 +44,11 @@ namespace RavenRace.Features.dick
         }
     }
 
+
+
+    /// <summary>
+    /// “归元入体”Hediff的核心逻辑组件，负责管理3D模型的生成、动画、技能和生命周期。
+    /// </summary>
     public class HediffComp_CrotchSword : HediffComp
     {
         public HediffCompProperties_CrotchSword Props => (HediffCompProperties_CrotchSword)props;
@@ -70,6 +75,10 @@ namespace RavenRace.Features.dick
             CreateSword();
         }
 
+
+        /// <summary>
+        /// 创建并初始化Unity模型。
+        /// </summary>
         private void CreateSword()
         {
             if (_swordGo != null) return;
@@ -89,6 +98,10 @@ namespace RavenRace.Features.dick
             }
         }
 
+
+        /// <summary>
+        /// 生成技能按钮 (Gizmo)。
+        /// </summary>
         public override IEnumerable<Gizmo> CompGetGizmos()
         {
             IEnumerable<Gizmo> baseGizmos = base.CompGetGizmos();
@@ -106,7 +119,7 @@ namespace RavenRace.Features.dick
                 {
                     defaultLabel = "Ex咖喱棒",
                     defaultDesc = "朝着目标方向用力拍击地面，造成直线范围AOE伤害。",
-                    icon = ContentFinder<Texture2D>.Get("UI/Commands/Attack", true),
+                    icon = ContentFinder<Texture2D>.Get("UI/Abilities/Raven_Excalibur", true),
                     targetingParams = new TargetingParameters
                     {
                         canTargetLocations = true,
@@ -128,6 +141,10 @@ namespace RavenRace.Features.dick
             }
         }
 
+
+        /// <summary>
+        /// 开始技能释放流程。
+        /// </summary>
         private void StartSlam(LocalTargetInfo target)
         {
             if (_isSlamming) return;
@@ -281,6 +298,11 @@ namespace RavenRace.Features.dick
             }
         }
 
+
+
+        /// <summary>
+        /// 计算并造成直线范围伤害。
+        /// </summary>
         private void DealLineDamage(LocalTargetInfo target)
         {
             Vector3 startPos = Pawn.DrawPos;
@@ -343,6 +365,11 @@ namespace RavenRace.Features.dick
             }
         }
 
+
+
+        /// <summary>
+        /// 生成直线路径上的视觉特效。
+        /// </summary>
         private void SpawnShockwaveEffects(Vector3 startPos, Vector3 direction)
         {
             float spacing = 1.5f;
@@ -442,6 +469,10 @@ namespace RavenRace.Features.dick
             DestroySword();
         }
 
+
+        /// <summary>
+        /// 存档和读档逻辑。
+        /// </summary>
         public override void CompExposeData()
         {
             base.CompExposeData();
@@ -455,6 +486,14 @@ namespace RavenRace.Features.dick
             Scribe_TargetInfo.Look(ref _slamTarget, "slamTarget");
             Scribe_Values.Look(ref _hasDealtDamage, "hasDealtDamage", false);
             Scribe_Values.Look(ref _currentSwingPitch, "currentSwingPitch", 0f);
+
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                if (parent.pawn != null && parent.pawn.Spawned && _swordGo == null && _currentScale > 0)
+                {
+                    CreateSword();
+                }
+            }
         }
     }
 }

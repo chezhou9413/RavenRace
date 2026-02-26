@@ -1,33 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="BaseMeleeWeapon_Blunt">
+    <!-- 内部定义名 -->
     <defName>dickcoller</defName>
-    <label>迪克控制器</label>
-    <description>A shaped stick, heavy at one end, for bashing enemies to death. This weapon is so old it's part of human biology. Evolutionary biologists say that a major reason humans can tilt our wrists side-to-side (instead of just forward-and-back like other primates) is to be able to better swing a club.</description>
+    <!-- 游戏内名称 -->
+    <label>爻五宝</label>
+    <!-- 游戏内描述 (当前为原版木棒的描述) -->
+    <description>五金之英，太阳之精。一曰湛卢，二曰纯钧，三曰胜邪，四曰鱼肠，五曰巨阙。</description>
     <allowedArchonexusCount>1</allowedArchonexusCount>
     <altitudeLayer>Item</altitudeLayer>
     <alwaysHaulable>true</alwaysHaulable>
     <burnableByRecipe>true</burnableByRecipe>
     <category>Item</category>
+    
+    <!-- 武器组件 -->
     <comps>
       <li Class="RavenRace.Features.dick.CompProperties_OrbitSwords">
+        <!-- 指定当执行“归元入体”时，为持有者添加哪个Hediff -->
         <hideHediff>Raven_Hediff_GuiYuanRuTi</hideHediff>
       </li>
     </comps>
+    
+    <!-- 制作所需材料数量 -->
     <costStuffCount>40</costStuffCount>
     <drawerType>MapMeshOnly</drawerType>
     <drawGUIOverlay>true</drawGUIOverlay>
     <equipmentType>Primary</equipmentType>
     <equippedAngleOffset>-65</equippedAngleOffset>
+    
+    <!-- 贴图数据 -->
     <graphicData>
       <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
       <texPath>Things/Item/Equipment/WeaponMelee/Club</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    
     <inspectorTabs>
       <li>ITab_Art</li>
     </inspectorTabs>
+    
     <pathCost>14</pathCost>
+    
+    <!-- 制作配方 -->
     <recipeMaker>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
@@ -50,10 +64,13 @@
       </defaultIngredientFilter>
       <displayPriority>300</displayPriority>
     </recipeMaker>
+    
     <relicChance>1</relicChance>
     <rotatable>false</rotatable>
     <selectable>true</selectable>
     <smeltable>true</smeltable>
+    
+    <!-- 基础属性 -->
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1</Flammability>
@@ -63,17 +80,22 @@
       <WorkToMake>1200</WorkToMake>
       <Mass>2</Mass>
     </statBases>
+    
+    <!-- 可用材料 -->
     <stuffCategories>
       <li>Metallic</li>
       <li>Woody</li>
       <li>Stony</li>
     </stuffCategories>
+    
     <techLevel>Neolithic</techLevel>
     
-    
+    <tradeability>None</tradeability>    <!-- 核心修改: 禁止此物品被交易或在NPC身上自然生成 -->
     
     <thingClass>ThingWithComps</thingClass>
     <tickerType>Normal</tickerType>
+    
+    <!-- 攻击方式 -->
     <tools>
       <li>
         <label>handle</label>
@@ -93,18 +115,14 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-    <tradeTags>
-      <li>WeaponMelee</li>
-    </tradeTags>
-    <uiIconScale>1.1</uiIconScale>
-    <useHitPoints>true</useHitPoints>
+    
     <weaponClasses>
       <li>Melee</li>
       <li>MeleeBlunt</li>
       <li>Neolithic</li>
     </weaponClasses>
-    <weaponTags>
-      <li>NeolithicMeleeBasic</li>
-    </weaponTags>
+    
+    <!-- 核心修改: 移除了weaponTags，这样NPC和派系就不会自动生成并携带此武器了 -->
+
   </ThingDef>
 </Defs>

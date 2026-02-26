@@ -95,8 +95,8 @@
     </comps>
 
     <modExtensions>
-      <!-- [核心修改] 更新 Class 引用 -->
-      <li Class="RavenRace.Harmony.RavenStuffColorDisableExtension">
+      <!-- [核心修复] 更新 Class 引用，以匹配移动后C#文件的命名空间 -->
+      <li Class="RavenRace.Core.Harmony.RavenStuffColorDisableExtension">
         <disableStuffColor>true</disableStuffColor>
       </li>
     </modExtensions>
