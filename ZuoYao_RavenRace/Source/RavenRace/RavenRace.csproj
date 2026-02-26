@@ -20,12 +20,18 @@
     <Compile Remove="Features\Bloodline\Harmony\**" />
     <Compile Remove="Features\DefenseSystem\Settings\**" />
     <Compile Remove="Features\Operator\Rewards\**" />
+    <Compile Remove="Features\SoulAltar\Harmony\**" />
+    <Compile Remove="Features\SoulAltar\Settings\**" />
     <EmbeddedResource Remove="Features\Bloodline\Harmony\**" />
     <EmbeddedResource Remove="Features\DefenseSystem\Settings\**" />
     <EmbeddedResource Remove="Features\Operator\Rewards\**" />
+    <EmbeddedResource Remove="Features\SoulAltar\Harmony\**" />
+    <EmbeddedResource Remove="Features\SoulAltar\Settings\**" />
     <None Remove="Features\Bloodline\Harmony\**" />
     <None Remove="Features\DefenseSystem\Settings\**" />
     <None Remove="Features\Operator\Rewards\**" />
+    <None Remove="Features\SoulAltar\Harmony\**" />
+    <None Remove="Features\SoulAltar\Settings\**" />
   </ItemGroup>
   
   <!-- RimWorld核心引用 -->
@@ -63,9 +69,5 @@
   <!-- Harmony通过NuGet引用 -->
   <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.2.2" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Features\SoulAltar\Settings\" />
-    <Folder Include="Features\SoulAltar\Harmony\" />
   </ItemGroup>
 </Project>

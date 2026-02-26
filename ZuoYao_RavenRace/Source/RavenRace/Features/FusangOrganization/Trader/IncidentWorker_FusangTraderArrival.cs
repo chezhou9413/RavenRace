@@ -33,7 +33,7 @@ namespace RavenRace.Features.FusangOrganization.Trader
 
             if (parms.faction == null)
             {
-                parms.faction = Find.FactionManager.FirstFactionOfDef(FusangDefOf.Fusang_Hidden);
+                parms.faction = Find.FactionManager.FirstFactionOfDef(RavenDefOf.Fusang_Hidden);
                 if (parms.faction == null) return false;
             }
 

@@ -83,7 +83,7 @@ namespace RavenRace
                     defaultDesc = "立刻将玩家派系与扶桑隐世的派系关系增加100点。",
                     action = () =>
                     {
-                        Faction fusangFaction = Find.FactionManager.FirstFactionOfDef(FusangDefOf.Fusang_Hidden);
+                        Faction fusangFaction = Find.FactionManager.FirstFactionOfDef(RavenDefOf.Fusang_Hidden);
                         if (fusangFaction != null)
                         {
                             Faction.OfPlayer.TryAffectGoodwillWith(fusangFaction, 100, true, false, HistoryEventDefOf.DebugGoodwill);
@@ -170,7 +170,7 @@ namespace RavenRace
 
             yield return new FloatMenuOption("RavenRace_OpenFusangRadio".Translate(), () =>
             {
-                Job job = JobMaker.MakeJob(FusangDefOf.Raven_Job_UseFusangRadio, parent);
+                Job job = JobMaker.MakeJob(RavenDefOf.Raven_Job_UseFusangRadio, parent);
                 selPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
             });
         }

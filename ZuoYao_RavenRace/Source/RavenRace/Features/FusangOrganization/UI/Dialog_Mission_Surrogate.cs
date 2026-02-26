@@ -139,7 +139,7 @@ namespace RavenRace
 
         private void ApplySurrogacy(Pawn surrogate)
         {
-            Faction fusang = Find.FactionManager.FirstFactionOfDef(FusangDefOf.Fusang_Hidden);
+            Faction fusang = Find.FactionManager.FirstFactionOfDef(RavenDefOf.Fusang_Hidden);
             PawnKindDef kind = PawnKindDef.Named("Raven_Colonist");
             Pawn father = PawnGenerator.GeneratePawn(kind, fusang);
             Pawn mother = PawnGenerator.GeneratePawn(kind, fusang);

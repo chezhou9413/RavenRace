@@ -40,7 +40,7 @@ namespace RavenRace
             this.radio = radioSource;
             this.closeOnClickedOutside = true;
 
-            this.fusangFaction = Find.FactionManager.FirstFactionOfDef(FusangDefOf.Fusang_Hidden);
+            this.fusangFaction = Find.FactionManager.FirstFactionOfDef(RavenDefOf.Fusang_Hidden);
             this.operatorManager = Find.World.GetComponent<WorldComponent_OperatorManager>();
             this.fusangWorldComp = Find.World.GetComponent<WorldComponent_Fusang>();
 

@@ -148,7 +148,7 @@ namespace RavenRace.Features.Operator.UI
             base.PostClose();
             if (WorldComponent_OperatorManager.PostGiftMessage != null)
             {
-                var radio = Find.CurrentMap?.listerBuildings.allBuildingsColonist.FirstOrDefault(b => b.def == FusangDefOf.Raven_FusangRadio);
+                var radio = Find.CurrentMap?.listerBuildings.allBuildingsColonist.FirstOrDefault(b => b.def == RavenDefOf.Raven_FusangRadio);
                 if (radio != null)
                 {
                     Find.WindowStack.Add(new Dialog_FusangComm(radio));

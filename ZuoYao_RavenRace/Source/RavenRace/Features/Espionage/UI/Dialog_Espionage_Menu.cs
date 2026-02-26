@@ -55,7 +55,7 @@ namespace RavenRace.Features.Espionage.UI
                 Close();
                 // 即使 radio 为空，也应该尝试打开主界面（可能需要重新寻找电台，或者直接报错）
                 // 稳妥起见，如果 radio 为空，尝试找一个
-                if (radio == null) radio = Find.CurrentMap.listerBuildings.AllBuildingsColonistOfDef(FusangDefOf.Raven_FusangRadio).FirstOrDefault();
+                if (radio == null) radio = Find.CurrentMap.listerBuildings.AllBuildingsColonistOfDef(RavenDefOf.Raven_FusangRadio).FirstOrDefault();
 
                 if (radio != null) Find.WindowStack.Add(new Dialog_FusangComm(radio));
             }

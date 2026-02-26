@@ -93,9 +93,9 @@ namespace RavenRace.Buildings.Comps
             {
                 // A. 提供娱乐值和“迷醉香气”心情
                 p.needs?.joy?.GainJoy(RavenRaceMod.Settings.incenseJoyAmount, JoyKindDefOf.Social);
-                if (RavenBuildingDefOf.Raven_Thought_IncenseSmell != null)
+                if (RavenDefOf.Raven_Thought_IncenseSmell != null)
                 {
-                    p.needs?.mood?.thoughts?.memories?.TryGainMemory(RavenBuildingDefOf.Raven_Thought_IncenseSmell);
+                    p.needs?.mood?.thoughts?.memories?.TryGainMemory(RavenDefOf.Raven_Thought_IncenseSmell);
                 }
 
                 // B. 施加独立的“香薰氛围”Hediff，提供轻微的正面状态加成
