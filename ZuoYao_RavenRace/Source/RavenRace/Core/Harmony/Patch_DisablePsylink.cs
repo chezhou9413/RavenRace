@@ -7,6 +7,8 @@ namespace RavenRace.Core.Harmony
     /// <summary>
     /// 核心功能补丁：禁用由非灵能技能（如强制求爱）错误触发的灵能熵UI。
     /// 这是一个全局补丁，放置在Core文件夹下非常合适，用于解决根本性问题。
+    /// 原版游戏会将任何带有消耗的Ability都误判为灵能技能，导致没有灵能等级的角色出现错误的灵能熵UI。
+    /// 此补丁通过检查角色是否真的拥有灵能等级(PsychicAmplifier)来修正这个判断。
     /// </summary>
     [HarmonyPatch(typeof(Pawn_PsychicEntropyTracker), "IsPsychicallySensitive", MethodType.Getter)]
     public static class Patch_DisablePsylink
