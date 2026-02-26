@@ -20,6 +20,8 @@ namespace RavenRace.Features.Sounds
         [HarmonyPostfix]
         public static void TakeDamage_Postfix(Thing __instance, DamageInfo dinfo, DamageWorker.DamageResult __result)
         {
+            if (!RavenRaceMod.Settings.enableMemeSounds) return; // [新增] 总开关
+
             // 补丁作用于所有Thing，所以必须先判断类型是否为Pawn
             if (!(__instance is Pawn pawn))
             {
@@ -41,6 +43,8 @@ namespace RavenRace.Features.Sounds
         [HarmonyPrefix]
         public static void CastAbility_Prefix(Verb_CastAbility __instance)
         {
+            if (!RavenRaceMod.Settings.enableMemeSounds) return; // [新增] 总开关
+
             // 【修复】使用正确的 DefOf 引用
             if (__instance.CasterPawn?.kindDef == Features.CustomPawn.Binah.BinahDefOf.Raven_PawnKind_Binah)
             {
@@ -53,6 +57,8 @@ namespace RavenRace.Features.Sounds
         [HarmonyPostfix]
         public static void MakeDowned_Postfix(Pawn_HealthTracker __instance, Pawn ___pawn)
         {
+            if (!RavenRaceMod.Settings.enableMemeSounds) return; // [新增] 总开关
+
             if (___pawn != null && ___pawn.def == RavenDefOf.Raven_Race)
             {
                 RavenSoundDefOf.RavenMeme_PawnDowned?.PlayOneShot(SoundInfo.InMap(new TargetInfo(___pawn)));
@@ -64,6 +70,8 @@ namespace RavenRace.Features.Sounds
         [HarmonyPostfix]
         public static void RomanceAttempt_Postfix(Pawn initiator, Pawn recipient)
         {
+            if (!RavenRaceMod.Settings.enableMemeSounds) return; // [新增] 总开关
+
             // 检查发起者是否为渡鸦族，并且是否刚刚被拒绝
             if (initiator.def == RavenDefOf.Raven_Race && initiator.needs?.mood?.thoughts?.memories?.GetFirstMemoryOfDef(ThoughtDefOf.RebuffedMyRomanceAttempt) != null)
             {
@@ -76,6 +84,8 @@ namespace RavenRace.Features.Sounds
         [HarmonyPostfix]
         public static void CraftFail_Postfix(ref QualityCategory __result, int relevantSkillLevel)
         {
+            if (!RavenRaceMod.Settings.enableMemeSounds) return; // [新增] 总开关
+
             if (__result == QualityCategory.Awful)
             {
                 // 通过技能等级判断，高等级工匠失败时更有戏剧性
@@ -91,6 +101,8 @@ namespace RavenRace.Features.Sounds
         [HarmonyPrefix]
         public static void BuildFail_Prefix(Frame __instance, Pawn worker)
         {
+            if (!RavenRaceMod.Settings.enableMemeSounds) return; // [新增] 总开关
+
             if (worker != null && worker.def == RavenDefOf.Raven_Race && Rand.Chance(0.2f))
             {
                 RavenSoundDefOf.RavenMeme_CraftFail?.PlayOneShot(SoundInfo.InMap(new TargetInfo(worker)));
@@ -102,6 +114,8 @@ namespace RavenRace.Features.Sounds
         [HarmonyPostfix]
         public static void Insulted_Postfix(InteractionWorker __instance, Pawn initiator, Pawn recipient)
         {
+            if (!RavenRaceMod.Settings.enableMemeSounds) return; // [新增] 总开关
+
             if (__instance is InteractionWorker_Insult && recipient.def == RavenDefOf.Raven_Race)
             {
                 RavenSoundDefOf.RavenMeme_Insulted?.PlayOneShot(SoundInfo.InMap(new TargetInfo(recipient)));
@@ -114,6 +128,8 @@ namespace RavenRace.Features.Sounds
         // 【修复】Pawn.Kill方法可能没有参数，或者有一个可选的DamageInfo? dinfo。为了兼容性，我们只捕获实例。
         public static void Kill_Postfix(Pawn __instance)
         {
+            if (!RavenRaceMod.Settings.enableMemeSounds) return; // [新增] 总开关
+
             // 只对玩家殖民地的渡鸦播放
             if (__instance.def == RavenDefOf.Raven_Race && __instance.Faction == Faction.OfPlayer && __instance.MapHeld != null)
             {
@@ -135,7 +151,11 @@ namespace RavenRace.Features.Sounds
                     toil.initAction = () =>
                     {
                         originalInit?.Invoke();
-                        RavenSoundDefOf.RavenMeme_Fleeing?.PlayOneShot(SoundInfo.InMap(new TargetInfo(__instance.pawn)));
+                        // 在实际播放前再次检查设置
+                        if (RavenRaceMod.Settings.enableMemeSounds)
+                        {
+                            RavenSoundDefOf.RavenMeme_Fleeing?.PlayOneShot(SoundInfo.InMap(new TargetInfo(__instance.pawn)));
+                        }
                     };
                     soundPlayed = true; //确保只在第一个toil播放
                 }

@@ -8,32 +8,33 @@ namespace RavenRace.Features.dick
 {
     public class CompProperties_OrbitSwords : CompProperties
     {
-        public float detectRadius = 12f;
-        public float flySpeed = 0.10f;
-        public float attackSpeed = 0.55f;
-        public float returnSpeed = 0.08f;
-        public float orbitAroundTarget = 1.8f;
-        public float orbitAroundSpeed = 2.8f;
-        public int aimTicks = 25;
-        public int slashDamage = 20;
-        public int thrustDamage = 13;
-        public int betweenAttackTicks = 50;
+        public float detectRadius = 12f;        /// 自动索敌半径。飞剑只会攻击此范围内的敌人。
+        public float flySpeed = 0.15f;       /// 飞剑从主人身边飞向目标附近的速度。
+        public float attackSpeed = 0.55f;        /// 飞剑执行攻击动作（如突刺、劈砍）时的基础速度。
+        public float returnSpeed = 0.15f;        /// 飞剑攻击完毕或失去目标后，返回主人身边的速度。
+        public float orbitAroundTarget = 1.8f;       /// 飞剑在攻击前环绕目标的半径。
+        public float orbitAroundSpeed = 2.8f;        /// 飞剑环绕目标时的角速度，数值越大转得越快。
+        public int aimTicks = 20;        /// 攻击前锁定瞄准的持续时间（Ticks）。
+        public int betweenAttackTicks = 40;/// 两把飞剑之间发动攻击的最小时间间隔（Ticks）。
+
+        public int slashDamage = 20;                /// 【突刺】攻击造成的伤害。
+        public int thrustDamage = 13;        /// 【劈砍】攻击造成的伤害。
 
         // 攻击表现与手感
-        public float attackWindupScale = 0.35f;
-        public int hitPauseTicks = 4;
-        public float attackAccelPower = 2.2f;
-        public float slashArcDegrees = 65f;
+        public float attackWindupScale = 0.35f;        /// 攻击前向后蓄力的距离。
+        public int hitPauseTicks = 4;        /// 攻击命中目标时，为了营造打击感而暂停的持续时间（Ticks）。
+        public float attackAccelPower = 2.2f;        /// 攻击动画的速度曲线幂次。大于1表示加速，小于1表示减速。
+        public float slashArcDegrees = 65f;        /// 【劈砍】攻击划过的圆弧角度。
 
         // 特殊攻击参数
-        public int spinSlashDamage = 16;
-        public int diveDamage = 28;
-        public int flurryDamagePerHit = 6;
-        public int flurryHitCount = 4;
-        public int spiralDamage = 18;
-        public float diveHeight = 3.5f;
-        public int diveHoverTicks = 18;
-        public float spinSlashRadius = 1.2f;
+        public int spinSlashDamage = 16;        /// 【回旋斩】攻击造成的伤害。
+        public int diveDamage = 28;        /// 【神圣俯冲】攻击造成的伤害。
+        public int flurryDamagePerHit = 6;       /// 【乱舞】攻击中每次命中造成的伤害。
+        public int flurryHitCount = 4;        /// 【乱舞】攻击的总命中次数。
+        public int spiralDamage = 18;        /// 【螺旋钻】攻击造成的伤害。
+        public float diveHeight = 3.5f;        /// 【神圣俯冲】飞升达到的最大高度。
+        public int diveHoverTicks = 18;        /// 【神圣俯冲】在最高点悬停的时间（Ticks）。
+        public float spinSlashRadius = 1.2f;        /// 【回旋斩】的攻击半径。
 
         // 入体相关
         public HediffDef hideHediff;

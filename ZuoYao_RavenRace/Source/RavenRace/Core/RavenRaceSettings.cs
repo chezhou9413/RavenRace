@@ -15,6 +15,7 @@ namespace RavenRace
         // ===================================================
         public bool enableDebugMode = false;
         public bool enableVerboseLogging = false;
+        public bool enableMemeSounds = false; // [新增] 彩蛋音效开关，默认关闭
 
         // [新增] 余烬之血概率设置 (归类于 Base)
         public float emberBloodDeathChance = 0.3f;
@@ -233,6 +234,7 @@ namespace RavenRace
 
             Scribe_Values.Look(ref enableDebugMode, "enableDebugMode", false);
             Scribe_Values.Look(ref enableVerboseLogging, "enableVerboseLogging", false);
+            Scribe_Values.Look(ref enableMemeSounds, "enableMemeSounds", false); // [新增] 保存音效开关
             Scribe_Values.Look(ref emberBloodDeathChance, "emberBloodDeathChance", 0.3f);
             Scribe_Values.Look(ref emberBloodBerserkChance, "emberBloodBerserkChance", 0.3f);
             Scribe_Values.Look(ref featherDropMoodThreshold, "featherDropMoodThreshold", 0.05f);
