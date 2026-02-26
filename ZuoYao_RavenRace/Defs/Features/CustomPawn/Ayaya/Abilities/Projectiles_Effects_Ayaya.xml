@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 飞行器 -->
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>Raven_PawnFlyer_AyayaDash</defName>
+    <thingClass>RavenRace.Features.CustomPawn.Ayaya.PawnFlyer_AyayaDash</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>0.1</flightDurationMin>
+      <flightSpeed>30</flightSpeed>
+      <heightFactor>0.2</heightFactor>
+    </pawnFlyer>
+  </ThingDef>
+
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>Raven_PawnFlyer_Knockback</defName>
+    <thingClass>RavenRace.Features.CustomPawn.Ayaya.PawnFlyer_Knockback</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>0.4</flightDurationMin>
+      <flightSpeed>15</flightSpeed>
+      <heightFactor>1.2</heightFactor>
+    </pawnFlyer>
+  </ThingDef>
+
+  <!-- 投射物 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Raven_Projectile_WindBlade</defName>
+    <label>风刃</label>
+    <graphicData>
+      <texPath>Things/Projectile/Arrow_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>Cut</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <speed>75</speed>
+    </projectile>
+  </ThingDef>
+
+  <!-- 特效 (EffecterDef) -->
+  <!-- [修复] 使用 FleckDef 替代 ThingDef Mote -->
+  <EffecterDef>
+    <defName>Raven_Effecter_TenguGale</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sprayer</subEffecterClass>
+        <fleckDef>Smoke</fleckDef> <!-- 原版 FleckDef: Smoke -->
+        <burstCount>5~8</burstCount>
+        <scale>1.5~2.5</scale>
+        <speed>2~4</speed>
+        <airTime>0.5~1.0</airTime>
+        <positionRadius>0.5</positionRadius>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_Sprayer</subEffecterClass>
+        <fleckDef>AirPuff</fleckDef> <!-- 原版 FleckDef: AirPuff -->
+        <burstCount>3~5</burstCount>
+        <scale>1.0~1.5</scale>
+        <speed>0.5~1.0</speed>
+        <positionRadius>1.0</positionRadius>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

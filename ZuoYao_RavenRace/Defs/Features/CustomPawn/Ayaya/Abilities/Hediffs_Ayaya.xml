@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 技能赋予 Buff -->
+  <HediffDef>
+    <defName>Raven_Hediff_Ayaya_Skills</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>鸦天狗之力</label>
+    <description>Ayaya 操控风的种族天赋。</description>
+    <initialSeverity>1</initialSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+          <li>Raven_Ability_Ayaya_MusouFuujin</li>
+          <li>Raven_Ability_Ayaya_TenguOtoshi</li>
+        </abilityDefs>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

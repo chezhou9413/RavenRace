@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 服装 (Apparel) ==================== -->
+
+  <!-- 六角帽 (修正路径) -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>Raven_Apparel_AyayaHat</defName>
+    <label>天狗头襟</label>
+    <description>天狗特有的小型多角帽子。</description>
+    <techLevel>Industrial</techLevel>
+    <thingClass>Apparel</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <!-- [路径修正] -->
+      <texPath>Races/Raven/Special/Ayaya/Apparel/Headgear/Ayaya_Hat_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.1</Mass>
+      <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+    </statBases>
+    <smeltable>false</smeltable>
+    <costList><Cloth>10</Cloth></costList>
+    <thingCategories><li>Apparel</li></thingCategories>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <layers><li>Overhead</li></layers>
+      <wornGraphicPath>Races/Raven/Special/Ayaya/Apparel/Headgear/Ayaya_Hat</wornGraphicPath>
+      <tags><li>Ayaya_Apparel</li></tags>
+    </apparel>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName><li>Raven_PawnKind_Ayaya</li></requiredPawnKindDefName>
+      </li>
+      <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+        <targetRaces><li>Raven_Race</li></targetRaces>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 天狗便服 -->
+  <ThingDef>
+    <defName>Raven_Apparel_AyayaCasual</defName>
+    <label>天狗记者服</label>
+    <description>一套白衬衫搭配黑色短裙的轻便装束。</description>
+    <techLevel>Industrial</techLevel>
+    <thingClass>Apparel</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Never</tickerType>
+    <burnableByRecipe>true</burnableByRecipe>
+    <smeltable>false</smeltable>
+    <graphicData>
+      <texPath>Races/Raven/Special/Ayaya/Apparel/Ayaya_Casual_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <MarketValue>2500</MarketValue>
+      <Mass>1.0</Mass>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <Insulation_Cold>10</Insulation_Cold>
+    </statBases>
+    <costList><Cloth>50</Cloth></costList>
+    <equippedStatOffsets>
+      <TradePriceImprovement>0.10</TradePriceImprovement>
+    </equippedStatOffsets>
+    <thingCategories><li>Apparel</li></thingCategories>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Legs</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <layers><li>Middle</li></layers>
+      <wornGraphicPath>Races/Raven/Special/Ayaya/Apparel/Ayaya_Casual</wornGraphicPath>
+      <useWornGraphicMask>false</useWornGraphicMask>
+      <tags><li>Ayaya_Apparel</li></tags>
+      <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>true</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName><li>Raven_PawnKind_Ayaya</li></requiredPawnKindDefName>
+      </li>
+      <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+        <targetRaces><li>Raven_Race</li></targetRaces>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 天狗斜挎包 -->
+  <ThingDef>
+    <defName>Raven_Apparel_AyayaBag</defName>
+    <label>记者斜挎包</label>
+    <description>一个装满了胶卷、笔记本和备用团扇的实用挎包。</description>
+    <techLevel>Industrial</techLevel>
+    <thingClass>Apparel</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Races/Raven/Special/Ayaya/Apparel/Ayaya_Bag_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <MarketValue>600</MarketValue>
+      <Mass>0.5</Mass>
+      <CarryingCapacity>30</CarryingCapacity>
+    </statBases>
+    <costList><Leather_Plain>20</Leather_Plain></costList>
+    <smeltable>false</smeltable>
+    <thingCategories><li>Apparel</li></thingCategories>
+    <apparel>
+      <bodyPartGroups><li>Torso</li></bodyPartGroups>
+      <layers><li>Belt</li></layers>
+      <wornGraphicPath>Races/Raven/Special/Ayaya/Apparel/Ayaya_Bag</wornGraphicPath>
+      <tags><li>Ayaya_Apparel</li></tags>
+    </apparel>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName><li>Raven_PawnKind_Ayaya</li></requiredPawnKindDefName>
+      </li>
+      <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+        <targetRaces><li>Raven_Race</li></targetRaces>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== 2. 武器 (Weapon) ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Raven_Weapon_AyayaFan</defName>
+    <label>枫叶团扇</label>
+    <description>一把巨大的红叶团扇（Ha-Uchiwa）。</description>
+    <graphicData>
+      <texPath>Races/Raven/Special/Ayaya/Weapon/Ayaya_Fan</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <Mass>1.0</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.50</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.30</AccuracyLong>
+      <RangedWeapon_Cooldown>0.4</RangedWeapon_Cooldown>
+    </statBases>
+    <costList><WoodLog>50</WoodLog><Steel>20</Steel></costList>
+    <smeltable>false</smeltable>
+    <weaponTags><li>Raven_Ayaya_Fan</li></weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Raven_Projectile_WindBlade</defaultProjectile>
+        <warmupTime>0.05</warmupTime>
+        <range>22.9</range>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <soundCast>ThrowGrenade</soundCast> 
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>扇击</label>
+        <capacities><li>Blunt</li></capacities>
+        <power>9</power>
+        <cooldownTime>0.8</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- ==================== 3. 物品改为饰品 (Apparel) ==================== -->
+
+  <!-- 文花帖 (改为饰品) -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>Raven_Item_BunkaChou</defName>
+    <label>文花帖</label>
+    <description>一本用来记录新闻素材的手账，现在作为饰品携带。</description>
+    <techLevel>Industrial</techLevel>
+    <thingClass>Apparel</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Races/Raven/Special/Ayaya/Item/Ayaya_Book</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>500</MarketValue>
+      <Mass>0.5</Mass>
+    </statBases>
+    <smeltable>false</smeltable>
+    <thingCategories><li>Apparel</li></thingCategories>
+    <apparel>
+      <!-- [建议修改] 也改为 OnSkin 防止与包冲突 -->
+      <bodyPartGroups><li>Waist</li></bodyPartGroups> 
+      <layers><li>OnSkin</li></layers>
+      <wornGraphicPath>Races/Raven/Hair/Transparent</wornGraphicPath> 
+      <tags><li>Ayaya_Apparel</li></tags>
+    </apparel>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName><li>Raven_PawnKind_Ayaya</li></requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 文文。新闻 (改为饰品) -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>Raven_Item_AyayaNews</defName>
+    <label>文文。新闻</label>
+    <description>一份新闻报纸，现在作为饰品携带。</description>
+    <techLevel>Industrial</techLevel>
+    <thingClass>Apparel</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Races/Raven/Special/Ayaya/Item/Ayaya_News</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>5</MarketValue>
+      <Mass>0.1</Mass>
+    </statBases>
+    <smeltable>false</smeltable>
+    <thingCategories><li>Apparel</li></thingCategories>
+    <apparel>
+      <!-- [修复冲突] 改为 Waist (腰部) 和 OnSkin (贴身层)，避开 Belt 层的包 -->
+      <bodyPartGroups><li>Waist</li></bodyPartGroups>
+      <layers><li>OnSkin</li></layers>
+      <wornGraphicPath>Races/Raven/Hair/Transparent</wornGraphicPath>
+      <tags><li>Ayaya_Apparel</li></tags>
+    </apparel>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName><li>Raven_PawnKind_Ayaya</li></requiredPawnKindDefName>
+      </li>
+      <!-- 保留阅读功能 (Usable) -->
+      <li Class="CompProperties_Usable">
+          <useJob>Ingest</useJob>
+          <useLabel>阅读新闻</useLabel>
+      </li>
+    </comps>
+    <ingestible>
+        <foodType>Processed</foodType>
+        <preferability>NeverForNutrition</preferability>
+        <joyKind>Reading</joyKind>
+        <joy>0.4</joy>
+        <ingestSound>PageTurn</ingestSound>
+    </ingestible>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 技能：无双风神 -->
+  <AbilityDef>
+    <defName>Raven_Ability_Ayaya_MusouFuujin</defName>
+    <label>无双风神</label>
+    <description>“疾风啊，撕裂一切吧！”\n\n射命丸文将自身化作一道无法捕捉的疾风残影，以神速穿过战场。任何处于她冲刺路径上的敌人都将受到肉眼无法看清的风刃切割。\n\n效果：超远距离冲刺 + 路径穿透伤害。</description>
+    <iconPath>Races/Raven/Special/Ayaya/Abilities/MusouFuujin</iconPath>
+    <cooldownTicksRange>400</cooldownTicksRange>
+    <targetRequired>true</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_Jump</verbClass>
+      <label>冲刺</label>
+      <violent>true</violent>
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+      <range>34.9</range>
+      <requireLineOfSight>true</requireLineOfSight>
+      <!-- [修复] 使用原版通用风声或不指定，避免红字 -->
+      <soundCast>Psycast_Skip_Exit</soundCast> 
+    </verbProperties>
+    <comps>
+      <!-- [修复] 使用自定义 Comp，替代不存在的 CompProperties_AbilityJump -->
+      <li Class="RavenRace.Features.CustomPawn.Ayaya.CompProperties_AbilityAyayaDash">
+        <flyerDef>Raven_PawnFlyer_AyayaDash</flyerDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- 技能：天狗颪 -->
+  <AbilityDef>
+    <defName>Raven_Ability_Ayaya_TenguOtoshi</defName>
+    <label>天狗颪</label>
+    <description>“这阵风，可是能把房子都吹跑的哦。”\n\n射命丸文猛力挥动团扇，召唤出一股强烈的下沉气流（颪）。这股怪风能将敌人强行吹飞并重重摔在地上。\n\n效果：强制击退 + 落地重击伤害 + 眩晕。</description>
+    <iconPath>Races/Raven/Special/Ayaya/Abilities/TenguOtoshi</iconPath>
+    <cooldownTicksRange>900</cooldownTicksRange>
+    <targetRequired>true</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>14.9</range>
+      <warmupTime>0.4</warmupTime>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+        <neverTargetIncapacitated>true</neverTargetIncapacitated>
+      </targetParams>
+      <soundCast>ThrowGrenade</soundCast>
+    </verbProperties>
+    <comps>
+      <li Class="RavenRace.Features.CustomPawn.Ayaya.CompProperties_AbilityTenguGale">
+        <knockbackDistance>8</knockbackDistance>
+        <flyerDef>Raven_PawnFlyer_Knockback</flyerDef>
+      </li>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>Raven_Effecter_TenguGale</effecterDef>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

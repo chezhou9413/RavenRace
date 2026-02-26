@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TraitDef>
+    <defName>Raven_Trait_Ayaya</defName>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>风的程度</label>
+        <description>速度可以像风一样快。应该说其动作本身就是风。\n\n乘风而翔，听取风之吐息，自如地操纵驾驭风。</description>
+        <statOffsets>
+          <MoveSpeed>2.0</MoveSpeed>
+          <MeleeDodgeChance>30.0</MeleeDodgeChance>
+          <IncomingDamageFactor>-0.5</IncomingDamageFactor>
+          <JoyFallRateFactor>1.5</JoyFallRateFactor>
+        </statOffsets>
+        <statFactors>
+          <PawnTrapSpringChance>0</PawnTrapSpringChance>
+        </statFactors>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Backstory_Ayaya_Child</defName>
+    <title>小小鸦天狗</title>
+    <titleShort>小天狗</titleShort>
+    <baseDesc>跑得很快！很可爱！也很惹人嫌！从小就展现出了对速度的极致追求。</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>Raven_Ayaya</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>5</Social>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Backstory_Ayaya_Adult</defName>
+    <title>著名新闻记者</title>
+    <titleShort>记者</titleShort>
+    <baseDesc>从事记者的工作，主要执笔报纸《文文。新闻》。手持相机，在幻想乡各处奔走，记录下各种有趣的事件。能以疾风般的速度移动，但不会为了炫耀而使用能力。身边有时围绕着乌鸦，随身带着团扇、相机和文花帖。\n\n有着“事件的情报不足的话是绝不会拿来当新闻”的方针。但事实上她的报导仍时常充斥着夸大的讯息和假新闻。\n\n最后被目击的时刻，文文大喊着“有大新闻的味道！”就跟着某魔法少女飞僵冲到异变裂缝中消失了，现在她来到了边缘世界继续取材。</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>Raven_Ayaya</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>10</Shooting>
+      <Melee>12</Melee>
+      <Social>14</Social>
+      <Intellectual>8</Intellectual>
+    </skillGains>
+    <forcedTraitsChance>
+      <li>
+        <defName>Raven_Trait_Ayaya</defName>
+        <chance>100</chance>
+      </li>
+      <li>
+        <defName>Nimble</defName>
+        <chance>100</chance>
+      </li>
+    </forcedTraitsChance>
+    
+    <forcedHediffs>
+      <li>Raven_Hediff_Ayaya_Skills</li>
+    </forcedHediffs>
+  </AlienRace.AlienBackstoryDef>
+</Defs>
