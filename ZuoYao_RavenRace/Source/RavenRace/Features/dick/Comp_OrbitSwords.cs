@@ -144,6 +144,53 @@ namespace RavenRace.Features.dick
             "dick_light", "dick_mohu", "dick_masaike", "dick_err", "dick_dack"
         };
 
+        private List<(SwordState state, float circleAngle, int phaseOffset)> _savedAgentStates;
+        private bool _prefabLoadFailed = false; // 新增：防止预制体加载失败后无限重试导致卡死报错
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            DestroySwords();
+        }
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref _angle, "orbitAngle", 0f);
+            Scribe_Values.Look(ref _selfSpin, "selfSpin", 0f);
+
+            // 规范的 Scribe 写法：无论保存还是读取，都在相同的结构中进行
+            int count = (Scribe.mode == LoadSaveMode.Saving) ? _agents.Count : 0;
+            Scribe_Values.Look(ref count, "agentCount", 0);
+
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+            {
+                _savedAgentStates = new List<(SwordState, float, int)>();
+            }
+
+            for (int i = 0; i < count; i++)
+            {
+                SwordState state = SwordState.Orbiting;
+                float circleAngle = 0f;
+                int phaseOffset = 0;
+
+                if (Scribe.mode == LoadSaveMode.Saving && i < _agents.Count)
+                {
+                    state = _agents[i].state;
+                    circleAngle = _agents[i].circleAngle;
+                    phaseOffset = _agents[i].phaseOffset;
+                }
+
+                Scribe_Values.Look(ref state, $"agent_{i}_state", SwordState.Orbiting);
+                Scribe_Values.Look(ref circleAngle, $"agent_{i}_circleAngle", 0f);
+                Scribe_Values.Look(ref phaseOffset, $"agent_{i}_phaseOffset", 0);
+
+                if (Scribe.mode == LoadSaveMode.LoadingVars)
+                {
+                    _savedAgentStates.Add((state, circleAngle, phaseOffset));
+                }
+            }
+        }
+
         // 获取当前装备该武器的 Pawn
         private Pawn OwnerPawn
         {
@@ -169,11 +216,18 @@ namespace RavenRace.Features.dick
 
         private void CreateSwords()
         {
+            if (_prefabLoadFailed) return;
+
             for (int i = 0; i < PrefabKeys.Length; i++)
             {
                 string key = PrefabKeys[i];
                 if (!abDatabase.prefabDataBase.TryGetValue(key, out GameObject prefab) || prefab == null)
-                { Log.Error($"[Comp_OrbitSwords] 找不到预制体: {key}"); continue; }
+                {
+                    // Log.ErrorOnce 保证同一种报错只跳一次，保护性能
+                    Log.ErrorOnce($"[Comp_OrbitSwords] 找不到预制体: {key}。请检查 AssetBundle 是否已加载。", key.GetHashCode() ^ 81923);
+                    _prefabLoadFailed = true;
+                    continue;
+                }
 
                 GameObject inst = UnityEngine.Object.Instantiate(prefab);
                 inst.name = $"OrbitSword_{key}";
@@ -217,7 +271,6 @@ namespace RavenRace.Features.dick
         {
             if (OwnerPawn == null || Props.hideHediff == null) return;
 
-            // 强制打断所有飞剑当前动作，转为入体状态
             foreach (var a in _agents)
             {
                 a.target = null;
@@ -225,33 +278,48 @@ namespace RavenRace.Features.dick
             }
         }
 
-        // --- 主逻辑更新 ---
 
         public override void CompTick()
         {
             base.CompTick();
             Pawn pawn = OwnerPawn;
-
-            // 未被装备时清理模型
             if (pawn == null)
             {
                 if (_agents.Count > 0) DestroySwords();
                 return;
             }
-            // 首次装备初始化
-            else if (_agents.Count == 0)
+            if (_agents.Count == 0 && !_prefabLoadFailed)
             {
                 CreateSwords();
+                if (_savedAgentStates != null && _agents.Count > 0)
+                {
+                    bool hasHideHediff = Props.hideHediff != null && pawn.health.hediffSet.HasHediff(Props.hideHediff);
+                    for (int i = 0; i < _agents.Count && i < _savedAgentStates.Count; i++)
+                    {
+                        var saved = _savedAgentStates[i];
+                        _agents[i].circleAngle = saved.circleAngle;
+                        _agents[i].phaseOffset = saved.phaseOffset;
+
+                        if (hasHideHediff && (saved.state == SwordState.Hidden || saved.state == SwordState.DrillIntoButt))
+                        {
+                            _agents[i].state = SwordState.Hidden;
+                            _agents[i].go?.SetActive(false);
+                        }
+                        else
+                        {
+                            _agents[i].state = (saved.state == SwordState.Hidden || saved.state == SwordState.DrillIntoButt)
+                                ? SwordState.Orbiting
+                                : saved.state;
+                        }
+                    }
+                    _savedAgentStates = null;
+                }
             }
-
-            if (!pawn.Spawned) return;
-
+            if (!pawn.Spawned || _agents.Count == 0) return;
             _angle = (_angle + OrbitSpeed) % 360f;
             _selfSpin = (_selfSpin + SpinSpeed) % 360f;
-
             Vector3 center = GetOrbitCenter();
             float step = 360f / _agents.Count;
-
             for (int i = 0; i < _agents.Count; i++)
             {
                 float rad = (_angle + i * step) * Mathf.Deg2Rad;
@@ -262,12 +330,14 @@ namespace RavenRace.Features.dick
                     _agents[i].initialized = true;
                 }
             }
-
             if (Find.TickManager.TicksGame % 10 == 0)
+            {
                 AssignTargets();
-
+            }
             foreach (var a in _agents)
+            {
                 TickSword(a, center);
+            }
         }
 
         // --- 索敌与目标分配 ---
@@ -492,18 +562,15 @@ namespace RavenRace.Features.dick
         {
             if (OwnerPawn == null) return;
 
-            // 存在其他仍在归元途中的飞剑时，挂机等待
             foreach (var agent in _agents)
             {
                 if (agent.state == SwordState.DrillIntoButt) return;
             }
-
-            // 当入体 Hediff 结束或被移除时，飞剑重新释出
             if (Props.hideHediff != null && !OwnerPawn.health.hediffSet.HasHediff(Props.hideHediff))
             {
                 a.go?.SetActive(true);
-                a.state = SwordState.Orbiting;
                 a.currentPos = OwnerPawn.DrawPos;
+                a.state = SwordState.Orbiting;
             }
         }
 

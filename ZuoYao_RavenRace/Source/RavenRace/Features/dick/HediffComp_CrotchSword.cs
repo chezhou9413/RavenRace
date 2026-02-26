@@ -85,7 +85,7 @@ namespace RavenRace.Features.dick
             }
             else
             {
-                Log.Error($"[HediffComp_CrotchSword] 找不到预制体: {Props.prefabKey}");
+                Log.ErrorOnce($"[HediffComp_CrotchSword] 找不到预制体: {Props.prefabKey}", Props.prefabKey.GetHashCode());
             }
         }
 
@@ -148,14 +148,28 @@ namespace RavenRace.Features.dick
         {
             base.CompPostTick(ref severityAdjustment);
 
+            //如果小人不在地图上、死了，销毁表现模型并直接返回
             if (Pawn == null || !Pawn.Spawned || Pawn.Map == null || Pawn.Dead)
             {
                 DestroySword();
                 return;
             }
 
-            if (_swordGo == null) return;
+            // 2. 读档恢复或模型意外丢失时的懒加载机制
+            if (_swordGo == null)
+            {
+                CreateSword();
 
+                // 如果尝试重建后依然失败（如缺失前置Mod），强行移除此Hediff防止死循环与报错
+                if (_swordGo == null)
+                {
+                    Log.Warning($"[HediffComp_CrotchSword] 模型恢复失败，强行移除 Hediff 防止状态卡死。");
+                    Pawn.health.RemoveHediff(parent);
+                    return;
+                }
+            }
+
+            //寿命计算与模型缩放逻辑
             _ageTicks++;
 
             if (!_isShrinking && _ageTicks >= Props.lifespanTicks)
@@ -172,7 +186,7 @@ namespace RavenRace.Features.dick
                     _currentScale = 0f;
                     DestroySword();
                     Pawn.health.RemoveHediff(parent);
-                    return;
+                    return; //移除自身后必须终止本帧 Tick
                 }
             }
             else
@@ -182,81 +196,89 @@ namespace RavenRace.Features.dick
                     _currentScale = Props.targetScale;
             }
 
+            //处理攻击动画
             if (_slamPhase != SlamPhase.None)
             {
-                _phaseTicks++;
-
-                switch (_slamPhase)
-                {
-                    case SlamPhase.Windup:
-                        {
-                            float t = Mathf.Clamp01((float)_phaseTicks / Props.windupTicks);
-                            t = t * t * (3f - 2f * t);
-                            _currentSwingPitch = Mathf.Lerp(Props.windupStartPitch, Props.windupEndPitch, t);
-
-                            if (_phaseTicks >= Props.windupTicks)
-                            {
-                                _slamPhase = SlamPhase.Strike;
-                                _phaseTicks = 0;
-                            }
-                            break;
-                        }
-
-                    case SlamPhase.Strike:
-                        {
-                            float t = Mathf.Clamp01((float)_phaseTicks / Props.strikeTicks);
-                            t = t * t;
-                            _currentSwingPitch = Mathf.Lerp(Props.windupEndPitch, Props.strikeLandPitch, t);
-
-                            if (!_hasDealtDamage && _phaseTicks >= Props.strikeTicks / 2)
-                            {
-                                DealLineDamage(_slamTarget);
-                                _hasDealtDamage = true;
-                            }
-
-                            if (_phaseTicks >= Props.strikeTicks)
-                            {
-                                _currentSwingPitch = Props.strikeLandPitch;
-                                _slamPhase = SlamPhase.Hold;
-                                _phaseTicks = 0;
-                            }
-                            break;
-                        }
-
-                    case SlamPhase.Hold:
-                        {
-                            float decayRatio = 1f - Mathf.Clamp01((float)_phaseTicks / Props.holdTicks);
-                            float tremble = Mathf.Sin(_phaseTicks * 2.5f) * 3f * decayRatio;
-                            _currentSwingPitch = Props.strikeLandPitch + tremble;
-
-                            if (_phaseTicks >= Props.holdTicks)
-                            {
-                                _currentSwingPitch = Props.strikeLandPitch;
-                                _slamPhase = SlamPhase.Return;
-                                _phaseTicks = 0;
-                            }
-                            break;
-                        }
-
-                    case SlamPhase.Return:
-                        {
-                            float t = Mathf.Clamp01((float)_phaseTicks / Props.returnTicks);
-                            t = t * t * (3f - 2f * t);
-                            _currentSwingPitch = Mathf.Lerp(Props.strikeLandPitch, Props.windupStartPitch, t);
-
-                            if (_phaseTicks >= Props.returnTicks)
-                            {
-                                _currentSwingPitch = Props.windupStartPitch;
-                                _slamPhase = SlamPhase.None;
-                                _phaseTicks = 0;
-                            }
-                            break;
-                        }
-                }
+                ProcessSlamAnimation();
             }
 
+            //应用变换
             _swordGo.transform.localScale = Vector3.one * _currentScale;
             UpdateTransform();
+        }
+
+        //将原有的庞大 switch 逻辑抽取为独立方法
+        private void ProcessSlamAnimation()
+        {
+            _phaseTicks++;
+
+            switch (_slamPhase)
+            {
+                case SlamPhase.Windup:
+                    {
+                        float t = Mathf.Clamp01((float)_phaseTicks / Props.windupTicks);
+                        t = t * t * (3f - 2f * t);
+                        _currentSwingPitch = Mathf.Lerp(Props.windupStartPitch, Props.windupEndPitch, t);
+
+                        if (_phaseTicks >= Props.windupTicks)
+                        {
+                            _slamPhase = SlamPhase.Strike;
+                            _phaseTicks = 0;
+                        }
+                        break;
+                    }
+
+                case SlamPhase.Strike:
+                    {
+                        float t = Mathf.Clamp01((float)_phaseTicks / Props.strikeTicks);
+                        t = t * t;
+                        _currentSwingPitch = Mathf.Lerp(Props.windupEndPitch, Props.strikeLandPitch, t);
+
+                        if (!_hasDealtDamage && _phaseTicks >= Props.strikeTicks / 2)
+                        {
+                            DealLineDamage(_slamTarget);
+                            _hasDealtDamage = true;
+                        }
+
+                        if (_phaseTicks >= Props.strikeTicks)
+                        {
+                            _currentSwingPitch = Props.strikeLandPitch;
+                            _slamPhase = SlamPhase.Hold;
+                            _phaseTicks = 0;
+                        }
+                        break;
+                    }
+
+                case SlamPhase.Hold:
+                    {
+                        float decayRatio = 1f - Mathf.Clamp01((float)_phaseTicks / Props.holdTicks);
+                        float tremble = Mathf.Sin(_phaseTicks * 2.5f) * 3f * decayRatio;
+                        _currentSwingPitch = Props.strikeLandPitch + tremble;
+
+                        if (_phaseTicks >= Props.holdTicks)
+                        {
+                            _currentSwingPitch = Props.strikeLandPitch;
+                            _slamPhase = SlamPhase.Return;
+                            _phaseTicks = 0;
+                        }
+                        break;
+                    }
+
+                case SlamPhase.Return:
+                    {
+                        float t = Mathf.Clamp01((float)_phaseTicks / Props.returnTicks);
+                        t = t * t * (3f - 2f * t);
+                        _currentSwingPitch = Mathf.Lerp(Props.strikeLandPitch, Props.windupStartPitch, t);
+
+                        if (_phaseTicks >= Props.returnTicks)
+                        {
+                            _currentSwingPitch = Props.windupStartPitch;
+                            _slamPhase = SlamPhase.None;
+                            _phaseTicks = 0;
+                        }
+                        break;
+                    }
+            }
         }
 
         private void DealLineDamage(LocalTargetInfo target)
@@ -270,7 +292,7 @@ namespace RavenRace.Features.dick
 
             SpawnShockwaveEffects(startPos, direction);
 
-            // 防止单次挥砍多段判定
+            //防止单次挥砍多段判定
             HashSet<Thing> alreadyHit = new HashSet<Thing>();
 
             for (float dist = 1f; dist <= Props.slamRange; dist += 0.5f)
@@ -345,7 +367,7 @@ namespace RavenRace.Features.dick
             }
         }
 
-        // 纯视觉特效，规避 GenExplosion 音效崩溃
+        //纯视觉特效，规避 GenExplosion 音效崩溃
         private void SpawnHitExplosion(IntVec3 cell, Map map)
         {
             if (!cell.InBounds(map)) return;
@@ -423,6 +445,8 @@ namespace RavenRace.Features.dick
         public override void CompExposeData()
         {
             base.CompExposeData();
+
+            // 剔除了 PostLoadInit 中的实例化逻辑，全部交给 Tick 处理
             Scribe_Values.Look(ref _currentScale, "currentScale", 0f);
             Scribe_Values.Look(ref _ageTicks, "ageTicks", 0);
             Scribe_Values.Look(ref _isShrinking, "isShrinking", false);
@@ -431,14 +455,6 @@ namespace RavenRace.Features.dick
             Scribe_TargetInfo.Look(ref _slamTarget, "slamTarget");
             Scribe_Values.Look(ref _hasDealtDamage, "hasDealtDamage", false);
             Scribe_Values.Look(ref _currentSwingPitch, "currentSwingPitch", 0f);
-
-            if (Scribe.mode == LoadSaveMode.PostLoadInit)
-            {
-                if (parent.pawn != null && parent.pawn.Spawned && _swordGo == null && _currentScale > 0)
-                {
-                    CreateSword();
-                }
-            }
         }
     }
 }

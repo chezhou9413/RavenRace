@@ -13,11 +13,6 @@
       <li Class="RavenRace.Features.dick.CompProperties_OrbitSwords">
         <hideHediff>Raven_Hediff_GuiYuanRuTi</hideHediff>
       </li>
-      <li Class="CompProperties_Forbiddable"></li>
-      <li>
-        <compClass>CompEquippable</compClass>
-      </li>
-      <li Class="CompProperties_Styleable"></li>
     </comps>
     <costStuffCount>40</costStuffCount>
     <drawerType>MapMeshOnly</drawerType>
