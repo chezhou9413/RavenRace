@@ -74,9 +74,9 @@
       <li>Stony</li>
     </stuffCategories>
     <techLevel>Neolithic</techLevel>
-    <thingCategories>
-      <li>WeaponsMelee</li>
-    </thingCategories>
+    
+    
+    
     <thingClass>ThingWithComps</thingClass>
     <tickerType>Normal</tickerType>
     <tools>
