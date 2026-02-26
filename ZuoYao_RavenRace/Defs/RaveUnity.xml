@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ChezhouLib.LibDef.ClAssetLord>
+        <defName>RaveUnityLord</defName>
+        <label>渡鸦种族预制体管理</label>
+        <AbPath>/AssetBundles/raveasset.ab</AbPath>
+        <unityAssetMount>
+            <li>
+                <key>dick_light</key>
+                <value>/prefab/Rave/dick_light.prefab</value>
+            </li>
+            <li>
+                <key>dick_mohu</key>
+                <value>/prefab/Rave/dick_mohu.prefab</value>
+            </li>
+            <li>
+                <key>dick_masaike</key>
+                <value>/prefab/Rave/dick_masaike.prefab</value>
+            </li>
+            <li>
+                <key>dick_err</key>
+                <value>/prefab/Rave/dick_err.prefab</value>
+            </li>
+            <li>
+                <key>dick_dack</key>
+                <value>/prefab/Rave/dick_dack.prefab</value>
+            </li>
+            <li>
+                <key>dick_xuancai</key>
+                <value>/prefab/Rave/dick_xuancai.prefab</value>
+            </li>
+        </unityAssetMount>
+    </ChezhouLib.LibDef.ClAssetLord>
+</Defs>
