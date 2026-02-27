@@ -16,25 +16,25 @@
                 </categories>
             </li>
         </backstoryFiltersOverride>
-        
+
         <!-- 强制装备 (现在包括道具，因为道具已改为饰品) -->
         <apparelRequired>
             <li>Raven_Apparel_AyayaHat</li>
             <li>Raven_Apparel_AyayaCasual</li>
             <li>Raven_Apparel_AyayaBag</li>
-            <li>Raven_Item_BunkaChou</li> <!-- 文花帖 -->
-            <li>Raven_Item_AyayaNews</li> <!-- 新闻 -->
+            <li>Raven_Item_BunkaChou</li>            <!-- 文花帖 -->
+            <li>Raven_Item_AyayaNews</li>            <!-- 新闻 -->
         </apparelRequired>
-        
+
         <apparelTags>
             <li>Ayaya_Apparel</li>
         </apparelTags>
-        
+
         <apparelMoney>
-            <min>99999</min> <!-- 提高预算，防止因钱不够而不生成 -->
+            <min>99999</min>            <!-- 提高预算，防止因钱不够而不生成 -->
             <max>99999</max>
         </apparelMoney>
-        
+
         <!-- 强制武器 -->
         <weaponMoney>
             <min>99999</min>
@@ -54,33 +54,46 @@
                 <kindName>Ayaya</kindName>
                 <kindDesName>幻想乡最速记者</kindDesName>
                 <Gender>Female</Gender>
-                <kindAge>1000</kindAge>
-                <BodyTypeName>Female</BodyTypeName>
-                <hairProDefName>Raven_Hair_Standard</hairProDefName> <!-- 必须指定一个基础发型Def，哪怕后面替换了贴图 -->
+                <kindAge>18</kindAge>
                 <isColseFa>true</isColseFa>
 
                 <!-- 技能设置 (根据背景故事设定) -->
                 <skillSettings>
-                    <li><skillDef>Shooting</skillDef><minLevel>15</minLevel><maxLevel>20</maxLevel><passion>Major</passion></li>
-                    <li><skillDef>Melee</skillDef><minLevel>12</minLevel><maxLevel>15</maxLevel><passion>Minor</passion></li>
-                    <li><skillDef>Social</skillDef><minLevel>14</minLevel><maxLevel>18</maxLevel><passion>Major</passion></li>
-                    <li><skillDef>Intellectual</skillDef><minLevel>10</minLevel><maxLevel>15</maxLevel><passion>Minor</passion></li>
-                </skillSettings>
-
-                <!-- 渲染节点规则 (原生贴图替换) -->
-                <renderNodeRules>
-                    <!-- 替换前发 -->
                     <li>
-                        <tagDefName>Hair</tagDefName> <!-- 优先使用 tagDefName -->
+                        <skillDef>Shooting</skillDef>
+                        <minLevel>15</minLevel>
+                        <maxLevel>20</maxLevel>
+                        <passion>Major</passion>
+                    </li>
+                    <li>
+                        <skillDef>Melee</skillDef>
+                        <minLevel>12</minLevel>
+                        <maxLevel>15</maxLevel>
+                        <passion>Minor</passion>
+                    </li>
+                    <li>
+                        <skillDef>Social</skillDef>
+                        <minLevel>14</minLevel>
+                        <maxLevel>18</maxLevel>
+                        <passion>Major</passion>
+                    </li>
+                    <li>
+                        <skillDef>Intellectual</skillDef>
+                        <minLevel>10</minLevel>
+                        <maxLevel>15</maxLevel>
+                        <passion>Minor</passion>
+                    </li>
+                </skillSettings>
+                <renderNodeRules>
+                    <li>
+                        <debugLabel>RavenHair_A</debugLabel>
                         <replacePath>Races/Raven/Special/Ayaya/Hair/Ayaya_Hair</replacePath>
                     </li>
-                    <!-- 原生 Body 通常由 HAR 处理，这里如果只是换头，用 bodyAddonRules 更好，除非你要换原生头 -->
                     <li>
-                        <tagDefName>Head</tagDefName>
-                        <replacePath>Races/Raven/Special/Ayaya/Face/Ayaya_Face</replacePath>
+                        <debugLabel>RavenHair_A_Back</debugLabel>
+                        <replacePath>Races/Raven/Special/Ayaya/Hair/Ayaya_Hair_Back</replacePath>
                     </li>
                 </renderNodeRules>
-
                 <!-- HAR BodyAddon 规则 (附加部件替换) -->
                 <bodyAddonRules>
                     <!-- 替换脸部 (如果你的脸是做成 BodyAddon 的) -->
@@ -88,19 +101,28 @@
                         <BodyAddonName>raven_face</BodyAddonName>
                         <ReplacePath>Races/Raven/Special/Ayaya/Face/Ayaya_Face</ReplacePath>
                         <offset>
-                            <south><bodyTypes><Female>(0,0)</Female></bodyTypes><layerOffset>0.01</layerOffset></south>
-                            <north><bodyTypes><Female>(0,0)</Female></bodyTypes><layerOffset>0.01</layerOffset></north>
-                            <east><bodyTypes><Female>(0,0)</Female></bodyTypes><layerOffset>0.01</layerOffset></east>
+                            <south>
+                                <bodyTypes>
+                                    <Female>(0,0)</Female>
+                                </bodyTypes>
+                                <layerOffset>0.01</layerOffset>
+                            </south>
+                            <north>
+                                <bodyTypes>
+                                    <Female>(0,0)</Female>
+                                </bodyTypes>
+                                <layerOffset>0.01</layerOffset>
+                            </north>
+                            <east>
+                                <bodyTypes>
+                                    <Female>(0,0)</Female>
+                                </bodyTypes>
+                                <layerOffset>0.01</layerOffset>
+                            </east>
                         </offset>
-                    </li>
-                    <!-- 替换后发 (通常是 BodyAddon) -->
-                    <li>
-                        <BodyAddonName>Races/Raven/Hair/RavenHair_A_Back</BodyAddonName> <!-- 需确认这是 XML 中的 path -->
-                        <ReplacePath>Races/Raven/Special/Ayaya/Hair/Ayaya_Hair_Back</ReplacePath>
                     </li>
                 </bodyAddonRules>
             </li>
-            
             <li Class="RavenRace.Features.CustomPawn.Ui.RaveExtension.RaveCustomPawnUiData">
                 <workerClass>RavenRace.Features.CustomPawn.Ui.SpecialPawnWorker.SpecialPawnWorker_TimedUnlock</workerClass>
                 <CustomPawnUiDes>幻想乡最速记者，操控风的鸦天狗。拥有极其强大的机动性和控制能力。\n\n“清风伴随，鸦群环绕... 即使来到了边缘世界，只要有大新闻的味道，我就能以最速飞到现场！但也请注意，如果不想被写成花边新闻的主角，最好配合取材哦。”</CustomPawnUiDes>
