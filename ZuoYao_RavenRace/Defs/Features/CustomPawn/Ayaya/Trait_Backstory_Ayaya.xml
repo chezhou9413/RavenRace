@@ -5,11 +5,11 @@
     <commonality>0</commonality>
     <degreeDatas>
       <li>
-        <label>风的程度</label>
+        <label>操纵风程度的能力</label>
         <description>速度可以像风一样快。应该说其动作本身就是风。\n\n乘风而翔，听取风之吐息，自如地操纵驾驭风。</description>
         <statOffsets>
-          <MoveSpeed>2.0</MoveSpeed>
-          <MeleeDodgeChance>30.0</MeleeDodgeChance>
+          <MoveSpeed>5.0</MoveSpeed>
+          <MeleeDodgeChance>50.0</MeleeDodgeChance>
           <IncomingDamageFactor>-0.5</IncomingDamageFactor>
           <JoyFallRateFactor>1.5</JoyFallRateFactor>
         </statOffsets>

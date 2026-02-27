@@ -24,8 +24,7 @@ namespace RavenRace.Features.CustomPawn.Ayaya
 
         // SoundDefs (音效定义)
         // [修复] 必须在这里声明字段，RimWorld 启动时会自动将 XML 中的同名 Def 绑定到此处
-        public static SoundDef Raven_Sound_Ayaya_Slash;
-        public static SoundDef Raven_Sound_WindDash;
+        public static SoundDef RavenMeme_Ayaya_Ayaya;
 
         // Effects (特效定义)
         public static EffecterDef Raven_Effecter_TenguGale;

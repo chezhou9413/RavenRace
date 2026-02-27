@@ -3,61 +3,6 @@
 
   <!-- ==================== 1. 服装 (Apparel) ==================== -->
 
-  <!-- 六角帽 (修正路径) -->
-  <ThingDef ParentName="ApparelBase">
-    <defName>Raven_Apparel_AyayaHat</defName>
-    <label>天狗头襟</label>
-    <description>天狗特有的小型多角帽子。</description>
-    <techLevel>Industrial</techLevel>
-    <thingClass>Apparel</thingClass>
-    <category>Item</category>
-    <selectable>true</selectable>
-    <drawerType>MapMeshOnly</drawerType>
-    <graphicData>
-      <!-- [路径修正] -->
-      <texPath>Races/Raven/Special/Ayaya/Apparel/Headgear/Ayaya_Hat_south</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.0</drawSize>
-    </graphicData>
-    <statBases>
-      <MaxHitPoints>200</MaxHitPoints>
-      <MarketValue>1200</MarketValue>
-      <Mass>0.1</Mass>
-      <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
-    </statBases>
-    <smeltable>false</smeltable>
-    <costList>
-      <Cloth>10</Cloth>
-    </costList>
-    <thingCategories>
-      <li>Apparel</li>
-    </thingCategories>
-    <apparel>
-      <bodyPartGroups>
-        <li>UpperHead</li>
-      </bodyPartGroups>
-      <layers>
-        <li>Overhead</li>
-      </layers>
-      <wornGraphicPath>Races/Raven/Special/Ayaya/Apparel/Headgear/Ayaya_Hat</wornGraphicPath>
-      <tags>
-        <li>Ayaya_Apparel</li>
-      </tags>
-    </apparel>
-    <comps>
-      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
-        <requiredPawnKindDefName>
-          <li>Raven_PawnKind_Ayaya</li>
-        </requiredPawnKindDefName>
-      </li>
-      <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
-        <targetRaces>
-          <li>Raven_Race</li>
-        </targetRaces>
-      </li>
-    </comps>
-  </ThingDef>
-
   <!-- 天狗便服 -->
   <ThingDef>
     <defName>Raven_Apparel_AyayaCasual</defName>
@@ -191,11 +136,11 @@
     <statBases>
       <MarketValue>2000</MarketValue>
       <Mass>1.0</Mass>
-      <AccuracyTouch>0.60</AccuracyTouch>
-      <AccuracyShort>0.50</AccuracyShort>
-      <AccuracyMedium>0.40</AccuracyMedium>
-      <AccuracyLong>0.30</AccuracyLong>
-      <RangedWeapon_Cooldown>0.4</RangedWeapon_Cooldown>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.60</AccuracyMedium>
+      <AccuracyLong>0.60</AccuracyLong>
+      <RangedWeapon_Cooldown>0.2</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <WoodLog>50</WoodLog>
@@ -210,9 +155,9 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Raven_Projectile_WindBlade</defaultProjectile>
-        <warmupTime>0.05</warmupTime>
-        <range>22.9</range>
-        <burstShotCount>3</burstShotCount>
+        <warmupTime>0.01</warmupTime>
+        <range>30</range>
+        <burstShotCount>10</burstShotCount>
         <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
         <soundCast>ThrowGrenade</soundCast>
       </li>
@@ -223,8 +168,8 @@
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>9</power>
-        <cooldownTime>0.8</cooldownTime>
+        <power>15</power>
+        <cooldownTime>0.2</cooldownTime>
       </li>
     </tools>
   </ThingDef>

@@ -94,9 +94,9 @@ namespace RavenRace.Features.CustomPawn.Ayaya
 
             // 播放切割音效
             // [修复] 使用自定义 DefOf 引用，确保音效存在，避免 SoundDefOf 缺失导致的编译错误
-            if (AyayaDefOf.Raven_Sound_Ayaya_Slash != null)
+            if (AyayaDefOf.RavenMeme_Ayaya_Ayaya != null)
             {
-                AyayaDefOf.Raven_Sound_Ayaya_Slash.PlayOneShot(new TargetInfo(victim.Position, this.Map));
+                AyayaDefOf.RavenMeme_Ayaya_Ayaya.PlayOneShot(new TargetInfo(victim.Position, this.Map));
             }
         }
 

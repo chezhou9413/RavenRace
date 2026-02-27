@@ -189,5 +189,24 @@
     </subSounds>
   </SoundDef>
 
+  <!-- 逃跑 -->
+  <SoundDef>
+    <defName>RavenMeme_Ayaya_Ayaya</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_Ayaya_Ayaya</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+
 
 </Defs>

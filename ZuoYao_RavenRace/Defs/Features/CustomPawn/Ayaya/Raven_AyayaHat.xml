@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>Raven_Apparel_AyayaHat</defName>
+        <label>六角帽</label>
+        <description>帽子上有六个白绒球，六个绒球应该是代表六种基本修行项目：布施·持戒·忍辱·精进·禅定·智慧。所以说文都具备这些么？</description>
+        <smeltable>false</smeltable>
+        <apparel>
+            <wornGraphicPath />
+            <layers>
+                <li>Belt</li>
+            </layers>
+            <bodyPartGroups>
+                <li>Eyes</li>
+            </bodyPartGroups>
+            <renderNodeProperties>
+                <li>
+                    <nodeClass>PawnRenderNode</nodeClass>
+                    <workerClass>ChezhouLib.ClPawnRenderNodeWorker.PawnRenderNodeWorker_FixedSize</workerClass>
+                    <texPath>Races/Raven/Special/Ayaya/Apparel/Headgear/Ayaya_Hat</texPath>
+                    <parentTagDef>Head</parentTagDef>
+                    <baseLayer>170</baseLayer>
+                    <shaderTypeDef>Cutout</shaderTypeDef>
+                    <drawData>
+                        <scale>0.46</scale>
+                        <defaultData>
+                            <offset>(0, 0, 0)</offset>
+                        </defaultData>
+                    </drawData>
+                </li>
+            </renderNodeProperties>
+            <tags>
+                <li>Ayaya_Apparel</li>
+            </tags>
+        </apparel>
+        <comps>
+            <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+                <requiredPawnKindDefName>
+                    <li>Raven_PawnKind_Ayaya</li>
+                </requiredPawnKindDefName>
+            </li>
+            <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+                <targetRaces>
+                    <li>Raven_Race</li>
+                </targetRaces>
+            </li>
+        </comps>
+
+        <graphicData>
+            <texPath>Races/Raven/Special/Ayaya/Apparel/Headgear/Ayaya_Hat_south</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.8</drawSize>
+        </graphicData>
+
+        <statBases>
+            <Mass>0.03</Mass>
+            <MarketValue>500</MarketValue>
+            <MaxHitPoints>160</MaxHitPoints>
+            <Flammability>0.3</Flammability>
+            <Insulation_Cold>0</Insulation_Cold>
+            <Insulation_Heat>0</Insulation_Heat>
+        </statBases>
+
+        <tradeability>All</tradeability>
+
+        <equippedStatOffsets>
+            <SocialImpact>0.15</SocialImpact>
+        </equippedStatOffsets>
+
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+
+    </ThingDef>
+
+
+</Defs>

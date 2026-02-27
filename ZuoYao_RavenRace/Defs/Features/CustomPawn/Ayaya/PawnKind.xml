@@ -54,7 +54,7 @@
                 <kindName>Ayaya</kindName>
                 <kindDesName>幻想乡最速记者</kindDesName>
                 <Gender>Female</Gender>
-                <kindAge>18</kindAge>
+                <kindAge>22</kindAge>
                 <isColseFa>true</isColseFa>
 
                 <!-- 技能设置 (根据背景故事设定) -->
@@ -125,7 +125,7 @@
             </li>
             <li Class="RavenRace.Features.CustomPawn.Ui.RaveExtension.RaveCustomPawnUiData">
                 <workerClass>RavenRace.Features.CustomPawn.Ui.SpecialPawnWorker.SpecialPawnWorker_TimedUnlock</workerClass>
-                <CustomPawnUiDes>幻想乡最速记者，操控风的鸦天狗。拥有极其强大的机动性和控制能力。\n\n“清风伴随，鸦群环绕... 即使来到了边缘世界，只要有大新闻的味道，我就能以最速飞到现场！但也请注意，如果不想被写成花边新闻的主角，最好配合取材哦。”</CustomPawnUiDes>
+                <CustomPawnUiDes>あやややや？幻想乡最速记者，操控风的鸦天狗。拥有极其强大的机动性和控制能力。\n\n“清风伴随，鸦群环绕... 即使来到了边缘世界，只要有大新闻的味道，我就能以最速飞到现场！但也请注意，如果不想被写成花边新闻的主角，最好配合取材哦。”</CustomPawnUiDes>
                 <pos>3</pos>
             </li>
         </modExtensions>
