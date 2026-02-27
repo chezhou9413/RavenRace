@@ -22,30 +22,40 @@
     </pawnFlyer>
   </ThingDef>
 
-  <!-- 投射物 -->
-  <ThingDef ParentName="BaseBullet">
-    <defName>Raven_Projectile_WindBlade</defName>
-    <label>风刃</label>
-    <graphicData>
-      <texPath>Things/Projectile/Arrow_Small</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>Transparent</shaderType>
-    </graphicData>
-    <projectile>
-      <damageDef>Cut</damageDef>
-      <damageAmountBase>7</damageAmountBase>
-      <speed>75</speed>
-    </projectile>
-  </ThingDef>
+<!-- 东方弹幕投射物 -->
+<ThingDef ParentName="BaseBullet">
+  <defName>Raven_Projectile_WindBlade</defName>
+  <label>风刃</label>
+  <thingClass>RavenRace.Features.CustomPawn.Ayaya.Projectile_TouhouDanmaku</thingClass>
+
+  <graphicData>
+    <texPath>Things/Projectile/WindBlade</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+    <shaderType>Transparent</shaderType>
+  </graphicData>
+  
+  <!-- 关键：在<projectile>标签上指定我们自定义的Class -->
+  <projectile Class="RavenRace.Features.CustomPawn.Ayaya.ProjectileProperties_TouhouDanmaku">
+    <damageDef>Blunt</damageDef>
+    <damageAmountBase>25</damageAmountBase>
+    <armorPenetrationBase>0.4</armorPenetrationBase>
+    <stoppingPower>0.5</stoppingPower>
+    <speed>10</speed>
+    <collisionRadius>1.5</collisionRadius>    <!-- 这里就是我们的新属性！1.5的半径会形成一个直径约3格的圆形碰撞区域 -->
+  </projectile>
+
+</ThingDef>
+
+
 
   <!-- 特效 (EffecterDef) -->
-  <!-- [修复] 使用 FleckDef 替代 ThingDef Mote -->
   <EffecterDef>
     <defName>Raven_Effecter_TenguGale</defName>
     <children>
       <li>
-        <subEffecterClass>SubEffecter_Sprayer</subEffecterClass>
-        <fleckDef>Smoke</fleckDef> <!-- 原版 FleckDef: Smoke -->
+        <!-- [核心修复] 使用具体子类 SubEffecter_SprayerTriggered 替代抽象类 -->
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Smoke</fleckDef>
         <burstCount>5~8</burstCount>
         <scale>1.5~2.5</scale>
         <speed>2~4</speed>
@@ -53,8 +63,9 @@
         <positionRadius>0.5</positionRadius>
       </li>
       <li>
-        <subEffecterClass>SubEffecter_Sprayer</subEffecterClass>
-        <fleckDef>AirPuff</fleckDef> <!-- 原版 FleckDef: AirPuff -->
+        <!-- [核心修复] 使用具体子类 SubEffecter_SprayerTriggered 替代抽象类 -->
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>AirPuff</fleckDef>
         <burstCount>3~5</burstCount>
         <scale>1.0~1.5</scale>
         <speed>0.5~1.0</speed>

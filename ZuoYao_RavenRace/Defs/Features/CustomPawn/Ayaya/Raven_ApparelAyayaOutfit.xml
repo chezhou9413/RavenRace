@@ -150,16 +150,21 @@
     <weaponTags>
       <li>Raven_Ayaya_Fan</li>
     </weaponTags>
+    <!-- 扇形弹幕 -->
     <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
+      <li Class="RavenRace.Features.CustomPawn.Ayaya.VerbProperties_Danmaku"> 
+        <!-- 关键：指定我们自定义的Verb Class -->
+        <verbClass>RavenRace.Features.CustomPawn.Ayaya.Verb_ShootDanmaku</verbClass> 
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Raven_Projectile_WindBlade</defaultProjectile>
-        <warmupTime>0.01</warmupTime>
-        <range>30</range>
-        <burstShotCount>10</burstShotCount>
-        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <warmupTime>0.1</warmupTime>
+        <range>50</range>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
         <soundCast>ThrowGrenade</soundCast>
+        <!-- 一次发射9发弹幕，在一个30度的扇形范围内 -->
+        <projectilesPerShot>9</projectilesPerShot>
+        <spreadAngle>30</spreadAngle> 
       </li>
     </verbs>
     <tools>
@@ -172,17 +177,19 @@
         <cooldownTime>0.2</cooldownTime>
       </li>
     </tools>
+
   </ThingDef>
 
-  <!-- ==================== 3. 物品改为饰品 (Apparel) ==================== -->
+  <!-- ==================== 3. 物品 (Items) [核心修改：改为 Inventory Item] ==================== -->
 
-  <!-- 文花帖 (改为饰品) -->
-  <ThingDef ParentName="ApparelBase">
+  <!-- 文花帖 -->
+  <ThingDef ParentName="ResourceBase">
     <defName>Raven_Item_BunkaChou</defName>
     <label>文花帖</label>
-    <description>一本用来记录新闻素材的手账，现在作为饰品携带。</description>
+    <description>一本用来记录新闻素材的手账。是天狗记者的必备工具。</description>
+    <!-- 必须保留 ThingWithComps 才能使用 CompProperties_KindLocked -->
+    <thingClass>ThingWithComps</thingClass>
     <techLevel>Industrial</techLevel>
-    <thingClass>Apparel</thingClass>
     <category>Item</category>
     <selectable>true</selectable>
     <drawerType>MapMeshOnly</drawerType>
@@ -195,25 +202,17 @@
       <MaxHitPoints>100</MaxHitPoints>
       <MarketValue>500</MarketValue>
       <Mass>0.5</Mass>
+      <Flammability>1.0</Flammability>
     </statBases>
     <smeltable>false</smeltable>
     <thingCategories>
-      <li>Apparel</li>
+      <li>Manufactured</li>
     </thingCategories>
-    <apparel>
-      <!-- [建议修改] 也改为 OnSkin 防止与包冲突 -->
-      <bodyPartGroups>
-        <li>Waist</li>
-      </bodyPartGroups>
-      <layers>
-        <li>OnSkin</li>
-      </layers>
-      <wornGraphicPath>Races/Raven/Hair/Transparent</wornGraphicPath>
-      <tags>
-        <li>Ayaya_Apparel</li>
-      </tags>
-    </apparel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
     <comps>
+      <!-- 锁定组件：只有 Ayaya 能持有/使用 (如果组件逻辑支持物品的话) -->
       <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
         <requiredPawnKindDefName>
           <li>Raven_PawnKind_Ayaya</li>
@@ -222,13 +221,13 @@
     </comps>
   </ThingDef>
 
-  <!-- 文文。新闻 (改为饰品) -->
-  <ThingDef ParentName="ApparelBase">
+  <!-- 文文。新闻 -->
+  <ThingDef ParentName="ResourceBase">
     <defName>Raven_Item_AyayaNews</defName>
     <label>文文。新闻</label>
-    <description>一份新闻报纸，现在作为饰品携带。</description>
+    <description>一份在幻想乡流传甚广的新闻报纸。虽然内容真实性存疑，但文笔确实不错。</description>
+    <thingClass>ThingWithComps</thingClass>
     <techLevel>Industrial</techLevel>
-    <thingClass>Apparel</thingClass>
     <category>Item</category>
     <selectable>true</selectable>
     <drawerType>MapMeshOnly</drawerType>
@@ -241,31 +240,22 @@
       <MaxHitPoints>100</MaxHitPoints>
       <MarketValue>5</MarketValue>
       <Mass>0.1</Mass>
+      <Flammability>1.0</Flammability>
     </statBases>
     <smeltable>false</smeltable>
     <thingCategories>
-      <li>Apparel</li>
+      <li>Manufactured</li>
     </thingCategories>
-    <apparel>
-      <!-- [修复冲突] 改为 Waist (腰部) 和 OnSkin (贴身层)，避开 Belt 层的包 -->
-      <bodyPartGroups>
-        <li>Waist</li>
-      </bodyPartGroups>
-      <layers>
-        <li>OnSkin</li>
-      </layers>
-      <wornGraphicPath>Races/Raven/Hair/Transparent</wornGraphicPath>
-      <tags>
-        <li>Ayaya_Apparel</li>
-      </tags>
-    </apparel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
     <comps>
       <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
         <requiredPawnKindDefName>
           <li>Raven_PawnKind_Ayaya</li>
         </requiredPawnKindDefName>
       </li>
-      <!-- 保留阅读功能 (Usable) -->
+      <!-- 阅读功能 (作为物品直接使用) -->
       <li Class="CompProperties_Usable">
         <useJob>Ingest</useJob>
         <useLabel>阅读新闻</useLabel>
