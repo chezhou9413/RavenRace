@@ -103,6 +103,10 @@ namespace RavenRace
                     {
                         pawn.needs.mood?.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_ForceLovin_Initiator, PartnerPawn);
                         PartnerPawn.needs.mood?.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_ForceLovin_Recipient, pawn);
+
+                        // [修改] 调用安全的防抖方法，防止受害者被重复记录
+                        RavenReproductionUtility.AddLovinCountSafely(PartnerPawn);
+
                         pawn.interactions.TryInteractWith(PartnerPawn, InteractionDefOf.Chitchat);
                         if (PartnerPawn.IsPrisonerOfColony)
                         {

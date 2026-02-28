@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 原版的记录器，支持原生的永久保存 -->
+  <RecordDef>
+    <defName>Raven_Record_LovinCount</defName>
+    <label>交配总数</label>
+    <description>此角色生命中经历的性行为或交配总次数。对于繁衍至上的文化来说，这是力量与地位的象征。</description>
+    <type>Int</type>
+  </RecordDef>
+</Defs>

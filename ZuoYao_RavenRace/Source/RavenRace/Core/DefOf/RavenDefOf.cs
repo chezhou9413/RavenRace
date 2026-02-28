@@ -53,6 +53,12 @@ namespace RavenRace
         // Features: Reproduction - 繁殖系统
         // ===================================================
 
+        // 繁衍至上文化相关 (新增)
+        public static MemeDef Raven_Heritage;                    // 繁衍至上模因
+        public static RecordDef Raven_Record_LovinCount;         // 交配总数统计
+        public static HediffDef Raven_Hediff_ReproductionLust;   // 繁衍渴望Hediff
+
+
         //灵卵相关
         public static ThingDef Raven_SpiritEgg;                 // 受精灵卵
         public static ThingDef Raven_SpiritEgg_Unfertilized;    // 未受精灵卵

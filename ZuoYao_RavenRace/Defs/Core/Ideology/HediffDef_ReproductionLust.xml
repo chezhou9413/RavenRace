@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>Raven_Hediff_ReproductionLust</defName>
+    <label>繁衍渴望</label>
+    <description>受到文化和本能的驱使，对繁衍极度狂热。随着交配次数的增加，这种渴望不仅不会平息，反而会化作更强大的生命力、社交魅力与刺杀本能。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.4, 0.6)</defaultLabelColor>
+    <isBad>false</isBad>
+    <maxSeverity>4.0</maxSeverity>
+    <comps>
+      <!-- 动态显示 (x次) 尾缀的组件 -->
+      <li Class="RavenRace.Features.Reproduction.HediffCompProperties_LovinCount" />
+    </comps>
+    <stages>
+      <li>
+        <label>食髓知味</label>
+        <minSeverity>0.0</minSeverity>
+        <statOffsets>
+          <Fertility>0.10</Fertility>
+          <SocialImpact>0.10</SocialImpact>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <label>纵欲狂欢</label>
+        <minSeverity>1.0</minSeverity>
+        <statOffsets>
+          <Fertility>0.25</Fertility>
+          <SocialImpact>0.20</SocialImpact>
+          <MoveSpeed>0.4</MoveSpeed>
+          <MeleeDodgeChance>5</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+      <li>
+        <label>肉欲化身</label>
+        <minSeverity>2.0</minSeverity>
+        <statOffsets>
+          <Fertility>0.50</Fertility>
+          <SocialImpact>0.40</SocialImpact>
+          <MoveSpeed>0.8</MoveSpeed>
+          <MeleeDodgeChance>10</MeleeDodgeChance>
+          <MeleeHitChance>5</MeleeHitChance>
+        </statOffsets>
+      </li>
+      <li>
+        <label>繁衍司命</label>
+        <minSeverity>3.0</minSeverity>
+        <painFactor>0.8</painFactor>
+        <statOffsets>
+          <Fertility>1.0</Fertility>
+          <SocialImpact>0.60</SocialImpact>
+          <MoveSpeed>1.5</MoveSpeed>
+          <MeleeDodgeChance>20</MeleeDodgeChance>
+          <MeleeHitChance>10</MeleeHitChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
