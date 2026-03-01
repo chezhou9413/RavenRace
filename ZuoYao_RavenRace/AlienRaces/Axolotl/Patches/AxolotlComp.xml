@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/BodyDef[defName="Raven_Body"]/corePart/parts</xpath>
+    <value>
+      <li>
+        <def>Axolotl_Meridians</def>
+        <coverage>0.03</coverage>
+        <depth>Inside</depth>
+        <groups>
+          <li>Torso</li>
+        </groups>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Raven_Race"]/comps</xpath>
     <value>
       <li Class="Axolotl.CompProperties_AxolotlAI">
