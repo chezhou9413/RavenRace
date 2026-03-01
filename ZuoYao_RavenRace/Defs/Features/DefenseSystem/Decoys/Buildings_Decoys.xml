@@ -10,7 +10,7 @@
     <graphicData>
       <texPath>Buildings/DefenseSystem/RavenDecoy/DecoyDummy</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.2</drawSize>
+      <drawSize>1.5</drawSize>
     </graphicData>
     
     <!-- 核心修改：移除 turretTop place worker，它会绘制一个额外的蓝图底座导致叠加 -->
@@ -19,7 +19,7 @@
     </placeWorkers>
     
     <uiIconPath>Buildings/DefenseSystem/RavenDecoy/DecoyDummy</uiIconPath> <!-- 使用 UI Icon，让建造菜单显示正确 -->
-    <uiIconScale>0.8</uiIconScale> <!-- 调整UI图标大小 -->
+    <uiIconScale>1.5</uiIconScale> <!-- 调整UI图标大小 -->
 
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
@@ -29,7 +29,7 @@
       <Flammability>1.0</Flammability>
       <WorkToBuild>500</WorkToBuild>
       <Mass>10</Mass>
-      <Beauty>-5</Beauty>
+      <Beauty>5</Beauty>
       <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
     </statBases>
     <tickerType>Normal</tickerType>

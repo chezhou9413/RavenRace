@@ -17,6 +17,7 @@ namespace RavenRace.Features.Sounds
         public static SoundDef RavenMeme_Insulted;
         public static SoundDef RavenMeme_PawnDeath;
         public static SoundDef RavenMeme_Fleeing;
+        public static SoundDef RavenMeme_Ayaya_Ayaya;
 
         static RavenSoundDefOf()
         {

@@ -22,9 +22,6 @@ namespace RavenRace.Features.CustomPawn.Ayaya
         public static ThingDef Raven_PawnFlyer_Knockback;
         public static ThingDef Raven_Projectile_WindBlade;
 
-        // SoundDefs（音效定义）
-        public static SoundDef RavenMeme_Ayaya_Ayaya;
-
         // Effects（特效定义）
         public static EffecterDef Raven_Effecter_TenguGale;
 
