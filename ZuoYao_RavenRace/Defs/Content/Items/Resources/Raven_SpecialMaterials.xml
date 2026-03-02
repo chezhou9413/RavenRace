@@ -46,11 +46,11 @@
     </tradeTags>
   </ThingDef>
 
-  <!-- 3. 余烬之血 -->
+  <!-- 3. 余烬之血 (核心机制重构) -->
   <ThingDef ParentName="ResourceBase">
     <defName>Raven_EmberBlood</defName>
     <label>余烬之血</label>
-    <description>从渡鸦族心脏中提取的浓缩血液，呈暗金色胶状，散发着不稳定的热量。\n\n获取方式：\n1. 对渡鸦族进行“提取余烬之血”手术（必死）。\n2. 通过扶桑电台发布“崇高奉献”特殊协议。\n\n这是一种极其危险的血脉纯化媒介。直接注射可能唤醒体内的金乌之力，但也极可能导致死亡或疯狂。</description>
+    <description>从渡鸦族心脏中提取的浓缩血液，呈暗金色胶状，散发着不稳定的热量。\n\n获取方式：\n1. 对渡鸦族进行“提取余烬之血”手术（必死）。\n2. 通过扶桑电台发布“崇高奉献”特殊协议。\n\n这是一种极其危险的血脉纯化媒介。直接注射能够唤醒体内的金乌之力，但这股力量最多只能将金乌浓度推至 20%。当受术者浓度达到极限时，将无法再承受注射。\n\n警告：极易导致血管爆裂死亡或陷入疯狂。</description>
     <graphicData>
       <texPath>Items/Materials/EmberBlood</texPath> 
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -67,18 +67,18 @@
     </tradeTags>
     <stackLimit>75</stackLimit>
     
-    <ingestible>
-      <foodType>Fluid</foodType>
-      <preferability>NeverForNutrition</preferability>
-      <baseIngestTicks>200</baseIngestTicks>
-      <ingestSound>Ingest_Inject</ingestSound>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>注射{0}</ingestCommandString> 
-      <ingestReportString>正在注射{0}。</ingestReportString>
-      <outcomeDoers>
-        <li Class="RavenRace.IngestionOutcomeDoer_EmberBlood" />
-      </outcomeDoers>
-    </ingestible>
+    <!-- [核心修改] 移除 Ingestible，改用 Usable，彻底杜绝AI乱吃，并允许代码级别灰色拦截 -->
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>注射余烬之血</useLabel>
+        <useDuration>200</useDuration>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>RavenRace.Features.Purification.CompUseEffect_EmberBlood</compClass>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
   </ThingDef>
 
   <!-- 4. 破碎日核 -->

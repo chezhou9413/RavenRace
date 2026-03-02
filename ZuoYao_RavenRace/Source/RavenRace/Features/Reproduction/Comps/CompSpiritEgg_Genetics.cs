@@ -5,6 +5,7 @@ using Verse;
 using RimWorld;
 using RavenRace.Compat.Epona;
 using RavenRace.Features.Bloodline;
+using RavenRace.Features.Purification; // [新增引用] 引入纯化系统命名空间
 
 namespace RavenRace.Features.Reproduction
 {
@@ -188,10 +189,15 @@ namespace RavenRace.Features.Reproduction
             BloodlineUtility.EnsureBloodlineFloor(this.bloodlineComposition);
         }
 
+        /// <summary>
+        /// 获取或模拟指定父母的血脉数据。
+        /// [核心修改] 适应解耦架构，从独立的 CompPurification 中读取金乌浓度。
+        /// </summary>
         private (float concentration, Dictionary<string, float> composition) GetOrSimulateBloodline(Pawn p)
         {
             if (p == null) return (0f, new Dictionary<string, float>());
 
+            // 机械体返回纯净的机械血脉
             if (p.RaceProps.IsMechanoid)
             {
                 return (0f, new Dictionary<string, float> { { BloodlineManager.MECHANIOD_BLOODLINE_KEY, 1.0f } });
@@ -203,15 +209,25 @@ namespace RavenRace.Features.Reproduction
                 raceKey = EponaCompatUtility.NormalizeToEponaKey(raceKey);
             }
 
+            // 雪牛恶作剧兼容
             if (RavenRaceMod.Settings != null && RavenRaceMod.Settings.enableMuffaloPrank && p.def.defName == "Muffalo")
                 return (0f, new Dictionary<string, float> { { "MooGirl", 1.0f } });
 
+            // 获取杂交血脉组件
             CompBloodline comp = p.TryGetComp<CompBloodline>();
+            // [新增] 获取纯化（金乌）组件
+            CompPurification purComp = p.TryGetComp<CompPurification>();
+
+            // 从纯化组件安全读取金乌浓度
+            float conc = purComp != null ? purComp.GoldenCrowConcentration : 0f;
+
             if (comp != null && comp.BloodlineComposition.Count > 0)
             {
-                return (comp.GoldenCrowConcentration, comp.BloodlineComposition);
+                // 返回金乌浓度和杂交组成
+                return (conc, comp.BloodlineComposition);
             }
 
+            // 如果是非渡鸦的外星人，模拟一个100%自身种族的字典，浓度为0
             return (0f, new Dictionary<string, float> { { raceKey, 1.0f } });
         }
 

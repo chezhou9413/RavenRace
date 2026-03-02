@@ -5,7 +5,8 @@ using RimWorld;
 using UnityEngine;
 using Verse.Sound;
 using RavenRace.Features.Bloodline;
-using RavenRace.Features.Reproduction; // [Added]
+using RavenRace.Features.Reproduction; 
+using RavenRace.Features.Purification; // [新增引用] 引入纯化系统命名空间
 
 namespace RavenRace.Features.BloodlineRitual
 {
@@ -65,7 +66,6 @@ namespace RavenRace.Features.BloodlineRitual
             if (Altar.GetDirectlyHeldThings().Count == 0) return;
 
             Thing eggThing = Altar.GetDirectlyHeldThings()[0];
-            // [Change] Comp_SpiritEgg -> CompSpiritEgg
             CompSpiritEgg eggComp = eggThing.TryGetComp<CompSpiritEgg>();
 
             if (eggComp != null)
@@ -78,13 +78,26 @@ namespace RavenRace.Features.BloodlineRitual
             Messages.Message("RavenRace_Ritual_AbsorptionSuccess".Translate(pawn.LabelShort), pawn, MessageTypeDefOf.PositiveEvent);
         }
 
+        /// <summary>
+        /// 吸收灵卵精髓的核心算法。
+        /// [核心修改] 适应解耦架构，杂交成分由血脉组件处理，金乌浓度提升由纯化组件处理。
+        /// </summary>
         private void AbsorbBloodline(Pawn invoker, CompSpiritEgg egg)
         {
             CompBloodline invokerBlood = invoker.TryGetComp<CompBloodline>();
-            if (invokerBlood == null) return;
+            // [新增] 获取角色的纯化组件
+            CompPurification invokerPur = invoker.TryGetComp<CompPurification>();
 
-            float gain = egg.goldenCrowConcentration * 0.2f;
-            invokerBlood.GoldenCrowConcentration += gain;
+            // 1. 吸收金乌浓度精华 (受限于当前阶段上限)
+            if (invokerPur != null)
+            {
+                float gain = egg.goldenCrowConcentration * 0.2f;
+                // 仪式吸收的基底极限设为 1.0f，意味着它可以一直提升浓度直到当前阶段(Stage)的物理上限。
+                invokerPur.TryAddGoldenCrowConcentration(gain, 1.0f);
+            }
+
+            // 2. 合并杂交血脉成分 (原逻辑保留，依然处理成分融合)
+            if (invokerBlood == null) return;
 
             Dictionary<string, float> newComposition = new Dictionary<string, float>();
             HashSet<string> allKeys = new HashSet<string>();
@@ -98,12 +111,14 @@ namespace RavenRace.Features.BloodlineRitual
             {
                 float valInvoker = invokerBlood.BloodlineComposition.ContainsKey(key) ? invokerBlood.BloodlineComposition[key] : 0f;
                 float valEgg = egg.bloodlineComposition.ContainsKey(key) ? egg.bloodlineComposition[key] : 0f;
+                // 继承公式：自身占 80%，吞噬蛋占 20%
                 float finalVal = (valInvoker * 0.8f) + (valEgg * 0.2f);
                 if (finalVal > 0f) newComposition[key] = finalVal;
             }
 
             invokerBlood.SetBloodlineComposition(newComposition);
 
+            // 确保渡鸦主成分不低于 50%
             if (invokerBlood.BloodlineComposition.ContainsKey("Raven_Race"))
             {
                 if (invokerBlood.BloodlineComposition["Raven_Race"] < 0.5f)

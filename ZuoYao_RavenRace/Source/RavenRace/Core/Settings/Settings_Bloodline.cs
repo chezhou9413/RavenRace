@@ -28,6 +28,24 @@ namespace RavenRace.Settings
 
             // 3. 启用血脉突变
             listing.CheckboxLabeled("RavenRace_Settings_EnableBloodlineMutations".Translate(), ref s.enableBloodlineMutations, "RavenRace_Settings_EnableBloodlineMutationsDesc".Translate());
+
+
+            // =========================================================
+            // [新增] 纯化系统相关设置
+            // =========================================================
+            listing.GapLine();
+            listing.Label("=== 纯化仪式设置 ===");
+
+            listing.Label($"纯化仪式成功率: {s.purificationSuccessChance:P0}");
+            s.purificationSuccessChance = listing.Slider(s.purificationSuccessChance, 0f, 1f);
+
+            listing.Label($"纯化仪式读条时间 (游戏刻, 1秒=60): {s.purificationRitualDurationTicks}");
+            // 滑动范围：从 1000(约16秒) 到 10000(约166秒)
+            s.purificationRitualDurationTicks = (int)listing.Slider(s.purificationRitualDurationTicks, 1000f, 10000f);
+
+
+
+
         }
     }
 }
