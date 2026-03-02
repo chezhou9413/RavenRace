@@ -1,12 +1,60 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using Verse;
 
 namespace RavenRace.Compat.MoeLotl
 {
+    [HarmonyPatch]
+    public static class Patch_FixDuplicateSkillSaveData
+    {
+        private static Type skillType;
+        private static FieldInfo f_loadID;
+        private static HashSet<int> seenIDs = new HashSet<int>();
+
+        static bool Prepare()
+        {
+            skillType = AccessTools.TypeByName("Axolotl.MoeLotlQiSkill");
+            if (skillType == null) return false;
+            f_loadID = AccessTools.Field(skillType, "loadID");
+            if (f_loadID == null) return false;
+            return true;
+        }
+        static MethodBase TargetMethod()
+        {
+            return AccessTools.Method(skillType, "ExposeData");
+        }
+        public static void Prefix()
+        {
+            if (Scribe.mode != LoadSaveMode.LoadingVars)
+            {
+                seenIDs.Clear();
+            }
+        }
+
+        public static void Postfix(object __instance)
+        {
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+            {
+                int currentID = (int)f_loadID.GetValue(__instance);
+                if (seenIDs.Contains(currentID))
+                {
+                    int newID = Find.UniqueIDsManager.GetNextHediffID();
+                    f_loadID.SetValue(__instance, newID);
+                    seenIDs.Add(newID);
+                }
+                else
+                {
+                    seenIDs.Add(currentID);
+                }
+            }
+        }
+    }
+
     [HarmonyPatch]
     public static class Patch_EnergyGainPerSec
     {
@@ -108,10 +156,6 @@ namespace RavenRace.Compat.MoeLotl
                     if (pawn?.def?.defName == "Raven_Race")
                         __result = true;
                 }            
-            }
-            else
-            {
-                __result = false;
             }
         }
 
