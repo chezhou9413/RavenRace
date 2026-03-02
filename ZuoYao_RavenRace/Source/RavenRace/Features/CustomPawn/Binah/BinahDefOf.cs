@@ -38,6 +38,8 @@ namespace RavenRace.Features.CustomPawn.Binah
         // [修复] 启用震击波 Mote 定义
         public static ThingDef Raven_Mote_Binah_ShockwaveDistortion;
 
+
+
         static BinahDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(BinahDefOf));
