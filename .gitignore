@@ -7,3 +7,5 @@
 ZuoYao_RavenRace/Source/RavenRace/.vs/
 ZuoYao_RavenRace/Source/RavenRace/obj/
 ZuoYao_RavenRace/Source/RavenRace/bin/
+*.dll
+*.pdb
