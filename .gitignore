@@ -7,5 +7,7 @@
 ZuoYao_RavenRace/Source/RavenRace/.vs/
 ZuoYao_RavenRace/Source/RavenRace/obj/
 ZuoYao_RavenRace/Source/RavenRace/bin/
-*.dll
-*.pdb
+
+# 编译产物
+ZuoYao_RavenRace/Assemblies/*.dll
+ZuoYao_RavenRace/Assemblies/*.pdb
