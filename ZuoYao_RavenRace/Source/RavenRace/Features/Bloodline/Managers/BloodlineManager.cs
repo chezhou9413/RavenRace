@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using RimWorld;
+using RavenRace.Features.Purification; // [新增引用]
 
 namespace RavenRace.Features.Bloodline
 {
@@ -16,6 +17,8 @@ namespace RavenRace.Features.Bloodline
         public static void InitializePawnBloodline(Pawn pawn, CompBloodline comp)
         {
             if (pawn == null || comp == null) return;
+
+            var purComp = pawn.TryGetComp<CompPurification>();            // [新增] 获取纯化组件
 
             // 1. 检查是否为机械族 (优先于 Def 查找)
             if (pawn.RaceProps.IsMechanoid)
@@ -34,13 +37,14 @@ namespace RavenRace.Features.Bloodline
                 comp.BloodlineComposition.Clear();
                 comp.BloodlineComposition.Add(pawn.def.defName, 1.0f);
 
-                if (bloodline.isGoldenCrowSource)
+                // [更新] 将初始浓度写入纯化组件
+                if (bloodline.isGoldenCrowSource && purComp != null)
                 {
-                    comp.GoldenCrowConcentration = Rand.Range(0.01f, 0.10f);
+                    purComp.GoldenCrowConcentration = Rand.Range(0.01f, 0.10f);
                 }
-                else
+                else if (purComp != null)
                 {
-                    comp.GoldenCrowConcentration = 0f;
+                    purComp.GoldenCrowConcentration = 0f;
                 }
 
                 RavenModUtility.LogVerbose($"Initialized known bloodline for {pawn.ThingID}: {bloodline.labelShort}");

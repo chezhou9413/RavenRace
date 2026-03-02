@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 阶段 0：初始阶段。所有新生成的渡鸦都在这个阶段。浓度锁死在 20% -->
+  <RavenRace.Features.Purification.PurificationStageDef>
+    <defName>Raven_PurificationStage_0</defName>
+    <label>凡躯</label>
+    <stageIndex>0</stageIndex>
+    <concentrationThreshold>0.20</concentrationThreshold> 
+    <!-- 基础阶段没有奖励 -->
+  </RavenRace.Features.Purification.PurificationStageDef>
+
+  <!-- 阶段 1：第一次纯化突破后 (达到 20% 并进行仪式后进入此阶段)。浓度上限解锁到 40% -->
+  <RavenRace.Features.Purification.PurificationStageDef>
+    <defName>Raven_PurificationStage_1</defName>
+    <label>初融真火</label>
+    <stageIndex>1</stageIndex>
+    <concentrationThreshold>0.40</concentrationThreshold> 
+    <grantedHediffs>
+      <li>Raven_Hediff_PurificationBonus_Stage1</li>
+    </grantedHediffs>
+  </RavenRace.Features.Purification.PurificationStageDef>
+
+</Defs>

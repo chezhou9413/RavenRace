@@ -13,6 +13,9 @@
       <li>
         <compClass>RavenRace.Features.Bloodline.CompBloodline</compClass>
       </li>
+
+      <li Class="RavenRace.Features.Purification.CompProperties_Purification" />
+
       <li Class="RavenRace.Race.CompProperties_RavenRace" />
       <li Class="RavenRace.CompProperties_RavenFeatherDrop"/>
       <li Class="ChezhouLib.ClThingComp.ThingCompProperties_RaceFly">
@@ -492,6 +495,8 @@
           <li>Raven_Apparel_Casual</li>
           <li>Raven_Apparel_Qipao</li>
           <li>Raven_Apparel_Quju</li>
+          <li>Raven_Apparel_Doteikorosu</li>
+          <li>Raven_Apparel_QipaoNaichuang</li>
           <li>Raven_Apparel_ShadowCloak</li> 
         </apparelList>
 
@@ -520,6 +525,8 @@
           <li>Raven_Apparel_Casual</li>
           <li>Raven_Apparel_Qipao</li>
           <li>Raven_Apparel_Quju</li>
+          <li>Raven_Apparel_Doteikorosu</li>
+          <li>Raven_Apparel_QipaoNaichuang</li>
           <li>Raven_Apparel_ShadowCloak</li>
         </whiteApparelList>
         

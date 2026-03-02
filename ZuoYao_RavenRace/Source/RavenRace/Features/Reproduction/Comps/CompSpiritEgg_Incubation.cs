@@ -5,8 +5,8 @@ using RimWorld.Planet;
 using System.Linq;
 using System.Collections.Generic;
 using RavenRace.Features.Bloodline;
+using RavenRace.Features.Purification; // [新增引用] 引入纯化系统命名空间
 
-// [关键] 命名空间统一
 namespace RavenRace.Features.Reproduction
 {
     public partial class CompSpiritEgg
@@ -106,14 +106,26 @@ namespace RavenRace.Features.Reproduction
             }
         }
 
+        /// <summary>
+        /// 赋予婴儿血脉数据。
+        /// [核心修改] 适应解耦架构，将金乌浓度写入婴儿的纯化组件。
+        /// </summary>
         private void ApplyBloodlineData(Pawn baby)
         {
+            // 1. 赋予杂交成分
             CompBloodline bComp = baby.TryGetComp<CompBloodline>();
             if (bComp != null)
             {
-                bComp.GoldenCrowConcentration = this.goldenCrowConcentration;
                 bComp.SetBloodlineComposition(this.bloodlineComposition);
                 bComp.RefreshAbilities();
+            }
+
+            // 2. [新增] 赋予金乌浓度
+            CompPurification purComp = baby.TryGetComp<CompPurification>();
+            if (purComp != null)
+            {
+                purComp.GoldenCrowConcentration = this.goldenCrowConcentration;
+                purComp.RefreshPurificationBonuses(); // 刷新阶段赋予的属性
             }
         }
 

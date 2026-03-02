@@ -189,7 +189,7 @@
     </subSounds>
   </SoundDef>
 
-  <!-- 逃跑 -->
+  <!-- 文文叫声 -->
   <SoundDef>
     <defName>RavenMeme_Ayaya_Ayaya</defName>
     <context>MapOnly</context>

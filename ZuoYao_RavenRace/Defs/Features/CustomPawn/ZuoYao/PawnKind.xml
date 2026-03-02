@@ -78,7 +78,7 @@
             </li>
             <li Class="RavenRace.Features.CustomPawn.Ui.RaveExtension.RaveCustomPawnUiData">
                 <workerClass>RavenRace.Features.CustomPawn.Ui.SpecialPawnWorker.SpecialPawnWorker_TimedUnlock</workerClass> <!-- 工作类 -->
-                <CustomPawnUiDes>测试文本,测试文本,测试文本,测试文本,测试文本,测试文本,测试文本</CustomPawnUiDes> <!-- 角色描述 -->
+                <CustomPawnUiDes>爱好勾引小正太的痴女大姐姐左爻。嘿嘿，可爱的小家伙，姐姐来帮你“释放”一下哦。</CustomPawnUiDes> <!-- 角色描述 -->
                 <pos>1</pos>     <!-- ui排序 -->
             </li>
         </modExtensions>

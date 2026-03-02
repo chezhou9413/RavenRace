@@ -39,6 +39,9 @@ namespace RavenRace
         public float goldenCrowDecayRate = 0.1f;          // 【血脉】金乌血脉浓度的自然衰减速率。
         public bool enableBloodlineMutations = true;      // 【血脉】是否允许在杂交时发生低概率的血脉突变。
 
+        public float purificationSuccessChance = 0.5f;    // 【纯化】纯化仪式成功的概率
+        public int purificationRitualDurationTicks = 5000; // 【纯化】纯化仪式的耗时(Ticks)
+
         // ===================================================
         // 3. 育生祭坛 (Soul Altar)
         // ===================================================
@@ -219,6 +222,8 @@ namespace RavenRace
             Scribe_Values.Look(ref bloodlineInheritanceStrength, "bloodlineInheritanceStrength", 1.0f);
             Scribe_Values.Look(ref goldenCrowDecayRate, "goldenCrowDecayRate", 0.1f);
             Scribe_Values.Look(ref enableBloodlineMutations, "enableBloodlineMutations", true);
+            Scribe_Values.Look(ref purificationSuccessChance, "purificationSuccessChance", 0.5f);
+            Scribe_Values.Look(ref purificationRitualDurationTicks, "purificationRitualDurationTicks", 5000);
 
             // --- 3. 育生祭坛 ---
             Scribe_Values.Look(ref baseHatchingDays, "baseHatchingDays", 15f);
