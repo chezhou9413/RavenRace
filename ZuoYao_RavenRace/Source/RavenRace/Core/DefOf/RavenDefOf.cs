@@ -203,6 +203,19 @@ namespace RavenRace
         // 暖床 (我想把这个也放到MiscSmallFeatures下）
         public static ThoughtDef Raven_Thought_Snuggle;             // 暖床 (个人心情)
 
+
+        // ===================================================
+        // Features: Ideology & Culture - 文化与风格
+        // ===================================================
+
+        public static StyleCategoryDef Raven_StyleCategory;      // 渡鸦风格分类
+        public static IdeoIconDef Raven_IdeoIcon;                // 渡鸦文化符号图标
+
+        // 戒律引用 (用于逻辑检查，虽然大部分在XML处理)
+        public static PreceptDef Lovin_FreeApproved;             // 肉欲：推崇
+        public static PreceptDef Corpses_DontCare;               // 尸体：漠视
+
+
         // ===================================================
         // Others - 其他
         // ===================================================

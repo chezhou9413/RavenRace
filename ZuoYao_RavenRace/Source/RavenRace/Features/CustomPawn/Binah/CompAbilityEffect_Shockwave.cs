@@ -45,27 +45,38 @@ namespace RavenRace.Features.CustomPawn.Binah
             // 3. 屏幕震动
             Find.CameraDriver.shaker.DoShake(3.0f);
 
-            // 4. 伤害逻辑
+            // 4. 伤害逻辑：【修复】震击只对 Pawn 造成伤害，不破坏建筑
             foreach (var cell in GenRadial.RadialCellsAround(caster.Position, Props.radius, true))
             {
                 if (!cell.InBounds(map)) continue;
+
                 List<Thing> things = cell.GetThingList(map);
                 for (int i = things.Count - 1; i >= 0; i--)
                 {
                     Thing t = things[i];
+
+                    // 跳过施法者自身
                     if (t == caster) continue;
+
+                    // 跳过友方 Pawn
                     if (t is Pawn p && !p.HostileTo(caster)) continue;
 
-                    if (t is Pawn || t is Building)
+                    // 【修复】只对 Pawn 造成伤害，移除对 Building 的判断
+                    if (t is Pawn)
                     {
                         t.TakeDamage(new DamageInfo(DamageDefOf.Blunt, Props.damageAmount, 0.5f, -1, caster));
-                        if (t is Pawn victim && !victim.Dead)
+
+                        // 对存活的 Pawn 施加击晕
+                        Pawn victim = (Pawn)t;
+                        if (!victim.Dead)
                         {
                             victim.stances.stunner.StunFor(120, caster);
                         }
                     }
                 }
             }
+
+
         }
     }
 }

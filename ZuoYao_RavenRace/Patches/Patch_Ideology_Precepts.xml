@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 
+    修复：让 "尸体：漠视" 戒律允许 "繁衍至上" 模因使用。
+    原版逻辑：Corpses_DontCare 只有在拥有 Cannibal, Raider 等模因时才可用。
+    我们通过 Patch 将 Raven_Heritage 加入这个白名单。
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PreceptDef[defName="Corpses_DontCare"]/requiredMemes</xpath>
+    <value>
+      <li>Raven_Heritage</li>
+    </value>
+  </Operation>
+
+  
+</Patch>

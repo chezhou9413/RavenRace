@@ -1,22 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- 
-    繁衍至上 Meme (原 渡鸦传承)
+    繁衍至上 Meme 
   -->
   <MemeDef>
     <defName>Raven_Heritage</defName>
     <label>繁衍至上</label>
     <description>由于一场几乎使其灭族的灾难，渡鸦族的人口一直处在崩溃的边缘。为了延续血脉，他们的文化演化出了一种对繁衍近乎偏执的渴望。因此，他们的性观念极为开放，甚至可以说是放纵。在渡鸦族的社会中，强烈的性欲被视为生命力的象征，而繁衍后代则是凌驾于诸多道德之上的最高使命。他们从不掩饰自己的欲望，并会主动、直接地寻求任何他们认为合适的伴侣来确保种族的存续。他们是优雅的刺客，是潜藏在黑暗中的情报贩子，也是为了种族存续不惜一切代价的狂热繁衍者。</description>
-    <!-- 请确保绘制了新贴图并放在此处，如果没有，可以暂时先改回旧路径 UI/Ideoligions/Memes/GoldenCrowFaith -->
     <iconPath>UI/Ideoligions/Memes/RavenReproduction</iconPath> 
     <groupDef>Misc</groupDef>
     
-    <impact>3</impact>
+    <!-- [核心修改] 影响等级改为中 (2) -->
+    <impact>2</impact>
     <renderOrder>999</renderOrder>
     
     <exclusionTags>
       <li>DivineNonHuman</li>
     </exclusionTags>
+
+    <!-- [核心修改] 强制要求关联风格分类 -->
+    <thingStyleCategories>
+      <li>
+        <category>Raven_StyleCategory</category>
+        <priority>10</priority>
+      </li>
+    </thingStyleCategories>
+
+    <!-- [核心修改] 强制戒律要求 -->
+    <requireOne>
+      <!-- 强制要求 肉欲：推崇 (Lovin: Free and Approved) -->
+      <li>
+        <li>Lovin_FreeApproved</li>
+      </li>
+      <!-- 强制要求 尸体：漠视 (Corpses: Don't care) -->
+      <li>
+        <li>Corpses_DontCare</li>
+      </li>
+    </requireOne>
     
     <descriptionMaker>
       <rules>

@@ -497,7 +497,7 @@
           <li>Raven_Apparel_Quju</li>
           <li>Raven_Apparel_Doteikorosu</li>
           <li>Raven_Apparel_QipaoNaichuang</li>
-          <li>Raven_Apparel_ShadowCloak</li>
+          <li>Raven_Apparel_ShadowCloak</li> 
         </apparelList>
 
         <!-- 专属武器列表 -->
@@ -528,6 +528,8 @@
           <li>Raven_Apparel_Doteikorosu</li>
           <li>Raven_Apparel_QipaoNaichuang</li>
           <li>Raven_Apparel_ShadowCloak</li>
+
+          <li>Raven_Apparel_BeadedGstring</li>
         </whiteApparelList>
 
         <!-- 

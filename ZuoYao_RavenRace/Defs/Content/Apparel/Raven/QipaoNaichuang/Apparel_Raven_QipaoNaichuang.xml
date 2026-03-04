@@ -59,8 +59,6 @@
       
       <!-- 服装标签 -->
       <tags>
-        <li>IndustrialBasic</li>
-        <!-- 专属标签，用于商人库存和敌人生成 -->
         <li>RavenApparel</li> 
       </tags>
       <!-- 默认装备策略 -->

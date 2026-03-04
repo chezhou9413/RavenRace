@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 渡鸦文化符号 ==================== -->
+  <RimWorld.IdeoIconDef>
+    <defName>Raven_IdeoIcon</defName>
+    <iconPath>UI/Ideoligions/Symbols/RavenSymbol</iconPath>
+    <!-- [核心修复] 字段名必须是 <memes>，源码中 IdeoSymbolPartDef 定义如此 -->
+    <memes>
+      <li>Raven_Heritage</li>
+    </memes>
+  </RimWorld.IdeoIconDef>
+
+  <!-- ==================== 2. 渡鸦风格分类 ==================== -->
+  <!-- 定义一个全局风格分类，将渡鸦族的家具归纳其中 -->
+  <StyleCategoryDef>
+    <defName>Raven_StyleCategory</defName>
+    <label>渡鸦风格</label>
+    <iconPath>UI/Ideoligions/Styles/RavenStyleIcon</iconPath>
+    <thingDefStyles>
+      <!-- 将渡鸦族的特色家具关联到此风格 -->
+      <!-- 注意：即使 ThingStyleDef 引用的是原始贴图，也建议加上，以便在UI中显示风格标签 -->
+      <li>
+        <thingDef>Raven_IncenseBurner</thingDef>
+        <styleDef>Raven_Style_IncenseBurner</styleDef>
+      </li>
+      <li>
+        <thingDef>Raven_Building_SlimeBathtub</thingDef>
+        <styleDef>Raven_Style_SlimeBathtub</styleDef>
+      </li>
+      <li>
+        <thingDef>Raven_Building_SewingBench</thingDef>
+        <styleDef>Raven_Style_SewingBench</styleDef>
+      </li>
+      <li>
+        <thingDef>Raven_Building_DuskWorkbench</thingDef>
+        <styleDef>Raven_Style_DuskWorkbench</styleDef>
+      </li>
+      <li>
+        <thingDef>Raven_Building_EmberExtractor</thingDef>
+        <styleDef>Raven_Style_EmberExtractor</styleDef>
+      </li>
+      <li>
+        <thingDef>Raven_Building_SunRaiserInjector</thingDef>
+        <styleDef>Raven_Style_SunRaiserInjector</styleDef>
+      </li>
+    </thingDefStyles>
+  </StyleCategoryDef>
+
+  <!-- ==================== 3. 具体样式变体 (ThingStyleDef) ==================== -->
+  <!-- 这些定义告诉游戏：在渡鸦风格下，这些建筑长什么样。我们直接指向现有的贴图 -->
+
+  <ThingStyleDef>
+    <defName>Raven_Style_IncenseBurner</defName>
+    <graphicData>
+      <texPath>Buildings/IncenseBurner/IncenseBurner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>Raven_Style_SlimeBathtub</defName>
+    <graphicData>
+      <texPath>Buildings/Furniture/RavenBathtub/Bathtub</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2, 2)</drawSize> 
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>Raven_Style_SewingBench</defName>
+    <graphicData>
+      <texPath>Buildings/Production/RavenSewingBench/RavenSewingBench</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>Raven_Style_DuskWorkbench</defName>
+    <graphicData>
+      <texPath>Buildings/Production/DuskWorkbench/DuskWorkbench</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>Raven_Style_EmberExtractor</defName>
+    <graphicData>
+      <texPath>Buildings/Production/EmberExtractor/Base</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4, 4)</drawSize>
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>Raven_Style_SunRaiserInjector</defName>
+    <graphicData>
+      <texPath>Buildings/Production/SunRaiserInjector/SunRaiserInjector</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5.2, 5.2)</drawSize>
+    </graphicData>
+  </ThingStyleDef>
+
+</Defs>

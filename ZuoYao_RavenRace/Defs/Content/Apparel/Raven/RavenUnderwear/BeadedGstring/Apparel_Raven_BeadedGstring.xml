@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Raven_Apparel_BeadedGstring</defName>
+    <label>渡鸦内衣-珠串</label>
+    <description>一件独特设计的情趣内衣，从项圈上垂下一串珠串遮住了隐私部位。（这真的能遮住吗？）</description>
+    <graphicData>
+      <texPath>Items/Apparel/Raven/RavenUnderwear/BeadedGstring/RavenBeadedGstring_Female_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    
+    <costStuffCount>80</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <!-- WorkToMake 由下面的 recipeMaker 自动处理 -->
+      <Mass>1.2</Mass>
+      <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>1.2</StuffEffectMultiplierInsulation_Cold> 
+      <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>2.5</EquipDelay>
+    </statBases>
+    
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Legs</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      
+      <wornGraphicPath>Items/Apparel/Raven/RavenUnderwear/BeadedGstring/RavenBeadedGstring</wornGraphicPath>
+      
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      
+      <tags>
+        <li>RavenApparel</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workAmount>4000</workAmount>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <!-- 【核心修改】将前置科技改为新的缝纫科技 -->
+      <researchPrerequisite>RavenResearch_Tailoring</researchPrerequisite>
+      <!-- 【核心修改】将可制作的工作台改为新的渡鸦缝纫台 -->
+      <recipeUsers>
+        <li>Raven_Building_SewingBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    
+
+
+
+
+  </ThingDef>
+</Defs>
