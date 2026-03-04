@@ -11,6 +11,9 @@
     <pawnsPlural>渡鸦族</pawnsPlural>
     <techLevel>Industrial</techLevel>
     
+    <!-- [核心修改] 指定固定的世界地图图标 -->
+    <factionIconPath>World/Factions/RavenOutcastIcon</factionIconPath>
+    
     <backstoryFilters>
       <li>
         <categories>

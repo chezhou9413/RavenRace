@@ -34,7 +34,7 @@
       </bodyPartGroups>
       <wornGraphicPath>Items/Apparel/Raven/Casual/RavenCasual</wornGraphicPath>
       <layers>
-        <li>OnSkin</li>
+        <li>Shell</li>
       </layers>
       <tags>
         <li>IndustrialBasic</li>
