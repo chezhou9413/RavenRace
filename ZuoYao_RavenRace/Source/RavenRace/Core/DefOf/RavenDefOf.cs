@@ -217,6 +217,20 @@ namespace RavenRace
 
 
         // ===================================================
+        // Features: Servitude - 侍奉系统
+        // ===================================================
+        public static InteractionDef Raven_Interaction_Seduce;//色诱
+        public static ThoughtDef Raven_Thought_HasServant;//有仆人想法
+        public static ThoughtDef Raven_Thought_IsServant;//有主人想法
+
+        //各项侍奉互动
+        public static JobDef Raven_Job_FollowMaster;//跟随
+        public static JobDef Raven_Job_CleanseMaster;//擦拭身体
+        public static JobDef Raven_Job_LapPillow;//膝枕
+        public static JobDef Raven_Job_FeedMaster;//喂食
+
+
+        // ===================================================
         // Others - 其他
         // ===================================================
 

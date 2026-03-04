@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>Raven_ServitudeAI</defName>
+    <insertTag>Humanlike_PostDuty</insertTag>
+    <insertPriority>100</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- 这是我们的核心AI逻辑注入点 -->
+        <li Class="RavenRace.Features.Servitude.JobGiver_Servitude"/>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

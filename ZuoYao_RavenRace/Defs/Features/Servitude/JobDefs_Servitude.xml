@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 原有的跟随工作 -->
+  <JobDef>
+    <defName>Raven_Job_FollowMaster</defName>
+    <driverClass>RavenRace.Features.Servitude.JobDriver_FollowMaster</driverClass>
+    <reportString>正在陪伴主人。</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+
+  <!-- 新增：擦拭身体 -->
+  <JobDef>
+    <defName>Raven_Job_CleanseMaster</defName>
+    <driverClass>RavenRace.Features.Servitude.JobDriver_CleanseMaster</driverClass> 
+    <reportString>正在为主人擦拭身体。</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+
+  <!-- 新增：膝枕 -->
+  <JobDef>
+    <defName>Raven_Job_LapPillow</defName>
+    <!-- [错误修复] 指向新的自定义 JobDriver，不再复用 JobDriver_Lovin -->
+    <driverClass>RavenRace.Features.Servitude.JobDriver_LapPillow</driverClass>
+    <reportString>正在给主人膝枕。</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <!-- 新增：喂食 -->
+  <JobDef>
+    <defName>Raven_Job_FeedMaster</defName>
+    <driverClass>RimWorld.JobDriver_Feed</driverClass>
+    <reportString>正在喂食主人。</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+
+</Defs>

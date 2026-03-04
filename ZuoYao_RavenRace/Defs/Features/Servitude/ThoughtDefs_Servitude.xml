@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 主人的心情 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_HasServant</defName>
+    <workerClass>RavenRace.Features.Servitude.ThoughtWorker_HasServant</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>拥有专属侍奉者</label>
+        <description>有人无时无刻不在关心我、服侍我，这种感觉真是...无与伦比的满足。</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- 侍奉者的心情 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_IsServant</defName>
+    <workerClass>RavenRace.Features.Servitude.ThoughtWorker_IsServant</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>侍奉我的主人</label>
+        <description>我的身心都属于我的主人。只要能让主人满足，我愿意付出一切。</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
