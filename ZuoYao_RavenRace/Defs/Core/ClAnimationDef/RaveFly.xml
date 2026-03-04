@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <ChezhouLib.LibDef.ClAnimation>
+    <ChezhouLib.LibDef.ClAnimationClipDef>
         <defName>Raven_Fly</defName>
-        <!-- 绑定种族 -->
-        <raceDef>Raven_Race</raceDef>
         <label>渡鸦族飞行动画</label>
-        <!-- 序列帧路径 -->
-        <texPath>ClAnimation/Raven_Fly/RavenFly</texPath>
-        <!-- 播放速度 -->
-        <playSpeed>2</playSpeed>
-        <!-- 在哪个渲染节点播放 -->
-        <renderNodeName>RavenWing_LayerB</renderNodeName>
-        <!-- 在这个hediff存在时播放 -->
+        <raceDef>Raven_Race</raceDef>
+        <priority>1</priority>
+        <duration>60</duration>
+        <loop>true</loop>
+        <loopMode>Loop</loopMode>
+
         <hediff>
             <li>ClHediff_Flying</li>
         </hediff>
-        <!-- 播放的时候隐藏哪个渲染节点 -->
-        <hiddRenderNodeName>
+
+        <hideNodes>
             <li>RavenWing_LayerA</li>
             <li>RavenWing_LayerC</li>
-        </hiddRenderNodeName>
-         <!-- 在执行哪个job的时候播放
-        <jobDef>
-            <li>testjobdef</li>
-        </jobDef> -->
-        <!-- 播放优先级 -->
-        <pos>1</pos>
-        <!-- 是否启用反向循环播放 -->
-        <isRevertLoop>false</isRevertLoop>
-    </ChezhouLib.LibDef.ClAnimation>
+        </hideNodes>
+
+        <tracks>
+            <li>
+                <renderNodeName>RavenWing_LayerB</renderNodeName>
+                <texPath>ClAnimation/Raven_Fly/RavenFly</texPath>
+                <frameSpeed>2</frameSpeed>
+                <keyframes>
+                    <li>
+                        <tick>0</tick>
+                        <scale>1.0</scale>
+                    </li>
+                </keyframes>
+            </li>
+        </tracks>
+    </ChezhouLib.LibDef.ClAnimationClipDef>
 </Defs>

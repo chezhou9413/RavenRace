@@ -27,7 +27,7 @@
         <shadowTexPath>back</shadowTexPath>
         <shadowSize>1.2,1.2,1.2</shadowSize>
 
-        <autoLandingJobDefs>    <!-- 自动降落逻辑 -->
+        <autoLandingJobDefs>          <!-- 自动降落逻辑 -->
           <!-- 睡眠/躺下 -->
           <li>LayDown</li>
           <li>LayDownAwake</li>
@@ -58,7 +58,7 @@
         <!-- takeOffButtonTexPath 配置起飞按钮贴图 -->
         <!-- landingButtonTexPath 配置降落按钮贴图 -->
       </li>
-      <li Class="ChezhouLib.ClThingComp.ThingCompProperties_ClAnimationController"/>
+      <li Class="ChezhouLib.ClThingComp.ThingCompProperties_ClClipAnimController"/>
     </comps>
 
     <alienRace>
@@ -497,7 +497,7 @@
           <li>Raven_Apparel_Quju</li>
           <li>Raven_Apparel_Doteikorosu</li>
           <li>Raven_Apparel_QipaoNaichuang</li>
-          <li>Raven_Apparel_ShadowCloak</li> 
+          <li>Raven_Apparel_ShadowCloak</li>
         </apparelList>
 
         <!-- 专属武器列表 -->
@@ -529,12 +529,12 @@
           <li>Raven_Apparel_QipaoNaichuang</li>
           <li>Raven_Apparel_ShadowCloak</li>
         </whiteApparelList>
-        
+
         <!-- 
              注意：我们不开启 onlyUseRaceRestrictedWeapons。
              渡鸦族可以使用其他种族的武器（如捡来的枪），但其他种族不能使用渡鸦的武器（由上面的 weaponList 限制）。
         -->
-             
+
       </raceRestriction>
 
 
