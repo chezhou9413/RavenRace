@@ -203,6 +203,14 @@ namespace RavenRace
         // 暖床 (我想把这个也放到MiscSmallFeatures下）
         public static ThoughtDef Raven_Thought_Snuggle;             // 暖床 (个人心情)
 
+        // 忏悔室相关 [新增]
+        public static ThingDef Raven_Building_ConfessionBooth;
+        public static JobDef Raven_Job_EnterConfessionBooth;
+        public static HediffDef Raven_Hediff_PurifiedByLust;
+        public static HediffDef Raven_Hediff_NunReceptacle;
+        public static ThoughtDef Raven_Thought_ConfessedSin;
+        public static ThoughtDef Raven_Thought_AbsorbedSin;
+
 
         // ===================================================
         // Features: Ideology & Culture - 文化与风格

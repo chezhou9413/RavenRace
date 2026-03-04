@@ -132,6 +132,7 @@ namespace RavenRace
         public bool avDisableTolerance = false;
         public float bathtubJoyWeightMultiplier = 1.0f;
         public bool bathtubDisableTolerance = false;
+        public float confessionDurationHours = 1.0f;        // 忏悔室持续时间
 
         // ===================================================
         // UI 状态与逻辑
@@ -304,6 +305,10 @@ namespace RavenRace
             Scribe_Values.Look(ref avDisableTolerance, "avDisableTolerance", false);
             Scribe_Values.Look(ref bathtubJoyWeightMultiplier, "bathtubJoyWeightMultiplier", 1.0f);
             Scribe_Values.Look(ref bathtubDisableTolerance, "bathtubDisableTolerance", false);
+            Scribe_Values.Look(ref confessionDurationHours, "confessionDurationHours", 1.0f); // 忏悔室
+
+
+
         }
 
         public void OnSettingsChanged()
