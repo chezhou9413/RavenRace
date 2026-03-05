@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- 
-    金乌神话叙事模板 
-    Structure Meme 必须引用此类 Def 来生成背景故事
-  -->
   <IdeoStoryPatternDef>
     <defName>Raven_StoryPattern_GoldenCrow</defName>
     <segments>
+      <li>intro</li>
+      <li>conflict</li>
+      <li>founderJoin</li>
       <li>setup</li>
       <li>story</li>
-      <li>conclusion</li>
+      <li>victory</li>
     </segments>
-    
     <rules>
       <rulesStrings>
-        <!-- 最终的故事结构 -->
-        <li>final->[setup] [story] [conclusion]</li>
-
-        <!-- 故事内容 -->
-        <li>setup->在太古之时，世界是一片混沌的黑暗，直到三足金乌从[place_name]中升起，带来了第一缕光。</li>
-        <li>story->我们的血脉源于金乌洒下的余烬。</li>
-        <li>conclusion->我们是行走的余烬，终将汇聚成燎原的烈火。我们必须保持血脉的纯净，以待神鸟归来。</li>
-
-        <!-- 关键：这里必须定义神的名字引用，否则 Ideology UI 会报错 -->
-        <li>deity->[deity_name]</li>
-        
-        <!-- 专有名词 -->
-        <li>place_name->汤谷</li>
-        <li>place_name->扶桑</li>
-        <li>place_name->若木</li>
+        <li>intro->在太古之时，[place_name]笼罩于混沌黑暗之中，直到三足金乌升起，带来第一缕圣光。</li>
+        <li>conflict->一位[foeLeader]率领[foeSoldiers]入侵，妄图熄灭金乌的火焰。</li>
+        <li>founderJoin->[founder_label]，一位来自[place_name]的[place_job]，拒绝向[foeLeader]屈服，举起[place_personalWeapon]抵抗。</li>
+        <li>setup->[founder_label]的运动在黑暗中艰难燃起，如同一点余烬。</li>
+        <li>story->我们的血脉源于金乌洒下的余烬，是行走的火焰。</li>
+        <li>victory->[founder_label]召集信徒，用[place_personalWeapon]击败了[foeSoldiers]，将[foeLeader]驱逐出[place_name]，金乌的光芒重照大地。</li>
       </rulesStrings>
     </rules>
   </IdeoStoryPatternDef>

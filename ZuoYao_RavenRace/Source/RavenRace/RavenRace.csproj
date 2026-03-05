@@ -44,6 +44,18 @@
       <HintPath>E:\steam\steamapps\workshop\content\294100\3595247479\1.6\Assemblies\ChezhouLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>..\..\..\..\..\steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Unity.Burst.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>..\..\..\..\..\steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Unity.Collections.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\..\..\..\..\steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Unity.Mathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>$(RimWorldPath)\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>

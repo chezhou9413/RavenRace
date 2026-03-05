@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <WeatherDef>
+        <defName>DickRain_Weather</defName>
+        <label>迪克雨</label>
+        <description>无数的迪卡正在经过你的殖民地，暴露在室外的小人可能受到未知影响</description>
+
+        <skyColorsDay>
+            <sky>(0.95, 0.6, 0.75, 1)</sky>
+            <shadow>(0.9, 0.65, 0.78, 1)</shadow>
+            <overlay>(0.85, 0.5, 0.68, 1)</overlay>
+            <saturation>1.1</saturation>
+        </skyColorsDay>
+
+        <skyColorsDusk>
+            <sky>(0.85, 0.45, 0.65, 1)</sky>
+            <shadow>(0.8, 0.5, 0.68, 1)</shadow>
+            <overlay>(0.75, 0.38, 0.58, 1)</overlay>
+            <saturation>1.05</saturation>
+        </skyColorsDusk>
+
+        <skyColorsNightMid>
+            <sky>(0.45, 0.2, 0.35, 1)</sky>
+            <shadow>(0.48, 0.22, 0.38, 1)</shadow>
+            <overlay>(0.4, 0.18, 0.32, 1)</overlay>
+            <saturation>0.95</saturation>
+        </skyColorsNightMid>
+
+        <skyColorsNightEdge>
+            <sky>(0.55, 0.28, 0.42, 1)</sky>
+            <shadow>(0.58, 0.3, 0.45, 1)</shadow>
+            <overlay>(0.5, 0.25, 0.38, 1)</overlay>
+            <saturation>0.95</saturation>
+        </skyColorsNightEdge>
+
+        <durationRange>30000~90000</durationRange>
+        <rainRate>0.5</rainRate>
+        <isBad>true</isBad>
+        <moveSpeedMultiplier>0.9</moveSpeedMultiplier>
+        <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
+    </WeatherDef>
+    <IncidentDef>
+        <defName>DickRain_Incident</defName>
+        <label>迪克雨来袭</label>
+        <category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>RavenRace.Features.DickRain.IncidentWorker_DickRain</workerClass>
+        <letterLabel>Dick Rain</letterLabel>
+        <letterDef>NeutralEvent</letterDef>
+        <baseChance>0.3</baseChance>
+        <minRefireDays>10</minRefireDays>
+        <durationDays>0.5~1.5</durationDays>
+    </IncidentDef>
+</Defs>
