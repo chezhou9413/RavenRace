@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 建筑：忏悔室 ==================== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Raven_Building_ConfessionBooth</defName>
+    <label>渡鸦忏悔室</label>
+    <description>一个被黑色隔板一分为二的狭窄木间。一边供奉着金乌的神龛，供指定的"修女"端坐；另一边则是信徒的席位。\n\n隔板的中间挖出了一个高度微妙的圆洞，边缘因为长期的摩擦而变得光滑包浆。信徒们将通过这个圆洞，向神圣的修女递交自己那坚挺、肿胀的"罪恶"，换取内心的平静与救赎。\n\n使用方法：\n1. 选中建筑，点击"指定修女"绑定一名女性成员。\n2. 让任意异性（非修女）右键建筑选择进行"忏悔"。\n3. 双方将同时进入建筑内部。完成忏悔后，信徒将消除一个随机负面记忆。</description>
+    <thingClass>RavenRace.Features.MiscSmallFeatures.ConfessionBooth.Building_ConfessionBooth</thingClass>
+    <graphicData>
+      <texPath>Buildings/MiscSmallFeatures/ConfessionBooth/ConfessionBooth</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <shadowData>
+        <volume>(1.8, 1.0, 0.8)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(2,1)</size>
+    <!-- 必须设置为 Normal，否则默认值为 Never，Tick() 永远不会被调用 -->
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.8</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <rotatable>true</rotatable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+
+    <costList>
+      <WoodLog>100</WoodLog>
+      <Cloth>30</Cloth>
+      <Steel>20</Steel>
+    </costList>
+
+    <comps>
+      <!-- 使用我们自定义的修女分配组件 -->
+      <li Class="RavenRace.Features.MiscSmallFeatures.ConfessionBooth.CompProperties_AssignableToNun">
+        <maxAssignedPawnsCount>1</maxAssignedPawnsCount>
+        <drawAssignmentOverlay>true</drawAssignmentOverlay>
+      </li>
+    </comps>
+
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+
+    <designationCategory>Raven_Category</designationCategory>
+    <researchPrerequisites>
+      <li>RavenResearch_Reproduction</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <!-- ==================== 2. 工作：进入忏悔室 ==================== -->
+  <JobDef>
+    <defName>Raven_Job_EnterConfessionBooth</defName>
+    <driverClass>RavenRace.Features.MiscSmallFeatures.ConfessionBooth.JobDriver_EnterConfessionBooth</driverClass>
+    <reportString>正在进入忏悔室。</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <!-- ==================== 3. 状态 (Hediffs) ==================== -->
+  <!-- 信徒的 Hediff -->
+  <HediffDef>
+    <defName>Raven_Hediff_PurifiedByLust</defName>
+    <label>肉欲净罪</label>
+    <description>将积压已久的压力与浓稠的体液，尽数贯穿进隔板后那看不见脸的神圣修女体内。在黑暗与狭窄的空间中，被温暖紧致的肉壁死死吸吮直到彻底榨干。此刻，心中只有如同贤者般的空灵与轻松。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.9, 0.6)</defaultLabelColor>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+          <RestRateMultiplier>1.2</RestRateMultiplier>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 修女的 Hediff -->
+  <HediffDef>
+    <defName>Raven_Hediff_NunReceptacle</defName>
+    <label>罪恶容器</label>
+    <description>黑暗的隔板后，下半身被一根又一根陌生的炽热阳具无情地贯穿、内射。作为承载信徒们罪恶的容器，子宫里早已被灌满了浓浊腥臭的精液，从小穴中不断溢出，泥泞不堪。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.4, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>-0.1</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.05</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ==================== 4. 心情 (Thoughts) ==================== -->
+  <ThoughtDef>
+    <defName>Raven_Thought_ConfessedSin</defName>
+    <durationDays>2.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>完美的忏悔</label>
+        <description>啊……隔板后那神圣的通道，紧致得快要让人疯掉。所有的烦恼和罪恶，都被连同着体液一起彻底抽干了……</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Raven_Thought_AbsorbedSin</defName>
+    <durationDays>2.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>承受罪恶(修女)</label>
+        <description>咕啾……好烫……信徒们的罪恶，好浓稠……我都收下了……请尽情地弄脏我吧……</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

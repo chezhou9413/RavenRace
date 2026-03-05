@@ -54,6 +54,15 @@ namespace RavenRace.Settings
             listing.Gap();
 
 
+            // ==========================================
+            // 4. 忏悔室 [新增]
+            // ==========================================
+            listing.Label("=== 忏悔室设置 ===");
+            listing.Label($"忏悔持续时间: {s.confessionDurationHours:F1} 游戏小时");
+            listing.SubLabel("两人进入忏悔室后在里面“宣泄罪恶”所需要花费的时间。", 1f);
+            s.confessionDurationHours = listing.Slider(s.confessionDurationHours, 0.1f, 5.0f);
+            listing.Gap();
+
 
 
 

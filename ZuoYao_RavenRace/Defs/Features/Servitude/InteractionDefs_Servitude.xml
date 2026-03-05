@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <InteractionDef>
+    <defName>Raven_Interaction_Seduce</defName>
+    <label>seduce</label>
+    <workerClass>RavenRace.Features.Servitude.InteractionWorker_Seduce</workerClass>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef]向[RECIPIENT_nameDef]发起了主动的求爱。</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+</Defs>

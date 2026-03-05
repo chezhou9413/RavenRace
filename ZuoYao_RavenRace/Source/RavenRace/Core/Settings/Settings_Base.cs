@@ -78,9 +78,19 @@ namespace RavenRace.Settings
 
                 listing.SubLabel("注：如果所有概率均未触发，大统领将空手而归并提示。", 0.8f);
             }
+
+
+            // [新增] 侍奉系统设置
+            listing.GapLine();
+            listing.Label("=== 侍奉系统设置 ===");
+            listing.Label($"侍奉互动基础触发率: {s.servitudeInteractionChance:P0}");
+            s.servitudeInteractionChance = listing.Slider(s.servitudeInteractionChance, 0f, 1f);
+            listing.Label($"侍奉互动冷却时间倍率: {s.servitudeCooldownMultiplier:P0}");
+            s.servitudeCooldownMultiplier = listing.Slider(s.servitudeCooldownMultiplier, 0.1f, 5f);
+            listing.SubLabel("调整侍奉者主动执行各种互动的频率。触发率为每次AI检测时的基础概率，冷却倍率会缩放所有互动的冷却时间。调整侍奉者主动执行各种互动的频率。触发率为每次AI检测时的基础概率，冷却倍率会缩放所有互动的冷却时间。", -1f);
+
+
+
         }
-
-
-
     }
 }

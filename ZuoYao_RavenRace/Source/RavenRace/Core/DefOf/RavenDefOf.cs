@@ -203,6 +203,14 @@ namespace RavenRace
         // 暖床 (我想把这个也放到MiscSmallFeatures下）
         public static ThoughtDef Raven_Thought_Snuggle;             // 暖床 (个人心情)
 
+        // 忏悔室相关 [新增]
+        public static ThingDef Raven_Building_ConfessionBooth;
+        public static JobDef Raven_Job_EnterConfessionBooth;
+        public static HediffDef Raven_Hediff_PurifiedByLust;
+        public static HediffDef Raven_Hediff_NunReceptacle;
+        public static ThoughtDef Raven_Thought_ConfessedSin;
+        public static ThoughtDef Raven_Thought_AbsorbedSin;
+
 
         // ===================================================
         // Features: Ideology & Culture - 文化与风格
@@ -214,6 +222,20 @@ namespace RavenRace
         // 戒律引用 (用于逻辑检查，虽然大部分在XML处理)
         public static PreceptDef Lovin_FreeApproved;             // 肉欲：推崇
         public static PreceptDef Corpses_DontCare;               // 尸体：漠视
+
+
+        // ===================================================
+        // Features: Servitude - 侍奉系统
+        // ===================================================
+        public static InteractionDef Raven_Interaction_Seduce;//色诱
+        public static ThoughtDef Raven_Thought_HasServant;//有仆人想法
+        public static ThoughtDef Raven_Thought_IsServant;//有主人想法
+
+        //各项侍奉互动
+        public static JobDef Raven_Job_FollowMaster;//跟随
+        public static JobDef Raven_Job_CleanseMaster;//擦拭身体
+        public static JobDef Raven_Job_LapPillow;//膝枕
+        public static JobDef Raven_Job_FeedMaster;//喂食
 
 
         // ===================================================

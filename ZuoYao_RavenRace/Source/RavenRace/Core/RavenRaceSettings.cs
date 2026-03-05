@@ -32,6 +32,9 @@ namespace RavenRace
         public float greatRavenItemChance = 0.04f;      // 【生物】渡鸦大统领寻宝时，发现金制品的概率。
         public float greatRavenCubeChance = 0.01f;      // 【生物】渡鸦大统领寻宝时，发现“齁金魔方”的概率。
 
+        public float servitudeInteractionChance = 0.1f;    // 【侍奉】侍奉者主动发起互动的基础概率。
+        public float servitudeCooldownMultiplier = 1.0f;   // 【侍奉】侍奉者所有互动冷却时间的全局倍率。
+
         // ===================================================
         // 2. 血脉系统 (Bloodline)
         // ===================================================
@@ -129,6 +132,7 @@ namespace RavenRace
         public bool avDisableTolerance = false;
         public float bathtubJoyWeightMultiplier = 1.0f;
         public bool bathtubDisableTolerance = false;
+        public float confessionDurationHours = 1.0f;        // 忏悔室持续时间
 
         // ===================================================
         // UI 状态与逻辑
@@ -218,6 +222,9 @@ namespace RavenRace
             Scribe_Values.Look(ref greatRavenItemChance, "greatRavenItemChance", 0.04f);
             Scribe_Values.Look(ref greatRavenCubeChance, "greatRavenCubeChance", 0.01f);
 
+            Scribe_Values.Look(ref servitudeInteractionChance, "servitudeInteractionChance", 0.1f);            // [新增] 侍奉系统
+            Scribe_Values.Look(ref servitudeCooldownMultiplier, "servitudeCooldownMultiplier", 1.0f);            // [新增] 侍奉系统
+
             // --- 2. 血脉系统 ---
             Scribe_Values.Look(ref bloodlineInheritanceStrength, "bloodlineInheritanceStrength", 1.0f);
             Scribe_Values.Look(ref goldenCrowDecayRate, "goldenCrowDecayRate", 0.1f);
@@ -298,6 +305,10 @@ namespace RavenRace
             Scribe_Values.Look(ref avDisableTolerance, "avDisableTolerance", false);
             Scribe_Values.Look(ref bathtubJoyWeightMultiplier, "bathtubJoyWeightMultiplier", 1.0f);
             Scribe_Values.Look(ref bathtubDisableTolerance, "bathtubDisableTolerance", false);
+            Scribe_Values.Look(ref confessionDurationHours, "confessionDurationHours", 1.0f); // 忏悔室
+
+
+
         }
 
         public void OnSettingsChanged()

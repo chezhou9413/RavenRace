@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- [错误修复] 必须使用一个具体的 Def 子类作为顶级标签 -->
+  <RavenRace.Features.Servitude.ServitudeConfigDef>
+    <defName>Raven_ServitudeBond</defName>
+    <label>侍奉关系</label>
+    <description>一种定义主奴关系的配置。</description>
+    <modExtensions>
+      <li Class="RavenRace.Features.Servitude.ServitudeDefExtension">
+        <interactions>
+          <!-- 1. 主动勾引 -->
+          <li Class="RavenRace.Features.Servitude.ServitudeInteraction">
+            <jobDef>Raven_Job_ForceLovin</jobDef>
+            <fleckDef>Heart</fleckDef>
+            <letterLabel>情欲的邀约</letterLabel>
+            <letterText>{SERVANT_nameDef} 向 {MASTER_nameDef} 投去了渴求的目光，TA的身体已经做好了准备...</letterText>
+            <baseChance>0.1</baseChance>
+            <cooldownTicks>15000</cooldownTicks>
+          </li>
+
+          <!-- 2. 擦拭身体 -->
+          <li Class="RavenRace.Features.Servitude.ServitudeInteraction">
+            <jobDef>Raven_Job_CleanseMaster</jobDef>
+            <requiredMasterJobDef>Raven_Job_TakeSlimeBath</requiredMasterJobDef>
+            <fleckDef>HealingCross</fleckDef>
+            <letterLabel>贴心的服侍</letterLabel>
+            <letterText>看到正在黏液浴中享受的 {MASTER_nameDef}，{SERVANT_nameDef} 贴心地走上前去为TA擦拭身体。</letterText>
+            <baseChance>0.8</baseChance>
+            <cooldownTicks>6000</cooldownTicks>
+          </li>
+
+          <!-- 3. 膝枕 -->
+          <li Class="RavenRace.Features.Servitude.ServitudeInteraction">
+            <jobDef>Raven_Job_LapPillow</jobDef>
+            <fleckDef>Heart</fleckDef>
+            <letterLabel>温柔的膝枕</letterLabel>
+            <letterText>{SERVANT_nameDef} 温柔地让 {MASTER_nameDef} 枕在TA的大腿上，希望能让主人好好休息一下。</letterText>
+            <baseChance>0.05</baseChance>
+            <cooldownTicks>30000</cooldownTicks>
+          </li>
+
+          <!-- 4. 喂食 -->
+          <li Class="RavenRace.Features.Servitude.ServitudeInteraction">
+            <jobDef>Raven_Job_FeedMaster</jobDef>
+            <letterLabel>投喂</letterLabel>
+            <letterText>{SERVANT_nameDef} 找到了一些食物，小心翼翼地喂给 {MASTER_nameDef}。</letterText>
+            <baseChance>0.08</baseChance>
+            <cooldownTicks>20000</cooldownTicks>
+          </li>
+          
+        </interactions>
+      </li>
+    </modExtensions>
+  </RavenRace.Features.Servitude.ServitudeConfigDef>
+
+</Defs>
