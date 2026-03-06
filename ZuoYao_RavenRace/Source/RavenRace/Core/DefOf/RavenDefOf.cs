@@ -175,7 +175,18 @@ namespace RavenRace
         public static ThingDef Filth_RavenBodilyFluid;          // 特殊体液污渍
         public static HediffDef Raven_Hediff_FluidAccelerator;     // 液体促进器Hediff
 
-      // ===================================================
+
+        // ===================================================
+        // Features: Hypnosis - 催眠App
+        // ===================================================
+        public static ThingDef Raven_Item_HypnosisApp;
+        public static JobDef Raven_Job_HypnoticSelfPleasure;
+        public static InteractionDef Raven_Interaction_HypnosisCmd;
+
+
+
+
+        // ===================================================
         // Features: MiscSmallFeatures - 不好分类的小Feature
         // ===================================================
 

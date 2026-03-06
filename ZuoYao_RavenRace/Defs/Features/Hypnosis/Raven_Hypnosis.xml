@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 催眠App 物品定义 ==================== -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_Item_HypnosisApp</defName>
+    <label>催眠App终端</label>
+    <description>一个装载了名为“深红迷梦”非法软件的便携终端。这是一次性消耗品。\n\n使用时，将其对准目标进行“生物特征锁定”。一旦锁定成功，使用者的生物波将与目标的潜意识建立永久的【催眠链路】。\n\n之后，使用者可以通过该终端的后台权限，随时随地强制目标执行特定的肢体指令。</description>
+    
+    <graphicData>
+      <texPath>Items/Misc/HypnosisApp/HypnosisApp</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    
+    <statBases>
+      <MarketValue>800</MarketValue>
+      <Mass>0.2</Mass>
+      <WorkToMake>1200</WorkToMake>
+    </statBases>
+    
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>Artifacts</li>
+    </thingCategories>
+    <stackLimit>1</stackLimit>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Intellectual>6</Intellectual>
+      </skillRequirements>
+    </recipeMaker>
+
+    <costList>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Steel>20</Steel>
+      <Raven_DarkfeatherSteel>5</Raven_DarkfeatherSteel>
+    </costList>
+
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>启动催眠绑定程序</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      
+      <li Class="CompProperties_Targetable">
+        <compClass>CompTargetable_SinglePawn</compClass>
+      </li>
+      
+      <!-- 核心绑定组件 -->
+      <li Class="CompProperties_UseEffect">
+        <compClass>RavenRace.Features.Hypnosis.CompTargetEffect_HypnosisBind</compClass>
+      </li>
+      
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== 2. 强制自慰 Job定义 ==================== -->
+  <JobDef>
+    <defName>Raven_Job_HypnoticSelfPleasure</defName>
+    <driverClass>RavenRace.Features.Hypnosis.SelfPleasure.JobDriver_HypnoticSelfPleasure</driverClass>
+    <reportString>正在执行催眠指令：自我慰藉。</reportString>
+    <joyDuration>2000</joyDuration>
+    <joyKind>Raven_AdultEntertainment</joyKind>
+    <casualInterruptible>false</casualInterruptible> <!-- 除非被更暴力的手段打断 -->
+    <suspendable>false</suspendable>
+  </JobDef>
+
+  <!-- ==================== 3. 交互定义 (用于日志) ==================== -->
+  <InteractionDef>
+    <defName>Raven_Interaction_HypnosisCmd</defName>
+    <label>hypnotic command</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>true</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef]身体不受控制地颤抖着，遵从了脑海中的指令。</li>
+        <li>r_logentry->[INITIATOR_nameDef]眼神空洞，开始执行羞耻的命令。</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+</Defs>

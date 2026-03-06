@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 事件定义 ==================== -->
+  <IncidentDef>
+    <defName>Raven_Incident_ReproductionRequest</defName>
+    <label>扶桑繁衍请求</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <!-- 我们给一个基础权重，但 C# 逻辑会拦截它，确保只有左爻叙事者能触发 -->
+    <baseChance>2.0</baseChance>
+    <workerClass>RavenRace.Features.ReproductionRequest.IncidentWorker_ReproductionRequest</workerClass>
+    <letterLabel>繁衍请求</letterLabel>
+    <letterText>一群来自扶桑的渡鸦族女性进入了殖民地。带头的女孩头上有一个特殊的标记，你可以选中一名殖民者，右键与她交涉。</letterText>
+    <letterDef>NeutralEvent</letterDef>
+  </IncidentDef>
+
+  <!-- ==================== 2. AI 职责 (Duty) ==================== -->
+  <!-- 等待交涉的职责：在指定地点附近闲逛 -->
+  <DutyDef>
+    <defName>Raven_Duty_ReproductionRequest_Wait</defName>
+    <socialModeMax>Normal</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>5</wanderRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <!-- 排队执行交配的职责 -->
+  <DutyDef>
+    <defName>Raven_Duty_ReproductionRequest_Lovin</defName>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="RavenRace.Features.ReproductionRequest.JobGiver_RequestLovin" />
+        <!-- 如果因为某种原因没能拿到交配 Job，就原地闲逛防卡死 -->
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>3</wanderRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <!-- ==================== 3. 动作定义 (Job) ==================== -->
+  <JobDef>
+    <defName>Raven_Job_ReproductionRequestLovin</defName>
+    <driverClass>RavenRace.Features.ReproductionRequest.JobDriver_RequestLovin</driverClass>
+    <reportString>正在疯狂榨取TargetA的生命精华。</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <!-- 完美挂载你原有的组件，执行完自动增加交配次数 -->
+    <modExtensions>
+      <li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" />
+    </modExtensions>
+  </JobDef>
+
+  <!-- ==================== 4. 状态与心情 (Hediff & Thought) ==================== -->
+  <!-- 男性的榨干状态 -->
+  <HediffDef>
+    <defName>Raven_Hediff_SqueezedDry</defName>
+    <label>被彻底榨干</label>
+    <description>这具身体刚刚经历了一场超乎常人想象的连环榨取。由于极度的快感和体力的透支，现在双腿发软，大脑一片空白，只剩下浓稠的回味。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.4, 0.8)</defaultLabelColor>
+    <isBad>false</isBad> <!-- 虽然掉属性，但不是坏事，因为很爽 -->
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>15000</disappearsAfterTicks> <!-- 现实约 4 分钟 -->
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>-0.30</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.10</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 男性想法：肉怒器 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_SqueezedByGroup</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>肉欲的祭品</label>
+        <description>被一群如狼似虎的渡鸦大姐姐按在墙上排队榨取...像个毫无尊严的配种机器一样，连一滴都不剩了。但...这种感觉实在是太爽了！</description>
+        <baseMoodEffect>25</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- 女性想法：生命狂宴 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_GroupLovinParticipant</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>生命狂宴</label>
+        <description>大家一起分享了一场极其奢靡的生命狂宴。那种温热浓稠的精华填满子宫的感觉，真是太棒了...</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+  <!-- ==================== 5. (新增) 交涉工作定义 ==================== -->
+  <JobDef>
+    <defName>Raven_Job_NegotiateWithLeader</defName>
+    <driverClass>RavenRace.Features.ReproductionRequest.JobDriver_NegotiateWithLeader</driverClass>
+    <reportString>正在与扶桑领队交涉。</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+
+
+
+</Defs>

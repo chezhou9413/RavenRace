@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== 1. 状态 Hediff ==================== -->
+  <HediffDef>
+    <defName>Raven_Hediff_HypnoticTrance</defName>
+    <label>催眠指令执行中</label>
+    <description>这个人的潜意识完全被外部终端接管。身体像提线木偶一样自动执行着羞耻的指令，虽然意识清醒，却无法控制哪怕一根手指。\n\n“身体...好热...停不下来...”</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.4, 0.8)</defaultLabelColor> <!-- 粉色 -->
+    <isBad>true</isBad> <!-- 算作负面状态，虽然可能是爽的 -->
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>2500</min> <!-- 兜底消失时间，防止Job意外中断后残留 -->
+          <max>2500</max>
+        </disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.3</offset> <!-- 动作变得迟缓僵硬 -->
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ==================== 2. 结果 Thought ==================== -->
+  <ThoughtDef>
+    <defName>Raven_Thought_HypnoticSelfPleasure</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>被强制自我慰藉</label>
+        <description>那个设备...只是按了一下，我的手就开始自己动起来了...在大庭广众之下做那种事，甚至还因为快感叫出了声...即使结束后，那种被完全支配的战栗感依然残留在脊髓里。</description>
+        <baseMoodEffect>-5</baseMoodEffect> <!-- 羞耻感导致心情下降，或者是特殊癖好？暂时设为负 -->
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- ==================== 3. 指令定义 (CommandDef) ==================== -->
+  <!-- 这就是以后你扩展功能的地方，加一个 Def 就是加一个按钮 -->
+  
+  <RavenRace.Features.Hypnosis.Commands.HypnosisCommandDef>
+    <defName>Raven_HypnosisCmd_SelfPleasure</defName>
+    <label>指令：自我慰藉</label>
+    <description>强制目标在原地进行自慰，无视周围环境。</description>
+    <iconPath>UI/Hypnosis/Action_SelfPleasure</iconPath>
+    <order>1</order>
+    
+    <!-- 关联的 Job (之前定义的) -->
+    <jobDef>Raven_Job_HypnoticSelfPleasure</jobDef>
+    
+    <!-- 关联的状态和结果 -->
+    <activeHediffDef>Raven_Hediff_HypnoticTrance</activeHediffDef>
+    <outcomeThoughtDef>Raven_Thought_HypnoticSelfPleasure</outcomeThoughtDef>
+  </RavenRace.Features.Hypnosis.Commands.HypnosisCommandDef>
+
+</Defs>
