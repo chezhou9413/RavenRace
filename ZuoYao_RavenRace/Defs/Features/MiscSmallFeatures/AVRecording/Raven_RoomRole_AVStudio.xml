@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- AV摄影房 房间类型定义 -->
+  <RoomRoleDef>
+    <defName>Raven_RoomRole_AVStudio</defName>
+    <label>AV摄影房</label>
+    <!-- 指向我们自定义的 C# 打分逻辑 -->
+    <workerClass>RavenRace.Features.MiscSmallFeatures.AVRecording.RoomRoleWorker_AVStudio</workerClass>
+  </RoomRoleDef>
+</Defs>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 1. 普通版 AV 影像 -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_Item_AVRecord</defName>
+    <label>特供限制级影像</label>
+    <description>一部未经任何圣光处理的成人影片。里面记录了极度私密且露骨的肉体交流过程，画面充满情欲与疯狂。对于地下黑市的特殊收藏家来说，这件物品是无价的泄欲圣品。</description>
+    <graphicData>
+      <!-- 指向独立的贴图路径 -->
+      <texPath>Items/Misc/AVRecord/AVRecord</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <!-- 基础价值很高 -->
+      <MarketValue>800</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>10</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+      <li>Artifacts</li>
+    </thingCategories>
+    <tradeTags>
+      <li>Art</li>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <comps>
+      <!-- 我们自定义的影像记录及描述生成组件 -->
+      <li Class="RavenRace.Features.MiscSmallFeatures.AVRecording.CompProperties_AVRecord" />
+    </comps>
+    <stackLimit>1</stackLimit>
+  </ThingDef>
+
+  <!-- 2. 典藏版 AV 影像 (仅在专业 AV摄影房 产出) -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>Raven_Item_AVRecord_Premium</defName>
+    <label>典藏版情色大片</label>
+    <description>在专业的“AV摄影房”中通过多机位全息捕捉、并经过精心剪辑的典藏版成人影片。其画质之清晰，连最细微的汁水飞溅、肉体战栗和极乐时的翻白眼都能完美重现。它是无数黑市商人梦寐以求的绝品。</description>
+    <graphicData>
+      <texPath>Items/Misc/AVRecord/AVRecord_Premium</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <!-- 价值直接翻三倍以上，刺激玩家专门造房 -->
+      <MarketValue>2500</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>50</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+      <li>Artifacts</li>
+    </thingCategories>
+    <tradeTags>
+      <li>Art</li>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <comps>
+      <li Class="RavenRace.Features.MiscSmallFeatures.AVRecording.CompProperties_AVRecord" />
+    </comps>
+    <stackLimit>1</stackLimit>
+  </ThingDef>
+</Defs>

@@ -196,9 +196,15 @@ namespace RavenRace
         public static JobDef Raven_Job_DimensionalClimax;      // 次元高潮工作
         public static ThoughtDef Raven_Thought_MasturbatedWithCup; // 使用飞机杯心情
 
-        //AV相关
+        //看AV相关
         public static ThoughtDef Raven_Thought_WatchedAV;     // 观看AV心情
         public static JoyKindDef Raven_AdultEntertainment;    // 成人娱乐类型
+
+        //AV摄影系统
+        public static RoomRoleDef Raven_RoomRole_AVStudio;    // AV摄影房
+        public static ThingDef Raven_Building_AVCamera;       // AV摄影机
+        public static ThingDef Raven_Item_AVRecord;           // 普通录像带
+        public static ThingDef Raven_Item_AVRecord_Premium;   // 典藏录像带
 
         // 黏液浴缸相关
         public static ThingDef Raven_Building_SlimeBathtub; // 黏液浴缸
