@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 艾吉斯的专属渲染树 -->
+  <PawnRenderTreeDef>
+    <defName>Raven_Mech_Aegis_RenderTree</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        
+        <!-- 1. 身体 (高洁的修女服与仿生肌肤) -->
+        <li>
+          <debugLabel>Aegis Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <texPath>Races/Raven/Special/MechAngel/Body/MechAngel_Body</texPath>
+          <drawSize>1.5</drawSize>
+          <baseLayer>10</baseLayer>
+        </li>
+
+        <!-- 2. 头部 -->
+        <li>
+          <debugLabel>Aegis Head</debugLabel>
+          <tagDef>Head</tagDef>
+          <texPath>Races/Raven/Special/MechAngel/Head/MechAngel_Head</texPath>
+          <drawSize>1.5</drawSize>
+          <baseLayer>20</baseLayer>
+          <drawData>
+            <defaultData>
+              <offset>(0, 0, 0.35)</offset>
+            </defaultData>
+          </drawData>
+        </li>
+
+        <!-- 3. 正常眼睛 (高洁、无机质) -->
+        <li>
+          <debugLabel>Aegis Eyes Normal</debugLabel>
+          <!-- 挂载我们写的 C# 渲染判断器 -->
+          <workerClass>RavenRace.Features.MechanicalAngel.PawnRenderNodeWorker_AegisEyes_Normal</workerClass>
+          <texPath>Races/Raven/Special/MechAngel/Eyes/Normal_Eyes</texPath>
+          <drawSize>1.5</drawSize>
+          <baseLayer>25</baseLayer> 
+          <drawData>
+            <defaultData>
+              <offset>(0, 0, 0.35)</offset>
+            </defaultData>
+          </drawData>
+        </li>
+
+        <!-- 4. 发情眼睛 (粉色、爱心高光、盈满水雾) -->
+        <li>
+          <debugLabel>Aegis Eyes Pink</debugLabel>
+          <!-- 挂载我们写的 C# 渲染判断器 -->
+          <workerClass>RavenRace.Features.MechanicalAngel.PawnRenderNodeWorker_AegisEyes_Pink</workerClass>
+          <texPath>Races/Raven/Special/MechAngel/Eyes/Pink_Eyes</texPath>
+          <drawSize>1.5</drawSize>
+          <baseLayer>25</baseLayer> 
+          <drawData>
+            <defaultData>
+              <offset>(0, 0, 0.35)</offset>
+            </defaultData>
+          </drawData>
+        </li>
+
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>

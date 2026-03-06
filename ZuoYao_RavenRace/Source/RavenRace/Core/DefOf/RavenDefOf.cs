@@ -183,6 +183,16 @@ namespace RavenRace
         public static JobDef Raven_Job_HypnoticSelfPleasure;
         public static InteractionDef Raven_Interaction_HypnosisCmd;
 
+        // ===================================================
+        // Features: Mechanical Angel - 堕落的机械天使
+        // ===================================================
+        public static ThingDef Raven_Mech_Aegis;
+
+        public static JobDef Raven_Job_AegisLustCharge;
+        public static HediffDef Raven_Hediff_AegisDrained;
+        public static ThoughtDef Raven_Thought_AegisDrained;
+
+
 
 
 

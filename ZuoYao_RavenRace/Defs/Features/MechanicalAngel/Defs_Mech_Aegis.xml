@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== 艾吉斯 机械体定义 ==================== -->
+  <ThingDef ParentName="BaseMechanoidWalker">
+    <defName>Raven_Mech_Aegis</defName>
+    <label>机械天使“艾吉斯”</label>
+    <description>曾是某个陨落的超凡帝国用于守卫圣地的极高阶兵器。从外观上看，她拥有着与人类美少女毫无二致的无瑕肌肤。这种采用顶级仿生硅胶与活性细胞编织的外壳，触感不仅比人类更加柔软细腻，还能完美模拟出体温与心跳。\n\n然而，这台象征着神圣与不可侵犯的机体，被扶桑组织的渡鸦技师捕获，并加以了“奇妙”的改造。她那原本储存圣洁能量的聚变核心，被改造成了必须汲取高浓度生命体液才能运转的“淫能”引擎。为了最高效地榨取能量，她的内部穴道被彻底改造：内置了能够进行多段式蠕动的微型伺服电机、产生恐怖吸附力的真空阀门，以及常态保持在令人发狂的舒适温度的超凡子宫。\n\n如今，这台披着修女服的终极兵器，虽然依旧保留着神乎其技的医疗水平，但其存在意义已经被彻底定义为对“主人”绝对服从、渴求精液的榨汁机器。</description>
+    <statBases>
+      <MoveSpeed>6.5</MoveSpeed>
+      <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
+      <!-- 医疗神明：极高的基础医疗属性 -->
+      <MedicalTendQuality>2.5</MedicalTendQuality>
+      <MedicalSurgerySuccessChance>2.0</MedicalSurgerySuccessChance>
+      <!-- 【核心修复】不产生任何污染废料！ -->
+      <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">0</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>Human</body> 
+      <baseBodySize>1.0</baseBodySize>
+      <mechWeightClass>Medium</mechWeightClass>
+
+      <!-- 【核心修复】：告诉系统使用我们自定义的渲染树 -->
+      <renderTree>Raven_Mech_Aegis_RenderTree</renderTree>
+      <thinkTreeMain>Raven_Aegis_ThinkTree</thinkTreeMain>
+
+
+      <mechEnabledWorkTypes>
+        <li>Doctor</li>
+        <li>Warden</li> 
+      </mechEnabledWorkTypes>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="ChezhouLib.ClThingComp.ThingCompProperties_RaceFly">      <!-- 飞行组件：继承渡鸦族的高机动性 -->
+        <flySpeed>8.0</flySpeed>
+        <diagonalSpeed>2.0</diagonalSpeed>
+        <drawHeight>4</drawHeight>
+        <hoverSize>0.1</hoverSize>
+        <hoverSpeed>3.0</hoverSpeed>
+        <autoLandingJobDefs>
+          <li>MechCharge</li>
+          <li>Raven_Job_AegisLustCharge</li>
+        </autoLandingJobDefs>
+        <crashOnDowned>true</crashOnDowned>
+        <crashLandingMode>Teleport</crashLandingMode>
+      </li>
+      <li Class="RavenRace.Features.MechanicalAngel.CompProperties_AegisCore" />    <!-- 艾吉斯专属组件：控制主动榨汁的开关 -->
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== 艾吉斯 PawnKind ==================== -->
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>Raven_Mech_Aegis</defName> <!-- 恢复与 ThingDef 同名 -->
+    <label>机械天使“艾吉斯”</label>
+    <race>Raven_Mech_Aegis</race>
+    <combatPower>250</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <!-- 兜底用透明贴图 -->
+          <texPath>Races/Raven/Hair/Transparent</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ==================== 孕育配方 (极度恶堕版) ==================== -->
+  <RecipeDef>
+    <defName>Make_Raven_Mech_Aegis</defName>
+    <label>堕化重塑：机械天使</label>
+    
+    <!-- 露骨的调教过程描述 -->
+    <description>启动调教舱的极限堕化程序。将纯洁的机械残躯与破碎日核投入其中，开始深度的机体改造与肉道重塑。\n\n在漫长的三个调教周期里，无数粗糙的管线将插满她的每一个腔道，日夜不停地注入催情素并进行超高频率的震动刮擦。当“子宫恶堕”、“感官重写”与“常时发情”三个阶段的程序全部读条完毕后，那具曾经高高在上的神圣躯体，将在翻白眼的剧烈高潮中彻底崩溃，醒来时已是一具只认得主人肉棒的终极性爱机械。</description>
+    
+    <jobString>正满脸淫笑地监控着调教舱的恶堕开发进度。</jobString>
+    
+    <!-- 初始装填需要的工作量 -->
+    <workAmount>12000</workAmount> 
+    
+    <researchPrerequisite>HighMechtech</researchPrerequisite>
+    
+    <!-- 极其重要：指定只能在我们的“堕化调教舱”里制造！ -->
+    <recipeUsers>
+      <li>Raven_Building_AngelGestator</li>
+    </recipeUsers>
+    
+    <!-- 材料需求 -->
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>150</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>8</count></li>
+      <li><filter><thingDefs><li>Raven_ShatteredSunCore</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>SubcoreHigh</li></thingDefs></filter><count>1</count></li>
+      <!-- 额外加入七情花蜜作为高浓度催情原料 -->
+      <li><filter><thingDefs><li>RavenItem_SevenEmotionsNectar</li></thingDefs></filter><count>20</count></li>
+    </ingredients>
+    
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>ComponentSpacer</li>
+        <li>Raven_ShatteredSunCore</li>
+        <li>SubcoreHigh</li>
+        <li>RavenItem_SevenEmotionsNectar</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+
+    <!-- 产物：艾吉斯 -->
+    <products>
+      <Raven_Mech_Aegis>1</Raven_Mech_Aegis>
+    </products>
+    
+    <!-- 【调教周期设置】：分为3个阶段，需要机械师来回检查3次 -->
+    <!-- 总耗时约 3 天，模拟漫长的洗脑与肉体改造 -->
+    <formingTicks>180000</formingTicks> 
+    <gestationCycles>3</gestationCycles> 
+    
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <descriptionHyperlinks>
+      <ThingDef>Raven_Mech_Aegis</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+  <!-- ==================== 专属 Job ==================== -->
+  <JobDef>
+    <defName>Raven_Job_AegisLustCharge</defName>
+    <driverClass>RavenRace.Features.MechanicalAngel.JobDriver_AegisLustCharge</driverClass>
+    <reportString>正骑在主人身上，用高超的技巧和温热的人造肉道强制榨取体液...</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Always</checkOverrideOnDamage>
+  </JobDef>
+
+  <!-- ==================== 榨干 Hediff ==================== -->
+  <HediffDef>
+    <defName>Raven_Hediff_AegisDrained</defName>
+    <label>绝顶榨干(机械天使)</label>
+    <description>被机械天使进行了高强度的“淫能充能”。\n\n那完美拟真的湿热黏膜、完全贴合尺寸的肉壁，加上内部恐怖的真空吸附机制与规律震动的微型齿轮……这副专为榨精而重构的兵器躯体，毫不留情地抽干了主人的最后一滴体液。虽然双腿发软站都站不稳，大脑也被强制绝顶搞得一片空白，但那宛如直达天堂的余韵却让人完全无法抗拒。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.4, 0.7)</defaultLabelColor>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>60000</min> <!-- 持续1天 -->
+          <max>60000</max>
+        </disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>-0.5</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.1</offset></li>
+        </capMods>
+        <statOffsets>
+          <WorkSpeedGlobal>-0.3</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ==================== 榨干 心情 ==================== -->
+  <ThoughtDef>
+    <defName>Raven_Thought_AegisDrained</defName>
+    <durationDays>1.0</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>升天的极乐</label>
+        <description>太可怕了……那根本不是人类能有的内部构造。无数次高潮后，她软弹的内壁依然死死咬住我不放，像是要把灵魂连同体液一起抽干。可是……那种温暖包裹着每一寸神经的感觉……我还想再进去一次。</description>
+        <baseMoodEffect>30</baseMoodEffect> 
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
