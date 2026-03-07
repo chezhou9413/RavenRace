@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿// 为侍奉系统的AI添加RJW兼容性。
+using Verse;
 using Verse.AI;
 using RimWorld;
 using System.Linq;
@@ -125,6 +126,25 @@ namespace RavenRace.Features.Servitude
                             new LookTargets(servant, master));
                     }
 
+                    // 【核心RJW兼容修改】
+                    // 如果侍奉互动是“强制求爱”，并且RJW已激活，则将Job替换为RJW的性爱Job。
+                    if (interaction.jobDef == RavenDefOf.Raven_Job_ForceLovin && ModsConfig.IsActive("rim.job.world"))
+                    {
+                        // 通过DefName安全地获取RJW的JobDef，避免硬依赖导致报错。
+                        JobDef rjwJobDef = DefDatabase<JobDef>.GetNamed("rjw_fuck", false);
+                        if (rjwJobDef != null)
+                        {
+                            // 找到了RJW的Job，创建并返回它。
+                            Log.Message($"[RavenRace Servitude] RJW is active. Redirecting seduction from {servant.LabelShort} to {master.LabelShort} to use 'rjw_fuck' job.");
+                            return JobMaker.MakeJob(rjwJobDef, master);
+                        }
+                        else
+                        {
+                            // 这是一个异常情况：RJW已激活但找不到基础Job，记录警告并回退到原版行为。
+                            Log.Warning("[RavenRace Servitude] RJW is active, but 'rjw_fuck' JobDef was not found. Falling back to vanilla ForceLovin job.");
+                        }
+                    }
+
                     // 特殊处理喂食寻找食物
                     if (interaction.jobDef == RavenDefOf.Raven_Job_FeedMaster)
                     {
@@ -140,7 +160,7 @@ namespace RavenRace.Features.Servitude
                         return null;
                     }
 
-                    // 执行 Job
+                    // 默认行为或RJW未激活时的回退行为：执行XML中定义的Job。
                     return JobMaker.MakeJob(interaction.jobDef, master, master.Position);
                 }
             }

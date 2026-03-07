@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+            
+            <!-- ==================== 1. 原版：双人床爱爱 (Vanilla: Lovin') ==================== -->
+            <li Class="PatchOperationAddModExtension">
+                <xpath>Defs/JobDef[defName="Lovin"]</xpath>
+                <value>
+                    <li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" />
+                </value>
+            </li>
+
+            <!-- ==================== 2. 渡鸦族：强制求爱 (RavenRace: Force Lovin) ==================== -->
+            <li Class="PatchOperationAddModExtension">
+                <xpath>Defs/JobDef[defName="Raven_Job_ForceLovin"]</xpath>
+                <value>
+                    <li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" />
+                </value>
+            </li>
+
+            <!-- ==================== 3. 渡鸦族：扶桑繁衍请求 (RavenRace: Reproduction Request) ==================== -->
+            <!-- 您的XML中已经添加了，但为了统一管理，在此处重复添加是安全的。如果原XML中移除，则此处会生效。 -->
+            <li Class="PatchOperationConditional">
+                <xpath>Defs/JobDef[defName="Raven_Job_ReproductionRequestLovin" and not(modExtensions/li[@Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob"])]</xpath>
+                <match Class="PatchOperationAddModExtension">
+                    <xpath>Defs/JobDef[defName="Raven_Job_ReproductionRequestLovin"]</xpath>
+                    <value>
+                        <li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" />
+                    </value>
+                </match>
+            </li>
+
+            <!-- 
+                未来若有其他Mod或您自己添加的新的交配Job，只需按以下格式添加即可：
+                
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>Defs/JobDef[defName="OtherMod_SomeSexJob"]</xpath>
+                    <value>
+                        <li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" />
+                    </value>
+                </li>
+            -->
+
+
+
+<!-- 
+Purpose: (新文件) 统一的交配动作(Lovin' Job)管理补丁。
+所有需要被我们的系统（如“繁衍渴望”Hediff、AV摄影机）识别为交配行为的JobDef，都应在此处打上ModExtension标签。
+这使得未来的兼容和扩展变得极为简单，只需在此处添加一个新的补丁节点即可。
+-->
+
+
+
+
+        </operations>
+    </Operation>
+</Patch>
