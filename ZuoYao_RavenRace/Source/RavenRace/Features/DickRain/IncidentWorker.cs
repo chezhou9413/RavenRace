@@ -10,7 +10,7 @@ namespace RavenRace.Features.DickRain
 {
     public class IncidentWorker_DickRain : IncidentWorker
     {
-        // 获取我们自定义天气的 Def
+        //获取自定义天气的 Def
         private static WeatherDef DickRainWeather => DefDatabase<WeatherDef>.GetNamed("DickRain_Weather");
 
         protected override bool CanFireNowSub(IncidentParms parms)
