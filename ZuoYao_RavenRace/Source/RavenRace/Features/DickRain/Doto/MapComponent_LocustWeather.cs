@@ -20,6 +20,14 @@ namespace RavenRace.Features.DickRain.Doto
         private bool _wasActive;
         private float _spawnProgress;
 
+        private const int HediffCheckInterval = 60;
+        private const float SeverityGainOutdoors = 0.033f;
+        private const float SeverityDecayIndoors = -0.008f;
+        private const float MinSeverityToDecay = 0.05f;
+
+        private HediffDef _arousalDef;
+        private HediffDef ArousalDef => _arousalDef ??= HediffDef.Named("DickRain_Arousal");
+
         private static WeatherDef DickRainWeather =>
             DefDatabase<WeatherDef>.GetNamed("DickRain_Weather");
 
@@ -36,6 +44,7 @@ namespace RavenRace.Features.DickRain.Doto
             ResetToEdge();
             _dataInitialized = true;
         }
+
         private void ResetToEdge()
         {
             float mapH = map.Size.z;
@@ -49,6 +58,35 @@ namespace RavenRace.Features.DickRain.Doto
                 };
             }
             _spawnProgress = 0f;
+        }
+
+        public override void MapComponentTick()
+        {
+            // 用 map.uniqueID 偏移，避免多地图同帧集中计算
+            if ((Find.TickManager.TicksGame + map.uniqueID) % HediffCheckInterval != 0)
+                return;
+
+            bool rainActive = map.weatherManager.curWeather == DickRainWeather;
+
+            foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned)
+            {
+                if (!pawn.RaceProps.Humanlike || pawn.Dead) continue;
+
+                bool outdoors = !pawn.Position.Roofed(map);
+
+                if (rainActive && outdoors)
+                {
+                    HealthUtility.AdjustSeverity(pawn, ArousalDef, SeverityGainOutdoors);
+                }
+                else
+                {
+                    Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(ArousalDef);
+                    if (hediff != null && hediff.Severity > MinSeverityToDecay)
+                    {
+                        HealthUtility.AdjustSeverity(pawn, ArousalDef, SeverityDecayIndoors);
+                    }
+                }
+            }
         }
 
         public override void MapComponentUpdate()
@@ -80,6 +118,7 @@ namespace RavenRace.Features.DickRain.Doto
             if (dt <= 0f) return;
             if (_spawnProgress < 1f)
                 _spawnProgress = Mathf.Clamp01(_spawnProgress + dt / SpawnDuration);
+
             LocustMovementJob moveJob = new LocustMovementJob
             {
                 locusts = _locustsNative,
@@ -93,6 +132,7 @@ namespace RavenRace.Features.DickRain.Doto
             JobHandle handle = moveJob.Schedule(LocustCount, 128);
             handle.Complete();
         }
+
         public override void MapComponentDraw()
         {
             if (!IsDickRainActive) return;
@@ -103,15 +143,18 @@ namespace RavenRace.Features.DickRain.Doto
 
             LocustRenderSystem.Draw(_locustsNative, _locustMat, drawCount);
         }
+
         public override void MapRemoved()
         {
             base.MapRemoved();
             DisposeData();
         }
+
         ~MapComponent_LocustWeather()
         {
             DisposeData();
         }
+
         private void DisposeData()
         {
             if (_locustsNative.IsCreated)

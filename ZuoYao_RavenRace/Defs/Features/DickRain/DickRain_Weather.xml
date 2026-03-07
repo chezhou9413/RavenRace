@@ -3,7 +3,7 @@
     <WeatherDef>
         <defName>DickRain_Weather</defName>
         <label>迪克雨</label>
-        <description>无数的迪卡正在经过你的殖民地，暴露在室外的小人可能受到未知影响</description>
+        <description>无数的迪克正在经过你的殖民地，暴露在室外的小人可能受到未知影响</description>
 
         <skyColorsDay>
             <sky>(0.95, 0.6, 0.75, 1)</sky>

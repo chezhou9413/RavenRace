@@ -1,0 +1,31 @@
+<Defs>
+    <MentalBreakDef>
+        <defName>DickRain_LustBreak</defName>
+        <mentalState>DickRain_LustState</mentalState>
+        <baseCommonality>0</baseCommonality>
+        <intensity>Major</intensity>
+    </MentalBreakDef>
+
+    <MentalStateDef ParentName="BaseMentalState">
+        <defName>DickRain_LustState</defName>
+        <label>欲望难忍</label>
+        <stateClass>RavenRace.Features.DickRain.MentalState_DickRainLust</stateClass>
+        <workerClass>RavenRace.Features.DickRain.MentalStateWorker_DickRainLust</workerClass>
+        <category>Misc</category>
+        <colonistsOnly>false</colonistsOnly>
+        <minTicksBeforeRecovery>500</minTicksBeforeRecovery>
+        <maxTicksBeforeRecovery>2000</maxTicksBeforeRecovery>
+        <recoveryMtbDays>0.05</recoveryMtbDays>
+        <recoverFromSleep>true</recoverFromSleep>
+        <nameColor>(0.95, 0.4, 0.75)</nameColor>
+        <beginLetter>{0} 欲望难忍！\n\n[PAWN_pronoun] 在迪克雨的影响下彻底失控，正在寻找目标。</beginLetter>
+        <beginLetterDef>NegativeEvent</beginLetterDef>
+        <baseInspectLine>精神状态：欲望难忍</baseInspectLine>
+    </MentalStateDef>
+
+    <JobDef>
+        <defName>DickRain_YuwangNanRen</defName>
+        <driverClass>RavenRace.Features.DickRain.JobDriver_YuwangNanRen</driverClass>
+        <reportString>正在发泄……</reportString>
+    </JobDef>
+</Defs>
