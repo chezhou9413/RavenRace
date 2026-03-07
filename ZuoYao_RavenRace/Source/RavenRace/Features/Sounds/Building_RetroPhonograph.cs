@@ -41,7 +41,12 @@ namespace RavenRace.Features.Sounds
                             new FloatMenuOption("制作/建造失败", () => PlaySound(RavenSoundDefOf.RavenMeme_CraftFail)),
                             new FloatMenuOption("被侮辱", () => PlaySound(RavenSoundDefOf.RavenMeme_Insulted)),
                             new FloatMenuOption("死亡", () => PlaySound(RavenSoundDefOf.RavenMeme_PawnDeath)),
-                            new FloatMenuOption("逃跑", () => PlaySound(RavenSoundDefOf.RavenMeme_Fleeing))
+                            new FloatMenuOption("坠机", () => PlaySound(RavenSoundDefOf.RavenMeme_Manba_SeeYouAgain)),
+                            new FloatMenuOption("逃跑", () => PlaySound(RavenSoundDefOf.RavenMeme_Fleeing)),
+                            new FloatMenuOption("啊呀呀", () => PlaySound(RavenSoundDefOf.RavenMeme_Ayaya_Ayaya)),
+                            new FloatMenuOption("杂鱼", () => PlaySound(RavenSoundDefOf.RavenMeme_Zako))
+
+
                         };
                         Find.WindowStack.Add(new FloatMenu(options));
                     }

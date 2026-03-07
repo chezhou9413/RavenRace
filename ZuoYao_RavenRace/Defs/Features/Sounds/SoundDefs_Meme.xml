@@ -174,14 +174,14 @@
 
   <!-- 坠机 -->
   <SoundDef>
-    <defName>Manba_SeeYouAgain</defName>
+    <defName>RavenMeme_Manba_SeeYouAgain</defName>
     <context>MapOnly</context>
     <maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>Meme/Manba_SeeYouAgain</clipPath>
+            <clipPath>Meme/RavenMeme_Manba_SeeYouAgain</clipPath>
           </li>
         </grains>
         <volumeRange>100~100</volumeRange>
@@ -206,7 +206,22 @@
     </subSounds>
   </SoundDef>
 
-
+  <!-- 杂鱼 -->
+  <SoundDef>
+    <defName>RavenMeme_Zako</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Meme/RavenMeme_Zako</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 
 
 </Defs>

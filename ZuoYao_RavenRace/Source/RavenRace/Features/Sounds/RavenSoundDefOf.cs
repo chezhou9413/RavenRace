@@ -18,6 +18,11 @@ namespace RavenRace.Features.Sounds
         public static SoundDef RavenMeme_PawnDeath;
         public static SoundDef RavenMeme_Fleeing;
         public static SoundDef RavenMeme_Ayaya_Ayaya;
+        public static SoundDef RavenMeme_Manba_SeeYouAgain;
+        public static SoundDef RavenMeme_Zako;
+
+
+
 
         static RavenSoundDefOf()
         {
