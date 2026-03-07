@@ -83,6 +83,7 @@
     <Compile Include="Patch_Menstruation.cs" />
     <Compile Include="Patch_RJW_AfterSex.cs" />
     <Compile Include="Patch_SexInteractionHelper.cs" />
+    <Compile Include="Patch_SexualJobs_RJW.cs" />
     <Compile Include="RJWCompat_Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RjwReflection.cs" />

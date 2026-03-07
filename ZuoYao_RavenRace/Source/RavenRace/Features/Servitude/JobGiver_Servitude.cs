@@ -1,5 +1,4 @@
-﻿// 为侍奉系统的AI添加RJW兼容性。
-using Verse;
+﻿using Verse;
 using Verse.AI;
 using RimWorld;
 using System.Linq;
@@ -130,18 +129,16 @@ namespace RavenRace.Features.Servitude
                     // 如果侍奉互动是“强制求爱”，并且RJW已激活，则将Job替换为RJW的性爱Job。
                     if (interaction.jobDef == RavenDefOf.Raven_Job_ForceLovin && ModsConfig.IsActive("rim.job.world"))
                     {
-                        // 通过DefName安全地获取RJW的JobDef，避免硬依赖导致报错。
-                        JobDef rjwJobDef = DefDatabase<JobDef>.GetNamed("rjw_fuck", false);
+                        // [核心修复] RJW 对应的通用自愿站立交配 Job 叫做 "Quickie"，而不是 "rjw_fuck"
+                        JobDef rjwJobDef = DefDatabase<JobDef>.GetNamed("Quickie", false);
                         if (rjwJobDef != null)
                         {
-                            // 找到了RJW的Job，创建并返回它。
-                            Log.Message($"[RavenRace Servitude] RJW is active. Redirecting seduction from {servant.LabelShort} to {master.LabelShort} to use 'rjw_fuck' job.");
+                            Log.Message($"[RavenRace Servitude] RJW is active. Redirecting seduction from {servant.LabelShort} to {master.LabelShort} to use 'Quickie' job.");
                             return JobMaker.MakeJob(rjwJobDef, master);
                         }
                         else
                         {
-                            // 这是一个异常情况：RJW已激活但找不到基础Job，记录警告并回退到原版行为。
-                            Log.Warning("[RavenRace Servitude] RJW is active, but 'rjw_fuck' JobDef was not found. Falling back to vanilla ForceLovin job.");
+                            Log.Warning("[RavenRace Servitude] RJW is active, but 'Quickie' JobDef was not found. Falling back to vanilla ForceLovin job.");
                         }
                     }
 

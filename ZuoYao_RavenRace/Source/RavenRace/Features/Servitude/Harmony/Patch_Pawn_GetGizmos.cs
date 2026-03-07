@@ -12,15 +12,11 @@ namespace RavenRace.Features.Servitude.Harmony
         [HarmonyPostfix]
         public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance)
         {
-            // 首先返回原版及其他Mod的所有Gizmo
             foreach (var gizmo in __result)
             {
                 yield return gizmo;
             }
 
-            // 【核心修改】在这里添加了对 `__instance.RaceProps.Humanlike` 的检查。
-            // 这将确保按钮只对类人生物显示，从而过滤掉动物和机械体。
-            // 结合原有的派系和存活检查，实现了完整的逻辑闭环。
             if (__instance.RaceProps.Humanlike && __instance.Faction == Faction.OfPlayer && !__instance.Dead)
             {
                 var manager = ServitudeManager.Get();
@@ -35,38 +31,63 @@ namespace RavenRace.Features.Servitude.Harmony
                     action = () =>
                     {
                         List<FloatMenuOption> options = new List<FloatMenuOption>();
-                        // 遍历所有自由殖民者作为候选人
                         foreach (Pawn p in __instance.Map.mapPawns.FreeColonists)
                         {
-                            // 不能将自己设为自己的侍奉者
                             if (p != __instance)
                             {
                                 Pawn currentMaster = manager.GetMaster(p);
                                 if (currentMaster != null)
                                 {
-                                    // 如果候选人已在侍奉他人，则在菜单中标记并禁用
                                     options.Add(new FloatMenuOption($"{p.LabelShort} (正在侍奉 {currentMaster.LabelShort})", null));
                                 }
                                 else
                                 {
-                                    // 否则，添加为可选项
                                     options.Add(new FloatMenuOption(p.LabelShort, () => manager.AddRelation(__instance, p)));
                                 }
                             }
                         }
-                        // 显示浮动菜单
                         Find.WindowStack.Add(new FloatMenu(options));
                     }
                 };
 
-                // Gizmo 2: 解除关系
-                // 只有当该Pawn是主人或侍奉者时，才显示此按钮
-                if (manager.IsMaster(__instance) || manager.IsServant(__instance))
+                // Gizmo 2: 解除关系 (主人视角)
+                if (manager.IsMaster(__instance))
                 {
                     yield return new Command_Action
                     {
                         defaultLabel = "解除侍奉关系",
-                        defaultDesc = "解除该角色当前的所有主从关系。",
+                        defaultDesc = "解除与指定侍奉者的主从关系。",
+                        icon = ContentFinder<Texture2D>.Get("UI/Commands/Dismiss", true),
+                        action = () =>
+                        {
+                            List<FloatMenuOption> options = new List<FloatMenuOption>();
+                            var servants = manager.GetServants(__instance);
+
+                            // 逐个解除菜单
+                            foreach (var s in servants)
+                            {
+                                // 使用本地变量闭包，防止循环赋值问题
+                                Pawn targetServant = s;
+                                options.Add(new FloatMenuOption($"解除对 {targetServant.LabelShort} 的支配", () => manager.RemoveRelation(targetServant)));
+                            }
+
+                            // 如果有多个奴隶，额外提供一个全部解除的选项
+                            if (servants.Count > 1)
+                            {
+                                options.Add(new FloatMenuOption("解除所有侍奉者", () => manager.RemoveAllServants(__instance)));
+                            }
+
+                            Find.WindowStack.Add(new FloatMenu(options));
+                        }
+                    };
+                }
+                // Gizmo 2: 解除关系 (侍奉者视角)
+                else if (manager.IsServant(__instance))
+                {
+                    yield return new Command_Action
+                    {
+                        defaultLabel = "解除侍奉关系",
+                        defaultDesc = "停止对主人的侍奉。",
                         icon = ContentFinder<Texture2D>.Get("UI/Commands/Dismiss", true),
                         action = () => manager.RemoveRelation(__instance)
                     };

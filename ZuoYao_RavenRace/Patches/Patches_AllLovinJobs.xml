@@ -1,58 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+    <!-- 
+    Purpose: 统一的交配与色情动作(Lovin' & Erotic Jobs)管理补丁。
+    所有的性爱、发泄、色情行为都必须在此处打上对应的 ModExtension 标签。
+    通过这种机制，C# 代码不需要硬编码任何 JobDef，极大地提高了扩展性和模块解耦。
+    -->
     <Operation Class="PatchOperationSequence">
         <success>Always</success>
         <operations>
             
-            <!-- ==================== 1. 原版：双人床爱爱 (Vanilla: Lovin') ==================== -->
+            <!-- ========================================================================= -->
+            <!-- 1. Mating Jobs (交配动作) -->
+            <!-- 带有此标签的 Job，会触发：AV摄影记录、主模组交配次数统计、RJW需求恢复、RJW交配结算 -->
+            <!-- ========================================================================= -->
+            
+            <!-- 原版：双人床爱爱 -->
             <li Class="PatchOperationAddModExtension">
                 <xpath>Defs/JobDef[defName="Lovin"]</xpath>
-                <value>
-                    <li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" />
-                </value>
+                <value><li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" /></value>
             </li>
 
-            <!-- ==================== 2. 渡鸦族：强制求爱 (RavenRace: Force Lovin) ==================== -->
+            <!-- 渡鸦族：强制求爱 -->
             <li Class="PatchOperationAddModExtension">
                 <xpath>Defs/JobDef[defName="Raven_Job_ForceLovin"]</xpath>
-                <value>
-                    <li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" />
-                </value>
+                <value><li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" /></value>
             </li>
 
-            <!-- ==================== 3. 渡鸦族：扶桑繁衍请求 (RavenRace: Reproduction Request) ==================== -->
-            <!-- 您的XML中已经添加了，但为了统一管理，在此处重复添加是安全的。如果原XML中移除，则此处会生效。 -->
+            <!-- 渡鸦族：扶桑繁衍请求 (安全判定，防止重复添加) -->
             <li Class="PatchOperationConditional">
                 <xpath>Defs/JobDef[defName="Raven_Job_ReproductionRequestLovin" and not(modExtensions/li[@Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob"])]</xpath>
                 <match Class="PatchOperationAddModExtension">
                     <xpath>Defs/JobDef[defName="Raven_Job_ReproductionRequestLovin"]</xpath>
-                    <value>
-                        <li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" />
-                    </value>
+                    <value><li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" /></value>
                 </match>
             </li>
 
+            <!-- 特殊：迪克雨 欲望难忍 (涉及双人强行侵犯发泄，划分为交配) -->
+            <li Class="PatchOperationAddModExtension">
+                <xpath>Defs/JobDef[defName="DickRain_YuwangNanRen"]</xpath>
+                <value><li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" /></value>
+            </li>
+
+
+            <!-- ========================================================================= -->
+            <!-- 2. Erotic Jobs (色情/发泄动作) -->
+            <!-- 带有此标签的 Job，仅触发：RJW个人性需求恢复，不统计为交配次数。 -->
+            <!-- ========================================================================= -->
+            
+            <li Class="PatchOperationAddModExtension">
+                <xpath>Defs/JobDef[
+                    defName="Raven_Job_HypnoticSelfPleasure" or 
+                    defName="Raven_Job_TakeSlimeBath" or 
+                    defName="Raven_WatchAV" or 
+                    defName="Raven_Job_MasturbateWithCup" or 
+                    defName="Raven_Job_DimensionalClimax" or 
+                    defName="Raven_Job_EnterConfessionBooth"
+                ]</xpath>
+                <value>
+                    <!-- 引用我们新建的核心色情标记类 -->
+                    <li Class="RavenRace.Core.Sexuality.DefModExtension_EroticJob" />
+                </value>
+            </li>
+
             <!-- 
-                未来若有其他Mod或您自己添加的新的交配Job，只需按以下格式添加即可：
-                
-                <li Class="PatchOperationAddModExtension">
-                    <xpath>Defs/JobDef[defName="OtherMod_SomeSexJob"]</xpath>
-                    <value>
-                        <li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" />
-                    </value>
-                </li>
+                未来添加说明：
+                如果你新建了一个 Job 比如 "Raven_PlayToy"，只需在这里加入 defName="Raven_PlayToy" 即可，
+                所有底层的状态恢复、RJW 联动都会自动生效。
             -->
-
-
-
-<!-- 
-Purpose: (新文件) 统一的交配动作(Lovin' Job)管理补丁。
-所有需要被我们的系统（如“繁衍渴望”Hediff、AV摄影机）识别为交配行为的JobDef，都应在此处打上ModExtension标签。
-这使得未来的兼容和扩展变得极为简单，只需在此处添加一个新的补丁节点即可。
--->
-
-
-
 
         </operations>
     </Operation>
