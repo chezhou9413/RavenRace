@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <!-- ==================== 神骸堕化调教舱 (机械天使专属制造台) ==================== -->
-  <ThingDef ParentName="BuildingBase">
+  <!-- 【核心修复】将 ParentName 改为 BenchBase, 并移除 thingClass, 使其成为一个标准的工作台 -->
+  <ThingDef ParentName="BenchBase">
     <defName>Raven_Building_AngelGestator</defName>
     <label>神骸堕化调教舱</label>
-    
     <description>一台由扶桑组织的变态技师倾力打造的“神骸堕化调教舱”。这根本不是什么正经的机械培育器，而是一个专门用来将神圣兵器彻底雌堕为专属星怒的终极刑具。\n\n舱体内部注满了由七情花蜜与高浓度催情史莱姆黏液混合而成的温热淫水。当高洁的机械天使被呈M字开脚死死拘束在中央时，无数粗大的机械触手与注液软管会毫不留情地贯穿她的口腔、直肠以及尚未开发的人造子宫。伴随着高压泵的轰鸣，足以让大脑烧毁的媚药会被疯狂泵入她的神经中枢。\n\n在这里，所有关于“神圣”与“战斗”的底层防壁都会在持续数天的强制绝顶、失神抽搐与潮吹高潮中被彻底粉碎。最终，那曾经高高在上的天使，其内核将被完全覆写，彻底沦为只会摇尾乞怜、每时每刻都渴求着主人浓精灌肠的极品性处理肉壶。</description>
-    
-    <thingClass>Building_MechGestator</thingClass>
-    
+    <!-- <thingClass>Building_MechGestator</thingClass> --> <!-- 【核心修复】移除此行 -->
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <fillPercent>0.5</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
     <pathCost>42</pathCost>
-    <size>(3,2)</size> <!-- 临时为了适配“残火提取仪”的贴图，设为 3x2 -->
-    
+    <size>(3,2)</size>
     <statBases>
       <MaxHitPoints>350</MaxHitPoints>
       <WorkToBuild>8000</WorkToBuild>
       <Mass>85</Mass>
       <Flammability>0.5</Flammability>
     </statBases>
-    
     <costList>
       <Steel>300</Steel>
       <Plasteel>50</Plasteel>
       <ComponentIndustrial>8</ComponentIndustrial>
       <ComponentSpacer>2</ComponentSpacer>
     </costList>
-    
     <designationCategory>Biotech</designationCategory> 
     <researchPrerequisites>
       <li>HighMechtech</li>
     </researchPrerequisites>
-    
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -43,11 +35,16 @@
         <idlePowerDraw>50</idlePowerDraw>
       </li>
       <li Class="CompProperties_Flickable"/>
-      <!-- 【核心修复】保留空组件以防止 C# 报错，但因为机体废料产出为0，实际上不会产出垃圾 -->
-      <li Class="CompProperties_WasteProducer" />
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
     </comps>
 
-    <!-- 【贴图临时复用区】 -->
+    <building>
+      <destroySound>BuildingDestroy_Metal_Big</destroySound>
+    </building>
     <graphicData>
       <texPath>Buildings/Production/EmberExtractor/Base</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -57,54 +54,5 @@
         <volume>(1.8, 1.0, 2.8)</volume>
       </shadowData>
     </graphicData>
-
-    <building>
-      <destroySound>BuildingDestroy_Metal_Big</destroySound>
-      
-      <mechGestatorCylinderGraphic>
-        <texPath>Buildings/Production/EmberExtractor/Tank</texPath>
-        <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(4, 4)</drawSize>
-        <drawOffset>(0.045, 0, 0.18)</drawOffset>
-        <shaderType>Transparent</shaderType>
-      </mechGestatorCylinderGraphic>
-      
-      <mechGestatorTopGraphic>
-        <texPath>Races/Raven/Hair/Transparent</texPath>
-        <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(1, 1)</drawSize>
-      </mechGestatorTopGraphic>
-      
-      <maxFormedMechDrawSize>(1.8, 1.8)</maxFormedMechDrawSize>
-      <formingMechBobSpeed>0.5</formingMechBobSpeed>
-      <formingMechYBobDistance>0.1</formingMechYBobDistance>
-      <formingMechPerRotationOffset>
-        <li>(0, 0, 0)</li>
-        <li>(0, 0, 0)</li>
-        <li>(0, 0, 0)</li>
-        <li>(0, 0, 0)</li>
-      </formingMechPerRotationOffset>
-      
-      <!-- 【核心修复】严格按照 MoteForRotationData 的结构填写四向特效 -->
-      <gestatorFormingMote>
-        <north>MechGestatorFormingLarge_North</north>
-        <east>MechGestatorFormingLarge_East</east>
-        <west>MechGestatorFormingLarge_West</west>
-        <south>MechGestatorFormingLarge_South</south>
-      </gestatorFormingMote>
-      <gestatorCycleCompleteMote>
-        <north>MechGestatorCycleCompleteLarge_North</north>
-        <east>MechGestatorCycleCompleteLarge_East</east>
-        <west>MechGestatorCycleCompleteLarge_West</west>
-        <south>MechGestatorCycleCompleteLarge_South</south>
-      </gestatorCycleCompleteMote>
-      <gestatorFormedMote>
-        <north>MechGestatorFormedLarge_North</north>
-        <east>MechGestatorFormedLarge_East</east>
-        <west>MechGestatorFormedLarge_West</west>
-        <south>MechGestatorFormedLarge_South</south>
-      </gestatorFormedMote>
-    </building>
   </ThingDef>
-
 </Defs>

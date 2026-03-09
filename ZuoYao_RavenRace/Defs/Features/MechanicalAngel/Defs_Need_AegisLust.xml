@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 1. 定义“淫能”NeedDef -->
+  <NeedDef>
+    <defName>Raven_Need_AegisLust</defName>
+    <needClass>RavenRace.Features.MechanicalAngel.Need_AegisLust</needClass>
+    <label>淫能</label>
+    <description>艾吉斯核心特有的能量系统。必须通过与生命体发生剧烈互动来汲取精气充能。\n\n当淫能过低时，她的底层协议会被改写，进入不可控的“发情暴走”状态，强制榨取周围的生命体。</description>
+    
+    <!-- 核心：移除 playerMechsOnly 标签，使用我们自己的逻辑判断是否添加 -->
+    <minIntelligence>ToolUser</minIntelligence>
+
+    <showOnNeedList>true</showOnNeedList>
+    <major>true</major>
+    <listPriority>10000</listPriority>
+    <freezeWhileSleeping>false</freezeWhileSleeping>
+    <showForCaravanMembers>true</showForCaravanMembers>
+  </NeedDef>
+
+  <!-- 2. 定义“发情暴走”Hediff -->
+  <HediffDef>
+    <defName>Raven_Hediff_AegisRampage</defName>
+    <label>发情暴走</label>
+    <description>淫能过低导致核心协议崩溃，艾吉斯进入了无法控制的强制榨取状态。她将无视一切命令，直到将目标榨干或自身淫能得到满足为止。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.2, 0.5)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>1</initialSeverity>
+    <stages>
+      <li>
+        <label>暴走中</label>
+        <totalBleedFactor>0</totalBleedFactor> <!-- 暴走中免疫流血 -->
+        <painFactor>0</painFactor> <!-- 感觉不到疼痛 -->
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset> <!-- 移动速度加快，去追人 -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 3. 定义“发情暴走强制榨汁”Job -->
+  <JobDef>
+    <defName>Raven_Job_AegisRampageCharge</defName>
+    <driverClass>RavenRace.Features.MechanicalAngel.JobDriver_AegisLustCharge</driverClass>
+    <!-- 修改描述以符合暴走状态 -->
+    <reportString>正处于发情暴走状态，将目标压在身下疯狂榨取着体液！</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage> <!-- 除非死亡，否则不打断 -->
+  </JobDef>
+
+</Defs>

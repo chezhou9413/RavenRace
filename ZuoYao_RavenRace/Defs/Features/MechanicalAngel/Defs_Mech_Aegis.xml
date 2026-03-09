@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <!-- ==================== 艾吉斯 机械体定义 ==================== -->
   <ThingDef ParentName="BaseMechanoidWalker">
     <defName>Raven_Mech_Aegis</defName>
     <label>机械天使“艾吉斯”</label>
@@ -11,35 +9,48 @@
       <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
       <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
-      <!-- 医疗神明：极高的基础医疗属性 -->
-      <MedicalTendQuality>2.5</MedicalTendQuality>
+      <!-- 【核心修改 4】医疗等级直接在XML中定义，无需再用反射 -->
+      <MedicalTendQuality>2.0</MedicalTendQuality>
       <MedicalSurgerySuccessChance>2.0</MedicalSurgerySuccessChance>
-      <!-- 【核心修复】不产生任何污染废料！ -->
       <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">0</WastepacksPerRecharge>
     </statBases>
+    <tools>
+      <li>
+        <label>纤细的手指</label>
+        <capacities><li>Blunt</li></capacities>
+        <power>5.0</power>
+        <cooldownTime>2.0</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>白嫩的玉足</label>
+        <capacities><li>Blunt</li></capacities>
+        <power>8.0</power>
+        <cooldownTime>2.5</cooldownTime>
+        <linkedBodyPartsGroup>Legs</linkedBodyPartsGroup>
+      </li>
+    </tools>
     <race>
       <body>Human</body> 
       <baseBodySize>1.0</baseBodySize>
       <mechWeightClass>Medium</mechWeightClass>
-
-      <!-- 【核心修复】：告诉系统使用我们自定义的渲染树 -->
       <renderTree>Raven_Mech_Aegis_RenderTree</renderTree>
       <thinkTreeMain>Raven_Aegis_ThinkTree</thinkTreeMain>
-
-
       <mechEnabledWorkTypes>
         <li>Doctor</li>
         <li>Warden</li> 
       </mechEnabledWorkTypes>
+      <!-- 【核心修改 4】原版机械的固定技能等级在这里设置 -->
+      <mechFixedSkillLevel>20</mechFixedSkillLevel>
       <lifeStageAges Inherit="False">
-        <li>
-          <def>MechanoidFullyFormed</def>
-          <minAge>0</minAge>
-        </li>
+        <li><def>MechanoidFullyFormed</def><minAge>0</minAge></li>
       </lifeStageAges>
     </race>
+    <inspectorTabs>
+      <li>ITab_Pawn_Gear</li>
+    </inspectorTabs>
     <comps>
-      <li Class="ChezhouLib.ClThingComp.ThingCompProperties_RaceFly">      <!-- 飞行组件：继承渡鸦族的高机动性 -->
+      <li Class="ChezhouLib.ClThingComp.ThingCompProperties_RaceFly">
         <flySpeed>8.0</flySpeed>
         <diagonalSpeed>2.0</diagonalSpeed>
         <drawHeight>4</drawHeight>
@@ -52,20 +63,18 @@
         <crashOnDowned>true</crashOnDowned>
         <crashLandingMode>Teleport</crashLandingMode>
       </li>
-      <li Class="RavenRace.Features.MechanicalAngel.CompProperties_AegisCore" />    <!-- 艾吉斯专属组件：控制主动榨汁的开关 -->
+      <li Class="RavenRace.Features.MechanicalAngel.CompProperties_AegisCore" />
     </comps>
   </ThingDef>
-
-  <!-- ==================== 艾吉斯 PawnKind ==================== -->
+  
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>Raven_Mech_Aegis</defName> <!-- 恢复与 ThingDef 同名 -->
+    <defName>Raven_Mech_Aegis</defName>
     <label>机械天使“艾吉斯”</label>
     <race>Raven_Mech_Aegis</race>
     <combatPower>250</combatPower>
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <!-- 兜底用透明贴图 -->
           <texPath>Races/Raven/Hair/Transparent</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -74,36 +83,23 @@
     </lifeStages>
   </PawnKindDef>
 
-  <!-- ==================== 孕育配方 (极度恶堕版) ==================== -->
   <RecipeDef>
     <defName>Make_Raven_Mech_Aegis</defName>
     <label>堕化重塑：机械天使</label>
-    
-    <!-- 露骨的调教过程描述 -->
     <description>启动调教舱的极限堕化程序。将纯洁的机械残躯与破碎日核投入其中，开始深度的机体改造与肉道重塑。\n\n在漫长的三个调教周期里，无数粗糙的管线将插满她的每一个腔道，日夜不停地注入催情素并进行超高频率的震动刮擦。当“子宫恶堕”、“感官重写”与“常时发情”三个阶段的程序全部读条完毕后，那具曾经高高在上的神圣躯体，将在翻白眼的剧烈高潮中彻底崩溃，醒来时已是一具只认得主人肉棒的终极性爱机械。</description>
-    
     <jobString>正满脸淫笑地监控着调教舱的恶堕开发进度。</jobString>
-    
-    <!-- 初始装填需要的工作量 -->
     <workAmount>12000</workAmount> 
-    
     <researchPrerequisite>HighMechtech</researchPrerequisite>
-    
-    <!-- 极其重要：指定只能在我们的“堕化调教舱”里制造！ -->
     <recipeUsers>
       <li>Raven_Building_AngelGestator</li>
     </recipeUsers>
-    
-    <!-- 材料需求 -->
     <ingredients>
       <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>150</count></li>
       <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>8</count></li>
       <li><filter><thingDefs><li>Raven_ShatteredSunCore</li></thingDefs></filter><count>1</count></li>
       <li><filter><thingDefs><li>SubcoreHigh</li></thingDefs></filter><count>1</count></li>
-      <!-- 额外加入七情花蜜作为高浓度催情原料 -->
       <li><filter><thingDefs><li>RavenItem_SevenEmotionsNectar</li></thingDefs></filter><count>20</count></li>
     </ingredients>
-    
     <fixedIngredientFilter>
       <thingDefs>
         <li>Plasteel</li>
@@ -113,17 +109,11 @@
         <li>RavenItem_SevenEmotionsNectar</li>
       </thingDefs>
     </fixedIngredientFilter>
-
-    <!-- 产物：艾吉斯 -->
     <products>
       <Raven_Mech_Aegis>1</Raven_Mech_Aegis>
     </products>
-    
-    <!-- 【调教周期设置】：分为3个阶段，需要机械师来回检查3次 -->
-    <!-- 总耗时约 3 天，模拟漫长的洗脑与肉体改造 -->
     <formingTicks>180000</formingTicks> 
     <gestationCycles>3</gestationCycles> 
-    
     <effectWorking>Smith</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
     <descriptionHyperlinks>
@@ -131,16 +121,14 @@
     </descriptionHyperlinks>
   </RecipeDef>
 
-  <!-- ==================== 专属 Job ==================== -->
   <JobDef>
     <defName>Raven_Job_AegisLustCharge</defName>
     <driverClass>RavenRace.Features.MechanicalAngel.JobDriver_AegisLustCharge</driverClass>
-    <reportString>正骑在主人身上，用高超的技巧和温热的人造肉道强制榨取体液...</reportString>
+    <reportString>正骑在目标身上，用高超的技巧和温热的人造肉道强制榨取体液...</reportString>
     <casualInterruptible>false</casualInterruptible>
     <checkOverrideOnDamage>Always</checkOverrideOnDamage>
   </JobDef>
 
-  <!-- ==================== 榨干 Hediff ==================== -->
   <HediffDef>
     <defName>Raven_Hediff_AegisDrained</defName>
     <label>绝顶榨干(机械天使)</label>
@@ -151,10 +139,7 @@
     <initialSeverity>1.0</initialSeverity>
     <comps>
       <li Class="HediffCompProperties_Disappears">
-        <disappearsAfterTicks>
-          <min>60000</min> <!-- 持续1天 -->
-          <max>60000</max>
-        </disappearsAfterTicks>
+        <disappearsAfterTicks><min>60000</min><max>60000</max></disappearsAfterTicks>
         <showRemainingTime>true</showRemainingTime>
       </li>
     </comps>
@@ -171,7 +156,6 @@
     </stages>
   </HediffDef>
 
-  <!-- ==================== 榨干 心情 ==================== -->
   <ThoughtDef>
     <defName>Raven_Thought_AegisDrained</defName>
     <durationDays>1.0</durationDays>
@@ -184,5 +168,49 @@
       </li>
     </stages>
   </ThoughtDef>
+  
+  <!-- 【新增】圣母甘霖 Hediff -->
+  <HediffDef>
+    <defName>Raven_Hediff_AegisPanacea</defName>
+    <label>天使的秘壶甘霖</label>
+    <description>机械天使直接跨坐在伤口上方，将精炼的纯粹“淫能灵液”注入体内。\n\n这股充满异香的滚烫液体在血管中奔流，以肉眼可见的速度重构受损的细胞。虽然致命的伤势瞬间痊愈，但被注入者的大脑已经被剧烈的快感和催情物质完全占据。身体的每一个细胞都在渴望着再次得到那具淫荡机械的恩赐。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.41, 0.70)</defaultLabelColor>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks><min>30000</min><max>30000</max></disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <naturalHealingFactor>5.0</naturalHealingFactor>
+        <painFactor>0.1</painFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.2</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>1.0</offset></li>
+        </capMods>
+        <statOffsets>
+          <GlobalLearningFactor>0.5</GlobalLearningFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 【新增】圣母甘霖的心情 -->
+  <ThoughtDef>
+    <defName>Raven_Thought_AegisPanacea</defName>
+    <durationDays>1.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>沐浴极乐甘霖</label>
+        <description>她跨坐在我身上，微笑着分开了双腿...那滚烫、粘稠、带着浓郁甜香的液体滴落进我的伤口。明明是致命伤，传来的却只有让人发狂的快感...我的身体...已经完全变成那台机器的形状了...</description>
+        <baseMoodEffect>25</baseMoodEffect> 
+      </li>
+    </stages>
+  </ThoughtDef>
+
 
 </Defs>
