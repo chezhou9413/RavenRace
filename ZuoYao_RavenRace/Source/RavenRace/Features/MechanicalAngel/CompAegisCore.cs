@@ -14,9 +14,6 @@ namespace RavenRace.Features.MechanicalAngel
         }
     }
 
-    /// <summary>
-    /// 艾吉斯核心组件：管理主动发情机制、强制暴走状态，以及赋予她独有的“拾取武器”能力。
-    /// </summary>
     public class CompAegisCore : ThingComp
     {
         public bool allowLustCharge = true;
@@ -31,17 +28,13 @@ namespace RavenRace.Features.MechanicalAngel
             Scribe_Values.Look(ref isRampaging, "isRampaging", false);
         }
 
-        public override void CompTick()
-        {
-            base.CompTick();
-            // 【性能优化】从 CompTick (每帧) 改为 CompTickRare (每 250 ticks)，大幅降低性能开销
-        }
-
         public override void CompTickRare()
         {
             base.CompTickRare();
+            if (Pawn == null || Pawn.Dead || Pawn.needs == null) return;
 
-            var lustNeed = Pawn.needs.TryGetNeed<Need_AegisLust>();
+            // 【核心修复】直接使用原版的 energy (已经被我们伪装成了淫能)
+            var lustNeed = Pawn.needs.energy;
             if (lustNeed != null)
             {
                 if (lustNeed.CurLevelPercentage < 0.20f && !isRampaging)
@@ -58,8 +51,11 @@ namespace RavenRace.Features.MechanicalAngel
         private void TriggerLustRampage()
         {
             isRampaging = true;
-            var rampageHediff = HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("Raven_Hediff_AegisRampage"), Pawn);
-            Pawn.health.AddHediff(rampageHediff);
+            if (RavenDefOf.Raven_Hediff_AegisRampage != null)
+            {
+                var rampageHediff = HediffMaker.MakeHediff(RavenDefOf.Raven_Hediff_AegisRampage, Pawn);
+                Pawn.health.AddHediff(rampageHediff);
+            }
 
             if (Pawn.drafter != null) Pawn.drafter.Drafted = false;
             Pawn.jobs?.EndCurrentJob(JobCondition.InterruptForced, true);
@@ -70,10 +66,10 @@ namespace RavenRace.Features.MechanicalAngel
         private void EndLustRampage()
         {
             isRampaging = false;
-            var rampageHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("Raven_Hediff_AegisRampage"));
-            if (rampageHediff != null)
+            if (RavenDefOf.Raven_Hediff_AegisRampage != null)
             {
-                Pawn.health.RemoveHediff(rampageHediff);
+                var rampageHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(RavenDefOf.Raven_Hediff_AegisRampage);
+                if (rampageHediff != null) Pawn.health.RemoveHediff(rampageHediff);
             }
             Messages.Message($"艾吉斯的淫能已得到滋润，退出了发情暴走状态。", Pawn, MessageTypeDefOf.PositiveEvent);
         }
@@ -97,7 +93,7 @@ namespace RavenRace.Features.MechanicalAngel
                 yield return new Command_Action
                 {
                     defaultLabel = "更换武器...",
-                    defaultDesc = "命令艾吉斯拾取地上的武器或与他人交换武器。这是为她更换装备的唯一方式。",
+                    defaultDesc = "命令艾吉斯拾取地上的武器或剥夺他人的武器。",
                     icon = ContentFinder<Texture2D>.Get("UI/Commands/Attack", true),
                     action = delegate
                     {
@@ -115,9 +111,24 @@ namespace RavenRace.Features.MechanicalAngel
                         };
                         Find.Targeter.BeginTargeting(targetingParams, (target) =>
                         {
-                            // 【核心修复】创建更健壮的换武器 Job
-                            var equipJob = JobMaker.MakeJob(JobDefOf.Equip, target);
-                            Pawn.jobs.TryTakeOrderedJob(equipJob, JobTag.Misc);
+                            Thing targetThing = target.Thing;
+
+                            if (targetThing is Pawn targetPawn)
+                            {
+                                ThingWithComps targetWeapon = targetPawn.equipment?.Primary;
+                                if (targetWeapon != null)
+                                {
+                                    ThingWithComps droppedWeapon;
+                                    targetPawn.equipment.TryDropEquipment(targetWeapon, out droppedWeapon, targetPawn.Position, false);
+                                    if (droppedWeapon != null) targetThing = droppedWeapon;
+                                }
+                            }
+
+                            if (targetThing != null && targetThing.Spawned && targetThing.def.IsWeapon)
+                            {
+                                var equipJob = JobMaker.MakeJob(JobDefOf.Equip, targetThing);
+                                Pawn.jobs.TryTakeOrderedJob(equipJob, JobTag.Misc);
+                            }
                         });
                     }
                 };

@@ -26,6 +26,15 @@
                 <value><li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" /></value>
             </li>
 
+            <!-- 机械天使的两种榨汁行为 -->
+            <li Class="PatchOperationAddModExtension">
+                <xpath>Defs/JobDef[
+                    defName="Raven_Job_AegisLustCharge" or 
+                    defName="Raven_Job_AegisRampageCharge"
+                ]</xpath>
+                <value><li Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob" /></value>
+            </li>
+
             <!-- 渡鸦族：扶桑繁衍请求 (安全判定，防止重复添加) -->
             <li Class="PatchOperationConditional">
                 <xpath>Defs/JobDef[defName="Raven_Job_ReproductionRequestLovin" and not(modExtensions/li[@Class="RavenRace.Features.Reproduction.DefModExtension_LovinJob"])]</xpath>

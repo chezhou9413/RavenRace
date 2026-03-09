@@ -187,10 +187,14 @@ namespace RavenRace
         // Features: Mechanical Angel - 堕落的机械天使
         // ===================================================
         public static ThingDef Raven_Mech_Aegis;
-
         public static JobDef Raven_Job_AegisLustCharge;
         public static HediffDef Raven_Hediff_AegisDrained;
         public static ThoughtDef Raven_Thought_AegisDrained;
+        public static ThingDef Raven_Building_AngelGestator; // 神骸堕化调教舱
+        public static HediffDef Raven_Hediff_AegisPanacea;
+        public static ThoughtDef Raven_Thought_AegisPanacea;
+        public static HediffDef Raven_Hediff_AegisRampage;
+        public static JobDef Raven_Job_AegisRampageCharge;
 
 
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <!-- 【核心修复】将 ParentName 改为 BenchBase, 并移除 thingClass, 使其成为一个标准的工作台 -->
-  <ThingDef ParentName="BenchBase">
+  <ThingDef ParentName="BuildingBase">
     <defName>Raven_Building_AngelGestator</defName>
     <label>神骸堕化调教舱</label>
     <description>一台由扶桑组织的变态技师倾力打造的“神骸堕化调教舱”。这根本不是什么正经的机械培育器，而是一个专门用来将神圣兵器彻底雌堕为专属星怒的终极刑具。\n\n舱体内部注满了由七情花蜜与高浓度催情史莱姆黏液混合而成的温热淫水。当高洁的机械天使被呈M字开脚死死拘束在中央时，无数粗大的机械触手与注液软管会毫不留情地贯穿她的口腔、直肠以及尚未开发的人造子宫。伴随着高压泵的轰鸣，足以让大脑烧毁的媚药会被疯狂泵入她的神经中枢。\n\n在这里，所有关于“神圣”与“战斗”的底层防壁都会在持续数天的强制绝顶、失神抽搐与潮吹高潮中被彻底粉碎。最终，那曾经高高在上的天使，其内核将被完全覆写，彻底沦为只会摇尾乞怜、每时每刻都渴求着主人浓精灌肠的极品性处理肉壶。</description>
-    <!-- <thingClass>Building_MechGestator</thingClass> --> <!-- 【核心修复】移除此行 -->
+    
+    <thingClass>Building_MechGestator</thingClass>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <fillPercent>0.5</fillPercent>
@@ -35,16 +35,83 @@
         <idlePowerDraw>50</idlePowerDraw>
       </li>
       <li Class="CompProperties_Flickable"/>
-      <li Class="CompProperties_AffectedByFacilities">
-        <linkableFacilities>
-          <li>ToolCabinet</li>
-        </linkableFacilities>
-      </li>
+      <!-- 【核心防崩】原版代码强制要求机械仓拥有此组件，否则培育完成时会报空指针 -->
+      <li Class="CompProperties_WasteProducer" />
     </comps>
+
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
 
     <building>
       <destroySound>BuildingDestroy_Metal_Big</destroySound>
+      <!-- 【核心修复】严格遵守 FillableBarRequestWithRotation 的数据结构，使用原版 3x2 标准尺寸的偏移量 -->
+      <barDrawData>
+        <north>
+          <preRotationOffset>(-1.06, 0.91)</preRotationOffset>
+          <size>(0.7, 0.13)</size>
+        </north>
+        <south>
+          <preRotationOffset>(-1.06, 0.82)</preRotationOffset>
+          <size>(0.7, 0.13)</size>
+        </south>
+        <east>
+          <preRotationOffset>(1.06, -0.97)</preRotationOffset>
+          <size>(0.7, 0.13)</size>
+        </east>
+        <west>
+          <preRotationOffset>(-1.06, -0.97)</preRotationOffset>
+          <size>(0.7, 0.13)</size>
+        </west>
+      </barDrawData>
+      <!-- 【核心修复】为了防止尝试绘制虚影时报错，提供一个空位数据 -->
+      <formingGraphicData>
+        <texPath>Things/Pawn/Mechanoid/HalfGestatedMechSmall</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <drawSize>(1,1)</drawSize>
+      </formingGraphicData>
+      <formingMechBobSpeed>0.35</formingMechBobSpeed>
+      <formingMechYBobDistance>0.15</formingMechYBobDistance>
+      <formingMechPerRotationOffset>
+        <li>(0, 0, 0.45)</li>
+        <li>(0, 0, 0.45)</li>
+        <li>(0, 0, 0.45)</li>
+        <li>(0, 0, 0.45)</li>
+      </formingMechPerRotationOffset>
+      <!-- 【核心修复】严格遵守 MoteForRotationData 的四个方向结构 -->
+      <gestatorFormingMote>
+        <north>MechGestatorForming_North</north>
+        <east>MechGestatorForming_East</east>
+        <west>MechGestatorForming_East</west>
+        <south>MechGestatorForming_South</south>
+      </gestatorFormingMote>
+      <gestatorCycleCompleteMote>
+        <north>MechGestatorCycleComplete_North</north>
+        <east>MechGestatorCycleComplete_East</east>
+        <west>MechGestatorCycleComplete_East</west>
+        <south>MechGestatorCycleComplete_South</south>
+      </gestatorCycleCompleteMote>
+      <gestatorFormedMote>
+        <north>MechGestatorFormed_North</north>
+        <east>MechGestatorFormed_East</east>
+        <west>MechGestatorFormed_East</west>
+        <south>MechGestatorFormed_South</south>
+      </gestatorFormedMote>
+      <maxFormedMechDrawSize>(2.2, 2.2)</maxFormedMechDrawSize>
+      <mechGestatorTopGraphic>
+        <texPath>Things/Building/Mech/MechGestatorLargeTop</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(3, 2)</drawSize>
+      </mechGestatorTopGraphic>
+      <mechGestatorCylinderGraphic>
+        <texPath>Buildings/Production/EmberExtractor/Tank</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(4, 4)</drawSize>
+        <shaderType>Transparent</shaderType>
+        <drawOffset>(0.045, 0, 0.18)</drawOffset>
+      </mechGestatorCylinderGraphic>
     </building>
+    
     <graphicData>
       <texPath>Buildings/Production/EmberExtractor/Base</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
