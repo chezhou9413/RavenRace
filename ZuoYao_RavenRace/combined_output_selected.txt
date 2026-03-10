@@ -4034,6 +4034,16 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\A
           <li>Raven_Apparel_ShadowCloak</li>
 
           <li>Raven_Apparel_BeadedGstring</li>
+
+
+
+          <!-- [核心修复] 将原版的腰带类和背包类加入白名单，否则即便身体有Waist也穿不上！ -->
+          <li>Apparel_ShieldBelt</li>
+          <li>Apparel_SmokepopBelt</li>
+          <li>Apparel_FirefoampopPack</li>
+          <li>Apparel_PackJump</li>
+          <li>Apparel_PackBroadshield</li>
+
         </whiteApparelList>
 
         <!-- 
@@ -4169,6 +4179,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <BodyDef>
+    <!-- 保持你的 DefName 不变，确保兼容性 -->
     <defName>Raven_Body</defName>
     <label>raven body</label>
     <corePart>
@@ -4198,6 +4209,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
         <li>
           <def>Pelvis</def>
           <coverage>0.025</coverage>
+          <height>Bottom</height>
           <depth>Inside</depth>
           <groups>
             <li>Torso</li>
@@ -4274,6 +4286,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
         <li>
           <def>Neck</def>
           <coverage>0.075</coverage>
+          <height>Top</height>
           <groups>
             <li>Neck</li>
           </groups>
@@ -4284,6 +4297,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
               <groups>
                 <li>UpperHead</li>
                 <li>FullHead</li>
+                <li>HeadAttackTool</li>
               </groups>
               <parts>
                 <li>
@@ -4292,14 +4306,16 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                   <depth>Inside</depth>
                   <groups>
                     <li>UpperHead</li>
+                    <li>Eyes</li>
                     <li>FullHead</li>
                   </groups>
                   <parts>
                     <li>
                       <def>Brain</def>
-                      <coverage>0.80</coverage>
+                      <coverage>0.8</coverage>
                       <groups>
                         <li>UpperHead</li>
+                        <li>Eyes</li>
                         <li>FullHead</li>
                       </groups>
                     </li>
@@ -4313,6 +4329,12 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                     <li>FullHead</li>
                     <li>Eyes</li>
                   </groups>
+                  <woundAnchorTag>LeftEye</woundAnchorTag>
+                  <flipGraphic>true</flipGraphic>
+                  <visibleHediffRots>
+                    <li>South</li>
+                    <li>West</li>
+                  </visibleHediffRots>
                 </li>
                 <li>
                   <def>Eye</def>
@@ -4322,11 +4344,17 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                     <li>FullHead</li>
                     <li>Eyes</li>
                   </groups>
+                  <woundAnchorTag>RightEye</woundAnchorTag>
+                  <visibleHediffRots>
+                    <li>South</li>
+                    <li>East</li>
+                  </visibleHediffRots>
                 </li>
                 <li>
                   <def>Ear</def>
                   <customLabel>left ear</customLabel>
                   <coverage>0.07</coverage>
+                  <flipGraphic>true</flipGraphic>
                   <groups>
                     <li>UpperHead</li>
                     <li>FullHead</li>
@@ -4354,7 +4382,18 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                   <groups>
                     <li>Teeth</li>
                     <li>FullHead</li>
+                    <li>Mouth</li>
                   </groups>
+                  <parts>
+                    <li>
+                      <def>Tongue</def>
+                      <coverage>0.001</coverage>
+                      <depth>Inside</depth>
+                      <groups>
+                        <li>FullHead</li>
+                      </groups>
+                    </li>
+                  </parts>
                 </li>
               </parts>
             </li>
@@ -4364,6 +4403,8 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
           <def>Shoulder</def>
           <customLabel>left shoulder</customLabel>
           <coverage>0.12</coverage>
+          <woundAnchorTag>LeftShoulder</woundAnchorTag>
+          <flipGraphic>true</flipGraphic>
           <groups>
             <li>Shoulders</li>
           </groups>
@@ -4374,6 +4415,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
               <coverage>0.09</coverage>
               <height>Top</height>
               <depth>Inside</depth>
+              <flipGraphic>true</flipGraphic>
               <groups>
                 <li>Torso</li>
               </groups>
@@ -4382,6 +4424,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
               <def>Arm</def>
               <customLabel>left arm</customLabel>
               <coverage>0.77</coverage>
+              <flipGraphic>true</flipGraphic>
               <groups>
                 <li>Arms</li>
               </groups>
@@ -4409,6 +4452,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                   <customLabel>left hand</customLabel>
                   <coverage>0.14</coverage>
                   <height>Bottom</height>
+                  <flipGraphic>true</flipGraphic>
                   <groups>
                     <li>Hands</li>
                   </groups>
@@ -4438,6 +4482,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                       <groups>
                         <li>Hands</li>
                         <li>LeftHand</li>
+                        <li>MiddleFingers</li>
                       </groups>
                     </li>
                     <li>
@@ -4468,6 +4513,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
           <def>Shoulder</def>
           <customLabel>right shoulder</customLabel>
           <coverage>0.12</coverage>
+          <woundAnchorTag>RightShoulder</woundAnchorTag>
           <groups>
             <li>Shoulders</li>
           </groups>
@@ -4542,6 +4588,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                       <groups>
                         <li>Hands</li>
                         <li>RightHand</li>
+                        <li>MiddleFingers</li>
                       </groups>
                     </li>
                     <li>
@@ -4568,6 +4615,17 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
             </li>
           </parts>
         </li>
+        
+        <!-- 【核心修复】加入腰部节点！这就是护盾腰带无法穿戴的罪魁祸首！ -->
+        <li>
+          <def>Waist</def>
+          <coverage>0</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Waist</li>
+          </groups>
+        </li>
+        
         <li>
           <def>Leg</def>
           <customLabel>left leg</customLabel>
@@ -4576,6 +4634,8 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
           <groups>
             <li>Legs</li>
           </groups>
+          <woundAnchorTag>LeftLeg</woundAnchorTag>
+          <flipGraphic>true</flipGraphic>
           <parts>
             <li>
               <def>Femur</def>
@@ -4599,6 +4659,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
               <def>Foot</def>
               <customLabel>left foot</customLabel>
               <coverage>0.1</coverage>
+              <flipGraphic>true</flipGraphic>
               <groups>
                 <li>Feet</li>
               </groups>
@@ -4630,7 +4691,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                 <li>
                   <def>Toe</def>
                   <customLabel>left second toe</customLabel>
-                  <coverage>0.07</coverage>
+                  <coverage>0.09</coverage>
                   <groups>
                     <li>Feet</li>
                   </groups>
@@ -4638,7 +4699,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                 <li>
                   <def>Toe</def>
                   <customLabel>left big toe</customLabel>
-                  <coverage>0.08</coverage>
+                  <coverage>0.09</coverage>
                   <groups>
                     <li>Feet</li>
                   </groups>
@@ -4655,6 +4716,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
           <groups>
             <li>Legs</li>
           </groups>
+          <woundAnchorTag>RightLeg</woundAnchorTag>
           <parts>
             <li>
               <def>Femur</def>
@@ -4709,7 +4771,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                 <li>
                   <def>Toe</def>
                   <customLabel>right second toe</customLabel>
-                  <coverage>0.07</coverage>
+                  <coverage>0.09</coverage>
                   <groups>
                     <li>Feet</li>
                   </groups>
@@ -4717,7 +4779,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Core\Race\B
                 <li>
                   <def>Toe</def>
                   <customLabel>right big toe</customLabel>
-                  <coverage>0.08</coverage>
+                  <coverage>0.09</coverage>
                   <groups>
                     <li>Feet</li>
                   </groups>
@@ -4975,6 +5037,11 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
     <castEdgeShadows>true</castEdgeShadows>
     <pathCost>42</pathCost>
     <size>(3,2)</size>
+    
+    <!-- 【核心修复】加入交互点，这是 DoBill 工作必须的，否则小人不知道在哪塞材料 -->
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+
     <statBases>
       <MaxHitPoints>350</MaxHitPoints>
       <WorkToBuild>8000</WorkToBuild>
@@ -4987,10 +5054,16 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
       <ComponentIndustrial>8</ComponentIndustrial>
       <ComponentSpacer>2</ComponentSpacer>
     </costList>
-    <designationCategory>Biotech</designationCategory> 
+    
+    <designationCategory>Raven_Category</designationCategory> 
     <researchPrerequisites>
-      <li>HighMechtech</li>
+      <li>RavenResearch_MechanicalAngel</li>
     </researchPrerequisites>
+    
+    <recipes>
+      <li>Make_Raven_Mech_Aegis</li>
+    </recipes>
+
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -4998,7 +5071,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
         <idlePowerDraw>50</idlePowerDraw>
       </li>
       <li Class="CompProperties_Flickable"/>
-      <!-- 【核心防崩】原版代码强制要求机械仓拥有此组件，否则培育完成时会报空指针 -->
       <li Class="CompProperties_WasteProducer" />
     </comps>
 
@@ -5008,7 +5080,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
 
     <building>
       <destroySound>BuildingDestroy_Metal_Big</destroySound>
-      <!-- 【核心修复】严格遵守 FillableBarRequestWithRotation 的数据结构，使用原版 3x2 标准尺寸的偏移量 -->
       <barDrawData>
         <north>
           <preRotationOffset>(-1.06, 0.91)</preRotationOffset>
@@ -5027,7 +5098,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
           <size>(0.7, 0.13)</size>
         </west>
       </barDrawData>
-      <!-- 【核心修复】为了防止尝试绘制虚影时报错，提供一个空位数据 -->
       <formingGraphicData>
         <texPath>Things/Pawn/Mechanoid/HalfGestatedMechSmall</texPath>
         <graphicClass>Graphic_Single</graphicClass>
@@ -5041,7 +5111,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
         <li>(0, 0, 0.45)</li>
         <li>(0, 0, 0.45)</li>
       </formingMechPerRotationOffset>
-      <!-- 【核心修复】严格遵守 MoteForRotationData 的四个方向结构 -->
       <gestatorFormingMote>
         <north>MechGestatorForming_North</north>
         <east>MechGestatorForming_East</east>
@@ -5093,6 +5162,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
 .
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <!-- 机械天使躯体定义 -->
   <ThingDef ParentName="BaseMechanoidWalker">
     <defName>Raven_Mech_Aegis</defName>
     <label>机械天使“艾吉斯”</label>
@@ -5102,7 +5172,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
       <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
       <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
-      <!-- 【核心修改 4】医疗等级直接在XML中定义，无需再用反射 -->
       <MedicalTendQuality>2.0</MedicalTendQuality>
       <MedicalSurgerySuccessChance>2.0</MedicalSurgerySuccessChance>
       <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">0</WastepacksPerRecharge>
@@ -5133,7 +5202,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
         <li>Doctor</li>
         <li>Warden</li> 
       </mechEnabledWorkTypes>
-      <!-- 【核心修改 4】原版机械的固定技能等级在这里设置 -->
       <mechFixedSkillLevel>20</mechFixedSkillLevel>
       <lifeStageAges Inherit="False">
         <li><def>MechanoidFullyFormed</def><minAge>0</minAge></li>
@@ -5160,6 +5228,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
     </comps>
   </ThingDef>
   
+  <!-- 机械天使种类定义 -->
   <PawnKindDef ParentName="BaseMechanoidKind">
     <defName>Raven_Mech_Aegis</defName>
     <label>机械天使“艾吉斯”</label>
@@ -5176,44 +5245,33 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
     </lifeStages>
   </PawnKindDef>
 
-  <RecipeDef>
+  <!-- 机械天使制造配方 -->
+  <RecipeDef ParentName="BaseMechanoidRecipe">
     <defName>Make_Raven_Mech_Aegis</defName>
     <label>堕化重塑：机械天使</label>
     <description>启动调教舱的极限堕化程序。将纯洁的机械残躯与破碎日核投入其中，开始深度的机体改造与肉道重塑。\n\n在漫长的三个调教周期里，无数粗糙的管线将插满她的每一个腔道，日夜不停地注入催情素并进行超高频率的震动刮擦。当“子宫恶堕”、“感官重写”与“常时发情”三个阶段的程序全部读条完毕后，那具曾经高高在上的神圣躯体，将在翻白眼的剧烈高潮中彻底崩溃，醒来时已是一具只认得主人肉棒的终极性爱机械。</description>
     <jobString>正满脸淫笑地监控着调教舱的恶堕开发进度。</jobString>
     <workAmount>12000</workAmount> 
-    <researchPrerequisite>HighMechtech</researchPrerequisite>
-    <recipeUsers>
-      <li>Raven_Building_AngelGestator</li>
-    </recipeUsers>
-    <ingredients>
+    <researchPrerequisite>RavenResearch_MechanicalAngel</researchPrerequisite>
+    <ingredients Inherit="False">
       <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>150</count></li>
       <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>8</count></li>
       <li><filter><thingDefs><li>Raven_ShatteredSunCore</li></thingDefs></filter><count>1</count></li>
       <li><filter><thingDefs><li>SubcoreHigh</li></thingDefs></filter><count>1</count></li>
       <li><filter><thingDefs><li>RavenItem_SevenEmotionsNectar</li></thingDefs></filter><count>20</count></li>
     </ingredients>
-    <fixedIngredientFilter>
-      <thingDefs>
-        <li>Plasteel</li>
-        <li>ComponentSpacer</li>
-        <li>Raven_ShatteredSunCore</li>
-        <li>SubcoreHigh</li>
-        <li>RavenItem_SevenEmotionsNectar</li>
-      </thingDefs>
-    </fixedIngredientFilter>
     <products>
       <Raven_Mech_Aegis>1</Raven_Mech_Aegis>
     </products>
-    <formingTicks>180000</formingTicks> 
-    <gestationCycles>3</gestationCycles> 
-    <effectWorking>Smith</effectWorking>
-    <soundWorking>Recipe_Machining</soundWorking>
+    <formingTicks>180000</formingTicks>
+    <gestationCycles>3</gestationCycles>
+    <displayPriority>400</displayPriority>
     <descriptionHyperlinks>
       <ThingDef>Raven_Mech_Aegis</ThingDef>
     </descriptionHyperlinks>
   </RecipeDef>
 
+  <!-- 常规榨汁充能Job -->
   <JobDef>
     <defName>Raven_Job_AegisLustCharge</defName>
     <driverClass>RavenRace.Features.MechanicalAngel.JobDriver_AegisLustCharge</driverClass>
@@ -5222,6 +5280,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
     <checkOverrideOnDamage>Always</checkOverrideOnDamage>
   </JobDef>
 
+  <!-- 常规榨汁Hediff与思想 -->
   <HediffDef>
     <defName>Raven_Hediff_AegisDrained</defName>
     <label>绝顶榨干(机械天使)</label>
@@ -5262,7 +5321,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
     </stages>
   </ThoughtDef>
   
-  <!-- 【新增】圣母甘霖 Hediff -->
+  <!-- 圣母甘霖(治疗)Hediff与思想 -->
   <HediffDef>
     <defName>Raven_Hediff_AegisPanacea</defName>
     <label>天使的秘壶甘霖</label>
@@ -5291,7 +5350,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
     </stages>
   </HediffDef>
 
-  <!-- 【新增】圣母甘霖的心情 -->
   <ThoughtDef>
     <defName>Raven_Thought_AegisPanacea</defName>
     <durationDays>1.0</durationDays>
@@ -5305,34 +5363,10 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
     </stages>
   </ThoughtDef>
 
+  <!-- ==================================== -->
+  <!-- 暴走状态相关的 Hediff 和 Job 整合于此 -->
+  <!-- ==================================== -->
 
-</Defs>.
-.
-=
-File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\MechanicalAngel\Defs_Need_AegisLust.xml
-=
-.
-<?xml version="1.0" encoding="utf-8" ?>
-<Defs>
-
-  <!-- 1. 定义“淫能”NeedDef -->
-  <NeedDef>
-    <defName>Raven_Need_AegisLust</defName>
-    <needClass>RavenRace.Features.MechanicalAngel.Need_AegisLust</needClass>
-    <label>淫能</label>
-    <description>艾吉斯核心特有的能量系统。必须通过与生命体发生剧烈互动来汲取精气充能。\n\n当淫能过低时，她的底层协议会被改写，进入不可控的“发情暴走”状态，强制榨取周围的生命体。</description>
-    
-    <!-- 核心：移除 playerMechsOnly 标签，使用我们自己的逻辑判断是否添加 -->
-    <minIntelligence>ToolUser</minIntelligence>
-
-    <showOnNeedList>true</showOnNeedList>
-    <major>true</major>
-    <listPriority>10000</listPriority>
-    <freezeWhileSleeping>false</freezeWhileSleeping>
-    <showForCaravanMembers>true</showForCaravanMembers>
-  </NeedDef>
-
-  <!-- 2. 定义“发情暴走”Hediff -->
   <HediffDef>
     <defName>Raven_Hediff_AegisRampage</defName>
     <label>发情暴走</label>
@@ -5344,28 +5378,47 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
     <stages>
       <li>
         <label>暴走中</label>
-        <totalBleedFactor>0</totalBleedFactor> <!-- 暴走中免疫流血 -->
-        <painFactor>0</painFactor> <!-- 感觉不到疼痛 -->
+        <totalBleedFactor>0</totalBleedFactor>
+        <painFactor>0</painFactor>
         <capMods>
-          <li>
-            <capacity>Moving</capacity>
-            <offset>0.5</offset> <!-- 移动速度加快，去追人 -->
-          </li>
+          <li><capacity>Moving</capacity><offset>0.5</offset></li>
         </capMods>
       </li>
     </stages>
   </HediffDef>
 
-  <!-- 3. 定义“发情暴走强制榨汁”Job -->
   <JobDef>
     <defName>Raven_Job_AegisRampageCharge</defName>
     <driverClass>RavenRace.Features.MechanicalAngel.JobDriver_AegisLustCharge</driverClass>
-    <!-- 修改描述以符合暴走状态 -->
     <reportString>正处于发情暴走状态，将目标压在身下疯狂榨取着体液！</reportString>
     <casualInterruptible>false</casualInterruptible>
-    <checkOverrideOnDamage>Never</checkOverrideOnDamage> <!-- 除非死亡，否则不打断 -->
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
   </JobDef>
-
+</Defs>.
+.
+=
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\MechanicalAngel\Defs_WorkGivers_Aegis.xml
+=
+.
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>Raven_DoBillsAngelGestator</defName>
+    <label>神骸堕化调教</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Smithing</workType>
+    <priorityInType>220</priorityInType>
+    <fixedBillGiverDefs>
+      <!-- 绑定到我们的专属调教舱 -->
+      <li>Raven_Building_AngelGestator</li>
+    </fixedBillGiverDefs>
+    <verb>操作调教舱</verb>
+    <gerund>正在进行堕化调教</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
 </Defs>.
 .
 =
@@ -5448,14 +5501,20 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
 .
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
   <ThinkTreeDef>
     <defName>Raven_Aegis_ThinkTree</defName>
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
-        <!-- 保持与原版机械体相同的前置判定 -->
         <li Class="ThinkNode_Subtree"><treeDef>Despawned</treeDef></li>
         <li Class="ThinkNode_Subtree"><treeDef>Downed</treeDef></li>
+
+        <!-- 紧急救援协议 (极高优先级，只要不是自己倒下或低电量关机，优先救主人) -->
+        <li Class="ThinkNode_ConditionalOfPlayerFaction">
+          <subNodes>
+             <li Class="RavenRace.Features.MechanicalAngel.JobGiver_AegisRescueMaster" />
+          </subNodes>
+        </li>
+
         <li Class="ThinkNode_ConditionalLowEnergy" MayRequire="Ludeon.RimWorld.Biotech">
           <subNodes><li Class="JobGiver_SelfShutdown" /></subNodes>
         </li>
@@ -5492,9 +5551,7 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
                 <!-- 【核心拦截】：自定义淫能充电判断 -->
                 <li Class="ThinkNode_ConditionalRecharging">
                   <subNodes>
-                    <!-- 如果处于充能模式，优先尝试去榨取主人 -->
                     <li Class="RavenRace.Features.MechanicalAngel.JobGiver_AegisLustCharge" />
-                    <!-- 如果找不到主人，才退回到普通的充电站 -->
                     <li Class="JobGiver_GetEnergy_Charger" />
                   </subNodes>
                 </li>
@@ -5504,7 +5561,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
                   <workMode>Work</workMode>
                   <subNodes>
                     <li Class="JobGiver_SeekAllowedArea" />
-                    <!-- 没电时尝试榨汁 -->
                     <li Class="RavenRace.Features.MechanicalAngel.JobGiver_AegisLustCharge" />
                     <li Class="JobGiver_GetEnergy_Charger" />
                     <li Class="JobGiver_Work"><emergency>true</emergency></li>
@@ -5549,7 +5605,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
           </subNodes>
         </li>
 
-        <!-- 闲置兜底 -->
         <li Class="ThinkNode_Tagger">
           <tagToGive>Idle</tagToGive>
           <subNodes>
@@ -5562,7 +5617,6 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Features\Me
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>
-
 </Defs>.
 .
 =
@@ -5665,6 +5719,29 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Research\Re
     <!-- 第二列，平移 -->
     <researchViewX>1.50</researchViewX>
     <researchViewY>1.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+</Defs>.
+.
+=
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Defs\Research\Research_MechanicalAngel.xml
+=
+.
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>RavenResearch_MechanicalAngel</defName>
+    <label>神骸堕化技术</label>
+    <description>通过研究古代遗留的机械天使残骸，结合渡鸦族独有的生物炼金与催情技术，开发出能够彻底改写超凡机械体底层协议的“堕化调教”工艺。解锁神骸堕化调教舱及机械天使“艾吉斯”的培育。</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>HighMechtech</li>
+      <li>RavenResearch_Bionics</li>
+    </prerequisites>
+    <!-- 放置在科技树的合适位置 -->
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
     <tab>Raven_ResearchTab</tab>
   </ResearchProjectDef>
 </Defs>.
@@ -7241,6 +7318,7 @@ namespace RavenRace
         // ===================================================
         // Features: Mechanical Angel - 堕落的机械天使
         // ===================================================
+        public static ResearchProjectDef RavenResearch_MechanicalAngel; // 科技节点
         public static ThingDef Raven_Mech_Aegis;
         public static JobDef Raven_Job_AegisLustCharge;
         public static HediffDef Raven_Hediff_AegisDrained;
@@ -7365,53 +7443,6 @@ namespace RavenRace
         static RavenDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(RavenDefOf));
-        }
-    }
-}.
-.
-=
-File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\Core\Harmony\Patch_DisablePsylink.cs
-=
-.
-﻿using HarmonyLib;
-using Verse;
-using RimWorld;
-
-namespace RavenRace.Core.Harmony
-{
-    /// <summary>
-    /// 核心功能补丁：禁用由非灵能技能（如强制求爱）错误触发的灵能熵UI。
-    /// 这是一个全局补丁，放置在Core文件夹下非常合适，用于解决根本性问题。
-    /// 原版游戏会将任何带有消耗的Ability都误判为灵能技能，导致没有灵能等级的角色出现错误的灵能熵UI。
-    /// 此补丁通过检查角色是否真的拥有灵能等级(PsychicAmplifier)来修正这个判断。
-    /// </summary>
-    [HarmonyPatch(typeof(Pawn_PsychicEntropyTracker), "IsPsychicallySensitive", MethodType.Getter)]
-    public static class Patch_DisablePsylink
-    {
-        /// <summary>
-        /// 在原版 IsPsychicallySensitive 属性的get方法执行后运行。
-        /// </summary>
-        /// <param name="__instance">Pawn_PsychicEntropyTracker的实例。</param>
-        /// <param name="pawn">该组件所属的Pawn。</param>
-        /// <param name="__result">原版方法的返回值，我们可以修改它。</param>
-        [HarmonyPostfix]
-        public static void Postfix(Pawn_PsychicEntropyTracker __instance, Pawn ___pawn, ref bool __result)
-        {
-            // 如果原版判断结果已经是“不敏感”，则无需任何操作。
-            if (!__result) return;
-
-            Pawn p = ___pawn;
-            if (p == null) return;
-
-            // 检查该Pawn是否拥有真正的灵能等级（来自帝国、启灵树或心灵武器）。
-            bool hasRealPsylink = p.health.hediffSet.HasHediff(HediffDefOf.PsychicAmplifier);
-
-            // 如果该Pawn没有真正的灵能等级，但游戏却因为他有技能（如我们的强制求爱）而误判为“灵能敏感”，
-            // 我们就强制将结果改回false，从而隐藏错误的灵能熵UI。
-            if (!hasRealPsylink && __instance.EntropyValue <= float.Epsilon)
-            {
-                __result = false;
-            }
         }
     }
 }.
@@ -8755,7 +8786,6 @@ namespace RavenRace.Features.MechanicalAngel
             {
                 pawn.rotationTracker.FaceTarget(Master);
 
-                // 【核心修复】直接恢复原版的 energy (已被伪装)
                 if (pawn.needs != null && pawn.needs.energy != null)
                 {
                     float energyToRestorePerTick = pawn.needs.energy.MaxLevel / ChargeDuration;
@@ -8772,6 +8802,14 @@ namespace RavenRace.Features.MechanicalAngel
                     FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.Heart, 0.4f);
                 }
             };
+
+            // 【核心新增】利用与上面刚写的一致的底层拦截机制，直接播放持续音效！
+            SoundDef papapaSound = DefDatabase<SoundDef>.GetNamedSilentFail("RavenMechAegis_PaPaPa");
+            if (papapaSound != null)
+            {
+                chargeToil.PlaySustainerOrSound(() => papapaSound, 1f);
+            }
+
             yield return chargeToil;
 
             Toil successToil = ToilMaker.MakeToil("AegisChargeSuccess");
@@ -8784,6 +8822,10 @@ namespace RavenRace.Features.MechanicalAngel
 
                     if (RavenDefOf.Raven_Thought_AegisDrained != null && Master.needs?.mood != null)
                         Master.needs.mood.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_AegisDrained, pawn);
+
+                    // 【核心修复】增加交配次数
+                    Master.records?.Increment(RavenDefOf.Raven_Record_LovinCount);
+                    pawn.records?.Increment(RavenDefOf.Raven_Record_LovinCount);
 
                     Messages.Message($"艾吉斯完成了对 {Master.LabelShort} 的体液榨取，淫能已满。", pawn, MessageTypeDefOf.NeutralEvent);
                 }
@@ -8810,13 +8852,13 @@ File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace
 ﻿using Verse;
 using Verse.AI;
 using RimWorld;
-using RavenRace.Features.Servitude;
 
 namespace RavenRace.Features.MechanicalAngel
 {
     /// <summary>
     /// 艾吉斯的专属充能 AI 节点。
     /// 继承自原版 JobGiver_GetEnergy，复用其阈值检测逻辑。
+    /// 现已完美对接原版机械师系统。
     /// </summary>
     public class JobGiver_AegisLustCharge : JobGiver_GetEnergy
     {
@@ -8829,11 +8871,8 @@ namespace RavenRace.Features.MechanicalAngel
             var core = pawn.TryGetComp<CompAegisCore>();
             if (core == null || !core.allowLustCharge) return null;
 
-            // 3. 通过 ServitudeManager 寻找主人
-            var manager = ServitudeManager.Get();
-            if (manager == null) return null;
-
-            Pawn master = manager.GetMaster(pawn);
+            // 3. 【核心修改】通过原版扩展方法获取该机械体的绑定机械师主管！
+            Pawn master = pawn.GetOverseer();
 
             // 确保主人在同地图、存活，且可以被到达
             if (master != null && master.Map == pawn.Map && !master.Dead && !master.IsForbidden(pawn))
@@ -8847,6 +8886,53 @@ namespace RavenRace.Features.MechanicalAngel
             }
 
             // 如果没有主人或主人无法到达，返回 null（节点失效，退回到原版的充电站逻辑）
+            return null;
+        }
+    }
+}.
+.
+=
+File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\Features\MechanicalAngel\JobGiver_AegisRescueMaster.cs
+=
+.
+﻿using RimWorld;
+using Verse;
+using Verse.AI;
+
+namespace RavenRace.Features.MechanicalAngel
+{
+    /// <summary>
+    /// 艾吉斯紧急救援主人的行为节点。
+    /// 放在 ThinkTree 最顶端。只要主管倒地且不在床上，艾吉斯会放下一切强制执行救援。
+    /// 现已完美对接原版机械师系统。
+    /// </summary>
+    public class JobGiver_AegisRescueMaster : ThinkNode_JobGiver
+    {
+        protected override Job TryGiveJob(Pawn pawn)
+        {
+            // 如果艾吉斯自己倒了或无法移动，或者正在发情暴走，则无法救援
+            if (pawn.Downed || !pawn.Awake() || pawn.GetComp<CompAegisCore>()?.isRampaging == true)
+                return null;
+
+            // 【核心修改】获取原版机械师主管
+            Pawn master = pawn.GetOverseer();
+
+            // 确保主人存活、在当前地图，且已经倒地，且尚未躺在床上
+            if (master != null && master.Spawned && master.Map == pawn.Map && master.Downed && !master.InBed())
+            {
+                // 检查是否能够到达主人身边
+                if (!pawn.CanReach(master, PathEndMode.OnCell, Danger.Deadly)) return null;
+
+                // 寻找一个适合主人躺下的床铺 (使用原版医疗分配逻辑)
+                Building_Bed bed = RestUtility.FindBedFor(master, pawn, false, false, master.GuestStatus);
+                if (bed != null && master.CanReserve(bed, 1, -1, null, false))
+                {
+                    Job rescueJob = JobMaker.MakeJob(JobDefOf.Rescue, master, bed);
+                    rescueJob.count = 1;
+                    return rescueJob;
+                }
+            }
+
             return null;
         }
     }
@@ -8946,7 +9032,8 @@ namespace RavenRace.Features.MechanicalAngel
 File: C:\Users\Administrator\Desktop\RavenRace\ZuoYao_RavenRace\Source\RavenRace\Features\MechanicalAngel\Patch_AegisCoreSystems.cs
 =
 .
-﻿using HarmonyLib;
+﻿using System;
+using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -8955,19 +9042,35 @@ using Verse.Sound;
 
 namespace RavenRace.Features.MechanicalAngel
 {
+    /// <summary>
+    /// 艾吉斯核心系统拦截补丁综合类。
+    /// 职责：
+    /// 1. 伪装原版能量条为淫能。
+    /// 2. 屏蔽有毒垃圾产出。
+    /// 3. 拦截医疗和手术逻辑（音效替换与极乐结算）。
+    /// 注意：已移除强行绕过机械师限制的补丁，回归原版最稳定的提取框架！
+    /// </summary>
     [HarmonyPatch]
     public static class Patch_AegisCoreSystems
     {
-        // =========================================================
-        // 1. 无痛伪装原版能量条 (让维修自动扣除淫能)
-        // 修复：使用 Harmony 的 ___pawn 参数安全访问受保护字段
-        // =========================================================
+        private static Pawn GetPawn(Need need)
+        {
+            return Traverse.Create(need).Field("pawn").GetValue<Pawn>();
+        }
 
+        private static bool IsAegis(Pawn pawn)
+        {
+            return pawn != null && pawn.def == RavenDefOf.Raven_Mech_Aegis;
+        }
+
+        // =========================================================
+        // 1. 无痛伪装原版能量条
+        // =========================================================
         [HarmonyPatch(typeof(Need), "get_LabelCap")]
         [HarmonyPostfix]
-        public static void LabelCap_Postfix(Need __instance, Pawn ___pawn, ref string __result)
+        public static void LabelCap_Postfix(Need __instance, ref string __result)
         {
-            if (__instance is Need_MechEnergy && ___pawn?.def == RavenDefOf.Raven_Mech_Aegis)
+            if (__instance is Need_MechEnergy && IsAegis(GetPawn(__instance)))
             {
                 __result = "<color=#FF69B4>淫能</color>";
             }
@@ -8975,9 +9078,9 @@ namespace RavenRace.Features.MechanicalAngel
 
         [HarmonyPatch(typeof(Need_MechEnergy), "GetTipString")]
         [HarmonyPostfix]
-        public static void GetTipString_Postfix(Need_MechEnergy __instance, Pawn ___pawn, ref string __result)
+        public static void GetTipString_Postfix(Need_MechEnergy __instance, ref string __result)
         {
-            if (___pawn?.def == RavenDefOf.Raven_Mech_Aegis)
+            if (IsAegis(GetPawn(__instance)))
             {
                 __result = "<color=#FF69B4>淫能: " + __instance.CurLevelPercentage.ToStringPercent() + "</color>\n" +
                            "艾吉斯核心特有的能量系统。必须通过与生命体发生剧烈互动来汲取精气充能。\n(技师在维修她时，也会大量消耗此能量)\n\n" +
@@ -8987,11 +9090,11 @@ namespace RavenRace.Features.MechanicalAngel
 
         [HarmonyPatch(typeof(Need_MechEnergy), "get_MaxLevel")]
         [HarmonyPrefix]
-        public static bool MaxLevel_Prefix(Need_MechEnergy __instance, Pawn ___pawn, ref float __result)
+        public static bool MaxLevel_Prefix(Need_MechEnergy __instance, ref float __result)
         {
-            if (___pawn?.def == RavenDefOf.Raven_Mech_Aegis)
+            if (IsAegis(GetPawn(__instance)))
             {
-                __result = 100f; // 锁定最大值为100
+                __result = 100f;
                 return false;
             }
             return true;
@@ -8999,18 +9102,18 @@ namespace RavenRace.Features.MechanicalAngel
 
         [HarmonyPatch(typeof(Need_MechEnergy), "get_FallPerDay")]
         [HarmonyPrefix]
-        public static bool FallPerDay_Prefix(Need_MechEnergy __instance, Pawn ___pawn, ref float __result)
+        public static bool FallPerDay_Prefix(Need_MechEnergy __instance, ref float __result)
         {
-            Pawn p = ___pawn;
-            if (p != null && p.def == RavenDefOf.Raven_Mech_Aegis)
+            Pawn pawn = GetPawn(__instance);
+            if (IsAegis(pawn))
             {
-                if (p.Downed || !p.Awake()) { __result = 0f; return false; }
-                if (p.CurJobDef == RavenDefOf.Raven_Job_AegisLustCharge || p.CurJobDef == RavenDefOf.Raven_Job_AegisRampageCharge)
+                if (pawn.Downed || !pawn.Awake()) { __result = 0f; return false; }
+                if (pawn.CurJobDef == RavenDefOf.Raven_Job_AegisLustCharge || pawn.CurJobDef == DefDatabase<JobDef>.GetNamedSilentFail("Raven_Job_AegisRampageCharge"))
                 {
-                    __result = -100f; // 正在做爱时大幅度恢复
+                    __result = -100f; // 榨汁时大幅度恢复
                     return false;
                 }
-                __result = (p.mindState != null && !p.mindState.IsIdle) ? 20f : 5f;
+                __result = (pawn.mindState != null && !pawn.mindState.IsIdle) ? 20f : 5f;
                 return false;
             }
             return true;
@@ -9018,12 +9121,12 @@ namespace RavenRace.Features.MechanicalAngel
 
         [HarmonyPatch(typeof(Need), "DrawOnGUI")]
         [HarmonyPrefix]
-        public static void DrawOnGUI_Prefix(Need __instance, Pawn ___pawn, out Color __state)
+        public static void DrawOnGUI_Prefix(Need __instance, out Color __state)
         {
             __state = GUI.color;
-            if (__instance is Need_MechEnergy && ___pawn?.def == RavenDefOf.Raven_Mech_Aegis)
+            if (__instance is Need_MechEnergy && IsAegis(GetPawn(__instance)))
             {
-                GUI.color = new Color(1f, 0.41f, 0.7f, 1f); // 画条时强制染成粉色
+                GUI.color = new Color(1f, 0.41f, 0.7f, 1f);
             }
         }
 
@@ -9038,7 +9141,7 @@ namespace RavenRace.Features.MechanicalAngel
         [HarmonyPrefix]
         public static bool PawnColumnWorker_Prefix(Rect rect, Pawn pawn)
         {
-            if (pawn.def == RavenDefOf.Raven_Mech_Aegis && !pawn.IsGestating() && pawn.needs?.energy != null)
+            if (IsAegis(pawn) && !pawn.IsGestating() && pawn.needs?.energy != null)
             {
                 Widgets.FillableBar(rect.ContractedBy(4f), pawn.needs.energy.CurLevelPercentage, SolidColorMaterials.NewSolidColorTexture(new Color(1f, 0.41f, 0.7f)), BaseContent.ClearTex, false);
                 Text.Font = GameFont.Small;
@@ -9053,21 +9156,14 @@ namespace RavenRace.Features.MechanicalAngel
         // =========================================================
         // 2. 彻底屏蔽调教仓的有毒垃圾产出和空指针报错
         // =========================================================
-
         [HarmonyPatch(typeof(CompWasteProducer), "ProduceWaste")]
         [HarmonyPrefix]
-        public static bool ProduceWaste_Prefix(CompWasteProducer __instance)
-        {
-            // 如果是我们的调教仓，拦截产出方法，不产生任何垃圾！
-            if (__instance.parent.def == RavenDefOf.Raven_Building_AngelGestator) return false;
-            return true;
-        }
+        public static bool ProduceWaste_Prefix(CompWasteProducer __instance) => __instance.parent.def != RavenDefOf.Raven_Building_AngelGestator;
 
         [HarmonyPatch(typeof(CompWasteProducer), "get_CanEmptyNow")]
         [HarmonyPostfix]
         public static void CanEmptyNow_Postfix(CompWasteProducer __instance, ref bool __result)
         {
-            // 告诉AI，我们的仓不需要清空垃圾
             if (__instance.parent.def == RavenDefOf.Raven_Building_AngelGestator) __result = false;
         }
 
@@ -9075,11 +9171,9 @@ namespace RavenRace.Features.MechanicalAngel
         [HarmonyPrefix]
         public static bool GetWaste_Prefix(CompWasteProducer __instance, ref Thing __result)
         {
-            // 拦截核心空指针来源：如果内部容器为空或者是我们的仓，直接返回null
             if (__instance.parent.def == RavenDefOf.Raven_Building_AngelGestator || __instance.parent.TryGetInnerInteractableThingOwner() == null)
             {
-                __result = null;
-                return false;
+                __result = null; return false;
             }
             return true;
         }
@@ -9088,35 +9182,49 @@ namespace RavenRace.Features.MechanicalAngel
         [HarmonyPrefix]
         public static bool CompInspectStringExtra_Prefix(CompWasteProducer __instance, ref string __result)
         {
-            // 面板上不显示有毒垃圾
             if (__instance.parent.def == RavenDefOf.Raven_Building_AngelGestator)
             {
-                __result = null;
-                return false;
+                __result = null; return false;
             }
             return true;
         }
 
         // =========================================================
-        // 3. 拦截治疗、手术和解锁装备栏
+        // 3. 拦截医疗、手术、装备和音效 (瞬时替换模式)
         // =========================================================
-
         [HarmonyPatch(typeof(ITab_Pawn_Gear), "IsVisible", MethodType.Getter)]
         [HarmonyPostfix]
         public static void IsVisible_Postfix(ITab_Pawn_Gear __instance, ref bool __result)
         {
             Pawn pawn = Traverse.Create(__instance).Property("SelPawnForGear").GetValue<Pawn>();
-            if (!__result && pawn != null && pawn.def == RavenDefOf.Raven_Mech_Aegis)
+            if (!__result && IsAegis(pawn)) __result = true;
+        }
+
+        [HarmonyPatch(typeof(ToilEffects), "PlaySustainerOrSound", new Type[] { typeof(Toil), typeof(Func<SoundDef>), typeof(float) })]
+        [HarmonyPrefix]
+        public static void PlaySustainerOrSound_Prefix(Toil toil, ref Func<SoundDef> soundDefGetter)
+        {
+            Func<SoundDef> originalGetter = soundDefGetter;
+            soundDefGetter = () =>
             {
-                __result = true;
-            }
+                Pawn pawn = toil.actor;
+                if (IsAegis(pawn))
+                {
+                    if (pawn.CurJobDef == JobDefOf.TendPatient ||
+                       (pawn.CurJobDef == JobDefOf.DoBill && pawn.CurJob.GetTarget(TargetIndex.A).Thing is Pawn))
+                    {
+                        return null; // 哑巴掉原版的音效
+                    }
+                }
+                return originalGetter();
+            };
         }
 
         [HarmonyPatch(typeof(TendUtility), "DoTend")]
         [HarmonyPrefix]
         public static bool DoTend_Prefix(Pawn doctor, Pawn patient)
         {
-            if (doctor == null || doctor.def != RavenDefOf.Raven_Mech_Aegis) return true;
+            if (!IsAegis(doctor)) return true;
 
             var lustNeed = doctor.needs.energy;
             if (lustNeed == null || lustNeed.CurLevel < 10f)
@@ -9125,25 +9233,26 @@ namespace RavenRace.Features.MechanicalAngel
                 return false;
             }
             lustNeed.CurLevel -= 10f;
-            float quality = 2.0f; // 固定200%治疗质量
+            float quality = 2.0f;
 
             var hediffsToTend = new System.Collections.Generic.List<Hediff>();
             TendUtility.GetOptimalHediffsToTendWithSingleTreatment(patient, true, hediffsToTend, null);
-
             foreach (var hediff in hediffsToTend) hediff.Tended(quality, quality, 0);
 
             if (RavenDefOf.Raven_Hediff_AegisPanacea != null)
                 patient.health.AddHediff(RavenDefOf.Raven_Hediff_AegisPanacea);
-
             if (RavenDefOf.Raven_Thought_AegisPanacea != null && patient.needs?.mood != null)
                 patient.needs.mood.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_AegisPanacea, doctor);
 
             FleckMaker.ThrowMetaIcon(patient.Position, patient.Map, FleckDefOf.Heart);
+
             SoundDef treatmentSound = DefDatabase<SoundDef>.GetNamedSilentFail("RavenMechAegis_PaPaPa");
             treatmentSound?.PlayOneShot(new TargetInfo(patient.Position, patient.Map));
 
-            patient.records.Increment(RecordDefOf.TimesTendedTo);
-            doctor.records.Increment(RecordDefOf.TimesTendedOther);
+            patient.records?.Increment(RavenDefOf.Raven_Record_LovinCount);
+            doctor.records?.Increment(RavenDefOf.Raven_Record_LovinCount);
+            patient.records?.Increment(RecordDefOf.TimesTendedTo);
+            doctor.records?.Increment(RecordDefOf.TimesTendedOther);
 
             return false;
         }
@@ -9152,11 +9261,7 @@ namespace RavenRace.Features.MechanicalAngel
         [HarmonyPrefix]
         public static bool CheckSurgeryFail_Prefix(ref bool __result, Pawn surgeon)
         {
-            if (surgeon != null && surgeon.def == RavenDefOf.Raven_Mech_Aegis)
-            {
-                __result = false;
-                return false;
-            }
+            if (IsAegis(surgeon)) { __result = false; return false; }
             return true;
         }
 
@@ -9164,7 +9269,7 @@ namespace RavenRace.Features.MechanicalAngel
         [HarmonyPostfix]
         public static void OnSurgerySuccess_Postfix(Pawn pawn, Pawn billDoer)
         {
-            if (billDoer != null && billDoer.def == RavenDefOf.Raven_Mech_Aegis)
+            if (IsAegis(billDoer))
             {
                 var lustNeed = billDoer.needs.energy;
                 if (lustNeed != null && lustNeed.CurLevel >= 10f)
@@ -9172,16 +9277,19 @@ namespace RavenRace.Features.MechanicalAngel
                     lustNeed.CurLevel -= 10f;
                     if (RavenDefOf.Raven_Hediff_AegisPanacea != null)
                         pawn.health.AddHediff(RavenDefOf.Raven_Hediff_AegisPanacea);
-
                     if (RavenDefOf.Raven_Thought_AegisPanacea != null && pawn.needs?.mood != null)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_AegisPanacea, billDoer);
 
                     SoundDef treatmentSound = DefDatabase<SoundDef>.GetNamedSilentFail("RavenMechAegis_PaPaPa");
                     treatmentSound?.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
+
+                    pawn.records?.Increment(RavenDefOf.Raven_Record_LovinCount);
+                    billDoer.records?.Increment(RavenDefOf.Raven_Record_LovinCount);
                 }
             }
         }
 
+        // 暴走索敌拦截
         [HarmonyPatch(typeof(Pawn_JobTracker), "DetermineNextJob")]
         [HarmonyPrefix]
         public static bool DetermineNextJob_Prefix(ref ThinkResult __result, Pawn ___pawn)
@@ -9192,9 +9300,11 @@ namespace RavenRace.Features.MechanicalAngel
                 Pawn target = (Pawn)GenClosest.ClosestThing_Global(___pawn.Position, ___pawn.Map.mapPawns.AllPawnsSpawned, 9999f,
                     t => t is Pawn p && p != ___pawn && !p.Dead && p.def != RavenDefOf.Raven_Mech_Aegis && ___pawn.CanReach(p, PathEndMode.Touch, Danger.Deadly));
 
-                if (target != null && RavenDefOf.Raven_Job_AegisRampageCharge != null)
+                // 使用安全的方式获取发情暴走的JobDef
+                JobDef rampageJob = DefDatabase<JobDef>.GetNamedSilentFail("Raven_Job_AegisRampageCharge");
+                if (target != null && rampageJob != null)
                 {
-                    Job job = JobMaker.MakeJob(RavenDefOf.Raven_Job_AegisRampageCharge, target);
+                    Job job = JobMaker.MakeJob(rampageJob, target);
                     __result = new ThinkResult(job, null, JobTag.Misc, false);
                     return false;
                 }
@@ -10167,7 +10277,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZuoYao_RavenRace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3142980c04ce4d54fb1660b91004c217860876d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6115f3cb9d9688bc569033ee6bdecf66c35f2542")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZuoYao_RavenRace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZuoYao_RavenRace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

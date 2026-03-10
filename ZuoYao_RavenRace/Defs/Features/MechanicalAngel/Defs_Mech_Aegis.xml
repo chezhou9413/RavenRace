@@ -9,6 +9,7 @@
       <MoveSpeed>6.5</MoveSpeed>
       <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+      <!-- 带宽消耗设为3点，与原版对齐 -->
       <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
       <MedicalTendQuality>2.0</MedicalTendQuality>
       <MedicalSurgerySuccessChance>2.0</MedicalSurgerySuccessChance>
@@ -91,6 +92,7 @@
     <jobString>正满脸淫笑地监控着调教舱的恶堕开发进度。</jobString>
     <workAmount>12000</workAmount> 
     <researchPrerequisite>RavenResearch_MechanicalAngel</researchPrerequisite>
+    
     <ingredients Inherit="False">
       <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>150</count></li>
       <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>8</count></li>
@@ -99,6 +101,7 @@
       <li><filter><thingDefs><li>RavenItem_SevenEmotionsNectar</li></thingDefs></filter><count>20</count></li>
     </ingredients>
     <products>
+      <!-- 【核心修复】修正了此处致命的拼写错误，闭合标签不应包含多余的 "1" -->
       <Raven_Mech_Aegis>1</Raven_Mech_Aegis>
     </products>
     <formingTicks>180000</formingTicks>

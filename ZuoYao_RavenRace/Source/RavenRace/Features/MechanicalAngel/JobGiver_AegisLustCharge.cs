@@ -1,13 +1,13 @@
 ﻿using Verse;
 using Verse.AI;
 using RimWorld;
-using RavenRace.Features.Servitude;
 
 namespace RavenRace.Features.MechanicalAngel
 {
     /// <summary>
     /// 艾吉斯的专属充能 AI 节点。
     /// 继承自原版 JobGiver_GetEnergy，复用其阈值检测逻辑。
+    /// 现已完美对接原版机械师系统。
     /// </summary>
     public class JobGiver_AegisLustCharge : JobGiver_GetEnergy
     {
@@ -20,11 +20,8 @@ namespace RavenRace.Features.MechanicalAngel
             var core = pawn.TryGetComp<CompAegisCore>();
             if (core == null || !core.allowLustCharge) return null;
 
-            // 3. 通过 ServitudeManager 寻找主人
-            var manager = ServitudeManager.Get();
-            if (manager == null) return null;
-
-            Pawn master = manager.GetMaster(pawn);
+            // 3. 【核心修改】通过原版扩展方法获取该机械体的绑定机械师主管！
+            Pawn master = pawn.GetOverseer();
 
             // 确保主人在同地图、存活，且可以被到达
             if (master != null && master.Map == pawn.Map && !master.Dead && !master.IsForbidden(pawn))

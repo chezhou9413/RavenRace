@@ -4,7 +4,8 @@
     <defName>Raven_DoBillsAngelGestator</defName>
     <label>神骸堕化调教</label>
     <giverClass>WorkGiver_DoBill</giverClass>
-    <workType>Smithing</workType>
+    <!-- 【核心修复】工作类型必须改为原版机械师专用的 BasicWorker，否则机械师永远不会识别这个工作台上的清单！-->
+    <workType>BasicWorker</workType> 
     <priorityInType>220</priorityInType>
     <fixedBillGiverDefs>
       <!-- 绑定到我们的专属调教舱 -->

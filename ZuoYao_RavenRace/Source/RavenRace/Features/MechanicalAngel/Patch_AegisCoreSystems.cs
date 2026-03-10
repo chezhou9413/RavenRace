@@ -14,7 +14,7 @@ namespace RavenRace.Features.MechanicalAngel
     /// 1. 伪装原版能量条为淫能。
     /// 2. 屏蔽有毒垃圾产出。
     /// 3. 拦截医疗和手术逻辑（音效替换与极乐结算）。
-    /// 4. 绕过原版培育仓的机械师带宽限制。
+    /// 注意：已移除强行绕过机械师限制的补丁，回归原版最稳定的提取框架！
     /// </summary>
     [HarmonyPatch]
     public static class Patch_AegisCoreSystems
@@ -74,7 +74,7 @@ namespace RavenRace.Features.MechanicalAngel
             if (IsAegis(pawn))
             {
                 if (pawn.Downed || !pawn.Awake()) { __result = 0f; return false; }
-                if (pawn.CurJobDef == RavenDefOf.Raven_Job_AegisLustCharge || pawn.CurJobDef == RavenDefOf.Raven_Job_AegisRampageCharge)
+                if (pawn.CurJobDef == RavenDefOf.Raven_Job_AegisLustCharge || pawn.CurJobDef == DefDatabase<JobDef>.GetNamedSilentFail("Raven_Job_AegisRampageCharge"))
                 {
                     __result = -100f; // 榨汁时大幅度恢复
                     return false;
@@ -166,7 +166,6 @@ namespace RavenRace.Features.MechanicalAngel
             if (!__result && IsAegis(pawn)) __result = true;
         }
 
-        // 【核心修复】使用闭包动态静音原版治疗和手术音效
         [HarmonyPatch(typeof(ToilEffects), "PlaySustainerOrSound", new Type[] { typeof(Toil), typeof(Func<SoundDef>), typeof(float) })]
         [HarmonyPrefix]
         public static void PlaySustainerOrSound_Prefix(Toil toil, ref Func<SoundDef> soundDefGetter)
@@ -174,14 +173,13 @@ namespace RavenRace.Features.MechanicalAngel
             Func<SoundDef> originalGetter = soundDefGetter;
             soundDefGetter = () =>
             {
-                Pawn pawn = toil.actor; // 在实际运行的帧数获取真正的操作者
+                Pawn pawn = toil.actor;
                 if (IsAegis(pawn))
                 {
                     if (pawn.CurJobDef == JobDefOf.TendPatient ||
                        (pawn.CurJobDef == JobDefOf.DoBill && pawn.CurJob.GetTarget(TargetIndex.A).Thing is Pawn))
                     {
-                        // 只要是艾吉斯在做手术/治疗，强制把原版的持续音效变哑巴
-                        return null;
+                        return null; // 哑巴掉原版的音效
                     }
                 }
                 return originalGetter();
@@ -214,7 +212,6 @@ namespace RavenRace.Features.MechanicalAngel
 
             FleckMaker.ThrowMetaIcon(patient.Position, patient.Map, FleckDefOf.Heart);
 
-            // 【结算】治疗结束瞬间播放 PaPaPa
             SoundDef treatmentSound = DefDatabase<SoundDef>.GetNamedSilentFail("RavenMechAegis_PaPaPa");
             treatmentSound?.PlayOneShot(new TargetInfo(patient.Position, patient.Map));
 
@@ -249,7 +246,6 @@ namespace RavenRace.Features.MechanicalAngel
                     if (RavenDefOf.Raven_Thought_AegisPanacea != null && pawn.needs?.mood != null)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_AegisPanacea, billDoer);
 
-                    // 【结算】手术结束瞬间播放 PaPaPa
                     SoundDef treatmentSound = DefDatabase<SoundDef>.GetNamedSilentFail("RavenMechAegis_PaPaPa");
                     treatmentSound?.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
 
@@ -270,47 +266,14 @@ namespace RavenRace.Features.MechanicalAngel
                 Pawn target = (Pawn)GenClosest.ClosestThing_Global(___pawn.Position, ___pawn.Map.mapPawns.AllPawnsSpawned, 9999f,
                     t => t is Pawn p && p != ___pawn && !p.Dead && p.def != RavenDefOf.Raven_Mech_Aegis && ___pawn.CanReach(p, PathEndMode.Touch, Danger.Deadly));
 
-                if (target != null && RavenDefOf.Raven_Job_AegisRampageCharge != null)
+                // 使用安全的方式获取发情暴走的JobDef
+                JobDef rampageJob = DefDatabase<JobDef>.GetNamedSilentFail("Raven_Job_AegisRampageCharge");
+                if (target != null && rampageJob != null)
                 {
-                    Job job = JobMaker.MakeJob(RavenDefOf.Raven_Job_AegisRampageCharge, target);
+                    Job job = JobMaker.MakeJob(rampageJob, target);
                     __result = new ThinkResult(job, null, JobTag.Misc, false);
                     return false;
                 }
-            }
-            return true;
-        }
-
-        // =========================================================
-        // 4. 绕过原版机械师身份和带宽限制，允许任何人操作调教舱
-        // =========================================================
-        [HarmonyPatch(typeof(Bill_Mech), "PawnAllowedToStartAnew")]
-        [HarmonyPrefix]
-        public static bool PawnAllowedToStartAnew_Prefix(Bill_Mech __instance, Pawn p, ref bool __result)
-        {
-            if (__instance.recipe.defName == "Make_Raven_Mech_Aegis")
-            {
-                if (!ModLister.CheckBiotech("Mech bill")) { __result = false; return false; }
-                if (!__instance.recipe.PawnSatisfiesSkillRequirements(p)) { __result = false; return false; }
-                if (__instance.BoundPawn != null && __instance.BoundPawn != p)
-                {
-                    JobFailReason.Is("AlreadyAssigned".Translate() + " (" + __instance.BoundPawn.LabelShort + ")", null);
-                    __result = false;
-                    return false;
-                }
-                __result = true;
-                return false;
-            }
-            return true;
-        }
-
-        [HarmonyPatch(typeof(Bill_Mech), "ShouldDoNow")]
-        [HarmonyPrefix]
-        public static bool ShouldDoNow_Prefix(Bill_Mech __instance, ref bool __result)
-        {
-            if (__instance.recipe.defName == "Make_Raven_Mech_Aegis")
-            {
-                __result = !__instance.suspended;
-                return false;
             }
             return true;
         }

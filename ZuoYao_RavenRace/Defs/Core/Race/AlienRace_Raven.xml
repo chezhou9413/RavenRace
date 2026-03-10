@@ -530,6 +530,16 @@
           <li>Raven_Apparel_ShadowCloak</li>
 
           <li>Raven_Apparel_BeadedGstring</li>
+
+
+
+          <!-- [核心修复] 将原版的腰带类和背包类加入白名单，否则即便身体有Waist也穿不上！ -->
+          <li>Apparel_ShieldBelt</li>
+          <li>Apparel_SmokepopBelt</li>
+          <li>Apparel_FirefoampopPack</li>
+          <li>Apparel_PackJump</li>
+          <li>Apparel_PackBroadshield</li>
+
         </whiteApparelList>
 
         <!-- 
