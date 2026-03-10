@@ -12,6 +12,11 @@
     <castEdgeShadows>true</castEdgeShadows>
     <pathCost>42</pathCost>
     <size>(3,2)</size>
+    
+    <!-- 【核心修复】加入交互点，这是 DoBill 工作必须的，否则小人不知道在哪塞材料 -->
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+
     <statBases>
       <MaxHitPoints>350</MaxHitPoints>
       <WorkToBuild>8000</WorkToBuild>
@@ -24,10 +29,16 @@
       <ComponentIndustrial>8</ComponentIndustrial>
       <ComponentSpacer>2</ComponentSpacer>
     </costList>
-    <designationCategory>Biotech</designationCategory> 
+    
+    <designationCategory>Raven_Category</designationCategory> 
     <researchPrerequisites>
-      <li>HighMechtech</li>
+      <li>RavenResearch_MechanicalAngel</li>
     </researchPrerequisites>
+    
+    <recipes>
+      <li>Make_Raven_Mech_Aegis</li>
+    </recipes>
+
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -35,7 +46,6 @@
         <idlePowerDraw>50</idlePowerDraw>
       </li>
       <li Class="CompProperties_Flickable"/>
-      <!-- 【核心防崩】原版代码强制要求机械仓拥有此组件，否则培育完成时会报空指针 -->
       <li Class="CompProperties_WasteProducer" />
     </comps>
 
@@ -45,7 +55,6 @@
 
     <building>
       <destroySound>BuildingDestroy_Metal_Big</destroySound>
-      <!-- 【核心修复】严格遵守 FillableBarRequestWithRotation 的数据结构，使用原版 3x2 标准尺寸的偏移量 -->
       <barDrawData>
         <north>
           <preRotationOffset>(-1.06, 0.91)</preRotationOffset>
@@ -64,7 +73,6 @@
           <size>(0.7, 0.13)</size>
         </west>
       </barDrawData>
-      <!-- 【核心修复】为了防止尝试绘制虚影时报错，提供一个空位数据 -->
       <formingGraphicData>
         <texPath>Things/Pawn/Mechanoid/HalfGestatedMechSmall</texPath>
         <graphicClass>Graphic_Single</graphicClass>
@@ -78,7 +86,6 @@
         <li>(0, 0, 0.45)</li>
         <li>(0, 0, 0.45)</li>
       </formingMechPerRotationOffset>
-      <!-- 【核心修复】严格遵守 MoteForRotationData 的四个方向结构 -->
       <gestatorFormingMote>
         <north>MechGestatorForming_North</north>
         <east>MechGestatorForming_East</east>

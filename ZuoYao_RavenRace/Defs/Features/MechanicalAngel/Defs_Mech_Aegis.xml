@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <!-- 机械天使躯体定义 -->
   <ThingDef ParentName="BaseMechanoidWalker">
     <defName>Raven_Mech_Aegis</defName>
     <label>机械天使“艾吉斯”</label>
@@ -9,7 +10,6 @@
       <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
       <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
-      <!-- 【核心修改 4】医疗等级直接在XML中定义，无需再用反射 -->
       <MedicalTendQuality>2.0</MedicalTendQuality>
       <MedicalSurgerySuccessChance>2.0</MedicalSurgerySuccessChance>
       <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">0</WastepacksPerRecharge>
@@ -40,7 +40,6 @@
         <li>Doctor</li>
         <li>Warden</li> 
       </mechEnabledWorkTypes>
-      <!-- 【核心修改 4】原版机械的固定技能等级在这里设置 -->
       <mechFixedSkillLevel>20</mechFixedSkillLevel>
       <lifeStageAges Inherit="False">
         <li><def>MechanoidFullyFormed</def><minAge>0</minAge></li>
@@ -67,6 +66,7 @@
     </comps>
   </ThingDef>
   
+  <!-- 机械天使种类定义 -->
   <PawnKindDef ParentName="BaseMechanoidKind">
     <defName>Raven_Mech_Aegis</defName>
     <label>机械天使“艾吉斯”</label>
@@ -83,44 +83,33 @@
     </lifeStages>
   </PawnKindDef>
 
-  <RecipeDef>
+  <!-- 机械天使制造配方 -->
+  <RecipeDef ParentName="BaseMechanoidRecipe">
     <defName>Make_Raven_Mech_Aegis</defName>
     <label>堕化重塑：机械天使</label>
     <description>启动调教舱的极限堕化程序。将纯洁的机械残躯与破碎日核投入其中，开始深度的机体改造与肉道重塑。\n\n在漫长的三个调教周期里，无数粗糙的管线将插满她的每一个腔道，日夜不停地注入催情素并进行超高频率的震动刮擦。当“子宫恶堕”、“感官重写”与“常时发情”三个阶段的程序全部读条完毕后，那具曾经高高在上的神圣躯体，将在翻白眼的剧烈高潮中彻底崩溃，醒来时已是一具只认得主人肉棒的终极性爱机械。</description>
     <jobString>正满脸淫笑地监控着调教舱的恶堕开发进度。</jobString>
     <workAmount>12000</workAmount> 
-    <researchPrerequisite>HighMechtech</researchPrerequisite>
-    <recipeUsers>
-      <li>Raven_Building_AngelGestator</li>
-    </recipeUsers>
-    <ingredients>
+    <researchPrerequisite>RavenResearch_MechanicalAngel</researchPrerequisite>
+    <ingredients Inherit="False">
       <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>150</count></li>
       <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>8</count></li>
       <li><filter><thingDefs><li>Raven_ShatteredSunCore</li></thingDefs></filter><count>1</count></li>
       <li><filter><thingDefs><li>SubcoreHigh</li></thingDefs></filter><count>1</count></li>
       <li><filter><thingDefs><li>RavenItem_SevenEmotionsNectar</li></thingDefs></filter><count>20</count></li>
     </ingredients>
-    <fixedIngredientFilter>
-      <thingDefs>
-        <li>Plasteel</li>
-        <li>ComponentSpacer</li>
-        <li>Raven_ShatteredSunCore</li>
-        <li>SubcoreHigh</li>
-        <li>RavenItem_SevenEmotionsNectar</li>
-      </thingDefs>
-    </fixedIngredientFilter>
     <products>
       <Raven_Mech_Aegis>1</Raven_Mech_Aegis>
     </products>
-    <formingTicks>180000</formingTicks> 
-    <gestationCycles>3</gestationCycles> 
-    <effectWorking>Smith</effectWorking>
-    <soundWorking>Recipe_Machining</soundWorking>
+    <formingTicks>180000</formingTicks>
+    <gestationCycles>3</gestationCycles>
+    <displayPriority>400</displayPriority>
     <descriptionHyperlinks>
       <ThingDef>Raven_Mech_Aegis</ThingDef>
     </descriptionHyperlinks>
   </RecipeDef>
 
+  <!-- 常规榨汁充能Job -->
   <JobDef>
     <defName>Raven_Job_AegisLustCharge</defName>
     <driverClass>RavenRace.Features.MechanicalAngel.JobDriver_AegisLustCharge</driverClass>
@@ -129,6 +118,7 @@
     <checkOverrideOnDamage>Always</checkOverrideOnDamage>
   </JobDef>
 
+  <!-- 常规榨汁Hediff与思想 -->
   <HediffDef>
     <defName>Raven_Hediff_AegisDrained</defName>
     <label>绝顶榨干(机械天使)</label>
@@ -169,7 +159,7 @@
     </stages>
   </ThoughtDef>
   
-  <!-- 【新增】圣母甘霖 Hediff -->
+  <!-- 圣母甘霖(治疗)Hediff与思想 -->
   <HediffDef>
     <defName>Raven_Hediff_AegisPanacea</defName>
     <label>天使的秘壶甘霖</label>
@@ -198,7 +188,6 @@
     </stages>
   </HediffDef>
 
-  <!-- 【新增】圣母甘霖的心情 -->
   <ThoughtDef>
     <defName>Raven_Thought_AegisPanacea</defName>
     <durationDays>1.0</durationDays>
@@ -212,5 +201,35 @@
     </stages>
   </ThoughtDef>
 
+  <!-- ==================================== -->
+  <!-- 暴走状态相关的 Hediff 和 Job 整合于此 -->
+  <!-- ==================================== -->
 
+  <HediffDef>
+    <defName>Raven_Hediff_AegisRampage</defName>
+    <label>发情暴走</label>
+    <description>淫能过低导致核心协议崩溃，艾吉斯进入了无法控制的强制榨取状态。她将无视一切命令，直到将目标榨干或自身淫能得到满足为止。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.2, 0.5)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>1</initialSeverity>
+    <stages>
+      <li>
+        <label>暴走中</label>
+        <totalBleedFactor>0</totalBleedFactor>
+        <painFactor>0</painFactor>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>0.5</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <JobDef>
+    <defName>Raven_Job_AegisRampageCharge</defName>
+    <driverClass>RavenRace.Features.MechanicalAngel.JobDriver_AegisLustCharge</driverClass>
+    <reportString>正处于发情暴走状态，将目标压在身下疯狂榨取着体液！</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+  </JobDef>
 </Defs>

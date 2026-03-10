@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
   <ThinkTreeDef>
     <defName>Raven_Aegis_ThinkTree</defName>
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
-        <!-- 保持与原版机械体相同的前置判定 -->
         <li Class="ThinkNode_Subtree"><treeDef>Despawned</treeDef></li>
         <li Class="ThinkNode_Subtree"><treeDef>Downed</treeDef></li>
+
+        <!-- 紧急救援协议 (极高优先级，只要不是自己倒下或低电量关机，优先救主人) -->
+        <li Class="ThinkNode_ConditionalOfPlayerFaction">
+          <subNodes>
+             <li Class="RavenRace.Features.MechanicalAngel.JobGiver_AegisRescueMaster" />
+          </subNodes>
+        </li>
+
         <li Class="ThinkNode_ConditionalLowEnergy" MayRequire="Ludeon.RimWorld.Biotech">
           <subNodes><li Class="JobGiver_SelfShutdown" /></subNodes>
         </li>
@@ -44,9 +50,7 @@
                 <!-- 【核心拦截】：自定义淫能充电判断 -->
                 <li Class="ThinkNode_ConditionalRecharging">
                   <subNodes>
-                    <!-- 如果处于充能模式，优先尝试去榨取主人 -->
                     <li Class="RavenRace.Features.MechanicalAngel.JobGiver_AegisLustCharge" />
-                    <!-- 如果找不到主人，才退回到普通的充电站 -->
                     <li Class="JobGiver_GetEnergy_Charger" />
                   </subNodes>
                 </li>
@@ -56,7 +60,6 @@
                   <workMode>Work</workMode>
                   <subNodes>
                     <li Class="JobGiver_SeekAllowedArea" />
-                    <!-- 没电时尝试榨汁 -->
                     <li Class="RavenRace.Features.MechanicalAngel.JobGiver_AegisLustCharge" />
                     <li Class="JobGiver_GetEnergy_Charger" />
                     <li Class="JobGiver_Work"><emergency>true</emergency></li>
@@ -101,7 +104,6 @@
           </subNodes>
         </li>
 
-        <!-- 闲置兜底 -->
         <li Class="ThinkNode_Tagger">
           <tagToGive>Idle</tagToGive>
           <subNodes>
@@ -114,5 +116,4 @@
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>
-
 </Defs>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>Raven_DoBillsAngelGestator</defName>
+    <label>神骸堕化调教</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Smithing</workType>
+    <priorityInType>220</priorityInType>
+    <fixedBillGiverDefs>
+      <!-- 绑定到我们的专属调教舱 -->
+      <li>Raven_Building_AngelGestator</li>
+    </fixedBillGiverDefs>
+    <verb>操作调教舱</verb>
+    <gerund>正在进行堕化调教</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>RavenResearch_MechanicalAngel</defName>
+    <label>神骸堕化技术</label>
+    <description>通过研究古代遗留的机械天使残骸，结合渡鸦族独有的生物炼金与催情技术，开发出能够彻底改写超凡机械体底层协议的“堕化调教”工艺。解锁神骸堕化调教舱及机械天使“艾吉斯”的培育。</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>HighMechtech</li>
+      <li>RavenResearch_Bionics</li>
+    </prerequisites>
+    <!-- 放置在科技树的合适位置 -->
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <tab>Raven_ResearchTab</tab>
+  </ResearchProjectDef>
+</Defs>

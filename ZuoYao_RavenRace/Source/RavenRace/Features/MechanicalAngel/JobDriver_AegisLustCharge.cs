@@ -55,7 +55,6 @@ namespace RavenRace.Features.MechanicalAngel
             {
                 pawn.rotationTracker.FaceTarget(Master);
 
-                // 【核心修复】直接恢复原版的 energy (已被伪装)
                 if (pawn.needs != null && pawn.needs.energy != null)
                 {
                     float energyToRestorePerTick = pawn.needs.energy.MaxLevel / ChargeDuration;
@@ -72,6 +71,14 @@ namespace RavenRace.Features.MechanicalAngel
                     FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.Heart, 0.4f);
                 }
             };
+
+            // 【核心新增】利用与上面刚写的一致的底层拦截机制，直接播放持续音效！
+            SoundDef papapaSound = DefDatabase<SoundDef>.GetNamedSilentFail("RavenMechAegis_PaPaPa");
+            if (papapaSound != null)
+            {
+                chargeToil.PlaySustainerOrSound(() => papapaSound, 1f);
+            }
+
             yield return chargeToil;
 
             Toil successToil = ToilMaker.MakeToil("AegisChargeSuccess");
@@ -84,6 +91,10 @@ namespace RavenRace.Features.MechanicalAngel
 
                     if (RavenDefOf.Raven_Thought_AegisDrained != null && Master.needs?.mood != null)
                         Master.needs.mood.thoughts.memories.TryGainMemory(RavenDefOf.Raven_Thought_AegisDrained, pawn);
+
+                    // 【核心修复】增加交配次数
+                    Master.records?.Increment(RavenDefOf.Raven_Record_LovinCount);
+                    pawn.records?.Increment(RavenDefOf.Raven_Record_LovinCount);
 
                     Messages.Message($"艾吉斯完成了对 {Master.LabelShort} 的体液榨取，淫能已满。", pawn, MessageTypeDefOf.NeutralEvent);
                 }
