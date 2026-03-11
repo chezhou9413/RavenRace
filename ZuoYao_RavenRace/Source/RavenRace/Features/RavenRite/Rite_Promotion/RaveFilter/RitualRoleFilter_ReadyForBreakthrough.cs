@@ -1,7 +1,7 @@
-﻿using RavenRace.Features.Purification;
+﻿using RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps;
 using Verse;
 
-namespace RavenRace.Features.RavenRite.RaveFilter
+namespace RavenRace.Features.RavenRite.CustomRiteCore.RaveFilter
 {
     // 要求Pawn的金乌浓度已达到当前纯化阶段的阈值上限
     public class RitualRoleFilter_ReadyForBreakthrough : RitualRoleFilter

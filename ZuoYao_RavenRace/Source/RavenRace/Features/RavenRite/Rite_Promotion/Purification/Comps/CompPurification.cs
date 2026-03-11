@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace RavenRace.Features.Purification
+namespace RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps
 {
     public class CompProperties_Purification : CompProperties
     {

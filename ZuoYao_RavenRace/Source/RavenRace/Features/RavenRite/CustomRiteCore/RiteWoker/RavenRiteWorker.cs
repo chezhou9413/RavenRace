@@ -1,4 +1,4 @@
-﻿using RavenRace.Features.RavenRite.Pojo;
+﻿using RavenRace.Features.RavenRite.CustomRiteCore.Pojo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RavenRace.Features.RavenRite.RiteWoker
+namespace RavenRace.Features.RavenRite.CustomRiteCore.RiteWoker
 {
     public abstract class RavenRiteWorker
     {

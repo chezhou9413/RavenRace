@@ -1,9 +1,9 @@
-﻿using RavenRace.Features.RavenRite.RaveFilter;
+﻿using RavenRace.Features.RavenRite.CustomRiteCore.RaveFilter;
 using System;
 using UnityEngine;
 using Verse;
 
-namespace RavenRace.Features.RavenRite.Pojo
+namespace RavenRace.Features.RavenRite.CustomRiteCore.Pojo
 {
     public class RitualRoleDefinition
     {

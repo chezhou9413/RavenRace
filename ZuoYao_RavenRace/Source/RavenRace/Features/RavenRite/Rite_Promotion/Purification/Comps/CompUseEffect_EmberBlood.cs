@@ -3,7 +3,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 
-namespace RavenRace.Features.Purification
+namespace RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps
 {
     /// <summary>
     /// 余烬之血的全新执行逻辑。

@@ -4,8 +4,8 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 using RavenRace.Features.Bloodline;
-using RavenRace.Features.Purification; // [新增引用]
-using RavenRace.Features.FusangOrganization.UI; 
+using RavenRace.Features.FusangOrganization.UI;
+using RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps;
 
 namespace RavenRace
 {

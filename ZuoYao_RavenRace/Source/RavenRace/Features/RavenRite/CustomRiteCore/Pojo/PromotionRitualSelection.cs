@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RavenRace.Features.RavenRite.Pojo
+namespace RavenRace.Features.RavenRite.CustomRiteCore.Pojo
 {
     //玩家确认后的完整选择结果。
     public class PromotionRitualSelection

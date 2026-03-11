@@ -5,8 +5,8 @@ using RimWorld;
 using UnityEngine;
 using Verse.Sound;
 using RavenRace.Features.Bloodline;
-using RavenRace.Features.Reproduction; 
-using RavenRace.Features.Purification; // [新增引用] 引入纯化系统命名空间
+using RavenRace.Features.Reproduction;
+using RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps; // [新增引用] 引入纯化系统命名空间
 
 namespace RavenRace.Features.BloodlineRitual
 {

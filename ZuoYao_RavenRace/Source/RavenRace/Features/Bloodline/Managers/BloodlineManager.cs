@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using RimWorld;
-using RavenRace.Features.Purification; // [新增引用]
+using RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps; // [新增引用]
 
 namespace RavenRace.Features.Bloodline
 {

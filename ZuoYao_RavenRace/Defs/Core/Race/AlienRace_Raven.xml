@@ -13,9 +13,7 @@
       <li>
         <compClass>RavenRace.Features.Bloodline.CompBloodline</compClass>
       </li>
-
-      <li Class="RavenRace.Features.Purification.CompProperties_Purification" />
-
+      <li Class="RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps.CompProperties_Purification" />
       <li Class="RavenRace.Race.CompProperties_RavenRace" />
       <li Class="RavenRace.CompProperties_RavenFeatherDrop"/>
       <li Class="ChezhouLib.ClThingComp.ThingCompProperties_RaceFly">

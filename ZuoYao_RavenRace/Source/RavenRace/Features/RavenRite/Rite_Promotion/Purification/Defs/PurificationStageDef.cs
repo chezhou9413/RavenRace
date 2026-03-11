@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace RavenRace.Features.Purification
+namespace RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs
 {
     /// <summary>
     /// 血脉纯化阶段定义 (核心蓝图)。

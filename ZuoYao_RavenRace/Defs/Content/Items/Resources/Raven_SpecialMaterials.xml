@@ -75,7 +75,7 @@
         <useDuration>200</useDuration>
       </li>
       <li Class="CompProperties_UseEffect">
-        <compClass>RavenRace.Features.Purification.CompUseEffect_EmberBlood</compClass>
+        <compClass>RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps.CompUseEffect_EmberBlood</compClass>
       </li>
       <li Class="CompProperties_UseEffectDestroySelf" />
     </comps>

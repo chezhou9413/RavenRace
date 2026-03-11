@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RavenRace.Features.RavenRite.RaveFilter
+namespace RavenRace.Features.RavenRite.CustomRiteCore.RaveFilter
 {
     //角色候选人过滤条件基类，子类重写两个虚方法实现自定义限制。
     public abstract class RitualRoleFilter

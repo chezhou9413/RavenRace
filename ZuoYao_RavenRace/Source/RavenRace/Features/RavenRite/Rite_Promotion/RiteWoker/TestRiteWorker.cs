@@ -1,13 +1,13 @@
-﻿using RavenRace.Features.Purification;
-using RavenRace.Features.RavenRite.Pojo;
-using RavenRace.Features.RavenRite.RaveLordJob;
+﻿using RavenRace.Features.RavenRite.CustomRiteCore.Pojo;
+using RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps;
+using RavenRace.Features.RavenRite.Rite_Promotion.RaveLordJob;
 using RimWorld;
 using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace RavenRace.Features.RavenRite.RiteWoker
+namespace RavenRace.Features.RavenRite.CustomRiteCore.RiteWoker
 {
     public class TestRiteWorker : RavenRiteWorker
     {

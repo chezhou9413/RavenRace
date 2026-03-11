@@ -7,7 +7,7 @@ using LudeonTK;
 using System.Reflection;
 using RavenRace.Features.Operator;
 using RavenRace.Features.Bloodline;
-using RavenRace.Features.Purification; // [新增引用]
+using RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps; // [新增引用]
 
 namespace RavenRace
 {

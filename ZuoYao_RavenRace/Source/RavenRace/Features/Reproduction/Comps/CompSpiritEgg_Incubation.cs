@@ -5,7 +5,7 @@ using RimWorld.Planet;
 using System.Linq;
 using System.Collections.Generic;
 using RavenRace.Features.Bloodline;
-using RavenRace.Features.Purification; // [新增引用] 引入纯化系统命名空间
+using RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps; // [新增引用] 引入纯化系统命名空间
 
 namespace RavenRace.Features.Reproduction
 {

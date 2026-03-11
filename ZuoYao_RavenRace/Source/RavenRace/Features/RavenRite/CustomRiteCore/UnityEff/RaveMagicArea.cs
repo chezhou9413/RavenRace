@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using Verse;
 
-namespace RavenRace.Features.RavenRite.UnityEff
+namespace RavenRace.Features.RavenRite.CustomRiteCore.UnityEff
 {
    
     //延迟销毁协程组件

@@ -1,12 +1,12 @@
 ﻿using RavenRace.Features.FusangOrganization.UI;
-using RavenRace.Features.RavenRite.Pojo;
+using RavenRace.Features.RavenRite.CustomRiteCore.Pojo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace RavenRace.Features.RavenRite.UI
+namespace RavenRace.Features.RavenRite.CustomRiteCore.UI
 {
     [StaticConstructorOnStartup]
     public class Dialog_PromotionRitual : FusangWindowBase

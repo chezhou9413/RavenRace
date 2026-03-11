@@ -1,16 +1,14 @@
-﻿using RavenRace.Features.RavenRite.Pojo;
-using RavenRace.Features.RavenRite.RiteWoker;
-using RavenRace.Features.RavenRite.UI;
+﻿using RavenRace.Features.RavenRite.CustomRiteCore.Pojo;
+using RavenRace.Features.RavenRite.CustomRiteCore.RiteWoker;
+using RavenRace.Features.RavenRite.CustomRiteCore.UI;
 using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
-namespace RavenRace.Features.RavenRite.Comp
+namespace RavenRace.Features.RavenRite.CustomRiteCore.Comp
 {
     public class CompProperties_RavenRite : CompProperties
     {

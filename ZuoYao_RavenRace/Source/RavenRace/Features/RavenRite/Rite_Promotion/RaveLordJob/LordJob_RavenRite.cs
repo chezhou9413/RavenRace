@@ -1,5 +1,5 @@
-﻿using RavenRace.Features.RavenRite.Pojo;
-using RavenRace.Features.RavenRite.UnityEff;
+﻿using RavenRace.Features.RavenRite.CustomRiteCore.Pojo;
+using RavenRace.Features.RavenRite.CustomRiteCore.UnityEff;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace RavenRace.Features.RavenRite.RaveLordJob
+namespace RavenRace.Features.RavenRite.Rite_Promotion.RaveLordJob
 {
     //渡鸦仪式主Lord,分三阶段：聚集 执行读条 结束
     public class LordJob_RavenRite : LordJob
