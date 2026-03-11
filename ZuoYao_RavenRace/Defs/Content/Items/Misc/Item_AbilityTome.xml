@@ -5,7 +5,7 @@
     <label>渡鸦本能教本</label>
     <description>一本沾满干涸黏液的禁忌典籍。里面以极度露骨的插图和文字，记载了渡鸦族如何开发自身深不见底的肉体幽谷。通过学习，可以掌握利用极致的快感操控他人的“强制求爱”，以及将活人强行吞入阴道或直肠深处的恐怖技能——“吸星大法”。\n\n“成为我子宫里的一滩温热的肉泥吧……” —— 某位不愿透露姓名的司命</description>
     <graphicData>
-      <texPath>Items/Medicine/Oxytocin</texPath> <!-- 复用贴图 -->
+      <texPath>Items/Misc/AbilityTome/AbilityTome</texPath> <!-- 复用贴图 -->
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
