@@ -29,6 +29,10 @@
                 <key>dick_xuancai</key>
                 <value>/prefab/Rave/dick_xuancai.prefab</value>
             </li>
+            <li>
+                <key>MagicArea</key>
+                <value>/prefab/Rave/MagicArea.prefab</value>
+            </li>
         </unityAssetMount>
     </ChezhouLib.LibDef.ClAssetLord>
 </Defs>

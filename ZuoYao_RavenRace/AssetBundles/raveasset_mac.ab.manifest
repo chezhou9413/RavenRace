@@ -1,15 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1016059643
+CRC: 3742009136
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6a637b1cb17e1e9079d59f2ce7680c26
+    Hash: 1b00278a69c5e5d6189c1285bd9c5c15
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 618bca2a0daba2d0cf57a1eb2cf461f2
-  IncrementalBuildHash:
-    serializedVersion: 2
-    Hash: 6a637b1cb17e1e9079d59f2ce7680c26
+    Hash: 74c685eb68cf000f114787f16313d5dc
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -28,6 +25,12 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
 - Class: 198
   Script: {instanceID: 0}
 - Class: 199
@@ -38,11 +41,12 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/prefab/Rave/dick_dack.prefab
-- Assets/prefab/Rave/MagicArea.prefab
-- Assets/prefab/Rave/dick_masaike.prefab
-- Assets/prefab/Rave/dick_err.prefab
-- Assets/prefab/Rave/dick_mohu.prefab
-- Assets/prefab/Rave/dick_xuancai.prefab
 - Assets/prefab/Rave/dick_light.prefab
+- Assets/prefab/Rave/chushou.prefab
+- Assets/prefab/Rave/dick_mohu.prefab
+- Assets/prefab/Rave/dick_masaike.prefab
+- Assets/prefab/Rave/MagicArea.prefab
+- Assets/prefab/Rave/dick_err.prefab
+- Assets/prefab/Rave/dick_dack.prefab
+- Assets/prefab/Rave/dick_xuancai.prefab
 Dependencies: []

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+
+    <defName>RavenRace_RavenRiteAltar</defName>
+    <label>渡鸦祭坛</label>
+    <description>渡鸦族人举行古老晋升仪式的祭坛。主持者率众人在此祈颂，为族中佼佼者加冕新位。</description>
+
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0.5</fillPercent>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Misc/Altars/Altar1x1</texPath>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.8, 1, 0.8)</volume>
+      </shadowData>
+    </graphicData>
+
+    <size>(1,1)</size>
+    <costStuffCount>75</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <defaultStuff>BlocksGranite</defaultStuff>
+
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Beauty>12</Beauty>
+    </statBases>
+
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+
+    <ritualFocus>
+      <spectateDistance>3</spectateDistance>
+      <allowedSpectateSides>Down</allowedSpectateSides>
+    </ritualFocus>
+
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+
+    <placeWorkers>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+
+    <building>
+      <buildingTags>
+        <li>RitualFocus</li>
+      </buildingTags>
+      <paintable>true</paintable>
+    </building>
+
+    <!-- 普通建筑分类，直接在建筑页可见 -->
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2015</uiOrder>
+
+    <comps>
+      <li Class="CompProperties_Styleable" />
+      <!-- 渡鸦仪式核心组件 -->
+      <li Class="RavenRace.Features.RavenRite.Comp.CompProperties_RavenRite">
+
+        <!-- 仪式名称，显示在 Gizmo 和仪式 UI 标题 -->
+        <ritualLabel>渡鸦晋升仪式</ritualLabel>
+
+        <!-- Gizmo 按钮悬停说明文字 -->
+        <gizmoDesc>在渡鸦祭坛前举行晋升仪式，指定主持者与参与者。</gizmoDesc>
+
+        <!-- 仪式冷却天数（1天 = 60000 ticks） -->
+        <cooldownDays>3</cooldownDays>
+
+        <!-- 仪式效果执行类，负责仪式完成后的实际逻辑 -->
+        <ritualWorkerClass>RavenRace.Features.RavenRite.RiteWoker.TestRiteWorker</ritualWorkerClass>
+
+        <!-- 仪式角色定义 -->
+        <roles>
+          <li>
+            <!-- 角色ID，代码中通过 selection.GetFirst("host") 获取 -->
+            <RoleId>host</RoleId>
+            <!-- UI 显示名称 -->
+            <Label>晋升者</Label>
+            <!-- 最多选1人 -->
+            <MaxCount>1</MaxCount>
+            <!-- 必填角色，未选择时无法开始仪式 -->
+            <Required>true</Required>
+            <!-- 过滤器：限定只有满足突破条件的 Pawn 可被选为晋升者 -->
+            <filterClass>RavenRace.Features.RavenRite.RaveFilter.RitualRoleFilter_ReadyForBreakthrough</filterClass>
+          </li>
+        </roles>
+      </li>
+    </comps>
+
+  </ThingDef>
+</Defs>
