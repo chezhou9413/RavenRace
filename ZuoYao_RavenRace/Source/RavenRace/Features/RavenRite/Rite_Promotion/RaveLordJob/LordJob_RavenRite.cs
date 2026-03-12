@@ -56,7 +56,7 @@ namespace RavenRace.Features.RavenRite.Rite_Promotion.RaveLordJob
                 durationTicks,
                 ritualLabel, 
                 circleRadius,
-                 ritualTexts: new List<string> { "哈哈", "那就厉害了", "到时候火药给你留着，把那些黑基地全炸了", "好主意", "算我一个" });
+                 ritualTexts: new List<string> { "听吧，骄阳的后裔，烈日的见证者...",  "烧穿这凡躯的桎梏...", "让那黑色的血从伤口流尽...", "起来吧，黑羽中孕育的太阳！" });
             var finishToil = new LordToil_RavenRite_Finish();
             graph.StartingToil = gatherToil;
             graph.AddToil(performToil);
