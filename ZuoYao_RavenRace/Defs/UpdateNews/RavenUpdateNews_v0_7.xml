@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RavenRace.Features.UpdateNews.RavenUpdateNewsDef>
+    <defName>RavenUpdateNews_v0_7_0</defName>
+    <version>0.7.0</version>
+    <publishDate>2026-02-19</publishDate>
+    <title>0.7版本更新</title>
+    <!-- 0.7 也可以用不一样的配图 -->
+    <bannerPath>UI/UpdateNews/Banner_Default</bannerPath>
+  <content>
+0.7 增加了几个特殊角色：
+左爻还是和以前一样，通过黑衣人招。锁妈目前只能通过控制台招，可以生成一个玩玩，有好几个有意思的技能。
+
+[新增内容]
+- 加了个特殊动物：渡鸦大统领。最好通过控制台招，因为野外刷新概率很低。
+- 加了一些奇奇怪怪的整蛊音效，在开发者模式下唱片机可以看到有哪些，也欢迎自己探索。
+- 加了一个强制交配学习器，可以让其他种族也可以获得并使用这个技能了。具体调节在设置里面，记得看。
+- 加了一个捕兽夹，可以自动捕猎。
+
+[机制优化与修复]
+- 更新了 galgame 框架，现在扩展性强非常多。
+- 三字母兼容修复：现在可以选择直接加灵卵了。强制交配也可以正常指定动作了。
+- 修复了电台代孕任务的 bug。
+- 修复了间谍派出去回不来的 bug。
+- 修复了看 AV 吸引力太差且会厌倦的 bug。
+
+注：0.7 版本以前没有做文本记载。
+  </content>
+  </RavenRace.Features.UpdateNews.RavenUpdateNewsDef>
+</Defs>

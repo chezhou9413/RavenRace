@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Verse;
+using RavenRace.Features.UpdateNews; // 引入 UpdateNews 命名空间
 
 namespace RavenRace.Settings
 {
@@ -11,13 +12,28 @@ namespace RavenRace.Settings
             listing.Label("RavenRace_Settings_BaseDesc".Translate());
             listing.GapLine();
 
+            // ==========================================
+            // [新增] 模组更新日志控制区
+            // ==========================================
+            listing.Label("=== 更新日志控制 ===");
+            listing.CheckboxLabeled("游戏加载时自动弹出最新更新日志", ref s.enableUpdateNews, "开启后，如果模组有你没看过的更新说明，进档时会自动弹窗提醒。");
+
+            // 加入一个能手动唤出更新面板的按钮
+            Rect btnRect = listing.GetRect(30f);
+            btnRect.width = 250f;
+            if (FusangUIStyle.DrawButton(btnRect, "打开暗影余烬通讯终端 (更新日志)"))
+            {
+                Find.WindowStack.Add(new Window_UpdateNews());
+            }
+            listing.GapLine();
+
+
             listing.CheckboxLabeled("RavenRace_Settings_EnableDebugMode".Translate(), ref s.enableDebugMode);
             listing.CheckboxLabeled("RavenRace_Settings_EnableVerboseLogging".Translate(), ref s.enableVerboseLogging);
 
-            // [新增] 音效开关
+            // 音效开关
             listing.Gap();
             listing.CheckboxLabeled("启用彩蛋音效", ref s.enableMemeSounds, "开启后，在特定情况下会播放趣味音效。可能会很吵，请谨慎开启！");
-
 
             listing.GapLine();
 
@@ -27,7 +43,6 @@ namespace RavenRace.Settings
             listing.Label($"死亡概率: {s.emberBloodDeathChance:P0}");
             s.emberBloodDeathChance = listing.Slider(s.emberBloodDeathChance, 0f, 1f);
 
-            // [Fixed] 动态限制发狂概率，确保总和不超过 100%
             float maxBerserk = 1f - s.emberBloodDeathChance;
             if (s.emberBloodBerserkChance > maxBerserk) s.emberBloodBerserkChance = maxBerserk;
 
@@ -52,7 +67,6 @@ namespace RavenRace.Settings
             listing.Label($"掉落冷却时间: {s.featherCooldownDays:F1} 天");
             s.featherCooldownDays = listing.Slider(s.featherCooldownDays, 1f, 120f);
 
-
             // --- 大渡鸦 (大统领) 设置 ---
             listing.GapLine();
             listing.Label("=== 渡鸦大统领设置 ===");
@@ -63,7 +77,6 @@ namespace RavenRace.Settings
                 listing.Label($"寻找间隔: {s.greatRavenSearchDays:F1} 天");
                 s.greatRavenSearchDays = listing.Slider(s.greatRavenSearchDays, 0.1f, 10f);
 
-                // [新增] 概率配置
                 listing.Gap();
                 listing.Label("寻宝概率配置 (独立判断 0-100%)");
 
@@ -79,18 +92,14 @@ namespace RavenRace.Settings
                 listing.SubLabel("注：如果所有概率均未触发，大统领将空手而归并提示。", 0.8f);
             }
 
-
-            // [新增] 侍奉系统设置
+            // 侍奉系统设置
             listing.GapLine();
             listing.Label("=== 侍奉系统设置 ===");
             listing.Label($"侍奉互动基础触发率: {s.servitudeInteractionChance:P0}");
             s.servitudeInteractionChance = listing.Slider(s.servitudeInteractionChance, 0f, 1f);
             listing.Label($"侍奉互动冷却时间倍率: {s.servitudeCooldownMultiplier:P0}");
             s.servitudeCooldownMultiplier = listing.Slider(s.servitudeCooldownMultiplier, 0.1f, 5f);
-            listing.SubLabel("调整侍奉者主动执行各种互动的频率。触发率为每次AI检测时的基础概率，冷却倍率会缩放所有互动的冷却时间。调整侍奉者主动执行各种互动的频率。触发率为每次AI检测时的基础概率，冷却倍率会缩放所有互动的冷却时间。", -1f);
-
-
-
+            listing.SubLabel("调整侍奉者主动执行各种互动的频率。触发率为每次AI检测时的基础概率，冷却倍率会缩放所有互动的冷却时间。", 1f);
         }
     }
 }

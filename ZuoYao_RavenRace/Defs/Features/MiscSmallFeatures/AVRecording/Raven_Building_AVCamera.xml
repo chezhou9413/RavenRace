@@ -4,7 +4,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>Raven_Building_AVCamera</defName>
     <label>全息摄影机</label>
-    <description>一台配备了全息捕捉与隐蔽记录功能的先进摄影设备。\n\n只要提供电力，它就会静默地监控其视野范围内的一切。当它识别到范围内有生物在进行“繁衍活动”并结束时，会自动将过程提取并压缩成极其珍贵的加密影像弹出。\n\n如果将它与床铺放在同一个房间，该房间会被判定为“AV摄影房”，它将能产出价值连城的典藏版影像！</description>
+    <description>一台配备了全息捕捉与隐蔽记录功能的先进摄影设备。\n\n只要提供电力，它就会静默地监控其视野范围内的一切。当它识别到范围内有生物在进行“繁衍活动”并结束时，会自动将过程提取并压缩成极其珍贵的加密影像弹出。\n\n如果将它放在房间，该房间会被判定为“AV摄影房”，它将能产出价值连城的典藏版影像！</description>
     
     <!-- 绑定我们的核心逻辑类 -->
     <thingClass>RavenRace.Features.MiscSmallFeatures.AVRecording.Building_AVCamera</thingClass>

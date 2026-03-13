@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RavenRace.Features.UpdateNews.RavenUpdateNewsDef>
+    <defName>RavenUpdateNews_v0_8_0</defName>
+    <version>0.8.0</version>
+    <publishDate>2026-03-05</publishDate>
+    <title>0.8版本更新</title>
+    <bannerPath>UI/UpdateNews/Banner_Default</bannerPath> 
+  <content>
+0.8 做了很多东西：
+
+1. 现在我们有三个特殊角色啦！虽然文文的贴图还没整好，但是特殊武器和技能已经可以用了。
+2. 增加了一个超级无敌整蛊的玩具“爻五宝”，就是那个大鸟转转转武器，可以玩玩看了。
+3. 加了两套外衣和一套内衣，很涩。
+4. 文化新增了一个模因“繁衍至上”，强制戒律是肉欲放纵和尸体漠视。此外，如果选择了这个模因，还会给所有小人一个类似于米帝的计数 hediff，效果是做爱越多，buff 就越强。这个做爱支持原版做爱，强制交配技能做爱和三字母做爱。
+5. 给后面要做的血脉纯化路线做了一个框架，现在突破到 20% 血脉浓度以上需要举行一个仪式，已经有一个测试用建筑了。
+6. 加了个黏液浴缸，是一种娱乐方式，泡进去很爽。
+7. 更换了一些贴图。
+8. 增加了一个可以喷液体的仿生体，可以灭火。
+9. 增加了一个技能“吸星大法”，可以将人吸进身体里。此外，新增一个学习器“本能教本”，可以后天学习技能。
+10. 优化了繁殖框架，现在你可以和墙ccb并生蛋了。添加了“墙之血脉”。
+11. 给渡鸦大统领加了特殊的“寻找亮闪闪”和“吸收”的两个逻辑，还加了一个特殊掉落物：齁金魔方，后面会有用。
+  </content>
+  </RavenRace.Features.UpdateNews.RavenUpdateNewsDef>
+</Defs>
