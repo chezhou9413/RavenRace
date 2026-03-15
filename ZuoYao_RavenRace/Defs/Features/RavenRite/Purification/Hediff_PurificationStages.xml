@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Stage 1 (突破20%获得) 已有定义 -->
+  <HediffDef>
+    <defName>Raven_Hediff_PurificationBonus_Stage1</defName>
+    <label>初融真火</label>
+    <description>突破了凡躯的限制，金乌的血脉开始在体内复苏。这股温热的力量永久性地改善了体质。\n\n效果：\n- 移速 +0.2\n- 舒适最高温度 +10℃\n- 解锁能力：大火球</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.6, 0.2)</defaultLabelColor>
+    <isBad>false</isBad>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.2</MoveSpeed>
+          <ComfyTemperatureMax>10</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Stage 2 (突破40%获得) -->
+  <HediffDef>
+    <defName>Raven_Hediff_PurificationBonus_Stage2</defName>
+    <label>燃血化羽</label>
+    <description>金乌浓度的提升让体表的羽毛开始闪烁微弱的火光。血液流淌时犹如岩浆般灼热。\n\n效果：\n- 移速 +0.5\n- 舒适最高温度 +25℃\n- 解锁能力：群体点燃 (保留大火球)</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
+    <isBad>false</isBad>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.5</MoveSpeed>
+          <ComfyTemperatureMax>25</ComfyTemperatureMax>
+          <GlobalLearningFactor>0.1</GlobalLearningFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Stage 3 (突破50%获得，预留拓展) -->
+  <HediffDef>
+    <defName>Raven_Hediff_PurificationBonus_Stage3</defName>
+    <label>烈阳雏形</label>
+    <description>体内的能量回路已被彻底改造，现在你甚至可以直接将环境中的热量化为己用。\n\n效果：\n- 移速 +0.8\n- 舒适最高温度 +50℃</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.4, 0.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.8</MoveSpeed>
+          <ComfyTemperatureMax>50</ComfyTemperatureMax>
+          <MeleeDodgeChance>10</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+</Defs>

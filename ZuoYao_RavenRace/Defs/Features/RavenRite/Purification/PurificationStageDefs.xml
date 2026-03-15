@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 阶段 0 (初始凡躯，浓度上限 20%) -->
+  <RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs.PurificationStageDef>
+    <defName>Raven_PurificationStage_0</defName>
+    <label>凡躯</label>
+    <stageIndex>0</stageIndex>
+    <concentrationThreshold>0.20</concentrationThreshold>
+  </RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs.PurificationStageDef>
+
+  <!-- 阶段 1 (突破20%达成，浓度上限 40%) -->
+  <RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs.PurificationStageDef>
+    <defName>Raven_PurificationStage_1</defName>
+    <label>初融真火</label>
+    <stageIndex>1</stageIndex>
+    <concentrationThreshold>0.40</concentrationThreshold>
+    <grantedHediffs>
+      <li>Raven_Hediff_PurificationBonus_Stage1</li>
+    </grantedHediffs>
+    <grantedAbilities>
+      <li>Raven_Ability_Fireball</li>
+    </grantedAbilities>
+  </RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs.PurificationStageDef>
+
+  <!-- 阶段 2 (突破40%达成，浓度上限 50%) -->
+  <RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs.PurificationStageDef>
+    <defName>Raven_PurificationStage_2</defName>
+    <label>燃血化羽</label>
+    <stageIndex>2</stageIndex>
+    <concentrationThreshold>0.50</concentrationThreshold>
+    <grantedHediffs>
+      <li>Raven_Hediff_PurificationBonus_Stage2</li>
+    </grantedHediffs>
+    <grantedAbilities>
+      <li>Raven_Ability_MassIgnite</li>
+    </grantedAbilities>
+  </RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs.PurificationStageDef>
+
+  <!-- 阶段 3 (突破50%达成，浓度上限 60%) -->
+  <RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs.PurificationStageDef>
+    <defName>Raven_PurificationStage_3</defName>
+    <label>烈阳雏形</label>
+    <stageIndex>3</stageIndex>
+    <concentrationThreshold>0.60</concentrationThreshold>
+    <grantedHediffs>
+      <li>Raven_Hediff_PurificationBonus_Stage3</li>
+    </grantedHediffs>
+  </RavenRace.Features.RavenRite.Rite_Promotion.Purification.Defs.PurificationStageDef>
+
+</Defs>

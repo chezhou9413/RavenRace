@@ -37,6 +37,15 @@ namespace RavenRace
 
 
         // ===================================================
+        // Purification - 纯化系统相关
+        // ===================================================
+        public static HediffDef Raven_Hediff_PurificationBonus_Stage2; // 纯化阶段2
+        public static HediffDef Raven_Hediff_PurificationBonus_Stage3; // 纯化阶段3
+        public static AbilityDef Raven_Ability_Fireball;               // 纯化能力：大火球
+        public static AbilityDef Raven_Ability_MassIgnite;             // 纯化能力：群体点燃
+
+
+        // ===================================================
         // Features: Soul Altar - 育生祭坛
         // ===================================================
 

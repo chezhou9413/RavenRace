@@ -14,6 +14,16 @@ namespace RavenRace
     /// </summary>
     public class RavenRaceSettings : ModSettings
     {
+
+        // ===================================================
+        // 0. 更新日志 (Update News) [新增]
+        // ===================================================
+        public bool enableUpdateNews = true;
+        public string lastViewedVersion = "0.0.0";
+
+
+
+
         // ===================================================
         // 1. 基础与调试 (Base & Debug)
         // ===================================================
@@ -205,6 +215,12 @@ namespace RavenRace
         public override void ExposeData()
         {
             base.ExposeData();
+
+
+            // --- 0. 更新与基础 ---
+            Scribe_Values.Look(ref enableUpdateNews, "enableUpdateNews", true);
+            Scribe_Values.Look(ref lastViewedVersion, "lastViewedVersion", "0.0.0");
+
 
             // --- 1. 基础与调试 ---
             Scribe_Values.Look(ref enableDebugMode, "enableDebugMode", false);

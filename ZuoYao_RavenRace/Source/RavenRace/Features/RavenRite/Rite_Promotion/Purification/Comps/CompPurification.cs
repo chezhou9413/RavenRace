@@ -16,15 +16,8 @@ namespace RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps
         }
     }
 
-    /// <summary>
-    /// 渡鸦金乌纯化核心组件。
-    /// 完全独立于杂交血脉系统，专注于金乌浓度的管理与飞升阶段突破。
-    /// </summary>
     public class CompPurification : ThingComp
     {
-        // ==========================================
-        // 核心数据
-        // ==========================================
         private float goldenCrowConcentration = 0f;
         public int currentPurificationStage = 0;
 
@@ -46,107 +39,86 @@ namespace RavenRace.Features.RavenRite.Rite_Promotion.Purification.Comps
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            // 每次生成或读档时，确保持有对应阶段的加成
             RefreshPurificationBonuses();
         }
 
-        // ==============================================================
-        // 核心逻辑：浓度与阶段控制
-        // ==============================================================
-
-        /// <summary>
-        /// 获取当前纯化阶段允许的最高浓度物理上限。
-        /// </summary>
         public float GetMaxConcentrationLimit()
         {
-            float limit = 1.0f; // 默认为满值
             var allStages = DefDatabase<PurificationStageDef>.AllDefsListForReading;
-            if (allStages.NullOrEmpty()) return limit;
-
             var currentStageDef = allStages.FirstOrDefault(s => s.stageIndex == this.currentPurificationStage);
-            if (currentStageDef != null)
-            {
-                limit = currentStageDef.concentrationThreshold;
-            }
-            return limit;
+            return currentStageDef?.concentrationThreshold ?? 1.0f;
         }
 
-        /// <summary>
-        /// 尝试安全地增加金乌血脉浓度。
-        /// 会同时受到“当前纯化阶段物理上限”和“来源物品极限”的双重约束。
-        /// </summary>
         public void TryAddGoldenCrowConcentration(float amount, float sourceMaxLimit = 1.0f)
         {
             float stageLimit = GetMaxConcentrationLimit();
             float hardLimit = Mathf.Min(stageLimit, sourceMaxLimit);
+            if (this.goldenCrowConcentration >= hardLimit) return;
 
-            if (this.goldenCrowConcentration >= hardLimit)
-            {
-                return;
-            }
-
-            this.goldenCrowConcentration += amount;
-
-            if (this.goldenCrowConcentration > hardLimit)
-            {
-                this.goldenCrowConcentration = hardLimit;
-            }
-
+            this.goldenCrowConcentration = Mathf.Min(this.goldenCrowConcentration + amount, hardLimit);
             RefreshPurificationBonuses();
         }
 
-        // ==============================================================
-        // 奖励发放
-        // ==============================================================
+        /// <summary>
+        /// 核心刷新逻辑
+        /// Hediff: 覆盖制（仅保留最高级）
+        /// Ability/Trait: 解锁制（累加继承）
+        /// </summary>
         public void RefreshPurificationBonuses()
         {
             if (this.Pawn == null || this.Pawn.health == null) return;
 
-            var allStages = DefDatabase<PurificationStageDef>.AllDefsListForReading;
+            var allStages = DefDatabase<PurificationStageDef>.AllDefsListForReading.OrderBy(s => s.stageIndex).ToList();
             if (allStages.NullOrEmpty()) return;
 
-            foreach (var stageDef in allStages)
+            // 1. 处理 Hediff (覆盖制)
+            // 先收集所有定义过的阶段 Hediff，全部移除
+            foreach (var stage in allStages)
             {
-                bool shouldHaveBonus = this.currentPurificationStage >= stageDef.stageIndex;
-
-                // 1. Hediffs
-                if (stageDef.grantedHediffs != null)
+                if (stage.grantedHediffs != null)
                 {
-                    foreach (var hDef in stageDef.grantedHediffs)
+                    foreach (var hDef in stage.grantedHediffs)
                     {
-                        BloodlineUtility.ToggleHediff(this.Pawn, hDef, shouldHaveBonus);
+                        var existing = this.Pawn.health.hediffSet.GetFirstHediffOfDef(hDef);
+                        if (existing != null) this.Pawn.health.RemoveHediff(existing);
                     }
                 }
+            }
 
-                // 2. Abilities
+            // 寻找当前拥有的最高级且合法的阶段，添加其 Hediff
+            var currentStageDef = allStages.LastOrDefault(s => s.stageIndex <= this.currentPurificationStage);
+            if (currentStageDef?.grantedHediffs != null)
+            {
+                foreach (var hDef in currentStageDef.grantedHediffs)
+                {
+                    this.Pawn.health.AddHediff(hDef);
+                }
+            }
+
+            // 2. 处理技能和特性 (解锁继承制)
+            foreach (var stageDef in allStages)
+            {
+                bool isUnlocked = this.currentPurificationStage >= stageDef.stageIndex;
+
                 if (stageDef.grantedAbilities != null)
                 {
                     foreach (var aDef in stageDef.grantedAbilities)
                     {
-                        BloodlineUtility.ToggleAbility(this.Pawn, aDef, shouldHaveBonus);
+                        BloodlineUtility.ToggleAbility(this.Pawn, aDef, isUnlocked);
                     }
                 }
 
-                // 3. Traits (只增不减)
-                if (shouldHaveBonus && stageDef.grantedTraits != null && this.Pawn.story != null && this.Pawn.story.traits != null)
+                if (isUnlocked && stageDef.grantedTraits != null && this.Pawn.story?.traits != null)
                 {
                     foreach (var tDef in stageDef.grantedTraits)
                     {
                         if (!this.Pawn.story.traits.HasTrait(tDef))
-                        {
                             this.Pawn.story.traits.GainTrait(new Trait(tDef));
-                        }
                     }
                 }
             }
 
             Pawn.Drawer?.renderer?.SetAllGraphicsDirty();
-        }
-
-        public override string CompInspectStringExtra()
-        {
-            if (!RavenRaceMod.Settings.enableDebugMode) return null;
-            return $"Purification Stage: {currentPurificationStage} (Limit: {GetMaxConcentrationLimit():P0})";
         }
     }
 }

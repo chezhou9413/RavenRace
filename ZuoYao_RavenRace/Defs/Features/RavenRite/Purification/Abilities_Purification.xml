@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 大火球弹体 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Raven_Projectile_Fireball</defName>
+    <label>金乌火球</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(254,189,58)</color>
+      <drawSize>2.5</drawSize>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <speed>55</speed>
+      <explosionRadius>4.9</explosionRadius> <!-- 半径加大 -->
+      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>0.8</preExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.3</arcHeightFactor>
+    </projectile>
+  </ThingDef>
+
+  <!-- 火球术 -->
+  <AbilityDef>
+    <defName>Raven_Ability_Fireball</defName>
+    <label>金乌火球</label>
+    <description>瞬发的毁灭火球。</description>
+    <iconPath>UI/Abilities/Raven_Fireball</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hostile>true</hostile>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>29.9</range>
+      <warmupTime>0.5</warmupTime> <!-- 速度加快 -->
+      <soundCast>Shot_IncendiaryLauncher</soundCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <!-- 【核心】必须有这个组件，火球才会飞出去 -->
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>Raven_Projectile_Fireball</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- 群体点燃 -->
+  <AbilityDef>
+    <defName>Raven_Ability_MassIgnite</defName>
+    <label>群体点燃</label>
+    <description>指定范围全屏点燃。</description>
+    <iconPath>UI/Abilities/Raven_MassIgnite</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <hostile>true</hostile>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>24.9</range>
+      <warmupTime>0.8</warmupTime> <!-- 速度加快 -->
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="RavenRace.Features.RavenRite.Rite_Promotion.Purification.Abilities.CompProperties_AbilityMassIgnite">
+        <radius>9.9</radius> <!-- 半径加大 -->
+        <fireSize>1.2</fireSize>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>
