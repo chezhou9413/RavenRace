@@ -24,7 +24,9 @@
         <hoverSpeed>2.5</hoverSpeed>
         <shadowTexPath>back</shadowTexPath>
         <shadowSize>1.2,1.2,1.2</shadowSize>
-
+        <ExcludeKindDefs>
+          <li>Raven_PawnKind_ThrumboGirl</li>
+        </ExcludeKindDefs>
         <autoLandingJobDefs>          <!-- 自动降落逻辑 -->
           <!-- 睡眠/躺下 -->
           <li>LayDown</li>
@@ -495,7 +497,7 @@
           <li>Raven_Apparel_Quju</li>
           <li>Raven_Apparel_Doteikorosu</li>
           <li>Raven_Apparel_QipaoNaichuang</li>
-          <li>Raven_Apparel_ShadowCloak</li> 
+          <li>Raven_Apparel_ShadowCloak</li>
         </apparelList>
 
         <!-- 专属武器列表 -->

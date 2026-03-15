@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <PawnKindDef>
+        <defName>Raven_PawnKind_ThrumboGirl</defName>
+        <label>敲击兽娘</label>
+        <race>Raven_Race</race>
+        <combatPower>1000</combatPower>
+        <isFighter>true</isFighter>
+        <defaultFactionType>PlayerColony</defaultFactionType>
+        <!-- 强制服装 -->
+        <apparelRequired>
+            <li>Raven_ApparelBinahOutfit</li>
+            <li>Raven_eardrop</li>
+        </apparelRequired>
+        <apparelTags>
+            <li>Binah_Apparel</li>
+        </apparelTags>
+        <apparelMoney>
+            <min>9999</min>
+            <max>9999</max>
+        </apparelMoney>
+
+        <techHediffsChance>0.5</techHediffsChance>
+        <initialWillRange>10~10</initialWillRange>
+        <initialResistanceRange>0~0</initialResistanceRange>
+
+        <modExtensions>
+            <li Class="ChezhouLib.Extension.kindRule">
+                <kindName>敲击兽娘</kindName>
+                <kindAge>22</kindAge>
+                <kindDesName></kindDesName>
+                <isColseFa>true</isColseFa>
+                <bodyAddonRules>
+                    <li>
+                        <BodyAddonName>raven_face</BodyAddonName>
+                        <ReplacePath>Races/Raven/Special/Binah/Face/Binah_Face</ReplacePath>
+                        <offset>
+                            <south>
+                                <bodyTypes>
+                                    <Female>(0,0)</Female>
+                                    <Male>(0,0)</Male>
+                                </bodyTypes>
+                                <layerOffset>0.01</layerOffset>
+                            </south>
+                            <north>
+                                <bodyTypes>
+                                    <Female>(0,0)</Female>
+                                    <Male>(0,0)</Male>
+                                </bodyTypes>
+                                <layerOffset>0.01</layerOffset>
+                            </north>
+                            <east>
+                                <bodyTypes>
+                                    <Female>(0,0)</Female>
+                                    <Male>(0,0)</Male>
+                                </bodyTypes>
+                                <layerOffset>0.01</layerOffset>
+                            </east>
+                        </offset>
+                    </li>
+                </bodyAddonRules>
+                <renderNodeRules>
+                    <li>
+                        <debugLabel>Head</debugLabel>
+                        <replacePath>Races/Raven/Special/ThrumboGirl/Head/Head_Blank</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>RavenHair_A</debugLabel>
+                        <replacePath>Races/Raven/Special/ThrumboGirl/Hair/hair</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>RavenHair_A_Back</debugLabel>
+                        <replacePath>Races/Raven/Null/Null</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>raven_face</debugLabel>
+                        <replacePath>Races/Raven/Special/ThrumboGirl/Eye/eye_close/eye_close</replacePath>
+                        <replacePathDraft>Races/Raven/Special/ThrumboGirl/Eye/eye_open/eye_open</replacePathDraft>
+                    </li>
+                    <li>
+                        <debugLabel>Body</debugLabel>
+                        <replacePath>Races/Raven/Special/ThrumboGirl/Body/Body</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>raven_womb_female</debugLabel>
+                        <replacePath>Races/Raven/Null/Null</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>RavenEar_Base</debugLabel>
+                        <replacePath>Races/Raven/Null/Null</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>RavenWing_LayerA</debugLabel>
+                        <replacePath>Races/Raven/Null/Null</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>RavenWing_LayerB</debugLabel>
+                        <replacePath>Races/Raven/Null/Null</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>RavenWing_LayerC</debugLabel>
+                        <replacePath>Races/Raven/Null/Null</replacePath>
+                    </li>
+                    <li>
+                        <debugLabel>raven_RavenEar</debugLabel>
+                        <replacePath>Races/Raven/Null/Null</replacePath>
+                    </li>
+                </renderNodeRules>
+            </li>
+            <li Class="RavenRace.Features.CustomPawn.Ui.RaveExtension.RaveCustomPawnUiData">
+                <workerClass>RavenRace.Features.CustomPawn.Ui.SpecialPawnWorker.SpecialPawnWorkerBase</workerClass>
+                <CustomPawnUiDes>敲击兽娘</CustomPawnUiDes>                <!-- 角色描述 -->
+                <pos>2</pos>                <!-- ui排序 -->
+            </li>
+
+        </modExtensions>
+    </PawnKindDef>
+</Defs>
