@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <AlienRace.ThingDef_AlienRace ParentName="BasePawn">
     <defName>Raven_Race</defName>
@@ -25,7 +25,7 @@
         <shadowTexPath>back</shadowTexPath>
         <shadowSize>1.2,1.2,1.2</shadowSize>
         <ExcludeKindDefs>
-          <li>Raven_PawnKind_ThrumboGirl</li>
+          <li>Raven_PawnKind_Seanae</li>
         </ExcludeKindDefs>
         <autoLandingJobDefs>          <!-- 自动降落逻辑 -->
           <!-- 睡眠/躺下 -->

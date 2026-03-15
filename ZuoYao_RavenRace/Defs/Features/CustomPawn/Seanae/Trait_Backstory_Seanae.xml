@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TraitDef>
+    <defName>Raven_Trait_Seanae</defName>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>可爱敲击兽娘</label>
+        <description>可可爱爱的敲击兽娘，力气很大哦~</description>
+        <skillGains>
+            <Melee>5</Melee>
+        </skillGains>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Backstory_Seanae_Child</defName>
+    <title>！？敲敲！？</title>
+    <titleShort>！？敲敲！？</titleShort>
+    <baseDesc>！？敲敲！？</baseDesc>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>Raven_Seanae</li>
+    </spawnCategories>
+    <skillGains>
+      <Medicine>12</Medicine>
+    </skillGains>
+  </AlienRace.AlienBackstoryDef>
+
+  <AlienRace.AlienBackstoryDef>
+    <defName>Raven_Backstory_Seanae_Adult</defName>
+    <title>可爱的希娜埃</title>
+    <titleShort>可爱的希娜埃</titleShort>
+    <baseDesc>希娜埃！希娜埃！我们喜欢你！</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>Raven_Seanae</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>10</Shooting>
+      <Melee>10</Melee>
+    </skillGains>
+    <forcedTraitsChance>
+      <li>
+        <defName>Raven_Trait_Seanae</defName>
+        <chance>100</chance>
+      </li>
+    </forcedTraitsChance>
+    
+
+  </AlienRace.AlienBackstoryDef>
+</Defs>
